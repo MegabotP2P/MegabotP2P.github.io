@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Test de Reflejos Visuales - ByteZone</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Monetag Web In-Page Push (Zona 12034401) -->
+    <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    
+    <!-- Monetag Telegram Mini App SDK Oficial (Zona 12040274) -->
+    <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
+    
+    <script>
+        function executeRewardedAction(rewardCallback) {
+            if (typeof show_12040274 === 'function') {
+                show_12040274().then(() => {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                }).catch((err) => {
+                    console.log("Anuncio Monetag Telegram cerrado o error:", err);
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                });
+            } else {
+                if (typeof rewardCallback === 'function') rewardCallback();
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
+
+    
+    <header class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center space-x-2 group">
+                <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
+                <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    BYTE<span class="text-white">ZONE</span>
+                </span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <button onclick="promptChangeName()" class="text-xs text-gray-300 hover:text-cyan-400 bg-gray-800/80 px-2.5 py-1.5 rounded-xl border border-gray-700/60 flex items-center space-x-1.5 transition">
+                    <span id="playerCountryDisplay" class="text-sm select-none">🌐</span>
+                    <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
+                    <span class="text-cyan-400 text-[10px]">✏️</span>
+                </button>
+                <a href="../telegram.html" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                    <span>✈️</span>
+                    <span class="hidden sm:inline">Telegram</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
+        <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
+            <a href="../index.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+                <span class="text-base sm:text-lg">🕹️</span>
+                <span>Arcade Hub</span>
+            </a>
+            <a href="../hacks.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">📱</span>
+                <span>Tech Hacks</span>
+            </a>
+            <a href="../humor.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🎭</span>
+                <span>Humor</span>
+            </a>
+            <a href="../telegram.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🚀</span>
+                <span>Comunidad</span>
+            </a>
+        </div>
+    </nav>
+    
+
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
+        <div class="flex items-center justify-between">
+            <a href="../index.html" class="text-xs text-purple-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+                <span>←</span>
+                <span>Volver al Arcade</span>
+            </a>
+
+            <div class="text-xs text-gray-400 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800 flex items-center space-x-2">
+                <span>Modo:</span>
+                <span class="text-purple-400 font-bold">Tiempo de Reacción</span>
+            </div>
+        </div>
+
+        <!-- TABLERO DE RÉCORD REFLEJOS -->
+        <div class="bg-gray-900/90 p-4 rounded-2xl border border-purple-500/30 flex items-center justify-between shadow-xl">
+            <div>
+                <p class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Tu Mejor Tiempo (Milisegundos)</p>
+                <p id="userBestScore" class="text-2xl font-black text-white">0 ms</p>
+            </div>
+            <div class="text-right">
+                <p class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Tu Posición Actual</p>
+                <span id="userRankBadge" class="text-xs font-black text-pink-400 bg-pink-500/10 border border-pink-500/30 px-3 py-1 rounded-full">
+                    Sin Clasificar
+                </span>
+            </div>
+        </div>
+
+        <!-- CONTADOR DE ENERGÍA / INTENTOS DIARIOS -->
+        <div class="bg-gray-900/90 p-3.5 rounded-2xl border border-gray-800 flex items-center justify-between shadow">
+            <div class="flex items-center space-x-2">
+                <span class="text-xs text-gray-400 font-bold uppercase tracking-wider">⚡ Energía:</span>
+                <div id="attemptsIndicator" class="flex items-center space-x-1"></div>
+                <span id="attemptsText" class="text-xs font-black text-amber-400 ml-1">5/5 Intentos</span>
+            </div>
+            <button onclick="openEnergyModal()" class="text-xs bg-gradient-to-r from-amber-500 to-yellow-500 hover:opacity-90 active:scale-95 text-gray-950 font-black px-3 py-1.5 rounded-xl shadow transition flex items-center space-x-1">
+                <span>⚡</span>
+                <span>+ Recargar</span>
+            </button>
+        </div>
+
+        <!-- PANTALLA DE REFLEJOS VISUALES -->
+        <div class="bg-gray-900/90 rounded-3xl p-6 border border-gray-800 text-center shadow-2xl">
+            <h2 class="text-2xl font-black text-white mb-2">⚡ Test de Reflejos Visuales</h2>
+            <p class="text-xs text-gray-400 max-w-sm mx-auto mb-6">
+                Toca la pantalla justo cuando el recuadro cambie a <strong>VERDE</strong>. Menor tiempo = mejor puesto.
+            </p>
+
+            <div id="reflexBox" onclick="handleReflexClick()" 
+                 class="w-full max-w-sm mx-auto h-64 rounded-2xl flex flex-col items-center justify-center cursor-pointer transition select-none p-4 shadow-inner bg-gradient-to-br from-blue-900 to-indigo-950 border-2 border-blue-500/40">
+                <span id="reflexIcon" class="text-5xl mb-2">⚡</span>
+                <h3 id="reflexStatus" class="text-xl font-black text-white">TOCA PARA INICIAR</h3>
+                <p id="reflexSub" class="text-xs text-blue-200 mt-1">Reacciona cuando cambie a verde (5 intentos diarios)</p>
+            </div>
+        </div>
+
+        <!-- MODAL DE ENERGÍA AGOTADA / RECARGA -->
+        <div id="energyModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-yellow-500/50 text-center shadow-2xl relative">
+                <span class="text-5xl animate-bounce inline-block">⚡</span>
+                <h3 class="text-xl font-black text-white mt-2">¡ENERGÍA AGOTADA!</h3>
+                <p class="text-xs text-gray-300 my-2">Has completado tus 5 intentos. La velocidad extrema requiere reflejos descansados.</p>
+                
+                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-3 my-4 text-xs text-yellow-300 text-left space-y-1">
+                    <p>💡 <strong>Opción 1:</strong> Vuelve mañana a las 00:00.</p>
+                    <p>🔥 <strong>Opción 2:</strong> Ve un anuncio para desbloquear <strong>+5 intentos YA</strong> y seguir rompiendo el récord.</p>
+                </div>
+
+                <button onclick="executeRewardedAction(handleRechargeClick)" class="w-full bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black py-3.5 rounded-2xl shadow-xl shadow-yellow-500/30 text-xs sm:text-sm flex items-center justify-center space-x-2 transition mb-2">
+                    <span>▶</span>
+                    <span>VER ANUNCIO & RECARGAR +5 INTENTOS</span>
+                </button>
+
+                <button onclick="closeEnergyModal()" class="text-xs text-gray-400 hover:text-white underline mt-2">
+                    Cerrar y volver mañana
+                </button>
+            </div>
+        </div>
+
+        <!-- TABLA DE LÍDERES REFLEJOS -->
+        <div class="bg-gray-900/80 rounded-3xl p-6 border border-gray-800">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl">🏆</span>
+                    <h3 class="text-lg font-black text-white">Top 10 • Tiempos de Reacción (ms)</h3>
+                </div>
+                <span class="text-xs bg-emerald-500/20 text-emerald-300 font-bold px-2.5 py-1 rounded-full">En Vivo</span>
+            </div>
+            <div id="leaderboardList" class="space-y-2 text-sm"></div>
+        </div>
+
+    </main>
+
+    
+    <!-- MODAL PERFIL JUGADOR (CONEXIÓN UNIFICADA Y PAÍS) -->
+    <div id="namePromptModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-purple-500/50 text-center shadow-2xl relative">
+            <span class="text-4xl animate-bounce inline-block">👑</span>
+            <h3 class="text-xl font-black text-white mt-2">Tu Perfil de Campeón</h3>
+            <p class="text-xs text-gray-300 my-2">Tu apodo y bandera quedarán guardados en la tabla de récords mundiales.</p>
+            
+            <div class="flex items-center justify-center space-x-2 my-3 p-2 bg-gray-800/80 rounded-xl border border-gray-700/60 text-xs text-gray-300">
+                <span>Tu Bandera:</span>
+                <span id="modalCountryFlag" class="text-xl">🌐</span>
+                <span id="modalCountryName" class="font-bold text-cyan-400">VE</span>
+                <span class="text-[10px] text-gray-400">(Auto-detectada)</span>
+            </div>
+
+            <input type="text" id="modalNameInput" placeholder="Ej: Alex_Pro, Fénix..." maxlength="15"
+                   class="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-gray-700 focus:outline-none focus:border-cyan-400 mb-4 text-center font-bold tracking-wider">
+            
+            <div class="flex space-x-2">
+                <button onclick="closeNameModal()" class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold py-2.5 rounded-xl text-xs transition">
+                    Cancelar
+                </button>
+                <button onclick="savePlayerNameFromModal()" class="w-1/2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-cyan-500/25">
+                    Guardar Perfil
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        // Sistema de identidad persistente por dispositivo (Device ID)
+        let deviceId = localStorage.getItem('bytezone_device_id');
+        if (!deviceId) {
+            deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+            localStorage.setItem('bytezone_device_id', deviceId);
+        }
+
+        let playerName = localStorage.getItem('bytezone_player_name');
+        if (!playerName) {
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user) {
+                playerName = window.Telegram.WebApp.initDataUnsafe.user.first_name || window.Telegram.WebApp.initDataUnsafe.user.username;
+            } else {
+                playerName = "Jugador_" + Math.floor(Math.random()*900 + 100);
+            }
+            localStorage.setItem('bytezone_player_name', playerName);
+        }
+
+        let playerCountry = localStorage.getItem('bytezone_player_country') || '';
+
+        function getCountryFlag(code) {
+            if (!code || code.length !== 2) return '🌐';
+            const c = code.toUpperCase();
+            return String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1));
+        }
+
+        async function detectUserCountry() {
+            if (playerCountry && playerCountry.length === 2) {
+                updateCountryDisplays();
+                return playerCountry;
+            }
+            try {
+                const res = await fetch('https://api.country.is/');
+                const data = await res.json();
+                if (data && data.country) {
+                    playerCountry = data.country.toUpperCase();
+                    localStorage.setItem('bytezone_player_country', playerCountry);
+                    updateCountryDisplays();
+                    return playerCountry;
+                }
+            } catch (e) {
+                try {
+                    const res2 = await fetch('https://get.geojs.io/v1/ip/country.json');
+                    const data2 = await res2.json();
+                    if (data2 && data2.country) {
+                        playerCountry = data2.country.toUpperCase();
+                        localStorage.setItem('bytezone_player_country', playerCountry);
+                        updateCountryDisplays();
+                        return playerCountry;
+                    }
+                } catch (e2) {}
+            }
+            playerCountry = 'VE';
+            localStorage.setItem('bytezone_player_country', playerCountry);
+            updateCountryDisplays();
+            return playerCountry;
+        }
+
+        function updateCountryDisplays() {
+            const flag = getCountryFlag(playerCountry);
+            document.querySelectorAll('#playerCountryDisplay').forEach(el => {
+                el.textContent = flag;
+            });
+            const cName = document.getElementById('modalCountryName');
+            if (cName) cName.textContent = playerCountry;
+            const cFlag = document.getElementById('modalCountryFlag');
+            if (cFlag) cFlag.textContent = flag;
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        function updateNameDisplays() {
+            document.querySelectorAll('#playerNameDisplay').forEach(el => {
+                el.textContent = playerName;
+            });
+        }
+        updateNameDisplays();
+        detectUserCountry();
+
+        function promptChangeName() {
+            const input = document.getElementById('modalNameInput');
+            if (input) input.value = playerName;
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeNameModal() {
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function savePlayerNameFromModal() {
+            const input = document.getElementById('modalNameInput');
+            const val = input ? input.value.trim() : '';
+            if (val) {
+                playerName = val;
+                localStorage.setItem('bytezone_player_name', playerName);
+                updateNameDisplays();
+                
+                ['stacker', 'reflex', 'memory'].forEach(game => {
+                    const key = 'bytezone_scores_' + game;
+                    let scores = JSON.parse(localStorage.getItem(key) || '[]');
+                    scores.forEach(s => {
+                        if (s.deviceId === deviceId || s.isMe) {
+                            s.name = playerName;
+                            s.country = playerCountry || s.country || 'VE';
+                        }
+                    });
+                    localStorage.setItem(key, JSON.stringify(scores));
+                });
+            }
+            closeNameModal();
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        // Sistema de Telemetría y Popularidad (ByteZone Analytics)
+        function trackByteZoneEvent(gameKey, eventType) {
+            try {
+                let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
+                if (!stats[gameKey]) stats[gameKey] = { views: 0, plays: 0, ads: 0 };
+                if (eventType === 'view') stats[gameKey].views = (stats[gameKey].views || 0) + 1;
+                if (eventType === 'play') stats[gameKey].plays = (stats[gameKey].plays || 0) + 1;
+                if (eventType === 'ad') stats[gameKey].ads = (stats[gameKey].ads || 0) + 1;
+                stats['last_active'] = new Date().toISOString();
+                localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
+            } catch(e) {}
+        }
+    </script>
+
+
+    <script>
+        let reflexAttempts = parseInt(localStorage.getItem('bytezone_reflex_attempts') ?? '5');
+        const lastReflexDate = localStorage.getItem('bytezone_reflex_date');
+        const todayStr = new Date().toISOString().slice(0, 10);
+
+        if (lastReflexDate !== todayStr) {
+            reflexAttempts = 5;
+            localStorage.setItem('bytezone_reflex_attempts', '5');
+            localStorage.setItem('bytezone_reflex_date', todayStr);
+        }
+
+        function updateAttemptsUI() {
+            const container = document.getElementById('attemptsIndicator');
+            const text = document.getElementById('attemptsText');
+            if (container) {
+                container.innerHTML = '';
+                for (let i = 0; i < 5; i++) {
+                    const dot = document.createElement('span');
+                    dot.textContent = '⚡';
+                    dot.className = (i < reflexAttempts) ? 'text-yellow-400 text-sm filter drop-shadow' : 'text-gray-700 text-sm';
+                    container.appendChild(dot);
+                }
+            }
+            if (text) {
+                text.textContent = reflexAttempts + "/5 Intentos";
+                text.className = reflexAttempts > 0 ? "text-xs font-black text-amber-400 ml-1" : "text-xs font-black text-red-400 ml-1";
+            }
+        }
+        updateAttemptsUI();
+
+        function openEnergyModal() {
+            const modal = document.getElementById('energyModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeEnergyModal() {
+            const modal = document.getElementById('energyModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function handleRechargeClick() {
+            reflexAttempts = 5;
+            localStorage.setItem('bytezone_reflex_attempts', '5');
+            localStorage.setItem('bytezone_reflex_date', todayStr);
+            updateAttemptsUI();
+            closeEnergyModal();
+            if (window.confetti) confetti({ particleCount: 50, spread: 50, origin: { y: 0.6 } });
+            
+            const sub = document.getElementById('reflexSub');
+            if (sub) sub.textContent = "¡+5 Intentos recargados! Toca para jugar";
+        }
+
+        let reflexState = 'IDLE', reflexTimeout = null, reflexStart = 0;
+        function handleReflexClick() {
+            const box = document.getElementById('reflexBox');
+            const stat = document.getElementById('reflexStatus');
+            const icon = document.getElementById('reflexIcon');
+            const sub = document.getElementById('reflexSub');
+
+            if (reflexState === 'IDLE' || reflexState === 'DONE') {
+                if (reflexAttempts <= 0) {
+                    openEnergyModal();
+                    return;
+                }
+                trackByteZoneEvent('reflex', 'play');
+                reflexState = 'WAIT';
+                box.className = "w-full max-w-sm mx-auto h-64 rounded-2xl flex flex-col items-center justify-center cursor-pointer select-none p-4 shadow-inner bg-gradient-to-br from-red-900 to-rose-950 border-2 border-red-500";
+                icon.textContent = "🛑";
+                stat.textContent = "¡ESPERA EL VERDE!";
+                sub.textContent = "No toques todavía...";
+
+                reflexTimeout = setTimeout(() => {
+                    reflexState = 'READY';
+                    reflexStart = Date.now();
+                    box.className = "w-full max-w-sm mx-auto h-64 rounded-2xl flex flex-col items-center justify-center cursor-pointer select-none p-4 shadow-inner bg-gradient-to-br from-emerald-500 to-green-600 border-4 border-emerald-300 animate-pulse";
+                    icon.textContent = "⚡";
+                    stat.textContent = "¡TOCA YA!";
+                }, Math.floor(Math.random() * 2000) + 1800);
+
+            } else if (reflexState === 'WAIT') {
+                clearTimeout(reflexTimeout);
+                reflexState = 'DONE';
+
+                reflexAttempts = Math.max(0, reflexAttempts - 1);
+                localStorage.setItem('bytezone_reflex_attempts', reflexAttempts.toString());
+                updateAttemptsUI();
+
+                box.className = "w-full max-w-sm mx-auto h-64 rounded-2xl flex flex-col items-center justify-center cursor-pointer select-none p-4 shadow-inner bg-gradient-to-br from-yellow-900 to-amber-950 border-2 border-yellow-500";
+                icon.textContent = "⚠️";
+                stat.textContent = "¡MUY TEMPRANO!";
+                sub.textContent = reflexAttempts > 0 ? "Toca para reiniciar (" + reflexAttempts + " intentos restantes)" : "¡Sin energía! Toca para recargar";
+
+                if (reflexAttempts <= 0) {
+                    setTimeout(openEnergyModal, 800);
+                }
+            } else if (reflexState === 'READY') {
+                const diff = Date.now() - reflexStart;
+                reflexState = 'DONE';
+
+                reflexAttempts = Math.max(0, reflexAttempts - 1);
+                localStorage.setItem('bytezone_reflex_attempts', reflexAttempts.toString());
+                updateAttemptsUI();
+
+                box.className = "w-full max-w-sm mx-auto h-64 rounded-2xl flex flex-col items-center justify-center cursor-pointer select-none p-4 shadow-inner bg-gradient-to-br from-blue-900 to-indigo-950 border-2 border-cyan-400";
+                icon.textContent = "🎯";
+                stat.textContent = diff + " ms";
+                sub.textContent = reflexAttempts > 0 ? "Toca para intentar superarlo (" + reflexAttempts + " intentos restantes)" : "¡Sin energía! Toca para recargar";
+
+                saveScore(diff);
+
+                if (reflexAttempts <= 0) {
+                    setTimeout(openEnergyModal, 900);
+                }
+            }
+        }
+
+        trackByteZoneEvent('reflex', 'view');
+
+        function getCleanScores(gameKey, isAscending) {
+            let scores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || 'null');
+            if (!scores || scores.length === 0) {
+                scores = [
+                    { name: "ViperPulse", score: 215, country: "US" },
+                    { name: "NicoFast", score: 240, country: "CL" },
+                    { name: "Dani_Reflex", score: 265, country: "VE" },
+                    { name: "SaraFlash", score: 290, country: "ES" },
+                    { name: "Leo_Gamer", score: 320, country: "MX" },
+                    { name: "TurboFénix", score: 350, country: "CO" }
+                ];
+            }
+            const myEntries = [];
+            const otherEntries = [];
+
+            scores.forEach(x => {
+                const isUser = (x.deviceId && x.deviceId === deviceId) || x.name === playerName || x.isMe === true;
+                if (isUser) myEntries.push(x);
+                else otherEntries.push(x);
+            });
+
+            let bestUserEntry = null;
+            if (myEntries.length > 0) {
+                myEntries.sort((a, b) => isAscending ? a.score - b.score : b.score - a.score);
+                bestUserEntry = myEntries[0];
+                bestUserEntry.deviceId = deviceId;
+                bestUserEntry.name = playerName;
+                bestUserEntry.country = playerCountry || bestUserEntry.country || 'VE';
+                bestUserEntry.isMe = true;
+                localStorage.setItem('bytezone_best_' + gameKey, bestUserEntry.score.toString());
+            }
+
+            const cleanList = [];
+            if (bestUserEntry) cleanList.push(bestUserEntry);
+            const fallbackCountries = ['US', 'CL', 'VE', 'ES', 'MX', 'CO', 'AR', 'PE'];
+            otherEntries.forEach((x, i) => {
+                if (!x.country) x.country = fallbackCountries[i % fallbackCountries.length];
+                cleanList.push(x);
+            });
+
+            cleanList.sort((a, b) => isAscending ? a.score - b.score : b.score - a.score);
+            localStorage.setItem('bytezone_scores_' + gameKey, JSON.stringify(cleanList));
+            return cleanList;
+        }
+
+        function saveScore(score) {
+            const currentBest = parseInt(localStorage.getItem('bytezone_best_reflex') || '0');
+            if (currentBest === 0 || score < currentBest) {
+                localStorage.setItem('bytezone_best_reflex', score.toString());
+                let scores = JSON.parse(localStorage.getItem('bytezone_scores_reflex') || '[]');
+                scores = scores.filter(x => !( (x.deviceId && x.deviceId === deviceId) || x.name === playerName || x.isMe === true ));
+                scores.push({ name: playerName, deviceId: deviceId, score: score, country: playerCountry || 'VE', isMe: true });
+                scores.sort((a, b) => a.score - b.score);
+                localStorage.setItem('bytezone_scores_reflex', JSON.stringify(scores));
+                renderLeaderboardUI();
+                if (window.confetti) confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
+            }
+        }
+
+        function renderLeaderboardUI() {
+            const list = getCleanScores('reflex', true);
+            const container = document.getElementById('leaderboardList');
+            const myBest = parseInt(localStorage.getItem('bytezone_best_reflex') || '0');
+            document.getElementById('userBestScore').textContent = myBest > 0 ? (myBest + " ms") : "0 ms";
+
+            if (list.length === 0) {
+                container.innerHTML = '<div class="p-4 text-center text-gray-500 text-xs">Sin partidas aún. ¡Sé el primero en entrar al Top!</div>';
+                document.getElementById('userRankBadge').textContent = "Sin Clasificar";
+                return;
+            }
+
+            container.innerHTML = "";
+            let myPosition = null;
+            list.slice(0, 10).forEach((item, idx) => {
+                const isMe = (item.deviceId && item.deviceId === deviceId) || item.name === playerName || item.isMe === true;
+                if (isMe && myPosition === null) {
+                    myPosition = idx + 1;
+                }
+                const badge = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "#" + (idx + 1);
+                const itemFlag = getCountryFlag(item.country);
+                const row = document.createElement('div');
+                row.className = "flex justify-between items-center p-2.5 rounded-xl " + (isMe ? 'bg-purple-950/40 border border-purple-500 shadow-md' : 'bg-gray-800/60 border border-gray-700/50');
+                row.innerHTML = `
+                    <div class="flex items-center space-x-2 min-w-0">
+                        <span class="w-6 text-center font-bold text-xs ${idx < 3 ? 'text-yellow-400 font-extrabold' : 'text-gray-400'}">${badge}</span>
+                        <span class="text-base select-none">${itemFlag}</span>
+                        <span class="font-bold truncate ${isMe ? 'text-purple-400' : 'text-white'}">${item.name} ${isMe ? '(Tú)' : ''}</span>
+                    </div>
+                    <span class="font-black flex-shrink-0 ${isMe ? 'text-pink-400' : 'text-purple-400'}">${item.score} ms</span>
+                `;
+                container.appendChild(row);
+            });
+
+            const rankBadge = document.getElementById('userRankBadge');
+            if (myPosition === 1) {
+                rankBadge.textContent = "🥇 Puesto #1 (¡Líder!)";
+                rankBadge.className = "text-xs font-black text-yellow-300 bg-yellow-500/20 border border-yellow-500/50 px-3 py-1 rounded-full animate-pulse";
+            } else if (myPosition === 2) {
+                rankBadge.textContent = "🥈 Puesto #2";
+                rankBadge.className = "text-xs font-black text-gray-200 bg-gray-500/20 border border-gray-400/50 px-3 py-1 rounded-full";
+            } else if (myPosition === 3) {
+                rankBadge.textContent = "🥉 Puesto #3";
+                rankBadge.className = "text-xs font-black text-amber-400 bg-amber-500/20 border border-amber-500/50 px-3 py-1 rounded-full";
+            } else if (myPosition) {
+                rankBadge.textContent = "Puesto #" + myPosition;
+                rankBadge.className = "text-xs font-black text-pink-400 bg-pink-500/10 border border-pink-500/30 px-3 py-1 rounded-full";
+            } else {
+                rankBadge.textContent = "Sin Clasificar";
+                rankBadge.className = "text-xs font-black text-gray-400 bg-gray-800 border border-gray-700 px-3 py-1 rounded-full";
+            }
+        }
+
+        renderLeaderboardUI();
+    </script>
+</body>
+</html>
