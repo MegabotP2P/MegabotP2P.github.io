@@ -1,512 +1,381 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolucionaError - Diccionario y Solución de Códigos de Error</title>
-    <meta name="description" content="Encuentra gratis la solución a los códigos de error de tus lavadoras, aires acondicionados, neveras y motores de auto OBD2.">
-    <meta name="monetag" content="d1abe10ca7a4b6913b66971cc3948b1b">
-    <link rel="canonical" href="https://megabotp2p.github.io/">
-    <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ByteZone - Arcade Lobby & Juegos</title>
+    <meta name="description" content="Arcade con mini-juegos adictivos de habilidad y reflejos con torneos semanales y rankings en vivo.">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Monetag Web In-Page Push (Zona 12034401) -->
+    <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    
+    <!-- Monetag Telegram Mini App SDK Oficial (Zona 12040274) -->
+    <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
+    
+    <script>
+        function executeRewardedAction(rewardCallback) {
+            if (typeof show_12040274 === 'function') {
+                show_12040274().then(() => {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                }).catch((err) => {
+                    console.log("Anuncio Monetag Telegram cerrado o error:", err);
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                });
+            } else {
+                if (typeof rewardCallback === 'function') rewardCallback();
+            }
+        }
+    </script>
+
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
 
-    <header class="bg-blue-900 text-white shadow-md pt-12 sm:pt-8">
-        <div class="max-w-5xl mx-auto px-4 py-8 text-center">
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
-                🛠️ SolucionaError<span class="text-yellow-400">.com</span>
-            </h1>
-            <p class="text-blue-200 text-sm max-w-lg mx-auto mb-6">
-                Manuales técnicos rápidos y soluciones comprobadas para códigos de falla en electrodomésticos y autos.
-            </p>
-
-            <!-- Buscador en tiempo real -->
-            <div class="max-w-xl mx-auto relative">
-                <input type="text" id="searchInput" placeholder="Escribe tu código o marca (ej: 4E, Samsung, P0300, LG)..." 
-                       class="w-full px-5 py-3.5 rounded-2xl text-gray-900 bg-white shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 text-sm">
+    
+    <header class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
+                <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    BYTE<span class="text-white">ZONE</span>
+                </span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <button onclick="promptChangeName()" class="text-xs text-gray-300 hover:text-cyan-400 bg-gray-800/80 px-2.5 py-1.5 rounded-xl border border-gray-700/60 flex items-center space-x-1.5 transition">
+                    <span id="playerCountryDisplay" class="text-sm select-none">🌐</span>
+                    <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
+                    <span class="text-cyan-400 text-[10px]">✏️</span>
+                </button>
+                <a href="telegram.html" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                    <span>✈️</span>
+                    <span class="hidden sm:inline">Telegram</span>
+                </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold text-gray-900">Códigos más consultados hoy</h2>
-            <span id="contadorResultados" class="text-xs text-gray-500 font-medium"></span>
+    <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
+        <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
+            <a href="index.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+                <span class="text-base sm:text-lg">🕹️</span>
+                <span>Arcade Hub</span>
+            </a>
+            <a href="hacks.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">📱</span>
+                <span>Tech Hacks</span>
+            </a>
+            <a href="humor.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🎭</span>
+                <span>Humor</span>
+            </a>
+            <a href="telegram.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🚀</span>
+                <span>Comunidad</span>
+            </a>
+        </div>
+    </nav>
+    
+
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <!-- BANNER DE BIENVENIDA -->
+        <div class="bg-gradient-to-r from-blue-950/80 via-purple-950/80 to-pink-950/80 border border-purple-500/30 rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
+            <span class="text-[11px] bg-purple-500/20 text-purple-300 border border-purple-500/40 font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Temporada 2026 • Torneo Semanal en Vivo
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-2">Arcade Hub ByteZone</h1>
+            <p class="text-gray-300 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
+                Elige tu desafío, compite contra otros jugadores y escala en el Top 10. ¡Cada juego tiene su propio podio de campeones!
+            </p>
+
+            <!-- IDENTIDAD DEL JUGADOR EN LOBBY -->
+            <div class="mt-4 inline-flex items-center space-x-2 bg-gray-900/90 px-4 py-2 rounded-2xl border border-gray-700 shadow-lg">
+                <span class="text-xs text-gray-400">Compitiendo como:</span>
+                <span id="playerNameDisplay" class="font-black text-cyan-400 text-sm">Jugador</span>
+                <button onclick="promptChangeName()" class="text-xs text-purple-400 hover:text-white ml-1 font-bold">✏️ Editar</button>
+            </div>
         </div>
 
-        <div id="codigosGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            
-        <a href="codigos/samsung-lavadoras-error-4e-4c.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 4e / 4c lavadoras fallo en entrada o suministro de agua">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <!-- CATÁLOGO DE JUEGOS DISPONIBLES (CADA UNO EN SU PROPIA PÁGINA) -->
+        <div class="space-y-4">
+            <div class="flex justify-between items-center">
+                <h2 class="text-xl font-black text-white flex items-center space-x-2">
+                    <span>🕹️</span>
+                    <span>Mini-Juegos Activos</span>
+                </h2>
+                <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">3 Juegos Disponibles</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 4E / 4C</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en entrada o suministro de agua</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-5e-5c-e2.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 5e / 5c / e2 lavadoras fallo en el drenaje o desagüe">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                
+                <!-- TARJETA JUEGO 1: NEON STACKER -->
+                <div class="bg-gray-900/80 border border-cyan-500/40 rounded-3xl p-5 hover:border-cyan-400 transition shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-black bg-cyan-500/20 text-cyan-300 px-2.5 py-1 rounded-md uppercase">TOP 1 POPULAR 🔥</span>
+                            <span class="text-[11px] text-gray-400">Habilidad</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-cyan-400 transition">🏗️ Neon Stacker Pro</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Encaja los bloques de neón a gran velocidad. Incluye botón de <strong>Segunda Oportunidad</strong> para no perder tu récord.
+                        </p>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <a href="juegos/neon-stacker.html" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
+                            ▶ JUGAR AHORA
+                        </a>
+                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
+                            En Telegram ✈️
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TARJETA JUEGO 2: TEST DE REFLEJOS VISUALES -->
+                <div class="bg-gray-900/80 border border-purple-500/40 rounded-3xl p-5 hover:border-purple-400 transition shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-black bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md uppercase">COMPETITIVO ⚡</span>
+                            <span class="text-[11px] text-gray-400">Velocidad</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-purple-400 transition">⚡ Test de Reflejos</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Mide tu tiempo de reacción visual en milisegundos cuando cambie a verde. ¿Tienes reflejos de piloto de carreras?
+                        </p>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <a href="juegos/reflejos-visuales.html" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
+                            ▶ JUGAR AHORA
+                        </a>
+                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
+                            En Telegram ✈️
+                        </a>
+                    </div>
+                </div>
+
+                <!-- TARJETA JUEGO 3: CYBER MEMORY (NUEVO) -->
+                <div class="bg-gray-900/80 border border-emerald-500/40 rounded-3xl p-5 hover:border-emerald-400 transition shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-black bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md uppercase">ESTRENO ✨</span>
+                            <span class="text-[11px] text-gray-400">Memoria</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-emerald-400 transition">🧠 Cyber Memory</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                            Memoriza y repite la secuencia de luces de neón. Cada ronda añade un paso más a toda velocidad.
+                        </p>
+                    </div>
+
+                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <a href="juegos/cyber-memory.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
+                            ▶ JUGAR AHORA
+                        </a>
+                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
+                            En Telegram ✈️
+                        </a>
+                    </div>
+                </div>
+
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 5E / 5C / E2</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el drenaje o desagüe</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-ue-ub-e4.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung ue / ub / e4 lavadoras desbalance de carga en el tambor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error UE / UB / E4</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Desbalance de carga en el tambor</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-de-dc-de1.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung de / dc / de1 lavadoras puerta o escotilla abierta o mal cerrada">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error dE / dC / dE1</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Puerta o escotilla abierta o mal cerrada</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-sud-suds.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung sud / suds lavadoras exceso de espuma detectado en la tina">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error SUD / SUdS</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Exceso de espuma detectado en la tina</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-3e-3c-8e.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 3e / 3c / 8e lavadoras fallo en el motor o tacómetro">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 3E / 3C / 8E</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el motor o tacómetro</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-1e-1c-le.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 1e / 1c / le lavadoras fallo en sensor de nivel de agua (presostato)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 1E / 1C / LE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en sensor de nivel de agua (Presostato)</p>
-        </a>
-        
-        <a href="codigos/samsung-lavadoras-error-te-te1.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung te / te1 lavadoras sensor de temperatura (termistor) defectuoso">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error tE / tE1</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Sensor de temperatura (Termistor) defectuoso</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-oe.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg oe lavadoras fallo de drenaje de agua">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error OE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de drenaje de agua</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-ie.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ie lavadoras suministro de agua insuficiente">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error IE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Suministro de agua insuficiente</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-cl.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg cl lavadoras bloqueo infantil activo (child lock)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CL</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Bloqueo Infantil Activo (Child Lock)</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-le.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg le lavadoras bloqueo o sobrecarga del motor direct drive">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error LE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Bloqueo o sobrecarga del motor Direct Drive</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-de-de1-de2.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg de / de1 / de2 lavadoras error de puerta no bloqueada">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error dE / dE1 / dE2</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de puerta no bloqueada</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-fe.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg fe lavadoras error de desbordamiento (sobrellenado)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error FE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de desbordamiento (Sobrellenado)</p>
-        </a>
-        
-        <a href="codigos/lg-lavadoras-error-pe.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg pe lavadoras sensor de presión de agua (presostato) defectuoso">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error PE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Sensor de presión de agua (Presostato) defectuoso</p>
-        </a>
-        
-        <a href="codigos/whirlpool-lavadoras-error-f21-e02.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f21 / e02 lavadoras tiempo de drenaje prolongado">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F21 / E02</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Tiempo de drenaje prolongado</p>
-        </a>
-        
-        <a href="codigos/whirlpool-lavadoras-error-f20-e01.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f20 / e01 lavadoras problema de entrada de agua">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F20 / E01</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Problema de entrada de agua</p>
-        </a>
-        
-        <a href="codigos/whirlpool-lavadoras-error-f06-e01.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f06 / e01 lavadoras error en el tacómetro del motor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F06 / E01</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error en el tacómetro del motor</p>
-        </a>
-        
-        <a href="codigos/whirlpool-lavadoras-error-f28-e01.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f28 / e01 lavadoras error de comunicación de la placa central">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F28 / E01</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de comunicación de la placa central</p>
-        </a>
-        
-        <a href="codigos/mabe-lavadoras-error-e1.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e1 lavadoras tiempo límite de llenado excedido">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E1</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Tiempo límite de llenado excedido</p>
-        </a>
-        
-        <a href="codigos/mabe-lavadoras-error-e2.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e2 lavadoras fallo en desagüe de la tina">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E2</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en desagüe de la tina</p>
-        </a>
-        
-        <a href="codigos/mabe-lavadoras-error-e3.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e3 lavadoras desbalanceo en el centrifugado">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E3</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Desbalanceo en el centrifugado</p>
-        </a>
-        
-        <a href="codigos/mabe-lavadoras-error-e4.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e4 lavadoras puerta o tapa superior abierta">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E4</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Puerta o tapa superior abierta</p>
-        </a>
-        
-        <a href="codigos/lg-aire-acondicionado-error-ch05-c5.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch05 / c5 aire acondicionado error de comunicación inverter">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH05 / C5</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de comunicación Inverter</p>
-        </a>
-        
-        <a href="codigos/lg-aire-acondicionado-error-ch10.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch10 aire acondicionado motor del ventilador interior bloqueado (bldc)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH10</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Motor del ventilador interior bloqueado (BLDC)</p>
-        </a>
-        
-        <a href="codigos/lg-aire-acondicionado-error-ch21.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch21 aire acondicionado pico de sobrecorriente en el compresor (ipm)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH21</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Pico de sobrecorriente en el compresor (IPM)</p>
-        </a>
-        
-        <a href="codigos/lg-aire-acondicionado-error-ch38.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch38 aire acondicionado fuga de gas refrigerante detectada">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH38</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fuga de gas refrigerante detectada</p>
-        </a>
-        
-        <a href="codigos/samsung-aire-acondicionado-error-e101-e102.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung e101 / e102 aire acondicionado fallo de comunicación entre unidades">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E101 / E102</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de comunicación entre unidades</p>
-        </a>
-        
-        <a href="codigos/samsung-aire-acondicionado-error-e458.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung e458 aire acondicionado fallo en motor del ventilador exterior">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E458</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en motor del ventilador exterior</p>
-        </a>
-        
-        <a href="codigos/samsung-aire-acondicionado-error-e201.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung e201 aire acondicionado fallo en sensor de temperatura de intercambio interior">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E201</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en sensor de temperatura de intercambio interior</p>
-        </a>
-        
-        <a href="codigos/daikin-aire-acondicionado-error-u4.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="daikin u4 aire acondicionado fallo de transmisión entre split y compresor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Daikin</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error U4</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de transmisión entre split y compresor</p>
-        </a>
-        
-        <a href="codigos/daikin-aire-acondicionado-error-a6.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="daikin a6 aire acondicionado fallo en motor del ventilador interior">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Daikin</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error A6</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en motor del ventilador interior</p>
-        </a>
-        
-        <a href="codigos/daikin-aire-acondicionado-error-l5.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="daikin l5 aire acondicionado sobrecarga instantánea en el compresor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Daikin</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error L5</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Sobrecarga instantánea en el compresor</p>
-        </a>
-        
-        <a href="codigos/samsung-refrigeradores-error-22e-22c.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 22e / 22c refrigeradores fallo en ventilador del evaporador (nevera)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 22E / 22C</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en ventilador del evaporador (Nevera)</p>
-        </a>
-        
-        <a href="codigos/samsung-refrigeradores-error-25e.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 25e refrigeradores fallo en el sistema de descongelación (defrost)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 25E</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el sistema de descongelación (Defrost)</p>
-        </a>
-        
-        <a href="codigos/samsung-refrigeradores-error-84e.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 84e refrigeradores compresor inverter bloqueado (rotor lock)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 84E</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Compresor Inverter bloqueado (Rotor Lock)</p>
-        </a>
-        
-        <a href="codigos/lg-refrigeradores-error-er-ff.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg er ff refrigeradores fallo en el ventilador del congelador (freezer fan)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error Er FF</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el ventilador del congelador (Freezer Fan)</p>
-        </a>
-        
-        <a href="codigos/lg-refrigeradores-error-er-dh.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg er dh refrigeradores fallo en la descongelación (defrost heater)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error Er dH</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en la descongelación (Defrost Heater)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0300.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0300 autos y motores fallo de encendido aleatorio en múltiples cilindros">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0300</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de encendido aleatorio en múltiples cilindros</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0301-p0302-p0303-p0304.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0301 / p0302 / p0303 / p0304 autos y motores fallo de encendido en cilindro específico">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0301 / P0302 / P0303 / P0304</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de encendido en cilindro específico</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0420.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0420 autos y motores eficiencia del catalizador por debajo del umbral (banco 1)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0420</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Eficiencia del catalizador por debajo del umbral (Banco 1)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0171.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0171 autos y motores mezcla de combustible demasiado pobre (demasiado aire)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0171</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Mezcla de combustible demasiado pobre (Demasiado aire)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0172.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0172 autos y motores mezcla de combustible demasiado rica (exceso de combustible)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0172</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Mezcla de combustible demasiado rica (Exceso de combustible)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0128.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0128 autos y motores termostato del refrigerante trabado en frío">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0128</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Termostato del refrigerante trabado en frío</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0442-p0455.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0442 / p0455 autos y motores fuga detectada en el sistema evap (gases de gasolina)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0442 / P0455</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fuga detectada en el sistema EVAP (Gases de gasolina)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0340.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0340 autos y motores fallo en el circuito del sensor de posición del árbol de levas (cmp)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0340</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el circuito del sensor de posición del árbol de levas (CMP)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0335.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0335 autos y motores fallo en el sensor de posición del cigüeñal (ckp)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0335</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el sensor de posición del cigüeñal (CKP)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0500.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0500 autos y motores fallo en el sensor de velocidad del vehículo (vss)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0500</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el sensor de velocidad del vehículo (VSS)</p>
-        </a>
-        
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0700.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0700 autos y motores fallo general en el sistema de control de transmisión automática (tcm)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
-            </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0700</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo general en el sistema de control de transmisión automática (TCM)</p>
-        </a>
-        
         </div>
+
+        <!-- ACCESOS RÁPIDOS ADICIONALES -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="hacks.html" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
+                <span class="text-3xl">📱</span>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Hacks & Atajos Secretos</h4>
+                    <p class="text-xs text-gray-400">Trucos de WhatsApp, batería y funciones ocultas de teléfonos.</p>
+                </div>
+            </a>
+            <a href="humor.html" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
+                <span class="text-3xl">🎭</span>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
+                    <p class="text-xs text-gray-400">Chistes, frases sarcásticas y memes de programadores.</p>
+                </div>
+            </a>
+        </div>
+
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 text-xs py-6 mt-12 text-center">
-        <p>© 2026 SolucionaError. Guías libres y abiertas para reparaciones domésticas.</p>
+    
+    <!-- MODAL PERFIL JUGADOR (CONEXIÓN UNIFICADA Y PAÍS) -->
+    <div id="namePromptModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-purple-500/50 text-center shadow-2xl relative">
+            <span class="text-4xl animate-bounce inline-block">👑</span>
+            <h3 class="text-xl font-black text-white mt-2">Tu Perfil de Campeón</h3>
+            <p class="text-xs text-gray-300 my-2">Tu apodo y bandera quedarán guardados en la tabla de récords mundiales.</p>
+            
+            <div class="flex items-center justify-center space-x-2 my-3 p-2 bg-gray-800/80 rounded-xl border border-gray-700/60 text-xs text-gray-300">
+                <span>Tu Bandera:</span>
+                <span id="modalCountryFlag" class="text-xl">🌐</span>
+                <span id="modalCountryName" class="font-bold text-cyan-400">VE</span>
+                <span class="text-[10px] text-gray-400">(Auto-detectada)</span>
+            </div>
+
+            <input type="text" id="modalNameInput" placeholder="Ej: Alex_Pro, Fénix..." maxlength="15"
+                   class="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-gray-700 focus:outline-none focus:border-cyan-400 mb-4 text-center font-bold tracking-wider">
+            
+            <div class="flex space-x-2">
+                <button onclick="closeNameModal()" class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold py-2.5 rounded-xl text-xs transition">
+                    Cancelar
+                </button>
+                <button onclick="savePlayerNameFromModal()" class="w-1/2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-cyan-500/25">
+                    Guardar Perfil
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
+        <p>© 2026 ByteZone • Portal de Mini-Juegos y Entretenimiento Móvil</p>
+        <p class="mt-2 flex items-center justify-center space-x-3 text-[11px]">
+            <a href="stats.html" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+                <span>📊</span>
+                <span class="underline">Métricas & Popularidad</span>
+            </a>
+            <span>•</span>
+            <span class="text-gray-500">Servidores Globales 🌐</span>
+        </p>
     </footer>
+    
 
+    
     <script>
-        const input = document.getElementById('searchInput');
-        const cards = document.querySelectorAll('.codigo-card');
-        const contador = document.getElementById('contadorResultados');
-
-        function filtrar() {
-            const query = input.value.toLowerCase().trim();
-            let visibles = 0;
-            cards.forEach(card => {
-                const searchData = card.getAttribute('data-search');
-                if (searchData.includes(query)) {
-                    card.style.display = 'block';
-                    visibles++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            contador.textContent = `${visibles} códigos encontrados`;
+        // Sistema de identidad persistente por dispositivo (Device ID)
+        let deviceId = localStorage.getItem('bytezone_device_id');
+        if (!deviceId) {
+            deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+            localStorage.setItem('bytezone_device_id', deviceId);
         }
 
-        input.addEventListener('input', filtrar);
-        filtrar();
+        let playerName = localStorage.getItem('bytezone_player_name');
+        if (!playerName) {
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user) {
+                playerName = window.Telegram.WebApp.initDataUnsafe.user.first_name || window.Telegram.WebApp.initDataUnsafe.user.username;
+            } else {
+                playerName = "Jugador_" + Math.floor(Math.random()*900 + 100);
+            }
+            localStorage.setItem('bytezone_player_name', playerName);
+        }
+
+        let playerCountry = localStorage.getItem('bytezone_player_country') || '';
+
+        function getCountryFlag(code) {
+            if (!code || code.length !== 2) return '🌐';
+            const c = code.toUpperCase();
+            return String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1));
+        }
+
+        async function detectUserCountry() {
+            if (playerCountry && playerCountry.length === 2) {
+                updateCountryDisplays();
+                return playerCountry;
+            }
+            try {
+                const res = await fetch('https://api.country.is/');
+                const data = await res.json();
+                if (data && data.country) {
+                    playerCountry = data.country.toUpperCase();
+                    localStorage.setItem('bytezone_player_country', playerCountry);
+                    updateCountryDisplays();
+                    return playerCountry;
+                }
+            } catch (e) {
+                try {
+                    const res2 = await fetch('https://get.geojs.io/v1/ip/country.json');
+                    const data2 = await res2.json();
+                    if (data2 && data2.country) {
+                        playerCountry = data2.country.toUpperCase();
+                        localStorage.setItem('bytezone_player_country', playerCountry);
+                        updateCountryDisplays();
+                        return playerCountry;
+                    }
+                } catch (e2) {}
+            }
+            playerCountry = 'VE';
+            localStorage.setItem('bytezone_player_country', playerCountry);
+            updateCountryDisplays();
+            return playerCountry;
+        }
+
+        function updateCountryDisplays() {
+            const flag = getCountryFlag(playerCountry);
+            document.querySelectorAll('#playerCountryDisplay').forEach(el => {
+                el.textContent = flag;
+            });
+            const cName = document.getElementById('modalCountryName');
+            if (cName) cName.textContent = playerCountry;
+            const cFlag = document.getElementById('modalCountryFlag');
+            if (cFlag) cFlag.textContent = flag;
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        function updateNameDisplays() {
+            document.querySelectorAll('#playerNameDisplay').forEach(el => {
+                el.textContent = playerName;
+            });
+        }
+        updateNameDisplays();
+        detectUserCountry();
+
+        function promptChangeName() {
+            const input = document.getElementById('modalNameInput');
+            if (input) input.value = playerName;
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeNameModal() {
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function savePlayerNameFromModal() {
+            const input = document.getElementById('modalNameInput');
+            const val = input ? input.value.trim() : '';
+            if (val) {
+                playerName = val;
+                localStorage.setItem('bytezone_player_name', playerName);
+                updateNameDisplays();
+                
+                ['stacker', 'reflex', 'memory'].forEach(game => {
+                    const key = 'bytezone_scores_' + game;
+                    let scores = JSON.parse(localStorage.getItem(key) || '[]');
+                    scores.forEach(s => {
+                        if (s.deviceId === deviceId || s.isMe) {
+                            s.name = playerName;
+                            s.country = playerCountry || s.country || 'VE';
+                        }
+                    });
+                    localStorage.setItem(key, JSON.stringify(scores));
+                });
+            }
+            closeNameModal();
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        // Sistema de Telemetría y Popularidad (ByteZone Analytics)
+        function trackByteZoneEvent(gameKey, eventType) {
+            try {
+                let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
+                if (!stats[gameKey]) stats[gameKey] = { views: 0, plays: 0, ads: 0 };
+                if (eventType === 'view') stats[gameKey].views = (stats[gameKey].views || 0) + 1;
+                if (eventType === 'play') stats[gameKey].plays = (stats[gameKey].plays || 0) + 1;
+                if (eventType === 'ad') stats[gameKey].ads = (stats[gameKey].ads || 0) + 1;
+                stats['last_active'] = new Date().toISOString();
+                localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
+            } catch(e) {}
+        }
     </script>
 
 </body>
