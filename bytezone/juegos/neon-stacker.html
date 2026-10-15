@@ -44,9 +44,9 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a href="../telegram.html" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
-                    <span>✈️</span>
-                    <span class="hidden sm:inline">Telegram</span>
+                <a id="headerActionBtn" href="../telegram.html" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                    <span id="headerActionIcon">✈️</span>
+                    <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
             </div>
         </div>
@@ -58,11 +58,11 @@
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="../hacks.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="../hacks.html" onclick="handleExternalNav(event, 'hacks.html')" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">📱</span>
                 <span>Tech Hacks</span>
             </a>
-            <a href="../humor.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="../humor.html" onclick="handleExternalNav(event, 'humor.html')" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
@@ -317,6 +317,53 @@
                 stats['last_active'] = new Date().toISOString();
                 localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
             } catch(e) {}
+        }
+
+        // Detección estricta de Telegram y redirección hacia la Web para Hacks & Humor
+        function isTelegramClient() {
+            return !!(window.TelegramWebviewProxy !== undefined || 
+                      (window.Telegram && window.Telegram.WebApp && (window.Telegram.WebApp.initData || window.Telegram.WebApp.platform)) ||
+                      navigator.userAgent.indexOf('Telegram') !== -1 ||
+                      location.search.indexOf('tgWebApp') !== -1 ||
+                      location.hash.indexOf('tgWebAppData') !== -1);
+        }
+
+        function handleExternalNav(e, page) {
+            if (isTelegramClient()) {
+                if (e) e.preventDefault();
+                const targetUrl = 'https://megabotp2p.github.io/bytezone/' + page;
+                if (window.Telegram && window.Telegram.WebApp && typeof window.Telegram.WebApp.openLink === 'function') {
+                    window.Telegram.WebApp.openLink(targetUrl);
+                } else {
+                    window.open(targetUrl, '_blank');
+                }
+            }
+        }
+        
+        function openFullWebPortal(e) {
+            if (e) e.preventDefault();
+            const targetUrl = 'https://megabotp2p.github.io/bytezone/';
+            if (isTelegramClient() && window.Telegram && window.Telegram.WebApp && typeof window.Telegram.WebApp.openLink === 'function') {
+                window.Telegram.WebApp.openLink(targetUrl);
+            } else {
+                window.open(targetUrl, '_blank');
+            }
+        }
+
+        // Si estamos en Telegram, cambiar botón superior a "Portal Web"
+        if (isTelegramClient()) {
+            const btn = document.getElementById('headerActionBtn');
+            if (btn) {
+                btn.href = 'https://megabotp2p.github.io/bytezone/';
+                btn.onclick = (e) => handleExternalNav(e, 'index.html');
+                const icon = document.getElementById('headerActionIcon');
+                if (icon) icon.textContent = '🌐';
+                const txt = document.getElementById('headerActionText');
+                if (txt) {
+                    txt.textContent = 'Portal Web';
+                    txt.classList.remove('hidden');
+                }
+            }
         }
     </script>
 
