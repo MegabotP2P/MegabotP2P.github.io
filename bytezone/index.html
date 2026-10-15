@@ -8,24 +8,57 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Monetag In-Page Push Banners (Zona 12034401) - Web y Telegram Mini App -->
+    <script>
+        // 1. Limpieza automática de caché y cualquier temporizador inApp previo guardado en el navegador/Telegram
+        try {
+            Object.keys(localStorage).forEach(k => {
+                if (!k.startsWith('bytezone_')) localStorage.removeItem(k);
+            });
+            Object.keys(sessionStorage).forEach(k => {
+                if (!k.startsWith('bz_')) sessionStorage.removeItem(k);
+            });
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+            }
+            if (!location.search.includes('v=6') && !sessionStorage.getItem('bz_v6_reloaded')) {
+                sessionStorage.setItem('bz_v6_reloaded', '1');
+                const sep = location.search ? '&' : '?';
+                location.replace(location.pathname + location.search + sep + 'v=6' + location.hash);
+            }
+        } catch (e) {}
+    </script>
+
+    <!-- Monetag In-Page Push Banners Arriba (Zona 12034401) - Web y Telegram Mini App -->
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
     
-    <!-- Monetag Telegram Mini App SDK Oficial (Zona 12040274) - Recompensas y Vidas Extra -->
-    <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
-    
     <script>
-        // Manejador de Recompensas por Video Intersticial (Exclusivo cuando el usuario pide Segunda Oportunidad)
+        // 2. Video de Recompensa (Zona 12040274): SE CARGA Y EJECUTA ÚNICAMENTE CUANDO EL JUGADOR PIDE SEGUNDA OPORTUNIDAD
         function executeRewardedAction(rewardCallback) {
+            const runReward = () => {
+                if (typeof show_12040274 === 'function') {
+                    show_12040274().then(() => {
+                        if (typeof rewardCallback === 'function') rewardCallback();
+                    }).catch((err) => {
+                        console.log("Anuncio Monetag Telegram cerrado o error:", err);
+                        if (typeof rewardCallback === 'function') rewardCallback();
+                    });
+                } else {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                }
+            };
+
             if (typeof show_12040274 === 'function') {
-                show_12040274().then(() => {
-                    if (typeof rewardCallback === 'function') rewardCallback();
-                }).catch((err) => {
-                    console.log("Anuncio Monetag Telegram cerrado o error:", err);
-                    if (typeof rewardCallback === 'function') rewardCallback();
-                });
+                runReward();
             } else {
-                if (typeof rewardCallback === 'function') rewardCallback();
+                const s = document.createElement('script');
+                s.src = 'https://libtl.com/sdk.js';
+                s.dataset.zone = '12040274';
+                s.dataset.sdk = 'show_12040274';
+                s.onload = () => setTimeout(runReward, 150);
+                s.onerror = () => {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                };
+                document.head.appendChild(s);
             }
         }
     </script>
@@ -39,7 +72,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2 group">
+            <a href="index.html?v=6" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -51,7 +84,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=6" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -61,19 +94,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="index.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html" onclick="handleExternalNav(event, 'hacks.html')" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">📱</span>
                 <span>Tech Hacks</span>
             </a>
-            <a href="humor.html" onclick="handleExternalNav(event, 'humor.html')" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -127,7 +160,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/neon-stacker.html" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
+                        <a href="juegos/neon-stacker.html?v=6" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -150,7 +183,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/reflejos-visuales.html" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
+                        <a href="juegos/reflejos-visuales.html?v=6" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -173,7 +206,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/cyber-memory.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
+                        <a href="juegos/cyber-memory.html?v=6" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -187,33 +220,20 @@
 
         <!-- ACCESOS RÁPIDOS ADICIONALES -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="hacks.html" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
+            <a href="hacks.html?v=6" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">📱</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Hacks & Atajos Secretos</h4>
                     <p class="text-xs text-gray-400">Trucos de WhatsApp, batería y funciones ocultas de teléfonos.</p>
                 </div>
             </a>
-            <a href="humor.html" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
+            <a href="humor.html?v=6" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🎭</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
                     <p class="text-xs text-gray-400">Chistes, frases sarcásticas y memes de programadores.</p>
                 </div>
             </a>
-        </div>
-
-        <!-- BANNER DE CONVERSIÓN A WEB COMPLETA -->
-        <div class="bg-gradient-to-r from-blue-950/70 via-purple-950/50 to-gray-900 border border-cyan-500/30 rounded-3xl p-6 text-center shadow-xl space-y-3">
-            <span class="text-3xl">🌐</span>
-            <h3 class="text-lg font-black text-white">¿Quieres ver los Hacks de Teléfonos & Humor?</h3>
-            <p class="text-xs text-gray-300 max-w-md mx-auto leading-relaxed">
-                Nuestros mejores artículos de optimización para tu teléfono, atajos secretos y humor gamer están disponibles en nuestro Portal Web oficial.
-            </p>
-            <button onclick="openFullWebPortal(event)" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 active:scale-95 text-white font-black py-3 px-6 rounded-2xl text-xs shadow-lg shadow-cyan-500/25 transition inline-flex items-center space-x-2">
-                <span>🚀</span>
-                <span>Explorar Portal Web Completo en Chrome</span>
-            </button>
         </div>
 
     </main>
@@ -252,7 +272,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal de Mini-Juegos y Entretenimiento Móvil</p>
         <p class="mt-2 flex items-center justify-center space-x-3 text-[11px]">
-            <a href="stats.html" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=6" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>📊</span>
                 <span class="underline">Métricas & Popularidad</span>
             </a>
@@ -394,52 +414,6 @@
             } catch(e) {}
         }
 
-        // Detección estricta de Telegram y redirección hacia la Web para Hacks & Humor
-        function isTelegramClient() {
-            return !!(window.TelegramWebviewProxy !== undefined || 
-                      (window.Telegram && window.Telegram.WebApp && (window.Telegram.WebApp.initData || window.Telegram.WebApp.platform)) ||
-                      navigator.userAgent.indexOf('Telegram') !== -1 ||
-                      location.search.indexOf('tgWebApp') !== -1 ||
-                      location.hash.indexOf('tgWebAppData') !== -1);
-        }
-
-        function handleExternalNav(e, page) {
-            if (isTelegramClient()) {
-                if (e) e.preventDefault();
-                const targetUrl = 'https://megabotp2p.github.io/bytezone/' + page;
-                if (window.Telegram && window.Telegram.WebApp && typeof window.Telegram.WebApp.openLink === 'function') {
-                    window.Telegram.WebApp.openLink(targetUrl);
-                } else {
-                    window.open(targetUrl, '_blank');
-                }
-            }
-        }
-        
-        function openFullWebPortal(e) {
-            if (e) e.preventDefault();
-            const targetUrl = 'https://megabotp2p.github.io/bytezone/';
-            if (isTelegramClient() && window.Telegram && window.Telegram.WebApp && typeof window.Telegram.WebApp.openLink === 'function') {
-                window.Telegram.WebApp.openLink(targetUrl);
-            } else {
-                window.open(targetUrl, '_blank');
-            }
-        }
-
-        // Si estamos en Telegram, cambiar botón superior a "Portal Web"
-        if (isTelegramClient()) {
-            const btn = document.getElementById('headerActionBtn');
-            if (btn) {
-                btn.href = 'https://megabotp2p.github.io/bytezone/';
-                btn.onclick = (e) => handleExternalNav(e, 'index.html');
-                const icon = document.getElementById('headerActionIcon');
-                if (icon) icon.textContent = '🌐';
-                const txt = document.getElementById('headerActionText');
-                if (txt) {
-                    txt.textContent = 'Portal Web';
-                    txt.classList.remove('hidden');
-                }
-            }
-        }
     </script>
 
 </body>
