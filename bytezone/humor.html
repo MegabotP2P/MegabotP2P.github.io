@@ -7,38 +7,10 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Detección estricta de entorno: Web vs Telegram Mini App -->
-    <script>
-        const isTelegramApp = !!(window.TelegramWebviewProxy !== undefined || 
-                                 (window.Telegram && window.Telegram.WebApp && (window.Telegram.WebApp.initData || window.Telegram.WebApp.platform)) ||
-                                 navigator.userAgent.indexOf('Telegram') !== -1 ||
-                                 location.search.indexOf('tgWebApp') !== -1 ||
-                                 location.hash.indexOf('tgWebAppData') !== -1);
-        
-        if (!isTelegramApp) {
-            // Cargar Monetag Web In-Page Push solo en navegadores normales fuera de Telegram
-            (function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-            
-            // Reubicar anuncios flotantes de la web abajo para que nunca tapen el menú ni los botones
-            const relocatePushAds = () => {
-                document.querySelectorAll('div').forEach(el => {
-                    const s = el.style;
-                    if (s && s.position === 'fixed' && s.top && s.top !== 'auto') {
-                        const topVal = parseInt(s.top);
-                        if (!isNaN(topVal) && topVal < 140 && !el.id.includes('Modal') && !el.classList.contains('z-50')) {
-                            if (parseInt(s.zIndex) > 1000) {
-                                s.top = 'auto';
-                                s.bottom = '15px';
-                            }
-                        }
-                    }
-                });
-            };
-            setInterval(relocatePushAds, 1000);
-        }
-    </script>
+    <!-- Monetag In-Page Push Banners (Zona 12034401) - Web y Telegram Mini App -->
+    <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
     
-    <!-- Monetag Telegram Mini App SDK Oficial (Zona 12040274) -->
+    <!-- Monetag Telegram Mini App SDK Oficial (Zona 12040274) - Recompensas y Vidas Extra -->
     <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
     
     <script>
@@ -60,7 +32,10 @@
 <body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
 
     
-    <header class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+    <!-- ESPACIO RESERVADO PARA BANNERS MONETAG EN LA PARTE SUPERIOR (EVITA QUE TAPEN EL LOGO Y BOTONES) -->
+    <div id="monetag-ad-spacer" class="w-full h-24 sm:h-28 flex-shrink-0 pointer-events-none" style="min-height: 96px;" aria-hidden="true"></div>
+
+    <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
