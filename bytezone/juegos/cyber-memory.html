@@ -7,7 +7,28 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Monetag Web In-Page Push (Zona 12034401) -->
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    
+    <!-- Monetag Telegram Mini App SDK Oficial (Zona 12040274) -->
+    <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
+    
+    <script>
+        function executeRewardedAction(rewardCallback) {
+            if (typeof show_12040274 === 'function') {
+                show_12040274().then(() => {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                }).catch((err) => {
+                    console.log("Anuncio Monetag Telegram cerrado o error:", err);
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                });
+            } else {
+                if (typeof rewardCallback === 'function') rewardCallback();
+            }
+        }
+    </script>
+
 </head>
 <body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
 
@@ -22,7 +43,7 @@
             </a>
             <div class="flex items-center space-x-2">
                 <button onclick="promptChangeName()" class="text-xs text-gray-300 hover:text-cyan-400 bg-gray-800/80 px-2.5 py-1.5 rounded-xl border border-gray-700/60 flex items-center space-x-1.5 transition">
-                    <span>👤</span>
+                    <span id="playerCountryDisplay" class="text-sm select-none">🌐</span>
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
@@ -114,7 +135,7 @@
                 <p id="memoryReviveText" class="text-sm font-bold text-emerald-400 mt-1 mb-4">Llegaste a la Ronda 6</p>
                 
                 <div class="w-full max-w-xs mx-auto mb-3">
-                    <button onclick="handleMemoryReviveClick()" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90 active:scale-95 text-white font-black py-3.5 rounded-2xl shadow-xl shadow-emerald-500/30 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
+                    <button onclick="executeRewardedAction(handleMemoryReviveClick)" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90 active:scale-95 text-white font-black py-3.5 rounded-2xl shadow-xl shadow-emerald-500/30 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
                         <span>▶</span>
                         <span>SALVAR RACHA & CONTINUAR (VER ANUNCIO)</span>
                     </button>
@@ -142,13 +163,20 @@
     </main>
 
     
-    <!-- MODAL PERFIL JUGADOR (CONEXIÓN UNIFICADA) -->
+    <!-- MODAL PERFIL JUGADOR (CONEXIÓN UNIFICADA Y PAÍS) -->
     <div id="namePromptModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-purple-500/50 text-center shadow-2xl relative">
             <span class="text-4xl animate-bounce inline-block">👑</span>
-            <h3 class="text-xl font-black text-white mt-2">Tu Apodo de Campeón</h3>
-            <p class="text-xs text-gray-300 my-2">Tu apodo quedará guardado para tu dispositivo. Si lo cambias, se actualizan tus récords automáticamente.</p>
+            <h3 class="text-xl font-black text-white mt-2">Tu Perfil de Campeón</h3>
+            <p class="text-xs text-gray-300 my-2">Tu apodo y bandera quedarán guardados en la tabla de récords mundiales.</p>
             
+            <div class="flex items-center justify-center space-x-2 my-3 p-2 bg-gray-800/80 rounded-xl border border-gray-700/60 text-xs text-gray-300">
+                <span>Tu Bandera:</span>
+                <span id="modalCountryFlag" class="text-xl">🌐</span>
+                <span id="modalCountryName" class="font-bold text-cyan-400">VE</span>
+                <span class="text-[10px] text-gray-400">(Auto-detectada)</span>
+            </div>
+
             <input type="text" id="modalNameInput" placeholder="Ej: Alex_Pro, Fénix..." maxlength="15"
                    class="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-gray-700 focus:outline-none focus:border-cyan-400 mb-4 text-center font-bold tracking-wider">
             
@@ -157,7 +185,7 @@
                     Cancelar
                 </button>
                 <button onclick="savePlayerNameFromModal()" class="w-1/2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-cyan-500/25">
-                    Guardar Apodo
+                    Guardar Perfil
                 </button>
             </div>
         </div>
@@ -182,12 +210,67 @@
             localStorage.setItem('bytezone_player_name', playerName);
         }
 
+        let playerCountry = localStorage.getItem('bytezone_player_country') || '';
+
+        function getCountryFlag(code) {
+            if (!code || code.length !== 2) return '🌐';
+            const c = code.toUpperCase();
+            return String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1));
+        }
+
+        async function detectUserCountry() {
+            if (playerCountry && playerCountry.length === 2) {
+                updateCountryDisplays();
+                return playerCountry;
+            }
+            try {
+                const res = await fetch('https://api.country.is/');
+                const data = await res.json();
+                if (data && data.country) {
+                    playerCountry = data.country.toUpperCase();
+                    localStorage.setItem('bytezone_player_country', playerCountry);
+                    updateCountryDisplays();
+                    return playerCountry;
+                }
+            } catch (e) {
+                try {
+                    const res2 = await fetch('https://get.geojs.io/v1/ip/country.json');
+                    const data2 = await res2.json();
+                    if (data2 && data2.country) {
+                        playerCountry = data2.country.toUpperCase();
+                        localStorage.setItem('bytezone_player_country', playerCountry);
+                        updateCountryDisplays();
+                        return playerCountry;
+                    }
+                } catch (e2) {}
+            }
+            playerCountry = 'VE';
+            localStorage.setItem('bytezone_player_country', playerCountry);
+            updateCountryDisplays();
+            return playerCountry;
+        }
+
+        function updateCountryDisplays() {
+            const flag = getCountryFlag(playerCountry);
+            document.querySelectorAll('#playerCountryDisplay').forEach(el => {
+                el.textContent = flag;
+            });
+            const cName = document.getElementById('modalCountryName');
+            if (cName) cName.textContent = playerCountry;
+            const cFlag = document.getElementById('modalCountryFlag');
+            if (cFlag) cFlag.textContent = flag;
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
         function updateNameDisplays() {
             document.querySelectorAll('#playerNameDisplay').forEach(el => {
                 el.textContent = playerName;
             });
         }
         updateNameDisplays();
+        detectUserCountry();
 
         function promptChangeName() {
             const input = document.getElementById('modalNameInput');
@@ -209,13 +292,13 @@
                 localStorage.setItem('bytezone_player_name', playerName);
                 updateNameDisplays();
                 
-                // Actualizar nombres en historiales de cada juego sin crear duplicados
                 ['stacker', 'reflex', 'memory'].forEach(game => {
                     const key = 'bytezone_scores_' + game;
                     let scores = JSON.parse(localStorage.getItem(key) || '[]');
                     scores.forEach(s => {
                         if (s.deviceId === deviceId || s.isMe) {
                             s.name = playerName;
+                            s.country = playerCountry || s.country || 'VE';
                         }
                     });
                     localStorage.setItem(key, JSON.stringify(scores));
@@ -225,6 +308,19 @@
             if (typeof renderLeaderboardUI === 'function') {
                 renderLeaderboardUI();
             }
+        }
+
+        // Sistema de Telemetría y Popularidad (ByteZone Analytics)
+        function trackByteZoneEvent(gameKey, eventType) {
+            try {
+                let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
+                if (!stats[gameKey]) stats[gameKey] = { views: 0, plays: 0, ads: 0 };
+                if (eventType === 'view') stats[gameKey].views = (stats[gameKey].views || 0) + 1;
+                if (eventType === 'play') stats[gameKey].plays = (stats[gameKey].plays || 0) + 1;
+                if (eventType === 'ad') stats[gameKey].ads = (stats[gameKey].ads || 0) + 1;
+                stats['last_active'] = new Date().toISOString();
+                localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
+            } catch(e) {}
         }
     </script>
 
@@ -365,8 +461,20 @@
             document.getElementById('memoryStartBtn').textContent = "▶ JUGAR OTRA VEZ";
         }
 
+        trackByteZoneEvent('memory', 'view');
+
         function getCleanScores(gameKey, isAscending) {
-            let scores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]');
+            let scores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || 'null');
+            if (!scores || scores.length === 0) {
+                scores = [
+                    { name: "MegaBrain", score: 12, country: "MX" },
+                    { name: "Titan_Mind", score: 10, country: "CO" },
+                    { name: "Valen_Pro", score: 8, country: "VE" },
+                    { name: "NeoMatrix", score: 7, country: "ES" },
+                    { name: "Sofia_Arcade", score: 5, country: "AR" },
+                    { name: "QuantumBoy", score: 4, country: "CL" }
+                ];
+            }
             const myEntries = [];
             const otherEntries = [];
 
@@ -382,13 +490,18 @@
                 bestUserEntry = myEntries[0];
                 bestUserEntry.deviceId = deviceId;
                 bestUserEntry.name = playerName;
+                bestUserEntry.country = playerCountry || bestUserEntry.country || 'VE';
                 bestUserEntry.isMe = true;
                 localStorage.setItem('bytezone_best_' + gameKey, bestUserEntry.score.toString());
             }
 
             const cleanList = [];
             if (bestUserEntry) cleanList.push(bestUserEntry);
-            otherEntries.forEach(x => cleanList.push(x));
+            const fallbackCountries = ['MX', 'CO', 'VE', 'ES', 'AR', 'CL', 'US', 'PE'];
+            otherEntries.forEach((x, i) => {
+                if (!x.country) x.country = fallbackCountries[i % fallbackCountries.length];
+                cleanList.push(x);
+            });
 
             cleanList.sort((a, b) => isAscending ? a.score - b.score : b.score - a.score);
             localStorage.setItem('bytezone_scores_' + gameKey, JSON.stringify(cleanList));
@@ -401,7 +514,7 @@
                 localStorage.setItem('bytezone_best_memory', score.toString());
                 let scores = JSON.parse(localStorage.getItem('bytezone_scores_memory') || '[]');
                 scores = scores.filter(x => !( (x.deviceId && x.deviceId === deviceId) || x.name === playerName || x.isMe === true ));
-                scores.push({ name: playerName, deviceId: deviceId, score: score, isMe: true });
+                scores.push({ name: playerName, deviceId: deviceId, score: score, country: playerCountry || 'VE', isMe: true });
                 scores.sort((a, b) => b.score - a.score);
                 localStorage.setItem('bytezone_scores_memory', JSON.stringify(scores));
                 renderLeaderboardUI();
@@ -429,14 +542,16 @@
                     myPosition = idx + 1;
                 }
                 const badge = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "#" + (idx + 1);
+                const itemFlag = getCountryFlag(item.country);
                 const row = document.createElement('div');
                 row.className = "flex justify-between items-center p-2.5 rounded-xl " + (isMe ? 'bg-emerald-950/40 border border-emerald-500 shadow-md' : 'bg-gray-800/60 border border-gray-700/50');
                 row.innerHTML = `
-                    <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-2 min-w-0">
                         <span class="w-6 text-center font-bold text-xs ${idx < 3 ? 'text-yellow-400 font-extrabold' : 'text-gray-400'}">${badge}</span>
-                        <span class="font-bold ${isMe ? 'text-emerald-400' : 'text-white'}">${item.name} ${isMe ? '(Tú)' : ''}</span>
+                        <span class="text-base select-none">${itemFlag}</span>
+                        <span class="font-bold truncate ${isMe ? 'text-emerald-400' : 'text-white'}">${item.name} ${isMe ? '(Tú)' : ''}</span>
                     </div>
-                    <span class="font-black ${isMe ? 'text-pink-400' : 'text-emerald-400'}">${item.score} Rondas</span>
+                    <span class="font-black flex-shrink-0 ${isMe ? 'text-pink-400' : 'text-emerald-400'}">${item.score} Rondas</span>
                 `;
                 container.appendChild(row);
             });
