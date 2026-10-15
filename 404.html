@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando ByteZone...</title>
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            var lower = path.toLowerCase();
+            
+            // Si el teclado del móvil puso mayúsculas (ej: /ByteZone, /Bytezone, /Telegram.html)
+            if (lower.indexOf('bytezone') !== -1) {
+                var target = lower;
+                if (target.substr(-1) !== '/' && target.indexOf('.html') === -1) {
+                    target += '/';
+                }
+                window.location.replace(target + window.location.search);
+            } else {
+                window.location.replace('/' + window.location.search);
+            }
+        })();
+    </script>
+</head>
+<body style="background:#030712; color:#38bdf8; font-family:sans-serif; text-align:center; padding-top:60px;">
+    <h2 style="font-weight:900; letter-spacing:1px;">⚡ BYTEZONE</h2>
+    <p style="color:#94a3b8; font-size:14px;">Redirigiendo a la pantalla correcta...</p>
+</body>
+</html>
