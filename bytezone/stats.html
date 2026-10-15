@@ -14,7 +14,7 @@
     <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
     
     <script>
-        // 1. Manejador de Recompensas por Video Intersticial (Segunda Oportunidad / Vidas)
+        // Manejador de Recompensas por Video Intersticial (Exclusivo cuando el usuario pide Segunda Oportunidad)
         function executeRewardedAction(rewardCallback) {
             if (typeof show_12040274 === 'function') {
                 show_12040274().then(() => {
@@ -26,35 +26,6 @@
             } else {
                 if (typeof rewardCallback === 'function') rewardCallback();
             }
-        }
-
-        // 2. Anuncio Intersticial Automático dentro de la App (Monetag Telegram In-App)
-        function initMonetagTelegramInApp() {
-            if (typeof show_12040274 === 'function') {
-                try {
-                    show_12040274({
-                        type: 'inApp',
-                        inAppSettings: {
-                            frequency: 2,
-                            capping: 0.1,
-                            interval: 30,
-                            timeout: 5,
-                            everyPage: false
-                        }
-                    });
-                    console.log("✅ Monetag In-App Interstitial inicializado.");
-                } catch (e) {
-                    console.log("Info Monetag In-App:", e);
-                }
-            } else {
-                setTimeout(initMonetagTelegramInApp, 1000);
-            }
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initMonetagTelegramInApp);
-        } else {
-            initMonetagTelegramInApp();
         }
     </script>
 
