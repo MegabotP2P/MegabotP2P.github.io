@@ -7,14 +7,16 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Detección de entorno: Web vs Telegram Mini App -->
+    <!-- Detección estricta de entorno: Web vs Telegram Mini App -->
     <script>
-        // Si estamos dentro de Telegram Mini App, no cargar In-Page Push flotante
-        // para que no tape el encabezado ni los botones del juego.
-        const isTelegramApp = !!(window.Telegram && window.Telegram.WebApp && (window.Telegram.WebApp.initData || window.Telegram.WebApp.platform));
+        const isTelegramApp = !!(window.TelegramWebviewProxy !== undefined || 
+                                 (window.Telegram && window.Telegram.WebApp && (window.Telegram.WebApp.initData || window.Telegram.WebApp.platform)) ||
+                                 navigator.userAgent.indexOf('Telegram') !== -1 ||
+                                 location.search.indexOf('tgWebApp') !== -1 ||
+                                 location.hash.indexOf('tgWebAppData') !== -1);
         
         if (!isTelegramApp) {
-            // Cargar Monetag Web In-Page Push solo en navegadores normales
+            // Cargar Monetag Web In-Page Push solo en navegadores normales fuera de Telegram
             (function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
             
             // Reubicar anuncios flotantes de la web abajo para que nunca tapen el menú ni los botones
