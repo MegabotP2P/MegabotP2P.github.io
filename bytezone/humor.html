@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Humor Tech & Sarcasmo - ByteZone</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
+
+    
+    <header class="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2 group">
+                <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
+                <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    BYTE<span class="text-white">ZONE</span>
+                </span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <button onclick="promptChangeName()" class="text-xs text-gray-300 hover:text-cyan-400 bg-gray-800/80 px-2.5 py-1.5 rounded-xl border border-gray-700/60 flex items-center space-x-1.5 transition">
+                    <span>👤</span>
+                    <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
+                    <span class="text-cyan-400 text-[10px]">✏️</span>
+                </button>
+                <a href="telegram.html" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                    <span>✈️</span>
+                    <span class="hidden sm:inline">Telegram</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
+        <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
+            <a href="index.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🕹️</span>
+                <span>Arcade Hub</span>
+            </a>
+            <a href="hacks.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">📱</span>
+                <span>Tech Hacks</span>
+            </a>
+            <a href="humor.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+                <span class="text-base sm:text-lg">🎭</span>
+                <span>Humor</span>
+            </a>
+            <a href="telegram.html" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🚀</span>
+                <span>Comunidad</span>
+            </a>
+        </div>
+    </nav>
+    
+
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <div class="text-center mb-6">
+            <span class="text-xs bg-pink-500/20 text-pink-300 border border-pink-500/30 font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                Dosis Diaria de Risas
+            </span>
+            <h1 class="text-2xl sm:text-3xl font-black text-white mt-2">Cápsula de Humor & Sarcasmo</h1>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">Frases, chistes y verdades incómodas sobre la tecnología.</p>
+        </div>
+
+        <div class="bg-gray-900/80 rounded-3xl p-6 sm:p-8 border border-gray-800 text-center max-w-lg mx-auto shadow-xl">
+            <span class="text-5xl">🤖</span>
+            <p id="humorQuote" class="text-base sm:text-lg font-bold text-white my-4 italic leading-relaxed">
+                "¿Por qué los programadores prefieren el modo oscuro? Porque la luz atrae a los bichos (bugs)."
+            </p>
+            <button onclick="generarChisteNuevo()" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 active:scale-95 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg shadow-pink-500/20 transition">
+                🎲 Tirar otro chiste / meme
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <div class="bg-gray-900/80 p-4 rounded-2xl border border-gray-800">
+                <p class="text-xs text-cyan-400 font-bold mb-1">Niveles de Batería:</p>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    100%: Me siento inmortal.<br>
+                    50%: Aún tengo tiempo.<br>
+                    15%: Buscando cargador como loco.<br>
+                    2%: Bajando el brillo a cero y rezando.
+                </p>
+            </div>
+            <div class="bg-gray-900/80 p-4 rounded-2xl border border-gray-800">
+                <p class="text-xs text-pink-400 font-bold mb-1">La Ley del Soporte Técnico:</p>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    El 90% de los problemas se resuelven reiniciando. El otro 10% se resuelve haciéndote el loco hasta que otra persona lo reinicie.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    
+    <!-- MODAL PERFIL JUGADOR (CONEXIÓN UNIFICADA) -->
+    <div id="namePromptModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-purple-500/50 text-center shadow-2xl relative">
+            <span class="text-4xl animate-bounce inline-block">👑</span>
+            <h3 class="text-xl font-black text-white mt-2">Tu Apodo de Campeón</h3>
+            <p class="text-xs text-gray-300 my-2">Tu apodo quedará guardado para tu dispositivo. Si lo cambias, se actualizan tus récords automáticamente.</p>
+            
+            <input type="text" id="modalNameInput" placeholder="Ej: Alex_Pro, Fénix..." maxlength="15"
+                   class="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-gray-700 focus:outline-none focus:border-cyan-400 mb-4 text-center font-bold tracking-wider">
+            
+            <div class="flex space-x-2">
+                <button onclick="closeNameModal()" class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold py-2.5 rounded-xl text-xs transition">
+                    Cancelar
+                </button>
+                <button onclick="savePlayerNameFromModal()" class="w-1/2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-cyan-500/25">
+                    Guardar Apodo
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
+        <p>© 2026 ByteZone • Portal de Entretenimiento & Mini-Juegos Móviles</p>
+    </footer>
+
+    
+    <script>
+        // Sistema de identidad persistente por dispositivo (Device ID)
+        let deviceId = localStorage.getItem('bytezone_device_id');
+        if (!deviceId) {
+            deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+            localStorage.setItem('bytezone_device_id', deviceId);
+        }
+
+        let playerName = localStorage.getItem('bytezone_player_name');
+        if (!playerName) {
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user) {
+                playerName = window.Telegram.WebApp.initDataUnsafe.user.first_name || window.Telegram.WebApp.initDataUnsafe.user.username;
+            } else {
+                playerName = "Jugador_" + Math.floor(Math.random()*900 + 100);
+            }
+            localStorage.setItem('bytezone_player_name', playerName);
+        }
+
+        function updateNameDisplays() {
+            document.querySelectorAll('#playerNameDisplay').forEach(el => {
+                el.textContent = playerName;
+            });
+        }
+        updateNameDisplays();
+
+        function promptChangeName() {
+            const input = document.getElementById('modalNameInput');
+            if (input) input.value = playerName;
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeNameModal() {
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function savePlayerNameFromModal() {
+            const input = document.getElementById('modalNameInput');
+            const val = input ? input.value.trim() : '';
+            if (val) {
+                playerName = val;
+                localStorage.setItem('bytezone_player_name', playerName);
+                updateNameDisplays();
+                
+                // Actualizar nombres en historiales de cada juego sin crear duplicados
+                ['stacker', 'reflex', 'memory'].forEach(game => {
+                    const key = 'bytezone_scores_' + game;
+                    let scores = JSON.parse(localStorage.getItem(key) || '[]');
+                    scores.forEach(s => {
+                        if (s.deviceId === deviceId || s.isMe) {
+                            s.name = playerName;
+                        }
+                    });
+                    localStorage.setItem(key, JSON.stringify(scores));
+                });
+            }
+            closeNameModal();
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+    </script>
+
+
+    <script>
+        const CHISTES = [
+            "¿Por qué los programadores prefieren el modo oscuro? Porque la luz atrae a los bichos (bugs).",
+            "Hay 10 tipos de personas en el mundo: las que entienden binario y las que no.",
+            "Mi computadora me preguntó si quería actualizar a Windows 11. Le dije que no, y empezó a actualizarse.",
+            "Le dije a mi router que necesitaba espacio. Ahora no me conecta.",
+            "— Papá, ¿por qué el sol sale por el este y se pone por el oeste?\n— Funciona, no lo toques.",
+            "Si un programa funciona a la primera, sospecha. Algo muy grave está fallando en silencio.",
+            "Un SQL entra a un bar, camina hacia dos mesas y pregunta: ¿Puedo hacer un JOIN?",
+            "Hardware: La parte del ordenador que puedes patear cuando falla el software.",
+            "El 99% de las soluciones a problemas técnicos se descubren después de decir en voz alta: 'Pero si ayer funcionaba...'"
+        ];
+
+        function generarChisteNuevo() {
+            const q = document.getElementById('humorQuote');
+            const rand = CHISTES[Math.floor(Math.random() * CHISTES.length)];
+            q.textContent = '"' + rand + '"';
+        }
+    </script>
+</body>
+</html>
