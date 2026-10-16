@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Humor Tech & Sarcasmo - ByteZone</title>
+    <title>Humor Tech & Memes - ByteZone</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
     <script>
         // 1. Limpieza automática de caché y cualquier temporizador inApp previo guardado en el navegador/Telegram
@@ -115,40 +116,80 @@
 
     <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
 
-        <div class="text-center mb-6">
+        <div class="text-center mb-4">
             <span class="text-xs bg-pink-500/20 text-pink-300 border border-pink-500/30 font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                Dosis Diaria de Risas
+                Risas Garantizadas 😂
             </span>
-            <h1 class="text-2xl sm:text-3xl font-black text-white mt-2">Cápsula de Humor & Sarcasmo</h1>
-            <p class="text-xs sm:text-sm text-gray-400 mt-1">Frases, chistes y verdades incómodas sobre la tecnología.</p>
+            <h1 class="text-2xl sm:text-3xl font-black text-white mt-2">Cápsula de Humor & Sarcasmo Tech</h1>
+            <p class="text-xs sm:text-sm text-gray-400 mt-1">Verdades incómodas sobre WhatsApp, la batería, la IA y la vida digital.</p>
         </div>
 
-        <div class="bg-gray-900/80 rounded-3xl p-6 sm:p-8 border border-gray-800 text-center max-w-lg mx-auto shadow-xl">
-            <span class="text-5xl">🤖</span>
-            <p id="humorQuote" class="text-base sm:text-lg font-bold text-white my-4 italic leading-relaxed">
-                "¿Por qué los programadores prefieren el modo oscuro? Porque la luz atrae a los bichos (bugs)."
+        <!-- GENERADOR DE CHISTES Y FRASES -->
+        <div class="bg-gradient-to-r from-gray-900 via-gray-850 to-gray-900 rounded-3xl p-6 sm:p-8 border border-pink-500/40 text-center max-w-xl mx-auto shadow-2xl relative">
+            <span class="text-5xl animate-bounce inline-block mb-1">🤣</span>
+            <p id="humorQuote" class="text-sm sm:text-base font-bold text-white my-4 italic leading-relaxed min-h-[60px] flex items-center justify-center">
+                "— Mi amor, dame tu contraseña de WhatsApp si no tienes nada que esconder.<br>— Dame tú la clave de tu banco si confías en mí.<br>— ...Silencio absoluto en la sala."
             </p>
-            <button onclick="generarChisteNuevo()" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 active:scale-95 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg shadow-pink-500/20 transition">
-                🎲 Tirar otro chiste / meme
-            </button>
+            <div class="flex items-center justify-center space-x-3 mt-4">
+                <button onclick="generarChisteNuevo()" class="bg-gradient-to-r from-pink-500 to-purple-600 hover:opacity-90 active:scale-95 text-white font-black px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-lg shadow-pink-500/25 transition">
+                    🎲 Tirar otro chiste bueno
+                </button>
+                <button onclick="reaccionarRisa()" class="bg-gray-800 hover:bg-gray-700 text-pink-400 font-bold px-4 py-2.5 rounded-xl text-xs transition border border-gray-700 flex items-center space-x-1.5">
+                    <span>💀</span>
+                    <span>¡Tal cual!</span>
+                    <span id="risaCount" class="text-gray-400 text-[11px]">(48)</span>
+                </button>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-            <div class="bg-gray-900/80 p-4 rounded-2xl border border-gray-800">
-                <p class="text-xs text-cyan-400 font-bold mb-1">Niveles de Batería:</p>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    100%: Me siento inmortal.<br>
-                    50%: Aún tengo tiempo.<br>
-                    15%: Buscando cargador como loco.<br>
-                    2%: Bajando el brillo a cero y rezando.
+        <!-- TARJETAS DE VERDADES DE LA TECNOLOGÍA -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="bg-gray-900/90 p-5 rounded-2xl border border-cyan-500/30 shadow-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-xl">🎙️</span>
+                    <h4 class="text-xs font-black text-cyan-400 uppercase tracking-wider">La Ley del Audio de WhatsApp</h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed space-y-1">
+                    • <strong>0 a 15 seg:</strong> Escuchable con paciencia.<br>
+                    • <strong>15 a 45 seg:</strong> Lo pongo en 1.5x de inmediato.<br>
+                    • <strong>Más de 1 min:</strong> Eso ya no es un audio, es un podcast. ¡Llámame mejor!
                 </p>
             </div>
-            <div class="bg-gray-900/80 p-4 rounded-2xl border border-gray-800">
-                <p class="text-xs text-pink-400 font-bold mb-1">La Ley del Soporte Técnico:</p>
+
+            <div class="bg-gray-900/90 p-5 rounded-2xl border border-purple-500/30 shadow-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-xl">🤖</span>
+                    <h4 class="text-xs font-black text-purple-400 uppercase tracking-wider">La IA: Expectativa vs Realidad</h4>
+                </div>
                 <p class="text-xs text-gray-300 leading-relaxed">
-                    El 90% de los problemas se resuelven reiniciando. El otro 10% se resuelve haciéndote el loco hasta que otra persona lo reinicie.
+                    <strong>La gente:</strong> <em>"La Inteligencia Artificial va a dominar el mundo con robots asesinos..."</em><br>
+                    <strong>La IA en la vida real:</strong> Dibuja personas con 7 dedos en una mano y confunde un perro chihuahueño con un muffin de chocolate.
                 </p>
             </div>
+
+            <div class="bg-gray-900/90 p-5 rounded-2xl border border-pink-500/30 shadow-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-xl">🔋</span>
+                    <h4 class="text-xs font-black text-pink-400 uppercase tracking-wider">El Milagro del 1%</h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    Mi teléfono con <strong>99%</strong> de batería: se descarga en un parpadeo si abro Instagram.<br>
+                    Mi teléfono con <strong>1%</strong> de batería: aguanta 3 horas más, 2 llamadas de emergencia, una alarma y me da la hora del día siguiente.
+                </p>
+            </div>
+
+            <div class="bg-gray-900/90 p-5 rounded-2xl border border-emerald-500/30 shadow-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-xl">🛒</span>
+                    <h4 class="text-xs font-black text-emerald-400 uppercase tracking-wider">Compras por Internet</h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    <strong>En la foto de AliExpress:</strong> Camiseta ajustada modelo cyberpunk con acabado futurista.<br>
+                    <strong>Lo que te llega por encomienda:</strong> Un mantel de cocina transparente con dos huecos para los brazos.
+                </p>
+            </div>
+
         </div>
 
     </main>
@@ -334,21 +375,37 @@
 
     <script>
         const CHISTES = [
-            "¿Por qué los programadores prefieren el modo oscuro? Porque la luz atrae a los bichos (bugs).",
-            "Hay 10 tipos de personas en el mundo: las que entienden binario y las que no.",
-            "Mi computadora me preguntó si quería actualizar a Windows 11. Le dije que no, y empezó a actualizarse.",
-            "Le dije a mi router que necesitaba espacio. Ahora no me conecta.",
-            "— Papá, ¿por qué el sol sale por el este y se pone por el oeste?\n— Funciona, no lo toques.",
-            "Si un programa funciona a la primera, sospecha. Algo muy grave está fallando en silencio.",
-            "Un SQL entra a un bar, camina hacia dos mesas y pregunta: ¿Puedo hacer un JOIN?",
-            "Hardware: La parte del ordenador que puedes patear cuando falla el software.",
-            "El 99% de las soluciones a problemas técnicos se descubren después de decir en voz alta: 'Pero si ayer funcionaba...'"
+            "— Mi amor, dame tu contraseña de WhatsApp si no tienes nada que esconder.<br>— Dame tú la clave de tu banco si confías en mí.<br>— ...Silencio absoluto en la sala.",
+            "Le pedí a ChatGPT que me ayudara a redactar un mensaje para que mi novia no se molestara... y ChatGPT la dejó más brava todavía. Ni la inteligencia artificial entiende a las mujeres.",
+            "El técnico de computadoras: 'Amigo, se le quemó la tarjeta madre cuántica, el bios y el condensador de flujo... son $95'.<br>Yo: 'Hermano, el cable estaba medio desconectado del tomacorriente'.",
+            "La tía en el grupo familiar: 'Cuidado con el 5G que te altera las neuronas y te vigila'.<br>La misma tía: Reenvía 45 bendiciones con fotos de Piolín a las 5:00 a.m. todos los días.",
+            "Nivel de terror tecnológico extremo: Cuando vas a mandar una captura de pantalla burlándote de alguien... y casi se la mandas por error a esa misma persona.",
+            "El botón de 'He leído y acepto los términos y condiciones' es la mentira más grande que ha visto la raza humana. Absolutamente nadie lee eso.",
+            "Nada en esta vida te enseña a escribir más rápido en el teclado que ver el 'Escribiendo...' de la persona con la que estás discutiendo en WhatsApp.",
+            "— Papá, ¿por qué lloras?<br>— Hijo, acabo de ver una notificación en el teléfono...<br>— ¿Te hackearon la cuenta de banco?<br>— Peor: 'Tu jefe te ha agregado al grupo: Guardias de Fin de Semana'.",
+            "Le pregunté a la IA cómo hacerme millonario en 3 días sin salir de mi cama... y me mandó a buscar un novio con plata o a jugar la lotería.",
+            "Mamá gritando: '¡Hijo, el internet está lentísimo, seguro estás descargando tus juegos raros!'<br>Yo: Solo abrí la página de Wikipedia.<br>La tía en el cuarto de al lado: Descargando una serie turca de 80 capítulos en calidad 4K."
         ];
+
+        let countRisas = 48;
 
         function generarChisteNuevo() {
             const q = document.getElementById('humorQuote');
             const rand = CHISTES[Math.floor(Math.random() * CHISTES.length)];
-            q.textContent = '"' + rand + '"';
+            q.innerHTML = '"' + rand + '"';
+        }
+
+        function reaccionarRisa() {
+            countRisas++;
+            const el = document.getElementById('risaCount');
+            if (el) el.textContent = '(' + countRisas + ')';
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 25,
+                    spread: 60,
+                    origin: { y: 0.8 }
+                });
+            }
         }
     </script>
 </body>
