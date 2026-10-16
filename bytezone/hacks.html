@@ -19,10 +19,11 @@
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
             }
-            if (!location.search.includes('v=6') && !sessionStorage.getItem('bz_v6_reloaded')) {
-                sessionStorage.setItem('bz_v6_reloaded', '1');
-                const sep = location.search ? '&' : '?';
-                location.replace(location.pathname + location.search + sep + 'v=6' + location.hash);
+            if (!location.search.includes('v=7') && !sessionStorage.getItem('bz_v7_reloaded')) {
+                sessionStorage.setItem('bz_v7_reloaded', '1');
+                const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
+                const sep = cleanSearch.includes('?') ? '&' : '?';
+                location.replace(location.pathname + cleanSearch + sep + 'v=7' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -71,7 +72,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=6" class="flex items-center space-x-2 group">
+            <a href="index.html?v=7" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -83,7 +84,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=6" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=7" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -93,19 +94,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="index.html?v=7" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="hacks.html?v=7" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">📱</span>
                 <span>Tech Hacks</span>
             </a>
-            <a href="humor.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=7" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=6" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=7" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -179,7 +180,7 @@
         <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-purple-500/50 text-center shadow-2xl relative">
             <span class="text-4xl animate-bounce inline-block">👑</span>
             <h3 class="text-xl font-black text-white mt-2">Tu Perfil de Campeón</h3>
-            <p class="text-xs text-gray-300 my-2">Tu apodo y bandera quedarán guardados en la tabla de récords mundiales.</p>
+            <p class="text-xs text-gray-300 my-2">Tu apodo y bandera quedarán guardados en la tabla de récords mundiales en tiempo real.</p>
             
             <div class="flex items-center justify-center space-x-2 my-3 p-2 bg-gray-800/80 rounded-xl border border-gray-700/60 text-xs text-gray-300">
                 <span>Tu Bandera:</span>
@@ -207,12 +208,12 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal de Mini-Juegos y Entretenimiento Móvil</p>
         <p class="mt-2 flex items-center justify-center space-x-3 text-[11px]">
-            <a href="stats.html?v=6" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=7" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>📊</span>
                 <span class="underline">Métricas & Popularidad</span>
             </a>
             <span>•</span>
-            <span class="text-gray-500">Servidores Globales 🌐</span>
+            <span class="text-gray-500">Servidores Globales En Vivo 🌐</span>
         </p>
     </footer>
     
@@ -237,6 +238,349 @@
         }
 
         let playerCountry = localStorage.getItem('bytezone_player_country') || '';
+
+        // ==========================================================
+        // MOTOR DE SINCRONIZACIÓN MUNDIAL EN TIEMPO REAL (DUAL CLOUD)
+        // ==========================================================
+        const CLOUD_OBJ_IDS = {
+            stacker: 'ff808181a09d98f701a1448611567237',
+            reflex:  'ff808181a09d98f701a1448613fe7238',
+            memory:  'ff808181a09d98f701a14486174a7239'
+        };
+        const NTFY_SCORES_TOPIC = 'bytezone_global_scores_v2';
+
+        const DEFAULT_GAME_SCORES = {
+            stacker: [
+                { name: "CyberSam", score: 32, country: "ES" },
+                { name: "SpeedyGamer", score: 26, country: "MX" },
+                { name: "LunaByte", score: 21, country: "AR" },
+                { name: "Kev_Torres", score: 17, country: "VE" },
+                { name: "Alex_99", score: 14, country: "CO" },
+                { name: "NeonQueen", score: 10, country: "CL" }
+            ],
+            reflex: [
+                { name: "ViperPulse", score: 215, country: "US" },
+                { name: "NicoFast", score: 240, country: "CL" },
+                { name: "Dani_Reflex", score: 265, country: "VE" },
+                { name: "SaraFlash", score: 290, country: "ES" },
+                { name: "Leo_Gamer", score: 320, country: "MX" },
+                { name: "TurboFenix", score: 350, country: "CO" }
+            ],
+            memory: [
+                { name: "MegaBrain", score: 12, country: "MX" },
+                { name: "Titan_Mind", score: 10, country: "CO" },
+                { name: "Valen_Pro", score: 8, country: "VE" },
+                { name: "NeoMatrix", score: 7, country: "ES" },
+                { name: "Sofia_Arcade", score: 5, country: "AR" },
+                { name: "QuantumBoy", score: 4, country: "CL" }
+            ]
+        };
+
+        function isCurrentUserEntry(entry) {
+            if (!entry) return false;
+            if (entry.deviceId && entry.deviceId === deviceId) return true;
+            if (entry.name && playerName && entry.name.trim().toLowerCase() === playerName.trim().toLowerCase()) return true;
+            return false;
+        }
+
+        function encodeCompactScores(list) {
+            return (list || []).slice(0, 10).map(item => {
+                const cleanName = String(item.name || 'Jugador').replace(/[|;]/g, '').trim().slice(0, 12) || 'Jugador';
+                const sc = parseInt(item.score) || 0;
+                const cc = String(item.country || 'VE').toUpperCase().slice(0, 2);
+                return `${cleanName}|${sc}|${cc}`;
+            }).join(';');
+        }
+
+        function decodeCompactScores(str) {
+            if (!str || typeof str !== 'string') return [];
+            return str.split(';').map(part => {
+                const [name, sc, cc] = part.split('|');
+                const scoreNum = parseInt(sc);
+                if (!name || isNaN(scoreNum) || scoreNum <= 0) return null;
+                return {
+                    name: name.trim(),
+                    score: scoreNum,
+                    country: (cc && cc.length === 2) ? cc.toUpperCase() : 'VE'
+                };
+            }).filter(Boolean);
+        }
+
+        function mergeAndNormalizeScores(gameKey, incomingArrays, isAscending, oldNameToRemove) {
+            const byName = new Map();
+            const oldKey = oldNameToRemove ? oldNameToRemove.trim().toLowerCase() : null;
+
+            const addEntry = (raw) => {
+                if (!raw || !raw.name) return;
+                const sc = parseInt(raw.score);
+                if (isNaN(sc) || sc <= 0) return;
+
+                let nameStr = String(raw.name).trim();
+                let key = nameStr.toLowerCase();
+
+                if (oldKey && key === oldKey) {
+                    nameStr = playerName;
+                    key = playerName.trim().toLowerCase();
+                }
+                if ((raw.deviceId && raw.deviceId === deviceId) || raw.isMe === true) {
+                    nameStr = playerName;
+                    key = playerName.trim().toLowerCase();
+                }
+
+                const countryCode = (key === playerName.trim().toLowerCase())
+                    ? (playerCountry || raw.country || 'VE')
+                    : (raw.country || 'VE');
+
+                const existing = byName.get(key);
+                if (!existing) {
+                    byName.set(key, {
+                        name: nameStr,
+                        score: sc,
+                        country: countryCode,
+                        deviceId: (key === playerName.trim().toLowerCase()) ? deviceId : raw.deviceId
+                    });
+                } else {
+                    const isBetter = isAscending ? (sc < existing.score) : (sc > existing.score);
+                    if (isBetter) {
+                        existing.score = sc;
+                    }
+                    if (countryCode && (!existing.country || existing.country === 'VE')) {
+                        existing.country = countryCode;
+                    }
+                    if (key === playerName.trim().toLowerCase()) {
+                        existing.name = playerName;
+                        existing.deviceId = deviceId;
+                    }
+                }
+            };
+
+            // 1. Semilla base por defecto
+            (DEFAULT_GAME_SCORES[gameKey] || []).forEach(addEntry);
+
+            // 2. Listas entrantes (localStorage + Cloud REST + ntfy stream)
+            (incomingArrays || []).forEach(arr => {
+                if (Array.isArray(arr)) arr.forEach(addEntry);
+            });
+
+            // 3. Asegurar que el récord personal guardado en bytezone_best_<gameKey> siempre esté incluido
+            const myBest = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0');
+            if (myBest > 0) {
+                addEntry({
+                    name: playerName,
+                    score: myBest,
+                    country: playerCountry || 'VE',
+                    deviceId: deviceId
+                });
+            }
+
+            const merged = Array.from(byName.values());
+            merged.sort((a, b) => isAscending ? (a.score - b.score) : (b.score - a.score));
+
+            // Si el usuario está en la lista, sincronizar bytezone_best_<gameKey> con su mejor marca real
+            const myEntry = merged.find(x => isCurrentUserEntry(x));
+            if (myEntry && myEntry.score > 0) {
+                localStorage.setItem('bytezone_best_' + gameKey, myEntry.score.toString());
+            }
+
+            const topList = merged.slice(0, 15);
+            localStorage.setItem('bytezone_scores_' + gameKey, JSON.stringify(topList));
+            return topList;
+        }
+
+        function getCleanScores(gameKey, isAscending) {
+            let localScores = [];
+            try {
+                localScores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]');
+            } catch (e) { localScores = []; }
+            return mergeAndNormalizeScores(gameKey, [localScores], isAscending);
+        }
+
+        async function pushScoreToCloud(gameKey, score, isAscending, oldNameToRemove) {
+            const cleanScore = parseInt(score);
+            if (isNaN(cleanScore) || cleanScore <= 0) return;
+
+            // 1. Emitir evento en tiempo real por ntfy.sh para que otros teléfonos conectados lo vean al instante (<1 seg)
+            try {
+                fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        g: gameKey,
+                        d: deviceId,
+                        n: playerName,
+                        oldN: oldNameToRemove || undefined,
+                        s: cleanScore,
+                        c: playerCountry || 'VE',
+                        t: Date.now()
+                    })
+                }).catch(() => {});
+            } catch (e) {}
+
+            // 2. Actualizar el objeto persistente en api.restful-api.dev
+            const objId = CLOUD_OBJ_IDS[gameKey];
+            if (!objId) return;
+
+            try {
+                let cloudScores = [];
+                try {
+                    const getRes = await fetch(`https://api.restful-api.dev/objects/${objId}?t=${Date.now()}`, { cache: 'no-store' });
+                    if (getRes.ok) {
+                        const objData = await getRes.json();
+                        if (objData && objData.data && objData.data.v) {
+                            cloudScores = decodeCompactScores(objData.data.v);
+                        }
+                    }
+                } catch (e) {}
+
+                let localScores = [];
+                try {
+                    localScores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]');
+                } catch (e) {}
+
+                const newEntry = [{ name: playerName, score: cleanScore, country: playerCountry || 'VE', deviceId: deviceId }];
+                const merged = mergeAndNormalizeScores(gameKey, [cloudScores, localScores, newEntry], isAscending, oldNameToRemove);
+                const compactV = encodeCompactScores(merged.slice(0, 10));
+
+                await fetch(`https://api.restful-api.dev/objects/${objId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: 'bz_' + gameKey,
+                        data: { v: compactV }
+                    })
+                });
+            } catch (e) {}
+        }
+
+        async function syncGameFromCloud(gameKey, isAscending, silent = false) {
+            const badgeEl = document.getElementById('liveSyncStatus');
+            if (badgeEl && !silent) {
+                badgeEl.textContent = "🔄 Sincronizando...";
+            }
+
+            const objId = CLOUD_OBJ_IDS[gameKey];
+            let cloudList = [];
+            let ntfyList = [];
+            let renames = {};
+
+            // 1. Leer tabla persistente desde api.restful-api.dev
+            if (objId) {
+                try {
+                    const res = await fetch(`https://api.restful-api.dev/objects/${objId}?t=${Date.now()}`, { cache: 'no-store' });
+                    if (res.ok) {
+                        const json = await res.json();
+                        if (json && json.data && json.data.v) {
+                            cloudList = decodeCompactScores(json.data.v);
+                        }
+                    }
+                } catch (e) {}
+            }
+
+            // 2. Leer stream reciente de las últimas 12h desde ntfy.sh
+            try {
+                const resNtfy = await fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/json?poll=1&since=12h`, { cache: 'no-store' });
+                if (resNtfy.ok) {
+                    const text = await resNtfy.text();
+                    const lines = text.split('\n').filter(Boolean);
+                    lines.forEach(line => {
+                        try {
+                            const evt = JSON.parse(line);
+                            if (evt && evt.event === 'message' && evt.message) {
+                                const payload = JSON.parse(evt.message);
+                                if (payload && payload.oldN && payload.n) {
+                                    renames[String(payload.oldN).trim().toLowerCase()] = payload.n;
+                                }
+                                if (payload && payload.g === gameKey && payload.n && payload.s) {
+                                    ntfyList.push({
+                                        name: payload.n,
+                                        score: parseInt(payload.s),
+                                        country: payload.c || 'VE',
+                                        deviceId: payload.d
+                                    });
+                                }
+                            }
+                        } catch (pe) {}
+                    });
+                }
+            } catch (e) {}
+
+            // Aplicar posibles cambios de nombre recientes
+            const applyRename = (arr) => arr.map(item => {
+                const k = String(item.name || '').trim().toLowerCase();
+                if (renames[k]) item.name = renames[k];
+                return item;
+            });
+
+            let localScores = [];
+            try {
+                localScores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]');
+            } catch (e) {}
+
+            const myBestBefore = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0');
+            const myCloudEntry = cloudList.find(x => isCurrentUserEntry(x));
+
+            const merged = mergeAndNormalizeScores(
+                gameKey,
+                [applyRename(localScores), applyRename(cloudList), applyRename(ntfyList)],
+                isAscending
+            );
+
+            if (typeof renderLeaderboardUI === 'function' && window.CURRENT_GAME_KEY === gameKey) {
+                renderLeaderboardUI();
+            }
+
+            if (badgeEl) {
+                badgeEl.textContent = "🟢 Global En Vivo";
+            }
+
+            // 3. Auto-migración: Si este teléfono tenía un récord guardado de ayer que aún no está en la nube (o que supera al de la nube), subirlo automáticamente
+            const myBestNow = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0');
+            if (myBestNow > 0) {
+                const needsUpload = !myCloudEntry || (isAscending ? (myBestNow < myCloudEntry.score) : (myBestNow > myCloudEntry.score));
+                if (needsUpload) {
+                    pushScoreToCloud(gameKey, myBestNow, isAscending);
+                }
+            }
+
+            return merged;
+        }
+
+        function startRealtimeScoreStream(activeGameKey, isAscending) {
+            window.CURRENT_GAME_KEY = activeGameKey;
+            window.CURRENT_GAME_ASC = isAscending;
+            syncGameFromCloud(activeGameKey, isAscending);
+
+            // También sincronizar silenciosamente los otros juegos en segundo plano para subir cualquier récord previo guardado en este teléfono
+            ['stacker', 'reflex', 'memory'].forEach(g => {
+                if (g !== activeGameKey) {
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), 1500);
+                }
+            });
+
+            if (window.EventSource) {
+                try {
+                    const es = new EventSource(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/sse`);
+                    es.onmessage = (e) => {
+                        try {
+                            const evt = JSON.parse(e.data);
+                            if (evt && evt.message) {
+                                const p = JSON.parse(evt.message);
+                                if (p && p.g === activeGameKey && p.n && p.s) {
+                                    let current = [];
+                                    try { current = JSON.parse(localStorage.getItem('bytezone_scores_' + activeGameKey) || '[]'); } catch(err){}
+                                    mergeAndNormalizeScores(activeGameKey, [current, [{ name: p.n, score: parseInt(p.s), country: p.c || 'VE', deviceId: p.d }]], isAscending, p.oldN);
+                                    if (typeof renderLeaderboardUI === 'function') renderLeaderboardUI();
+                                }
+                            }
+                        } catch (err) {}
+                    };
+                } catch (e) {}
+            }
+
+            // Refresco periódico de respaldo cada 20 segundos
+            setInterval(() => {
+                syncGameFromCloud(activeGameKey, isAscending, true);
+            }, 20000);
+        }
 
         function getCountryFlag(code) {
             if (!code || code.length !== 2) return '🌐';
@@ -298,6 +642,15 @@
         updateNameDisplays();
         detectUserCountry();
 
+        // Sincronizar récords guardados en el dispositivo incluso si el usuario abre primero el Lobby
+        setTimeout(() => {
+            if (!window.CURRENT_GAME_KEY) {
+                ['stacker', 'reflex', 'memory'].forEach((g, idx) => {
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), idx * 800);
+                });
+            }
+        }, 600);
+
         function promptChangeName() {
             const input = document.getElementById('modalNameInput');
             if (input) input.value = playerName;
@@ -314,20 +667,21 @@
             const input = document.getElementById('modalNameInput');
             const val = input ? input.value.trim() : '';
             if (val) {
+                const oldName = playerName;
                 playerName = val;
                 localStorage.setItem('bytezone_player_name', playerName);
                 updateNameDisplays();
                 
                 ['stacker', 'reflex', 'memory'].forEach(game => {
+                    const isAsc = (game === 'reflex');
                     const key = 'bytezone_scores_' + game;
-                    let scores = JSON.parse(localStorage.getItem(key) || '[]');
-                    scores.forEach(s => {
-                        if (s.deviceId === deviceId || s.isMe) {
-                            s.name = playerName;
-                            s.country = playerCountry || s.country || 'VE';
-                        }
-                    });
-                    localStorage.setItem(key, JSON.stringify(scores));
+                    let scores = [];
+                    try { scores = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) {}
+                    mergeAndNormalizeScores(game, [scores], isAsc, oldName);
+                    const myBest = parseInt(localStorage.getItem('bytezone_best_' + game) || '0');
+                    if (myBest > 0) {
+                        pushScoreToCloud(game, myBest, isAsc, oldName);
+                    }
                 });
             }
             closeNameModal();
