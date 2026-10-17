@@ -21,11 +21,11 @@
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
             }
-            if (!location.search.includes('v=9') && !sessionStorage.getItem('bz_v9_reloaded')) {
-                sessionStorage.setItem('bz_v9_reloaded', '1');
+            if (!location.search.includes('v=10') && !sessionStorage.getItem('bz_v10_reloaded')) {
+                sessionStorage.setItem('bz_v10_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=9' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=10' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -74,7 +74,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=9" class="flex items-center space-x-2 group">
+            <a href="index.html?v=10" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -86,7 +86,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=9" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=10" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -96,19 +96,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="index.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="humor.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/neon-stacker.html?v=9" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
+                        <a href="juegos/neon-stacker.html?v=10" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -185,7 +185,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/reflejos-visuales.html?v=9" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
+                        <a href="juegos/reflejos-visuales.html?v=10" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -208,7 +208,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/cyber-memory.html?v=9" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
+                        <a href="juegos/cyber-memory.html?v=10" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -222,35 +222,49 @@
 
         <!-- REPRODUCTOR DE VIDEO FLASH IA EN PORTADA -->
         
-        <!-- REPRODUCTOR DE VIDEO FLASH IA (60 SEGUNDOS - LOCUCIÓN RÁPIDA + MONETIZACIÓN) -->
+        <!-- REPRODUCTOR DE VIDEO IA CON IMAGEN EN MOVIMIENTO + LECTURA COMPLETA -->
         <div class="bg-gray-900/95 border border-cyan-500/40 rounded-3xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div class="flex items-center space-x-2">
-                    <span class="text-xl animate-pulse">🎬</span>
+                    <span class="text-xl animate-pulse">📺</span>
                     <div>
-                        <h2 class="text-base sm:text-lg font-black text-white leading-tight">ByteZone TV • Resumen Flash IA (45s)</h2>
+                        <h2 class="text-base sm:text-lg font-black text-white leading-tight">ByteZone TV • Noticiero Visual IA</h2>
                         <p id="pulseUpdatedBadge" class="text-[11px] text-cyan-400 font-semibold">🤖 Actualizado automáticamente por el Agente CEO</p>
                     </div>
                 </div>
                 <div class="flex items-center space-x-1.5">
                     <button id="aiReelSpeedBtn" onclick="toggleReelSpeed()" class="text-[11px] bg-gray-800 hover:bg-gray-700 text-amber-300 font-bold px-2.5 py-1 rounded-xl border border-gray-700 transition">
-                        ⚡ Voz: 1.3x Rápido
+                        ⚡ Voz: 1.2x Dinámico
                     </button>
                     <span id="aiReelStepCounter" class="text-[11px] bg-purple-500/20 text-purple-300 border border-purple-500/40 font-bold px-2.5 py-1 rounded-xl">
-                        Escena 1/5
+                        Noticia 1/5
                     </span>
                 </div>
             </div>
 
-            <!-- PANTALLA PRINCIPAL DEL VIDEO IA -->
-            <div id="aiReelScreen" onclick="toggleAiVideoReel()" class="cursor-pointer relative w-full rounded-2xl overflow-hidden p-5 sm:p-7 min-h-[250px] sm:min-h-[270px] flex flex-col justify-between border-2 border-cyan-400/40 shadow-2xl transition-all duration-500 bg-gradient-to-br from-blue-600 via-purple-700 to-pink-700">
+            <!-- PANTALLA PRINCIPAL DE VIDEO CON FOTO REAL ANIMADA Y SUBTÍTULOS -->
+            <div id="aiReelScreen" onclick="toggleAiVideoReel()" class="cursor-pointer relative w-full rounded-2xl overflow-hidden p-4 sm:p-6 min-h-[300px] sm:min-h-[340px] flex flex-col justify-between border-2 border-cyan-400/50 shadow-2xl bg-gray-950">
                 
-                <!-- BARRA SUPERIOR DE ESCENA Y ECUALIZADOR -->
+                <!-- IMAGEN DE FONDO CON EFECTO VIDEO (KEN BURNS ZOOM) -->
+                <img id="aiReelBgImage" 
+                     src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1" 
+                     alt="Noticia IA"
+                     onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80'"
+                     class="absolute inset-0 w-full h-full object-cover opacity-45 scale-100 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/75 to-gray-950/40"></div>
+
+                <!-- BARRA SUPERIOR TV EN VIVO Y ECUALIZADOR -->
                 <div class="flex items-center justify-between z-10">
-                    <span id="aiReelBadge" class="text-[10px] sm:text-xs font-black uppercase tracking-wider bg-black/45 backdrop-blur-md text-cyan-300 px-3 py-1 rounded-full border border-white/20">
-                        FLASH IA • SEMANAL
-                    </span>
-                    <div id="aiReelEqualizer" class="flex items-end space-x-1 h-4 transition-opacity opacity-40">
+                    <div class="flex items-center space-x-2">
+                        <span class="flex items-center space-x-1 bg-red-600/90 text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                            <span>TV IA</span>
+                        </span>
+                        <span id="aiReelBadge" class="text-[10px] sm:text-xs font-black uppercase tracking-wider bg-black/65 backdrop-blur-md text-cyan-300 px-3 py-1 rounded-full border border-cyan-400/30">
+                            NOTICIA #1 • IA & FUTURO
+                        </span>
+                    </div>
+                    <div id="aiReelEqualizer" class="flex items-end space-x-1 h-4 transition-opacity opacity-40 bg-black/50 px-2 py-1 rounded-lg">
                         <span class="w-1 h-3 bg-cyan-300 rounded animate-ping"></span>
                         <span class="w-1 h-4 bg-pink-400 rounded animate-pulse"></span>
                         <span class="w-1 h-2 bg-amber-300 rounded animate-bounce"></span>
@@ -258,32 +272,51 @@
                     </div>
                 </div>
 
-                <!-- CONTENIDO CENTRAL DE LA ESCENA -->
-                <div class="my-4 text-center z-10 max-w-xl mx-auto">
-                    <div id="aiReelIcon" class="text-4xl sm:text-5xl mb-2 transform transition duration-300 inline-block">⚡</div>
-                    <h3 id="aiReelHeadline" class="text-lg sm:text-2xl font-black text-white drop-shadow-md leading-tight">
-                        ¡Resumen Tech & IA en 45 Segundos!
-                    </h3>
-                    <p id="aiReelSubtext" class="text-xs sm:text-sm text-gray-100 mt-2 bg-black/45 backdrop-blur-sm p-2.5 rounded-xl border border-white/10 leading-relaxed">
-                        Lo más impactante de la semana en tecnología, inventos e Inteligencia Artificial explicado a toda velocidad.
-                    </p>
+                <!-- TARJETA VISUAL DE LA NOTICIA EN PANTALLA -->
+                <div class="my-3 z-10 flex flex-col sm:flex-row items-center gap-3.5 bg-black/55 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-white/15 shadow-xl">
+                    <img id="aiReelThumbImage"
+                         src="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1"
+                         alt="Miniatura Noticia"
+                         onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80'"
+                         class="w-full sm:w-36 h-28 sm:h-28 object-cover rounded-xl border border-cyan-400/40 flex-shrink-0 shadow-md">
+                    <div class="text-left flex-grow">
+                        <h3 id="aiReelHeadline" class="text-sm sm:text-lg font-black text-white drop-shadow leading-snug">
+                            Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector
+                        </h3>
+                        <p id="aiReelSubtext" class="text-xs text-gray-200 mt-1.5 leading-relaxed">
+                            En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con contenidos creados con IA generativa, Google lanzó SynthID Detector.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- BARRA DE PROGRESO INFERIOR -->
-                <div class="w-full bg-black/40 h-2 rounded-full overflow-hidden z-10">
-                    <div id="aiReelProgressBar" class="bg-gradient-to-r from-cyan-300 via-amber-300 to-pink-400 h-full transition-all duration-300" style="width: 20%;"></div>
+                <!-- BOTÓN RÁPIDO PARA ABRIR Y ESCUCHAR LA NOTICIA COMPLETA + BARRA DE PROGRESO -->
+                <div class="z-10 space-y-2">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="text-[11px] text-gray-300 font-semibold">💡 Cierra cada noticia completa antes de pasar a la siguiente</span>
+                        <button id="aiReelOpenFullBtn" onclick="event.stopPropagation(); openFullNewsReader(0, false)" class="bg-cyan-500/90 hover:bg-cyan-400 text-gray-950 font-black text-[11px] px-3 py-1.5 rounded-xl shadow transition flex items-center space-x-1 flex-shrink-0">
+                            <span>📖</span>
+                            <span>Abrir Noticia Completa</span>
+                        </button>
+                    </div>
+                    <div class="w-full bg-black/60 h-2 rounded-full overflow-hidden">
+                        <div id="aiReelProgressBar" class="bg-gradient-to-r from-cyan-300 via-amber-300 to-pink-400 h-full transition-all duration-300" style="width: 20%;"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- CONTROLES DEL REPRODUCTOR + BOTÓN DE RECOMPENSA VIP (MONETIZACIÓN) -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-3">
-                <button id="aiReelPlayBtn" onclick="toggleAiVideoReel()" class="sm:col-span-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-95 active:scale-95 text-white font-black py-3 px-4 rounded-2xl shadow-lg shadow-cyan-500/25 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
+            <!-- CONTROLES DEL REPRODUCTOR -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
+                <button id="aiReelPlayBtn" onclick="toggleAiVideoReel()" class="col-span-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-95 active:scale-95 text-white font-black py-3 px-4 rounded-2xl shadow-lg shadow-cyan-500/25 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
                     <span>▶</span>
-                    <span>REPRODUCIR VIDEO IA (VOZ RÁPIDA)</span>
+                    <span>REPRODUCIR NOTICIERO EN VIDEO IA</span>
                 </button>
-                <button onclick="nextAiReelScene()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-bold py-3 px-4 rounded-2xl border border-gray-700 text-xs flex items-center justify-center space-x-1.5 transition">
+                <button onclick="prevAiReelScene()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-bold py-3 px-3 rounded-2xl border border-gray-700 text-xs flex items-center justify-center space-x-1 transition">
+                    <span>⏮</span>
+                    <span>Anterior</span>
+                </button>
+                <button onclick="nextAiReelScene()" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-bold py-3 px-3 rounded-2xl border border-gray-700 text-xs flex items-center justify-center space-x-1 transition">
                     <span>⏭</span>
-                    <span>Siguiente Noticia</span>
+                    <span>Siguiente</span>
                 </button>
             </div>
 
@@ -302,6 +335,77 @@
             </div>
         </div>
 
+        <!-- MODAL LECTOR Y LOCUTOR DE NOTICIA COMPLETA -->
+        <div id="fullNewsModal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+            <div class="bg-gray-900 border border-cyan-500/40 rounded-3xl max-w-2xl w-full max-h-[92vh] flex flex-col shadow-2xl overflow-hidden my-auto">
+                
+                <!-- CABECERA DEL MODAL CON FOTO DE LA NOTICIA -->
+                <div class="relative h-48 sm:h-56 w-full bg-gray-950 flex-shrink-0">
+                    <img id="fullNewsImg" src="" alt="Foto de la noticia" 
+                         onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80'"
+                         class="w-full h-full object-cover opacity-85">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+                    <button onclick="closeFullNewsReader()" class="absolute top-3 right-3 bg-black/75 hover:bg-black text-white font-black text-xs px-3.5 py-2 rounded-full border border-white/20 shadow-lg">
+                        ✕ Cerrar
+                    </button>
+                    <div class="absolute bottom-3 left-4 right-4">
+                        <span id="fullNewsBadge" class="text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 backdrop-blur-md">
+                            NOTICIA COMPLETA
+                        </span>
+                        <h2 id="fullNewsTitle" class="text-base sm:text-xl font-black text-white mt-1.5 leading-snug drop-shadow"></h2>
+                    </div>
+                </div>
+
+                <!-- BARRA DE CONTROL DE VOZ COMPLETA -->
+                <div class="p-4 bg-gray-950/90 border-b border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 flex-shrink-0">
+                    <button id="fullNewsSpeakBtn" onclick="toggleFullArticleSpeech()" class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-95 text-white font-black py-3 px-5 rounded-2xl shadow-lg shadow-cyan-500/25 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
+                        <span>🔊</span>
+                        <span>LEERME TODA LA NOTICIA EN VOZ ALTA</span>
+                    </button>
+                    <p id="fullNewsAudioStatus" class="text-[11px] text-gray-400">
+                        📖 Puedes leer el artículo abajo o tocar el botón azul para escucharlo completo.
+                    </p>
+                </div>
+
+                <!-- CUERPO COMPLETO DEL ARTÍCULO (PÁRRAFOS RESALTADOS MIENTRAS HABLA) -->
+                <div id="fullNewsBody" class="p-4 sm:p-6 overflow-y-auto space-y-2 flex-grow"></div>
+
+                <!-- PIE DEL MODAL: NAVEGAR ENTRE NOTICIAS -->
+                <div class="p-4 bg-gray-950/90 border-t border-gray-800 flex flex-wrap items-center justify-between gap-2 flex-shrink-0">
+                    <div class="flex items-center space-x-2">
+                        <button onclick="openFullNewsReader((window.bzReelState.currentArticleIdx || 0) - 1, false)" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-bold text-xs px-3.5 py-2 rounded-xl border border-gray-700">
+                            ⏮ Noticia Anterior
+                        </button>
+                        <button onclick="openFullNewsReader((window.bzReelState.currentArticleIdx || 0) + 1, false)" class="bg-gray-800 hover:bg-gray-700 text-gray-200 font-bold text-xs px-3.5 py-2 rounded-xl border border-gray-700">
+                            ⏭ Siguiente Noticia
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <a id="fullNewsSourceLink" href="#" target="_blank" rel="noopener" class="text-xs text-cyan-400 hover:underline font-bold">
+                            Fuente original ↗
+                        </a>
+                        <button onclick="closeFullNewsReader()" class="bg-gray-800 hover:bg-gray-700 text-white font-bold text-xs px-4 py-2 rounded-xl border border-gray-700">
+                            Cerrar Lector
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- NOTICIAS COMPLETAS DE LA SEMANA (CON FOTO, LECTURA COMPLETA Y LOCUCIÓN COMPLETA) -->
+        <div class="space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <h2 class="text-lg sm:text-xl font-black text-white flex items-center space-x-2">
+                    <span>📰</span>
+                    <span>Noticias Completas de IA & Tecnología (Leer o Escuchar)</span>
+                </h2>
+                <span class="text-[11px] text-cyan-400 font-bold bg-cyan-500/10 border border-cyan-500/30 px-2.5 py-1 rounded-full">
+                    🔊 Toca cualquier noticia para abrirla completa
+                </span>
+            </div>
+            <div id="weeklyNewsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
 
         <!-- EL BAÚL ARCADE (ROTACIÓN SEMANAL GESTIONADA POR EL AGENTE CEO) -->
         <div class="bg-gradient-to-r from-gray-900 via-amber-950/20 to-gray-900 border border-amber-500/40 rounded-3xl p-5 sm:p-6 shadow-xl">
@@ -329,7 +433,7 @@
                         Pilota la nave neón y sobrevive la mayor cantidad de segundos esquivando meteoritos cibernéticos. ¡Tiene su propio Torneo Semanal y Escudo de Segunda Oportunidad!
                     </p>
                 </div>
-                <button onclick="openVaultGameWithReward('juegos/cyber-dodge.html?v=9')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
+                <button onclick="openVaultGameWithReward('juegos/cyber-dodge.html?v=10')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
                     <span>🔓</span>
                     <span>RESCATAR DEL BAÚL & JUGAR</span>
                 </button>
@@ -338,14 +442,14 @@
 
         <!-- ACCESOS RÁPIDOS ADICIONALES -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="hacks.html?v=9" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
+            <a href="hacks.html?v=10" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🤖</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Noticias IA, Inventos & Hacks</h4>
                     <p class="text-xs text-gray-400">Lo último de la semana en Inteligencia Artificial, gadgets y trucos secretos.</p>
                 </div>
             </a>
-            <a href="humor.html?v=9" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
+            <a href="humor.html?v=10" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🎭</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
@@ -390,7 +494,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="stats.html?v=9" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=10" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -1223,95 +1327,43 @@
         }
 
         // ==========================================================
-        // REPRODUCTOR DE VIDEO FLASH IA (VOZ RÁPIDA + MONETIZACIÓN)
+        // REPRODUCTOR DE VIDEO FLASH IA + LECTOR DE NOTICIA COMPLETA
         // ==========================================================
         const DEFAULT_WEEKLY_PULSE = {
             week_id: "W2026-10-12",
             updated_human: "17/10/2026",
             video_reel: {
-                title: "ByteZone Flash IA • Edición Semanal",
-                subtitle: "Video-Resumen Rápido con Locución de Inteligencia Artificial",
-                duration_label: "45 seg",
+                title: "ByteZone TV • Noticiero IA Semanal",
+                subtitle: "5 Noticias Completas con Imagen + Voz IA + Lectura Completa",
+                duration_label: "5 Noticias",
                 scenes: [
                     {
-                        id: "intro",
-                        badge: "FLASH IA • SEMANAL",
-                        icon: "⚡",
-                        headline: "¡Resumen Tech & IA en 45 Segundos!",
-                        subtext: "Lo más impactante de la semana en tecnología, inventos e Inteligencia Artificial explicado al instante.",
-                        voice_script: "¡Qué tal equipo de ByteZone! Arrancamos el resumen flash de tecnología e inteligencia artificial de esta semana. ¡Vamos a toda velocidad!",
-                        bg_gradient: "from-blue-600 via-purple-700 to-pink-700",
-                        duration_ms: 6500
-                    },
-                    {
                         id: "news_1",
-                        badge: "BOMBAZO #1 • TECH & IA",
+                        news_index: 0,
+                        badge: "NOTICIA #1 • IA & FUTURO",
                         icon: "🤖",
                         headline: "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
-                        subtext: "La nueva herramienta detecta marcas de agua invisibles en imágenes, audios y textos generados por Inteligencia Artificial en segundos.",
-                        voice_script: "Número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. Esta nueva tecnología escanea marcas invisibles para descubrir al instante si un video o audio fue creado con inteligencia artificial.",
-                        bg_gradient: "from-cyan-600 to-blue-900",
-                        duration_ms: 9500
+                        subtext: "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con contenidos creados con IA generativa, Google lanzó SynthID Detector para identificar marcas de agua invisibles al instante.",
+                        image: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1",
+                        source: "Hipertextual IA",
+                        voice_script: "Noticia número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. En un mundo donde la realidad se pone a prueba todos los días con contenidos creados con inteligencia artificial, esta plataforma de Google permite identificar marcas de agua invisibles en segundos. Pasamos a la siguiente noticia.",
+                        bg_gradient: "from-cyan-600 to-blue-900"
                     },
                     {
                         id: "news_2",
-                        badge: "BOMBAZO #2 • LO NUEVO",
+                        news_index: 1,
+                        badge: "NOTICIA #2 • INNOVACIÓN",
                         icon: "🚀",
                         headline: "Linux sigue los pasos de Windows y añade un asistente de IA local a Ubuntu",
-                        subtext: "Canonical presenta Ubuntu con asistente de Inteligencia Artificial integrado que funciona directo en tu equipo.",
-                        voice_script: "Número 2: Linux sigue los pasos de Windows y añade un asistente de inteligencia artificial nativo a su última versión de Ubuntu, marcando un antes y un después en sistemas operativos.",
-                        bg_gradient: "from-purple-600 to-indigo-900",
-                        duration_ms: 9500
-                    },
-                    {
-                        id: "news_3",
-                        badge: "BOMBAZO #3 • TENDENCIA",
-                        icon: "⚡",
-                        headline: "OpenAI descubre una grabadora escondida en sus oficinas y el FBI interviene",
-                        subtext: "Máxima alerta de seguridad corporativa en los laboratorios donde se entrenan los próximos modelos de Inteligencia Artificial.",
-                        voice_script: "Número 3: Máxima tensión en Silicon Valley. Descubren un dispositivo de grabación oculto en una sala ejecutiva de OpenAI, desatando una investigación federal por espionaje tecnológico.",
-                        bg_gradient: "from-pink-600 to-rose-900",
-                        duration_ms: 9500
-                    },
-                    {
-                        id: "outro",
-                        badge: "🔓 SECRETO VIP & TORNEO",
-                        icon: "👑",
-                        headline: "El nuevo auto 'volador' y el Truco Gamer VIP de la semana",
-                        subtext: "¡Toca el botón dorado debajo del video para desbloquear la Noticia #5 + el Truco VIP y entra al Torneo Semanal!",
-                        voice_script: "Y en el secreto VIP de esta semana: el nuevo prototipo de auto volador y el truco oculto para acelerar tu teléfono antes de jugar. Toca el botón dorado debajo del reproductor para desbloquearlo ahora mismo.",
-                        bg_gradient: "from-amber-500 via-orange-600 to-rose-800",
-                        duration_ms: 9500,
-                        is_vip_hook: true
+                        subtext: "Canonical ha presentado Ubuntu 26.10 con Myna, un asistente de inteligencia artificial por voz que se ejecuta directo en tu computadora sin enviar datos privados a la nube.",
+                        image: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/ubuntu-terminal.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
+                        source: "Hipertextual IA",
+                        voice_script: "Noticia número 2: Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Canonical presentó Ubuntu 26 punto 10 con Myna, un nuevo asistente de voz que procesa todo en tu propio equipo protegiendo tu privacidad al cien por ciento. Pasamos a la siguiente noticia.",
+                        bg_gradient: "from-purple-600 to-indigo-900"
                     }
                 ]
             },
-            weekly_news: [
-                {
-                    title: "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
-                    summary: "En un mundo lleno de contenidos generados por IA, SynthID permite verificar en segundos si una imagen, pista de audio o video fue creado artificialmente.",
-                    source: "Hipertextual IA",
-                    link: "https://hipertextual.com/inteligencia-artificial/como-detectar-fotos-videos-y-audios-creados-con-ia-usando-synthid-detector/"
-                },
-                {
-                    title: "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
-                    summary: "Ubuntu incorpora su propio asistente inteligente local para automatizar comandos, optimizar el sistema y asistir al usuario sin depender de la nube.",
-                    source: "Hipertextual IA",
-                    link: "https://hipertextual.com/inteligencia-artificial/ubuntu-26-10-myna-asistente-ia-local/"
-                },
-                {
-                    title: "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
-                    summary: "La carrera por los secretos de la Inteligencia Artificial llega a niveles de película de espías tras hallarse un micrófono oculto en una sala ejecutiva.",
-                    source: "Hipertextual IA",
-                    link: "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/"
-                },
-                {
-                    title: "La mayoría de los usuarios cree que la IA avanza a una velocidad vertiginosa, según sondeo",
-                    summary: "Los nuevos modelos de voz, video y agentes autónomos están transformando el trabajo y el entretenimiento móvil mucho más rápido de lo previsto.",
-                    source: "Tech Radar",
-                    link: "https://news.google.com/"
-                }
-            ],
+            weekly_news: [],
             vip_hack_of_the_week: {
                 tag: "Secreto Gamer & IA de la Semana",
                 title: "Cómo activar el DNS Ultra-Rápido y liberar RAM oculta en 5 segundos",
@@ -1324,10 +1376,13 @@
             playing: false,
             sceneIdx: 0,
             timer: null,
-            voiceRate: 1.28,
+            voiceRate: 1.22,
             muted: false,
             audioCtx: null,
-            beatInterval: null
+            beatInterval: null,
+            speechSessionId: 0,
+            readingFullArticle: false,
+            currentArticleIdx: 0
         };
 
         async function loadWeeklyPulseData(rootPrefix = "") {
@@ -1352,24 +1407,36 @@
             updateReelSceneUI(0);
 
             const newsGrid = document.getElementById('weeklyNewsContainer');
-            if (newsGrid && Array.isArray(data.weekly_news)) {
-                newsGrid.innerHTML = data.weekly_news.slice(0, 4).map((item, i) => `
-                    <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition shadow-lg flex flex-col justify-between">
+            if (newsGrid && Array.isArray(data.weekly_news) && data.weekly_news.length > 0) {
+                newsGrid.innerHTML = data.weekly_news.map((item, i) => `
+                    <div class="bg-gray-900/95 rounded-3xl border border-gray-800 hover:border-cyan-400/70 transition shadow-xl overflow-hidden flex flex-col justify-between group">
                         <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
-                                    🔥 Top #${i + 1} • ${item.source || 'Tech IA'}
+                            <div onclick="openFullNewsReader(${i}, false)" class="relative h-44 w-full overflow-hidden bg-gray-950 cursor-pointer">
+                                <img src="${item.image || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80'}" 
+                                     alt="${(item.title || '').replace(/"/g, '&quot;')}" 
+                                     onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80'"
+                                     class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/30 to-transparent"></div>
+                                <span class="absolute top-3 left-3 text-[10px] font-black uppercase px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-cyan-300 border border-cyan-500/40">
+                                    🔥 Noticia #${i + 1} • ${item.source || 'Tech IA'}
                                 </span>
-                                <span class="text-[11px] text-gray-500">${data.updated_human || ''}</span>
+                                <span class="absolute bottom-2.5 right-3 text-[10px] font-bold bg-cyan-500/90 text-gray-950 px-2.5 py-0.5 rounded-full shadow">
+                                    📖 Toca para abrir completa
+                                </span>
                             </div>
-                            <h3 class="text-sm sm:text-base font-black text-white leading-snug">${item.title}</h3>
-                            <p class="text-xs text-gray-300 mt-2 leading-relaxed">${item.summary}</p>
+                            <div class="p-5">
+                                <h3 onclick="openFullNewsReader(${i}, false)" class="text-sm sm:text-base font-black text-white group-hover:text-cyan-400 transition leading-snug cursor-pointer">${item.title}</h3>
+                                <p class="text-xs text-gray-300 mt-2 leading-relaxed">${item.summary}</p>
+                            </div>
                         </div>
-                        <div class="mt-4 pt-3 border-t border-gray-800/80 flex justify-between items-center text-xs">
-                            <span class="text-purple-400 font-semibold">Seleccionado por Agente SEO</span>
-                            <button onclick="playSpecificNewsScene(${i + 1})" class="text-cyan-400 hover:underline font-bold flex items-center space-x-1">
+                        <div class="px-5 pb-4 pt-3 border-t border-gray-800/80 flex flex-wrap gap-2 justify-between items-center text-xs">
+                            <button onclick="openFullNewsReader(${i}, false)" class="bg-gray-800 hover:bg-gray-700 text-white font-bold px-3 py-2 rounded-xl border border-gray-700 flex items-center space-x-1.5 transition">
+                                <span>📖</span>
+                                <span>Leer Noticia Completa</span>
+                            </button>
+                            <button onclick="openFullNewsReader(${i}, true)" class="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 hover:from-cyan-500/30 hover:to-blue-500/30 text-cyan-300 border border-cyan-500/40 font-black px-3 py-2 rounded-xl flex items-center space-x-1.5 transition">
                                 <span>🔊</span>
-                                <span>Escuchar en Video IA</span>
+                                <span>Escuchar Completa</span>
                             </button>
                         </div>
                     </div>
@@ -1397,7 +1464,7 @@
                         const freqs = [110, 146.83, 164.81, 220];
                         osc.type = 'sine';
                         osc.frequency.setValueAtTime(freqs[step % freqs.length], ctx.currentTime);
-                        gain.gain.setValueAtTime(0.025, ctx.currentTime);
+                        gain.gain.setValueAtTime(0.018, ctx.currentTime);
                         gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
                         osc.connect(gain);
                         gain.connect(ctx.destination);
@@ -1405,7 +1472,7 @@
                         osc.stop(ctx.currentTime + 0.19);
                         step++;
                     } catch (err) {}
-                }, 420);
+                }, 440);
             } catch (e) {}
         }
 
@@ -1413,28 +1480,76 @@
             clearInterval(window.bzReelState.beatInterval);
         }
 
-        function speakReelText(text, onEndCallback) {
+        // divide un texto largo en oraciones completas para que Android/Chrome NUNCA corte la voz a mitad
+        function splitIntoSpeakableSentences(text) {
+            if (!text) return [];
+            const protectedText = text
+                .replace(/EE\.\s*UU\./g, 'Estados Unidos')
+                .replace(/(\d+)\.(\d+)/g, '$1 punto $2');
+            const rawParts = protectedText.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [protectedText];
+            return rawParts.map(s => s.trim()).filter(s => s.length > 1);
+        }
+
+        function speakTextSentenceBySentence(fullText, onSentenceChange, onAllFinished) {
             if (!('speechSynthesis' in window) || window.bzReelState.muted) {
                 return false;
             }
+            const sentences = splitIntoSpeakableSentences(fullText);
+            if (sentences.length === 0) return false;
+
+            window.bzReelState.speechSessionId++;
+            const currentSession = window.bzReelState.speechSessionId;
+
             try {
                 window.speechSynthesis.cancel();
-                const utter = new SpeechSynthesisUtterance(text);
-                utter.lang = 'es-ES';
-                utter.rate = window.bzReelState.voiceRate || 1.28;
-                utter.pitch = 1.05;
-                const voices = window.speechSynthesis.getVoices() || [];
-                const esVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Sabina') || v.name.includes('Helena')))
-                             || voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es'));
-                if (esVoice) utter.voice = esVoice;
-                utter.onend = () => {
-                    if (typeof onEndCallback === 'function') onEndCallback();
-                };
-                window.speechSynthesis.speak(utter);
-                return true;
-            } catch (e) {
-                return false;
-            }
+            } catch (e) {}
+
+            let idx = 0;
+            const speakNextSentence = () => {
+                if (currentSession !== window.bzReelState.speechSessionId) return;
+                if (idx >= sentences.length) {
+                    if (typeof onAllFinished === 'function') onAllFinished();
+                    return;
+                }
+                const sentenceText = sentences[idx];
+                if (typeof onSentenceChange === 'function') {
+                    onSentenceChange(sentenceText, idx, sentences.length);
+                }
+
+                try {
+                    const utter = new SpeechSynthesisUtterance(sentenceText);
+                    utter.lang = 'es-ES';
+                    utter.rate = window.bzReelState.voiceRate || 1.22;
+                    utter.pitch = 1.03;
+                    const voices = window.speechSynthesis.getVoices() || [];
+                    const esVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Sabina') || v.name.includes('Helena') || v.name.includes('Paulina')))
+                                 || voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es'));
+                    if (esVoice) utter.voice = esVoice;
+
+                    let finishedThis = false;
+                    const advance = () => {
+                        if (finishedThis || currentSession !== window.bzReelState.speechSessionId) return;
+                        finishedThis = true;
+                        clearTimeout(sentenceSafetyTimer);
+                        idx++;
+                        setTimeout(speakNextSentence, 120);
+                    };
+
+                    utter.onend = advance;
+                    utter.onerror = advance;
+
+                    // Tiempo de seguridad amplio basado en longitud real para jamás cortar antes de que termine de hablar
+                    const estimatedMs = Math.max(8000, Math.ceil((sentenceText.length / 8) * 1000) + 5000);
+                    const sentenceSafetyTimer = setTimeout(advance, estimatedMs);
+
+                    window.speechSynthesis.speak(utter);
+                } catch (err) {
+                    if (typeof onAllFinished === 'function') onAllFinished();
+                }
+            };
+
+            setTimeout(speakNextSentence, 60);
+            return true;
         }
 
         function updateReelSceneUI(idx) {
@@ -1443,33 +1558,49 @@
             const sc = scenes[idx] || scenes[0];
 
             const screen = document.getElementById('aiReelScreen');
+            const bgImg = document.getElementById('aiReelBgImage');
+            const thumbImg = document.getElementById('aiReelThumbImage');
             const badge = document.getElementById('aiReelBadge');
-            const icon = document.getElementById('aiReelIcon');
             const headline = document.getElementById('aiReelHeadline');
             const subtext = document.getElementById('aiReelSubtext');
             const stepText = document.getElementById('aiReelStepCounter');
             const progressBar = document.getElementById('aiReelProgressBar');
             const playBtn = document.getElementById('aiReelPlayBtn');
             const eqBars = document.getElementById('aiReelEqualizer');
+            const openFullBtn = document.getElementById('aiReelOpenFullBtn');
 
             if (!screen) return;
-            screen.className = `relative w-full rounded-2xl overflow-hidden p-5 sm:p-7 min-h-[250px] sm:min-h-[270px] flex flex-col justify-between border-2 border-cyan-400/40 shadow-2xl transition-all duration-500 bg-gradient-to-br ${sc.bg_gradient || 'from-blue-700 to-purple-900'}`;
-            if (badge) badge.textContent = sc.badge || 'FLASH IA';
-            if (icon) icon.textContent = sc.icon || '🤖';
+            const defaultImg = 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80';
+            const imgUrl = sc.image || defaultImg;
+
+            if (bgImg) {
+                bgImg.src = imgUrl;
+                bgImg.className = window.bzReelState.playing
+                    ? "absolute inset-0 w-full h-full object-cover opacity-55 scale-110 transition-transform duration-[9000ms] ease-out"
+                    : "absolute inset-0 w-full h-full object-cover opacity-45 scale-100 transition-transform duration-700";
+            }
+            if (thumbImg) {
+                thumbImg.src = imgUrl;
+            }
+            if (badge) badge.textContent = sc.badge || `NOTICIA #${idx + 1}`;
             if (headline) headline.textContent = sc.headline || '';
             if (subtext) subtext.textContent = sc.subtext || '';
-            if (stepText) stepText.textContent = `Escena ${idx + 1}/${scenes.length}`;
+            if (stepText) stepText.textContent = `Noticia ${idx + 1}/${scenes.length}`;
             if (progressBar) {
                 const pct = Math.round(((idx + 1) / scenes.length) * 100);
                 progressBar.style.width = `${pct}%`;
             }
+            if (openFullBtn) {
+                const targetNewsIdx = (typeof sc.news_index === 'number') ? sc.news_index : idx;
+                openFullBtn.setAttribute('onclick', `event.stopPropagation(); openFullNewsReader(${targetNewsIdx}, false)`);
+            }
             if (playBtn) {
                 playBtn.innerHTML = window.bzReelState.playing
-                    ? '<span>⏸</span><span>PAUSAR VIDEO IA</span>'
-                    : '<span>▶</span><span>REPRODUCIR VIDEO IA (VOZ RÁPIDA)</span>';
+                    ? '<span>⏸</span><span>PAUSAR NOTICIERO IA</span>'
+                    : '<span>▶</span><span>REPRODUCIR NOTICIERO EN VIDEO IA</span>';
             }
             if (eqBars) {
-                eqBars.style.opacity = window.bzReelState.playing ? '1' : '0.35';
+                eqBars.style.opacity = window.bzReelState.playing ? '1' : '0.4';
             }
         }
 
@@ -1488,6 +1619,7 @@
 
             trackByteZoneEvent('news_video', 'play');
             window.bzReelState.playing = true;
+            window.bzReelState.readingFullArticle = false;
             window.bzReelState.sceneIdx = startIdx;
             startCyberBeat();
             runReelScene(startIdx);
@@ -1520,22 +1652,45 @@
                 }
             };
 
-            const hasSpeech = speakReelText(sc.voice_script || sc.headline, () => {
-                setTimeout(goNext, 450);
-            });
+            const subtextEl = document.getElementById('aiReelSubtext');
+            const hasSpeech = speakTextSentenceBySentence(
+                sc.voice_script || (sc.headline + ". " + sc.subtext),
+                (currentSentence) => {
+                    if (subtextEl) subtextEl.textContent = currentSentence;
+                },
+                () => {
+                    // Espera a que cierre la noticia completa antes de pasar a la siguiente
+                    setTimeout(goNext, 650);
+                }
+            );
 
-            const fallbackMs = hasSpeech ? Math.max(sc.duration_ms || 9000, 11000) : (sc.duration_ms || 7500);
-            window.bzReelState.timer = setTimeout(goNext, fallbackMs);
+            // Solo usar temporizador si el navegador no soporta voz sintetizada
+            if (!hasSpeech) {
+                window.bzReelState.timer = setTimeout(goNext, 9000);
+            }
         }
 
         function stopAiVideoReel() {
             window.bzReelState.playing = false;
+            window.bzReelState.speechSessionId++;
             clearTimeout(window.bzReelState.timer);
             stopCyberBeat();
             if ('speechSynthesis' in window) {
                 try { window.speechSynthesis.cancel(); } catch (e) {}
             }
             updateReelSceneUI(window.bzReelState.sceneIdx || 0);
+        }
+
+        function prevAiReelScene() {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            const prevIdx = ((window.bzReelState.sceneIdx || 0) - 1 + scenes.length) % scenes.length;
+            if (window.bzReelState.playing) {
+                runReelScene(prevIdx);
+            } else {
+                window.bzReelState.sceneIdx = prevIdx;
+                updateReelSceneUI(prevIdx);
+            }
         }
 
         function nextAiReelScene() {
@@ -1557,17 +1712,182 @@
         }
 
         function toggleReelSpeed() {
-            const current = window.bzReelState.voiceRate || 1.28;
-            const next = current >= 1.45 ? 1.15 : (current >= 1.25 ? 1.48 : 1.28);
+            const current = window.bzReelState.voiceRate || 1.22;
+            const next = current >= 1.4 ? 1.05 : (current >= 1.18 ? 1.42 : 1.22);
             window.bzReelState.voiceRate = next;
             const btn = document.getElementById('aiReelSpeedBtn');
             if (btn) {
-                const label = next >= 1.45 ? '1.5x Turbo' : (next >= 1.25 ? '1.3x Rápido' : '1.0x Normal');
+                const label = next >= 1.4 ? '1.4x Turbo' : (next >= 1.18 ? '1.2x Dinámico' : '1.0x Normal');
                 btn.textContent = '⚡ Voz: ' + label;
             }
             if (window.bzReelState.playing) {
                 runReelScene(window.bzReelState.sceneIdx);
+            } else if (window.bzReelState.readingFullArticle) {
+                speakFullArticleInModal(window.bzReelState.currentArticleIdx);
             }
+        }
+
+        // ==========================================================
+        // LECTOR Y LOCUTOR DE NOTICIA COMPLETA (MODAL INTERACTIVO)
+        // ==========================================================
+        function openFullNewsReader(newsIdx, autoSpeak = false) {
+            stopAiVideoReel();
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const newsList = (Array.isArray(data.weekly_news) && data.weekly_news.length > 0)
+                ? data.weekly_news
+                : (data.video_reel.scenes || []).map(s => ({
+                    title: s.headline,
+                    summary: s.subtext,
+                    full_paragraphs: [s.subtext],
+                    full_voice_script: s.voice_script,
+                    image: s.image,
+                    source: s.source || 'ByteZone IA'
+                }));
+
+            if (newsIdx < 0) newsIdx = newsList.length - 1;
+            if (newsIdx >= newsList.length) newsIdx = 0;
+            window.bzReelState.currentArticleIdx = newsIdx;
+
+            const item = newsList[newsIdx] || newsList[0];
+            const modal = document.getElementById('fullNewsModal');
+            if (!modal) return;
+
+            const imgEl = document.getElementById('fullNewsImg');
+            const badgeEl = document.getElementById('fullNewsBadge');
+            const titleEl = document.getElementById('fullNewsTitle');
+            const bodyEl = document.getElementById('fullNewsBody');
+            const sourceLinkEl = document.getElementById('fullNewsSourceLink');
+
+            if (imgEl) {
+                imgEl.src = item.image || 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80';
+            }
+            if (badgeEl) {
+                badgeEl.textContent = `📰 NOTICIA #${newsIdx + 1} DE ${newsList.length} • ${item.source || 'ByteZone Tech'}`;
+            }
+            if (titleEl) {
+                titleEl.textContent = item.title || '';
+            }
+            const paragraphs = (Array.isArray(item.full_paragraphs) && item.full_paragraphs.length > 0)
+                ? item.full_paragraphs
+                : [item.summary || ''];
+
+            if (bodyEl) {
+                bodyEl.innerHTML = paragraphs.map((p, pIdx) => `
+                    <p id="fullNewsPara_${pIdx}" class="text-sm sm:text-base text-gray-200 leading-relaxed p-3 rounded-2xl transition border border-transparent">
+                        ${p}
+                    </p>
+                `).join('');
+            }
+            if (sourceLinkEl) {
+                if (item.link) {
+                    sourceLinkEl.href = item.link;
+                    sourceLinkEl.classList.remove('hidden');
+                } else {
+                    sourceLinkEl.classList.add('hidden');
+                }
+            }
+
+            modal.classList.remove('hidden');
+            updateFullNewsAudioBtn(false);
+
+            if (autoSpeak) {
+                speakFullArticleInModal(newsIdx);
+            }
+        }
+
+        function updateFullNewsAudioBtn(isReading) {
+            const btn = document.getElementById('fullNewsSpeakBtn');
+            const status = document.getElementById('fullNewsAudioStatus');
+            if (btn) {
+                if (isReading) {
+                    btn.innerHTML = '<span>⏹</span><span>DETENER LECTURA EN VOZ ALTA</span>';
+                    btn.className = "w-full sm:w-auto bg-gradient-to-r from-rose-600 to-pink-600 hover:opacity-95 text-white font-black py-3 px-5 rounded-2xl shadow-lg text-xs sm:text-sm flex items-center justify-center space-x-2 transition";
+                } else {
+                    btn.innerHTML = '<span>🔊</span><span>LEERME TODA LA NOTICIA EN VOZ ALTA</span>';
+                    btn.className = "w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-95 text-white font-black py-3 px-5 rounded-2xl shadow-lg shadow-cyan-500/25 text-xs sm:text-sm flex items-center justify-center space-x-2 transition";
+                }
+            }
+            if (status) {
+                status.textContent = isReading ? "🎙️ Leyendo el artículo completo párrafo por párrafo..." : "📖 Puedes leer el artículo abajo o tocar el botón azul para escucharlo completo.";
+            }
+        }
+
+        function toggleFullArticleSpeech() {
+            if (window.bzReelState.readingFullArticle) {
+                stopFullArticleSpeech();
+            } else {
+                speakFullArticleInModal(window.bzReelState.currentArticleIdx || 0);
+            }
+        }
+
+        function stopFullArticleSpeech() {
+            window.bzReelState.readingFullArticle = false;
+            window.bzReelState.speechSessionId++;
+            if ('speechSynthesis' in window) {
+                try { window.speechSynthesis.cancel(); } catch (e) {}
+            }
+            document.querySelectorAll('[id^="fullNewsPara_"]').forEach(el => {
+                el.className = "text-sm sm:text-base text-gray-200 leading-relaxed p-3 rounded-2xl transition border border-transparent";
+            });
+            updateFullNewsAudioBtn(false);
+        }
+
+        function speakFullArticleInModal(newsIdx) {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const newsList = data.weekly_news || [];
+            const item = newsList[newsIdx];
+            if (!item) return;
+
+            window.bzReelState.readingFullArticle = true;
+            updateFullNewsAudioBtn(true);
+
+            const paragraphs = (Array.isArray(item.full_paragraphs) && item.full_paragraphs.length > 0)
+                ? item.full_paragraphs
+                : [item.summary || ''];
+
+            window.bzReelState.speechSessionId++;
+            const session = window.bzReelState.speechSessionId;
+            let pIndex = -1; // -1 = leyendo el título
+
+            const readNextParagraph = () => {
+                if (!window.bzReelState.readingFullArticle || session !== window.bzReelState.speechSessionId) return;
+
+                document.querySelectorAll('[id^="fullNewsPara_"]').forEach(el => {
+                    el.className = "text-sm sm:text-base text-gray-200 leading-relaxed p-3 rounded-2xl transition border border-transparent";
+                });
+
+                if (pIndex === -1) {
+                    const introText = `${item.title}. Publicado por ${item.source || 'ByteZone'}.`;
+                    pIndex = 0;
+                    speakTextSentenceBySentence(introText, null, readNextParagraph);
+                    return;
+                }
+
+                if (pIndex >= paragraphs.length) {
+                    stopFullArticleSpeech();
+                    return;
+                }
+
+                const activeParaEl = document.getElementById(`fullNewsPara_${pIndex}`);
+                if (activeParaEl) {
+                    activeParaEl.className = "text-sm sm:text-base text-white font-semibold leading-relaxed p-3.5 rounded-2xl transition bg-cyan-950/60 border border-cyan-400/50 shadow-lg";
+                    activeParaEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+
+                const textToRead = paragraphs[pIndex];
+                pIndex++;
+                speakTextSentenceBySentence(textToRead, null, () => {
+                    setTimeout(readNextParagraph, 350);
+                });
+            };
+
+            readNextParagraph();
+        }
+
+        function closeFullNewsReader() {
+            stopFullArticleSpeech();
+            const modal = document.getElementById('fullNewsModal');
+            if (modal) modal.classList.add('hidden');
         }
 
         function unlockVipNewsAndHack() {

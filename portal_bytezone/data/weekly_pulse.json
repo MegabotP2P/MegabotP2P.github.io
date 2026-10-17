@@ -1,114 +1,176 @@
 {
-  "version": 9,
+  "version": 10,
   "week_id": "W2026-10-12",
-  "updated_at": "2026-10-17T12:26:33.801012-04:00",
+  "updated_at": "2026-10-17T13:02:42.296819-04:00",
   "updated_human": "17/10/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
     "mode": "Autónomo (Lunes 00:05 AM + Monitoreo Continuo)",
     "active_games_count": 3,
-    "vault_games_count": 1,
-    "seo_keywords": [
-      "juegos arcade online gratis",
-      "torneo semanal mini juegos telegram",
-      "noticias inteligencia artificial resumen",
-      "test de reflejos online milisegundos",
-      "trucos secretos smartphones 2026"
-    ]
+    "vault_games_count": 1
   },
   "video_reel": {
-    "title": "ByteZone Flash IA • Edición W2026-10-12",
-    "subtitle": "Video-Resumen Rápido con Voz de Inteligencia Artificial",
-    "duration_label": "45 seg",
+    "title": "ByteZone TV • Noticiero IA (W2026-10-12)",
+    "subtitle": "5 Noticias Completas con Imagen + Voz IA + Lectura Completa",
+    "duration_label": "5 Noticias",
     "scenes": [
       {
-        "id": "intro",
-        "badge": "FLASH IA • W2026-10-12",
-        "icon": "⚡",
-        "headline": "¡Resumen Tech & IA en 45 Segundos!",
-        "subtext": "Lo más impactante de la semana en tecnología, inventos e Inteligencia Artificial explicado al instante.",
-        "voice_script": "¡Qué tal equipo de ByteZone! Arrancamos el resumen flash de tecnología e inteligencia artificial de esta semana. ¡Vamos a toda velocidad!",
-        "bg_gradient": "from-blue-600 via-purple-700 to-pink-700",
-        "duration_ms": 6500
-      },
-      {
         "id": "news_1",
-        "badge": "BOMBAZO #1 • TECH & IA",
+        "news_index": 0,
+        "badge": "NOTICIA #1 • IA & FUTURO",
         "icon": "🤖",
         "headline": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
-        "subtext": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
-        "voice_script": "Número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
+        "subtext": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1",
+        "source": "Hipertextual IA",
+        "voice_script": "Noticia número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-cyan-600 to-blue-900",
-        "duration_ms": 9500
+        "is_vip_hook": false
       },
       {
         "id": "news_2",
-        "badge": "BOMBAZO #2 • LO NUEVO",
+        "news_index": 1,
+        "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
         "headline": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
-        "subtext": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
-        "voice_script": "Número 2: Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
+        "subtext": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna.",
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/ubuntu-terminal.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
+        "source": "Hipertextual IA",
+        "voice_script": "Noticia número 2: Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
-        "duration_ms": 9500
+        "is_vip_hook": false
       },
       {
         "id": "news_3",
-        "badge": "BOMBAZO #3 • TENDENCIA",
+        "news_index": 2,
+        "badge": "NOTICIA #3 • TENDENCIA GLOBAL",
         "icon": "⚡",
-        "headline": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
-        "subtext": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
-        "voice_script": "Número 3: OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado. Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
+        "headline": "Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora",
+        "subtext": "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h.",
+        "image": "https://i.blogs.es/c53511/6ac39bb3265e3f8e338faab6/1024_2000.jpeg",
+        "source": "Xataka IA & Tech",
+        "voice_script": "Noticia número 3: Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora. Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-pink-600 to-rose-900",
-        "duration_ms": 9500
+        "is_vip_hook": false
       },
       {
-        "id": "outro",
-        "badge": "🔓 SECRETO VIP & TORNEO",
-        "icon": "👑",
-        "headline": "La mayoría de los estadounidenses cree que la IA avanza demasiado rápido, según sondeo AP-NORC",
-        "subtext": "¡Toca el botón dorado abajo para desbloquear el Truco VIP de la semana y compite en el Torneo Semanal!",
-        "voice_script": "Y cerramos con: La mayoría de los estadounidenses cree que la IA avanza demasiado rápido, según sondeo AP-NORC. Toca el botón dorado debajo del video para desbloquear el truco secreto VIP de esta semana y rompe el récord en el Torneo Semanal de ByteZone.",
-        "bg_gradient": "from-amber-500 via-orange-600 to-rose-800",
-        "duration_ms": 9500,
+        "id": "news_4",
+        "news_index": 3,
+        "badge": "NOTICIA #4 • IMPACTO TECH",
+        "icon": "🧠",
+        "headline": "Zhang Yiming, el dueño de TikTok ha duplicado su fortuna. Su secreto: la IA, claro",
+        "subtext": "El nombre de Zhang Yiming probablemente no te suene de nada. Sin embargo, es probable que sí lo haga la empresa que fundó y convirtió en su principal fuente de ingresos: ByteDance, empresa propietaria de TikTok .",
+        "image": "https://i.blogs.es/7f7ee3/magnific__crea-una-imagenpasa-la-imagen-adjunta-img1-a-43-y-__64928/1024_2000.png",
+        "source": "Xataka IA & Tech",
+        "voice_script": "Noticia número 4: Zhang Yiming, el dueño de TikTok ha duplicado su fortuna. Su secreto: la IA, claro. El nombre de Zhang Yiming probablemente no te suene de nada. Sin embargo, es probable que sí lo haga la empresa que fundó y convirtió en su principal fuente de ingresos: ByteDance, empresa propietaria de TikTok . Pasamos a la siguiente noticia.",
+        "bg_gradient": "from-emerald-600 to-teal-900",
+        "is_vip_hook": false
+      },
+      {
+        "id": "news_5",
+        "news_index": 4,
+        "badge": "NOTICIA #5 • CIERRE SEMANAL",
+        "icon": "🔥",
+        "headline": "OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”",
+        "subtext": "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
+        "image": "https://i.blogs.es/519b30/sam-altman-diciendo-adios/1024_2000.png",
+        "source": "Genbeta IA",
+        "voice_script": "Noticia número 5: OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”. El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano . Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
     ]
   },
   "weekly_news": [
     {
+      "id": "news_1",
       "title": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
-      "summary": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
-      "voice_extra": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
+      "summary": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
+      "voice_extra": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
+      "full_paragraphs": [
+        "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
+        "SynthID Detector es una utilidad que la firma de Mountain View lleva bastante tiempo desarrollando, pero que recién hace cuestión de semanas abrió a todo el público . Como bien lo indica su nombre, su finalidad es detectar si una imagen, un vídeo o un audio se creó o modificó con inteligencia artificial .",
+        "Esta herramienta saca provecho de SynthID, una marca de agua invisible desarrollada por Google que se incorpora en los materiales generados o editados con IA. Si bien esta tecnología se aplicó inicialmente en fotos, vídeos o audios creados con Gemini , también se ha expandido a modelos de IA de terceros.",
+        "Si bien todavía está lejos de ser un estándar dentro de la industria, sí es una solución que ha ganado bastante aceptación entre las principales empresas del sector. Esto quiere decir que SynthID Detector no funciona únicamente con materiales multimedia creados con las IA de Google, sino también con las de OpenAI, NVIDIA y kakao , y muy pronto Apple también se sumará al listado.",
+        "El uso de SynthID Detector es realmente sencillo. Estamos hablando de una herramienta web, de modo que se puede ejecutar desde cualquier navegador ingresando a synthid.com . Una vez allí, solo hay que seleccionar y cargar los archivos a escanear, o arrastrarlos y soltarlos directamente sobre el recuadro de la utilidad .",
+        "Es importante señalar que para usar SynthID Detector es obligatorio iniciar sesión con una cuenta de Google, de Apple o de ChatGPT. Los formatos multimedia que soporta la herramienta son varios; en lo que respecta a vídeo, pueden ser MP4, MOV y WEBM. En lo que respecta a audio, puede analizar WAV, MP3, OGG, FLAC, AAC y M4A. En tanto que para las imágenes sirve con archivos JPG, JPEG, PNG, BMP, WEBP, AVIF, HEIC, HEIF, TIFF, TIF y GIF."
+      ],
+      "full_voice_script": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. Noticia publicada por Hipertextual IA. En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso. SynthID Detector es una utilidad que la firma de Mountain View lleva bastante tiempo desarrollando, pero que recién hace cuestión de semanas abrió a todo el público . Como bien lo indica su nombre, su finalidad es detectar si una imagen, un vídeo o un audio se creó o modificó con inteligencia artificial . Esta herramienta saca provecho de SynthID, una marca de agua invisible desarrollada por Google que se incorpora en los materiales generados o editados con IA. Si bien esta tecnología se aplicó inicialmente en fotos, vídeos o audios creados con Gemini , también se ha expandido a modelos de IA de terceros. Si bien todavía está lejos de ser un estándar dentro de la industria, sí es una solución que ha ganado bastante aceptación entre las principales empresas del sector. Esto quiere decir que SynthID Detector no funciona únicamente con materiales multimedia creados con las IA de Google, sino también con las de OpenAI, NVIDIA y kakao , y muy pronto Apple también se sumará al listado. El uso de SynthID Detector es realmente sencillo. Estamos hablando de una herramienta web, de modo que se puede ejecutar desde cualquier navegador ingresando a synthid.com . Una vez allí, solo hay que seleccionar y cargar los archivos a escanear, o arrastrarlos y soltarlos directamente sobre el recuadro de la utilidad . Es importante señalar que para usar SynthID Detector es obligatorio iniciar sesión con una cuenta de Google, de Apple o de ChatGPT. Los formatos multimedia que soporta la herramienta son varios; en lo que respecta a vídeo, pueden ser MP4, MOV y WEBM. En lo que respecta a audio, puede analizar WAV, MP3, OGG, FLAC, AAC y M4A. En tanto que para las imágenes sirve con archivos JPG, JPEG, PNG, BMP, WEBP, AVIF, HEIC, HEIF, TIFF, TIF y GIF.",
+      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1",
       "source": "Hipertextual IA",
       "link": "https://hipertextual.com/inteligencia-artificial/como-detectar-fotos-videos-y-audios-creados-con-ia-usando-synthid-detector/"
     },
     {
+      "id": "news_2",
       "title": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
-      "summary": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
-      "voice_extra": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
+      "summary": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna.",
+      "voice_extra": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna.",
+      "full_paragraphs": [
+        "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna. Ubuntu se ha subido al tren de la IA con un asistente de voz integrado en el escritorio que nos recuerda a Copilot.",
+        "De acuerdo con Canonical , Myna es un agente que convierte el habla en texto usando modelos de lenguaje que se ejecutan en el ordenador. A diferencia de ChatGPT, Claude o el mismo Copilot, la nueva IA de Ubuntu no envía nada a la nube , puesto que el procesamiento se lleva a cabo de forma local. Esto mantiene la privacidad del usuario, ya que su información no terminará en un servidor ni se usará para entrenar otros modelos.",
+        "Myna ofrece una experiencia similar a lo que vimos en las primeras versiones de ChatGPT . Los usuarios pueden expresar lo que desean usando lenguaje natural y la IA se encargará de ejecutar la acción. Canonical pone como ejemplo un desarrollador que le pide a Myna que lo ayude a investigar por qué sus pruebas están fallando, y Ubuntu será capaz de recopilar resultados, localizar código relevante y preparar el entorno de trabajo necesario para resolver el problema.",
+        "El asistente de IA de Ubuntu se encuentra en una vista previa y soporta modelos de reconocimiento de voz como Parakeet, Whisper y FunASR. En caso de que tengas una tarjeta gráfica NVIDIA, Myna puede sacarle provecho para acelerar el procesamiento de tus peticiones. Lo único que no podrás hacer es controlar el escritorio, ya que todavía no cuenta con esas capacidades.",
+        "Canonical dijo que Myna seguirá evolucionando y se incluirá por defecto con Ubuntu 28.04 LTS.",
+        "La integración de Myna llega acompañada de GNOME 51 , la versión más reciente del popular entorno de escritorio. Esta actualización ofrece una experiencia más fluida, con mejoras en la gestión de pantallas y la accesibilidad. Ubuntu también actualiza su App Center para ofrecer una gestión más coherente de paquetes Snap y Deb, mientras que los usuarios de Orca tendrán mejor soporte de aplicaciones Flutter."
+      ],
+      "full_voice_script": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Noticia publicada por Hipertextual IA. Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna. Ubuntu se ha subido al tren de la IA con un asistente de voz integrado en el escritorio que nos recuerda a Copilot. De acuerdo con Canonical , Myna es un agente que convierte el habla en texto usando modelos de lenguaje que se ejecutan en el ordenador. A diferencia de ChatGPT, Claude o el mismo Copilot, la nueva IA de Ubuntu no envía nada a la nube , puesto que el procesamiento se lleva a cabo de forma local. Esto mantiene la privacidad del usuario, ya que su información no terminará en un servidor ni se usará para entrenar otros modelos. Myna ofrece una experiencia similar a lo que vimos en las primeras versiones de ChatGPT . Los usuarios pueden expresar lo que desean usando lenguaje natural y la IA se encargará de ejecutar la acción. Canonical pone como ejemplo un desarrollador que le pide a Myna que lo ayude a investigar por qué sus pruebas están fallando, y Ubuntu será capaz de recopilar resultados, localizar código relevante y preparar el entorno de trabajo necesario para resolver el problema. El asistente de IA de Ubuntu se encuentra en una vista previa y soporta modelos de reconocimiento de voz como Parakeet, Whisper y FunASR. En caso de que tengas una tarjeta gráfica NVIDIA, Myna puede sacarle provecho para acelerar el procesamiento de tus peticiones. Lo único que no podrás hacer es controlar el escritorio, ya que todavía no cuenta con esas capacidades. Canonical dijo que Myna seguirá evolucionando y se incluirá por defecto con Ubuntu 28.04 LTS. La integración de Myna llega acompañada de GNOME 51 , la versión más reciente del popular entorno de escritorio. Esta actualización ofrece una experiencia más fluida, con mejoras en la gestión de pantallas y la accesibilidad. Ubuntu también actualiza su App Center para ofrecer una gestión más coherente de paquetes Snap y Deb, mientras que los usuarios de Orca tendrán mejor soporte de aplicaciones Flutter.",
+      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/ubuntu-terminal.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
       "source": "Hipertextual IA",
       "link": "https://hipertextual.com/inteligencia-artificial/ubuntu-26-10-myna-asistente-ia-local/"
     },
     {
-      "title": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
-      "summary": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
-      "voice_extra": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
-      "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/"
+      "id": "news_3",
+      "title": "Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora",
+      "summary": "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h.",
+      "voice_extra": "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h.",
+      "full_paragraphs": [
+        "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h. La aceleración ha reducido el tiempo disponible para detectarlos y derribarlos, obligando a Kiev a buscar soluciones cada vez más rápidas. La última: torretas robotizadas equipadas con ametralladoras de gran calibre, visión e inteligencia artificiales que ya han conseguido abatir estos aparatos.",
+        "La velocidad como arma. Rusia está intensificando el empleo de drones equipados con pequeños turborreactores , una evolución de los modelos de hélice que llevan años atacando ciudades e infraestructuras ucranianas. Entre ellos destaca el Geran-5 , capaz de alcanzar aproximadamente 600 km/h, una velocidad que reduce considerablemente la ventana de reacción de las defensas antiaéreas.",
+        "Según las cifras difundidas por Kiev, Rusia lanzó unos 350 drones a reacción en junio y elevó esa cantidad hasta los 2.800 en agosto. El problema se refleja en las tasas de interceptación: mientras los aparatos convencionales como el Geran-2 son derribados en más del 85% de los casos, los modelos a reacción presentan porcentajes de entre el 50% y el 70% , según la Fuerza Aérea ucraniana.",
+        "Una ametralladora con IA. La respuesta ucraniana consiste en desplegar torretas automatizadas capaces de localizar, seguir y disparar contra objetivos aéreos de gran velocidad. Yurii Ihnat, portavoz de la Fuerza Aérea, confirmó que estos sistemas ya han interceptado drones rusos a reacción, incluido el Geran-5, gracias al empleo de inteligencia y visión artificiales.",
+        "Las armas incorporan ametralladoras de calibre .50 , equivalentes a 12,7 milímetros, y permiten automatizar parte del proceso de adquisición y seguimiento de objetivos. Ucrania ya había presentado anteriormente el Sky Sentinel , una torreta con capacidades similares, aunque las autoridades no han identificado el modelo concreto responsable de las nuevas interceptaciones. Tampoco han detallado hasta qué punto la selección de objetivos y la autorización de disparo dependen de operadores humanos.",
+        "La batalla por Kiev. El presidente Zelenski anunció que más de una docena de estas torretas ya habían sido instaladas alrededor de la capital y que estaba previsto desplegar otras ocho en la región. Algunas se destinarán a proteger puentes que han sufrido multitud de ataques rusos, en medio de una ofensiva más amplia contra infraestructuras civiles. Su principal limitación es el alcance relativamente reducido de las ametralladoras, que obliga a situarlas cerca de los puntos que necesitan protección."
+      ],
+      "full_voice_script": "Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora. Noticia publicada por Xataka IA & Tech. Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h. La aceleración ha reducido el tiempo disponible para detectarlos y derribarlos, obligando a Kiev a buscar soluciones cada vez más rápidas. La última: torretas robotizadas equipadas con ametralladoras de gran calibre, visión e inteligencia artificiales que ya han conseguido abatir estos aparatos. La velocidad como arma. Rusia está intensificando el empleo de drones equipados con pequeños turborreactores , una evolución de los modelos de hélice que llevan años atacando ciudades e infraestructuras ucranianas. Entre ellos destaca el Geran-5 , capaz de alcanzar aproximadamente 600 km/h, una velocidad que reduce considerablemente la ventana de reacción de las defensas antiaéreas. Según las cifras difundidas por Kiev, Rusia lanzó unos 350 drones a reacción en junio y elevó esa cantidad hasta los 2.800 en agosto. El problema se refleja en las tasas de interceptación: mientras los aparatos convencionales como el Geran-2 son derribados en más del 85% de los casos, los modelos a reacción presentan porcentajes de entre el 50% y el 70% , según la Fuerza Aérea ucraniana. Una ametralladora con IA. La respuesta ucraniana consiste en desplegar torretas automatizadas capaces de localizar, seguir y disparar contra objetivos aéreos de gran velocidad. Yurii Ihnat, portavoz de la Fuerza Aérea, confirmó que estos sistemas ya han interceptado drones rusos a reacción, incluido el Geran-5, gracias al empleo de inteligencia y visión artificiales. Las armas incorporan ametralladoras de calibre .50 , equivalentes a 12,7 milímetros, y permiten automatizar parte del proceso de adquisición y seguimiento de objetivos. Ucrania ya había presentado anteriormente el Sky Sentinel , una torreta con capacidades similares, aunque las autoridades no han identificado el modelo concreto responsable de las nuevas interceptaciones. Tampoco han detallado hasta qué punto la selección de objetivos y la autorización de disparo dependen de operadores humanos. La batalla por Kiev. El presidente Zelenski anunció que más de una docena de estas torretas ya habían sido instaladas alrededor de la capital y que estaba previsto desplegar otras ocho en la región. Algunas se destinarán a proteger puentes que han sufrido multitud de ataques rusos, en medio de una ofensiva más amplia contra infraestructuras civiles. Su principal limitación es el alcance relativamente reducido de las ametralladoras, que obliga a situarlas cerca de los puntos que necesitan protección.",
+      "image": "https://i.blogs.es/c53511/6ac39bb3265e3f8e338faab6/1024_2000.jpeg",
+      "source": "Xataka IA & Tech",
+      "link": "https://www.xataka.com/magnet/rusia-puso-motores-a-reaccion-a-sus-drones-para-volar-a-600-km-h-respuesta-ucrania-ha-sido-darle-ojos-cerebro-a-ametralladora"
     },
     {
-      "title": "La mayoría de los estadounidenses cree que la IA avanza demasiado rápido, según sondeo AP-NORC",
-      "summary": "Noticia destacada en Los Angeles Times que marca la pauta tecnológica de esta semana.",
-      "voice_extra": "Según reporta Los Angeles Times, este avance ya está dando la vuelta al mundo.",
-      "source": "Los Angeles Times",
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNa3lqOHgxc2haNGNqd1kyamRLNzBmX3VHcy1BTlVjbzFmbm9Nbm1NWWRBaktjUGtVRnoxeDlza21VZ1F3WkhVejZxUmkzNDZHMWN4VTlHeG5yWWZ4UjB6MmhLZ0UtejlTdElJRFlyYW1ZUVlBMzRFQjhEYjc1NzU1VkJpb00weUxfVnZWU19EdTRUY3dwQUx5NWp1Ml93S0tJRjFfbFgzaHo0MDZMVWJuczZ4Ul84M0VuTlpiSEswaHltcWNGMlRkYzZabE40V1lRUUhzb2FScHZNVHdFYzZKN3Z1a2pwQktOaTNHQw?oc=5"
+      "id": "news_4",
+      "title": "Zhang Yiming, el dueño de TikTok ha duplicado su fortuna. Su secreto: la IA, claro",
+      "summary": "El nombre de Zhang Yiming probablemente no te suene de nada. Sin embargo, es probable que sí lo haga la empresa que fundó y convirtió en su principal fuente de ingresos: ByteDance, empresa propietaria de TikTok .",
+      "voice_extra": "El nombre de Zhang Yiming probablemente no te suene de nada. Sin embargo, es probable que sí lo haga la empresa que fundó y convirtió en su principal fuente de ingresos: ByteDance, empresa propietaria de TikTok .",
+      "full_paragraphs": [
+        "El nombre de Zhang Yiming probablemente no te suene de nada. Sin embargo, es probable que sí lo haga la empresa que fundó y convirtió en su principal fuente de ingresos: ByteDance, empresa propietaria de TikTok .",
+        "Zhang Yiming dejó la presidencia de ByteDance en 2021 y desde entonces se mueve lejos de los focos. Sin charlas, sin entrevistas, sin hacer mucho ruido. No obstante, ese silencio no significa que el millonario haya estado ocioso. En septiembre el fundador de TikTok se convirtió en la mayor fortuna de Asia ( no solo de China ) según las listas de millonarios de Forbes y Bloomberg .",
+        "Una cifra que no para de subir. Bloomberg sitúa a Zhang como el hombre más rico de Asia, con un patrimonio de más de 105.000 millones de dólares, justo por delante de Gautam Adani de India.",
+        "Solo durante el pasado mes de septiembre, Zhang sumó 12.000 millones de dólares y, en lo que va de año, ha acumulado un crecimiento del 61,8% desde los 65.200 millones de dólares que registraba en enero de 2026. En tan solo siete años, el patrimonio del fundador de ByteDance se ha multiplicado por ocho, desde los 13.000 millones de dólares que Bloomberg le atribuía en 2019.",
+        "Más rico según a quien preguntes . ByteDance no cotiza en bolsa, por lo que el cálculo de su fortuna se basa en estimaciones que tienen en cuenta tanto sus operaciones como las que declara su entorno. Hacer estas estimaciones, con las grandes fortunas de China, es todavía más complicado por su hermetismo.",
+        "Bloomberg parte de valoraciones de fondos como BlackRock o Fidelity, que de media sitúan el valor de ByteDance en unos 548.000 millones de dólares. Zhang controla cerca del 21% de la compañía, por lo que su lista le atribuye esos 105.000 millones de dólares. La lista de Forbes, en cambio, hace una lectura un poco más contenida y le otorgaba una fortuna de 84.000 millones de dólares, manteniendo su liderazgo como mayor fortuna de Asia."
+      ],
+      "full_voice_script": "Zhang Yiming, el dueño de TikTok ha duplicado su fortuna. Su secreto: la IA, claro. Noticia publicada por Xataka IA & Tech. El nombre de Zhang Yiming probablemente no te suene de nada. Sin embargo, es probable que sí lo haga la empresa que fundó y convirtió en su principal fuente de ingresos: ByteDance, empresa propietaria de TikTok . Zhang Yiming dejó la presidencia de ByteDance en 2021 y desde entonces se mueve lejos de los focos. Sin charlas, sin entrevistas, sin hacer mucho ruido. No obstante, ese silencio no significa que el millonario haya estado ocioso. En septiembre el fundador de TikTok se convirtió en la mayor fortuna de Asia ( no solo de China ) según las listas de millonarios de Forbes y Bloomberg . Una cifra que no para de subir. Bloomberg sitúa a Zhang como el hombre más rico de Asia, con un patrimonio de más de 105.000 millones de dólares, justo por delante de Gautam Adani de India. Solo durante el pasado mes de septiembre, Zhang sumó 12.000 millones de dólares y, en lo que va de año, ha acumulado un crecimiento del 61,8% desde los 65.200 millones de dólares que registraba en enero de 2026. En tan solo siete años, el patrimonio del fundador de ByteDance se ha multiplicado por ocho, desde los 13.000 millones de dólares que Bloomberg le atribuía en 2019. Más rico según a quien preguntes . ByteDance no cotiza en bolsa, por lo que el cálculo de su fortuna se basa en estimaciones que tienen en cuenta tanto sus operaciones como las que declara su entorno. Hacer estas estimaciones, con las grandes fortunas de China, es todavía más complicado por su hermetismo. Bloomberg parte de valoraciones de fondos como BlackRock o Fidelity, que de media sitúan el valor de ByteDance en unos 548.000 millones de dólares. Zhang controla cerca del 21% de la compañía, por lo que su lista le atribuye esos 105.000 millones de dólares. La lista de Forbes, en cambio, hace una lectura un poco más contenida y le otorgaba una fortuna de 84.000 millones de dólares, manteniendo su liderazgo como mayor fortuna de Asia.",
+      "image": "https://i.blogs.es/7f7ee3/magnific__crea-una-imagenpasa-la-imagen-adjunta-img1-a-43-y-__64928/1024_2000.png",
+      "source": "Xataka IA & Tech",
+      "link": "https://www.xataka.com/robotica-e-ia/zhang-yiming-dueno-tiktok-ha-duplicado-su-fortuna-su-secreto-ia-claro"
     },
     {
-      "title": "No es inteligencia artificial: Tesla presenta su nuevo auto ‘volador’",
-      "summary": "Noticia destacada en Telemundo que marca la pauta tecnológica de esta semana.",
-      "voice_extra": "Según reporta Telemundo, este avance ya está dando la vuelta al mundo.",
-      "source": "Telemundo",
-      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOeWJhZXVaVm43ZWFRekdBckI2VVJrcDNEdjZDV3F4RmxkNVZFOXQ2TXVsZ3dVZUJYTHR6QVBpenI5S2E2VG9xZkVTc1lUMi1qZThWLTIwZldIYVI5SHlsLUpPX3R2VTBnVUZRQy1kMjV3UEI0SklnZ1RTdUVmcmFLVHNzRGNzUkJOY1R1ZXpFNmh1QjVFd1BWNTZ4Q21yekZBd2J1YloySTcxTjZERkItTkpjVnlxM2ZmQnpuYW1GRkVkWG5xMVJUU25TM3Iza0V3Y3Q4YzZ5bmlTZl9IVVFINWFHRVFWZEp6SmhSVGZ6VDBUWTJkRUh0Uk1Kd2s?oc=5"
+      "id": "news_5",
+      "title": "OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”",
+      "summary": "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
+      "voice_extra": "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
+      "full_paragraphs": [
+        "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de EE. UU. que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
+        "Poco después, la empresa anunció que tres investigadores de seguridad habían sido despedidos tras una investigación interna por manejar información sensible fuera de los procedimientos establecidos.",
+        "Las personas despedidas son Tomek Korbak, Jasmine Wang y Mikita Balesni . Korbak y Balesni encabezan la lista de autores de un estudio sobre la supervisión del razonamiento de julio de 2025, firmado por 41 investigadores de varios laboratorios, del que Wang también es coautora. Su tesis: mientras un modelo razona en lenguaje claro antes de actuar, se puede supervisar ese razonamiento para detectar malas intenciones, aunque ciertas decisiones de diseño pueden hacer que esa posibilidad se pierda.",
+        "Wang dirigió un equipo en el Instituto Británico de Seguridad de la IA antes de reincorporarse a OpenAI en 2025. Suyo es el término “pacing” , que se refiere a la ralentización de los modelos más avanzados.",
+        "Además, Korbak fue el contacto técnico de METR durante la investigación de Hugging Face. Esa investigación la llevaron a cabo únicamente tres investigadores, dos de METR y uno de Redwood Research , no abordó las medidas de ciberseguridad de OpenAI ni sus prácticas internas, y el informe se publicó con partes tachadas el 26 de agosto.",
+        "El 9 de octubre, OpenAI señaló en una publicación en X que los tres “violaron políticas claras sobre el manejo de información sensible” y que la decisión no tenía que ver con plantear preocupaciones de seguridad. Habló de una ruptura de confianza importante , pero no precisó qué hicieron. En el mismo mensaje dijo estar de acuerdo con las recomendaciones de la carta."
+      ],
+      "full_voice_script": "OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”. Noticia publicada por Genbeta IA. El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de EE. UU. que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano . Poco después, la empresa anunció que tres investigadores de seguridad habían sido despedidos tras una investigación interna por manejar información sensible fuera de los procedimientos establecidos. Las personas despedidas son Tomek Korbak, Jasmine Wang y Mikita Balesni . Korbak y Balesni encabezan la lista de autores de un estudio sobre la supervisión del razonamiento de julio de 2025, firmado por 41 investigadores de varios laboratorios, del que Wang también es coautora. Su tesis: mientras un modelo razona en lenguaje claro antes de actuar, se puede supervisar ese razonamiento para detectar malas intenciones, aunque ciertas decisiones de diseño pueden hacer que esa posibilidad se pierda. Wang dirigió un equipo en el Instituto Británico de Seguridad de la IA antes de reincorporarse a OpenAI en 2025. Suyo es el término “pacing” , que se refiere a la ralentización de los modelos más avanzados. Además, Korbak fue el contacto técnico de METR durante la investigación de Hugging Face. Esa investigación la llevaron a cabo únicamente tres investigadores, dos de METR y uno de Redwood Research , no abordó las medidas de ciberseguridad de OpenAI ni sus prácticas internas, y el informe se publicó con partes tachadas el 26 de agosto. El 9 de octubre, OpenAI señaló en una publicación en X que los tres “violaron políticas claras sobre el manejo de información sensible” y que la decisión no tenía que ver con plantear preocupaciones de seguridad. Habló de una ruptura de confianza importante , pero no precisó qué hicieron. En el mismo mensaje dijo estar de acuerdo con las recomendaciones de la carta.",
+      "image": "https://i.blogs.es/519b30/sam-altman-diciendo-adios/1024_2000.png",
+      "source": "Genbeta IA",
+      "link": "https://www.genbeta.com/actualidad/openai-despide-a-tres-trabajadores-manejar-manera-inapropiada-informacion-sensible"
     }
   ],
   "vip_hack_of_the_week": {
@@ -124,7 +186,7 @@
       "status": "EN EL BAÚL (JUGABLE)",
       "badge": "JOYA DEL BAÚL 🗄️",
       "description": "Pilota la nave cuántica y esquiva la lluvia de meteoritos cibernéticos a velocidad extrema. Incluye Escudo de Segunda Oportunidad y Ranking en vivo.",
-      "url": "juegos/cyber-dodge.html?v=9",
+      "url": "juegos/cyber-dodge.html?v=10",
       "accent": "amber"
     }
   ]
