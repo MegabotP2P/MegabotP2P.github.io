@@ -1,0 +1,131 @@
+{
+  "version": 9,
+  "week_id": "W2026-10-12",
+  "updated_at": "2026-10-17T12:26:33.801012-04:00",
+  "updated_human": "17/10/2026",
+  "agent_status": {
+    "name": "Agente CEO & SEO ByteZone",
+    "mode": "Autónomo (Lunes 00:05 AM + Monitoreo Continuo)",
+    "active_games_count": 3,
+    "vault_games_count": 1,
+    "seo_keywords": [
+      "juegos arcade online gratis",
+      "torneo semanal mini juegos telegram",
+      "noticias inteligencia artificial resumen",
+      "test de reflejos online milisegundos",
+      "trucos secretos smartphones 2026"
+    ]
+  },
+  "video_reel": {
+    "title": "ByteZone Flash IA • Edición W2026-10-12",
+    "subtitle": "Video-Resumen Rápido con Voz de Inteligencia Artificial",
+    "duration_label": "45 seg",
+    "scenes": [
+      {
+        "id": "intro",
+        "badge": "FLASH IA • W2026-10-12",
+        "icon": "⚡",
+        "headline": "¡Resumen Tech & IA en 45 Segundos!",
+        "subtext": "Lo más impactante de la semana en tecnología, inventos e Inteligencia Artificial explicado al instante.",
+        "voice_script": "¡Qué tal equipo de ByteZone! Arrancamos el resumen flash de tecnología e inteligencia artificial de esta semana. ¡Vamos a toda velocidad!",
+        "bg_gradient": "from-blue-600 via-purple-700 to-pink-700",
+        "duration_ms": 6500
+      },
+      {
+        "id": "news_1",
+        "badge": "BOMBAZO #1 • TECH & IA",
+        "icon": "🤖",
+        "headline": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
+        "subtext": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
+        "voice_script": "Número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
+        "bg_gradient": "from-cyan-600 to-blue-900",
+        "duration_ms": 9500
+      },
+      {
+        "id": "news_2",
+        "badge": "BOMBAZO #2 • LO NUEVO",
+        "icon": "🚀",
+        "headline": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
+        "subtext": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
+        "voice_script": "Número 2: Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
+        "bg_gradient": "from-purple-600 to-indigo-900",
+        "duration_ms": 9500
+      },
+      {
+        "id": "news_3",
+        "badge": "BOMBAZO #3 • TENDENCIA",
+        "icon": "⚡",
+        "headline": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
+        "subtext": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
+        "voice_script": "Número 3: OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado. Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
+        "bg_gradient": "from-pink-600 to-rose-900",
+        "duration_ms": 9500
+      },
+      {
+        "id": "outro",
+        "badge": "🔓 SECRETO VIP & TORNEO",
+        "icon": "👑",
+        "headline": "La mayoría de los estadounidenses cree que la IA avanza demasiado rápido, según sondeo AP-NORC",
+        "subtext": "¡Toca el botón dorado abajo para desbloquear el Truco VIP de la semana y compite en el Torneo Semanal!",
+        "voice_script": "Y cerramos con: La mayoría de los estadounidenses cree que la IA avanza demasiado rápido, según sondeo AP-NORC. Toca el botón dorado debajo del video para desbloquear el truco secreto VIP de esta semana y rompe el récord en el Torneo Semanal de ByteZone.",
+        "bg_gradient": "from-amber-500 via-orange-600 to-rose-800",
+        "duration_ms": 9500,
+        "is_vip_hook": true
+      }
+    ]
+  },
+  "weekly_news": [
+    {
+      "title": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
+      "summary": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
+      "voice_extra": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan...",
+      "source": "Hipertextual IA",
+      "link": "https://hipertextual.com/inteligencia-artificial/como-detectar-fotos-videos-y-audios-creados-con-ia-usando-synthid-detector/"
+    },
+    {
+      "title": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
+      "summary": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
+      "voice_extra": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray,...",
+      "source": "Hipertextual IA",
+      "link": "https://hipertextual.com/inteligencia-artificial/ubuntu-26-10-myna-asistente-ia-local/"
+    },
+    {
+      "title": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
+      "summary": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
+      "voice_extra": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás...",
+      "source": "Hipertextual IA",
+      "link": "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/"
+    },
+    {
+      "title": "La mayoría de los estadounidenses cree que la IA avanza demasiado rápido, según sondeo AP-NORC",
+      "summary": "Noticia destacada en Los Angeles Times que marca la pauta tecnológica de esta semana.",
+      "voice_extra": "Según reporta Los Angeles Times, este avance ya está dando la vuelta al mundo.",
+      "source": "Los Angeles Times",
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNa3lqOHgxc2haNGNqd1kyamRLNzBmX3VHcy1BTlVjbzFmbm9Nbm1NWWRBaktjUGtVRnoxeDlza21VZ1F3WkhVejZxUmkzNDZHMWN4VTlHeG5yWWZ4UjB6MmhLZ0UtejlTdElJRFlyYW1ZUVlBMzRFQjhEYjc1NzU1VkJpb00weUxfVnZWU19EdTRUY3dwQUx5NWp1Ml93S0tJRjFfbFgzaHo0MDZMVWJuczZ4Ul84M0VuTlpiSEswaHltcWNGMlRkYzZabE40V1lRUUhzb2FScHZNVHdFYzZKN3Z1a2pwQktOaTNHQw?oc=5"
+    },
+    {
+      "title": "No es inteligencia artificial: Tesla presenta su nuevo auto ‘volador’",
+      "summary": "Noticia destacada en Telemundo que marca la pauta tecnológica de esta semana.",
+      "voice_extra": "Según reporta Telemundo, este avance ya está dando la vuelta al mundo.",
+      "source": "Telemundo",
+      "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOeWJhZXVaVm43ZWFRekdBckI2VVJrcDNEdjZDV3F4RmxkNVZFOXQ2TXVsZ3dVZUJYTHR6QVBpenI5S2E2VG9xZkVTc1lUMi1qZThWLTIwZldIYVI5SHlsLUpPX3R2VTBnVUZRQy1kMjV3UEI0SklnZ1RTdUVmcmFLVHNzRGNzUkJOY1R1ZXpFNmh1QjVFd1BWNTZ4Q21yekZBd2J1YloySTcxTjZERkItTkpjVnlxM2ZmQnpuYW1GRkVkWG5xMVJUU25TM3Iza0V3Y3Q4YzZ5bmlTZl9IVVFINWFHRVFWZEp6SmhSVGZ6VDBUWTJkRUh0Uk1Kd2s?oc=5"
+    }
+  ],
+  "vip_hack_of_the_week": {
+    "tag": "Optimización Gamer",
+    "title": "Liberar memoria RAM oculta en 5 segundos antes de jugar",
+    "body": "En Chrome o Telegram, cierra las pestañas en segundo plano y activa el modo 'No Molestar' durante tu partida: evita micro-tirones de pantalla cuando buscas récords de menos de 100 milisegundos."
+  },
+  "vault_games": [
+    {
+      "id": "cyber-dodge",
+      "title": "🚀 Cyber Dodge: Tormenta Neón",
+      "category": "Reflejos & Esquiva",
+      "status": "EN EL BAÚL (JUGABLE)",
+      "badge": "JOYA DEL BAÚL 🗄️",
+      "description": "Pilota la nave cuántica y esquiva la lluvia de meteoritos cibernéticos a velocidad extrema. Incluye Escudo de Segunda Oportunidad y Ranking en vivo.",
+      "url": "juegos/cyber-dodge.html?v=9",
+      "accent": "amber"
+    }
+  ]
+}

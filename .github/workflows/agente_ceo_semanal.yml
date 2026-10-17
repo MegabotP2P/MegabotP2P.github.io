@@ -1,0 +1,33 @@
+name: 🤖 Agente CEO & SEO Semanal ByteZone
+
+on:
+  schedule:
+    # Todos los lunes a las 04:05 UTC (00:05 AM Hora de Venezuela)
+    - cron: '5 4 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar-bytezone-semanal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Descargar repositorio ByteZone
+        uses: actions/checkout@v4
+
+      - name: 🐍 Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 🤖 Ejecutar Agente CEO (Noticias IA, Video Flash, Hacks & Baúl)
+        run: |
+          python agente_ceo_bytezone.py
+
+      - name: 🚀 Publicar actualización semanal en GitHub Pages
+        run: |
+          git config --global user.name "Agente CEO ByteZone"
+          git config --global user.email "agente-ceo@bytezone.app"
+          git add -A
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 [Agente CEO] Actualización semanal automática de Noticias IA, Video Flash y Baúl Arcade" && git push origin main)

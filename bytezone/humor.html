@@ -20,11 +20,11 @@
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
             }
-            if (!location.search.includes('v=8') && !sessionStorage.getItem('bz_v8_reloaded')) {
-                sessionStorage.setItem('bz_v8_reloaded', '1');
+            if (!location.search.includes('v=9') && !sessionStorage.getItem('bz_v9_reloaded')) {
+                sessionStorage.setItem('bz_v9_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=8' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=9' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -33,7 +33,7 @@
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
     
     <script>
-        // 2. Video de Recompensa (Zona 12040274): SE CARGA Y EJECUTA ÚNICAMENTE CUANDO EL JUGADOR PIDE SEGUNDA OPORTUNIDAD
+        // 2. Video de Recompensa (Zona 12040274): SE CARGA Y EJECUTA CUANDO EL JUGADOR PIDE SEGUNDA OPORTUNIDAD, DESBLOQUEA EL VIDEO VIP O ABRE EL BAÚL
         function executeRewardedAction(rewardCallback) {
             const runReward = () => {
                 if (typeof show_12040274 === 'function') {
@@ -73,7 +73,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=8" class="flex items-center space-x-2 group">
+            <a href="index.html?v=9" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -85,7 +85,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=8" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=9" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -95,19 +95,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=8" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="index.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=8" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
-                <span class="text-base sm:text-lg">📱</span>
-                <span>Tech Hacks</span>
+            <a href="hacks.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🤖</span>
+                <span>IA & Tech TV</span>
             </a>
-            <a href="humor.html?v=8" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="humor.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=8" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -227,14 +227,14 @@
 
     
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
-        <p>© 2026 ByteZone • Portal de Mini-Juegos y Entretenimiento Móvil</p>
-        <p class="mt-2 flex items-center justify-center space-x-3 text-[11px]">
-            <a href="stats.html?v=8" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
-                <span>📊</span>
-                <span class="underline">Métricas & Popularidad</span>
+        <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
+        <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
+            <a href="stats.html?v=9" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+                <span>🤖</span>
+                <span class="underline">Agente CEO & Métricas</span>
             </a>
             <span>•</span>
-            <span class="text-gray-500">Servidores Globales En Vivo 🌐</span>
+            <span class="text-emerald-400 font-semibold">Actualización Semanal Automática Activa 🌐</span>
         </p>
     </footer>
     
@@ -321,17 +321,17 @@
             return `⏳ Reinicia hoy 12:00 AM (${h}h ${m}m)`;
         }
 
+        const ALL_GAME_KEYS = ['stacker', 'reflex', 'memory', 'dodge'];
+
         function ensureWeeklyReset() {
             const currentWeek = getCurrentWeekId();
             const savedWeek = localStorage.getItem('bytezone_active_week');
             if (savedWeek !== currentWeek) {
-                ['stacker', 'reflex', 'memory'].forEach(g => {
+                ALL_GAME_KEYS.forEach(g => {
                     if (!savedWeek && currentWeek === 'W2026-10-12') {
-                        // Migración inicial de la semana en curso para no borrar lo jugado esta semana
                         const existingBest = localStorage.getItem('bytezone_best_' + g) || '0';
                         localStorage.setItem('bytezone_weekly_best_' + g, existingBest);
                     } else {
-                        // Nuevo lunes 00:00 (Domingo 12:00 de la noche): Reiniciar Torneo Semanal a cero
                         localStorage.setItem('bytezone_weekly_best_' + g, '0');
                         localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
                     }
@@ -359,30 +359,81 @@
 
         window.currentLeaderboardTab = 'weekly'; // 'weekly' o 'alltime'
 
+        // Semilla de jugadores reales verificados de la semana inaugural W2026-10-12 (con ***** sincronizado en 33 en ambos rankings)
+        const SEEDED_WEEKLY_SCORES = {
+            'W2026-10-12': {
+                stacker: [
+                    { name: "alexa torres", score: 34, country: "VE" },
+                    { name: "*****", score: 33, country: "VE" },
+                    { name: "RATG", score: 29, country: "VE" },
+                    { name: "Jugador_930", score: 29, country: "VE" },
+                    { name: "Jugador_311", score: 23, country: "VE" },
+                    { name: "Rafael Torres", score: 22, country: "VE" },
+                    { name: "Jugador_662", score: 22, country: "VE" }
+                ],
+                reflex: [
+                    { name: "RATG", score: 31, country: "VE" },
+                    { name: "*****", score: 87, country: "VE" },
+                    { name: "Rafael Torres", score: 249, country: "VE" },
+                    { name: "Jugador_930", score: 308, country: "VE" }
+                ],
+                memory: [
+                    { name: "Jugador_930", score: 13, country: "VE" },
+                    { name: "Jugador_662", score: 10, country: "VE" },
+                    { name: "Tovias Torres", score: 10, country: "VE" },
+                    { name: "*****", score: 10, country: "VE" },
+                    { name: "Jugador_311", score: 8, country: "VE" },
+                    { name: "RATG", score: 5, country: "VE" }
+                ],
+                dodge: [
+                    { name: "RATG", score: 24, country: "VE" },
+                    { name: "Rafael Torres", score: 19, country: "VE" }
+                ]
+            }
+        };
+
         const DEFAULT_ALLTIME_SCORES = {
             stacker: [
+                { name: "alexa torres", score: 34, country: "VE" },
+                { name: "*****", score: 33, country: "VE" },
                 { name: "CyberSam", score: 32, country: "ES" },
+                { name: "RATG", score: 29, country: "VE" },
+                { name: "Jugador_930", score: 29, country: "VE" },
                 { name: "SpeedyGamer", score: 26, country: "MX" },
-                { name: "LunaByte", score: 21, country: "AR" },
-                { name: "Kev_Torres", score: 17, country: "VE" },
-                { name: "Alex_99", score: 14, country: "CO" },
-                { name: "NeonQueen", score: 10, country: "CL" }
+                { name: "Jugador_311", score: 23, country: "VE" },
+                { name: "Rafael Torres", score: 22, country: "VE" },
+                { name: "Jugador_662", score: 22, country: "VE" },
+                { name: "LunaByte", score: 21, country: "AR" }
             ],
             reflex: [
+                { name: "RATG", score: 31, country: "VE" },
+                { name: "*****", score: 87, country: "VE" },
                 { name: "ViperPulse", score: 215, country: "US" },
                 { name: "NicoFast", score: 240, country: "CL" },
+                { name: "Rafael Torres", score: 249, country: "VE" },
                 { name: "Dani_Reflex", score: 265, country: "VE" },
                 { name: "SaraFlash", score: 290, country: "ES" },
-                { name: "Leo_Gamer", score: 320, country: "MX" },
-                { name: "TurboFenix", score: 350, country: "CO" }
+                { name: "Jugador_930", score: 308, country: "VE" },
+                { name: "Leo_Gamer", score: 320, country: "MX" }
             ],
             memory: [
+                { name: "Jugador_930", score: 13, country: "VE" },
                 { name: "MegaBrain", score: 12, country: "MX" },
                 { name: "Titan_Mind", score: 10, country: "CO" },
+                { name: "Jugador_662", score: 10, country: "VE" },
+                { name: "Tovias Torres", score: 10, country: "VE" },
+                { name: "*****", score: 10, country: "VE" },
                 { name: "Valen_Pro", score: 8, country: "VE" },
+                { name: "Jugador_311", score: 8, country: "VE" },
                 { name: "NeoMatrix", score: 7, country: "ES" },
-                { name: "Sofia_Arcade", score: 5, country: "AR" },
-                { name: "QuantumBoy", score: 4, country: "CL" }
+                { name: "RATG", score: 5, country: "VE" }
+            ],
+            dodge: [
+                { name: "CyberPilot", score: 42, country: "ES" },
+                { name: "Nova_VE", score: 35, country: "VE" },
+                { name: "FlashStar", score: 28, country: "MX" },
+                { name: "RATG", score: 24, country: "VE" },
+                { name: "Rafael Torres", score: 19, country: "VE" }
             ]
         };
 
@@ -425,7 +476,7 @@
         }
 
         function mergeAndNormalizeScores(gameKey, incomingArrays, isAscending, oldNameToRemove, mode = 'alltime') {
-            ensureWeeklyReset();
+            const currentWeek = ensureWeeklyReset();
             const isWeekly = (mode === 'weekly');
             const storageScoresKey = isWeekly ? ('bytezone_weekly_scores_' + gameKey) : ('bytezone_scores_' + gameKey);
             const storageBestKey   = isWeekly ? ('bytezone_weekly_best_' + gameKey)   : ('bytezone_best_' + gameKey);
@@ -477,8 +528,11 @@
                 }
             };
 
-            // 1. En el Salón de la Fama Histórico incluimos las leyendas base; en el Torneo Semanal solo jugadores reales de la semana
-            if (!isWeekly) {
+            // 1. Semilla base según modo (Semanal vs Histórico)
+            if (isWeekly) {
+                const weekSeeds = (SEEDED_WEEKLY_SCORES[currentWeek] && SEEDED_WEEKLY_SCORES[currentWeek][gameKey]) || [];
+                weekSeeds.forEach(addEntry);
+            } else {
                 (DEFAULT_ALLTIME_SCORES[gameKey] || []).forEach(addEntry);
             }
 
@@ -487,7 +541,7 @@
                 if (Array.isArray(arr)) arr.forEach(addEntry);
             });
 
-            // 3. Asegurar que el récord personal correspondiente (Semanal o Histórico) siempre esté incluido
+            // 3. Asegurar que el récord personal correspondiente siempre esté incluido
             const myBest = parseInt(localStorage.getItem(storageBestKey) || '0');
             if (myBest > 0) {
                 addEntry({
@@ -501,7 +555,6 @@
             const merged = Array.from(byName.values());
             merged.sort((a, b) => isAscending ? (a.score - b.score) : (b.score - a.score));
 
-            // Sincronizar marca personal si aparece en la tabla
             const myEntry = merged.find(x => isCurrentUserEntry(x));
             if (myEntry && myEntry.score > 0) {
                 if (myBest === 0 || (isAscending ? (myEntry.score < myBest) : (myEntry.score > myBest))) {
@@ -614,6 +667,8 @@
             const myWeeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0') || cleanScore;
             const myAlltimeBest = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0') || cleanScore;
 
+            localStorage.setItem(`bz_uploaded_${gameKey}_${currentWeek}`, String(myWeeklyBest));
+
             // 1. Emitir evento en tiempo real por ntfy.sh para todos los teléfonos conectados (<1 seg)
             try {
                 fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}`, {
@@ -714,7 +769,6 @@
             let ntfyAlltimeList = [];
             let renames = {};
 
-            // 1. Leer Torneo Semanal y Récord Histórico en paralelo
             await Promise.all([
                 (async () => {
                     if (!weeklyObjId) return;
@@ -793,9 +847,6 @@
             try { localWeekly = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + gameKey) || '[]'); } catch (e) {}
             try { localAlltime = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]'); } catch (e) {}
 
-            const myCloudWeekly = cloudWeeklyList.find(x => isCurrentUserEntry(x));
-            const myCloudAlltime = cloudAlltimeList.find(x => isCurrentUserEntry(x));
-
             mergeAndNormalizeScores(
                 gameKey,
                 [applyRename(localWeekly), applyRename(cloudWeeklyList), applyRename(ntfyWeeklyList)],
@@ -821,14 +872,12 @@
                 badgeEl.textContent = "🟢 Global En Vivo";
             }
 
-            // Auto-migración: Si este dispositivo tiene un récord semanal o histórico mejor que el de la nube, subirlo
+            // Auto-migración controlada (1 sola vez por marca nueva para no saturar la nube)
             const myWeeklyNow = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
-            const myAlltimeNow = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0');
-            const needsWeeklyUpload = myWeeklyNow > 0 && (!myCloudWeekly || (isAscending ? (myWeeklyNow < myCloudWeekly.score) : (myWeeklyNow > myCloudWeekly.score)));
-            const needsAlltimeUpload = myAlltimeNow > 0 && (!myCloudAlltime || (isAscending ? (myAlltimeNow < myCloudAlltime.score) : (myAlltimeNow > myCloudAlltime.score)));
-
-            if (needsWeeklyUpload || needsAlltimeUpload) {
-                pushScoreToCloud(gameKey, myWeeklyNow || myAlltimeNow, isAscending);
+            const lastUploaded = parseInt(localStorage.getItem(`bz_uploaded_${gameKey}_${currentWeek}`) || '0');
+            const inNtfy = ntfyWeeklyList.find(x => isCurrentUserEntry(x));
+            if (myWeeklyNow > 0 && lastUploaded !== myWeeklyNow && (!inNtfy || inNtfy.score !== myWeeklyNow)) {
+                pushScoreToCloud(gameKey, myWeeklyNow, isAscending);
             }
         }
 
@@ -838,16 +887,14 @@
             updateLeaderboardTabsUI();
             syncGameFromCloud(activeGameKey, isAscending);
 
-            // Actualizar contador de cuenta regresiva semanal cada 30 segundos
             setInterval(() => {
                 ensureWeeklyReset();
                 updateLeaderboardTabsUI();
             }, 30000);
 
-            // Sincronizar silenciosamente los otros juegos en segundo plano
             ['stacker', 'reflex', 'memory'].forEach(g => {
                 if (g !== activeGameKey) {
-                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), 1500);
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), 1800);
                 }
             });
 
@@ -880,10 +927,9 @@
                 } catch (e) {}
             }
 
-            // Refresco periódico de respaldo cada 20 segundos
             setInterval(() => {
                 syncGameFromCloud(activeGameKey, isAscending, true);
-            }, 20000);
+            }, 25000);
         }
 
         function getCountryFlag(code) {
@@ -946,11 +992,10 @@
         updateNameDisplays();
         detectUserCountry();
 
-        // Sincronizar récords guardados en el dispositivo incluso si el usuario abre primero el Lobby
         setTimeout(() => {
             if (!window.CURRENT_GAME_KEY) {
                 ['stacker', 'reflex', 'memory'].forEach((g, idx) => {
-                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), idx * 800);
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), idx * 900);
                 });
             }
         }, 600);
@@ -982,7 +1027,7 @@
                 localStorage.setItem('bytezone_player_name', playerName);
                 updateNameDisplays();
                 
-                ['stacker', 'reflex', 'memory'].forEach(game => {
+                ALL_GAME_KEYS.forEach(game => {
                     const isAsc = (game === 'reflex');
                     let wScores = [];
                     let aScores = [];
@@ -1014,6 +1059,382 @@
                 stats['last_active'] = new Date().toISOString();
                 localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
             } catch(e) {}
+        }
+
+        // ==========================================================
+        // REPRODUCTOR DE VIDEO FLASH IA (VOZ RÁPIDA + MONETIZACIÓN)
+        // ==========================================================
+        const DEFAULT_WEEKLY_PULSE = {
+            week_id: "W2026-10-12",
+            updated_human: "17/10/2026",
+            video_reel: {
+                title: "ByteZone Flash IA • Edición Semanal",
+                subtitle: "Video-Resumen Rápido con Locución de Inteligencia Artificial",
+                duration_label: "45 seg",
+                scenes: [
+                    {
+                        id: "intro",
+                        badge: "FLASH IA • SEMANAL",
+                        icon: "⚡",
+                        headline: "¡Resumen Tech & IA en 45 Segundos!",
+                        subtext: "Lo más impactante de la semana en tecnología, inventos e Inteligencia Artificial explicado al instante.",
+                        voice_script: "¡Qué tal equipo de ByteZone! Arrancamos el resumen flash de tecnología e inteligencia artificial de esta semana. ¡Vamos a toda velocidad!",
+                        bg_gradient: "from-blue-600 via-purple-700 to-pink-700",
+                        duration_ms: 6500
+                    },
+                    {
+                        id: "news_1",
+                        badge: "BOMBAZO #1 • TECH & IA",
+                        icon: "🤖",
+                        headline: "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
+                        subtext: "La nueva herramienta detecta marcas de agua invisibles en imágenes, audios y textos generados por Inteligencia Artificial en segundos.",
+                        voice_script: "Número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. Esta nueva tecnología escanea marcas invisibles para descubrir al instante si un video o audio fue creado con inteligencia artificial.",
+                        bg_gradient: "from-cyan-600 to-blue-900",
+                        duration_ms: 9500
+                    },
+                    {
+                        id: "news_2",
+                        badge: "BOMBAZO #2 • LO NUEVO",
+                        icon: "🚀",
+                        headline: "Linux sigue los pasos de Windows y añade un asistente de IA local a Ubuntu",
+                        subtext: "Canonical presenta Ubuntu con asistente de Inteligencia Artificial integrado que funciona directo en tu equipo.",
+                        voice_script: "Número 2: Linux sigue los pasos de Windows y añade un asistente de inteligencia artificial nativo a su última versión de Ubuntu, marcando un antes y un después en sistemas operativos.",
+                        bg_gradient: "from-purple-600 to-indigo-900",
+                        duration_ms: 9500
+                    },
+                    {
+                        id: "news_3",
+                        badge: "BOMBAZO #3 • TENDENCIA",
+                        icon: "⚡",
+                        headline: "OpenAI descubre una grabadora escondida en sus oficinas y el FBI interviene",
+                        subtext: "Máxima alerta de seguridad corporativa en los laboratorios donde se entrenan los próximos modelos de Inteligencia Artificial.",
+                        voice_script: "Número 3: Máxima tensión en Silicon Valley. Descubren un dispositivo de grabación oculto en una sala ejecutiva de OpenAI, desatando una investigación federal por espionaje tecnológico.",
+                        bg_gradient: "from-pink-600 to-rose-900",
+                        duration_ms: 9500
+                    },
+                    {
+                        id: "outro",
+                        badge: "🔓 SECRETO VIP & TORNEO",
+                        icon: "👑",
+                        headline: "El nuevo auto 'volador' y el Truco Gamer VIP de la semana",
+                        subtext: "¡Toca el botón dorado debajo del video para desbloquear la Noticia #5 + el Truco VIP y entra al Torneo Semanal!",
+                        voice_script: "Y en el secreto VIP de esta semana: el nuevo prototipo de auto volador y el truco oculto para acelerar tu teléfono antes de jugar. Toca el botón dorado debajo del reproductor para desbloquearlo ahora mismo.",
+                        bg_gradient: "from-amber-500 via-orange-600 to-rose-800",
+                        duration_ms: 9500,
+                        is_vip_hook: true
+                    }
+                ]
+            },
+            weekly_news: [
+                {
+                    title: "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
+                    summary: "En un mundo lleno de contenidos generados por IA, SynthID permite verificar en segundos si una imagen, pista de audio o video fue creado artificialmente.",
+                    source: "Hipertextual IA",
+                    link: "https://hipertextual.com/inteligencia-artificial/como-detectar-fotos-videos-y-audios-creados-con-ia-usando-synthid-detector/"
+                },
+                {
+                    title: "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
+                    summary: "Ubuntu incorpora su propio asistente inteligente local para automatizar comandos, optimizar el sistema y asistir al usuario sin depender de la nube.",
+                    source: "Hipertextual IA",
+                    link: "https://hipertextual.com/inteligencia-artificial/ubuntu-26-10-myna-asistente-ia-local/"
+                },
+                {
+                    title: "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
+                    summary: "La carrera por los secretos de la Inteligencia Artificial llega a niveles de película de espías tras hallarse un micrófono oculto en una sala ejecutiva.",
+                    source: "Hipertextual IA",
+                    link: "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/"
+                },
+                {
+                    title: "La mayoría de los usuarios cree que la IA avanza a una velocidad vertiginosa, según sondeo",
+                    summary: "Los nuevos modelos de voz, video y agentes autónomos están transformando el trabajo y el entretenimiento móvil mucho más rápido de lo previsto.",
+                    source: "Tech Radar",
+                    link: "https://news.google.com/"
+                }
+            ],
+            vip_hack_of_the_week: {
+                tag: "Secreto Gamer & IA de la Semana",
+                title: "Cómo activar el DNS Ultra-Rápido y liberar RAM oculta en 5 segundos",
+                body: "1) En Ajustes > Conexiones > DNS Privado escribe 'one.one.one.one' para reducir el ping un 30%. 2) Antes de buscar un récord en Test de Reflejos o Neon Stacker, activa 'No Molestar' para bloquear procesos en segundo plano que retrasan la respuesta táctil de tu pantalla."
+            }
+        };
+
+        window.bzPulseData = DEFAULT_WEEKLY_PULSE;
+        window.bzReelState = {
+            playing: false,
+            sceneIdx: 0,
+            timer: null,
+            voiceRate: 1.28,
+            muted: false,
+            audioCtx: null,
+            beatInterval: null
+        };
+
+        async function loadWeeklyPulseData(rootPrefix = "") {
+            try {
+                const res = await fetch(`${rootPrefix}data/weekly_pulse.json?t=${Date.now()}`, { cache: 'no-store' });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.video_reel && Array.isArray(data.video_reel.scenes)) {
+                        window.bzPulseData = data;
+                    }
+                }
+            } catch (e) {}
+            renderPulseWidgets();
+        }
+
+        function renderPulseWidgets() {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const dateBadge = document.getElementById('pulseUpdatedBadge');
+            if (dateBadge) {
+                dateBadge.textContent = `🤖 Actualizado por Agente CEO: ${data.updated_human || 'Hoy'} (${data.week_id || getCurrentWeekId()})`;
+            }
+            updateReelSceneUI(0);
+
+            const newsGrid = document.getElementById('weeklyNewsContainer');
+            if (newsGrid && Array.isArray(data.weekly_news)) {
+                newsGrid.innerHTML = data.weekly_news.slice(0, 4).map((item, i) => `
+                    <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                                    🔥 Top #${i + 1} • ${item.source || 'Tech IA'}
+                                </span>
+                                <span class="text-[11px] text-gray-500">${data.updated_human || ''}</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-black text-white leading-snug">${item.title}</h3>
+                            <p class="text-xs text-gray-300 mt-2 leading-relaxed">${item.summary}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-800/80 flex justify-between items-center text-xs">
+                            <span class="text-purple-400 font-semibold">Seleccionado por Agente SEO</span>
+                            <button onclick="playSpecificNewsScene(${i + 1})" class="text-cyan-400 hover:underline font-bold flex items-center space-x-1">
+                                <span>🔊</span>
+                                <span>Escuchar en Video IA</span>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function startCyberBeat() {
+            if (window.bzReelState.muted) return;
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                if (!window.bzReelState.audioCtx) {
+                    window.bzReelState.audioCtx = new AudioContext();
+                }
+                const ctx = window.bzReelState.audioCtx;
+                if (ctx.state === 'suspended') ctx.resume();
+                clearInterval(window.bzReelState.beatInterval);
+                let step = 0;
+                window.bzReelState.beatInterval = setInterval(() => {
+                    if (!window.bzReelState.playing || window.bzReelState.muted) return;
+                    try {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        const freqs = [110, 146.83, 164.81, 220];
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freqs[step % freqs.length], ctx.currentTime);
+                        gain.gain.setValueAtTime(0.025, ctx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 0.19);
+                        step++;
+                    } catch (err) {}
+                }, 420);
+            } catch (e) {}
+        }
+
+        function stopCyberBeat() {
+            clearInterval(window.bzReelState.beatInterval);
+        }
+
+        function speakReelText(text, onEndCallback) {
+            if (!('speechSynthesis' in window) || window.bzReelState.muted) {
+                return false;
+            }
+            try {
+                window.speechSynthesis.cancel();
+                const utter = new SpeechSynthesisUtterance(text);
+                utter.lang = 'es-ES';
+                utter.rate = window.bzReelState.voiceRate || 1.28;
+                utter.pitch = 1.05;
+                const voices = window.speechSynthesis.getVoices() || [];
+                const esVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Sabina') || v.name.includes('Helena')))
+                             || voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es'));
+                if (esVoice) utter.voice = esVoice;
+                utter.onend = () => {
+                    if (typeof onEndCallback === 'function') onEndCallback();
+                };
+                window.speechSynthesis.speak(utter);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function updateReelSceneUI(idx) {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            const sc = scenes[idx] || scenes[0];
+
+            const screen = document.getElementById('aiReelScreen');
+            const badge = document.getElementById('aiReelBadge');
+            const icon = document.getElementById('aiReelIcon');
+            const headline = document.getElementById('aiReelHeadline');
+            const subtext = document.getElementById('aiReelSubtext');
+            const stepText = document.getElementById('aiReelStepCounter');
+            const progressBar = document.getElementById('aiReelProgressBar');
+            const playBtn = document.getElementById('aiReelPlayBtn');
+            const eqBars = document.getElementById('aiReelEqualizer');
+
+            if (!screen) return;
+            screen.className = `relative w-full rounded-2xl overflow-hidden p-5 sm:p-7 min-h-[250px] sm:min-h-[270px] flex flex-col justify-between border-2 border-cyan-400/40 shadow-2xl transition-all duration-500 bg-gradient-to-br ${sc.bg_gradient || 'from-blue-700 to-purple-900'}`;
+            if (badge) badge.textContent = sc.badge || 'FLASH IA';
+            if (icon) icon.textContent = sc.icon || '🤖';
+            if (headline) headline.textContent = sc.headline || '';
+            if (subtext) subtext.textContent = sc.subtext || '';
+            if (stepText) stepText.textContent = `Escena ${idx + 1}/${scenes.length}`;
+            if (progressBar) {
+                const pct = Math.round(((idx + 1) / scenes.length) * 100);
+                progressBar.style.width = `${pct}%`;
+            }
+            if (playBtn) {
+                playBtn.innerHTML = window.bzReelState.playing
+                    ? '<span>⏸</span><span>PAUSAR VIDEO IA</span>'
+                    : '<span>▶</span><span>REPRODUCIR VIDEO IA (VOZ RÁPIDA)</span>';
+            }
+            if (eqBars) {
+                eqBars.style.opacity = window.bzReelState.playing ? '1' : '0.35';
+            }
+        }
+
+        function toggleAiVideoReel() {
+            if (window.bzReelState.playing) {
+                stopAiVideoReel();
+            } else {
+                startAiVideoReel(window.bzReelState.sceneIdx || 0);
+            }
+        }
+
+        function startAiVideoReel(startIdx = 0) {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            if (startIdx >= scenes.length) startIdx = 0;
+
+            trackByteZoneEvent('news_video', 'play');
+            window.bzReelState.playing = true;
+            window.bzReelState.sceneIdx = startIdx;
+            startCyberBeat();
+            runReelScene(startIdx);
+        }
+
+        function runReelScene(idx) {
+            clearTimeout(window.bzReelState.timer);
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            if (!window.bzReelState.playing || idx >= scenes.length) {
+                stopAiVideoReel();
+                window.bzReelState.sceneIdx = 0;
+                updateReelSceneUI(0);
+                return;
+            }
+
+            window.bzReelState.sceneIdx = idx;
+            updateReelSceneUI(idx);
+            const sc = scenes[idx];
+
+            let advanced = false;
+            const goNext = () => {
+                if (advanced || !window.bzReelState.playing) return;
+                advanced = true;
+                clearTimeout(window.bzReelState.timer);
+                if (idx + 1 < scenes.length) {
+                    runReelScene(idx + 1);
+                } else {
+                    stopAiVideoReel();
+                }
+            };
+
+            const hasSpeech = speakReelText(sc.voice_script || sc.headline, () => {
+                setTimeout(goNext, 450);
+            });
+
+            const fallbackMs = hasSpeech ? Math.max(sc.duration_ms || 9000, 11000) : (sc.duration_ms || 7500);
+            window.bzReelState.timer = setTimeout(goNext, fallbackMs);
+        }
+
+        function stopAiVideoReel() {
+            window.bzReelState.playing = false;
+            clearTimeout(window.bzReelState.timer);
+            stopCyberBeat();
+            if ('speechSynthesis' in window) {
+                try { window.speechSynthesis.cancel(); } catch (e) {}
+            }
+            updateReelSceneUI(window.bzReelState.sceneIdx || 0);
+        }
+
+        function nextAiReelScene() {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            const nextIdx = ((window.bzReelState.sceneIdx || 0) + 1) % scenes.length;
+            if (window.bzReelState.playing) {
+                runReelScene(nextIdx);
+            } else {
+                window.bzReelState.sceneIdx = nextIdx;
+                updateReelSceneUI(nextIdx);
+            }
+        }
+
+        function playSpecificNewsScene(sceneIndex) {
+            const el = document.getElementById('aiReelScreen');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            startAiVideoReel(sceneIndex);
+        }
+
+        function toggleReelSpeed() {
+            const current = window.bzReelState.voiceRate || 1.28;
+            const next = current >= 1.45 ? 1.15 : (current >= 1.25 ? 1.48 : 1.28);
+            window.bzReelState.voiceRate = next;
+            const btn = document.getElementById('aiReelSpeedBtn');
+            if (btn) {
+                const label = next >= 1.45 ? '1.5x Turbo' : (next >= 1.25 ? '1.3x Rápido' : '1.0x Normal');
+                btn.textContent = '⚡ Voz: ' + label;
+            }
+            if (window.bzReelState.playing) {
+                runReelScene(window.bzReelState.sceneIdx);
+            }
+        }
+
+        function unlockVipNewsAndHack() {
+            trackByteZoneEvent('news_video', 'ad');
+            const box = document.getElementById('vipUnlockedBox');
+            const btn = document.getElementById('vipUnlockBtn');
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const vip = data.vip_hack_of_the_week || DEFAULT_WEEKLY_PULSE.vip_hack_of_the_week;
+            if (box) {
+                document.getElementById('vipHackTag').textContent = vip.tag || 'Secreto VIP';
+                document.getElementById('vipHackTitle').textContent = vip.title || '';
+                document.getElementById('vipHackBody').textContent = vip.body || '';
+                box.classList.remove('hidden');
+            }
+            if (btn) {
+                btn.innerHTML = '<span>✅</span><span>CONTENIDO VIP DESBLOQUEADO</span>';
+                btn.className = "w-full bg-emerald-600/30 border border-emerald-400/50 text-emerald-300 font-black py-3 rounded-2xl text-xs flex items-center justify-center space-x-2";
+            }
+            if (window.confetti) {
+                confetti({ particleCount: 60, spread: 60, origin: { y: 0.7 } });
+            }
+        }
+
+        function openVaultGameWithReward(targetUrl) {
+            trackByteZoneEvent('dodge', 'ad');
+            executeRewardedAction(() => {
+                window.location.href = targetUrl;
+            });
         }
 
     </script>

@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cyber Dodge: Tormenta de Asteroides - Baúl Arcade ByteZone</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script>
+        // 1. Limpieza automática de caché y cualquier temporizador inApp previo guardado en el navegador/Telegram
+        try {
+            Object.keys(localStorage).forEach(k => {
+                if (!k.startsWith('bytezone_')) localStorage.removeItem(k);
+            });
+            Object.keys(sessionStorage).forEach(k => {
+                if (!k.startsWith('bz_')) sessionStorage.removeItem(k);
+            });
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+            }
+            if (!location.search.includes('v=9') && !sessionStorage.getItem('bz_v9_reloaded')) {
+                sessionStorage.setItem('bz_v9_reloaded', '1');
+                const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
+                const sep = cleanSearch.includes('?') ? '&' : '?';
+                location.replace(location.pathname + cleanSearch + sep + 'v=9' + location.hash);
+            }
+        } catch (e) {}
+    </script>
+
+    <!-- Monetag In-Page Push Banners Arriba (Zona 12034401) - Web y Telegram Mini App -->
+    <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
+    
+    <script>
+        // 2. Video de Recompensa (Zona 12040274): SE CARGA Y EJECUTA CUANDO EL JUGADOR PIDE SEGUNDA OPORTUNIDAD, DESBLOQUEA EL VIDEO VIP O ABRE EL BAÚL
+        function executeRewardedAction(rewardCallback) {
+            const runReward = () => {
+                if (typeof show_12040274 === 'function') {
+                    show_12040274().then(() => {
+                        if (typeof rewardCallback === 'function') rewardCallback();
+                    }).catch((err) => {
+                        console.log("Anuncio Monetag Telegram cerrado o error:", err);
+                        if (typeof rewardCallback === 'function') rewardCallback();
+                    });
+                } else {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                }
+            };
+
+            if (typeof show_12040274 === 'function') {
+                runReward();
+            } else {
+                const s = document.createElement('script');
+                s.src = 'https://libtl.com/sdk.js';
+                s.dataset.zone = '12040274';
+                s.dataset.sdk = 'show_12040274';
+                s.onload = () => setTimeout(runReward, 150);
+                s.onerror = () => {
+                    if (typeof rewardCallback === 'function') rewardCallback();
+                };
+                document.head.appendChild(s);
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
+
+    
+    <!-- ESPACIO RESERVADO PARA BANNERS MONETAG EN LA PARTE SUPERIOR (EVITA QUE TAPEN EL LOGO Y BOTONES) -->
+    <div id="monetag-ad-spacer" class="w-full h-24 sm:h-28 flex-shrink-0 pointer-events-none" style="min-height: 96px;" aria-hidden="true"></div>
+
+    <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="../index.html?v=9" class="flex items-center space-x-2 group">
+                <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
+                <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+                    BYTE<span class="text-white">ZONE</span>
+                </span>
+            </a>
+            <div class="flex items-center space-x-2">
+                <button onclick="promptChangeName()" class="text-xs text-gray-300 hover:text-cyan-400 bg-gray-800/80 px-2.5 py-1.5 rounded-xl border border-gray-700/60 flex items-center space-x-1.5 transition">
+                    <span id="playerCountryDisplay" class="text-sm select-none">🌐</span>
+                    <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
+                    <span class="text-cyan-400 text-[10px]">✏️</span>
+                </button>
+                <a id="headerActionBtn" href="../telegram.html?v=9" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                    <span id="headerActionIcon">✈️</span>
+                    <span id="headerActionText" class="hidden sm:inline">Telegram</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
+        <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
+            <a href="../index.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+                <span class="text-base sm:text-lg">🕹️</span>
+                <span>Arcade Hub</span>
+            </a>
+            <a href="../hacks.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🤖</span>
+                <span>IA & Tech TV</span>
+            </a>
+            <a href="../humor.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🎭</span>
+                <span>Humor</span>
+            </a>
+            <a href="../telegram.html?v=9" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+                <span class="text-base sm:text-lg">🚀</span>
+                <span>Comunidad</span>
+            </a>
+        </div>
+    </nav>
+    
+
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <!-- BARRA REGRESAR Y SELLO BAÚL -->
+        <div class="flex items-center justify-between">
+            <a href="../index.html?v=9" class="text-xs text-amber-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+                <span>←</span>
+                <span>Volver al Arcade</span>
+            </a>
+
+            <div class="text-xs text-amber-300 bg-amber-500/10 px-3 py-1.5 rounded-xl border border-amber-500/30 flex items-center space-x-1.5 font-bold">
+                <span>🗄️</span>
+                <span>Joya Rescatada del Baúl</span>
+            </div>
+        </div>
+
+        <!-- TABLERO DE RÉCORD CYBER DODGE -->
+        <div class="bg-gray-900/90 p-4 rounded-2xl border border-amber-500/30 flex items-center justify-between shadow-xl">
+            <div>
+                <p id="userBestScoreLabel" class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Tu Mejor Supervivencia Semanal</p>
+                <p id="userBestScore" class="text-2xl font-black text-white">0 seg</p>
+            </div>
+            <div class="text-right">
+                <p id="userRankLabel" class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Puesto Semanal</p>
+                <span id="userRankBadge" class="text-xs font-black text-pink-400 bg-pink-500/10 border border-pink-500/30 px-3 py-1 rounded-full">
+                    Sin Clasificar
+                </span>
+            </div>
+        </div>
+
+        <!-- LIENZO DEL JUEGO CYBER DODGE -->
+        <div class="bg-gray-900/90 rounded-3xl p-4 sm:p-6 border border-gray-800 relative shadow-2xl">
+            <div class="relative w-full max-w-sm mx-auto h-[400px] sm:h-[430px] rounded-2xl overflow-hidden bg-gray-950 border-2 border-amber-500/40">
+                <canvas id="dodgeCanvas" width="360" height="430" class="w-full h-full block cursor-pointer select-none touch-none"></canvas>
+
+                <!-- OVERLAY INICIO -->
+                <div id="dodgeStartScreen" class="absolute inset-0 bg-gray-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-5xl mb-2 animate-bounce">🚀</span>
+                    <span class="text-[10px] font-black uppercase bg-amber-500/20 text-amber-300 px-2.5 py-0.5 rounded-full mb-1">Edición Especial del Baúl</span>
+                    <h2 class="text-2xl font-black text-white">CYBER DODGE</h2>
+                    <p class="text-xs text-gray-300 mt-2 mb-6 max-w-xs">
+                        Desliza el dedo o mueve el cursor para pilotar la nave y esquivar la lluvia de meteoritos neón. ¡Cada segundo suma puntos!
+                    </p>
+                    <button onclick="startDodgeGame()" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:scale-105 active:scale-95 text-gray-950 font-black px-8 py-3.5 rounded-2xl shadow-xl shadow-amber-500/30 transition text-sm">
+                        ¡DESPEGAR NAVE!
+                    </button>
+                </div>
+
+                <!-- MODAL ESCUDO DE SEGUNDA OPORTUNIDAD -->
+                <div id="dodgeReviveModal" class="hidden absolute inset-0 bg-gray-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-5xl mb-1">☄️</span>
+                    <h3 class="text-xl font-black text-white">¡IMPACTO DE ASTEROIDE!</h3>
+                    <p id="dodgeScoreText" class="text-sm font-bold text-amber-400 mt-1 mb-4">Sobreviviste 18 segundos</p>
+
+                    <div id="dodgeReviveBox" class="w-full max-w-xs mb-3">
+                        <button onclick="executeRewardedAction(handleDodgeRevive)" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90 active:scale-95 text-white font-black py-3.5 rounded-2xl shadow-lg shadow-emerald-500/30 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
+                            <span>🛡️</span>
+                            <span>ACTIVAR ESCUDO & CONTINUAR</span>
+                        </button>
+                        <p class="text-[10px] text-gray-400 mt-1">Destruye los asteroides en pantalla y conserva tu tiempo</p>
+                    </div>
+
+                    <button onclick="startDodgeGame()" class="text-xs text-gray-400 hover:text-white underline mt-2">
+                        Reiniciar desde 0 seg
+                    </button>
+                </div>
+            </div>
+            <p class="text-xs text-gray-400 text-center mt-3">💡 Desliza el dedo a izquierda/derecha o usa las flechas del teclado para mover la nave</p>
+        </div>
+
+        <!-- TABLA DE LÍDERES CYBER DODGE -->
+        <div class="bg-gray-900/80 rounded-3xl p-5 sm:p-6 border border-gray-800">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl">🏆</span>
+                    <h3 class="text-base sm:text-lg font-black text-white">Top 10 • Cyber Dodge</h3>
+                </div>
+                <button id="liveSyncStatus" onclick="syncGameFromCloud('dodge', false)" class="text-xs bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-bold px-2.5 py-1 rounded-full transition">🟢 Global En Vivo</button>
+            </div>
+
+            <div class="flex space-x-1.5 bg-gray-950/90 p-1.5 rounded-2xl border border-gray-800 mb-3">
+                <button id="tabWeeklyBtn" onclick="switchLeaderboardTab('weekly')" class="w-1/2 py-2 px-3 rounded-xl font-black text-xs transition flex items-center justify-center space-x-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-gray-950 shadow-md shadow-amber-500/20">
+                    <span>🔥</span>
+                    <span>Torneo Semanal</span>
+                </button>
+                <button id="tabAlltimeBtn" onclick="switchLeaderboardTab('alltime')" class="w-1/2 py-2 px-3 rounded-xl font-bold text-xs transition flex items-center justify-center space-x-1.5 text-gray-400 hover:text-white">
+                    <span>👑</span>
+                    <span>Récord Histórico</span>
+                </button>
+            </div>
+
+            <div id="weeklyCountdownBanner" class="mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1"></div>
+
+            <div id="leaderboardList" class="space-y-2 text-sm"></div>
+        </div>
+
+    </main>
+
+    
+    <!-- MODAL PERFIL JUGADOR (CONEXIÓN UNIFICADA Y PAÍS) -->
+    <div id="namePromptModal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-gray-900 w-full max-w-sm rounded-3xl p-6 border border-purple-500/50 text-center shadow-2xl relative">
+            <span class="text-4xl animate-bounce inline-block">👑</span>
+            <h3 class="text-xl font-black text-white mt-2">Tu Perfil de Campeón</h3>
+            <p class="text-xs text-gray-300 my-2">Tu apodo y bandera quedarán guardados en la tabla de récords mundiales en tiempo real.</p>
+            
+            <div class="flex items-center justify-center space-x-2 my-3 p-2 bg-gray-800/80 rounded-xl border border-gray-700/60 text-xs text-gray-300">
+                <span>Tu Bandera:</span>
+                <span id="modalCountryFlag" class="text-xl">🌐</span>
+                <span id="modalCountryName" class="font-bold text-cyan-400">VE</span>
+                <span class="text-[10px] text-gray-400">(Auto-detectada)</span>
+            </div>
+
+            <input type="text" id="modalNameInput" placeholder="Ej: Alex_Pro, Fénix..." maxlength="15"
+                   class="w-full px-4 py-3 rounded-xl bg-gray-800 text-white text-sm border border-gray-700 focus:outline-none focus:border-cyan-400 mb-4 text-center font-bold tracking-wider">
+            
+            <div class="flex space-x-2">
+                <button onclick="closeNameModal()" class="w-1/2 bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold py-2.5 rounded-xl text-xs transition">
+                    Cancelar
+                </button>
+                <button onclick="savePlayerNameFromModal()" class="w-1/2 bg-gradient-to-r from-cyan-500 to-purple-600 hover:opacity-90 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-lg shadow-cyan-500/25">
+                    Guardar Perfil
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        // Reparación automática de nombres truncados en versiones previas (12 chars -> 15 chars completos)
+        const KNOWN_NAME_REPAIRS = {
+            'rafael torre': 'Rafael Torres',
+            'tovias torre': 'Tovias Torres',
+            'tobias torre': 'Tovias Torres'
+        };
+
+        function repairPlayerName(rawName) {
+            if (!rawName) return 'Jugador';
+            const clean = String(rawName).replace(/[|;]/g, '').trim().slice(0, 15);
+            const lower = clean.toLowerCase();
+            if (KNOWN_NAME_REPAIRS[lower]) return KNOWN_NAME_REPAIRS[lower];
+            return clean || 'Jugador';
+        }
+
+        // Sistema de identidad persistente por dispositivo (Device ID)
+        let deviceId = localStorage.getItem('bytezone_device_id');
+        if (!deviceId) {
+            deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+            localStorage.setItem('bytezone_device_id', deviceId);
+        }
+
+        let playerName = localStorage.getItem('bytezone_player_name');
+        if (!playerName) {
+            if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe && window.Telegram.WebApp.initDataUnsafe.user) {
+                playerName = window.Telegram.WebApp.initDataUnsafe.user.first_name || window.Telegram.WebApp.initDataUnsafe.user.username;
+            } else {
+                playerName = "Jugador_" + Math.floor(Math.random()*900 + 100);
+            }
+        }
+        playerName = repairPlayerName(playerName);
+        localStorage.setItem('bytezone_player_name', playerName);
+
+        let prevNames = [];
+        try {
+            prevNames = JSON.parse(localStorage.getItem('bytezone_prev_names') || '[]');
+            if (!Array.isArray(prevNames)) prevNames = [];
+        } catch (e) { prevNames = []; }
+
+        let playerCountry = localStorage.getItem('bytezone_player_country') || '';
+
+        // ==========================================================
+        // RELOJ DE TORNEO SEMANAL (REINICIO DOMINGO 12:00 AM / LUNES 00:00 VET)
+        // ==========================================================
+        function getNowVenezuela() {
+            const now = new Date();
+            const utcMs = now.getTime() + (now.getTimezoneOffset() * 60000);
+            return new Date(utcMs - (4 * 3600000)); // UTC-4 Venezuela
+        }
+
+        function getCurrentWeekId() {
+            const vet = getNowVenezuela();
+            const day = vet.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+            const diffToMonday = (day === 0) ? -6 : (1 - day);
+            const monday = new Date(vet);
+            monday.setDate(vet.getDate() + diffToMonday);
+            const y = monday.getFullYear();
+            const m = String(monday.getMonth() + 1).padStart(2, '0');
+            const d = String(monday.getDate()).padStart(2, '0');
+            return `W${y}-${m}-${d}`;
+        }
+
+        function getWeeklyCountdownText() {
+            const vet = getNowVenezuela();
+            const day = vet.getDay();
+            const daysUntilMonday = (day === 0) ? 1 : (8 - day);
+            const nextMonday = new Date(vet);
+            nextMonday.setDate(vet.getDate() + daysUntilMonday);
+            nextMonday.setHours(0, 0, 0, 0);
+            const diffMs = Math.max(0, nextMonday.getTime() - vet.getTime());
+            const totalMinutes = Math.floor(diffMs / 60000);
+            const d = Math.floor(totalMinutes / (60 * 24));
+            const h = Math.floor((totalMinutes % (60 * 24)) / 60);
+            const m = totalMinutes % 60;
+            if (d > 0) {
+                return `⏳ Reinicia Dom 12:00 AM (${d}d ${h}h ${m}m)`;
+            }
+            return `⏳ Reinicia hoy 12:00 AM (${h}h ${m}m)`;
+        }
+
+        const ALL_GAME_KEYS = ['stacker', 'reflex', 'memory', 'dodge'];
+
+        function ensureWeeklyReset() {
+            const currentWeek = getCurrentWeekId();
+            const savedWeek = localStorage.getItem('bytezone_active_week');
+            if (savedWeek !== currentWeek) {
+                ALL_GAME_KEYS.forEach(g => {
+                    if (!savedWeek && currentWeek === 'W2026-10-12') {
+                        const existingBest = localStorage.getItem('bytezone_best_' + g) || '0';
+                        localStorage.setItem('bytezone_weekly_best_' + g, existingBest);
+                    } else {
+                        localStorage.setItem('bytezone_weekly_best_' + g, '0');
+                        localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
+                    }
+                });
+                localStorage.setItem('bytezone_active_week', currentWeek);
+            }
+            return currentWeek;
+        }
+        ensureWeeklyReset();
+
+        // ==========================================================
+        // MOTOR DE SINCRONIZACIÓN MUNDIAL EN TIEMPO REAL (SEMANAL + HISTÓRICO)
+        // ==========================================================
+        const CLOUD_ALLTIME_IDS = {
+            stacker: 'ff808181a09d98f701a1448611567237',
+            reflex:  'ff808181a09d98f701a1448613fe7238',
+            memory:  'ff808181a09d98f701a14486174a7239'
+        };
+        const CLOUD_WEEKLY_IDS = {
+            stacker: 'ff808181a09d98f701a14a82e347035f',
+            reflex:  'ff808181a09d98f701a14a82e55d0360',
+            memory:  'ff808181a09d98f701a14a82e7130361'
+        };
+        const NTFY_SCORES_TOPIC = 'bytezone_global_scores_v3';
+
+        window.currentLeaderboardTab = 'weekly'; // 'weekly' o 'alltime'
+
+        // Semilla de jugadores reales verificados de la semana inaugural W2026-10-12 (con ***** sincronizado en 33 en ambos rankings)
+        const SEEDED_WEEKLY_SCORES = {
+            'W2026-10-12': {
+                stacker: [
+                    { name: "alexa torres", score: 34, country: "VE" },
+                    { name: "*****", score: 33, country: "VE" },
+                    { name: "RATG", score: 29, country: "VE" },
+                    { name: "Jugador_930", score: 29, country: "VE" },
+                    { name: "Jugador_311", score: 23, country: "VE" },
+                    { name: "Rafael Torres", score: 22, country: "VE" },
+                    { name: "Jugador_662", score: 22, country: "VE" }
+                ],
+                reflex: [
+                    { name: "RATG", score: 31, country: "VE" },
+                    { name: "*****", score: 87, country: "VE" },
+                    { name: "Rafael Torres", score: 249, country: "VE" },
+                    { name: "Jugador_930", score: 308, country: "VE" }
+                ],
+                memory: [
+                    { name: "Jugador_930", score: 13, country: "VE" },
+                    { name: "Jugador_662", score: 10, country: "VE" },
+                    { name: "Tovias Torres", score: 10, country: "VE" },
+                    { name: "*****", score: 10, country: "VE" },
+                    { name: "Jugador_311", score: 8, country: "VE" },
+                    { name: "RATG", score: 5, country: "VE" }
+                ],
+                dodge: [
+                    { name: "RATG", score: 24, country: "VE" },
+                    { name: "Rafael Torres", score: 19, country: "VE" }
+                ]
+            }
+        };
+
+        const DEFAULT_ALLTIME_SCORES = {
+            stacker: [
+                { name: "alexa torres", score: 34, country: "VE" },
+                { name: "*****", score: 33, country: "VE" },
+                { name: "CyberSam", score: 32, country: "ES" },
+                { name: "RATG", score: 29, country: "VE" },
+                { name: "Jugador_930", score: 29, country: "VE" },
+                { name: "SpeedyGamer", score: 26, country: "MX" },
+                { name: "Jugador_311", score: 23, country: "VE" },
+                { name: "Rafael Torres", score: 22, country: "VE" },
+                { name: "Jugador_662", score: 22, country: "VE" },
+                { name: "LunaByte", score: 21, country: "AR" }
+            ],
+            reflex: [
+                { name: "RATG", score: 31, country: "VE" },
+                { name: "*****", score: 87, country: "VE" },
+                { name: "ViperPulse", score: 215, country: "US" },
+                { name: "NicoFast", score: 240, country: "CL" },
+                { name: "Rafael Torres", score: 249, country: "VE" },
+                { name: "Dani_Reflex", score: 265, country: "VE" },
+                { name: "SaraFlash", score: 290, country: "ES" },
+                { name: "Jugador_930", score: 308, country: "VE" },
+                { name: "Leo_Gamer", score: 320, country: "MX" }
+            ],
+            memory: [
+                { name: "Jugador_930", score: 13, country: "VE" },
+                { name: "MegaBrain", score: 12, country: "MX" },
+                { name: "Titan_Mind", score: 10, country: "CO" },
+                { name: "Jugador_662", score: 10, country: "VE" },
+                { name: "Tovias Torres", score: 10, country: "VE" },
+                { name: "*****", score: 10, country: "VE" },
+                { name: "Valen_Pro", score: 8, country: "VE" },
+                { name: "Jugador_311", score: 8, country: "VE" },
+                { name: "NeoMatrix", score: 7, country: "ES" },
+                { name: "RATG", score: 5, country: "VE" }
+            ],
+            dodge: [
+                { name: "CyberPilot", score: 42, country: "ES" },
+                { name: "Nova_VE", score: 35, country: "VE" },
+                { name: "FlashStar", score: 28, country: "MX" },
+                { name: "RATG", score: 24, country: "VE" },
+                { name: "Rafael Torres", score: 19, country: "VE" }
+            ]
+        };
+
+        function isCurrentUserEntry(entry) {
+            if (!entry) return false;
+            if (entry.deviceId && entry.deviceId === deviceId) return true;
+            if (entry.name && playerName && repairPlayerName(entry.name).toLowerCase() === playerName.trim().toLowerCase()) return true;
+            return false;
+        }
+
+        function encodeCompactScores(list, maxChars = 195) {
+            const parts = [];
+            let currentLen = 0;
+            for (const item of (list || []).slice(0, 10)) {
+                const cleanName = repairPlayerName(item.name || 'Jugador');
+                const sc = parseInt(item.score) || 0;
+                if (sc <= 0) continue;
+                const cc = String(item.country || 'VE').toUpperCase().slice(0, 2);
+                const token = `${cleanName}|${sc}|${cc}`;
+                const addedLen = parts.length === 0 ? token.length : token.length + 1;
+                if (currentLen + addedLen > maxChars) break;
+                parts.push(token);
+                currentLen += addedLen;
+            }
+            return parts.join(';');
+        }
+
+        function decodeCompactScores(str) {
+            if (!str || typeof str !== 'string') return [];
+            return str.split(';').map(part => {
+                const [name, sc, cc] = part.split('|');
+                const scoreNum = parseInt(sc);
+                if (!name || isNaN(scoreNum) || scoreNum <= 0) return null;
+                return {
+                    name: repairPlayerName(name),
+                    score: scoreNum,
+                    country: (cc && cc.length === 2) ? cc.toUpperCase() : 'VE'
+                };
+            }).filter(Boolean);
+        }
+
+        function mergeAndNormalizeScores(gameKey, incomingArrays, isAscending, oldNameToRemove, mode = 'alltime') {
+            const currentWeek = ensureWeeklyReset();
+            const isWeekly = (mode === 'weekly');
+            const storageScoresKey = isWeekly ? ('bytezone_weekly_scores_' + gameKey) : ('bytezone_scores_' + gameKey);
+            const storageBestKey   = isWeekly ? ('bytezone_weekly_best_' + gameKey)   : ('bytezone_best_' + gameKey);
+
+            const byName = new Map();
+            const oldKey = oldNameToRemove ? repairPlayerName(oldNameToRemove).toLowerCase() : null;
+
+            const addEntry = (raw) => {
+                if (!raw || !raw.name) return;
+                const sc = parseInt(raw.score);
+                if (isNaN(sc) || sc <= 0) return;
+
+                let nameStr = repairPlayerName(raw.name);
+                let key = nameStr.toLowerCase();
+
+                if ((oldKey && key === oldKey) || prevNames.includes(key)) {
+                    nameStr = playerName;
+                    key = playerName.trim().toLowerCase();
+                }
+                if ((raw.deviceId && raw.deviceId === deviceId) || raw.isMe === true) {
+                    nameStr = playerName;
+                    key = playerName.trim().toLowerCase();
+                }
+
+                const countryCode = (key === playerName.trim().toLowerCase())
+                    ? (playerCountry || raw.country || 'VE')
+                    : (raw.country || 'VE');
+
+                const existing = byName.get(key);
+                if (!existing) {
+                    byName.set(key, {
+                        name: nameStr,
+                        score: sc,
+                        country: countryCode,
+                        deviceId: (key === playerName.trim().toLowerCase()) ? deviceId : raw.deviceId
+                    });
+                } else {
+                    const isBetter = isAscending ? (sc < existing.score) : (sc > existing.score);
+                    if (isBetter) {
+                        existing.score = sc;
+                    }
+                    if (countryCode && (!existing.country || existing.country === 'VE')) {
+                        existing.country = countryCode;
+                    }
+                    if (key === playerName.trim().toLowerCase()) {
+                        existing.name = playerName;
+                        existing.deviceId = deviceId;
+                    }
+                }
+            };
+
+            // 1. Semilla base según modo (Semanal vs Histórico)
+            if (isWeekly) {
+                const weekSeeds = (SEEDED_WEEKLY_SCORES[currentWeek] && SEEDED_WEEKLY_SCORES[currentWeek][gameKey]) || [];
+                weekSeeds.forEach(addEntry);
+            } else {
+                (DEFAULT_ALLTIME_SCORES[gameKey] || []).forEach(addEntry);
+            }
+
+            // 2. Listas entrantes (localStorage + Cloud REST + ntfy stream)
+            (incomingArrays || []).forEach(arr => {
+                if (Array.isArray(arr)) arr.forEach(addEntry);
+            });
+
+            // 3. Asegurar que el récord personal correspondiente siempre esté incluido
+            const myBest = parseInt(localStorage.getItem(storageBestKey) || '0');
+            if (myBest > 0) {
+                addEntry({
+                    name: playerName,
+                    score: myBest,
+                    country: playerCountry || 'VE',
+                    deviceId: deviceId
+                });
+            }
+
+            const merged = Array.from(byName.values());
+            merged.sort((a, b) => isAscending ? (a.score - b.score) : (b.score - a.score));
+
+            const myEntry = merged.find(x => isCurrentUserEntry(x));
+            if (myEntry && myEntry.score > 0) {
+                if (myBest === 0 || (isAscending ? (myEntry.score < myBest) : (myEntry.score > myBest))) {
+                    localStorage.setItem(storageBestKey, myEntry.score.toString());
+                }
+            }
+
+            const topList = merged.slice(0, 15);
+            localStorage.setItem(storageScoresKey, JSON.stringify(topList));
+            return topList;
+        }
+
+        function getCleanScores(gameKey, isAscending, mode) {
+            ensureWeeklyReset();
+            const targetMode = mode || window.currentLeaderboardTab || 'weekly';
+            const storageScoresKey = (targetMode === 'weekly') ? ('bytezone_weekly_scores_' + gameKey) : ('bytezone_scores_' + gameKey);
+            let localScores = [];
+            try {
+                localScores = JSON.parse(localStorage.getItem(storageScoresKey) || '[]');
+            } catch (e) { localScores = []; }
+            return mergeAndNormalizeScores(gameKey, [localScores], isAscending, null, targetMode);
+        }
+
+        function switchLeaderboardTab(mode) {
+            window.currentLeaderboardTab = (mode === 'alltime') ? 'alltime' : 'weekly';
+            updateLeaderboardTabsUI();
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        function updateLeaderboardTabsUI() {
+            const mode = window.currentLeaderboardTab || 'weekly';
+            const btnWeekly = document.getElementById('tabWeeklyBtn');
+            const btnAlltime = document.getElementById('tabAlltimeBtn');
+            const banner = document.getElementById('weeklyCountdownBanner');
+
+            if (btnWeekly && btnAlltime) {
+                if (mode === 'weekly') {
+                    btnWeekly.className = "w-1/2 py-2 px-3 rounded-xl font-black text-xs transition flex items-center justify-center space-x-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-gray-950 shadow-md shadow-amber-500/20";
+                    btnAlltime.className = "w-1/2 py-2 px-3 rounded-xl font-bold text-xs transition flex items-center justify-center space-x-1.5 text-gray-400 hover:text-white";
+                } else {
+                    btnWeekly.className = "w-1/2 py-2 px-3 rounded-xl font-bold text-xs transition flex items-center justify-center space-x-1.5 text-gray-400 hover:text-white";
+                    btnAlltime.className = "w-1/2 py-2 px-3 rounded-xl font-black text-xs transition flex items-center justify-center space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-md shadow-cyan-500/20";
+                }
+            }
+
+            if (banner) {
+                if (mode === 'weekly') {
+                    banner.innerHTML = `
+                        <span class="font-bold text-amber-300 flex items-center space-x-1">
+                            <span>🔥</span>
+                            <span>Torneo de la Semana</span>
+                        </span>
+                        <span class="text-gray-300 font-semibold">${getWeeklyCountdownText()}</span>
+                    `;
+                    banner.className = "mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1";
+                } else {
+                    banner.innerHTML = `
+                        <span class="font-bold text-cyan-300 flex items-center space-x-1">
+                            <span>👑</span>
+                            <span>Salón de la Fama Mundial</span>
+                        </span>
+                        <span class="text-gray-300">Récords históricos de todos los tiempos</span>
+                    `;
+                    banner.className = "mb-3 px-3 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1";
+                }
+            }
+        }
+
+        function recordGameScore(gameKey, score, isAscending) {
+            ensureWeeklyReset();
+            const cleanScore = parseInt(score);
+            if (isNaN(cleanScore) || cleanScore <= 0) return false;
+
+            const weeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
+            const alltimeBest = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0');
+
+            const isNewWeeklyBest = (weeklyBest === 0) || (isAscending ? (cleanScore < weeklyBest) : (cleanScore > weeklyBest));
+            const isNewAlltimeBest = (alltimeBest === 0) || (isAscending ? (cleanScore < alltimeBest) : (cleanScore > alltimeBest));
+
+            if (isNewWeeklyBest) {
+                localStorage.setItem('bytezone_weekly_best_' + gameKey, cleanScore.toString());
+                let wScores = [];
+                try { wScores = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + gameKey) || '[]'); } catch(e) {}
+                mergeAndNormalizeScores(gameKey, [wScores, [{ name: playerName, deviceId: deviceId, score: cleanScore, country: playerCountry || 'VE' }]], isAscending, null, 'weekly');
+            }
+
+            if (isNewAlltimeBest) {
+                localStorage.setItem('bytezone_best_' + gameKey, cleanScore.toString());
+                let aScores = [];
+                try { aScores = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]'); } catch(e) {}
+                mergeAndNormalizeScores(gameKey, [aScores, [{ name: playerName, deviceId: deviceId, score: cleanScore, country: playerCountry || 'VE' }]], isAscending, null, 'alltime');
+            }
+
+            if (isNewWeeklyBest || isNewAlltimeBest) {
+                if (typeof renderLeaderboardUI === 'function') renderLeaderboardUI();
+                pushScoreToCloud(gameKey, cleanScore, isAscending);
+                if (window.confetti) confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
+                return true;
+            }
+            return false;
+        }
+
+        async function pushScoreToCloud(gameKey, score, isAscending, oldNameToRemove) {
+            const currentWeek = ensureWeeklyReset();
+            const cleanScore = parseInt(score);
+            if (isNaN(cleanScore) || cleanScore <= 0) return;
+
+            const myWeeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0') || cleanScore;
+            const myAlltimeBest = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0') || cleanScore;
+
+            localStorage.setItem(`bz_uploaded_${gameKey}_${currentWeek}`, String(myWeeklyBest));
+
+            // 1. Emitir evento en tiempo real por ntfy.sh para todos los teléfonos conectados (<1 seg)
+            try {
+                fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        g: gameKey,
+                        w: currentWeek,
+                        d: deviceId,
+                        n: playerName,
+                        oldN: oldNameToRemove || undefined,
+                        sw: myWeeklyBest,
+                        sa: myAlltimeBest,
+                        c: playerCountry || 'VE',
+                        t: Date.now()
+                    })
+                }).catch(() => {});
+            } catch (e) {}
+
+            // 2. Actualizar Objeto SEMANAL en api.restful-api.dev
+            const weeklyObjId = CLOUD_WEEKLY_IDS[gameKey];
+            if (weeklyObjId && myWeeklyBest > 0) {
+                try {
+                    let cloudWeekly = [];
+                    try {
+                        const getRes = await fetch(`https://api.restful-api.dev/objects/${weeklyObjId}?t=${Date.now()}`, { cache: 'no-store' });
+                        if (getRes.ok) {
+                            const objData = await getRes.json();
+                            if (objData && objData.data && objData.data.w === currentWeek && objData.data.v) {
+                                cloudWeekly = decodeCompactScores(objData.data.v);
+                            }
+                        }
+                    } catch (e) {}
+
+                    let localWeekly = [];
+                    try { localWeekly = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + gameKey) || '[]'); } catch (e) {}
+
+                    const newEntry = [{ name: playerName, score: myWeeklyBest, country: playerCountry || 'VE', deviceId: deviceId }];
+                    const mergedWeekly = mergeAndNormalizeScores(gameKey, [cloudWeekly, localWeekly, newEntry], isAscending, oldNameToRemove, 'weekly');
+                    const compactW = encodeCompactScores(mergedWeekly.slice(0, 10), 185);
+
+                    await fetch(`https://api.restful-api.dev/objects/${weeklyObjId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: 'bzw_' + gameKey,
+                            data: { w: currentWeek, v: compactW }
+                        })
+                    });
+                } catch (e) {}
+            }
+
+            // 3. Actualizar Objeto HISTÓRICO en api.restful-api.dev
+            const alltimeObjId = CLOUD_ALLTIME_IDS[gameKey];
+            if (alltimeObjId && myAlltimeBest > 0) {
+                try {
+                    let cloudAlltime = [];
+                    try {
+                        const getRes = await fetch(`https://api.restful-api.dev/objects/${alltimeObjId}?t=${Date.now()}`, { cache: 'no-store' });
+                        if (getRes.ok) {
+                            const objData = await getRes.json();
+                            if (objData && objData.data && objData.data.v) {
+                                cloudAlltime = decodeCompactScores(objData.data.v);
+                            }
+                        }
+                    } catch (e) {}
+
+                    let localAlltime = [];
+                    try { localAlltime = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]'); } catch (e) {}
+
+                    const newEntry = [{ name: playerName, score: myAlltimeBest, country: playerCountry || 'VE', deviceId: deviceId }];
+                    const mergedAlltime = mergeAndNormalizeScores(gameKey, [cloudAlltime, localAlltime, newEntry], isAscending, oldNameToRemove, 'alltime');
+                    const compactA = encodeCompactScores(mergedAlltime.slice(0, 10), 195);
+
+                    await fetch(`https://api.restful-api.dev/objects/${alltimeObjId}`, {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: 'bz_' + gameKey,
+                            data: { v: compactA }
+                        })
+                    });
+                } catch (e) {}
+            }
+        }
+
+        async function syncGameFromCloud(gameKey, isAscending, silent = false) {
+            const currentWeek = ensureWeeklyReset();
+            const badgeEl = document.getElementById('liveSyncStatus');
+            if (badgeEl && !silent) {
+                badgeEl.textContent = "🔄 Sincronizando...";
+            }
+
+            const weeklyObjId = CLOUD_WEEKLY_IDS[gameKey];
+            const alltimeObjId = CLOUD_ALLTIME_IDS[gameKey];
+            let cloudWeeklyList = [];
+            let cloudAlltimeList = [];
+            let ntfyWeeklyList = [];
+            let ntfyAlltimeList = [];
+            let renames = {};
+
+            await Promise.all([
+                (async () => {
+                    if (!weeklyObjId) return;
+                    try {
+                        const resW = await fetch(`https://api.restful-api.dev/objects/${weeklyObjId}?t=${Date.now()}`, { cache: 'no-store' });
+                        if (resW.ok) {
+                            const jsonW = await resW.json();
+                            if (jsonW && jsonW.data && jsonW.data.w === currentWeek && jsonW.data.v) {
+                                cloudWeeklyList = decodeCompactScores(jsonW.data.v);
+                            }
+                        }
+                    } catch (e) {}
+                })(),
+                (async () => {
+                    if (!alltimeObjId) return;
+                    try {
+                        const resA = await fetch(`https://api.restful-api.dev/objects/${alltimeObjId}?t=${Date.now()}`, { cache: 'no-store' });
+                        if (resA.ok) {
+                            const jsonA = await resA.json();
+                            if (jsonA && jsonA.data && jsonA.data.v) {
+                                cloudAlltimeList = decodeCompactScores(jsonA.data.v);
+                            }
+                        }
+                    } catch (e) {}
+                })(),
+                (async () => {
+                    try {
+                        const resNtfy = await fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/json?poll=1&since=12h`, { cache: 'no-store' });
+                        if (resNtfy.ok) {
+                            const text = await resNtfy.text();
+                            const lines = text.split('\n').filter(Boolean);
+                            lines.forEach(line => {
+                                try {
+                                    const evt = JSON.parse(line);
+                                    if (evt && evt.event === 'message' && evt.message) {
+                                        const p = JSON.parse(evt.message);
+                                        if (p && p.oldN && p.n) {
+                                            renames[repairPlayerName(p.oldN).toLowerCase()] = repairPlayerName(p.n);
+                                        }
+                                        if (p && p.g === gameKey && p.n) {
+                                            const cleanN = repairPlayerName(p.n);
+                                            if (p.w === currentWeek && (p.sw || p.s)) {
+                                                ntfyWeeklyList.push({
+                                                    name: cleanN,
+                                                    score: parseInt(p.sw || p.s),
+                                                    country: p.c || 'VE',
+                                                    deviceId: p.d
+                                                });
+                                            }
+                                            if (p.sa || p.s) {
+                                                ntfyAlltimeList.push({
+                                                    name: cleanN,
+                                                    score: parseInt(p.sa || p.s),
+                                                    country: p.c || 'VE',
+                                                    deviceId: p.d
+                                                });
+                                            }
+                                        }
+                                    }
+                                } catch (pe) {}
+                            });
+                        }
+                    } catch (e) {}
+                })()
+            ]);
+
+            const applyRename = (arr) => arr.map(item => {
+                const clean = repairPlayerName(item.name || '');
+                const k = clean.toLowerCase();
+                item.name = renames[k] || clean;
+                return item;
+            });
+
+            let localWeekly = [];
+            let localAlltime = [];
+            try { localWeekly = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + gameKey) || '[]'); } catch (e) {}
+            try { localAlltime = JSON.parse(localStorage.getItem('bytezone_scores_' + gameKey) || '[]'); } catch (e) {}
+
+            mergeAndNormalizeScores(
+                gameKey,
+                [applyRename(localWeekly), applyRename(cloudWeeklyList), applyRename(ntfyWeeklyList)],
+                isAscending,
+                null,
+                'weekly'
+            );
+
+            mergeAndNormalizeScores(
+                gameKey,
+                [applyRename(localAlltime), applyRename(cloudAlltimeList), applyRename(ntfyAlltimeList)],
+                isAscending,
+                null,
+                'alltime'
+            );
+
+            if (typeof renderLeaderboardUI === 'function' && window.CURRENT_GAME_KEY === gameKey) {
+                updateLeaderboardTabsUI();
+                renderLeaderboardUI();
+            }
+
+            if (badgeEl) {
+                badgeEl.textContent = "🟢 Global En Vivo";
+            }
+
+            // Auto-migración controlada (1 sola vez por marca nueva para no saturar la nube)
+            const myWeeklyNow = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
+            const lastUploaded = parseInt(localStorage.getItem(`bz_uploaded_${gameKey}_${currentWeek}`) || '0');
+            const inNtfy = ntfyWeeklyList.find(x => isCurrentUserEntry(x));
+            if (myWeeklyNow > 0 && lastUploaded !== myWeeklyNow && (!inNtfy || inNtfy.score !== myWeeklyNow)) {
+                pushScoreToCloud(gameKey, myWeeklyNow, isAscending);
+            }
+        }
+
+        function startRealtimeScoreStream(activeGameKey, isAscending) {
+            window.CURRENT_GAME_KEY = activeGameKey;
+            window.CURRENT_GAME_ASC = isAscending;
+            updateLeaderboardTabsUI();
+            syncGameFromCloud(activeGameKey, isAscending);
+
+            setInterval(() => {
+                ensureWeeklyReset();
+                updateLeaderboardTabsUI();
+            }, 30000);
+
+            ['stacker', 'reflex', 'memory'].forEach(g => {
+                if (g !== activeGameKey) {
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), 1800);
+                }
+            });
+
+            if (window.EventSource) {
+                try {
+                    const es = new EventSource(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/sse`);
+                    es.onmessage = (e) => {
+                        try {
+                            const evt = JSON.parse(e.data);
+                            if (evt && evt.message) {
+                                const p = JSON.parse(evt.message);
+                                if (p && p.g === activeGameKey && p.n) {
+                                    const currentWeek = ensureWeeklyReset();
+                                    const cleanN = repairPlayerName(p.n);
+                                    if (p.w === currentWeek && (p.sw || p.s)) {
+                                        let curW = [];
+                                        try { curW = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + activeGameKey) || '[]'); } catch(err){}
+                                        mergeAndNormalizeScores(activeGameKey, [curW, [{ name: cleanN, score: parseInt(p.sw || p.s), country: p.c || 'VE', deviceId: p.d }]], isAscending, p.oldN, 'weekly');
+                                    }
+                                    if (p.sa || p.s) {
+                                        let curA = [];
+                                        try { curA = JSON.parse(localStorage.getItem('bytezone_scores_' + activeGameKey) || '[]'); } catch(err){}
+                                        mergeAndNormalizeScores(activeGameKey, [curA, [{ name: cleanN, score: parseInt(p.sa || p.s), country: p.c || 'VE', deviceId: p.d }]], isAscending, p.oldN, 'alltime');
+                                    }
+                                    if (typeof renderLeaderboardUI === 'function') renderLeaderboardUI();
+                                }
+                            }
+                        } catch (err) {}
+                    };
+                } catch (e) {}
+            }
+
+            setInterval(() => {
+                syncGameFromCloud(activeGameKey, isAscending, true);
+            }, 25000);
+        }
+
+        function getCountryFlag(code) {
+            if (!code || code.length !== 2) return '🌐';
+            const c = code.toUpperCase();
+            return String.fromCodePoint(127397 + c.charCodeAt(0), 127397 + c.charCodeAt(1));
+        }
+
+        async function detectUserCountry() {
+            if (playerCountry && playerCountry.length === 2) {
+                updateCountryDisplays();
+                return playerCountry;
+            }
+            try {
+                const res = await fetch('https://api.country.is/');
+                const data = await res.json();
+                if (data && data.country) {
+                    playerCountry = data.country.toUpperCase();
+                    localStorage.setItem('bytezone_player_country', playerCountry);
+                    updateCountryDisplays();
+                    return playerCountry;
+                }
+            } catch (e) {
+                try {
+                    const res2 = await fetch('https://get.geojs.io/v1/ip/country.json');
+                    const data2 = await res2.json();
+                    if (data2 && data2.country) {
+                        playerCountry = data2.country.toUpperCase();
+                        localStorage.setItem('bytezone_player_country', playerCountry);
+                        updateCountryDisplays();
+                        return playerCountry;
+                    }
+                } catch (e2) {}
+            }
+            playerCountry = 'VE';
+            localStorage.setItem('bytezone_player_country', playerCountry);
+            updateCountryDisplays();
+            return playerCountry;
+        }
+
+        function updateCountryDisplays() {
+            const flag = getCountryFlag(playerCountry);
+            document.querySelectorAll('#playerCountryDisplay').forEach(el => {
+                el.textContent = flag;
+            });
+            const cName = document.getElementById('modalCountryName');
+            if (cName) cName.textContent = playerCountry;
+            const cFlag = document.getElementById('modalCountryFlag');
+            if (cFlag) cFlag.textContent = flag;
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        function updateNameDisplays() {
+            document.querySelectorAll('#playerNameDisplay').forEach(el => {
+                el.textContent = playerName;
+            });
+        }
+        updateNameDisplays();
+        detectUserCountry();
+
+        setTimeout(() => {
+            if (!window.CURRENT_GAME_KEY) {
+                ['stacker', 'reflex', 'memory'].forEach((g, idx) => {
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), idx * 900);
+                });
+            }
+        }, 600);
+
+        function promptChangeName() {
+            const input = document.getElementById('modalNameInput');
+            if (input) input.value = playerName;
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeNameModal() {
+            const modal = document.getElementById('namePromptModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function savePlayerNameFromModal() {
+            const input = document.getElementById('modalNameInput');
+            const val = input ? repairPlayerName(input.value) : '';
+            if (val) {
+                const oldName = playerName;
+                if (oldName && oldName.toLowerCase() !== val.toLowerCase()) {
+                    if (!prevNames.includes(oldName.toLowerCase())) {
+                        prevNames.push(oldName.toLowerCase());
+                        localStorage.setItem('bytezone_prev_names', JSON.stringify(prevNames));
+                    }
+                }
+                playerName = val;
+                localStorage.setItem('bytezone_player_name', playerName);
+                updateNameDisplays();
+                
+                ALL_GAME_KEYS.forEach(game => {
+                    const isAsc = (game === 'reflex');
+                    let wScores = [];
+                    let aScores = [];
+                    try { wScores = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + game) || '[]'); } catch(e) {}
+                    try { aScores = JSON.parse(localStorage.getItem('bytezone_scores_' + game) || '[]'); } catch(e) {}
+                    mergeAndNormalizeScores(game, [wScores], isAsc, oldName, 'weekly');
+                    mergeAndNormalizeScores(game, [aScores], isAsc, oldName, 'alltime');
+                    const myBest = parseInt(localStorage.getItem('bytezone_best_' + game) || '0');
+                    const myWeekly = parseInt(localStorage.getItem('bytezone_weekly_best_' + game) || '0');
+                    if (myBest > 0 || myWeekly > 0) {
+                        pushScoreToCloud(game, myWeekly || myBest, isAsc, oldName);
+                    }
+                });
+            }
+            closeNameModal();
+            if (typeof renderLeaderboardUI === 'function') {
+                renderLeaderboardUI();
+            }
+        }
+
+        // Sistema de Telemetría y Popularidad (ByteZone Analytics)
+        function trackByteZoneEvent(gameKey, eventType) {
+            try {
+                let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
+                if (!stats[gameKey]) stats[gameKey] = { views: 0, plays: 0, ads: 0 };
+                if (eventType === 'view') stats[gameKey].views = (stats[gameKey].views || 0) + 1;
+                if (eventType === 'play') stats[gameKey].plays = (stats[gameKey].plays || 0) + 1;
+                if (eventType === 'ad') stats[gameKey].ads = (stats[gameKey].ads || 0) + 1;
+                stats['last_active'] = new Date().toISOString();
+                localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
+            } catch(e) {}
+        }
+
+        // ==========================================================
+        // REPRODUCTOR DE VIDEO FLASH IA (VOZ RÁPIDA + MONETIZACIÓN)
+        // ==========================================================
+        const DEFAULT_WEEKLY_PULSE = {
+            week_id: "W2026-10-12",
+            updated_human: "17/10/2026",
+            video_reel: {
+                title: "ByteZone Flash IA • Edición Semanal",
+                subtitle: "Video-Resumen Rápido con Locución de Inteligencia Artificial",
+                duration_label: "45 seg",
+                scenes: [
+                    {
+                        id: "intro",
+                        badge: "FLASH IA • SEMANAL",
+                        icon: "⚡",
+                        headline: "¡Resumen Tech & IA en 45 Segundos!",
+                        subtext: "Lo más impactante de la semana en tecnología, inventos e Inteligencia Artificial explicado al instante.",
+                        voice_script: "¡Qué tal equipo de ByteZone! Arrancamos el resumen flash de tecnología e inteligencia artificial de esta semana. ¡Vamos a toda velocidad!",
+                        bg_gradient: "from-blue-600 via-purple-700 to-pink-700",
+                        duration_ms: 6500
+                    },
+                    {
+                        id: "news_1",
+                        badge: "BOMBAZO #1 • TECH & IA",
+                        icon: "🤖",
+                        headline: "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
+                        subtext: "La nueva herramienta detecta marcas de agua invisibles en imágenes, audios y textos generados por Inteligencia Artificial en segundos.",
+                        voice_script: "Número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. Esta nueva tecnología escanea marcas invisibles para descubrir al instante si un video o audio fue creado con inteligencia artificial.",
+                        bg_gradient: "from-cyan-600 to-blue-900",
+                        duration_ms: 9500
+                    },
+                    {
+                        id: "news_2",
+                        badge: "BOMBAZO #2 • LO NUEVO",
+                        icon: "🚀",
+                        headline: "Linux sigue los pasos de Windows y añade un asistente de IA local a Ubuntu",
+                        subtext: "Canonical presenta Ubuntu con asistente de Inteligencia Artificial integrado que funciona directo en tu equipo.",
+                        voice_script: "Número 2: Linux sigue los pasos de Windows y añade un asistente de inteligencia artificial nativo a su última versión de Ubuntu, marcando un antes y un después en sistemas operativos.",
+                        bg_gradient: "from-purple-600 to-indigo-900",
+                        duration_ms: 9500
+                    },
+                    {
+                        id: "news_3",
+                        badge: "BOMBAZO #3 • TENDENCIA",
+                        icon: "⚡",
+                        headline: "OpenAI descubre una grabadora escondida en sus oficinas y el FBI interviene",
+                        subtext: "Máxima alerta de seguridad corporativa en los laboratorios donde se entrenan los próximos modelos de Inteligencia Artificial.",
+                        voice_script: "Número 3: Máxima tensión en Silicon Valley. Descubren un dispositivo de grabación oculto en una sala ejecutiva de OpenAI, desatando una investigación federal por espionaje tecnológico.",
+                        bg_gradient: "from-pink-600 to-rose-900",
+                        duration_ms: 9500
+                    },
+                    {
+                        id: "outro",
+                        badge: "🔓 SECRETO VIP & TORNEO",
+                        icon: "👑",
+                        headline: "El nuevo auto 'volador' y el Truco Gamer VIP de la semana",
+                        subtext: "¡Toca el botón dorado debajo del video para desbloquear la Noticia #5 + el Truco VIP y entra al Torneo Semanal!",
+                        voice_script: "Y en el secreto VIP de esta semana: el nuevo prototipo de auto volador y el truco oculto para acelerar tu teléfono antes de jugar. Toca el botón dorado debajo del reproductor para desbloquearlo ahora mismo.",
+                        bg_gradient: "from-amber-500 via-orange-600 to-rose-800",
+                        duration_ms: 9500,
+                        is_vip_hook: true
+                    }
+                ]
+            },
+            weekly_news: [
+                {
+                    title: "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
+                    summary: "En un mundo lleno de contenidos generados por IA, SynthID permite verificar en segundos si una imagen, pista de audio o video fue creado artificialmente.",
+                    source: "Hipertextual IA",
+                    link: "https://hipertextual.com/inteligencia-artificial/como-detectar-fotos-videos-y-audios-creados-con-ia-usando-synthid-detector/"
+                },
+                {
+                    title: "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
+                    summary: "Ubuntu incorpora su propio asistente inteligente local para automatizar comandos, optimizar el sistema y asistir al usuario sin depender de la nube.",
+                    source: "Hipertextual IA",
+                    link: "https://hipertextual.com/inteligencia-artificial/ubuntu-26-10-myna-asistente-ia-local/"
+                },
+                {
+                    title: "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
+                    summary: "La carrera por los secretos de la Inteligencia Artificial llega a niveles de película de espías tras hallarse un micrófono oculto en una sala ejecutiva.",
+                    source: "Hipertextual IA",
+                    link: "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/"
+                },
+                {
+                    title: "La mayoría de los usuarios cree que la IA avanza a una velocidad vertiginosa, según sondeo",
+                    summary: "Los nuevos modelos de voz, video y agentes autónomos están transformando el trabajo y el entretenimiento móvil mucho más rápido de lo previsto.",
+                    source: "Tech Radar",
+                    link: "https://news.google.com/"
+                }
+            ],
+            vip_hack_of_the_week: {
+                tag: "Secreto Gamer & IA de la Semana",
+                title: "Cómo activar el DNS Ultra-Rápido y liberar RAM oculta en 5 segundos",
+                body: "1) En Ajustes > Conexiones > DNS Privado escribe 'one.one.one.one' para reducir el ping un 30%. 2) Antes de buscar un récord en Test de Reflejos o Neon Stacker, activa 'No Molestar' para bloquear procesos en segundo plano que retrasan la respuesta táctil de tu pantalla."
+            }
+        };
+
+        window.bzPulseData = DEFAULT_WEEKLY_PULSE;
+        window.bzReelState = {
+            playing: false,
+            sceneIdx: 0,
+            timer: null,
+            voiceRate: 1.28,
+            muted: false,
+            audioCtx: null,
+            beatInterval: null
+        };
+
+        async function loadWeeklyPulseData(rootPrefix = "") {
+            try {
+                const res = await fetch(`${rootPrefix}data/weekly_pulse.json?t=${Date.now()}`, { cache: 'no-store' });
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.video_reel && Array.isArray(data.video_reel.scenes)) {
+                        window.bzPulseData = data;
+                    }
+                }
+            } catch (e) {}
+            renderPulseWidgets();
+        }
+
+        function renderPulseWidgets() {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const dateBadge = document.getElementById('pulseUpdatedBadge');
+            if (dateBadge) {
+                dateBadge.textContent = `🤖 Actualizado por Agente CEO: ${data.updated_human || 'Hoy'} (${data.week_id || getCurrentWeekId()})`;
+            }
+            updateReelSceneUI(0);
+
+            const newsGrid = document.getElementById('weeklyNewsContainer');
+            if (newsGrid && Array.isArray(data.weekly_news)) {
+                newsGrid.innerHTML = data.weekly_news.slice(0, 4).map((item, i) => `
+                    <div class="bg-gray-900/90 p-5 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition shadow-lg flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                                    🔥 Top #${i + 1} • ${item.source || 'Tech IA'}
+                                </span>
+                                <span class="text-[11px] text-gray-500">${data.updated_human || ''}</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-black text-white leading-snug">${item.title}</h3>
+                            <p class="text-xs text-gray-300 mt-2 leading-relaxed">${item.summary}</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-800/80 flex justify-between items-center text-xs">
+                            <span class="text-purple-400 font-semibold">Seleccionado por Agente SEO</span>
+                            <button onclick="playSpecificNewsScene(${i + 1})" class="text-cyan-400 hover:underline font-bold flex items-center space-x-1">
+                                <span>🔊</span>
+                                <span>Escuchar en Video IA</span>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function startCyberBeat() {
+            if (window.bzReelState.muted) return;
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                if (!window.bzReelState.audioCtx) {
+                    window.bzReelState.audioCtx = new AudioContext();
+                }
+                const ctx = window.bzReelState.audioCtx;
+                if (ctx.state === 'suspended') ctx.resume();
+                clearInterval(window.bzReelState.beatInterval);
+                let step = 0;
+                window.bzReelState.beatInterval = setInterval(() => {
+                    if (!window.bzReelState.playing || window.bzReelState.muted) return;
+                    try {
+                        const osc = ctx.createOscillator();
+                        const gain = ctx.createGain();
+                        const freqs = [110, 146.83, 164.81, 220];
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freqs[step % freqs.length], ctx.currentTime);
+                        gain.gain.setValueAtTime(0.025, ctx.currentTime);
+                        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+                        osc.connect(gain);
+                        gain.connect(ctx.destination);
+                        osc.start();
+                        osc.stop(ctx.currentTime + 0.19);
+                        step++;
+                    } catch (err) {}
+                }, 420);
+            } catch (e) {}
+        }
+
+        function stopCyberBeat() {
+            clearInterval(window.bzReelState.beatInterval);
+        }
+
+        function speakReelText(text, onEndCallback) {
+            if (!('speechSynthesis' in window) || window.bzReelState.muted) {
+                return false;
+            }
+            try {
+                window.speechSynthesis.cancel();
+                const utter = new SpeechSynthesisUtterance(text);
+                utter.lang = 'es-ES';
+                utter.rate = window.bzReelState.voiceRate || 1.28;
+                utter.pitch = 1.05;
+                const voices = window.speechSynthesis.getVoices() || [];
+                const esVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Sabina') || v.name.includes('Helena')))
+                             || voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es'));
+                if (esVoice) utter.voice = esVoice;
+                utter.onend = () => {
+                    if (typeof onEndCallback === 'function') onEndCallback();
+                };
+                window.speechSynthesis.speak(utter);
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function updateReelSceneUI(idx) {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            const sc = scenes[idx] || scenes[0];
+
+            const screen = document.getElementById('aiReelScreen');
+            const badge = document.getElementById('aiReelBadge');
+            const icon = document.getElementById('aiReelIcon');
+            const headline = document.getElementById('aiReelHeadline');
+            const subtext = document.getElementById('aiReelSubtext');
+            const stepText = document.getElementById('aiReelStepCounter');
+            const progressBar = document.getElementById('aiReelProgressBar');
+            const playBtn = document.getElementById('aiReelPlayBtn');
+            const eqBars = document.getElementById('aiReelEqualizer');
+
+            if (!screen) return;
+            screen.className = `relative w-full rounded-2xl overflow-hidden p-5 sm:p-7 min-h-[250px] sm:min-h-[270px] flex flex-col justify-between border-2 border-cyan-400/40 shadow-2xl transition-all duration-500 bg-gradient-to-br ${sc.bg_gradient || 'from-blue-700 to-purple-900'}`;
+            if (badge) badge.textContent = sc.badge || 'FLASH IA';
+            if (icon) icon.textContent = sc.icon || '🤖';
+            if (headline) headline.textContent = sc.headline || '';
+            if (subtext) subtext.textContent = sc.subtext || '';
+            if (stepText) stepText.textContent = `Escena ${idx + 1}/${scenes.length}`;
+            if (progressBar) {
+                const pct = Math.round(((idx + 1) / scenes.length) * 100);
+                progressBar.style.width = `${pct}%`;
+            }
+            if (playBtn) {
+                playBtn.innerHTML = window.bzReelState.playing
+                    ? '<span>⏸</span><span>PAUSAR VIDEO IA</span>'
+                    : '<span>▶</span><span>REPRODUCIR VIDEO IA (VOZ RÁPIDA)</span>';
+            }
+            if (eqBars) {
+                eqBars.style.opacity = window.bzReelState.playing ? '1' : '0.35';
+            }
+        }
+
+        function toggleAiVideoReel() {
+            if (window.bzReelState.playing) {
+                stopAiVideoReel();
+            } else {
+                startAiVideoReel(window.bzReelState.sceneIdx || 0);
+            }
+        }
+
+        function startAiVideoReel(startIdx = 0) {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            if (startIdx >= scenes.length) startIdx = 0;
+
+            trackByteZoneEvent('news_video', 'play');
+            window.bzReelState.playing = true;
+            window.bzReelState.sceneIdx = startIdx;
+            startCyberBeat();
+            runReelScene(startIdx);
+        }
+
+        function runReelScene(idx) {
+            clearTimeout(window.bzReelState.timer);
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            if (!window.bzReelState.playing || idx >= scenes.length) {
+                stopAiVideoReel();
+                window.bzReelState.sceneIdx = 0;
+                updateReelSceneUI(0);
+                return;
+            }
+
+            window.bzReelState.sceneIdx = idx;
+            updateReelSceneUI(idx);
+            const sc = scenes[idx];
+
+            let advanced = false;
+            const goNext = () => {
+                if (advanced || !window.bzReelState.playing) return;
+                advanced = true;
+                clearTimeout(window.bzReelState.timer);
+                if (idx + 1 < scenes.length) {
+                    runReelScene(idx + 1);
+                } else {
+                    stopAiVideoReel();
+                }
+            };
+
+            const hasSpeech = speakReelText(sc.voice_script || sc.headline, () => {
+                setTimeout(goNext, 450);
+            });
+
+            const fallbackMs = hasSpeech ? Math.max(sc.duration_ms || 9000, 11000) : (sc.duration_ms || 7500);
+            window.bzReelState.timer = setTimeout(goNext, fallbackMs);
+        }
+
+        function stopAiVideoReel() {
+            window.bzReelState.playing = false;
+            clearTimeout(window.bzReelState.timer);
+            stopCyberBeat();
+            if ('speechSynthesis' in window) {
+                try { window.speechSynthesis.cancel(); } catch (e) {}
+            }
+            updateReelSceneUI(window.bzReelState.sceneIdx || 0);
+        }
+
+        function nextAiReelScene() {
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const scenes = (data.video_reel && data.video_reel.scenes) || DEFAULT_WEEKLY_PULSE.video_reel.scenes;
+            const nextIdx = ((window.bzReelState.sceneIdx || 0) + 1) % scenes.length;
+            if (window.bzReelState.playing) {
+                runReelScene(nextIdx);
+            } else {
+                window.bzReelState.sceneIdx = nextIdx;
+                updateReelSceneUI(nextIdx);
+            }
+        }
+
+        function playSpecificNewsScene(sceneIndex) {
+            const el = document.getElementById('aiReelScreen');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            startAiVideoReel(sceneIndex);
+        }
+
+        function toggleReelSpeed() {
+            const current = window.bzReelState.voiceRate || 1.28;
+            const next = current >= 1.45 ? 1.15 : (current >= 1.25 ? 1.48 : 1.28);
+            window.bzReelState.voiceRate = next;
+            const btn = document.getElementById('aiReelSpeedBtn');
+            if (btn) {
+                const label = next >= 1.45 ? '1.5x Turbo' : (next >= 1.25 ? '1.3x Rápido' : '1.0x Normal');
+                btn.textContent = '⚡ Voz: ' + label;
+            }
+            if (window.bzReelState.playing) {
+                runReelScene(window.bzReelState.sceneIdx);
+            }
+        }
+
+        function unlockVipNewsAndHack() {
+            trackByteZoneEvent('news_video', 'ad');
+            const box = document.getElementById('vipUnlockedBox');
+            const btn = document.getElementById('vipUnlockBtn');
+            const data = window.bzPulseData || DEFAULT_WEEKLY_PULSE;
+            const vip = data.vip_hack_of_the_week || DEFAULT_WEEKLY_PULSE.vip_hack_of_the_week;
+            if (box) {
+                document.getElementById('vipHackTag').textContent = vip.tag || 'Secreto VIP';
+                document.getElementById('vipHackTitle').textContent = vip.title || '';
+                document.getElementById('vipHackBody').textContent = vip.body || '';
+                box.classList.remove('hidden');
+            }
+            if (btn) {
+                btn.innerHTML = '<span>✅</span><span>CONTENIDO VIP DESBLOQUEADO</span>';
+                btn.className = "w-full bg-emerald-600/30 border border-emerald-400/50 text-emerald-300 font-black py-3 rounded-2xl text-xs flex items-center justify-center space-x-2";
+            }
+            if (window.confetti) {
+                confetti({ particleCount: 60, spread: 60, origin: { y: 0.7 } });
+            }
+        }
+
+        function openVaultGameWithReward(targetUrl) {
+            trackByteZoneEvent('dodge', 'ad');
+            executeRewardedAction(() => {
+                window.location.href = targetUrl;
+            });
+        }
+
+    </script>
+
+
+    <script>
+        const dCanvas = document.getElementById('dodgeCanvas');
+        const dCtx = dCanvas.getContext('2d');
+        const dStart = document.getElementById('dodgeStartScreen');
+        const dRevive = document.getElementById('dodgeReviveModal');
+
+        let shipX = 180;
+        let asteroids = [];
+        let dodgeRunning = false;
+        let dodgeScore = 0;
+        let dodgeTicks = 0;
+        let hasRevivedDodge = false;
+
+        function startDodgeGame() {
+            dStart.classList.add('hidden');
+            dRevive.classList.add('hidden');
+            shipX = dCanvas.width / 2;
+            asteroids = [];
+            dodgeScore = 0;
+            dodgeTicks = 0;
+            hasRevivedDodge = false;
+            dodgeRunning = true;
+            trackByteZoneEvent('dodge', 'play');
+            requestAnimationFrame(updateDodgeLoop);
+        }
+
+        function spawnAsteroid() {
+            const radius = 11 + Math.random() * 13;
+            const x = radius + Math.random() * (dCanvas.width - radius * 2);
+            const speedY = 3.2 + Math.random() * 2.5 + Math.min(dodgeScore * 0.08, 4.5);
+            const colors = ['#f59e0b', '#ec4899', '#06b6d4', '#a855f7', '#ef4444'];
+            asteroids.push({
+                x: x,
+                y: -radius,
+                r: radius,
+                vy: speedY,
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
+        }
+
+        function updateDodgeLoop() {
+            if (!dodgeRunning) return;
+            dodgeTicks++;
+            if (dodgeTicks % 60 === 0) {
+                dodgeScore++;
+            }
+
+            const spawnRate = Math.max(14, 34 - Math.floor(dodgeScore / 3));
+            if (dodgeTicks % spawnRate === 0) {
+                spawnAsteroid();
+            }
+
+            dCtx.fillStyle = "#030712";
+            dCtx.fillRect(0, 0, dCanvas.width, dCanvas.height);
+
+            // Estrellas de fondo
+            dCtx.fillStyle = "rgba(255,255,255,0.25)";
+            for (let i = 0; i < 18; i++) {
+                const sx = (i * 57) % dCanvas.width;
+                const sy = ((i * 83) + dodgeTicks * 2) % dCanvas.height;
+                dCtx.fillRect(sx, sy, 2, 2);
+            }
+
+            // Dibujar Nave Neón
+            const shipY = dCanvas.height - 48;
+            dCtx.save();
+            dCtx.fillStyle = "#22d3ee";
+            dCtx.shadowColor = "#22d3ee";
+            dCtx.shadowBlur = 14;
+            dCtx.beginPath();
+            dCtx.moveTo(shipX, shipY - 18);
+            dCtx.lineTo(shipX - 16, shipY + 14);
+            dCtx.lineTo(shipX + 16, shipY + 14);
+            dCtx.closePath();
+            dCtx.fill();
+            dCtx.restore();
+
+            // Actualizar y dibujar asteroides
+            for (let i = asteroids.length - 1; i >= 0; i--) {
+                const a = asteroids[i];
+                a.y += a.vy;
+
+                dCtx.save();
+                dCtx.fillStyle = a.color;
+                dCtx.shadowColor = a.color;
+                dCtx.shadowBlur = 12;
+                dCtx.beginPath();
+                dCtx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
+                dCtx.fill();
+                dCtx.restore();
+
+                // Colisión con la nave
+                const dx = a.x - shipX;
+                const dy = a.y - shipY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < a.r + 12) {
+                    gameOverDodge();
+                    return;
+                }
+
+                if (a.y - a.r > dCanvas.height) {
+                    asteroids.splice(i, 1);
+                }
+            }
+
+            dCtx.fillStyle = "#ffffff";
+            dCtx.font = "bold 18px monospace";
+            dCtx.fillText("TIEMPO: " + dodgeScore + "s", 16, 32);
+
+            requestAnimationFrame(updateDodgeLoop);
+        }
+
+        function gameOverDodge() {
+            dodgeRunning = false;
+            recordGameScore('dodge', dodgeScore, false);
+            document.getElementById('dodgeScoreText').textContent = "Sobreviviste " + dodgeScore + " segundos";
+            document.getElementById('dodgeReviveBox').style.display = hasRevivedDodge ? 'none' : 'block';
+            dRevive.classList.remove('hidden');
+        }
+
+        function handleDodgeRevive() {
+            trackByteZoneEvent('dodge', 'ad');
+            hasRevivedDodge = true;
+            asteroids = [];
+            dRevive.classList.add('hidden');
+            dodgeRunning = true;
+            requestAnimationFrame(updateDodgeLoop);
+        }
+
+        function moveShipFromClientX(clientX) {
+            const rect = dCanvas.getBoundingClientRect();
+            const relX = ((clientX - rect.left) / rect.width) * dCanvas.width;
+            shipX = Math.max(22, Math.min(dCanvas.width - 22, relX));
+        }
+
+        dCanvas.addEventListener('pointermove', (e) => {
+            if (dodgeRunning) moveShipFromClientX(e.clientX);
+        });
+        dCanvas.addEventListener('pointerdown', (e) => {
+            if (dodgeRunning) moveShipFromClientX(e.clientX);
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (!dodgeRunning) return;
+            if (e.key === 'ArrowLeft') shipX = Math.max(22, shipX - 24);
+            if (e.key === 'ArrowRight') shipX = Math.min(dCanvas.width - 22, shipX + 24);
+        });
+
+        trackByteZoneEvent('dodge', 'view');
+
+        function renderLeaderboardUI() {
+            const mode = window.currentLeaderboardTab || 'weekly';
+            const list = getCleanScores('dodge', false, mode);
+            const container = document.getElementById('leaderboardList');
+            const bestKey = (mode === 'weekly') ? 'bytezone_weekly_best_dodge' : 'bytezone_best_dodge';
+            const myBest = parseInt(localStorage.getItem(bestKey) || '0');
+            document.getElementById('userBestScore').textContent = myBest + " seg";
+
+            const bestLabel = document.getElementById('userBestScoreLabel');
+            const rankLabel = document.getElementById('userRankLabel');
+            if (bestLabel) bestLabel.textContent = (mode === 'weekly') ? "Tu Mejor Supervivencia Semanal" : "Tu Récord Histórico";
+            if (rankLabel) rankLabel.textContent = (mode === 'weekly') ? "Puesto Semanal" : "Puesto Histórico";
+
+            if (list.length === 0) {
+                container.innerHTML = '<div class="p-4 text-center text-gray-400 text-xs">¡Sé el primero en marcar récord en Cyber Dodge esta semana!</div>';
+                document.getElementById('userRankBadge').textContent = "Sin Clasificar";
+                return;
+            }
+
+            container.innerHTML = "";
+            let myPosition = null;
+            list.slice(0, 10).forEach((item, idx) => {
+                const isMe = isCurrentUserEntry(item);
+                if (isMe && myPosition === null) myPosition = idx + 1;
+                const badge = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "#" + (idx + 1);
+                const itemFlag = getCountryFlag(item.country);
+                const row = document.createElement('div');
+                row.className = "flex justify-between items-center p-2.5 rounded-xl " + (isMe ? 'bg-amber-950/40 border border-amber-500 shadow-md' : 'bg-gray-800/60 border border-gray-700/50');
+                row.innerHTML = `
+                    <div class="flex items-center space-x-2 min-w-0">
+                        <span class="w-6 text-center font-bold text-xs ${idx < 3 ? 'text-yellow-400 font-extrabold' : 'text-gray-400'}">${badge}</span>
+                        <span class="text-base select-none">${itemFlag}</span>
+                        <span class="font-bold truncate ${isMe ? 'text-amber-400' : 'text-white'}">${item.name} ${isMe ? '(Tú)' : ''}</span>
+                    </div>
+                    <span class="font-black flex-shrink-0 ${isMe ? 'text-pink-400' : 'text-amber-400'}">${item.score} seg</span>
+                `;
+                container.appendChild(row);
+            });
+
+            const rankBadge = document.getElementById('userRankBadge');
+            if (myPosition === 1) {
+                rankBadge.textContent = "🥇 Puesto #1 (¡Líder!)";
+                rankBadge.className = "text-xs font-black text-yellow-300 bg-yellow-500/20 border border-yellow-500/50 px-3 py-1 rounded-full animate-pulse";
+            } else if (myPosition) {
+                rankBadge.textContent = "Puesto #" + myPosition;
+                rankBadge.className = "text-xs font-black text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full";
+            }
+        }
+
+        updateLeaderboardTabsUI();
+        renderLeaderboardUI();
+        startRealtimeScoreStream('dodge', false);
+    </script>
+</body>
+</html>
