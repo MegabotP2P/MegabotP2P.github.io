@@ -863,8 +863,6 @@ PLAYER_IDENTITY_SCRIPT = """
             }
             return false;
         }
-            return false;
-        }
 
         async function pushScoreToCloud(gameKey, score, isAscending, oldNameToRemove) {
             const currentWeek = ensureWeeklyReset();
