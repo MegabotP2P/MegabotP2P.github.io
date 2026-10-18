@@ -11,11 +11,11 @@
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=11') && !sessionStorage.getItem('bz_v11_reloaded')) {
-                sessionStorage.setItem('bz_v11_reloaded', '1');
+            if (!location.search.includes('v=12') && !sessionStorage.getItem('bz_v12_reloaded')) {
+                sessionStorage.setItem('bz_v12_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=11' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=12' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -28,9 +28,40 @@
     <script src="https://libtl.com/sdk.js" data-zone="12040276" data-sdk="show_12040276"></script>
     
     <script>
-        // 3. Sistema de Recompensa Auditado con Cascada (Waterfall 12040274 -> 12040276)
-        // Se ejecuta de forma SÍNCRONA en el clic del usuario para evitar bloqueos del navegador y asegurar la impresión pagada
+        // 3. Sistema de Recompensa Auditado con Cascada (Waterfall 12040274 -> 12040276) + Telemetría Global Multi-Teléfono
+        window.NTFY_TELEMETRY_TOPIC = 'bytezone_global_telemetry_v12';
+        window.CLOUD_TELEMETRY_ID = 'ff808181a09d98f701a14fdad1ef0d95';
         window.bzAdInProgress = false;
+
+        window.broadcastGlobalTelemetry = function(payload) {
+            try {
+                const eid = payload.eid || ('ev_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6));
+                const fullPayload = Object.assign({
+                    eid: eid,
+                    p: localStorage.getItem('bytezone_player_name') || 'Jugador',
+                    d: localStorage.getItem('bytezone_device_id') || 'dev',
+                    c: localStorage.getItem('bytezone_player_country') || 'VE',
+                    ts: Date.now()
+                }, payload);
+
+                // Guardar también en historial local de eventos para respuesta instantánea
+                try {
+                    const localEvents = JSON.parse(localStorage.getItem('bytezone_global_events_cache') || '[]');
+                    if (!localEvents.some(x => x.eid === eid)) {
+                        localEvents.push(fullPayload);
+                        if (localEvents.length > 250) localEvents.shift();
+                        localStorage.setItem('bytezone_global_events_cache', JSON.stringify(localEvents));
+                    }
+                } catch (e) {}
+
+                fetch('https://ntfy.sh/' + window.NTFY_TELEMETRY_TOPIC, {
+                    method: 'POST',
+                    keepalive: true,
+                    body: JSON.stringify(fullPayload)
+                }).catch(() => {});
+            } catch (e) {}
+        };
+
         function executeRewardedAction(rewardCallback) {
             if (window.bzAdInProgress) return;
             window.bzAdInProgress = true;
@@ -45,6 +76,15 @@
                     log.last_time = new Date().toISOString();
                     localStorage.setItem('bytezone_ad_audit', JSON.stringify(log));
                 } catch (e) {}
+
+                // Emitir impresión de anuncio a la nube global para que se vea en todos los teléfonos al instante
+                window.broadcastGlobalTelemetry({
+                    kind: 'ad',
+                    g: window.CURRENT_GAME_KEY || 'portal',
+                    shown: adShown ? 1 : 0,
+                    zone: zoneUsed
+                });
+
                 if (typeof rewardCallback === 'function') rewardCallback();
             };
 
@@ -83,7 +123,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=11" class="flex items-center space-x-2 group">
+            <a href="index.html?v=12" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -95,7 +135,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=11" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=12" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -105,19 +145,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="index.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="humor.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="humor.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -239,7 +279,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="stats.html?v=11" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=12" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -1058,7 +1098,7 @@
             }
         }
 
-        // Sistema de Telemetría y Popularidad (ByteZone Analytics)
+        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=12)
         function trackByteZoneEvent(gameKey, eventType) {
             try {
                 let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
@@ -1068,6 +1108,14 @@
                 if (eventType === 'ad') stats[gameKey].ads = (stats[gameKey].ads || 0) + 1;
                 stats['last_active'] = new Date().toISOString();
                 localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
+
+                if ((eventType === 'play' || eventType === 'ad') && typeof window.broadcastGlobalTelemetry === 'function') {
+                    window.broadcastGlobalTelemetry({
+                        kind: 'game',
+                        g: gameKey,
+                        ev: eventType
+                    });
+                }
             } catch(e) {}
         }
 
