@@ -8,57 +8,67 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
-        // 1. Limpieza automática de caché y cualquier temporizador inApp previo guardado en el navegador/Telegram
+        // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            Object.keys(localStorage).forEach(k => {
-                if (!k.startsWith('bytezone_')) localStorage.removeItem(k);
-            });
-            Object.keys(sessionStorage).forEach(k => {
-                if (!k.startsWith('bz_')) sessionStorage.removeItem(k);
-            });
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
-            }
-            if (!location.search.includes('v=10') && !sessionStorage.getItem('bz_v10_reloaded')) {
-                sessionStorage.setItem('bz_v10_reloaded', '1');
+            if (!location.search.includes('v=11') && !sessionStorage.getItem('bz_v11_reloaded')) {
+                sessionStorage.setItem('bz_v11_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=10' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=11' + location.hash);
             }
         } catch (e) {}
     </script>
 
-    <!-- Monetag In-Page Push Banners Arriba (Zona 12034401) - Web y Telegram Mini App -->
+    <!-- 1. Monetag In-Page Push Banners (Zona 12034401) - Web y Telegram Mini App -->
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
+
+    <!-- 2. Monetag Rewarded Interstitial SDK PRECARGADO desde el inicio (Zona Principal 12040274 CPM Alto + Zona Respaldo 12040276) -->
+    <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
+    <script src="https://libtl.com/sdk.js" data-zone="12040276" data-sdk="show_12040276"></script>
     
     <script>
-        // 2. Video de Recompensa (Zona 12040274): SE CARGA Y EJECUTA CUANDO EL JUGADOR PIDE SEGUNDA OPORTUNIDAD, DESBLOQUEA EL VIDEO VIP O ABRE EL BAÚL
+        // 3. Sistema de Recompensa Auditado con Cascada (Waterfall 12040274 -> 12040276)
+        // Se ejecuta de forma SÍNCRONA en el clic del usuario para evitar bloqueos del navegador y asegurar la impresión pagada
+        window.bzAdInProgress = false;
         function executeRewardedAction(rewardCallback) {
-            const runReward = () => {
-                if (typeof show_12040274 === 'function') {
-                    show_12040274().then(() => {
-                        if (typeof rewardCallback === 'function') rewardCallback();
-                    }).catch((err) => {
-                        console.log("Anuncio Monetag Telegram cerrado o error:", err);
-                        if (typeof rewardCallback === 'function') rewardCallback();
+            if (window.bzAdInProgress) return;
+            window.bzAdInProgress = true;
+
+            const finishReward = (adShown, zoneUsed) => {
+                window.bzAdInProgress = false;
+                try {
+                    const log = JSON.parse(localStorage.getItem('bytezone_ad_audit') || '{"shown":0,"fallback":0}');
+                    if (adShown) log.shown = (log.shown || 0) + 1;
+                    else log.fallback = (log.fallback || 0) + 1;
+                    log.last_zone = zoneUsed;
+                    log.last_time = new Date().toISOString();
+                    localStorage.setItem('bytezone_ad_audit', JSON.stringify(log));
+                } catch (e) {}
+                if (typeof rewardCallback === 'function') rewardCallback();
+            };
+
+            const tryBackupZone = () => {
+                if (typeof window.show_12040276 === 'function') {
+                    window.show_12040276().then(() => {
+                        finishReward(true, '12040276');
+                    }).catch((err2) => {
+                        console.warn("Monetag Zona Respaldo 12040276 sin inventario:", err2);
+                        finishReward(false, 'none');
                     });
                 } else {
-                    if (typeof rewardCallback === 'function') rewardCallback();
+                    finishReward(false, 'none');
                 }
             };
 
-            if (typeof show_12040274 === 'function') {
-                runReward();
+            if (typeof window.show_12040274 === 'function') {
+                window.show_12040274().then(() => {
+                    finishReward(true, '12040274');
+                }).catch((err1) => {
+                    console.warn("Monetag Zona Principal 12040274 no llenó, activando respaldo 12040276:", err1);
+                    tryBackupZone();
+                });
             } else {
-                const s = document.createElement('script');
-                s.src = 'https://libtl.com/sdk.js';
-                s.dataset.zone = '12040274';
-                s.dataset.sdk = 'show_12040274';
-                s.onload = () => setTimeout(runReward, 150);
-                s.onerror = () => {
-                    if (typeof rewardCallback === 'function') rewardCallback();
-                };
-                document.head.appendChild(s);
+                tryBackupZone();
             }
         }
     </script>
@@ -72,7 +82,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=10" class="flex items-center space-x-2 group">
+            <a href="index.html?v=11" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -84,7 +94,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=10" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=11" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -94,19 +104,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="index.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="humor.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=10" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="telegram.html?v=11" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -191,7 +201,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="stats.html?v=10" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=11" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -1611,7 +1621,9 @@
         function openVaultGameWithReward(targetUrl) {
             trackByteZoneEvent('dodge', 'ad');
             executeRewardedAction(() => {
-                window.location.href = targetUrl;
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 250);
             });
         }
 
