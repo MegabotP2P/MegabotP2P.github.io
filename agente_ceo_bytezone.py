@@ -288,13 +288,13 @@ VAULT_GAMES_CATALOG = [
         "status": "EN EL BAÚL (JUGABLE)",
         "badge": "JOYA DEL BAÚL 🗄️",
         "description": "Pilota la nave cuántica y esquiva la lluvia de meteoritos cibernéticos a velocidad extrema. Incluye Escudo de Segunda Oportunidad y Ranking en vivo.",
-        "url": "juegos/cyber-dodge.html?v=12",
+        "url": "juegos/cyber-dodge.html?v=13",
         "accent": "amber"
     }
 ]
 
 def main():
-    print(f"🤖 [Agente CEO ByteZone] Ejecutando actualización autónoma v=12 para la semana {WEEK_ID} ({FECHA_HUMANA})...")
+    print(f"🤖 [Agente CEO ByteZone] Ejecutando actualización autónoma v=13 para la semana {WEEK_ID} ({FECHA_HUMANA})...")
     news = fetch_latest_tech_news()
     scenes = build_video_reel_scenes(news)
     vip_hack = WEEKLY_VIP_HACKS[WEEK_NUM % len(WEEKLY_VIP_HACKS)]

@@ -12,11 +12,11 @@
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=12') && !sessionStorage.getItem('bz_v12_reloaded')) {
+            if (!location.search.includes('v=13') && !sessionStorage.getItem('bz_v12_reloaded')) {
                 sessionStorage.setItem('bz_v12_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=12' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=13' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -124,7 +124,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=12" class="flex items-center space-x-2 group">
+            <a href="index.html?v=13" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -136,7 +136,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=12" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=13" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -146,19 +146,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="index.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="humor.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -212,7 +212,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/neon-stacker.html?v=12" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
+                        <a href="juegos/neon-stacker.html?v=13" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -235,7 +235,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/reflejos-visuales.html?v=12" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
+                        <a href="juegos/reflejos-visuales.html?v=13" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -258,7 +258,7 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/cyber-memory.html?v=12" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
+                        <a href="juegos/cyber-memory.html?v=13" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
                             ▶ JUGAR AHORA
                         </a>
                         <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
@@ -483,7 +483,7 @@
                         Pilota la nave neón y sobrevive la mayor cantidad de segundos esquivando meteoritos cibernéticos. ¡Tiene su propio Torneo Semanal y Escudo de Segunda Oportunidad!
                     </p>
                 </div>
-                <button onclick="openVaultGameWithReward('juegos/cyber-dodge.html?v=12')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
+                <button onclick="openVaultGameWithReward('juegos/cyber-dodge.html?v=13')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
                     <span>🔓</span>
                     <span>RESCATAR DEL BAÚL & JUGAR</span>
                 </button>
@@ -492,14 +492,14 @@
 
         <!-- ACCESOS RÁPIDOS ADICIONALES -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="hacks.html?v=12" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
+            <a href="hacks.html?v=13" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🤖</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Noticias IA, Inventos & Hacks</h4>
                     <p class="text-xs text-gray-400">Lo último de la semana en Inteligencia Artificial, gadgets y trucos secretos.</p>
                 </div>
             </a>
-            <a href="humor.html?v=12" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
+            <a href="humor.html?v=13" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🎭</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
@@ -583,14 +583,15 @@
 
             <!-- BOTONES DE COMPARTIR VIRAL -->
             <div class="space-y-2">
-                <a id="podiumWhatsappBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
+                <a id="podiumWhatsappBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
                     <span>📲</span>
                     <span>Compartir Reto en WhatsApp</span>
                 </a>
-                <a id="podiumTelegramBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
+                <a id="podiumTelegramBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
                     <span>✈️</span>
                     <span>Compartir Reto en Telegram</span>
                 </a>
+                <button onclick="sharePodiumNative()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/25 transition"><span>📤</span><span>Compartir con otras apps</span></button>
                 <button onclick="copyPodiumChallengeText()" class="w-full bg-gray-800 hover:bg-gray-750 text-gray-200 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center space-x-1.5 border border-gray-700 transition">
                     <span id="copyChallengeIcon">📋</span>
                     <span id="copyChallengeText">Copiar Mensaje del Reto</span>
@@ -608,7 +609,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="stats.html?v=12" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=13" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -1070,7 +1071,7 @@
 
 ` +
                 `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:
-${pageUrl}?v=12`;
+${pageUrl}?v=13`;
 
             currentPodiumShareText = challengeText;
 
@@ -1080,7 +1081,7 @@ ${pageUrl}?v=12`;
             }
             const tgBtn = document.getElementById('podiumTelegramBtn');
             if (tgBtn) {
-                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=12") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
+                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=13") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
             }
 
             modal.classList.remove('hidden');
@@ -1093,6 +1094,49 @@ ${pageUrl}?v=12`;
             const modal = document.getElementById('podiumShareModal');
             if (modal) modal.classList.add('hidden');
         }
+
+        function openShareLink(url) {
+            try {
+                const tg = window.Telegram && window.Telegram.WebApp;
+                if (url.indexOf('https://t.me/') === 0 && tg && tg.openTelegramLink) { tg.openTelegramLink(url); return false; }
+                if (tg && tg.openLink) { tg.openLink(url); return false; }
+            } catch (e) {}
+            const w = window.open(url, '_blank');
+            if (!w) { window.location.href = url; }
+            return false;
+        }
+
+        function sharePodiumNative() {
+            if (!currentPodiumShareText) return;
+            const pageUrl = window.location.href.split('?')[0] + '?v=13';
+            if (navigator.share) {
+                navigator.share({ title: 'Reto ByteZone Arcade', text: currentPodiumShareText, url: pageUrl }).catch(() => {});
+            } else {
+                copyPodiumChallengeText();
+            }
+        }
+
+        // Botón visible "Retar a mis amigos" cuando el jugador está en el Top 3 (no depende de tocar la insignia)
+        function ensureChallengeButton() {
+            const badge = document.getElementById('userRankBadge');
+            if (!badge) return;
+            const inPodium = typeof badge.onclick === 'function' && /Toca para Retar/.test(badge.textContent || '');
+            let btn = document.getElementById('challengeFriendsBtn');
+            if (inPodium) {
+                if (!btn) {
+                    btn = document.createElement('button');
+                    btn.id = 'challengeFriendsBtn';
+                    btn.className = 'w-full mt-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-95 active:scale-95 text-gray-950 font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition';
+                    btn.innerHTML = '<span>📣</span><span>Retar a mis amigos con mi puesto</span>';
+                    const host = badge.closest('.rounded-2xl') || badge.parentElement;
+                    host.insertAdjacentElement('afterend', btn);
+                }
+                btn.onclick = function () { if (typeof badge.onclick === 'function') badge.onclick(); };
+            } else if (btn) {
+                btn.remove();
+            }
+        }
+        setInterval(ensureChallengeButton, 1000);
 
         function copyPodiumChallengeText() {
             if (!currentPodiumShareText) return;
@@ -1592,7 +1636,7 @@ ${pageUrl}?v=12`;
             }
         }
 
-        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=12)
+        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=13)
         function trackByteZoneEvent(gameKey, eventType) {
             try {
                 let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');

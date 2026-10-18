@@ -1,7 +1,7 @@
 {
   "version": 11,
   "week_id": "W2026-10-12",
-  "updated_at": "2026-10-18T12:39:08.144246-04:00",
+  "updated_at": "2026-10-18T13:22:37.578675-04:00",
   "updated_human": "18/10/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
@@ -186,7 +186,7 @@
       "status": "EN EL BAÚL (JUGABLE)",
       "badge": "JOYA DEL BAÚL 🗄️",
       "description": "Pilota la nave cuántica y esquiva la lluvia de meteoritos cibernéticos a velocidad extrema. Incluye Escudo de Segunda Oportunidad y Ranking en vivo.",
-      "url": "juegos/cyber-dodge.html?v=12",
+      "url": "juegos/cyber-dodge.html?v=13",
       "accent": "amber"
     }
   ]
