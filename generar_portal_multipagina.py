@@ -175,18 +175,18 @@ PORTAL_DIR = "portal_bytezone"
 JUEGOS_DIR = os.path.join(PORTAL_DIR, "juegos")
 os.makedirs(JUEGOS_DIR, exist_ok=True)
 
-# SCRIPTS DE ANUNCIOS MONETAG AUDITADOS (v=12):
+# SCRIPTS DE ANUNCIOS MONETAG AUDITADOS (v=14):
 # - PRESERVA TOKENS DE SESIÓN DE MONETAG (NO BORRA LOCALSTORAGE NI SERVICE WORKER DE MONETAG)
 # - PRECARGA SDK REWARDED (12040274 CPM $0.07) + RESPALDO (12040276) EN <HEAD> PARA CERO PÉRDIDA DE IMPRESIONES
 MONETAG_TAG = """
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=12') && !sessionStorage.getItem('bz_v12_reloaded')) {
+            if (!location.search.includes('v=14') && !sessionStorage.getItem('bz_v12_reloaded')) {
                 sessionStorage.setItem('bz_v12_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=12' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=14' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -301,7 +301,7 @@ def get_header(current_page="arcade", depth=0):
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="{root}index.html?v=12" class="flex items-center space-x-2 group">
+            <a href="{root}index.html?v=14" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -313,7 +313,7 @@ def get_header(current_page="arcade", depth=0):
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="{root}telegram.html?v=12" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="{root}telegram.html?v=14" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -323,19 +323,19 @@ def get_header(current_page="arcade", depth=0):
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="{root}index.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('arcade')}">
+            <a href="{root}index.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('arcade')}">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="{root}hacks.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('hacks')}">
+            <a href="{root}hacks.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('hacks')}">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="{root}humor.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('humor')}">
+            <a href="{root}humor.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('humor')}">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="{root}telegram.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('telegram')}">
+            <a href="{root}telegram.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('telegram')}">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -350,7 +350,7 @@ def get_footer(depth=0):
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="{root}stats.html?v=12" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="{root}stats.html?v=14" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -433,14 +433,15 @@ PLAYER_MODAL = """
 
             <!-- BOTONES DE COMPARTIR VIRAL -->
             <div class="space-y-2">
-                <a id="podiumWhatsappBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
+                <a id="podiumWhatsappBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
                     <span>📲</span>
                     <span>Compartir Reto en WhatsApp</span>
                 </a>
-                <a id="podiumTelegramBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
+                <a id="podiumTelegramBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
                     <span>✈️</span>
                     <span>Compartir Reto en Telegram</span>
                 </a>
+                <button onclick="sharePodiumNative()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/25 transition"><span>📤</span><span>Compartir con otras apps</span></button>
                 <button onclick="copyPodiumChallengeText()" class="w-full bg-gray-800 hover:bg-gray-750 text-gray-200 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center space-x-1.5 border border-gray-700 transition">
                     <span id="copyChallengeIcon">📋</span>
                     <span id="copyChallengeText">Copiar Mensaje del Reto</span>
@@ -910,7 +911,7 @@ PLAYER_IDENTITY_SCRIPT = """
                 `⚡ Mi Marca: ${scoreFormatted}\n` +
                 `🔥 Torneo Semanal: ${wBadge}\n` +
                 `👑 Récord Histórico: ${aBadge}\n\n` +
-                `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:\n${pageUrl}?v=12`;
+                `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:\n${pageUrl}?v=14`;
 
             currentPodiumShareText = challengeText;
 
@@ -920,7 +921,7 @@ PLAYER_IDENTITY_SCRIPT = """
             }
             const tgBtn = document.getElementById('podiumTelegramBtn');
             if (tgBtn) {
-                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=12") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
+                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=14") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
             }
 
             modal.classList.remove('hidden');
@@ -933,6 +934,49 @@ PLAYER_IDENTITY_SCRIPT = """
             const modal = document.getElementById('podiumShareModal');
             if (modal) modal.classList.add('hidden');
         }
+
+        function openShareLink(url) {
+            try {
+                const tg = window.Telegram && window.Telegram.WebApp;
+                if (url.indexOf('https://t.me/') === 0 && tg && tg.openTelegramLink) { tg.openTelegramLink(url); return false; }
+                if (tg && tg.openLink) { tg.openLink(url); return false; }
+            } catch (e) {}
+            const w = window.open(url, '_blank');
+            if (!w) { window.location.href = url; }
+            return false;
+        }
+
+        function sharePodiumNative() {
+            if (!currentPodiumShareText) return;
+            const pageUrl = window.location.href.split('?')[0] + '?v=14';
+            if (navigator.share) {
+                navigator.share({ title: 'Reto ByteZone Arcade', text: currentPodiumShareText, url: pageUrl }).catch(() => {});
+            } else {
+                copyPodiumChallengeText();
+            }
+        }
+
+        // Botón visible "Retar a mis amigos" cuando el jugador está en el Top 3 (no depende de tocar la insignia)
+        function ensureChallengeButton() {
+            const badge = document.getElementById('userRankBadge');
+            if (!badge) return;
+            const inPodium = typeof badge.onclick === 'function' && /Toca para Retar/.test(badge.textContent || '');
+            let btn = document.getElementById('challengeFriendsBtn');
+            if (inPodium) {
+                if (!btn) {
+                    btn = document.createElement('button');
+                    btn.id = 'challengeFriendsBtn';
+                    btn.className = 'w-full mt-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-95 active:scale-95 text-gray-950 font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition';
+                    btn.innerHTML = '<span>📣</span><span>Retar a mis amigos con mi puesto</span>';
+                    const host = badge.closest('.rounded-2xl') || badge.parentElement;
+                    host.insertAdjacentElement('afterend', btn);
+                }
+                btn.onclick = function () { if (typeof badge.onclick === 'function') badge.onclick(); };
+            } else if (btn) {
+                btn.remove();
+            }
+        }
+        setInterval(ensureChallengeButton, 1000);
 
         function copyPodiumChallengeText() {
             if (!currentPodiumShareText) return;
@@ -1043,8 +1087,6 @@ PLAYER_IDENTITY_SCRIPT = """
 
                 return true;
             }
-            return false;
-        }
             return false;
         }
 
@@ -1373,7 +1415,7 @@ PLAYER_IDENTITY_SCRIPT = """
             }
         }
 
-        // Visita de pagina (alimenta la telemetria de trafico del Agente CEO)
+        // Visita de página (alimenta la telemetría de tráfico del Agente CEO)
         try {
             if (!window.__bzPageViewSent && typeof window.broadcastGlobalTelemetry === 'function') {
                 window.__bzPageViewSent = true;
@@ -1445,7 +1487,7 @@ PLAYER_IDENTITY_SCRIPT = """
             }
         }
 
-        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=12)
+        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=14)
         function trackByteZoneEvent(gameKey, eventType) {
             try {
                 let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
@@ -2324,14 +2366,14 @@ TEMPLATE_INDEX = """<!DOCTYPE html>
 
         <!-- ACCESOS RÁPIDOS ADICIONALES -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="hacks.html?v=12" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
+            <a href="hacks.html?v=14" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🤖</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Noticias IA, Inventos & Hacks</h4>
                     <p class="text-xs text-gray-400">Lo último de la semana en Inteligencia Artificial, gadgets y trucos secretos.</p>
                 </div>
             </a>
-            <a href="humor.html?v=12" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
+            <a href="humor.html?v=14" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🎭</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
@@ -2376,7 +2418,7 @@ TEMPLATE_STACKER = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=12" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=14" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -2618,7 +2660,6 @@ TEMPLATE_STACKER = """<!DOCTYPE html>
         function resetStackerGame() {
             reviveModal.classList.add('hidden');
             if (flushPendingPodium()) {
-                // Mostró el podio: dejar la pantalla de inicio para que juegue cuando quiera
                 startScreen.classList.remove('hidden');
             } else {
                 startStackerGame();
@@ -2738,7 +2779,7 @@ TEMPLATE_REFLEX = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=12" class="text-xs text-purple-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=14" class="text-xs text-purple-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -3065,7 +3106,7 @@ TEMPLATE_MEMORY = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=12" class="text-xs text-emerald-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=14" class="text-xs text-emerald-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -3407,7 +3448,7 @@ TEMPLATE_DODGE = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y SELLO BAÚL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=12" class="text-xs text-amber-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=14" class="text-xs text-amber-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -3917,6 +3958,7 @@ TEMPLATE_HUMOR = """<!DOCTYPE html>
         let __lastJoke = -1;
         function generarChisteNuevo() {
             const q = document.getElementById('humorQuote');
+            if (!CHISTES || !CHISTES.length) return;
             let i = Math.floor(Math.random() * CHISTES.length);
             if (CHISTES.length > 1) { while (i === __lastJoke) { i = Math.floor(Math.random() * CHISTES.length); } }
             __lastJoke = i;
@@ -4174,7 +4216,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
                     <p class="text-gray-400">Escudos con Anuncio:</p>
                     <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
                 </div>
-                <a href="juegos/cyber-dodge.html?v=12" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
+                <a href="juegos/cyber-dodge.html?v=14" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
                     Probar Juego
                 </a>
             </div>
@@ -4328,7 +4370,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
     <script>
         window.CURRENT_GAME_KEY = 'stats';
 
-        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=12)
+        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=14)
         const BASELINE_METRICS = {
             stacker: { plays: 28, ads: 8 },
             reflex:  { plays: 22, ads: 5 },
@@ -4585,6 +4627,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
         updateMonetagSdkStatusUI();
         setTimeout(updateMonetagSdkStatusUI, 1200);
         setInterval(() => refreshGlobalMetricsFromCloud(false), 20000);
+
         async function loadCeoReport() {
             try {
                 const res = await fetch('data/weekly_pulse.json?t=' + Date.now(), { cache: 'no-store' });
@@ -4692,7 +4735,7 @@ for target_dir in DIRECTORIOS_SALIDA:
     with open(os.path.join(target_dir, "stats.html"), "w", encoding="utf-8") as f:
         f.write(render_page(TEMPLATE_STATS, "stats", depth=0, page_key="stats", path="stats.html"))
 
-print("✅ Arquitectura Multi-Página v=12 de ByteZone sincronizada en portal_bytezone Y bytezone:")
+print("✅ Arquitectura Multi-Página v=14 de ByteZone sincronizada en portal_bytezone Y bytezone:")
 print(" - index.html (Lobby + Reproductor Video Flash IA + Baúl Arcade)")
 print(" - juegos/neon-stacker.html (Juego 1: Torre Neon Stacker Pro - ***** sincronizado en 33)")
 print(" - juegos/reflejos-visuales.html (Juego 2: Test Reflejos Visuales)")
