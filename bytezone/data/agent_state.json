@@ -1,0 +1,50 @@
+{
+  "portada": [
+    "stacker",
+    "reflex",
+    "memory"
+  ],
+  "vault": [
+    "dodge"
+  ],
+  "entered": {
+    "stacker": "W2026-10-19",
+    "reflex": "W2026-10-19",
+    "memory": "W2026-10-19",
+    "dodge": "W2026-10-19"
+  },
+  "history": [
+    {
+      "week_id": "W2026-10-19",
+      "plays": 0,
+      "devices": 0,
+      "views": 0,
+      "ads": 0
+    }
+  ],
+  "last_news_keys": [
+    "openai descubre una grabadora escondida",
+    "amazon se ha convertido en el mejor ejem",
+    "su escuela bloqueó chatgpt ahora esta es",
+    "las mejores ofertas de mediamarkt durant",
+    "la psicología dice que las personas que"
+  ],
+  "last_joke_ids": [
+    10,
+    20,
+    40,
+    24,
+    2,
+    18,
+    34,
+    31,
+    37,
+    6
+  ],
+  "last_truth_ids": [
+    6,
+    1,
+    5,
+    9
+  ]
+}

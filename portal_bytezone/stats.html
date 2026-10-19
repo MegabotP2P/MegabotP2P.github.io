@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Métricas & Popularidad - ByteZone</title>
+    <title>Panel de Métricas | ByteZone</title>
+    <meta name="description" content="Panel interno de métricas.">
+    <meta name="keywords" content="juegos arcade online gratis, juegos sin descargar, test de reflejos, test de velocidad de reacción, juego de memoria, torneo semanal, ranking mundial de juegos, noticias de inteligencia artificial, resumen semanal de IA, mini juegos para Telegram, juegos para celular, retos entre amigos, openai, amazon, chatgpt, ahora, mediamarkt, hazte, renove, openai">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://megabotp2p.github.io/bytezone/stats.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ByteZone Arcade">
+    <meta property="og:title" content="Panel de Métricas | ByteZone">
+    <meta property="og:description" content="Panel interno de métricas.">
+    <meta property="og:url" content="https://megabotp2p.github.io/bytezone/stats.html">
+    <meta property="og:image" content="https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panel de Métricas | ByteZone">
+    <meta name="twitter:description" content="Panel interno de métricas.">
+    <meta name="twitter:image" content="https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ByteZone Arcade", "url": "https://megabotp2p.github.io/bytezone/stats.html", "inLanguage": "es", "description": "Panel interno de métricas."}</script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=13') && !sessionStorage.getItem('bz_v12_reloaded')) {
+            if (!location.search.includes('v=12') && !sessionStorage.getItem('bz_v12_reloaded')) {
                 sessionStorage.setItem('bz_v12_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=13' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=12' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -122,7 +137,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=13" class="flex items-center space-x-2 group">
+            <a href="index.html?v=12" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -134,7 +149,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=13" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=12" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -144,19 +159,19 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="index.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="hacks.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="humor.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -310,7 +325,7 @@
                     <p class="text-gray-400">Escudos con Anuncio:</p>
                     <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
                 </div>
-                <a href="juegos/cyber-dodge.html?v=13" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
+                <a href="juegos/cyber-dodge.html?v=12" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
                     Probar Juego
                 </a>
             </div>
@@ -412,6 +427,38 @@
             </div>
         </div>
 
+        <!-- REPORTE DEL AGENTE CEO (se actualiza solo cada semana) -->
+        <div class="bg-gray-900/90 rounded-3xl p-6 border border-cyan-500/40 shadow-xl space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🧠</span>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-black text-white">Reporte del Agente CEO</h3>
+                        <p id="ceoReportMeta" class="text-xs text-gray-400">Cargando último reporte...</p>
+                    </div>
+                </div>
+                <span id="ceoTrafficBadge" class="text-xs font-black bg-gray-800 text-gray-300 border border-gray-700 px-3 py-1 rounded-full">Tráfico: -</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Dispositivos (7d)</p><p id="ceoDevices" class="font-black text-lg text-cyan-400">0</p></div>
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Partidas (7d)</p><p id="ceoPlays" class="font-black text-lg text-white">0</p></div>
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Visitas a juegos (7d)</p><p id="ceoViews" class="font-black text-lg text-purple-400">0</p></div>
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Anuncios vistos (7d)</p><p id="ceoAds" class="font-black text-lg text-emerald-400">0</p></div>
+            </div>
+            <div>
+                <p class="text-xs font-black text-white mb-1.5">✅ Lo que hizo / decidió esta semana</p>
+                <ul id="ceoActions" class="space-y-1 text-[11px] text-gray-300 list-disc pl-4"></ul>
+            </div>
+            <div>
+                <p class="text-xs font-black text-white mb-1.5">📣 Kit de promoción (toca para copiar y compartir)</p>
+                <div id="ceoPromo" class="space-y-2"></div>
+            </div>
+            <div>
+                <p class="text-xs font-black text-white mb-1.5">🔎 Palabras clave de la semana (SEO)</p>
+                <p id="ceoKeywords" class="text-[11px] text-gray-400 leading-relaxed"></p>
+            </div>
+        </div>
+
         <!-- ACCIONES DE ADMINISTRADOR -->
         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
             <button onclick="refreshGlobalMetricsFromCloud(true)" class="w-full sm:w-1/2 bg-gray-800 hover:bg-gray-750 text-cyan-300 font-bold py-3 rounded-xl text-xs transition border border-gray-700">
@@ -497,15 +544,14 @@
 
             <!-- BOTONES DE COMPARTIR VIRAL -->
             <div class="space-y-2">
-                <a id="podiumWhatsappBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
+                <a id="podiumWhatsappBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
                     <span>📲</span>
                     <span>Compartir Reto en WhatsApp</span>
                 </a>
-                <a id="podiumTelegramBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
+                <a id="podiumTelegramBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
                     <span>✈️</span>
                     <span>Compartir Reto en Telegram</span>
                 </a>
-                <button onclick="sharePodiumNative()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/25 transition"><span>📤</span><span>Compartir con otras apps</span></button>
                 <button onclick="copyPodiumChallengeText()" class="w-full bg-gray-800 hover:bg-gray-750 text-gray-200 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center space-x-1.5 border border-gray-700 transition">
                     <span id="copyChallengeIcon">📋</span>
                     <span id="copyChallengeText">Copiar Mensaje del Reto</span>
@@ -522,7 +568,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="stats.html?v=13" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=12" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -923,8 +969,20 @@
                         weeklyPos: weeklyPos,
                         alltimePos: alltimePos
                     });
+                    return true;
                 }
             } catch(e) {}
+            return false;
+        }
+
+        // Muestra el modal del podio pendiente (si lo hay) usando la MEJOR marca semanal. Devuelve true si se mostró.
+        function flushPendingPodium() {
+            const p = window.__pendingPodium;
+            if (!p) return false;
+            window.__pendingPodium = null;
+            const best = parseInt(localStorage.getItem('bytezone_weekly_best_' + p.gameKey) || localStorage.getItem('bytezone_best_' + p.gameKey) || '0');
+            if (!best) return false;
+            return checkAndShowPodiumModal(p.gameKey, best, p.isAscending) === true;
         }
 
         function showPodiumModal(data) {
@@ -984,7 +1042,7 @@
 
 ` +
                 `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:
-${pageUrl}?v=13`;
+${pageUrl}?v=12`;
 
             currentPodiumShareText = challengeText;
 
@@ -994,7 +1052,7 @@ ${pageUrl}?v=13`;
             }
             const tgBtn = document.getElementById('podiumTelegramBtn');
             if (tgBtn) {
-                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=13") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
+                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=12") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
             }
 
             modal.classList.remove('hidden');
@@ -1007,49 +1065,6 @@ ${pageUrl}?v=13`;
             const modal = document.getElementById('podiumShareModal');
             if (modal) modal.classList.add('hidden');
         }
-
-        function openShareLink(url) {
-            try {
-                const tg = window.Telegram && window.Telegram.WebApp;
-                if (url.indexOf('https://t.me/') === 0 && tg && tg.openTelegramLink) { tg.openTelegramLink(url); return false; }
-                if (tg && tg.openLink) { tg.openLink(url); return false; }
-            } catch (e) {}
-            const w = window.open(url, '_blank');
-            if (!w) { window.location.href = url; }
-            return false;
-        }
-
-        function sharePodiumNative() {
-            if (!currentPodiumShareText) return;
-            const pageUrl = window.location.href.split('?')[0] + '?v=13';
-            if (navigator.share) {
-                navigator.share({ title: 'Reto ByteZone Arcade', text: currentPodiumShareText, url: pageUrl }).catch(() => {});
-            } else {
-                copyPodiumChallengeText();
-            }
-        }
-
-        // Botón visible "Retar a mis amigos" cuando el jugador está en el Top 3 (no depende de tocar la insignia)
-        function ensureChallengeButton() {
-            const badge = document.getElementById('userRankBadge');
-            if (!badge) return;
-            const inPodium = typeof badge.onclick === 'function' && /Toca para Retar/.test(badge.textContent || '');
-            let btn = document.getElementById('challengeFriendsBtn');
-            if (inPodium) {
-                if (!btn) {
-                    btn = document.createElement('button');
-                    btn.id = 'challengeFriendsBtn';
-                    btn.className = 'w-full mt-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-95 active:scale-95 text-gray-950 font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition';
-                    btn.innerHTML = '<span>📣</span><span>Retar a mis amigos con mi puesto</span>';
-                    const host = badge.closest('.rounded-2xl') || badge.parentElement;
-                    host.insertAdjacentElement('afterend', btn);
-                }
-                btn.onclick = function () { if (typeof badge.onclick === 'function') badge.onclick(); };
-            } else if (btn) {
-                btn.remove();
-            }
-        }
-        setInterval(ensureChallengeButton, 1000);
 
         function copyPodiumChallengeText() {
             if (!currentPodiumShareText) return;
@@ -1150,13 +1165,18 @@ ${pageUrl}?v=13`;
                 pushScoreToCloud(gameKey, cleanScore, isAscending);
                 if (window.confetti) confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
 
-                // Activar el Gancho Social si entró al podio de los 3 mejores
-                setTimeout(() => {
-                    checkAndShowPodiumModal(gameKey, cleanScore, isAscending);
-                }, 600);
+                // Gancho Social: NUNCA interrumpir una partida en curso. Se deja pendiente y se muestra
+                // solo cuando la partida termina de verdad (ver flushPendingPodium en cada juego).
+                window.__pendingPodium = { gameKey: gameKey, isAscending: isAscending };
+                if (gameKey === 'reflex') {
+                    // En Reflejos cada intento es una partida completa
+                    setTimeout(() => { flushPendingPodium(); }, 900);
+                }
 
                 return true;
             }
+            return false;
+        }
             return false;
         }
 
@@ -1485,6 +1505,14 @@ ${pageUrl}?v=13`;
             }
         }
 
+        // Visita de pagina (alimenta la telemetria de trafico del Agente CEO)
+        try {
+            if (!window.__bzPageViewSent && typeof window.broadcastGlobalTelemetry === 'function') {
+                window.__bzPageViewSent = true;
+                window.broadcastGlobalTelemetry({ kind: 'page', g: (location.pathname.split('/').pop() || 'index.html') });
+            }
+        } catch (e) {}
+
         function updateNameDisplays() {
             document.querySelectorAll('#playerNameDisplay').forEach(el => {
                 el.textContent = playerName;
@@ -1549,7 +1577,7 @@ ${pageUrl}?v=13`;
             }
         }
 
-        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=13)
+        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=12)
         function trackByteZoneEvent(gameKey, eventType) {
             try {
                 let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
@@ -1560,7 +1588,7 @@ ${pageUrl}?v=13`;
                 stats['last_active'] = new Date().toISOString();
                 localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
 
-                if ((eventType === 'play' || eventType === 'ad') && typeof window.broadcastGlobalTelemetry === 'function') {
+                if ((eventType === 'view' || eventType === 'play' || eventType === 'ad') && typeof window.broadcastGlobalTelemetry === 'function') {
                     window.broadcastGlobalTelemetry({
                         kind: 'game',
                         g: gameKey,
@@ -2170,7 +2198,7 @@ ${pageUrl}?v=13`;
     <script>
         window.CURRENT_GAME_KEY = 'stats';
 
-        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=13)
+        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=12)
         const BASELINE_METRICS = {
             stacker: { plays: 28, ads: 8 },
             reflex:  { plays: 22, ads: 5 },
@@ -2427,6 +2455,51 @@ ${pageUrl}?v=13`;
         updateMonetagSdkStatusUI();
         setTimeout(updateMonetagSdkStatusUI, 1200);
         setInterval(() => refreshGlobalMetricsFromCloud(false), 20000);
+        async function loadCeoReport() {
+            try {
+                const res = await fetch('data/weekly_pulse.json?t=' + Date.now(), { cache: 'no-store' });
+                if (!res.ok) return;
+                const d = await res.json();
+                const r = d.agent_report || {};
+                const t = r.traffic || {};
+                const meta = document.getElementById('ceoReportMeta');
+                if (meta) meta.textContent = 'Semana ' + (d.week_id || '-') + ' • Actualizado ' + (d.updated_human || '-') + ' (v' + (d.version || '?') + ')';
+                const st = r.traffic_status || '-';
+                const badge = document.getElementById('ceoTrafficBadge');
+                if (badge) {
+                    const map = { bajo: ['🟠 Tráfico BAJO', 'bg-amber-500/20 text-amber-300 border-amber-500/40'], estable: ['🟢 Tráfico ESTABLE', 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'], creciendo: ['🚀 Tráfico CRECIENDO', 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'] };
+                    const m = map[st] || ['Tráfico: -', 'bg-gray-800 text-gray-300 border-gray-700'];
+                    badge.textContent = m[0] + (t.change_pct != null ? ' (' + (t.change_pct > 0 ? '+' : '') + t.change_pct + '% vs semana previa)' : '');
+                    badge.className = 'text-xs font-black border px-3 py-1 rounded-full ' + m[1];
+                }
+                const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+                set('ceoDevices', t.devices_7d || 0); set('ceoPlays', t.plays_7d || 0);
+                set('ceoViews', t.views_7d || 0); set('ceoAds', t.ads_shown_7d || 0);
+                const ul = document.getElementById('ceoActions');
+                if (ul) ul.innerHTML = (r.actions || []).map(a => '<li>' + String(a).replace(/</g, '&lt;') + '</li>').join('');
+                const promo = d.promo_kit || {};
+                const box = document.getElementById('ceoPromo');
+                if (box) {
+                    const items = (promo.whatsapp_status || []).concat(promo.social_caption ? [promo.social_caption] : []);
+                    box.innerHTML = '';
+                    items.forEach((txt, i) => {
+                        const b = document.createElement('button');
+                        b.className = 'w-full text-left p-3 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-cyan-500/50 text-[11px] text-gray-200 leading-relaxed transition';
+                        b.textContent = txt;
+                        b.onclick = () => {
+                            const done = () => { b.classList.add('border-emerald-500'); setTimeout(() => b.classList.remove('border-emerald-500'), 1500); };
+                            if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done).catch(() => prompt('Copia el texto:', txt));
+                            else prompt('Copia el texto:', txt);
+                        };
+                        box.appendChild(b);
+                    });
+                }
+                const kw = (d.seo && d.seo.keywords) || [];
+                set('ceoKeywords', kw.join(' • '));
+            } catch (e) {}
+        }
+        loadCeoReport();
+
     </script>
 </body>
 </html>

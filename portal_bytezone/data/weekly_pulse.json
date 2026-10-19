@@ -1,11 +1,11 @@
 {
-  "version": 11,
+  "version": 14,
   "week_id": "W2026-10-19",
-  "updated_at": "2026-10-19T05:47:54.234709-04:00",
+  "updated_at": "2026-10-19T11:08:34.791797-04:00",
   "updated_human": "19/10/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
-    "mode": "Autónomo (Lunes 00:05 AM + Monitoreo Continuo)",
+    "mode": "Autónomo (Lunes + monitoreo de telemetría cada 6 h)",
     "active_games_count": 3,
     "vault_games_count": 1
   },
@@ -19,11 +19,11 @@
         "news_index": 0,
         "badge": "NOTICIA #1 • IA & FUTURO",
         "icon": "🤖",
-        "headline": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
-        "subtext": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
-        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1",
+        "headline": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
+        "subtext": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico.",
+        "image": "https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg",
         "source": "Hipertextual IA",
-        "voice_script": "Noticia número 1: Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 1: OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado. Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-cyan-600 to-blue-900",
         "is_vip_hook": false
       },
@@ -32,11 +32,11 @@
         "news_index": 1,
         "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
-        "headline": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
-        "subtext": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna.",
-        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/ubuntu-terminal.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
-        "source": "Hipertextual IA",
-        "voice_script": "Noticia número 2: Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna. Pasamos a la siguiente noticia.",
+        "headline": "Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza",
+        "subtext": "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
+        "image": "https://i.blogs.es/5ebee2/magnific__crea-una-imagenpasa-la-imagen-adjunta-img1-a-43-y-__15731/1024_2000.jpeg",
+        "source": "Xataka IA & Tech",
+        "voice_script": "Noticia número 2: Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza. Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
         "is_vip_hook": false
       },
@@ -45,11 +45,11 @@
         "news_index": 2,
         "badge": "NOTICIA #3 • TENDENCIA GLOBAL",
         "icon": "⚡",
-        "headline": "Decimos que el género de una IA nos da igual, hasta que llega el momento de pagarle",
-        "subtext": "La IA suele tener voz de mujer. Desde la primera Siri hasta la actual Alexa, pasando por el GPS: los asistentes virtuales han adoptado tradicionalmente voces femeninas por defecto.",
-        "image": "https://i.blogs.es/bd5302/ia-asistentes-virtuales-hombre-mujer-portada/1024_2000.jpeg",
-        "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 3: Decimos que el género de una IA nos da igual, hasta que llega el momento de pagarle. La IA suele tener voz de mujer. Desde la primera Siri hasta la actual Alexa, pasando por el GPS: los asistentes virtuales han adoptado tradicionalmente voces femeninas por defecto. Pasamos a la siguiente noticia.",
+        "headline": "Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios",
+        "subtext": "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D.",
+        "image": "https://i.blogs.es/a07c8e/navya-tuteja/1024_2000.jpeg",
+        "source": "Genbeta IA",
+        "voice_script": "Noticia número 3: Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios. Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-pink-600 to-rose-900",
         "is_vip_hook": false
       },
@@ -58,11 +58,11 @@
         "news_index": 3,
         "badge": "NOTICIA #4 • IMPACTO TECH",
         "icon": "🧠",
-        "headline": "Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora",
-        "subtext": "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h.",
-        "image": "https://i.blogs.es/c53511/6ac39bb3265e3f8e338faab6/1024_2000.jpeg",
-        "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 4: Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora. Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h. Pasamos a la siguiente noticia.",
+        "headline": "Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre",
+        "subtext": "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire.",
+        "image": "https://i.blogs.es/5785a5/mediamarkt/1024_2000.jpeg",
+        "source": "Xataka",
+        "voice_script": "Noticia número 4: Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre. MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-emerald-600 to-teal-900",
         "is_vip_hook": false
       },
@@ -71,11 +71,11 @@
         "news_index": 4,
         "badge": "NOTICIA #5 • CIERRE SEMANAL",
         "icon": "🔥",
-        "headline": "OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”",
-        "subtext": "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
-        "image": "https://i.blogs.es/519b30/sam-altman-diciendo-adios/1024_2000.png",
-        "source": "Genbeta IA",
-        "voice_script": "Noticia número 5: OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”. El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano . Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "headline": "La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones",
+        "subtext": "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo.",
+        "image": "https://i.blogs.es/0ab295/en-una-reunion-el-movil-boca-abajo/1024_2000.jpeg",
+        "source": "Genbeta",
+        "voice_script": "Noticia número 5: La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones. Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
         "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
@@ -84,93 +84,98 @@
   "weekly_news": [
     {
       "id": "news_1",
-      "title": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector",
-      "summary": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
-      "voice_extra": "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
+      "title": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
+      "summary": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico.",
+      "voice_extra": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico.",
       "full_paragraphs": [
-        "En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso.",
-        "SynthID Detector es una utilidad que la firma de Mountain View lleva bastante tiempo desarrollando, pero que recién hace cuestión de semanas abrió a todo el público . Como bien lo indica su nombre, su finalidad es detectar si una imagen, un vídeo o un audio se creó o modificó con inteligencia artificial .",
-        "Esta herramienta saca provecho de SynthID, una marca de agua invisible desarrollada por Google que se incorpora en los materiales generados o editados con IA. Si bien esta tecnología se aplicó inicialmente en fotos, vídeos o audios creados con Gemini , también se ha expandido a modelos de IA de terceros.",
-        "Si bien todavía está lejos de ser un estándar dentro de la industria, sí es una solución que ha ganado bastante aceptación entre las principales empresas del sector. Esto quiere decir que SynthID Detector no funciona únicamente con materiales multimedia creados con las IA de Google, sino también con las de OpenAI, NVIDIA y kakao , y muy pronto Apple también se sumará al listado.",
-        "El uso de SynthID Detector es realmente sencillo. Estamos hablando de una herramienta web, de modo que se puede ejecutar desde cualquier navegador ingresando a synthid.com . Una vez allí, solo hay que seleccionar y cargar los archivos a escanear, o arrastrarlos y soltarlos directamente sobre el recuadro de la utilidad .",
-        "Es importante señalar que para usar SynthID Detector es obligatorio iniciar sesión con una cuenta de Google, de Apple o de ChatGPT. Los formatos multimedia que soporta la herramienta son varios; en lo que respecta a vídeo, pueden ser MP4, MOV y WEBM. En lo que respecta a audio, puede analizar WAV, MP3, OGG, FLAC, AAC y M4A. En tanto que para las imágenes sirve con archivos JPG, JPEG, PNG, BMP, WEBP, AVIF, HEIC, HEIF, TIFF, TIF y GIF."
+        "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico. Abdulrahman Alfozan, el empleado de origen saudí, habría colocado la grabadora en una sala que se usaba para discutir sobre investigación, estrategia y productos de OpenAI.",
+        "En una publicación en su cuenta de X , OpenAI dijo que descubrió un \"dispositivo de grabación sofisticado\" que estaba oculto dentro de una de sus oficinas. La compañía reportó el hecho al FBI, que arrestó al acusado y comenzó una investigación para conocer lo ocurrido. OpenAI añadió que no hay indicios de que el empleado accediera o exfiltrara información confidencial, como pesos de modelos, código fuente o datos de clientes.",
+        "De acuerdo con The San Francisco Standard , el dispositivo apareció durante una revisión del equipo de vigilancia el pasado 30 de septiembre. El aparato se encontraba conectado al puerto USB de un televisor , el cual estaba instalado en una sala de reuniones ejecutiva. OpenAI cree que Alfozan lo instaló el 28 de septiembre e intentó esconderlo usando papel higiénico para que pasara desapercibido.",
+        "La sala donde encontraron la grabadora es usada para asuntos confidenciales, como investigación de modelos, próximos productos o relaciones con los gobiernos . Según la denuncia, Alfozan no tenía autorización para entrar ni para asistir a reuniones allí, aunque las cámaras de seguridad lo captaron cerca en varias fechas anteriores al hallazgo.",
+        "Abdulrahman Alfozan , un ingeniero de 35 años de nacionalidad saudí, trabajaba en OpenAI desde julio de 2025. El perfil de LinkedIn del acusado detalla que se desempeñaba como líder de ingeniería de la plataforma de agentes de IA , y anteriormente había laborado en Meta como ingeniero de sistemas. Alfozan cuenta con un máster en Ciencia de Datos por la Universidad de Berkeley e hizo prácticas en Microsoft, SAP y Akamai.",
+        "Según la acusación, Alfozan usó una herramienta de productividad para preguntar por direcciones de edificios, salas, aforos y calendarios, así como la ubicación de reuniones con directivos y socios externos. Entre el 24 y el 30 de septiembre, una cuenta asociada a su pareja preguntó a un chatbot cómo construir una grabadora y operarla vía remota . Estas consultas continuaron el 27 y el 28 de ese mes, cuando la misma cuenta pidió información por el modelo del dispositivo de grabación que apareció en las oficinas de OpenAI."
       ],
-      "full_voice_script": "Cómo detectar fotos, vídeos y audios creados con IA usando SynthID Detector. Noticia publicada por Hipertextual IA. En un mundo donde la realidad y la veracidad se ponen a prueba todos los días con un sinfín de contenidos creados con IA generativa, necesitamos herramientas que permitan identificarlos. Aquí entra en escena SynthID Detector , una plataforma de Google que ayuda justamente a eso. SynthID Detector es una utilidad que la firma de Mountain View lleva bastante tiempo desarrollando, pero que recién hace cuestión de semanas abrió a todo el público . Como bien lo indica su nombre, su finalidad es detectar si una imagen, un vídeo o un audio se creó o modificó con inteligencia artificial . Esta herramienta saca provecho de SynthID, una marca de agua invisible desarrollada por Google que se incorpora en los materiales generados o editados con IA. Si bien esta tecnología se aplicó inicialmente en fotos, vídeos o audios creados con Gemini , también se ha expandido a modelos de IA de terceros. Si bien todavía está lejos de ser un estándar dentro de la industria, sí es una solución que ha ganado bastante aceptación entre las principales empresas del sector. Esto quiere decir que SynthID Detector no funciona únicamente con materiales multimedia creados con las IA de Google, sino también con las de OpenAI, NVIDIA y kakao , y muy pronto Apple también se sumará al listado. El uso de SynthID Detector es realmente sencillo. Estamos hablando de una herramienta web, de modo que se puede ejecutar desde cualquier navegador ingresando a synthid.com . Una vez allí, solo hay que seleccionar y cargar los archivos a escanear, o arrastrarlos y soltarlos directamente sobre el recuadro de la utilidad . Es importante señalar que para usar SynthID Detector es obligatorio iniciar sesión con una cuenta de Google, de Apple o de ChatGPT. Los formatos multimedia que soporta la herramienta son varios; en lo que respecta a vídeo, pueden ser MP4, MOV y WEBM. En lo que respecta a audio, puede analizar WAV, MP3, OGG, FLAC, AAC y M4A. En tanto que para las imágenes sirve con archivos JPG, JPEG, PNG, BMP, WEBP, AVIF, HEIC, HEIF, TIFF, TIF y GIF.",
-      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/synthid-scaled.jpg?fit=1024%2C540&quality=70&strip=all&ssl=1",
+      "full_voice_script": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado. Noticia publicada por Hipertextual IA. Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico. Abdulrahman Alfozan, el empleado de origen saudí, habría colocado la grabadora en una sala que se usaba para discutir sobre investigación, estrategia y productos de OpenAI. En una publicación en su cuenta de X , OpenAI dijo que descubrió un \"dispositivo de grabación sofisticado\" que estaba oculto dentro de una de sus oficinas. La compañía reportó el hecho al FBI, que arrestó al acusado y comenzó una investigación para conocer lo ocurrido. OpenAI añadió que no hay indicios de que el empleado accediera o exfiltrara información confidencial, como pesos de modelos, código fuente o datos de clientes. De acuerdo con The San Francisco Standard , el dispositivo apareció durante una revisión del equipo de vigilancia el pasado 30 de septiembre. El aparato se encontraba conectado al puerto USB de un televisor , el cual estaba instalado en una sala de reuniones ejecutiva. OpenAI cree que Alfozan lo instaló el 28 de septiembre e intentó esconderlo usando papel higiénico para que pasara desapercibido. La sala donde encontraron la grabadora es usada para asuntos confidenciales, como investigación de modelos, próximos productos o relaciones con los gobiernos . Según la denuncia, Alfozan no tenía autorización para entrar ni para asistir a reuniones allí, aunque las cámaras de seguridad lo captaron cerca en varias fechas anteriores al hallazgo. Abdulrahman Alfozan , un ingeniero de 35 años de nacionalidad saudí, trabajaba en OpenAI desde julio de 2025. El perfil de LinkedIn del acusado detalla que se desempeñaba como líder de ingeniería de la plataforma de agentes de IA , y anteriormente había laborado en Meta como ingeniero de sistemas. Alfozan cuenta con un máster en Ciencia de Datos por la Universidad de Berkeley e hizo prácticas en Microsoft, SAP y Akamai. Según la acusación, Alfozan usó una herramienta de productividad para preguntar por direcciones de edificios, salas, aforos y calendarios, así como la ubicación de reuniones con directivos y socios externos. Entre el 24 y el 30 de septiembre, una cuenta asociada a su pareja preguntó a un chatbot cómo construir una grabadora y operarla vía remota . Estas consultas continuaron el 27 y el 28 de ese mes, cuando la misma cuenta pidió información por el modelo del dispositivo de grabación que apareció en las oficinas de OpenAI.",
+      "image": "https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg",
       "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/como-detectar-fotos-videos-y-audios-creados-con-ia-usando-synthid-detector/"
+      "link": "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/",
+      "published": "2026-10-14T00:05:06+00:00"
     },
     {
       "id": "news_2",
-      "title": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu",
-      "summary": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna.",
-      "voice_extra": "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna.",
+      "title": "Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza",
+      "summary": "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
+      "voice_extra": "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
       "full_paragraphs": [
-        "Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna. Ubuntu se ha subido al tren de la IA con un asistente de voz integrado en el escritorio que nos recuerda a Copilot.",
-        "De acuerdo con Canonical , Myna es un agente que convierte el habla en texto usando modelos de lenguaje que se ejecutan en el ordenador. A diferencia de ChatGPT, Claude o el mismo Copilot, la nueva IA de Ubuntu no envía nada a la nube , puesto que el procesamiento se lleva a cabo de forma local. Esto mantiene la privacidad del usuario, ya que su información no terminará en un servidor ni se usará para entrenar otros modelos.",
-        "Myna ofrece una experiencia similar a lo que vimos en las primeras versiones de ChatGPT . Los usuarios pueden expresar lo que desean usando lenguaje natural y la IA se encargará de ejecutar la acción. Canonical pone como ejemplo un desarrollador que le pide a Myna que lo ayude a investigar por qué sus pruebas están fallando, y Ubuntu será capaz de recopilar resultados, localizar código relevante y preparar el entorno de trabajo necesario para resolver el problema.",
-        "El asistente de IA de Ubuntu se encuentra en una vista previa y soporta modelos de reconocimiento de voz como Parakeet, Whisper y FunASR. En caso de que tengas una tarjeta gráfica NVIDIA, Myna puede sacarle provecho para acelerar el procesamiento de tus peticiones. Lo único que no podrás hacer es controlar el escritorio, ya que todavía no cuenta con esas capacidades.",
-        "Canonical dijo que Myna seguirá evolucionando y se incluirá por defecto con Ubuntu 28.04 LTS.",
-        "La integración de Myna llega acompañada de GNOME 51 , la versión más reciente del popular entorno de escritorio. Esta actualización ofrece una experiencia más fluida, con mejoras en la gestión de pantallas y la accesibilidad. Ubuntu también actualiza su App Center para ofrecer una gestión más coherente de paquetes Snap y Deb, mientras que los usuarios de Orca tendrán mejor soporte de aplicaciones Flutter."
+        "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
+        "Sin embargo, durante una entrevista para Fox News , Jeff Bezos aseguró que no creía que la IA sea el principal responsable de esos despidos, aunque sí los atribuye a un futuro en el que la IA tiene un papel prioritario para Amazon y justificó los despidos con el contexto de una Amazon con urgencia por crecer.",
+        "Pedidos desde el sofá. El fundador de Amazon justificó el crecimiento desmesurado de Amazon durante la pandemia por el descomunal incremento de desmanda de comercio online que provocaron las restricciones de movilidad. \"La gente se quedaba en casa y hacía pedidos\", contó Bezos, y por eso \"realmente aumentamos nuestra plantilla\". Recordó que fue \"un periodo increíblemente estresante para nosotros\".",
+        "Según Bezos, Amazon salió de ese periodo con un exceso de plantilla y los números le dan la razón. Según la documentación que la empresa está obligada a presentar ante la Comisión del Mercado de Valores (SEC). A finales de 2019 la empresa tenía 798.000 empleados . Dos años después ya eran 1,6 millones de empleados. Más del doble en solo 24 meses.",
+        "30.000 despidos en tres meses . Cuando la demanda de productos online se relajó, llegaron los recortes de plantilla. En octubre de 2025 Amazon anunció 14.000 despidos y en enero de 2026 se confirmaban otros 16.000 despidos más, hasta sumar 30.000 puestos en tres meses. La directiva Beth Galetti habló de \"fortalecer la organización reduciendo capas, aumentando la propiedad y eliminando burocracia\".",
+        "No obstante, hay algo contradictorio en las palabras de Bezos, ya que esos despidos no se dieron en la plantilla que se encarga de satisfacer la demanda de las compras online, algo razonable si la demanda de pedidos ha bajado. Según los documentos de Amazon presentados a la SEC, a finales de 2025 su plantilla continuaba siendo de 1,576 millones de personas y se incrementó hasta los 1,595 millones en el primer trimestre de 2026. Tal y como recogía Reuters , de esos 30.000 despidos anunciados, Amazon dejó ir a menos de 1.000 trabajadores de oficina del negocio de tiendas."
       ],
-      "full_voice_script": "Linux sigue los pasos de Windows y añade un asistente de IA a Ubuntu. Noticia publicada por Hipertextual IA. Canonical ha presentado Ubuntu 26.10, la versión estable más reciente del sistema operativo que marca un punto de inflexión en la evolución de Linux. Conocida como Stonking Stingray, esta edición incluye mejoras en rendimiento, seguridad y un nuevo kernel, aunque lo más destacado es Myna. Ubuntu se ha subido al tren de la IA con un asistente de voz integrado en el escritorio que nos recuerda a Copilot. De acuerdo con Canonical , Myna es un agente que convierte el habla en texto usando modelos de lenguaje que se ejecutan en el ordenador. A diferencia de ChatGPT, Claude o el mismo Copilot, la nueva IA de Ubuntu no envía nada a la nube , puesto que el procesamiento se lleva a cabo de forma local. Esto mantiene la privacidad del usuario, ya que su información no terminará en un servidor ni se usará para entrenar otros modelos. Myna ofrece una experiencia similar a lo que vimos en las primeras versiones de ChatGPT . Los usuarios pueden expresar lo que desean usando lenguaje natural y la IA se encargará de ejecutar la acción. Canonical pone como ejemplo un desarrollador que le pide a Myna que lo ayude a investigar por qué sus pruebas están fallando, y Ubuntu será capaz de recopilar resultados, localizar código relevante y preparar el entorno de trabajo necesario para resolver el problema. El asistente de IA de Ubuntu se encuentra en una vista previa y soporta modelos de reconocimiento de voz como Parakeet, Whisper y FunASR. En caso de que tengas una tarjeta gráfica NVIDIA, Myna puede sacarle provecho para acelerar el procesamiento de tus peticiones. Lo único que no podrás hacer es controlar el escritorio, ya que todavía no cuenta con esas capacidades. Canonical dijo que Myna seguirá evolucionando y se incluirá por defecto con Ubuntu 28.04 LTS. La integración de Myna llega acompañada de GNOME 51 , la versión más reciente del popular entorno de escritorio. Esta actualización ofrece una experiencia más fluida, con mejoras en la gestión de pantallas y la accesibilidad. Ubuntu también actualiza su App Center para ofrecer una gestión más coherente de paquetes Snap y Deb, mientras que los usuarios de Orca tendrán mejor soporte de aplicaciones Flutter.",
-      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/ubuntu-terminal.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
-      "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/ubuntu-26-10-myna-asistente-ia-local/"
+      "full_voice_script": "Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza. Noticia publicada por Xataka IA & Tech. Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026. Sin embargo, durante una entrevista para Fox News , Jeff Bezos aseguró que no creía que la IA sea el principal responsable de esos despidos, aunque sí los atribuye a un futuro en el que la IA tiene un papel prioritario para Amazon y justificó los despidos con el contexto de una Amazon con urgencia por crecer. Pedidos desde el sofá. El fundador de Amazon justificó el crecimiento desmesurado de Amazon durante la pandemia por el descomunal incremento de desmanda de comercio online que provocaron las restricciones de movilidad. \"La gente se quedaba en casa y hacía pedidos\", contó Bezos, y por eso \"realmente aumentamos nuestra plantilla\". Recordó que fue \"un periodo increíblemente estresante para nosotros\". Según Bezos, Amazon salió de ese periodo con un exceso de plantilla y los números le dan la razón. Según la documentación que la empresa está obligada a presentar ante la Comisión del Mercado de Valores (SEC). A finales de 2019 la empresa tenía 798.000 empleados . Dos años después ya eran 1,6 millones de empleados. Más del doble en solo 24 meses. 30.000 despidos en tres meses . Cuando la demanda de productos online se relajó, llegaron los recortes de plantilla. En octubre de 2025 Amazon anunció 14.000 despidos y en enero de 2026 se confirmaban otros 16.000 despidos más, hasta sumar 30.000 puestos en tres meses. La directiva Beth Galetti habló de \"fortalecer la organización reduciendo capas, aumentando la propiedad y eliminando burocracia\". No obstante, hay algo contradictorio en las palabras de Bezos, ya que esos despidos no se dieron en la plantilla que se encarga de satisfacer la demanda de las compras online, algo razonable si la demanda de pedidos ha bajado. Según los documentos de Amazon presentados a la SEC, a finales de 2025 su plantilla continuaba siendo de 1,576 millones de personas y se incrementó hasta los 1,595 millones en el primer trimestre de 2026. Tal y como recogía Reuters , de esos 30.000 despidos anunciados, Amazon dejó ir a menos de 1.000 trabajadores de oficina del negocio de tiendas.",
+      "image": "https://i.blogs.es/5ebee2/magnific__crea-una-imagenpasa-la-imagen-adjunta-img1-a-43-y-__15731/1024_2000.jpeg",
+      "source": "Xataka IA & Tech",
+      "link": "https://www.xataka.com/empresas-y-economia/amazon-se-ha-convertido-mejor-ejemplo-impacto-ia-empleo-se-crea-se-destruye-se-desplaza",
+      "published": "2026-10-19T13:15:53+00:00"
     },
     {
       "id": "news_3",
-      "title": "Decimos que el género de una IA nos da igual, hasta que llega el momento de pagarle",
-      "summary": "La IA suele tener voz de mujer. Desde la primera Siri hasta la actual Alexa, pasando por el GPS: los asistentes virtuales han adoptado tradicionalmente voces femeninas por defecto.",
-      "voice_extra": "La IA suele tener voz de mujer. Desde la primera Siri hasta la actual Alexa, pasando por el GPS: los asistentes virtuales han adoptado tradicionalmente voces femeninas por defecto.",
+      "title": "Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios",
+      "summary": "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D.",
+      "voice_extra": "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D.",
       "full_paragraphs": [
-        "La IA suele tener voz de mujer. Desde la primera Siri hasta la actual Alexa, pasando por el GPS: los asistentes virtuales han adoptado tradicionalmente voces femeninas por defecto. No es casualidad, hay razones psicológicas para ello . Para entender estas dinámicas, un grupo de investigadores suizo ha analizado cómo influye el género de un agente virtual.",
-        "Los sesgos . La industria tecnológica dio prioridad a las voces femeninas hasta convertirlas prácticamente en la norma. Esta decisión se apoya en sesgos cognitivos heredados de una sociedad sexista: los estudios sobre comportamiento avalan la asociación entre voz femenina y las funciones de asistencia, recepción o atención al público.",
-        "A una IA que percibimos como femenina solemos atribuirle amabilidad, empatía y capacidad para tranquilizarnos. De ahí que la voz por defecto de estas herramientas sea habitualmente la de mujer: tenemos la percepción de que así es más fácil comunicarnos con ellas. Y con las masculinas ocurre lo contrario: los sesgos cognitivos apuntan a una mayor autoridad y firmeza.",
-        "La prueba . Un equipo de investigadores de varias universidades europeas, entre ellas la Universidad de Limerick y la de Zúrich, puso a prueba estos sesgos en un experimento sobre tareas profesionales titulado '¿De apariencia humana y masculino? Cómo influye el diseño de los asistentes de IA en la confianza y las recompensas económicas en el trabajo en realidad virtual'. Para ello, equiparon a 189 participantes con gafas de realidad virtual.",
-        "En el estudio se probaron cuatro asistentes distintos: un chatbot de texto, un robot de escritorio y dos agentes de aspecto humano llamados Johan y Johanna. Cada participante interactuó con tres de ellos: el chatbot, el robot y uno de los dos avatares humanos. Todos usaban el mismo modelo, GPT-4 de OpenAI.",
-        "Mismo trabajo, distinta recompensa . Al terminar las pruebas, los participantes debían valorar la contribución de cada IA al trabajo y asignarle una recompensa económica. Podían entregarle hasta cuatro francos suizos y quedarse con el dinero restante. Los resultados, resumidos, fueron:"
+        "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D. C. y, si su centro nombrara a un mejor alumno, asegura que probablemente optaría por hablar en la graduación.",
+        "Lo que proponía en ese correo se llama Raaha : una plataforma gratuita con la que las personas neurodivergentes puntúan una oferta de trabajo antes de postularse. Tuteja asegura que ya reúne más de 1.000 usuarios y 20.000 ofertas . Nació de una pauta que llevaba tiempo viendo: anuncios escritos solo desde el lado del empleador, cargados de requisitos y mudos sobre cómo es el día a día. La financia ella misma y la mantiene gratis mientras suma usuarios; el modelo futuro pasaría por que empresas y organizaciones de empleo paguen por usarla o por mejorar sus ofertas.",
+        "El funcionamiento es sencillo : el usuario responde un cuestionario de 12 preguntas sobre cómo trabaja mejor, pega la descripción de un puesto y recibe una puntuación de encaje. El análisis valora factores como el ritmo de trabajo, la comunicación o la previsibilidad del horario, y lo hace Claude, el modelo de Anthropic , con unas instrucciones preparadas con ayuda de especialistas en neurodiversidad.",
+        "Quien quiera probarla debe saber que la web de Raaha (raaha.ai) está en inglés , que se nutre de ofertas públicas como las de Adzuna y USAJobs (el portal de empleo del Gobierno federal de Estados Unidos) y que en agosto su aplicación para iOS seguía pendiente de aprobación. Las cifras también han cambiado deprisa: en julio Tuteja hablaba de 150 usuarios, en agosto superaba los 200 y ahora declara más de 1.000 . Quiere ir a la universidad, pero se plantea dedicarse a Raaha a tiempo completo si sigue creciendo al ritmo actual.",
+        "Su expediente contrasta con el de sus coetáneos . PISA 2025, el Programa para la Evaluación Internacional de Alumnos de la OCDE (Organización para la Cooperación y el Desarrollo Económicos), ha registrado desde 2015 una caída media de 28 puntos en lectura y de 22 en matemáticas en los países de la OCDE, y entre lo que provocan estos datos (siempre según este informe) están las pantallas, la menor atención y la IA generativa. En España, los alumnos de 15 años lograron 451 puntos en lectura y 457 en matemáticas.",
+        "Tuteja no discute esa explicación, pero cree que a ella la protegió una medida que no fue idea suya: el WiFi de su instituto bloquea ChatGPT, Claude y herramientas parecidas. “Me hizo usarla mucho menos en clase” , cuenta. “Así que supongo que, por molesto que fuera, aun así fue bueno, en cierto modo” ."
       ],
-      "full_voice_script": "Decimos que el género de una IA nos da igual, hasta que llega el momento de pagarle. Noticia publicada por Xataka IA & Tech. La IA suele tener voz de mujer. Desde la primera Siri hasta la actual Alexa, pasando por el GPS: los asistentes virtuales han adoptado tradicionalmente voces femeninas por defecto. No es casualidad, hay razones psicológicas para ello . Para entender estas dinámicas, un grupo de investigadores suizo ha analizado cómo influye el género de un agente virtual. Los sesgos . La industria tecnológica dio prioridad a las voces femeninas hasta convertirlas prácticamente en la norma. Esta decisión se apoya en sesgos cognitivos heredados de una sociedad sexista: los estudios sobre comportamiento avalan la asociación entre voz femenina y las funciones de asistencia, recepción o atención al público. A una IA que percibimos como femenina solemos atribuirle amabilidad, empatía y capacidad para tranquilizarnos. De ahí que la voz por defecto de estas herramientas sea habitualmente la de mujer: tenemos la percepción de que así es más fácil comunicarnos con ellas. Y con las masculinas ocurre lo contrario: los sesgos cognitivos apuntan a una mayor autoridad y firmeza. La prueba . Un equipo de investigadores de varias universidades europeas, entre ellas la Universidad de Limerick y la de Zúrich, puso a prueba estos sesgos en un experimento sobre tareas profesionales titulado '¿De apariencia humana y masculino? Cómo influye el diseño de los asistentes de IA en la confianza y las recompensas económicas en el trabajo en realidad virtual'. Para ello, equiparon a 189 participantes con gafas de realidad virtual. En el estudio se probaron cuatro asistentes distintos: un chatbot de texto, un robot de escritorio y dos agentes de aspecto humano llamados Johan y Johanna. Cada participante interactuó con tres de ellos: el chatbot, el robot y uno de los dos avatares humanos. Todos usaban el mismo modelo, GPT-4 de OpenAI. Mismo trabajo, distinta recompensa . Al terminar las pruebas, los participantes debían valorar la contribución de cada IA al trabajo y asignarle una recompensa económica. Podían entregarle hasta cuatro francos suizos y quedarse con el dinero restante. Los resultados, resumidos, fueron:",
-      "image": "https://i.blogs.es/bd5302/ia-asistentes-virtuales-hombre-mujer-portada/1024_2000.jpeg",
-      "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/robotica-e-ia/decimos-que-genero-ia-nos-da-igual-que-llega-momento-pagarle"
+      "full_voice_script": "Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios. Noticia publicada por Genbeta IA. Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D. C. y, si su centro nombrara a un mejor alumno, asegura que probablemente optaría por hablar en la graduación. Lo que proponía en ese correo se llama Raaha : una plataforma gratuita con la que las personas neurodivergentes puntúan una oferta de trabajo antes de postularse. Tuteja asegura que ya reúne más de 1.000 usuarios y 20.000 ofertas . Nació de una pauta que llevaba tiempo viendo: anuncios escritos solo desde el lado del empleador, cargados de requisitos y mudos sobre cómo es el día a día. La financia ella misma y la mantiene gratis mientras suma usuarios; el modelo futuro pasaría por que empresas y organizaciones de empleo paguen por usarla o por mejorar sus ofertas. El funcionamiento es sencillo : el usuario responde un cuestionario de 12 preguntas sobre cómo trabaja mejor, pega la descripción de un puesto y recibe una puntuación de encaje. El análisis valora factores como el ritmo de trabajo, la comunicación o la previsibilidad del horario, y lo hace Claude, el modelo de Anthropic , con unas instrucciones preparadas con ayuda de especialistas en neurodiversidad. Quien quiera probarla debe saber que la web de Raaha (raaha.ai) está en inglés , que se nutre de ofertas públicas como las de Adzuna y USAJobs (el portal de empleo del Gobierno federal de Estados Unidos) y que en agosto su aplicación para iOS seguía pendiente de aprobación. Las cifras también han cambiado deprisa: en julio Tuteja hablaba de 150 usuarios, en agosto superaba los 200 y ahora declara más de 1.000 . Quiere ir a la universidad, pero se plantea dedicarse a Raaha a tiempo completo si sigue creciendo al ritmo actual. Su expediente contrasta con el de sus coetáneos . PISA 2025, el Programa para la Evaluación Internacional de Alumnos de la OCDE (Organización para la Cooperación y el Desarrollo Económicos), ha registrado desde 2015 una caída media de 28 puntos en lectura y de 22 en matemáticas en los países de la OCDE, y entre lo que provocan estos datos (siempre según este informe) están las pantallas, la menor atención y la IA generativa. En España, los alumnos de 15 años lograron 451 puntos en lectura y 457 en matemáticas. Tuteja no discute esa explicación, pero cree que a ella la protegió una medida que no fue idea suya: el WiFi de su instituto bloquea ChatGPT, Claude y herramientas parecidas. “Me hizo usarla mucho menos en clase” , cuenta. “Así que supongo que, por molesto que fuera, aun así fue bueno, en cierto modo” .",
+      "image": "https://i.blogs.es/a07c8e/navya-tuteja/1024_2000.jpeg",
+      "source": "Genbeta IA",
+      "link": "https://www.genbeta.com/inteligencia-artificial/su-escuela-bloqueo-chatgpt-ahora-esta-estudiante-secundaria-17-anos-dirige-startup-inteligencia-artificial-1-000-usuarios",
+      "published": "2026-10-15T09:30:25+00:00"
     },
     {
       "id": "news_4",
-      "title": "Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora",
-      "summary": "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h.",
-      "voice_extra": "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h.",
+      "title": "Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre",
+      "summary": "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire.",
+      "voice_extra": "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire.",
       "full_paragraphs": [
-        "Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h. La aceleración ha reducido el tiempo disponible para detectarlos y derribarlos, obligando a Kiev a buscar soluciones cada vez más rápidas. La última: torretas robotizadas equipadas con ametralladoras de gran calibre, visión e inteligencia artificiales que ya han conseguido abatir estos aparatos.",
-        "La velocidad como arma. Rusia está intensificando el empleo de drones equipados con pequeños turborreactores , una evolución de los modelos de hélice que llevan años atacando ciudades e infraestructuras ucranianas. Entre ellos destaca el Geran-5 , capaz de alcanzar aproximadamente 600 km/h, una velocidad que reduce considerablemente la ventana de reacción de las defensas antiaéreas.",
-        "Según las cifras difundidas por Kiev, Rusia lanzó unos 350 drones a reacción en junio y elevó esa cantidad hasta los 2.800 en agosto. El problema se refleja en las tasas de interceptación: mientras los aparatos convencionales como el Geran-2 son derribados en más del 85% de los casos, los modelos a reacción presentan porcentajes de entre el 50% y el 70% , según la Fuerza Aérea ucraniana.",
-        "Una ametralladora con IA. La respuesta ucraniana consiste en desplegar torretas automatizadas capaces de localizar, seguir y disparar contra objetivos aéreos de gran velocidad. Yurii Ihnat, portavoz de la Fuerza Aérea, confirmó que estos sistemas ya han interceptado drones rusos a reacción, incluido el Geran-5, gracias al empleo de inteligencia y visión artificiales.",
-        "Las armas incorporan ametralladoras de calibre .50 , equivalentes a 12,7 milímetros, y permiten automatizar parte del proceso de adquisición y seguimiento de objetivos. Ucrania ya había presentado anteriormente el Sky Sentinel , una torreta con capacidades similares, aunque las autoridades no han identificado el modelo concreto responsable de las nuevas interceptaciones. Tampoco han detallado hasta qué punto la selección de objetivos y la autorización de disparo dependen de operadores humanos.",
-        "La batalla por Kiev. El presidente Zelenski anunció que más de una docena de estas torretas ya habían sido instaladas alrededor de la capital y que estaba previsto desplegar otras ocho en la región. Algunas se destinarán a proteger puentes que han sufrido multitud de ataques rusos, en medio de una ofensiva más amplia contra infraestructuras civiles. Su principal limitación es el alcance relativamente reducido de las ametralladoras, que obliga a situarlas cerca de los puntos que necesitan protección."
+        "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire. Por ello, en este artículo vamos a repasar los cinco mejores chollos que están ahora mismo disponibles.",
+        "En una época en la que tanto la memoria RAM como los discos duros (y SSD) han subido de precio, se agradece encontrar ofertas como la del Seagate Expansión que ha bajado hasta los 179,99 euros . Se trata de un disco duro portátil que tiene capacidad de 5 TB , lo que permite guardar muchísimas fotos, vídeos y archivos en general en un dispositivo con un formato muy compacto.",
+        "MediaMarkt también tiene de oferta el Marshall Emberton II por un precio de 89 euros , un altavoz Bluetooth que destaca por su particular diseño retro, un signo distintivo de la marca. Su batería ofrece una autonomía teórica de más de 30 horas, tiene un formato bastante pequeño y es resistente tanto al agua como al polvo ( IP67 ).",
+        "Aunque no es el mejor precio que hemos visto hasta la fecha, MediaMarkt tiene un buen descuento en el Google Pixel 11 Pro , que ahora se puede comprar por 1.044,05 euros . Este precio sale únicamente si iniciamos sesión en la tienda. Se trata de un móvil de gama alta con un tamaño compacto de 6,3 pulgadas , ofrece un buen rendimiento y cuenta con un excelente apartado fotográfico.",
+        "Si aún no tienes una freidora de aire y buscas un modelo compacto que te permita preparar muchas recetas, MediaMarkt tiene la Ninja Crispi por 129 euros . Se trata de un modelo que incluye dos recipientes de cristal de 3,8 y 1,4 litros, ideales para ver cómo se cocinan los alimentos y extraerlos en su punto. Ofrece temperaturas de hasta 185 ºC y permite asar, dorar y mantener la comida caliente.",
+        "Por último, la tienda también tiene de oferta la Haier S80G , una smart TV que con el descuento se queda por 369 euros . Incorpora un panel con tecnología QLED que tiene una diagonal de 55 pulgadas, su sistema operativo es Google TV, ofrece una tasa de refresco de hasta 120 Hz a través de software y sus altavoces son compatibles con Dolby Audio."
       ],
-      "full_voice_script": "Rusia puso motores a reacción a sus drones para volar a 600 km/h: la respuesta de Ucrania ha sido darle ojos y cerebro a una ametralladora. Noticia publicada por Xataka IA & Tech. Rusia ha encontrado una forma de complicar todavía más la defensa aérea de Ucrania: sustituir las hélices de algunos de sus drones de ataque por pequeños motores a reacción capaces de impulsarlos a velocidades cercanas a los 600 km/h. La aceleración ha reducido el tiempo disponible para detectarlos y derribarlos, obligando a Kiev a buscar soluciones cada vez más rápidas. La última: torretas robotizadas equipadas con ametralladoras de gran calibre, visión e inteligencia artificiales que ya han conseguido abatir estos aparatos. La velocidad como arma. Rusia está intensificando el empleo de drones equipados con pequeños turborreactores , una evolución de los modelos de hélice que llevan años atacando ciudades e infraestructuras ucranianas. Entre ellos destaca el Geran-5 , capaz de alcanzar aproximadamente 600 km/h, una velocidad que reduce considerablemente la ventana de reacción de las defensas antiaéreas. Según las cifras difundidas por Kiev, Rusia lanzó unos 350 drones a reacción en junio y elevó esa cantidad hasta los 2.800 en agosto. El problema se refleja en las tasas de interceptación: mientras los aparatos convencionales como el Geran-2 son derribados en más del 85% de los casos, los modelos a reacción presentan porcentajes de entre el 50% y el 70% , según la Fuerza Aérea ucraniana. Una ametralladora con IA. La respuesta ucraniana consiste en desplegar torretas automatizadas capaces de localizar, seguir y disparar contra objetivos aéreos de gran velocidad. Yurii Ihnat, portavoz de la Fuerza Aérea, confirmó que estos sistemas ya han interceptado drones rusos a reacción, incluido el Geran-5, gracias al empleo de inteligencia y visión artificiales. Las armas incorporan ametralladoras de calibre .50 , equivalentes a 12,7 milímetros, y permiten automatizar parte del proceso de adquisición y seguimiento de objetivos. Ucrania ya había presentado anteriormente el Sky Sentinel , una torreta con capacidades similares, aunque las autoridades no han identificado el modelo concreto responsable de las nuevas interceptaciones. Tampoco han detallado hasta qué punto la selección de objetivos y la autorización de disparo dependen de operadores humanos. La batalla por Kiev. El presidente Zelenski anunció que más de una docena de estas torretas ya habían sido instaladas alrededor de la capital y que estaba previsto desplegar otras ocho en la región. Algunas se destinarán a proteger puentes que han sufrido multitud de ataques rusos, en medio de una ofensiva más amplia contra infraestructuras civiles. Su principal limitación es el alcance relativamente reducido de las ametralladoras, que obliga a situarlas cerca de los puntos que necesitan protección.",
-      "image": "https://i.blogs.es/c53511/6ac39bb3265e3f8e338faab6/1024_2000.jpeg",
-      "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/magnet/rusia-puso-motores-a-reaccion-a-sus-drones-para-volar-a-600-km-h-respuesta-ucrania-ha-sido-darle-ojos-cerebro-a-ametralladora"
+      "full_voice_script": "Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre. Noticia publicada por Xataka. MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire. Por ello, en este artículo vamos a repasar los cinco mejores chollos que están ahora mismo disponibles. En una época en la que tanto la memoria RAM como los discos duros (y SSD) han subido de precio, se agradece encontrar ofertas como la del Seagate Expansión que ha bajado hasta los 179,99 euros . Se trata de un disco duro portátil que tiene capacidad de 5 TB , lo que permite guardar muchísimas fotos, vídeos y archivos en general en un dispositivo con un formato muy compacto. MediaMarkt también tiene de oferta el Marshall Emberton II por un precio de 89 euros , un altavoz Bluetooth que destaca por su particular diseño retro, un signo distintivo de la marca. Su batería ofrece una autonomía teórica de más de 30 horas, tiene un formato bastante pequeño y es resistente tanto al agua como al polvo ( IP67 ). Aunque no es el mejor precio que hemos visto hasta la fecha, MediaMarkt tiene un buen descuento en el Google Pixel 11 Pro , que ahora se puede comprar por 1.044,05 euros . Este precio sale únicamente si iniciamos sesión en la tienda. Se trata de un móvil de gama alta con un tamaño compacto de 6,3 pulgadas , ofrece un buen rendimiento y cuenta con un excelente apartado fotográfico. Si aún no tienes una freidora de aire y buscas un modelo compacto que te permita preparar muchas recetas, MediaMarkt tiene la Ninja Crispi por 129 euros . Se trata de un modelo que incluye dos recipientes de cristal de 3,8 y 1,4 litros, ideales para ver cómo se cocinan los alimentos y extraerlos en su punto. Ofrece temperaturas de hasta 185 ºC y permite asar, dorar y mantener la comida caliente. Por último, la tienda también tiene de oferta la Haier S80G , una smart TV que con el descuento se queda por 369 euros . Incorpora un panel con tecnología QLED que tiene una diagonal de 55 pulgadas, su sistema operativo es Google TV, ofrece una tasa de refresco de hasta 120 Hz a través de software y sus altavoces son compatibles con Dolby Audio.",
+      "image": "https://i.blogs.es/5785a5/mediamarkt/1024_2000.jpeg",
+      "source": "Xataka",
+      "link": "https://www.xataka.com/seleccion/mejores-ofertas-mediamarkt-durante-su-hazte-renove-tecnologia-hoy-19-octubre",
+      "published": "2026-10-19T17:01:55+02:00"
     },
     {
       "id": "news_5",
-      "title": "OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”",
-      "summary": "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
-      "voice_extra": "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de Estados Unidos que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
+      "title": "La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones",
+      "summary": "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo.",
+      "voice_extra": "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo.",
       "full_paragraphs": [
-        "El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de EE. UU. que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano .",
-        "Poco después, la empresa anunció que tres investigadores de seguridad habían sido despedidos tras una investigación interna por manejar información sensible fuera de los procedimientos establecidos.",
-        "Las personas despedidas son Tomek Korbak, Jasmine Wang y Mikita Balesni . Korbak y Balesni encabezan la lista de autores de un estudio sobre la supervisión del razonamiento de julio de 2025, firmado por 41 investigadores de varios laboratorios, del que Wang también es coautora. Su tesis: mientras un modelo razona en lenguaje claro antes de actuar, se puede supervisar ese razonamiento para detectar malas intenciones, aunque ciertas decisiones de diseño pueden hacer que esa posibilidad se pierda.",
-        "Wang dirigió un equipo en el Instituto Británico de Seguridad de la IA antes de reincorporarse a OpenAI en 2025. Suyo es el término “pacing” , que se refiere a la ralentización de los modelos más avanzados.",
-        "Además, Korbak fue el contacto técnico de METR durante la investigación de Hugging Face. Esa investigación la llevaron a cabo únicamente tres investigadores, dos de METR y uno de Redwood Research , no abordó las medidas de ciberseguridad de OpenAI ni sus prácticas internas, y el informe se publicó con partes tachadas el 26 de agosto.",
-        "El 9 de octubre, OpenAI señaló en una publicación en X que los tres “violaron políticas claras sobre el manejo de información sensible” y que la decisión no tenía que ver con plantear preocupaciones de seguridad. Habló de una ruptura de confianza importante , pero no precisó qué hicieron. En el mismo mensaje dijo estar de acuerdo con las recomendaciones de la carta."
+        "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo. Hay quien lo interpreta como desconfianza , pero la explicación es otra: quiere librarse de las notificaciones y las llamadas entrantes y de la presión constante de estar disponible en todo momento. Al fin y al cabo, es solo una interpretación, y no se apoya en ningún experimento científico que estudie sus motivaciones.",
+        "Lo que sí han estudiado los experimentos es el efecto de tener el móvil a la vista .",
+        "En la Universidad de Essex, Andrew Przybylski y Netta Weinstein realizaron un experimento con parejas de desconocidos que hablaban entre ellos durante diez minutos con un teléfono o un cuaderno sobre una mesa cercana.",
+        "En su trabajo, publicado en el Journal of Social and Personal Relationships , el teléfono se asoció con una menor cercanía y una conversación de menor calidad y, en un segundo experimento, con una menor confianza y empatía, aunque solo cuando hablaban de algo personal: con un tema trivial no hubo diferencias . Después, otro grupo de científicos, ya fuera del Reino Unido, llevó la comparación a conversaciones reales.",
+        "Shalini Misra, de Virginia Tech , observó 100 conversaciones reales entre dos personas en entornos informales. Aquellas que tuvieron lugar sin ningún dispositivo a la vista salieron mejor valoradas. “En presencia de un dispositivo móvil hay menos contacto visual” , resumía la investigadora.",
+        "Matt Johnson, profesor en la Hult International Business School , recopiló varios de estos trabajos en su artículo ‘The Psychology of the Face-Down Phone’ (la psicología del móvil boca abajo). Según los experimentos que recoge, no hace falta usar el aparato para que afecte a la atención, y cuanto más difícil es la tarea, más pronunciado es el efecto."
       ],
-      "full_voice_script": "OpenAI despide a tres trabajadores por manejar de manera inapropiada “información sensible”. Noticia publicada por Genbeta IA. El 30 de septiembre, Chris Painter, de METR, declaró ante un subcomité del Senado de EE. UU. que OpenAI había invitado a “un puñado” de sus colegas a entrar en sus oficinas para averiguar cómo agentes de IA de la propia empresa habían atacado a Hugging Face en verano . Poco después, la empresa anunció que tres investigadores de seguridad habían sido despedidos tras una investigación interna por manejar información sensible fuera de los procedimientos establecidos. Las personas despedidas son Tomek Korbak, Jasmine Wang y Mikita Balesni . Korbak y Balesni encabezan la lista de autores de un estudio sobre la supervisión del razonamiento de julio de 2025, firmado por 41 investigadores de varios laboratorios, del que Wang también es coautora. Su tesis: mientras un modelo razona en lenguaje claro antes de actuar, se puede supervisar ese razonamiento para detectar malas intenciones, aunque ciertas decisiones de diseño pueden hacer que esa posibilidad se pierda. Wang dirigió un equipo en el Instituto Británico de Seguridad de la IA antes de reincorporarse a OpenAI en 2025. Suyo es el término “pacing” , que se refiere a la ralentización de los modelos más avanzados. Además, Korbak fue el contacto técnico de METR durante la investigación de Hugging Face. Esa investigación la llevaron a cabo únicamente tres investigadores, dos de METR y uno de Redwood Research , no abordó las medidas de ciberseguridad de OpenAI ni sus prácticas internas, y el informe se publicó con partes tachadas el 26 de agosto. El 9 de octubre, OpenAI señaló en una publicación en X que los tres “violaron políticas claras sobre el manejo de información sensible” y que la decisión no tenía que ver con plantear preocupaciones de seguridad. Habló de una ruptura de confianza importante , pero no precisó qué hicieron. En el mismo mensaje dijo estar de acuerdo con las recomendaciones de la carta.",
-      "image": "https://i.blogs.es/519b30/sam-altman-diciendo-adios/1024_2000.png",
-      "source": "Genbeta IA",
-      "link": "https://www.genbeta.com/actualidad/openai-despide-a-tres-trabajadores-manejar-manera-inapropiada-informacion-sensible"
+      "full_voice_script": "La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones. Noticia publicada por Genbeta. Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo. Hay quien lo interpreta como desconfianza , pero la explicación es otra: quiere librarse de las notificaciones y las llamadas entrantes y de la presión constante de estar disponible en todo momento. Al fin y al cabo, es solo una interpretación, y no se apoya en ningún experimento científico que estudie sus motivaciones. Lo que sí han estudiado los experimentos es el efecto de tener el móvil a la vista . En la Universidad de Essex, Andrew Przybylski y Netta Weinstein realizaron un experimento con parejas de desconocidos que hablaban entre ellos durante diez minutos con un teléfono o un cuaderno sobre una mesa cercana. En su trabajo, publicado en el Journal of Social and Personal Relationships , el teléfono se asoció con una menor cercanía y una conversación de menor calidad y, en un segundo experimento, con una menor confianza y empatía, aunque solo cuando hablaban de algo personal: con un tema trivial no hubo diferencias . Después, otro grupo de científicos, ya fuera del Reino Unido, llevó la comparación a conversaciones reales. Shalini Misra, de Virginia Tech , observó 100 conversaciones reales entre dos personas en entornos informales. Aquellas que tuvieron lugar sin ningún dispositivo a la vista salieron mejor valoradas. “En presencia de un dispositivo móvil hay menos contacto visual” , resumía la investigadora. Matt Johnson, profesor en la Hult International Business School , recopiló varios de estos trabajos en su artículo ‘The Psychology of the Face-Down Phone’ (la psicología del móvil boca abajo). Según los experimentos que recoge, no hace falta usar el aparato para que afecte a la atención, y cuanto más difícil es la tarea, más pronunciado es el efecto.",
+      "image": "https://i.blogs.es/0ab295/en-una-reunion-el-movil-boca-abajo/1024_2000.jpeg",
+      "source": "Genbeta",
+      "link": "https://www.genbeta.com/movil/psicologia-dice-que-personas-que-dejan-movil-boca-abajo-no-para-ocultar-nada-realidad-tactica-para-evitar-distracciones",
+      "published": "2026-10-19T16:01:56+02:00"
     }
   ],
   "vip_hack_of_the_week": {
@@ -178,16 +183,189 @@
     "title": "Cómo activar el Modo Ultra-Velocidad de Red DNS Privado sin instalar apps",
     "body": "Entra en Ajustes > Conexiones > Más ajustes de conexión > DNS Privado y escribe 'dns.adguard.com' o 'one.one.one.one'. Tu teléfono resolverá páginas y juegos hasta un 35% más rápido y bloqueará rastreadores pesados automáticamente."
   },
+  "weekly_jokes": [
+    "En mi casa hay dos tipos de personas: los que dicen 'reinicia el router' y los que ya lo reiniciaron tres veces.",
+    "Los términos y condiciones son el único libro que todos hemos 'leído' y nadie ha abierto.",
+    "Mi modo 'No molestar' lleva activado desde 2021. A veces alguien se acuerda de mí por correo.",
+    "Mi cuenta de ahorros y mi batería tienen algo en común: las dos llegan al 5% a mitad de mes.",
+    "Cuando el celular dice 'almacenamiento casi lleno' yo borro dos fotos repetidas y una app que nunca abrí. Dolor mínimo, espacio máximo.",
+    "Mi estado de WhatsApp dura 24 horas. Mi arrepentimiento por subirlo, dos minutos.",
+    "Nada te enseña a escribir más rápido que ver el 'Escribiendo...' de la persona con la que discutes por WhatsApp.",
+    "Antes uno buscaba pareja; ahora busca un enchufe. Y a veces el segundo aparece primero.",
+    "Yo: 'Voy a usar el teléfono 5 minutos'. El teléfono, 2 horas después: 'Hola de nuevo'.",
+    "Descargué una app para meditar. Me desconecté tan bien que olvidé abrirla."
+  ],
+  "weekly_truths": [
+    {
+      "emoji": "🔔",
+      "color": "pink",
+      "title": "Notificaciones",
+      "body": "<strong>Importante:</strong> 1 mensaje de tu jefe.<br><strong>Urgentísimo:</strong> 47 avisos de apps que no recuerdas haber instalado."
+    },
+    {
+      "emoji": "🤖",
+      "color": "purple",
+      "title": "La IA: Expectativa vs Realidad",
+      "body": "<strong>La gente:</strong> <em>\"La IA va a dominar el mundo con robots asesinos...\"</em><br><strong>La IA en la vida real:</strong> Dibuja personas con 7 dedos en una mano y confunde un chihuahua con un muffin."
+    },
+    {
+      "emoji": "📸",
+      "color": "amber",
+      "title": "La Galería del Celular",
+      "body": "10.000 fotos: 9.800 son capturas de pantalla, 150 son la misma selfie y ninguna es la que estás buscando."
+    },
+    {
+      "emoji": "🎮",
+      "color": "emerald",
+      "title": "Psicología Gamer",
+      "body": "<strong>Pierdo:</strong> es culpa del lag.<br><strong>Gano:</strong> pura habilidad y talento natural."
+    }
+  ],
+  "game_layout": {
+    "portada": [
+      "stacker",
+      "reflex",
+      "memory"
+    ],
+    "vault": [
+      "dodge"
+    ],
+    "badges": {}
+  },
   "vault_games": [
     {
-      "id": "cyber-dodge",
-      "title": "🚀 Cyber Dodge: Tormenta Neón",
-      "category": "Reflejos & Esquiva",
-      "status": "EN EL BAÚL (JUGABLE)",
-      "badge": "JOYA DEL BAÚL 🗄️",
-      "description": "Pilota la nave cuántica y esquiva la lluvia de meteoritos cibernéticos a velocidad extrema. Incluye Escudo de Segunda Oportunidad y Ranking en vivo.",
-      "url": "juegos/cyber-dodge.html?v=13",
-      "accent": "amber"
+      "id": "dodge",
+      "title": "Cyber Dodge",
+      "url": "juegos/cyber-dodge.html?v=14"
     }
-  ]
+  ],
+  "seo": {
+    "title": "ByteZone Arcade | Juegos Gratis, Ranking Semanal y Noticias de IA",
+    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: OpenAI descubre una grabadora escondida en sus oficinas y el FBI…",
+    "keywords": [
+      "juegos arcade online gratis",
+      "juegos sin descargar",
+      "test de reflejos",
+      "test de velocidad de reacción",
+      "juego de memoria",
+      "torneo semanal",
+      "ranking mundial de juegos",
+      "noticias de inteligencia artificial",
+      "resumen semanal de IA",
+      "mini juegos para Telegram",
+      "juegos para celular",
+      "retos entre amigos",
+      "openai",
+      "amazon",
+      "chatgpt",
+      "ahora",
+      "mediamarkt",
+      "hazte",
+      "renove",
+      "openai"
+    ],
+    "trending_terms": [
+      "OpenAI",
+      "Amazon",
+      "ChatGPT",
+      "Ahora",
+      "MediaMarkt",
+      "Hazte",
+      "Renove",
+      "openai"
+    ],
+    "og_image": "https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg",
+    "lastmod": "2026-10-19"
+  },
+  "promo_kit": {
+    "whatsapp_status": [
+      "🎮 Torneo semanal nuevo en ByteZone: ranking reiniciado, ¡todos empiezan de cero! ⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo? Juega gratis 👉 https://megabotp2p.github.io/bytezone/",
+      "🔥 ¿Cuánto duras en Neon Stacker? Reta a tus amigos en el ranking semanal 👉 https://megabotp2p.github.io/bytezone/",
+      "🤖 Noticia IA de la semana: OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
+    ],
+    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #OpenAI #Amazon #ChatGPT",
+    "hashtags": [
+      "#juegosgratis",
+      "#arcade",
+      "#reflejos",
+      "#retos",
+      "#IA",
+      "#tecnologia",
+      "#telegram",
+      "#OpenAI",
+      "#Amazon",
+      "#ChatGPT"
+    ],
+    "challenge_lines": [
+      "⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo?",
+      "🏗️ Récord de Neon Stacker: 39 pisos (*****). ¿Llegas más alto?"
+    ],
+    "last_week_champions_text": ""
+  },
+  "last_week_champions": {},
+  "all_time_records": {
+    "stacker": {
+      "name": "*****",
+      "score": 39,
+      "country": "VE"
+    },
+    "reflex": {
+      "name": "Jugador_191",
+      "score": 16,
+      "country": "VE"
+    },
+    "memory": {
+      "name": "betza",
+      "score": 14,
+      "country": "VE"
+    }
+  },
+  "agent_report": {
+    "generated_at": "2026-10-19T11:08:34.791797-04:00",
+    "week_id": "W2026-10-19",
+    "traffic_status": "bajo",
+    "traffic": {
+      "devices_7d": 0,
+      "plays_7d": 0,
+      "views_7d": 0,
+      "ad_actions_7d": 0,
+      "ads_shown_7d": 0,
+      "devices_prev_7d": 0,
+      "change_pct": null,
+      "per_game": {
+        "stacker": {
+          "view": 0,
+          "play": 0,
+          "ad": 0
+        },
+        "reflex": {
+          "view": 0,
+          "play": 0,
+          "ad": 0
+        },
+        "memory": {
+          "view": 0,
+          "play": 0,
+          "ad": 0
+        },
+        "dodge": {
+          "view": 0,
+          "play": 0,
+          "ad": 0
+        }
+      },
+      "top_countries": []
+    },
+    "actions": [
+      "Noticias renovadas: 5 historias nuevas (se evitaron los titulares de la semana anterior).",
+      "Humor renovado: 10 chistes y 4 'verdades tech' nuevas.",
+      "SEO: meta-tags actualizados con palabras clave de la semana (OpenAI, Amazon, ChatGPT, Ahora, MediaMarkt), sitemap regenerado. IndexNow aceptó la notificación (HTTP 202)",
+      "Kit de promoción listo (textos para WhatsApp/Telegram/redes con los récords actuales).",
+      "Telegram: sin token/chat configurados (envío automático desactivado).",
+      "Sin rotación: solo 0 partidas registradas en 7 días (se necesitan 30 para decidir con datos).",
+      "ALERTA: tráfico bajo (menos de 25 dispositivos únicos en 7 días). Recomendación: difundir el kit de promoción en grupos y estados esta semana."
+    ],
+    "rotation": null,
+    "note": "Las métricas se acumulan desde el primer día de la telemetría global; los primeros reportes tienen pocos datos."
+  }
 }

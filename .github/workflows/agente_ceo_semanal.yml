@@ -24,6 +24,7 @@ jobs:
       - name: 🤖 Ejecutar Agente CEO (Noticias IA, Video Flash, Hacks & Baúl)
         run: |
           python agente_ceo_bytezone.py
+          python generar_portal_multipagina.py
 
       - name: 🚀 Publicar actualización semanal en GitHub Pages
         run: |

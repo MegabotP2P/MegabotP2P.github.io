@@ -1,0 +1,113 @@
+{
+  "days": {
+    "2026-10-19": {
+      "games": {
+        "stacker": {
+          "view": 0,
+          "play": 13,
+          "ad": 1
+        },
+        "reflex": {
+          "view": 0,
+          "play": 20,
+          "ad": 2
+        },
+        "dodge": {
+          "view": 0,
+          "play": 7,
+          "ad": 4
+        },
+        "memory": {
+          "view": 0,
+          "play": 7,
+          "ad": 2
+        }
+      },
+      "devices": [
+        "8279de2d",
+        "74d8a10e",
+        "d50ac3c9"
+      ],
+      "countries": {
+        "VE": 56
+      },
+      "ads": {
+        "shown": 11,
+        "fallback": 0
+      }
+    }
+  },
+  "seen": [
+    "ev_mvfcd5b7_qlck2v",
+    "ev_mvfdfbzl_0ivj7v",
+    "ev_mvfd5v0s_sygxky",
+    "ev_mvfd5v0u_ng3h0b",
+    "ev_mvfcgcgj_ifg7xk",
+    "ev_mvfcb1qd_618261",
+    "ev_mvf6qgp9_hwj74k",
+    "ev_mvfd5ajd_033rp5",
+    "ev_mvfd4c7t_gaa2of",
+    "ev_mvfd7t14_nu3mis",
+    "ev_mvfd2d7g_ahq423",
+    "ev_mvf6mn14_fqm13e",
+    "ev_mvfd7t15_g9nans",
+    "ev_mvfdahkw_cj2i0o",
+    "ev_mvfcezs1_5e99m8",
+    "ev_mvfd3ui4_g8zzzg",
+    "ev_mvfd6cjs_i556ws",
+    "ev_mvf6o5qc_83nyqr",
+    "ev_mvfd3ui5_yd0fps",
+    "ev_mvfdahkx_qder6y",
+    "ev_mvfdbu4f_x3cxto",
+    "ev_mvfdecg8_ybwvph",
+    "ev_mvfdfwim_2e4xr5",
+    "ev_mvfdg4mj_n0geio",
+    "ev_mvfcbki0_u2ienx",
+    "ev_mvfdflwe_uf67t8",
+    "ev_mvf6p87d_i3bt16",
+    "ev_mvfddkh0_lbd2wb",
+    "ev_mvfd2t5n_v09gmt",
+    "ev_mvfdcvy2_di6p1d",
+    "ev_mvfdez9o_4hd6g7",
+    "ev_mvfcih9f_zgy0r0",
+    "ev_mvfd27v2_r60do9",
+    "ev_mvfd29ox_yp4spx",
+    "ev_mvfd2ick_48wpna",
+    "ev_mvfdejo0_e6sr7y",
+    "ev_mvfcknss_uxhvqp",
+    "ev_mvfd8ps4_990sni",
+    "ev_mvfcjzmg_2wu1m0",
+    "ev_mvfddddj_xxfzbr",
+    "ev_mvf6ofaw_b6jb5p",
+    "ev_mvf6ou28_wjeib1",
+    "ev_mvf6qjyf_m5936s",
+    "ev_mvfd4mzi_c2g1mg",
+    "ev_mvfdcvy1_w08r02",
+    "ev_mvfcfm98_3ib4jv",
+    "ev_mvfckurl_1uuf7g",
+    "ev_mvfcl0c3_amet9j",
+    "ev_mvfd2bbo_jwj90m",
+    "ev_mvf6qabk_n7b9wk",
+    "ev_mvfdbyyu_afces6",
+    "ev_mvfckfn0_uvy0k9",
+    "ev_mvfdd8el_dfcphc",
+    "ev_mvfddpit_f74y3l",
+    "ev_mvf6q6af_8teq42",
+    "ev_mvfd4x9d_nnhgpc",
+    "ev_mvf6q3rf_fhkzqn",
+    "ev_mvfcih9a_6nnjvi",
+    "ev_mvf6q3ri_ojx0ik",
+    "ev_mvfck88x_ngk1sx",
+    "ev_mvfcl0c1_9ek9t7",
+    "ev_mvfd2fv8_1k48yu",
+    "ev_mvf6qej4_k4muqs",
+    "ev_mvfcm184_twhc3n",
+    "ev_mvfcjalq_v7qhnr",
+    "ev_mvfd27v5_ovnpex",
+    "ev_mvfdd0ja_avjvme",
+    "ev_mvf6oqdh_8p9dgh",
+    "ev_mvfcjcwp_u9ex2x",
+    "ev_mvfdb3zl_1vcl1z"
+  ],
+  "updated_at": "2026-10-19T11:08:34.791797-04:00"
+}

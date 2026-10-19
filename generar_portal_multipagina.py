@@ -1,25 +1,192 @@
 import os
 import sys
+import re
 
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
+
+import json as _json
+
+SITE_BASE = "https://megabotp2p.github.io/bytezone/"
+
+def _load_pulse():
+    for path in (os.path.join("bytezone", "data", "weekly_pulse.json"), os.path.join("portal_bytezone", "data", "weekly_pulse.json")):
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                return _json.load(fh)
+        except Exception:
+            continue
+    return {}
+
+PULSE = _load_pulse()
+CV = "14"
+
+GAME_CATALOG = {
+    "stacker": {"emoji": "🏗️", "title": "Neon Stacker Pro", "cat": "Habilidad", "color": "cyan", "grad": "from-cyan-500 to-blue-600",
+                "badge": "HABILIDAD 🏗️", "url": "juegos/neon-stacker.html", "vault_tag": "Habilidad & Precisión",
+                "desc": "Encaja los bloques de neón a gran velocidad. Incluye botón de <strong>Segunda Oportunidad</strong> para no perder tu récord."},
+    "reflex":  {"emoji": "⚡", "title": "Test de Reflejos", "cat": "Velocidad", "color": "purple", "grad": "from-purple-500 to-pink-600",
+                "badge": "COMPETITIVO ⚡", "url": "juegos/reflejos-visuales.html", "vault_tag": "Velocidad & Reacción",
+                "desc": "Mide tu tiempo de reacción visual en milisegundos cuando cambie a verde. ¿Tienes reflejos de piloto de carreras?"},
+    "memory":  {"emoji": "🧠", "title": "Cyber Memory", "cat": "Memoria", "color": "emerald", "grad": "from-emerald-500 to-teal-600",
+                "badge": "MEMORIA 🧠", "url": "juegos/cyber-memory.html", "vault_tag": "Memoria & Secuencias",
+                "desc": "Memoriza y repite la secuencia de luces de neón. Cada ronda añade un paso más a toda velocidad."},
+    "dodge":   {"emoji": "🚀", "title": "Cyber Dodge: Tormenta de Asteroides", "cat": "Acción", "color": "amber", "grad": "from-amber-500 to-orange-500",
+                "badge": "ACCIÓN 🚀", "url": "juegos/cyber-dodge.html", "vault_tag": "Acción Espacial & Reflejos",
+                "desc": "Pilota la nave neón y sobrevive la mayor cantidad de segundos esquivando meteoritos cibernéticos. ¡Tiene su propio Torneo Semanal y Escudo de Segunda Oportunidad!"},
+}
+
+_layout = PULSE.get("game_layout") or {}
+PORTADA_IDS = [g for g in (_layout.get("portada") or ["stacker", "reflex", "memory"]) if g in GAME_CATALOG]
+VAULT_IDS = [g for g in (_layout.get("vault") or ["dodge"]) if g in GAME_CATALOG]
+GAME_BADGES = _layout.get("badges") or {}
+
+def render_portada_grid():
+    cards = []
+    for g in PORTADA_IDS:
+        m = GAME_CATALOG[g]
+        col = m["color"]
+        badge = GAME_BADGES.get(g, m["badge"])
+        cards.append(f"""
+                <!-- TARJETA JUEGO: {m['title'].upper()} -->
+                <div class="bg-gray-900/80 border border-{col}-500/40 rounded-3xl p-5 hover:border-{col}-400 transition shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-black bg-{col}-500/20 text-{col}-300 px-2.5 py-1 rounded-md uppercase">{badge}</span>
+                            <span class="text-[11px] text-gray-400">{m['cat']}</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white group-hover:text-{col}-400 transition">{m['emoji']} {m['title']}</h3>
+                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">{m['desc']}</p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <a href="{m['url']}?v={CV}" class="bg-gradient-to-r {m['grad']} hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-{col}-500/25 transition">
+                            ▶ JUGAR AHORA
+                        </a>
+                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
+                            En Telegram ✈️
+                        </a>
+                    </div>
+                </div>""")
+    return '<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">' + "".join(cards) + '\n            </div>'
+
+def render_vault_cards():
+    out = []
+    for g in VAULT_IDS:
+        m = GAME_CATALOG[g]
+        out.append(f"""            <div class="bg-gray-950/80 border border-amber-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-3">
+                <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-[10px] font-black bg-amber-500 text-gray-950 px-2 py-0.5 rounded uppercase">JOYA EN EL BAÚL</span>
+                        <span class="text-xs text-amber-300 font-semibold">{m['vault_tag']}</span>
+                    </div>
+                    <h4 class="text-base font-black text-white">{m['emoji']} {m['title']}</h4>
+                    <p class="text-xs text-gray-300 leading-relaxed max-w-xl">{m['desc']}</p>
+                </div>
+                <button onclick="openVaultGameWithReward('{m['url']}?v={CV}')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
+                    <span>🔓</span>
+                    <span>RESCATAR DEL BAÚL &amp; JUGAR</span>
+                </button>
+            </div>""")
+    return "\n".join(out)
+
+def render_truth_grid():
+    truths = PULSE.get("weekly_truths") or []
+    if not truths:
+        return ""
+    cards = []
+    for t in truths:
+        col = t.get("color", "cyan")
+        cards.append(f"""
+            <div class="bg-gray-900/90 p-5 rounded-2xl border border-{col}-500/30 shadow-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                    <span class="text-xl">{t.get('emoji','💡')}</span>
+                    <h4 class="text-xs font-black text-{col}-400 uppercase tracking-wider">{t.get('title','')}</h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">{t.get('body','')}</p>
+            </div>""")
+    return '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' + "".join(cards) + '\n        </div>'
+
+def jokes_json():
+    jokes = PULSE.get("weekly_jokes") or []
+    return _json.dumps(jokes, ensure_ascii=False) if jokes else ""
+
+# ---------------- SEO ----------------
+def _esc(s):
+    return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;").replace(">", "&gt;")
+
+def build_seo_block(page_key, path):
+    seo = PULSE.get("seo") or {}
+    kw = ", ".join(seo.get("keywords") or [])
+    og_img = seo.get("og_image") or "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80"
+    first_news = ((PULSE.get("weekly_news") or [{}])[0] or {}).get("title", "las noticias de IA de la semana")
+    pages = {
+        "index": (seo.get("title") or "ByteZone Arcade | Juegos Gratis, Ranking Semanal y Noticias de IA",
+                  seo.get("description") or "Juega gratis, compite en el torneo semanal y mira el resumen de IA de la semana."),
+        "hacks": ("Noticias de IA de la Semana, Inventos y Trucos de Celular | ByteZone",
+                  f"Resumen en video y lectura completa de las 5 noticias de IA y tecnología de la semana. Hoy: {first_news}"),
+        "humor": ("Chistes y Humor Tech de la Semana | ByteZone",
+                  "Chistes nuevos cada semana sobre WhatsApp, la batería, la inteligencia artificial y la vida digital. ¡Ríete y comparte!"),
+        "telegram": ("Mini App de Telegram: Juegos y Ranking | ByteZone",
+                     "Juega a los mini-juegos de ByteZone desde Telegram y compite en el ranking semanal mundial."),
+        "stats": ("Panel de Métricas | ByteZone", "Panel interno de métricas."),
+        "stacker": ("Neon Stacker Pro: Juego de Torre Neón Online Gratis | ByteZone",
+                    "Apila bloques de neón sin fallar y llega al Piso más alto. Ranking semanal e histórico en vivo. Gratis y sin descargar."),
+        "reflex": ("Test de Reflejos Online: ¿Cuántos Milisegundos Reaccionas? | ByteZone",
+                   "Mide tu velocidad de reacción en milisegundos y compite en el ranking mundial semanal. Reta a tus amigos."),
+        "memory": ("Cyber Memory: Juego de Memoria de Secuencias Online | ByteZone",
+                   "Repite la secuencia de luces neón y supera tu récord de rondas. Torneo semanal y ranking histórico."),
+        "dodge": ("Cyber Dodge: Esquiva Asteroides, Juego de Reflejos | ByteZone",
+                  "Pilota tu nave y esquiva la lluvia de meteoritos neón el mayor tiempo posible. Ranking semanal en vivo."),
+    }
+    title, desc = pages.get(page_key, pages["index"])
+    url = SITE_BASE + path
+    robots = "noindex, nofollow" if page_key == "stats" else "index, follow, max-image-preview:large"
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "WebSite" if page_key == "index" else "WebPage",
+        "name": "ByteZone Arcade", "url": url, "inLanguage": "es", "description": desc,
+    }
+    if page_key == "index":
+        ld["potentialAction"] = {"@type": "PlayAction", "target": SITE_BASE}
+    return f"""<title>{_esc(title)}</title>
+    <meta name="description" content="{_esc(desc)}">
+    <meta name="keywords" content="{_esc(kw)}">
+    <meta name="robots" content="{robots}">
+    <link rel="canonical" href="{url}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ByteZone Arcade">
+    <meta property="og:title" content="{_esc(title)}">
+    <meta property="og:description" content="{_esc(desc)}">
+    <meta property="og:url" content="{url}">
+    <meta property="og:image" content="{_esc(og_img)}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{_esc(title)}">
+    <meta name="twitter:description" content="{_esc(desc)}">
+    <meta name="twitter:image" content="{_esc(og_img)}">
+    <script type="application/ld+json">{_json.dumps(ld, ensure_ascii=False)}</script>"""
+
+def inject_seo(html, page_key, path):
+    html = re.sub(r'<title>.*?</title>\s*', '', html, count=1, flags=re.S)
+    html = re.sub(r'<meta name="description"[^>]*>\s*', '', html, count=1)
+    block = build_seo_block(page_key, path)
+    return re.sub(r'(<meta name="viewport"[^>]*>)', lambda m: m.group(1) + "\n    " + block, html, count=1)
 
 PORTAL_DIR = "portal_bytezone"
 JUEGOS_DIR = os.path.join(PORTAL_DIR, "juegos")
 os.makedirs(JUEGOS_DIR, exist_ok=True)
 
-# SCRIPTS DE ANUNCIOS MONETAG AUDITADOS (v=13):
+# SCRIPTS DE ANUNCIOS MONETAG AUDITADOS (v=12):
 # - PRESERVA TOKENS DE SESIÓN DE MONETAG (NO BORRA LOCALSTORAGE NI SERVICE WORKER DE MONETAG)
 # - PRECARGA SDK REWARDED (12040274 CPM $0.07) + RESPALDO (12040276) EN <HEAD> PARA CERO PÉRDIDA DE IMPRESIONES
 MONETAG_TAG = """
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=13') && !sessionStorage.getItem('bz_v12_reloaded')) {
+            if (!location.search.includes('v=12') && !sessionStorage.getItem('bz_v12_reloaded')) {
                 sessionStorage.setItem('bz_v12_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=13' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=12' + location.hash);
             }
         } catch (e) {}
     </script>
@@ -134,7 +301,7 @@ def get_header(current_page="arcade", depth=0):
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="{root}index.html?v=13" class="flex items-center space-x-2 group">
+            <a href="{root}index.html?v=12" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -146,7 +313,7 @@ def get_header(current_page="arcade", depth=0):
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="{root}telegram.html?v=13" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="{root}telegram.html?v=12" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -156,19 +323,19 @@ def get_header(current_page="arcade", depth=0):
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
-            <a href="{root}index.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('arcade')}">
+            <a href="{root}index.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('arcade')}">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade Hub</span>
             </a>
-            <a href="{root}hacks.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('hacks')}">
+            <a href="{root}hacks.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('hacks')}">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & Tech TV</span>
             </a>
-            <a href="{root}humor.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('humor')}">
+            <a href="{root}humor.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('humor')}">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="{root}telegram.html?v=13" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('telegram')}">
+            <a href="{root}telegram.html?v=12" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('telegram')}">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -183,7 +350,7 @@ def get_footer(depth=0):
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="{root}stats.html?v=13" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="{root}stats.html?v=12" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -266,15 +433,14 @@ PLAYER_MODAL = """
 
             <!-- BOTONES DE COMPARTIR VIRAL -->
             <div class="space-y-2">
-                <a id="podiumWhatsappBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
+                <a id="podiumWhatsappBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition">
                     <span>📲</span>
                     <span>Compartir Reto en WhatsApp</span>
                 </a>
-                <a id="podiumTelegramBtn" href="#" onclick="return openShareLink(this.href)" rel="noopener" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
+                <a id="podiumTelegramBtn" href="#" target="_blank" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-blue-500/25 transition">
                     <span>✈️</span>
                     <span>Compartir Reto en Telegram</span>
                 </a>
-                <button onclick="sharePodiumNative()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-95 text-white font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-purple-500/25 transition"><span>📤</span><span>Compartir con otras apps</span></button>
                 <button onclick="copyPodiumChallengeText()" class="w-full bg-gray-800 hover:bg-gray-750 text-gray-200 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center space-x-1.5 border border-gray-700 transition">
                     <span id="copyChallengeIcon">📋</span>
                     <span id="copyChallengeText">Copiar Mensaje del Reto</span>
@@ -679,8 +845,20 @@ PLAYER_IDENTITY_SCRIPT = """
                         weeklyPos: weeklyPos,
                         alltimePos: alltimePos
                     });
+                    return true;
                 }
             } catch(e) {}
+            return false;
+        }
+
+        // Muestra el modal del podio pendiente (si lo hay) usando la MEJOR marca semanal. Devuelve true si se mostró.
+        function flushPendingPodium() {
+            const p = window.__pendingPodium;
+            if (!p) return false;
+            window.__pendingPodium = null;
+            const best = parseInt(localStorage.getItem('bytezone_weekly_best_' + p.gameKey) || localStorage.getItem('bytezone_best_' + p.gameKey) || '0');
+            if (!best) return false;
+            return checkAndShowPodiumModal(p.gameKey, best, p.isAscending) === true;
         }
 
         function showPodiumModal(data) {
@@ -732,7 +910,7 @@ PLAYER_IDENTITY_SCRIPT = """
                 `⚡ Mi Marca: ${scoreFormatted}\n` +
                 `🔥 Torneo Semanal: ${wBadge}\n` +
                 `👑 Récord Histórico: ${aBadge}\n\n` +
-                `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:\n${pageUrl}?v=13`;
+                `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:\n${pageUrl}?v=12`;
 
             currentPodiumShareText = challengeText;
 
@@ -742,7 +920,7 @@ PLAYER_IDENTITY_SCRIPT = """
             }
             const tgBtn = document.getElementById('podiumTelegramBtn');
             if (tgBtn) {
-                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=13") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
+                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=12") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
             }
 
             modal.classList.remove('hidden');
@@ -755,49 +933,6 @@ PLAYER_IDENTITY_SCRIPT = """
             const modal = document.getElementById('podiumShareModal');
             if (modal) modal.classList.add('hidden');
         }
-
-        function openShareLink(url) {
-            try {
-                const tg = window.Telegram && window.Telegram.WebApp;
-                if (url.indexOf('https://t.me/') === 0 && tg && tg.openTelegramLink) { tg.openTelegramLink(url); return false; }
-                if (tg && tg.openLink) { tg.openLink(url); return false; }
-            } catch (e) {}
-            const w = window.open(url, '_blank');
-            if (!w) { window.location.href = url; }
-            return false;
-        }
-
-        function sharePodiumNative() {
-            if (!currentPodiumShareText) return;
-            const pageUrl = window.location.href.split('?')[0] + '?v=13';
-            if (navigator.share) {
-                navigator.share({ title: 'Reto ByteZone Arcade', text: currentPodiumShareText, url: pageUrl }).catch(() => {});
-            } else {
-                copyPodiumChallengeText();
-            }
-        }
-
-        // Botón visible "Retar a mis amigos" cuando el jugador está en el Top 3 (no depende de tocar la insignia)
-        function ensureChallengeButton() {
-            const badge = document.getElementById('userRankBadge');
-            if (!badge) return;
-            const inPodium = typeof badge.onclick === 'function' && /Toca para Retar/.test(badge.textContent || '');
-            let btn = document.getElementById('challengeFriendsBtn');
-            if (inPodium) {
-                if (!btn) {
-                    btn = document.createElement('button');
-                    btn.id = 'challengeFriendsBtn';
-                    btn.className = 'w-full mt-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-95 active:scale-95 text-gray-950 font-black py-3 px-4 rounded-2xl text-xs flex items-center justify-center space-x-2 shadow-lg shadow-emerald-500/25 transition';
-                    btn.innerHTML = '<span>📣</span><span>Retar a mis amigos con mi puesto</span>';
-                    const host = badge.closest('.rounded-2xl') || badge.parentElement;
-                    host.insertAdjacentElement('afterend', btn);
-                }
-                btn.onclick = function () { if (typeof badge.onclick === 'function') badge.onclick(); };
-            } else if (btn) {
-                btn.remove();
-            }
-        }
-        setInterval(ensureChallengeButton, 1000);
 
         function copyPodiumChallengeText() {
             if (!currentPodiumShareText) return;
@@ -898,13 +1033,18 @@ PLAYER_IDENTITY_SCRIPT = """
                 pushScoreToCloud(gameKey, cleanScore, isAscending);
                 if (window.confetti) confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
 
-                // Activar el Gancho Social si entró al podio de los 3 mejores
-                setTimeout(() => {
-                    checkAndShowPodiumModal(gameKey, cleanScore, isAscending);
-                }, 600);
+                // Gancho Social: NUNCA interrumpir una partida en curso. Se deja pendiente y se muestra
+                // solo cuando la partida termina de verdad (ver flushPendingPodium en cada juego).
+                window.__pendingPodium = { gameKey: gameKey, isAscending: isAscending };
+                if (gameKey === 'reflex') {
+                    // En Reflejos cada intento es una partida completa
+                    setTimeout(() => { flushPendingPodium(); }, 900);
+                }
 
                 return true;
             }
+            return false;
+        }
             return false;
         }
 
@@ -1233,6 +1373,14 @@ PLAYER_IDENTITY_SCRIPT = """
             }
         }
 
+        // Visita de pagina (alimenta la telemetria de trafico del Agente CEO)
+        try {
+            if (!window.__bzPageViewSent && typeof window.broadcastGlobalTelemetry === 'function') {
+                window.__bzPageViewSent = true;
+                window.broadcastGlobalTelemetry({ kind: 'page', g: (location.pathname.split('/').pop() || 'index.html') });
+            }
+        } catch (e) {}
+
         function updateNameDisplays() {
             document.querySelectorAll('#playerNameDisplay').forEach(el => {
                 el.textContent = playerName;
@@ -1297,7 +1445,7 @@ PLAYER_IDENTITY_SCRIPT = """
             }
         }
 
-        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=13)
+        // Sistema de Telemetría y Popularidad Global Multi-Teléfono (ByteZone Cloud Analytics v=12)
         function trackByteZoneEvent(gameKey, eventType) {
             try {
                 let stats = JSON.parse(localStorage.getItem('bytezone_telemetry') || '{}');
@@ -1308,7 +1456,7 @@ PLAYER_IDENTITY_SCRIPT = """
                 stats['last_active'] = new Date().toISOString();
                 localStorage.setItem('bytezone_telemetry', JSON.stringify(stats));
 
-                if ((eventType === 'play' || eventType === 'ad') && typeof window.broadcastGlobalTelemetry === 'function') {
+                if ((eventType === 'view' || eventType === 'play' || eventType === 'ad') && typeof window.broadcastGlobalTelemetry === 'function') {
                     window.broadcastGlobalTelemetry({
                         kind: 'game',
                         g: gameKey,
@@ -2133,81 +2281,10 @@ TEMPLATE_INDEX = """<!DOCTYPE html>
                     <span>🕹️</span>
                     <span>Juegos Oficiales del Torneo Semanal</span>
                 </h2>
-                <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">3 En Portada + 1 En Baúl</span>
+                <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">__PORTADA_LABEL__</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                
-                <!-- TARJETA JUEGO 1: NEON STACKER -->
-                <div class="bg-gray-900/80 border border-cyan-500/40 rounded-3xl p-5 hover:border-cyan-400 transition shadow-xl flex flex-col justify-between group">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-[10px] font-black bg-cyan-500/20 text-cyan-300 px-2.5 py-1 rounded-md uppercase">TOP 1 POPULAR 🔥</span>
-                            <span class="text-[11px] text-gray-400">Habilidad</span>
-                        </div>
-                        <h3 class="text-lg font-black text-white group-hover:text-cyan-400 transition">🏗️ Neon Stacker Pro</h3>
-                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
-                            Encaja los bloques de neón a gran velocidad. Incluye botón de <strong>Segunda Oportunidad</strong> para no perder tu récord.
-                        </p>
-                    </div>
-
-                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/neon-stacker.html?v=13" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-cyan-500/25 transition">
-                            ▶ JUGAR AHORA
-                        </a>
-                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
-                            En Telegram ✈️
-                        </a>
-                    </div>
-                </div>
-
-                <!-- TARJETA JUEGO 2: TEST DE REFLEJOS VISUALES -->
-                <div class="bg-gray-900/80 border border-purple-500/40 rounded-3xl p-5 hover:border-purple-400 transition shadow-xl flex flex-col justify-between group">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-[10px] font-black bg-purple-500/20 text-purple-300 px-2.5 py-1 rounded-md uppercase">COMPETITIVO ⚡</span>
-                            <span class="text-[11px] text-gray-400">Velocidad</span>
-                        </div>
-                        <h3 class="text-lg font-black text-white group-hover:text-purple-400 transition">⚡ Test de Reflejos</h3>
-                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
-                            Mide tu tiempo de reacción visual en milisegundos cuando cambie a verde. ¿Tienes reflejos de piloto de carreras?
-                        </p>
-                    </div>
-
-                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/reflejos-visuales.html?v=13" class="bg-gradient-to-r from-purple-500 to-pink-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-purple-500/25 transition">
-                            ▶ JUGAR AHORA
-                        </a>
-                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
-                            En Telegram ✈️
-                        </a>
-                    </div>
-                </div>
-
-                <!-- TARJETA JUEGO 3: CYBER MEMORY -->
-                <div class="bg-gray-900/80 border border-emerald-500/40 rounded-3xl p-5 hover:border-emerald-400 transition shadow-xl flex flex-col justify-between group">
-                    <div>
-                        <div class="flex justify-between items-center mb-3">
-                            <span class="text-[10px] font-black bg-emerald-500/20 text-emerald-300 px-2.5 py-1 rounded-md uppercase">ESTRENO ✨</span>
-                            <span class="text-[11px] text-gray-400">Memoria</span>
-                        </div>
-                        <h3 class="text-lg font-black text-white group-hover:text-emerald-400 transition">🧠 Cyber Memory</h3>
-                        <p class="text-xs text-gray-400 mt-2 leading-relaxed">
-                            Memoriza y repite la secuencia de luces de neón. Cada ronda añade un paso más a toda velocidad.
-                        </p>
-                    </div>
-
-                    <div class="mt-5 pt-4 border-t border-gray-800 flex items-center justify-between">
-                        <a href="juegos/cyber-memory.html?v=13" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-90 text-white font-black text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/25 transition">
-                            ▶ JUGAR AHORA
-                        </a>
-                        <a href="tg://resolve?domain=ByteZoneArcadeBot" class="text-xs text-blue-400 hover:underline">
-                            En Telegram ✈️
-                        </a>
-                    </div>
-                </div>
-
-            </div>
+            __PORTADA_GRID__
         </div>
 
         <!-- REPRODUCTOR DE VIDEO FLASH IA EN PORTADA -->
@@ -2242,34 +2319,19 @@ TEMPLATE_INDEX = """<!DOCTYPE html>
                 </span>
             </div>
 
-            <div class="bg-gray-950/80 border border-amber-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="space-y-1">
-                    <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-black bg-amber-500 text-gray-950 px-2 py-0.5 rounded uppercase">JOYA EN EL BAÚL</span>
-                        <span class="text-xs text-amber-300 font-semibold">Acción Espacial & Reflejos</span>
-                    </div>
-                    <h4 class="text-base font-black text-white">🚀 Cyber Dodge: Tormenta de Asteroides</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed max-w-xl">
-                        Pilota la nave neón y sobrevive la mayor cantidad de segundos esquivando meteoritos cibernéticos. ¡Tiene su propio Torneo Semanal y Escudo de Segunda Oportunidad!
-                    </p>
-                </div>
-                <button onclick="openVaultGameWithReward('juegos/cyber-dodge.html?v=13')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
-                    <span>🔓</span>
-                    <span>RESCATAR DEL BAÚL & JUGAR</span>
-                </button>
-            </div>
+            __VAULT_CARDS__
         </div>
 
         <!-- ACCESOS RÁPIDOS ADICIONALES -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="hacks.html?v=13" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
+            <a href="hacks.html?v=12" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🤖</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Noticias IA, Inventos & Hacks</h4>
                     <p class="text-xs text-gray-400">Lo último de la semana en Inteligencia Artificial, gadgets y trucos secretos.</p>
                 </div>
             </a>
-            <a href="humor.html?v=13" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
+            <a href="humor.html?v=12" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🎭</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
@@ -2314,7 +2376,7 @@ TEMPLATE_STACKER = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=13" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=12" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -2534,6 +2596,8 @@ TEMPLATE_STACKER = """<!DOCTYPE html>
             reviveFloorText.textContent = "Te caíste en el Piso " + currentFloor;
             document.getElementById('reviveActionBox').style.display = hasRevived ? 'none' : 'block';
             reviveModal.classList.remove('hidden');
+            // Si ya no puede revivir, la partida terminó de verdad: ahora sí se puede celebrar el podio
+            if (hasRevived) { setTimeout(() => { flushPendingPodium(); }, 700); }
         }
 
         function handleReviveClick() {
@@ -2553,7 +2617,12 @@ TEMPLATE_STACKER = """<!DOCTYPE html>
 
         function resetStackerGame() {
             reviveModal.classList.add('hidden');
-            startStackerGame();
+            if (flushPendingPodium()) {
+                // Mostró el podio: dejar la pantalla de inicio para que juegue cuando quiera
+                startScreen.classList.remove('hidden');
+            } else {
+                startStackerGame();
+            }
         }
 
         canvas.addEventListener('pointerdown', (e) => {
@@ -2669,7 +2738,7 @@ TEMPLATE_REFLEX = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=13" class="text-xs text-purple-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=12" class="text-xs text-purple-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -2996,7 +3065,7 @@ TEMPLATE_MEMORY = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=13" class="text-xs text-emerald-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=12" class="text-xs text-emerald-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -3184,6 +3253,7 @@ TEMPLATE_MEMORY = """<!DOCTYPE html>
                     if (reviveModal) reviveModal.classList.remove('hidden');
                 } else {
                     gameOverMemory(score);
+                    setTimeout(() => { flushPendingPodium(); }, 700);
                 }
             }
         }
@@ -3222,7 +3292,9 @@ TEMPLATE_MEMORY = """<!DOCTYPE html>
             const modal = document.getElementById('memoryReviveModal');
             if (modal) modal.classList.add('hidden');
             gameOverMemory(memorySequence.length - 1);
-            startMemoryGame();
+            if (!flushPendingPodium()) {
+                startMemoryGame();
+            }
         }
 
         function gameOverMemory(score) {
@@ -3335,7 +3407,7 @@ TEMPLATE_DODGE = """<!DOCTYPE html>
 
         <!-- BARRA REGRESAR Y SELLO BAÚL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=13" class="text-xs text-amber-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=12" class="text-xs text-amber-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -3392,7 +3464,7 @@ TEMPLATE_DODGE = """<!DOCTYPE html>
                         <p class="text-[10px] text-gray-400 mt-1">Destruye los asteroides en pantalla y conserva tu tiempo</p>
                     </div>
 
-                    <button onclick="startDodgeGame()" class="text-xs text-gray-400 hover:text-white underline mt-2">
+                    <button onclick="restartDodgeFromModal()" class="text-xs text-gray-400 hover:text-white underline mt-2">
                         Reiniciar desde 0 seg
                     </button>
                 </div>
@@ -3549,6 +3621,16 @@ TEMPLATE_DODGE = """<!DOCTYPE html>
             document.getElementById('dodgeScoreText').textContent = "Sobreviviste " + dodgeScore + " segundos";
             document.getElementById('dodgeReviveBox').style.display = hasRevivedDodge ? 'none' : 'block';
             dRevive.classList.remove('hidden');
+            if (hasRevivedDodge) { setTimeout(() => { flushPendingPodium(); }, 700); }
+        }
+
+        function restartDodgeFromModal() {
+            if (flushPendingPodium()) {
+                dRevive.classList.add('hidden');
+                dStart.classList.remove('hidden');
+            } else {
+                startDodgeGame();
+            }
         }
 
         function handleDodgeRevive() {
@@ -3817,54 +3899,7 @@ TEMPLATE_HUMOR = """<!DOCTYPE html>
         </div>
 
         <!-- TARJETAS DE VERDADES DE LA TECNOLOGÍA -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <div class="bg-gray-900/90 p-5 rounded-2xl border border-cyan-500/30 shadow-lg">
-                <div class="flex items-center space-x-2 mb-2">
-                    <span class="text-xl">🎙️</span>
-                    <h4 class="text-xs font-black text-cyan-400 uppercase tracking-wider">La Ley del Audio de WhatsApp</h4>
-                </div>
-                <p class="text-xs text-gray-300 leading-relaxed space-y-1">
-                    • <strong>0 a 15 seg:</strong> Escuchable con paciencia.<br>
-                    • <strong>15 a 45 seg:</strong> Lo pongo en 1.5x de inmediato.<br>
-                    • <strong>Más de 1 min:</strong> Eso ya no es un audio, es un podcast. ¡Llámame mejor!
-                </p>
-            </div>
-
-            <div class="bg-gray-900/90 p-5 rounded-2xl border border-purple-500/30 shadow-lg">
-                <div class="flex items-center space-x-2 mb-2">
-                    <span class="text-xl">🤖</span>
-                    <h4 class="text-xs font-black text-purple-400 uppercase tracking-wider">La IA: Expectativa vs Realidad</h4>
-                </div>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    <strong>La gente:</strong> <em>"La Inteligencia Artificial va a dominar el mundo con robots asesinos..."</em><br>
-                    <strong>La IA en la vida real:</strong> Dibuja personas con 7 dedos en una mano y confunde un perro chihuahueño con un muffin de chocolate.
-                </p>
-            </div>
-
-            <div class="bg-gray-900/90 p-5 rounded-2xl border border-pink-500/30 shadow-lg">
-                <div class="flex items-center space-x-2 mb-2">
-                    <span class="text-xl">🔋</span>
-                    <h4 class="text-xs font-black text-pink-400 uppercase tracking-wider">El Milagro del 1%</h4>
-                </div>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    Mi teléfono con <strong>99%</strong> de batería: se descarga en un parpadeo si abro Instagram.<br>
-                    Mi teléfono con <strong>1%</strong> de batería: aguanta 3 horas más, 2 llamadas de emergencia, una alarma y me da la hora del día siguiente.
-                </p>
-            </div>
-
-            <div class="bg-gray-900/90 p-5 rounded-2xl border border-emerald-500/30 shadow-lg">
-                <div class="flex items-center space-x-2 mb-2">
-                    <span class="text-xl">🛒</span>
-                    <h4 class="text-xs font-black text-emerald-400 uppercase tracking-wider">Compras por Internet</h4>
-                </div>
-                <p class="text-xs text-gray-300 leading-relaxed">
-                    <strong>En la foto de AliExpress:</strong> Camiseta ajustada modelo cyberpunk con acabado futurista.<br>
-                    <strong>Lo que te llega por encomienda:</strong> Un mantel de cocina transparente con dos huecos para los brazos.
-                </p>
-            </div>
-
-        </div>
+        __TRUTH_GRID__
 
     </main>
 
@@ -3875,26 +3910,19 @@ TEMPLATE_HUMOR = """<!DOCTYPE html>
     __PLAYER_IDENTITY_SCRIPT__
 
     <script>
-        const CHISTES = [
-            "— Mi amor, dame tu contraseña de WhatsApp si no tienes nada que esconder.<br>— Dame tú la clave de tu banco si confías en mí.<br>— ...Silencio absoluto en la sala.",
-            "Le pedí a ChatGPT que me ayudara a redactar un mensaje para que mi novia no se molestara... y ChatGPT la dejó más brava todavía. Ni la inteligencia artificial entiende a las mujeres.",
-            "El técnico de computadoras: 'Amigo, se le quemó la tarjeta madre cuántica, el bios y el condensador de flujo... son $95'.<br>Yo: 'Hermano, el cable estaba medio desconectado del tomacorriente'.",
-            "La tía en el grupo familiar: 'Cuidado con el 5G que te altera las neuronas y te vigila'.<br>La misma tía: Reenvía 45 bendiciones con fotos de Piolín a las 5:00 a.m. todos los días.",
-            "Nivel de terror tecnológico extremo: Cuando vas a mandar una captura de pantalla burlándote de alguien... y casi se la mandas por error a esa misma persona.",
-            "El botón de 'He leído y acepto los términos y condiciones' es la mentira más grande que ha visto la raza humana. Absolutamente nadie lee eso.",
-            "Nada en esta vida te enseña a escribir más rápido en el teclado que ver el 'Escribiendo...' de la persona con la que estás discutiendo en WhatsApp.",
-            "— Papá, ¿por qué lloras?<br>— Hijo, acabo de ver una notificación en el teléfono...<br>— ¿Te hackearon la cuenta de banco?<br>— Peor: 'Tu jefe te ha agregado al grupo: Guardias de Fin de Semana'.",
-            "Le pregunté a la IA cómo hacerme millonario en 3 días sin salir de mi cama... y me mandó a buscar un novio con plata o a jugar la lotería.",
-            "Mamá gritando: '¡Hijo, el internet está lentísimo, seguro estás descargando tus juegos raros!'<br>Yo: Solo abrí la página de Wikipedia.<br>La tía en el cuarto de al lado: Descargando una serie turca de 80 capítulos en calidad 4K."
-        ];
+        const CHISTES = __CHISTES_JSON__;
 
         let countRisas = 48;
 
+        let __lastJoke = -1;
         function generarChisteNuevo() {
             const q = document.getElementById('humorQuote');
-            const rand = CHISTES[Math.floor(Math.random() * CHISTES.length)];
-            q.innerHTML = '"' + rand + '"';
+            let i = Math.floor(Math.random() * CHISTES.length);
+            if (CHISTES.length > 1) { while (i === __lastJoke) { i = Math.floor(Math.random() * CHISTES.length); } }
+            __lastJoke = i;
+            q.innerHTML = '"' + CHISTES[i] + '"';
         }
+        setTimeout(generarChisteNuevo, 0);
 
         function reaccionarRisa() {
             countRisas++;
@@ -4146,7 +4174,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
                     <p class="text-gray-400">Escudos con Anuncio:</p>
                     <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
                 </div>
-                <a href="juegos/cyber-dodge.html?v=13" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
+                <a href="juegos/cyber-dodge.html?v=12" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
                     Probar Juego
                 </a>
             </div>
@@ -4248,6 +4276,38 @@ TEMPLATE_STATS = """<!DOCTYPE html>
             </div>
         </div>
 
+        <!-- REPORTE DEL AGENTE CEO (se actualiza solo cada semana) -->
+        <div class="bg-gray-900/90 rounded-3xl p-6 border border-cyan-500/40 shadow-xl space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">🧠</span>
+                    <div>
+                        <h3 class="text-base sm:text-lg font-black text-white">Reporte del Agente CEO</h3>
+                        <p id="ceoReportMeta" class="text-xs text-gray-400">Cargando último reporte...</p>
+                    </div>
+                </div>
+                <span id="ceoTrafficBadge" class="text-xs font-black bg-gray-800 text-gray-300 border border-gray-700 px-3 py-1 rounded-full">Tráfico: -</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Dispositivos (7d)</p><p id="ceoDevices" class="font-black text-lg text-cyan-400">0</p></div>
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Partidas (7d)</p><p id="ceoPlays" class="font-black text-lg text-white">0</p></div>
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Visitas a juegos (7d)</p><p id="ceoViews" class="font-black text-lg text-purple-400">0</p></div>
+                <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800"><p class="text-gray-400">Anuncios vistos (7d)</p><p id="ceoAds" class="font-black text-lg text-emerald-400">0</p></div>
+            </div>
+            <div>
+                <p class="text-xs font-black text-white mb-1.5">✅ Lo que hizo / decidió esta semana</p>
+                <ul id="ceoActions" class="space-y-1 text-[11px] text-gray-300 list-disc pl-4"></ul>
+            </div>
+            <div>
+                <p class="text-xs font-black text-white mb-1.5">📣 Kit de promoción (toca para copiar y compartir)</p>
+                <div id="ceoPromo" class="space-y-2"></div>
+            </div>
+            <div>
+                <p class="text-xs font-black text-white mb-1.5">🔎 Palabras clave de la semana (SEO)</p>
+                <p id="ceoKeywords" class="text-[11px] text-gray-400 leading-relaxed"></p>
+            </div>
+        </div>
+
         <!-- ACCIONES DE ADMINISTRADOR -->
         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
             <button onclick="refreshGlobalMetricsFromCloud(true)" class="w-full sm:w-1/2 bg-gray-800 hover:bg-gray-750 text-cyan-300 font-bold py-3 rounded-xl text-xs transition border border-gray-700">
@@ -4268,7 +4328,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
     <script>
         window.CURRENT_GAME_KEY = 'stats';
 
-        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=13)
+        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=12)
         const BASELINE_METRICS = {
             stacker: { plays: 28, ads: 8 },
             reflex:  { plays: 22, ads: 5 },
@@ -4525,19 +4585,69 @@ TEMPLATE_STATS = """<!DOCTYPE html>
         updateMonetagSdkStatusUI();
         setTimeout(updateMonetagSdkStatusUI, 1200);
         setInterval(() => refreshGlobalMetricsFromCloud(false), 20000);
+        async function loadCeoReport() {
+            try {
+                const res = await fetch('data/weekly_pulse.json?t=' + Date.now(), { cache: 'no-store' });
+                if (!res.ok) return;
+                const d = await res.json();
+                const r = d.agent_report || {};
+                const t = r.traffic || {};
+                const meta = document.getElementById('ceoReportMeta');
+                if (meta) meta.textContent = 'Semana ' + (d.week_id || '-') + ' • Actualizado ' + (d.updated_human || '-') + ' (v' + (d.version || '?') + ')';
+                const st = r.traffic_status || '-';
+                const badge = document.getElementById('ceoTrafficBadge');
+                if (badge) {
+                    const map = { bajo: ['🟠 Tráfico BAJO', 'bg-amber-500/20 text-amber-300 border-amber-500/40'], estable: ['🟢 Tráfico ESTABLE', 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40'], creciendo: ['🚀 Tráfico CRECIENDO', 'bg-cyan-500/20 text-cyan-300 border-cyan-500/40'] };
+                    const m = map[st] || ['Tráfico: -', 'bg-gray-800 text-gray-300 border-gray-700'];
+                    badge.textContent = m[0] + (t.change_pct != null ? ' (' + (t.change_pct > 0 ? '+' : '') + t.change_pct + '% vs semana previa)' : '');
+                    badge.className = 'text-xs font-black border px-3 py-1 rounded-full ' + m[1];
+                }
+                const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+                set('ceoDevices', t.devices_7d || 0); set('ceoPlays', t.plays_7d || 0);
+                set('ceoViews', t.views_7d || 0); set('ceoAds', t.ads_shown_7d || 0);
+                const ul = document.getElementById('ceoActions');
+                if (ul) ul.innerHTML = (r.actions || []).map(a => '<li>' + String(a).replace(/</g, '&lt;') + '</li>').join('');
+                const promo = d.promo_kit || {};
+                const box = document.getElementById('ceoPromo');
+                if (box) {
+                    const items = (promo.whatsapp_status || []).concat(promo.social_caption ? [promo.social_caption] : []);
+                    box.innerHTML = '';
+                    items.forEach((txt, i) => {
+                        const b = document.createElement('button');
+                        b.className = 'w-full text-left p-3 rounded-xl bg-gray-950/80 border border-gray-800 hover:border-cyan-500/50 text-[11px] text-gray-200 leading-relaxed transition';
+                        b.textContent = txt;
+                        b.onclick = () => {
+                            const done = () => { b.classList.add('border-emerald-500'); setTimeout(() => b.classList.remove('border-emerald-500'), 1500); };
+                            if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done).catch(() => prompt('Copia el texto:', txt));
+                            else prompt('Copia el texto:', txt);
+                        };
+                        box.appendChild(b);
+                    });
+                }
+                const kw = (d.seo && d.seo.keywords) || [];
+                set('ceoKeywords', kw.join(' • '));
+            } catch (e) {}
+        }
+        loadCeoReport();
+
     </script>
 </body>
 </html>
 """
 
-def render_page(template, current_page, depth=0):
-    html = template.replace("__MONETAG_TAG__", MONETAG_TAG)
+def render_page(template, current_page, depth=0, page_key="index", path=""):
+    html = template.replace("__PORTADA_GRID__", render_portada_grid())
+    html = html.replace("__VAULT_CARDS__", render_vault_cards())
+    html = html.replace("__PORTADA_LABEL__", f"{len(PORTADA_IDS)} En Portada + {len(VAULT_IDS)} En Baúl")
+    html = html.replace("__TRUTH_GRID__", render_truth_grid() or "")
+    html = html.replace("__CHISTES_JSON__", jokes_json() or "[]")
+    html = html.replace("__MONETAG_TAG__", MONETAG_TAG)
     html = html.replace("__HEADER__", get_header(current_page, depth=depth))
     html = html.replace("__AI_VIDEO_REEL_WIDGET__", AI_VIDEO_REEL_WIDGET)
     html = html.replace("__PLAYER_MODAL__", PLAYER_MODAL)
     html = html.replace("__PLAYER_IDENTITY_SCRIPT__", PLAYER_IDENTITY_SCRIPT)
     html = html.replace("__FOOTER__", get_footer(depth=depth))
-    return html
+    return inject_seo(html, page_key, path)
 
 # Generación sincronizada simultánea en portal_bytezone Y bytezone
 DIRECTORIOS_SALIDA = ["portal_bytezone", "bytezone"]
@@ -4548,41 +4658,41 @@ for target_dir in DIRECTORIOS_SALIDA:
     
     # 1. index.html
     with open(os.path.join(target_dir, "index.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_INDEX, "arcade", depth=0))
+        f.write(render_page(TEMPLATE_INDEX, "arcade", depth=0, page_key="index", path=""))
 
     # 2. juegos/neon-stacker.html
     with open(os.path.join(juegos_target, "neon-stacker.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_STACKER, "arcade", depth=1))
+        f.write(render_page(TEMPLATE_STACKER, "arcade", depth=1, page_key="stacker", path="juegos/neon-stacker.html"))
 
     # 3. juegos/reflejos-visuales.html
     with open(os.path.join(juegos_target, "reflejos-visuales.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_REFLEX, "arcade", depth=1))
+        f.write(render_page(TEMPLATE_REFLEX, "arcade", depth=1, page_key="reflex", path="juegos/reflejos-visuales.html"))
 
     # 4. juegos/cyber-memory.html
     with open(os.path.join(juegos_target, "cyber-memory.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_MEMORY, "arcade", depth=1))
+        f.write(render_page(TEMPLATE_MEMORY, "arcade", depth=1, page_key="memory", path="juegos/cyber-memory.html"))
 
     # 4B. juegos/cyber-dodge.html (Joya en El Baúl Arcade)
     with open(os.path.join(juegos_target, "cyber-dodge.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_DODGE, "arcade", depth=1))
+        f.write(render_page(TEMPLATE_DODGE, "arcade", depth=1, page_key="dodge", path="juegos/cyber-dodge.html"))
 
     # 5. hacks.html (IA & Tech TV + Noticias Semanales + Hacks)
     with open(os.path.join(target_dir, "hacks.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_HACKS, "hacks", depth=0))
+        f.write(render_page(TEMPLATE_HACKS, "hacks", depth=0, page_key="hacks", path="hacks.html"))
 
     # 6. humor.html
     with open(os.path.join(target_dir, "humor.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_HUMOR, "humor", depth=0))
+        f.write(render_page(TEMPLATE_HUMOR, "humor", depth=0, page_key="humor", path="humor.html"))
 
     # 7. telegram.html
     with open(os.path.join(target_dir, "telegram.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_TELEGRAM, "telegram", depth=0))
+        f.write(render_page(TEMPLATE_TELEGRAM, "telegram", depth=0, page_key="telegram", path="telegram.html"))
 
     # 8. stats.html
     with open(os.path.join(target_dir, "stats.html"), "w", encoding="utf-8") as f:
-        f.write(render_page(TEMPLATE_STATS, "stats", depth=0))
+        f.write(render_page(TEMPLATE_STATS, "stats", depth=0, page_key="stats", path="stats.html"))
 
-print("✅ Arquitectura Multi-Página v=13 de ByteZone sincronizada en portal_bytezone Y bytezone:")
+print("✅ Arquitectura Multi-Página v=12 de ByteZone sincronizada en portal_bytezone Y bytezone:")
 print(" - index.html (Lobby + Reproductor Video Flash IA + Baúl Arcade)")
 print(" - juegos/neon-stacker.html (Juego 1: Torre Neon Stacker Pro - ***** sincronizado en 33)")
 print(" - juegos/reflejos-visuales.html (Juego 2: Test Reflejos Visuales)")
