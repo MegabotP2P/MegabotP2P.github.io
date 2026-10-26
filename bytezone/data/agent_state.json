@@ -1,7 +1,7 @@
 {
   "portada": [
-    "stacker",
     "reflex",
+    "stacker",
     "memory"
   ],
   "vault": [
@@ -20,31 +20,38 @@
       "devices": 0,
       "views": 0,
       "ads": 0
+    },
+    {
+      "week_id": "W2026-10-26",
+      "plays": 47,
+      "devices": 3,
+      "views": 0,
+      "ads": 11
     }
   ],
   "last_news_keys": [
-    "openai descubre una grabadora escondida",
-    "amazon se ha convertido en el mejor ejem",
-    "su escuela bloqueó chatgpt ahora esta es",
-    "las mejores ofertas de mediamarkt durant",
-    "la psicología dice que las personas que"
+    "el truco con ia para quitar todos los an",
+    "joe tsai presidente de alibaba la única",
+    "desarrollador de centro de datos de penn",
+    "ofertas en reacondicionados de mediamark",
+    "google anuncia la solución tan esperada"
   ],
   "last_joke_ids": [
-    10,
-    20,
-    40,
-    24,
-    2,
-    18,
-    34,
-    31,
-    37,
-    6
+    0,
+    21,
+    14,
+    27,
+    23,
+    7,
+    17,
+    5,
+    36,
+    41
   ],
   "last_truth_ids": [
-    6,
-    1,
-    5,
-    9
+    10,
+    4,
+    11,
+    3
   ]
 }

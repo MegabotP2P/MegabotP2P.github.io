@@ -1,8 +1,8 @@
 {
   "version": 14,
-  "week_id": "W2026-10-19",
-  "updated_at": "2026-10-19T11:08:34.791797-04:00",
-  "updated_human": "19/10/2026",
+  "week_id": "W2026-10-26",
+  "updated_at": "2026-10-26T05:59:55.230029-04:00",
+  "updated_human": "26/10/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
     "mode": "Autónomo (Lunes + monitoreo de telemetría cada 6 h)",
@@ -10,7 +10,7 @@
     "vault_games_count": 1
   },
   "video_reel": {
-    "title": "ByteZone TV • Noticiero IA (W2026-10-19)",
+    "title": "ByteZone TV • Noticiero IA (W2026-10-26)",
     "subtitle": "5 Noticias Completas con Imagen + Voz IA + Lectura Completa",
     "duration_label": "5 Noticias",
     "scenes": [
@@ -19,11 +19,11 @@
         "news_index": 0,
         "badge": "NOTICIA #1 • IA & FUTURO",
         "icon": "🤖",
-        "headline": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
-        "subtext": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico.",
-        "image": "https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg",
+        "headline": "El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida",
+        "subtext": "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas.",
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
         "source": "Hipertextual IA",
-        "voice_script": "Noticia número 1: OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado. Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 1: El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida. La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-cyan-600 to-blue-900",
         "is_vip_hook": false
       },
@@ -32,11 +32,11 @@
         "news_index": 1,
         "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
-        "headline": "Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza",
-        "subtext": "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
-        "image": "https://i.blogs.es/5ebee2/magnific__crea-una-imagenpasa-la-imagen-adjunta-img1-a-43-y-__15731/1024_2000.jpeg",
+        "headline": "Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\"",
+        "subtext": "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos?",
+        "image": "https://i.blogs.es/11c6aa/retrato-pop-art-con-estrellas-europeas/1024_2000.jpeg",
         "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 2: Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza. Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 2: Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\". Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos? Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
         "is_vip_hook": false
       },
@@ -45,11 +45,11 @@
         "news_index": 2,
         "badge": "NOTICIA #3 • TENDENCIA GLOBAL",
         "icon": "⚡",
-        "headline": "Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios",
-        "subtext": "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D.",
-        "image": "https://i.blogs.es/a07c8e/navya-tuteja/1024_2000.jpeg",
+        "headline": "Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente",
+        "subtext": "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares.",
+        "image": "https://i.blogs.es/97db60/project-hazelnut/1024_2000.jpeg",
         "source": "Genbeta IA",
-        "voice_script": "Noticia número 3: Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios. Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 3: Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente. NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-pink-600 to-rose-900",
         "is_vip_hook": false
       },
@@ -58,11 +58,11 @@
         "news_index": 3,
         "badge": "NOTICIA #4 • IMPACTO TECH",
         "icon": "🧠",
-        "headline": "Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre",
-        "subtext": "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire.",
-        "image": "https://i.blogs.es/5785a5/mediamarkt/1024_2000.jpeg",
+        "headline": "Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más",
+        "subtext": "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos.",
+        "image": "https://i.blogs.es/0437a1/mediamarkt/1024_2000.jpeg",
         "source": "Xataka",
-        "voice_script": "Noticia número 4: Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre. MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 4: Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más. MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-emerald-600 to-teal-900",
         "is_vip_hook": false
       },
@@ -71,11 +71,11 @@
         "news_index": 4,
         "badge": "NOTICIA #5 • CIERRE SEMANAL",
         "icon": "🔥",
-        "headline": "La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones",
-        "subtext": "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo.",
-        "image": "https://i.blogs.es/0ab295/en-una-reunion-el-movil-boca-abajo/1024_2000.jpeg",
+        "headline": "Google anuncia la solución tan esperada para la barra de señal celular de Android Auto",
+        "subtext": "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red.",
+        "image": "https://i.blogs.es/e5ef4a/android-auto/1024_2000.jpeg",
         "source": "Genbeta",
-        "voice_script": "Noticia número 5: La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones. Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "voice_script": "Noticia número 5: Google anuncia la solución tan esperada para la barra de señal celular de Android Auto. Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
         "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
@@ -84,153 +84,155 @@
   "weekly_news": [
     {
       "id": "news_1",
-      "title": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado",
-      "summary": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico.",
-      "voice_extra": "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico.",
+      "title": "El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida",
+      "summary": "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas.",
+      "voice_extra": "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas.",
       "full_paragraphs": [
-        "Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico. Abdulrahman Alfozan, el empleado de origen saudí, habría colocado la grabadora en una sala que se usaba para discutir sobre investigación, estrategia y productos de OpenAI.",
-        "En una publicación en su cuenta de X , OpenAI dijo que descubrió un \"dispositivo de grabación sofisticado\" que estaba oculto dentro de una de sus oficinas. La compañía reportó el hecho al FBI, que arrestó al acusado y comenzó una investigación para conocer lo ocurrido. OpenAI añadió que no hay indicios de que el empleado accediera o exfiltrara información confidencial, como pesos de modelos, código fuente o datos de clientes.",
-        "De acuerdo con The San Francisco Standard , el dispositivo apareció durante una revisión del equipo de vigilancia el pasado 30 de septiembre. El aparato se encontraba conectado al puerto USB de un televisor , el cual estaba instalado en una sala de reuniones ejecutiva. OpenAI cree que Alfozan lo instaló el 28 de septiembre e intentó esconderlo usando papel higiénico para que pasara desapercibido.",
-        "La sala donde encontraron la grabadora es usada para asuntos confidenciales, como investigación de modelos, próximos productos o relaciones con los gobiernos . Según la denuncia, Alfozan no tenía autorización para entrar ni para asistir a reuniones allí, aunque las cámaras de seguridad lo captaron cerca en varias fechas anteriores al hallazgo.",
-        "Abdulrahman Alfozan , un ingeniero de 35 años de nacionalidad saudí, trabajaba en OpenAI desde julio de 2025. El perfil de LinkedIn del acusado detalla que se desempeñaba como líder de ingeniería de la plataforma de agentes de IA , y anteriormente había laborado en Meta como ingeniero de sistemas. Alfozan cuenta con un máster en Ciencia de Datos por la Universidad de Berkeley e hizo prácticas en Microsoft, SAP y Akamai.",
-        "Según la acusación, Alfozan usó una herramienta de productividad para preguntar por direcciones de edificios, salas, aforos y calendarios, así como la ubicación de reuniones con directivos y socios externos. Entre el 24 y el 30 de septiembre, una cuenta asociada a su pareja preguntó a un chatbot cómo construir una grabadora y operarla vía remota . Estas consultas continuaron el 27 y el 28 de ese mes, cuando la misma cuenta pidió información por el modelo del dispositivo de grabación que apareció en las oficinas de OpenAI."
+        "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas. Lo bueno es que algunos usuarios vieron la utilidad de Claude y lo están empleando para eliminar los anuncios y el exceso de aplicaciones en los televisores.",
+        "De acuerdo con TechCrunch , varios usuarios están experimentando con la IA para acabar con el bloatware y el rastreo de sus Smart TVs. Debido a que Claude y otros modelos reducen la barrera técnica para realizar este tipo de modificaciones, los usuarios le piden que les ayude a identificar los procesos innecesarios o desactivar paquetes del sistema. En algunos casos, la IA puede sustituir las interfaces cargadas de publicidad por lanzadores más sencillos , sin importar si tu televisor usa Google TV, Android TV o Fire TV.",
+        "A diferencia de lo que hemos visto siempre, las herramientas no requieren que modifiques el televisor mediante root . Basta con habilitar las opciones de desarrollador en la TV para activar la depuración, lo cual nos permitirá conectarlo a tu ordenador a través de ADB (Android Debug Bridge). Una vez que lo hacemos, solo tenemos que pedirle a Claude que haga su magia y ejecute los comandos necesarios para desactivar aplicaciones y servicios que están de más.",
+        "Actualmente existen dos herramientas de código abierto que se encargan de hacer el trabajo por ti. La primera es CleanYourTV , que desactiva aplicaciones preinstaladas y puede instalar un nuevo lanzador que reemplaza la pantalla principal de Google TV o Android TV . Estos cambios no modifican la partición del sistema, así que puedes revertirlos en cualquier momento.",
+        "La segunda herramienta es dumbtv , enfocada a los dispositivos Fire TV de Amazon . Esta puede eliminar la publicidad y los componentes de telemetría que utiliza la compañía para rastrear tus acciones, así como aplicar filtros DNS para bloquear los anuncios, recopilación de datos y actualizaciones de determinados servicios. Por último, si la interfaz de tu Fire TV te parece muy pesada, tendrás la opción de usar un lanzador propio que ofrece una mejor experiencia de uso.",
+        "El resultado es una interfaz de usuario más rápida y ordenada, sin anuncios y sin seguimiento de la actividad, así como una reducción de esas aplicaciones que están de más y que no podemos eliminar por los métodos comunes. Otra ventaja del uso de Claude y otros modelos de IA es que recuperaremos la experiencia centrada en el contenido y las aplicaciones que más usamos, sin que el algoritmo las esconda o sugiera otras que jamás tocaremos de nuevo."
       ],
-      "full_voice_script": "OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado. Noticia publicada por Hipertextual IA. Un ingeniero de OpenAI fue detenido por ocultar un dispositivo de grabación en una sala de conferencias de la empresa. Las autoridades afirmaron que el aparato estaba escondido detrás de un televisor y oculto con papel higiénico. Abdulrahman Alfozan, el empleado de origen saudí, habría colocado la grabadora en una sala que se usaba para discutir sobre investigación, estrategia y productos de OpenAI. En una publicación en su cuenta de X , OpenAI dijo que descubrió un \"dispositivo de grabación sofisticado\" que estaba oculto dentro de una de sus oficinas. La compañía reportó el hecho al FBI, que arrestó al acusado y comenzó una investigación para conocer lo ocurrido. OpenAI añadió que no hay indicios de que el empleado accediera o exfiltrara información confidencial, como pesos de modelos, código fuente o datos de clientes. De acuerdo con The San Francisco Standard , el dispositivo apareció durante una revisión del equipo de vigilancia el pasado 30 de septiembre. El aparato se encontraba conectado al puerto USB de un televisor , el cual estaba instalado en una sala de reuniones ejecutiva. OpenAI cree que Alfozan lo instaló el 28 de septiembre e intentó esconderlo usando papel higiénico para que pasara desapercibido. La sala donde encontraron la grabadora es usada para asuntos confidenciales, como investigación de modelos, próximos productos o relaciones con los gobiernos . Según la denuncia, Alfozan no tenía autorización para entrar ni para asistir a reuniones allí, aunque las cámaras de seguridad lo captaron cerca en varias fechas anteriores al hallazgo. Abdulrahman Alfozan , un ingeniero de 35 años de nacionalidad saudí, trabajaba en OpenAI desde julio de 2025. El perfil de LinkedIn del acusado detalla que se desempeñaba como líder de ingeniería de la plataforma de agentes de IA , y anteriormente había laborado en Meta como ingeniero de sistemas. Alfozan cuenta con un máster en Ciencia de Datos por la Universidad de Berkeley e hizo prácticas en Microsoft, SAP y Akamai. Según la acusación, Alfozan usó una herramienta de productividad para preguntar por direcciones de edificios, salas, aforos y calendarios, así como la ubicación de reuniones con directivos y socios externos. Entre el 24 y el 30 de septiembre, una cuenta asociada a su pareja preguntó a un chatbot cómo construir una grabadora y operarla vía remota . Estas consultas continuaron el 27 y el 28 de ese mes, cuando la misma cuenta pidió información por el modelo del dispositivo de grabación que apareció en las oficinas de OpenAI.",
-      "image": "https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg",
+      "full_voice_script": "El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida. Noticia publicada por Hipertextual IA. La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas. Lo bueno es que algunos usuarios vieron la utilidad de Claude y lo están empleando para eliminar los anuncios y el exceso de aplicaciones en los televisores. De acuerdo con TechCrunch , varios usuarios están experimentando con la IA para acabar con el bloatware y el rastreo de sus Smart TVs. Debido a que Claude y otros modelos reducen la barrera técnica para realizar este tipo de modificaciones, los usuarios le piden que les ayude a identificar los procesos innecesarios o desactivar paquetes del sistema. En algunos casos, la IA puede sustituir las interfaces cargadas de publicidad por lanzadores más sencillos , sin importar si tu televisor usa Google TV, Android TV o Fire TV. A diferencia de lo que hemos visto siempre, las herramientas no requieren que modifiques el televisor mediante root . Basta con habilitar las opciones de desarrollador en la TV para activar la depuración, lo cual nos permitirá conectarlo a tu ordenador a través de ADB (Android Debug Bridge). Una vez que lo hacemos, solo tenemos que pedirle a Claude que haga su magia y ejecute los comandos necesarios para desactivar aplicaciones y servicios que están de más. Actualmente existen dos herramientas de código abierto que se encargan de hacer el trabajo por ti. La primera es CleanYourTV , que desactiva aplicaciones preinstaladas y puede instalar un nuevo lanzador que reemplaza la pantalla principal de Google TV o Android TV . Estos cambios no modifican la partición del sistema, así que puedes revertirlos en cualquier momento. La segunda herramienta es dumbtv , enfocada a los dispositivos Fire TV de Amazon . Esta puede eliminar la publicidad y los componentes de telemetría que utiliza la compañía para rastrear tus acciones, así como aplicar filtros DNS para bloquear los anuncios, recopilación de datos y actualizaciones de determinados servicios. Por último, si la interfaz de tu Fire TV te parece muy pesada, tendrás la opción de usar un lanzador propio que ofrece una mejor experiencia de uso. El resultado es una interfaz de usuario más rápida y ordenada, sin anuncios y sin seguimiento de la actividad, así como una reducción de esas aplicaciones que están de más y que no podemos eliminar por los métodos comunes. Otra ventaja del uso de Claude y otros modelos de IA es que recuperaremos la experiencia centrada en el contenido y las aplicaciones que más usamos, sin que el algoritmo las esconda o sugiera otras que jamás tocaremos de nuevo.",
+      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
       "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/detienen-ingeniero-openai-grabadora-sala-ejecutiva/",
-      "published": "2026-10-14T00:05:06+00:00"
+      "link": "https://hipertextual.com/inteligencia-artificial/eliminar-anuncios-bloatware-smart-tv-ia/",
+      "published": "2026-10-25T08:00:00+00:00"
     },
     {
       "id": "news_2",
-      "title": "Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza",
-      "summary": "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
-      "voice_extra": "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
+      "title": "Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\"",
+      "summary": "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos?",
+      "voice_extra": "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos?",
       "full_paragraphs": [
-        "Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026.",
-        "Sin embargo, durante una entrevista para Fox News , Jeff Bezos aseguró que no creía que la IA sea el principal responsable de esos despidos, aunque sí los atribuye a un futuro en el que la IA tiene un papel prioritario para Amazon y justificó los despidos con el contexto de una Amazon con urgencia por crecer.",
-        "Pedidos desde el sofá. El fundador de Amazon justificó el crecimiento desmesurado de Amazon durante la pandemia por el descomunal incremento de desmanda de comercio online que provocaron las restricciones de movilidad. \"La gente se quedaba en casa y hacía pedidos\", contó Bezos, y por eso \"realmente aumentamos nuestra plantilla\". Recordó que fue \"un periodo increíblemente estresante para nosotros\".",
-        "Según Bezos, Amazon salió de ese periodo con un exceso de plantilla y los números le dan la razón. Según la documentación que la empresa está obligada a presentar ante la Comisión del Mercado de Valores (SEC). A finales de 2019 la empresa tenía 798.000 empleados . Dos años después ya eran 1,6 millones de empleados. Más del doble en solo 24 meses.",
-        "30.000 despidos en tres meses . Cuando la demanda de productos online se relajó, llegaron los recortes de plantilla. En octubre de 2025 Amazon anunció 14.000 despidos y en enero de 2026 se confirmaban otros 16.000 despidos más, hasta sumar 30.000 puestos en tres meses. La directiva Beth Galetti habló de \"fortalecer la organización reduciendo capas, aumentando la propiedad y eliminando burocracia\".",
-        "No obstante, hay algo contradictorio en las palabras de Bezos, ya que esos despidos no se dieron en la plantilla que se encarga de satisfacer la demanda de las compras online, algo razonable si la demanda de pedidos ha bajado. Según los documentos de Amazon presentados a la SEC, a finales de 2025 su plantilla continuaba siendo de 1,576 millones de personas y se incrementó hasta los 1,595 millones en el primer trimestre de 2026. Tal y como recogía Reuters , de esos 30.000 despidos anunciados, Amazon dejó ir a menos de 1.000 trabajadores de oficina del negocio de tiendas."
+        "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos? Joe Tsai, presidente y cofundador de Alibaba, lo tiene claro: no en una API cerrada probablemente suministrada por una empresa externa, sino en un modelo abierto que puedan entrenar a medida, como ha contado en el evento Wave , que ha tenido lugar en Italia.",
+        "De hecho, Tsai va un paso más allá: cree que es la única vía de que Europa alcance la independencia tecnológica. Y lo dice sin rodeos: según él, mientras que las empresas chinas de IA comparten su innovación y los avances, los laboratorios de EEUU, no.",
+        "Por qué importa . Porque a día de hoy y pese a las advertencias de Arthur Mensch , CEO de Mistral, sobre los dos años de margen que tiene Europa para montar su propia infraestructura de IA y los diferentes esfuerzos de la administración europea y su ecosistema empresarial , la realidad es que sigue dependiendo de la tecnología de Estados Unidos y China. Y acontecimientos como el bloqueo internacional a los modelos más potentes de Anthropic por parte de EEUU en verano ya demostró que un gobierno puede cerrar el grifo a demanda.",
+        "Desde entonces, empresas como Siemens o Renault combinan modelos de diferentes orígenes por si las moscas. Pero los problemas no acaban aquí: China y EEUU controlan en torno al 90 % de la infraestructura mundial de computación para IA, así que aunque quisiera, a Europa le falta capacidad.",
+        "Hacia la soberanía (a contrarreloj) . El pasado 3 de junio Bruselas presentó un paquete de medidas con el objetivo de minimizar su dependencia externa en materia tecnológica que incluye una inyección económica para acelerar la construcción de centros de datos, inteligencia artificial, semiconductores y pone sobre la mesa el código abierto como alternativa. Eso sí, si hablamos de open source, como recuerda el informe del pasado mes de septiembre de Mozilla recogido por Tom's Hardware , quien lleva la voz cantante es China",
+        "La propuesta de Tsai . Lo que propone Joe Tsai es prácticamente un fine tuning: descargar los pesos de un modelo abierto, ejecutarlo en la infraestructura propia y entrenarlo con datos internos, de modo que la información sensible no salga de la empresa."
       ],
-      "full_voice_script": "Amazon se ha convertido en el mejor ejemplo del impacto de la IA en el empleo: ni se crea ni se destruye, se desplaza. Noticia publicada por Xataka IA & Tech. Sam Altman ya puso sobre la mesa que la IA estaba siendo una de las mejores excusas de las grandes tecnológicas para justificar las rondas de despidos que se han venido produciendo en 2026. Sin embargo, durante una entrevista para Fox News , Jeff Bezos aseguró que no creía que la IA sea el principal responsable de esos despidos, aunque sí los atribuye a un futuro en el que la IA tiene un papel prioritario para Amazon y justificó los despidos con el contexto de una Amazon con urgencia por crecer. Pedidos desde el sofá. El fundador de Amazon justificó el crecimiento desmesurado de Amazon durante la pandemia por el descomunal incremento de desmanda de comercio online que provocaron las restricciones de movilidad. \"La gente se quedaba en casa y hacía pedidos\", contó Bezos, y por eso \"realmente aumentamos nuestra plantilla\". Recordó que fue \"un periodo increíblemente estresante para nosotros\". Según Bezos, Amazon salió de ese periodo con un exceso de plantilla y los números le dan la razón. Según la documentación que la empresa está obligada a presentar ante la Comisión del Mercado de Valores (SEC). A finales de 2019 la empresa tenía 798.000 empleados . Dos años después ya eran 1,6 millones de empleados. Más del doble en solo 24 meses. 30.000 despidos en tres meses . Cuando la demanda de productos online se relajó, llegaron los recortes de plantilla. En octubre de 2025 Amazon anunció 14.000 despidos y en enero de 2026 se confirmaban otros 16.000 despidos más, hasta sumar 30.000 puestos en tres meses. La directiva Beth Galetti habló de \"fortalecer la organización reduciendo capas, aumentando la propiedad y eliminando burocracia\". No obstante, hay algo contradictorio en las palabras de Bezos, ya que esos despidos no se dieron en la plantilla que se encarga de satisfacer la demanda de las compras online, algo razonable si la demanda de pedidos ha bajado. Según los documentos de Amazon presentados a la SEC, a finales de 2025 su plantilla continuaba siendo de 1,576 millones de personas y se incrementó hasta los 1,595 millones en el primer trimestre de 2026. Tal y como recogía Reuters , de esos 30.000 despidos anunciados, Amazon dejó ir a menos de 1.000 trabajadores de oficina del negocio de tiendas.",
-      "image": "https://i.blogs.es/5ebee2/magnific__crea-una-imagenpasa-la-imagen-adjunta-img1-a-43-y-__15731/1024_2000.jpeg",
+      "full_voice_script": "Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\". Noticia publicada por Xataka IA & Tech. Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos? Joe Tsai, presidente y cofundador de Alibaba, lo tiene claro: no en una API cerrada probablemente suministrada por una empresa externa, sino en un modelo abierto que puedan entrenar a medida, como ha contado en el evento Wave , que ha tenido lugar en Italia. De hecho, Tsai va un paso más allá: cree que es la única vía de que Europa alcance la independencia tecnológica. Y lo dice sin rodeos: según él, mientras que las empresas chinas de IA comparten su innovación y los avances, los laboratorios de EEUU, no. Por qué importa . Porque a día de hoy y pese a las advertencias de Arthur Mensch , CEO de Mistral, sobre los dos años de margen que tiene Europa para montar su propia infraestructura de IA y los diferentes esfuerzos de la administración europea y su ecosistema empresarial , la realidad es que sigue dependiendo de la tecnología de Estados Unidos y China. Y acontecimientos como el bloqueo internacional a los modelos más potentes de Anthropic por parte de EEUU en verano ya demostró que un gobierno puede cerrar el grifo a demanda. Desde entonces, empresas como Siemens o Renault combinan modelos de diferentes orígenes por si las moscas. Pero los problemas no acaban aquí: China y EEUU controlan en torno al 90 % de la infraestructura mundial de computación para IA, así que aunque quisiera, a Europa le falta capacidad. Hacia la soberanía (a contrarreloj) . El pasado 3 de junio Bruselas presentó un paquete de medidas con el objetivo de minimizar su dependencia externa en materia tecnológica que incluye una inyección económica para acelerar la construcción de centros de datos, inteligencia artificial, semiconductores y pone sobre la mesa el código abierto como alternativa. Eso sí, si hablamos de open source, como recuerda el informe del pasado mes de septiembre de Mozilla recogido por Tom's Hardware , quien lleva la voz cantante es China La propuesta de Tsai . Lo que propone Joe Tsai es prácticamente un fine tuning: descargar los pesos de un modelo abierto, ejecutarlo en la infraestructura propia y entrenarlo con datos internos, de modo que la información sensible no salga de la empresa.",
+      "image": "https://i.blogs.es/11c6aa/retrato-pop-art-con-estrellas-europeas/1024_2000.jpeg",
       "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/empresas-y-economia/amazon-se-ha-convertido-mejor-ejemplo-impacto-ia-empleo-se-crea-se-destruye-se-desplaza",
-      "published": "2026-10-19T13:15:53+00:00"
+      "link": "https://www.xataka.com/robotica-e-ia/presidente-alibaba-tiene-claro-unica-forma-que-europa-alcance-soberania-tecnologica-ia-open-source",
+      "published": "2026-10-25T17:30:11+00:00"
     },
     {
       "id": "news_3",
-      "title": "Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios",
-      "summary": "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D.",
-      "voice_extra": "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D.",
+      "title": "Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente",
+      "summary": "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares.",
+      "voice_extra": "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares.",
       "full_paragraphs": [
-        "Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D. C. y, si su centro nombrara a un mejor alumno, asegura que probablemente optaría por hablar en la graduación.",
-        "Lo que proponía en ese correo se llama Raaha : una plataforma gratuita con la que las personas neurodivergentes puntúan una oferta de trabajo antes de postularse. Tuteja asegura que ya reúne más de 1.000 usuarios y 20.000 ofertas . Nació de una pauta que llevaba tiempo viendo: anuncios escritos solo desde el lado del empleador, cargados de requisitos y mudos sobre cómo es el día a día. La financia ella misma y la mantiene gratis mientras suma usuarios; el modelo futuro pasaría por que empresas y organizaciones de empleo paguen por usarla o por mejorar sus ofertas.",
-        "El funcionamiento es sencillo : el usuario responde un cuestionario de 12 preguntas sobre cómo trabaja mejor, pega la descripción de un puesto y recibe una puntuación de encaje. El análisis valora factores como el ritmo de trabajo, la comunicación o la previsibilidad del horario, y lo hace Claude, el modelo de Anthropic , con unas instrucciones preparadas con ayuda de especialistas en neurodiversidad.",
-        "Quien quiera probarla debe saber que la web de Raaha (raaha.ai) está en inglés , que se nutre de ofertas públicas como las de Adzuna y USAJobs (el portal de empleo del Gobierno federal de Estados Unidos) y que en agosto su aplicación para iOS seguía pendiente de aprobación. Las cifras también han cambiado deprisa: en julio Tuteja hablaba de 150 usuarios, en agosto superaba los 200 y ahora declara más de 1.000 . Quiere ir a la universidad, pero se plantea dedicarse a Raaha a tiempo completo si sigue creciendo al ritmo actual.",
-        "Su expediente contrasta con el de sus coetáneos . PISA 2025, el Programa para la Evaluación Internacional de Alumnos de la OCDE (Organización para la Cooperación y el Desarrollo Económicos), ha registrado desde 2015 una caída media de 28 puntos en lectura y de 22 en matemáticas en los países de la OCDE, y entre lo que provocan estos datos (siempre según este informe) están las pantallas, la menor atención y la IA generativa. En España, los alumnos de 15 años lograron 451 puntos en lectura y 457 en matemáticas.",
-        "Tuteja no discute esa explicación, pero cree que a ella la protegió una medida que no fue idea suya: el WiFi de su instituto bloquea ChatGPT, Claude y herramientas parecidas. “Me hizo usarla mucho menos en clase” , cuenta. “Así que supongo que, por molesto que fuera, aun así fue bueno, en cierto modo” ."
+        "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares. El proyecto ocuparía unas 520 hectáreas.",
+        "Project Hazelnut es un complejo de 15 edificios de centros de datos cerca del Humboldt Industrial Park. NorthPoint afirma que proporcionaría posibilidades laborales a los miembros locales de la fuerza laboral durante las fases de construcción y funcionamiento del complejo de centros de datos.",
+        "Los ingresos fiscales se afirman como fuente de recursos para necesidades urbanísticas. Todo son hipótesis en este momento. P romete un paquete de 165 millones de dólares . Ofrece 45 millones a los hogares, 15 millones a fondos comunitarios y 105 millones al pueblo durante 15 años para financiar iniciativas como el establecimiento de una fuerza policial y bajar las tarifas de recogida de basura. Ampliaba una iniciativa de 30 millones de dólares para ayudar a compensar posibles mayores tarifas locales.",
+        "NorthPoint afirmó que para su proyecto utilizaría aguas reutilizadas para sus sistemas de refrigeración en lugar de agua potable local y que conservaría el doble de superficie de bosque de la que talara. Todas eran medidas de mitigación del impacto declaradas por la compañía de NorthPoint, pendientes de desarrollo y de obtener permisos.",
+        "Sus opositores expresaban preocupaciones por el sonido no natural, la contaminación luminosa y la posible pérdida de valor de la vivienda, así como por la demanda de energía y agua. Algunos también calificaron el pago como soborno. Sus opiniones eran una muestra, no una negativa de todos los vecinos .",
+        "El municipio de Hazle Township rechazó el proyecto de NorthPoint en noviembre de 2025, y una jueza de Pennsylvania no dio por bueno un recurso de una filial de NorthPoint contra la decisión municipal. El pueblo abrió un periodo de 180 días para revisar su ordenanza. Su ordenanza no regulaba explícitamente la construcción de centros de datos . Se necesitaría una autorización especial de uso del suelo de la Junta Municipal de Audiencias Urbanísticas de Hazle Township, tras una audiencia."
       ],
-      "full_voice_script": "Su escuela bloqueó ChatGPT. Ahora esta estudiante de secundaria de 17 años dirige una startup de inteligencia artificial con 1.000 usuarios. Noticia publicada por Genbeta IA. Navya Tuteja contacta con sus políticos locales mediante un correo en frío y una idea, y así llegó también a un periodista. Tiene 17 años, cursa el último año de secundaria en un instituto selectivo de las afueras de Washington D. C. y, si su centro nombrara a un mejor alumno, asegura que probablemente optaría por hablar en la graduación. Lo que proponía en ese correo se llama Raaha : una plataforma gratuita con la que las personas neurodivergentes puntúan una oferta de trabajo antes de postularse. Tuteja asegura que ya reúne más de 1.000 usuarios y 20.000 ofertas . Nació de una pauta que llevaba tiempo viendo: anuncios escritos solo desde el lado del empleador, cargados de requisitos y mudos sobre cómo es el día a día. La financia ella misma y la mantiene gratis mientras suma usuarios; el modelo futuro pasaría por que empresas y organizaciones de empleo paguen por usarla o por mejorar sus ofertas. El funcionamiento es sencillo : el usuario responde un cuestionario de 12 preguntas sobre cómo trabaja mejor, pega la descripción de un puesto y recibe una puntuación de encaje. El análisis valora factores como el ritmo de trabajo, la comunicación o la previsibilidad del horario, y lo hace Claude, el modelo de Anthropic , con unas instrucciones preparadas con ayuda de especialistas en neurodiversidad. Quien quiera probarla debe saber que la web de Raaha (raaha.ai) está en inglés , que se nutre de ofertas públicas como las de Adzuna y USAJobs (el portal de empleo del Gobierno federal de Estados Unidos) y que en agosto su aplicación para iOS seguía pendiente de aprobación. Las cifras también han cambiado deprisa: en julio Tuteja hablaba de 150 usuarios, en agosto superaba los 200 y ahora declara más de 1.000 . Quiere ir a la universidad, pero se plantea dedicarse a Raaha a tiempo completo si sigue creciendo al ritmo actual. Su expediente contrasta con el de sus coetáneos . PISA 2025, el Programa para la Evaluación Internacional de Alumnos de la OCDE (Organización para la Cooperación y el Desarrollo Económicos), ha registrado desde 2015 una caída media de 28 puntos en lectura y de 22 en matemáticas en los países de la OCDE, y entre lo que provocan estos datos (siempre según este informe) están las pantallas, la menor atención y la IA generativa. En España, los alumnos de 15 años lograron 451 puntos en lectura y 457 en matemáticas. Tuteja no discute esa explicación, pero cree que a ella la protegió una medida que no fue idea suya: el WiFi de su instituto bloquea ChatGPT, Claude y herramientas parecidas. “Me hizo usarla mucho menos en clase” , cuenta. “Así que supongo que, por molesto que fuera, aun así fue bueno, en cierto modo” .",
-      "image": "https://i.blogs.es/a07c8e/navya-tuteja/1024_2000.jpeg",
+      "full_voice_script": "Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente. Noticia publicada por Genbeta IA. NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares. El proyecto ocuparía unas 520 hectáreas. Project Hazelnut es un complejo de 15 edificios de centros de datos cerca del Humboldt Industrial Park. NorthPoint afirma que proporcionaría posibilidades laborales a los miembros locales de la fuerza laboral durante las fases de construcción y funcionamiento del complejo de centros de datos. Los ingresos fiscales se afirman como fuente de recursos para necesidades urbanísticas. Todo son hipótesis en este momento. P romete un paquete de 165 millones de dólares . Ofrece 45 millones a los hogares, 15 millones a fondos comunitarios y 105 millones al pueblo durante 15 años para financiar iniciativas como el establecimiento de una fuerza policial y bajar las tarifas de recogida de basura. Ampliaba una iniciativa de 30 millones de dólares para ayudar a compensar posibles mayores tarifas locales. NorthPoint afirmó que para su proyecto utilizaría aguas reutilizadas para sus sistemas de refrigeración en lugar de agua potable local y que conservaría el doble de superficie de bosque de la que talara. Todas eran medidas de mitigación del impacto declaradas por la compañía de NorthPoint, pendientes de desarrollo y de obtener permisos. Sus opositores expresaban preocupaciones por el sonido no natural, la contaminación luminosa y la posible pérdida de valor de la vivienda, así como por la demanda de energía y agua. Algunos también calificaron el pago como soborno. Sus opiniones eran una muestra, no una negativa de todos los vecinos . El municipio de Hazle Township rechazó el proyecto de NorthPoint en noviembre de 2025, y una jueza de Pennsylvania no dio por bueno un recurso de una filial de NorthPoint contra la decisión municipal. El pueblo abrió un periodo de 180 días para revisar su ordenanza. Su ordenanza no regulaba explícitamente la construcción de centros de datos . Se necesitaría una autorización especial de uso del suelo de la Junta Municipal de Audiencias Urbanísticas de Hazle Township, tras una audiencia.",
+      "image": "https://i.blogs.es/97db60/project-hazelnut/1024_2000.jpeg",
       "source": "Genbeta IA",
-      "link": "https://www.genbeta.com/inteligencia-artificial/su-escuela-bloqueo-chatgpt-ahora-esta-estudiante-secundaria-17-anos-dirige-startup-inteligencia-artificial-1-000-usuarios",
-      "published": "2026-10-15T09:30:25+00:00"
+      "link": "https://www.genbeta.com/inteligencia-artificial/desarrollador-centro-datos-pennsylvania-ofrece-10-000-dolares-a-4-500-hogares-residentes-se-niegan-diciendo-que-dinero-no-suficiente",
+      "published": "2026-10-25T09:00:08+00:00"
     },
     {
       "id": "news_4",
-      "title": "Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre",
-      "summary": "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire.",
-      "voice_extra": "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire.",
+      "title": "Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más",
+      "summary": "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos.",
+      "voice_extra": "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos.",
       "full_paragraphs": [
-        "MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire. Por ello, en este artículo vamos a repasar los cinco mejores chollos que están ahora mismo disponibles.",
-        "En una época en la que tanto la memoria RAM como los discos duros (y SSD) han subido de precio, se agradece encontrar ofertas como la del Seagate Expansión que ha bajado hasta los 179,99 euros . Se trata de un disco duro portátil que tiene capacidad de 5 TB , lo que permite guardar muchísimas fotos, vídeos y archivos en general en un dispositivo con un formato muy compacto.",
-        "MediaMarkt también tiene de oferta el Marshall Emberton II por un precio de 89 euros , un altavoz Bluetooth que destaca por su particular diseño retro, un signo distintivo de la marca. Su batería ofrece una autonomía teórica de más de 30 horas, tiene un formato bastante pequeño y es resistente tanto al agua como al polvo ( IP67 ).",
-        "Aunque no es el mejor precio que hemos visto hasta la fecha, MediaMarkt tiene un buen descuento en el Google Pixel 11 Pro , que ahora se puede comprar por 1.044,05 euros . Este precio sale únicamente si iniciamos sesión en la tienda. Se trata de un móvil de gama alta con un tamaño compacto de 6,3 pulgadas , ofrece un buen rendimiento y cuenta con un excelente apartado fotográfico.",
-        "Si aún no tienes una freidora de aire y buscas un modelo compacto que te permita preparar muchas recetas, MediaMarkt tiene la Ninja Crispi por 129 euros . Se trata de un modelo que incluye dos recipientes de cristal de 3,8 y 1,4 litros, ideales para ver cómo se cocinan los alimentos y extraerlos en su punto. Ofrece temperaturas de hasta 185 ºC y permite asar, dorar y mantener la comida caliente.",
-        "Por último, la tienda también tiene de oferta la Haier S80G , una smart TV que con el descuento se queda por 369 euros . Incorpora un panel con tecnología QLED que tiene una diagonal de 55 pulgadas, su sistema operativo es Google TV, ofrece una tasa de refresco de hasta 120 Hz a través de software y sus altavoces son compatibles con Dolby Audio."
+        "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos. Si no quieres esperar al Black Friday , atento a estos chollos que ya se encontrarán disponibles en la tienda hasta el 1 de noviembre o hasta agotar existencias:",
+        "Durante la campaña de MediaMarkt se puede comprar el Xiaomi 17T Pro mucho más barato. Añadiendo al carrito la configuración de 512 GB de almacenamiento interno , se queda por 611,93 euros en color azul (también está disponible en color morado ), un buen precio para un smartphone que cuenta con una buena pantalla de 6,83 pulgadas con tasa de refresco de hasta 144 Hz, una batería de 7.000 mAh con carga rápida de 100W y cámaras firmadas por Leica, ofreciendo de esta forma muy buenos resultados fotográficos.",
+        "Se trata de un móvil reacondicionado en estado excelente.",
+        "Si lo preferimos, el Samsung Galaxy S26 también ha bajado de precio en su configuración de 512 GB de almacenamiento interno. En este caso, al añadirlo al carrito se queda por 719,28 euros . Lo interesante de este móvil es que es más pequeño que el de Xiaomi al tener una pantalla de 6,3 pulgadas , su software está muy bien optimizado y su batería, pese a que no tiene mucha capacidad, ofrece una autonomía aproximada de dos días sin tener que utilizar el cargador.",
+        "Se trata de un móvil reacondicionado en estado excelente.",
+        "Si lo que estamos buscando es un buen televisor para ver pelis y series o para jugar a la consola, MediaMarkt tiene el modelo Samsung TQ65S83HAEXXC por 1.078,65 euros . Se trata de una smart TV con panel OLED de 65 pulgadas que cuenta con tratamiento antirreflejos, algo ideal si lo vamos a colocar frente a una ventana. También es compatible con HDR10+ y con Dolby Atmos, tiene modo Filmmaker, es compatible con Alexa y Google Assistant y su tasa de refresco es de hasta 120 Hz."
       ],
-      "full_voice_script": "Las mejores ofertas de MediaMarkt durante su Hazte un Renove en tecnología, hoy 19 de octubre. Noticia publicada por Xataka. MediaMarkt está celebrando su nueva campaña Hazte un Renove con ofertas muy atractivas en dispositivos tecnológicos. Hay de todo, desde móviles de gama alta hasta televisores, discos duros e incluso freidoras de aire. Por ello, en este artículo vamos a repasar los cinco mejores chollos que están ahora mismo disponibles. En una época en la que tanto la memoria RAM como los discos duros (y SSD) han subido de precio, se agradece encontrar ofertas como la del Seagate Expansión que ha bajado hasta los 179,99 euros . Se trata de un disco duro portátil que tiene capacidad de 5 TB , lo que permite guardar muchísimas fotos, vídeos y archivos en general en un dispositivo con un formato muy compacto. MediaMarkt también tiene de oferta el Marshall Emberton II por un precio de 89 euros , un altavoz Bluetooth que destaca por su particular diseño retro, un signo distintivo de la marca. Su batería ofrece una autonomía teórica de más de 30 horas, tiene un formato bastante pequeño y es resistente tanto al agua como al polvo ( IP67 ). Aunque no es el mejor precio que hemos visto hasta la fecha, MediaMarkt tiene un buen descuento en el Google Pixel 11 Pro , que ahora se puede comprar por 1.044,05 euros . Este precio sale únicamente si iniciamos sesión en la tienda. Se trata de un móvil de gama alta con un tamaño compacto de 6,3 pulgadas , ofrece un buen rendimiento y cuenta con un excelente apartado fotográfico. Si aún no tienes una freidora de aire y buscas un modelo compacto que te permita preparar muchas recetas, MediaMarkt tiene la Ninja Crispi por 129 euros . Se trata de un modelo que incluye dos recipientes de cristal de 3,8 y 1,4 litros, ideales para ver cómo se cocinan los alimentos y extraerlos en su punto. Ofrece temperaturas de hasta 185 ºC y permite asar, dorar y mantener la comida caliente. Por último, la tienda también tiene de oferta la Haier S80G , una smart TV que con el descuento se queda por 369 euros . Incorpora un panel con tecnología QLED que tiene una diagonal de 55 pulgadas, su sistema operativo es Google TV, ofrece una tasa de refresco de hasta 120 Hz a través de software y sus altavoces son compatibles con Dolby Audio.",
-      "image": "https://i.blogs.es/5785a5/mediamarkt/1024_2000.jpeg",
+      "full_voice_script": "Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más. Noticia publicada por Xataka. MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos. Si no quieres esperar al Black Friday , atento a estos chollos que ya se encontrarán disponibles en la tienda hasta el 1 de noviembre o hasta agotar existencias: Durante la campaña de MediaMarkt se puede comprar el Xiaomi 17T Pro mucho más barato. Añadiendo al carrito la configuración de 512 GB de almacenamiento interno , se queda por 611,93 euros en color azul (también está disponible en color morado ), un buen precio para un smartphone que cuenta con una buena pantalla de 6,83 pulgadas con tasa de refresco de hasta 144 Hz, una batería de 7.000 mAh con carga rápida de 100W y cámaras firmadas por Leica, ofreciendo de esta forma muy buenos resultados fotográficos. Se trata de un móvil reacondicionado en estado excelente. Si lo preferimos, el Samsung Galaxy S26 también ha bajado de precio en su configuración de 512 GB de almacenamiento interno. En este caso, al añadirlo al carrito se queda por 719,28 euros . Lo interesante de este móvil es que es más pequeño que el de Xiaomi al tener una pantalla de 6,3 pulgadas , su software está muy bien optimizado y su batería, pese a que no tiene mucha capacidad, ofrece una autonomía aproximada de dos días sin tener que utilizar el cargador. Se trata de un móvil reacondicionado en estado excelente. Si lo que estamos buscando es un buen televisor para ver pelis y series o para jugar a la consola, MediaMarkt tiene el modelo Samsung TQ65S83HAEXXC por 1.078,65 euros . Se trata de una smart TV con panel OLED de 65 pulgadas que cuenta con tratamiento antirreflejos, algo ideal si lo vamos a colocar frente a una ventana. También es compatible con HDR10+ y con Dolby Atmos, tiene modo Filmmaker, es compatible con Alexa y Google Assistant y su tasa de refresco es de hasta 120 Hz.",
+      "image": "https://i.blogs.es/0437a1/mediamarkt/1024_2000.jpeg",
       "source": "Xataka",
-      "link": "https://www.xataka.com/seleccion/mejores-ofertas-mediamarkt-durante-su-hazte-renove-tecnologia-hoy-19-octubre",
-      "published": "2026-10-19T17:01:55+02:00"
+      "link": "https://www.xataka.com/seleccion/ofertas-reacondicionados-mediamarkt-grandes-descuentos-samsung-galaxy-s26-512-gb-televisores-monitores",
+      "published": "2026-10-26T10:15:29+01:00"
     },
     {
       "id": "news_5",
-      "title": "La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones",
-      "summary": "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo.",
-      "voice_extra": "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo.",
+      "title": "Google anuncia la solución tan esperada para la barra de señal celular de Android Auto",
+      "summary": "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red.",
+      "voice_extra": "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red.",
       "full_paragraphs": [
-        "Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo. Hay quien lo interpreta como desconfianza , pero la explicación es otra: quiere librarse de las notificaciones y las llamadas entrantes y de la presión constante de estar disponible en todo momento. Al fin y al cabo, es solo una interpretación, y no se apoya en ningún experimento científico que estudie sus motivaciones.",
-        "Lo que sí han estudiado los experimentos es el efecto de tener el móvil a la vista .",
-        "En la Universidad de Essex, Andrew Przybylski y Netta Weinstein realizaron un experimento con parejas de desconocidos que hablaban entre ellos durante diez minutos con un teléfono o un cuaderno sobre una mesa cercana.",
-        "En su trabajo, publicado en el Journal of Social and Personal Relationships , el teléfono se asoció con una menor cercanía y una conversación de menor calidad y, en un segundo experimento, con una menor confianza y empatía, aunque solo cuando hablaban de algo personal: con un tema trivial no hubo diferencias . Después, otro grupo de científicos, ya fuera del Reino Unido, llevó la comparación a conversaciones reales.",
-        "Shalini Misra, de Virginia Tech , observó 100 conversaciones reales entre dos personas en entornos informales. Aquellas que tuvieron lugar sin ningún dispositivo a la vista salieron mejor valoradas. “En presencia de un dispositivo móvil hay menos contacto visual” , resumía la investigadora.",
-        "Matt Johnson, profesor en la Hult International Business School , recopiló varios de estos trabajos en su artículo ‘The Psychology of the Face-Down Phone’ (la psicología del móvil boca abajo). Según los experimentos que recoge, no hace falta usar el aparato para que afecte a la atención, y cuanto más difícil es la tarea, más pronunciado es el efecto."
+        "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red. El fallo podría hacer que el usuario creyera que su teléfono se había desconectado, mientras que las llamadas y los mensajes continuaban funcionando.",
+        "La confirmación procede de Mishaal Rahman, encargado de la relación con la comunidad de Android en Google , quien respondió en una publicación de Reddit . En su publicación, Rahman escribe: “Somos conscientes de los informes sobre la ausencia de la señal móvil y estamos distribuyendo una corrección que esperamos que solucione este problema” , y sigue: “La corrección todavía no está disponible de forma generalizada, así que puede tardar un tiempo en llegar a tu dispositivo” . Concluye sus comentarios diciendo que la persona podría apuntarse a la beta de Android Auto para intentar recibirla antes.",
+        "Su respuesta aborda el problema y la actualización , pero no se ofrece una línea de tiempo estimada para la distribución a nivel regional o por modelo de teléfono. También hay testimonios de usuarios en Reddit . Un usuario, brgomesz, publicó una captura de pantalla que ilustra cómo su indicador de red regresó a su Android Auto después de una actualización a la versión 17.8.663874. Otro usuario de Reddit comenta sus iniciales preocupaciones sobre la ausencia de indicadores de red con la versión 17.8.663874 y después actualiza su mensaje para indicar que el icono regresó en su Xiaomi 15 Ultra .",
+        "Cabe destacar que los usuarios de Android Auto deberían comprender que estas experiencias individuales no son pruebas suficientes de que un indicador de red vaya a ser restituido en el momento en que el dispositivo de la persona se actualice. La declaración de Google no vincula ninguna versión específica con el arreglo del indicador de red móvil. La solución desarrollada se está distribuyendo.",
+        "Google señala cómo el usuario puede encontrar la actualización para Android Auto . Describe un proceso que consiste en abrir la tienda de Google Play en el teléfono y pulsar en la imagen de perfil del usuario. Luego, la persona debe buscar “Gestionar apps y dispositivo” y localizar la sección de actualizaciones disponibles, pulsar en “Ver detalles” y revisar las actualizaciones para Android Auto. Si aparece una actualización para descargar, entonces se debe pulsar “Actualizar”. Otra opción es ir a la ficha de Android Auto en la tienda y pulsar “Actualizar” si aparece el botón.",
+        "El resto del procedimiento tiene que ver con las opciones de configuración manual o automática para instalar nuevas actualizaciones para Android Auto. Se debe ir a la página de la aplicación, pulsar en el menú de la esquina superior derecha y activar la actualización automática. Esta opción permite que la aplicación se actualice cuando haya actualizaciones disponibles, pero no es un factor determinante de cuándo comienza la distribución de una actualización para resolver un problema específico. La guía de Xataka sobre Android Auto ofrece una recopilación de formas en que se puede actualizar la aplicación."
       ],
-      "full_voice_script": "La psicología dice que las personas que dejan el móvil boca abajo no es para ocultar nada; en realidad, es una táctica para evitar distracciones. Noticia publicada por Genbeta. Una comida, dos personas. Antes de que llegue la primera ración, uno de los comensales gira su teléfono y lo deja sobre el mantel con la pantalla hacia abajo. Hay quien lo interpreta como desconfianza , pero la explicación es otra: quiere librarse de las notificaciones y las llamadas entrantes y de la presión constante de estar disponible en todo momento. Al fin y al cabo, es solo una interpretación, y no se apoya en ningún experimento científico que estudie sus motivaciones. Lo que sí han estudiado los experimentos es el efecto de tener el móvil a la vista . En la Universidad de Essex, Andrew Przybylski y Netta Weinstein realizaron un experimento con parejas de desconocidos que hablaban entre ellos durante diez minutos con un teléfono o un cuaderno sobre una mesa cercana. En su trabajo, publicado en el Journal of Social and Personal Relationships , el teléfono se asoció con una menor cercanía y una conversación de menor calidad y, en un segundo experimento, con una menor confianza y empatía, aunque solo cuando hablaban de algo personal: con un tema trivial no hubo diferencias . Después, otro grupo de científicos, ya fuera del Reino Unido, llevó la comparación a conversaciones reales. Shalini Misra, de Virginia Tech , observó 100 conversaciones reales entre dos personas en entornos informales. Aquellas que tuvieron lugar sin ningún dispositivo a la vista salieron mejor valoradas. “En presencia de un dispositivo móvil hay menos contacto visual” , resumía la investigadora. Matt Johnson, profesor en la Hult International Business School , recopiló varios de estos trabajos en su artículo ‘The Psychology of the Face-Down Phone’ (la psicología del móvil boca abajo). Según los experimentos que recoge, no hace falta usar el aparato para que afecte a la atención, y cuanto más difícil es la tarea, más pronunciado es el efecto.",
-      "image": "https://i.blogs.es/0ab295/en-una-reunion-el-movil-boca-abajo/1024_2000.jpeg",
+      "full_voice_script": "Google anuncia la solución tan esperada para la barra de señal celular de Android Auto. Noticia publicada por Genbeta. Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red. El fallo podría hacer que el usuario creyera que su teléfono se había desconectado, mientras que las llamadas y los mensajes continuaban funcionando. La confirmación procede de Mishaal Rahman, encargado de la relación con la comunidad de Android en Google , quien respondió en una publicación de Reddit . En su publicación, Rahman escribe: “Somos conscientes de los informes sobre la ausencia de la señal móvil y estamos distribuyendo una corrección que esperamos que solucione este problema” , y sigue: “La corrección todavía no está disponible de forma generalizada, así que puede tardar un tiempo en llegar a tu dispositivo” . Concluye sus comentarios diciendo que la persona podría apuntarse a la beta de Android Auto para intentar recibirla antes. Su respuesta aborda el problema y la actualización , pero no se ofrece una línea de tiempo estimada para la distribución a nivel regional o por modelo de teléfono. También hay testimonios de usuarios en Reddit . Un usuario, brgomesz, publicó una captura de pantalla que ilustra cómo su indicador de red regresó a su Android Auto después de una actualización a la versión 17.8.663874. Otro usuario de Reddit comenta sus iniciales preocupaciones sobre la ausencia de indicadores de red con la versión 17.8.663874 y después actualiza su mensaje para indicar que el icono regresó en su Xiaomi 15 Ultra . Cabe destacar que los usuarios de Android Auto deberían comprender que estas experiencias individuales no son pruebas suficientes de que un indicador de red vaya a ser restituido en el momento en que el dispositivo de la persona se actualice. La declaración de Google no vincula ninguna versión específica con el arreglo del indicador de red móvil. La solución desarrollada se está distribuyendo. Google señala cómo el usuario puede encontrar la actualización para Android Auto . Describe un proceso que consiste en abrir la tienda de Google Play en el teléfono y pulsar en la imagen de perfil del usuario. Luego, la persona debe buscar “Gestionar apps y dispositivo” y localizar la sección de actualizaciones disponibles, pulsar en “Ver detalles” y revisar las actualizaciones para Android Auto. Si aparece una actualización para descargar, entonces se debe pulsar “Actualizar”. Otra opción es ir a la ficha de Android Auto en la tienda y pulsar “Actualizar” si aparece el botón. El resto del procedimiento tiene que ver con las opciones de configuración manual o automática para instalar nuevas actualizaciones para Android Auto. Se debe ir a la página de la aplicación, pulsar en el menú de la esquina superior derecha y activar la actualización automática. Esta opción permite que la aplicación se actualice cuando haya actualizaciones disponibles, pero no es un factor determinante de cuándo comienza la distribución de una actualización para resolver un problema específico. La guía de Xataka sobre Android Auto ofrece una recopilación de formas en que se puede actualizar la aplicación.",
+      "image": "https://i.blogs.es/e5ef4a/android-auto/1024_2000.jpeg",
       "source": "Genbeta",
-      "link": "https://www.genbeta.com/movil/psicologia-dice-que-personas-que-dejan-movil-boca-abajo-no-para-ocultar-nada-realidad-tactica-para-evitar-distracciones",
-      "published": "2026-10-19T16:01:56+02:00"
+      "link": "https://www.genbeta.com/a-fondo/google-anuncia-solucion-esperada-para-barra-senal-celular-android-auto",
+      "published": "2026-10-26T09:01:32+01:00"
     }
   ],
   "vip_hack_of_the_week": {
-    "tag": "Secreto de IA & Celular",
-    "title": "Cómo activar el Modo Ultra-Velocidad de Red DNS Privado sin instalar apps",
-    "body": "Entra en Ajustes > Conexiones > Más ajustes de conexión > DNS Privado y escribe 'dns.adguard.com' o 'one.one.one.one'. Tu teléfono resolverá páginas y juegos hasta un 35% más rápido y bloqueará rastreadores pesados automáticamente."
+    "tag": "Truco Oculto WhatsApp",
+    "title": "Enviar fotos y videos en calidad 4K original sin que WhatsApp los pixele",
+    "body": "Antes de enviar cualquier foto o video, toca el botón 'HD' arriba en el editor, o adjúntalo como 'Documento' si quieres cero compresión. ¡La diferencia de nitidez es abismal!"
   },
   "weekly_jokes": [
-    "En mi casa hay dos tipos de personas: los que dicen 'reinicia el router' y los que ya lo reiniciaron tres veces.",
-    "Los términos y condiciones son el único libro que todos hemos 'leído' y nadie ha abierto.",
-    "Mi modo 'No molestar' lleva activado desde 2021. A veces alguien se acuerda de mí por correo.",
-    "Mi cuenta de ahorros y mi batería tienen algo en común: las dos llegan al 5% a mitad de mes.",
-    "Cuando el celular dice 'almacenamiento casi lleno' yo borro dos fotos repetidas y una app que nunca abrí. Dolor mínimo, espacio máximo.",
-    "Mi estado de WhatsApp dura 24 horas. Mi arrepentimiento por subirlo, dos minutos.",
-    "Nada te enseña a escribir más rápido que ver el 'Escribiendo...' de la persona con la que discutes por WhatsApp.",
-    "Antes uno buscaba pareja; ahora busca un enchufe. Y a veces el segundo aparece primero.",
-    "Yo: 'Voy a usar el teléfono 5 minutos'. El teléfono, 2 horas después: 'Hola de nuevo'.",
-    "Descargué una app para meditar. Me desconecté tan bien que olvidé abrirla."
+    "— Tengo una idea genial para una app.<br>— ¿Cuál?<br>— Una que avise cuando el vecino cambie la clave del Wi-Fi.",
+    "El corrector automático tiene vida propia: escribo 'llego en cinco' y envía 'llevo un cinco en matemática'.",
+    "Mi teléfono se cayó de la mesa y sobrevivió. Yo casi sufro un infarto. Resistencia emocional: 0, de pantalla: 100.",
+    "Mi laptop tiene 47 pestañas abiertas y yo solo recuerdo por qué abrí dos.",
+    "— Papá, ¿qué es la nube?<br>— Es donde el celular guarda lo que yo no quiero que mamá vea.",
+    "Mi PC tarda 10 minutos en encender y 2 segundos en congelarse justo cuando voy a guardar el trabajo. Puntería perfecta.",
+    "— ¿Ya reinició el equipo?<br>— Sí.<br>— ¿Seguro?<br>— ...ahora sí.",
+    "Programador: 'En mi computadora funciona'.<br>Cliente: 'Pero en la mía no'.<br>Programador: 'Entonces te mando mi computadora'.",
+    "Dormir 8 horas es fácil. Lo difícil es que el celular no te avise a las 3 a.m. que 'tu almacenamiento está casi lleno'.",
+    "Mi pantalla tiene tantas rayitas que ya no sé si es un teléfono o un mapa de carreteras."
   ],
   "weekly_truths": [
     {
-      "emoji": "🔔",
-      "color": "pink",
-      "title": "Notificaciones",
-      "body": "<strong>Importante:</strong> 1 mensaje de tu jefe.<br><strong>Urgentísimo:</strong> 47 avisos de apps que no recuerdas haber instalado."
-    },
-    {
-      "emoji": "🤖",
-      "color": "purple",
-      "title": "La IA: Expectativa vs Realidad",
-      "body": "<strong>La gente:</strong> <em>\"La IA va a dominar el mundo con robots asesinos...\"</em><br><strong>La IA en la vida real:</strong> Dibuja personas con 7 dedos en una mano y confunde un chihuahua con un muffin."
-    },
-    {
-      "emoji": "📸",
+      "emoji": "🔌",
       "color": "amber",
-      "title": "La Galería del Celular",
-      "body": "10.000 fotos: 9.800 son capturas de pantalla, 150 son la misma selfie y ninguna es la que estás buscando."
+      "title": "El Cargador Sagrado",
+      "body": "Todos tenemos <strong>un</strong> cargador que sí funciona. Se presta con ceremonia y se devuelve bajo juramento."
     },
     {
-      "emoji": "🎮",
+      "emoji": "📶",
+      "color": "blue",
+      "title": "El Wi-Fi del Vecino",
+      "body": "<strong>Señal:</strong> 5 rayitas.<br><strong>Velocidad:</strong> la de una tortuga con sueño.<br><strong>Clave:</strong> recién cambiada."
+    },
+    {
+      "emoji": "📱",
+      "color": "blue",
+      "title": "La Pantalla Rota",
+      "body": "Nivel 1: una rajadura pequeña.<br>Nivel 2: 'ya me acostumbré'.<br>Nivel 3: lees el mensaje en forma de rompecabezas."
+    },
+    {
+      "emoji": "🛒",
       "color": "emerald",
-      "title": "Psicología Gamer",
-      "body": "<strong>Pierdo:</strong> es culpa del lag.<br><strong>Gano:</strong> pura habilidad y talento natural."
+      "title": "Compras por Internet",
+      "body": "<strong>En la foto:</strong> Camiseta ajustada estilo cyberpunk.<br><strong>Lo que llega:</strong> Un mantel de cocina transparente con dos huecos para los brazos."
     }
   ],
   "game_layout": {
     "portada": [
-      "stacker",
       "reflex",
+      "stacker",
       "memory"
     ],
     "vault": [
       "dodge"
     ],
-    "badges": {}
+    "badges": {
+      "reflex": "MÁS JUGADO DE LA SEMANA 🔥"
+    }
   },
   "vault_games": [
     {
@@ -241,7 +243,7 @@
   ],
   "seo": {
     "title": "ByteZone Arcade | Juegos Gratis, Ranking Semanal y Noticias de IA",
-    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: OpenAI descubre una grabadora escondida en sus oficinas y el FBI…",
+    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: El truco con IA para quitar todos los anuncios y hacer tu Smart TV…",
     "keywords": [
       "juegos arcade online gratis",
       "juegos sin descargar",
@@ -255,35 +257,35 @@
       "mini juegos para Telegram",
       "juegos para celular",
       "retos entre amigos",
-      "openai",
-      "amazon",
-      "chatgpt",
-      "ahora",
-      "mediamarkt",
-      "hazte",
-      "renove",
-      "openai"
+      "smart",
+      "tsai",
+      "alibaba",
+      "europa",
+      "desarrollador",
+      "pennsylvania",
+      "ofertas",
+      "mediamarkt"
     ],
     "trending_terms": [
-      "OpenAI",
-      "Amazon",
-      "ChatGPT",
-      "Ahora",
-      "MediaMarkt",
-      "Hazte",
-      "Renove",
-      "openai"
+      "Smart",
+      "Tsai",
+      "Alibaba",
+      "Europa",
+      "Desarrollador",
+      "Pennsylvania",
+      "Ofertas",
+      "MediaMarkt"
     ],
-    "og_image": "https://imgs.hipertextual.com/wp-content/uploads/2025/02/openai-logo.jpg",
-    "lastmod": "2026-10-19"
+    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
+    "lastmod": "2026-10-26"
   },
   "promo_kit": {
     "whatsapp_status": [
       "🎮 Torneo semanal nuevo en ByteZone: ranking reiniciado, ¡todos empiezan de cero! ⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo? Juega gratis 👉 https://megabotp2p.github.io/bytezone/",
-      "🔥 ¿Cuánto duras en Neon Stacker? Reta a tus amigos en el ranking semanal 👉 https://megabotp2p.github.io/bytezone/",
-      "🤖 Noticia IA de la semana: OpenAI descubre una grabadora escondida en sus oficinas y el FBI detiene a un empleado\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
+      "🏆 Campeones de la semana pasada → Neon Stacker Pro: ***** (43 pisos) | Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
+      "🤖 Noticia IA de la semana: El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
     ],
-    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #OpenAI #Amazon #ChatGPT",
+    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Smart #Tsai #Alibaba",
     "hashtags": [
       "#juegosgratis",
       "#arcade",
@@ -292,17 +294,33 @@
       "#IA",
       "#tecnologia",
       "#telegram",
-      "#OpenAI",
-      "#Amazon",
-      "#ChatGPT"
+      "#Smart",
+      "#Tsai",
+      "#Alibaba"
     ],
     "challenge_lines": [
       "⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo?",
       "🏗️ Récord de Neon Stacker: 39 pisos (*****). ¿Llegas más alto?"
     ],
-    "last_week_champions_text": ""
+    "last_week_champions_text": "🏆 Campeones de la semana pasada → Neon Stacker Pro: ***** (43 pisos) | Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)"
   },
-  "last_week_champions": {},
+  "last_week_champions": {
+    "stacker": {
+      "name": "*****",
+      "score": 43,
+      "country": "VE"
+    },
+    "reflex": {
+      "name": "Jugador_191",
+      "score": 16,
+      "country": "VE"
+    },
+    "memory": {
+      "name": "Jugador_191",
+      "score": 3,
+      "country": "VE"
+    }
+  },
   "all_time_records": {
     "stacker": {
       "name": "*****",
@@ -321,48 +339,53 @@
     }
   },
   "agent_report": {
-    "generated_at": "2026-10-19T11:08:34.791797-04:00",
-    "week_id": "W2026-10-19",
+    "generated_at": "2026-10-26T05:59:55.230029-04:00",
+    "week_id": "W2026-10-26",
     "traffic_status": "bajo",
     "traffic": {
-      "devices_7d": 0,
-      "plays_7d": 0,
+      "devices_7d": 3,
+      "plays_7d": 47,
       "views_7d": 0,
-      "ad_actions_7d": 0,
-      "ads_shown_7d": 0,
+      "ad_actions_7d": 9,
+      "ads_shown_7d": 11,
       "devices_prev_7d": 0,
       "change_pct": null,
       "per_game": {
         "stacker": {
           "view": 0,
-          "play": 0,
-          "ad": 0
+          "play": 13,
+          "ad": 1
         },
         "reflex": {
           "view": 0,
-          "play": 0,
-          "ad": 0
+          "play": 20,
+          "ad": 2
         },
         "memory": {
           "view": 0,
-          "play": 0,
-          "ad": 0
+          "play": 7,
+          "ad": 2
         },
         "dodge": {
           "view": 0,
-          "play": 0,
-          "ad": 0
+          "play": 7,
+          "ad": 4
         }
       },
-      "top_countries": []
+      "top_countries": [
+        [
+          "VE",
+          56
+        ]
+      ]
     },
     "actions": [
       "Noticias renovadas: 5 historias nuevas (se evitaron los titulares de la semana anterior).",
       "Humor renovado: 10 chistes y 4 'verdades tech' nuevas.",
-      "SEO: meta-tags actualizados con palabras clave de la semana (OpenAI, Amazon, ChatGPT, Ahora, MediaMarkt), sitemap regenerado. IndexNow aceptó la notificación (HTTP 202)",
+      "SEO: meta-tags actualizados con palabras clave de la semana (Smart, Tsai, Alibaba, Europa, Desarrollador), sitemap regenerado. IndexNow aceptó la notificación (HTTP 202)",
       "Kit de promoción listo (textos para WhatsApp/Telegram/redes con los récords actuales).",
       "Telegram: sin token/chat configurados (envío automático desactivado).",
-      "Sin rotación: solo 0 partidas registradas en 7 días (se necesitan 30 para decidir con datos).",
+      "Sin rotación: el menos jugado ('Cyber Memory') tiene 18% de las partidas (umbral 15%) o aún está en su periodo mínimo de 2 semanas.",
       "ALERTA: tráfico bajo (menos de 25 dispositivos únicos en 7 días). Recomendación: difundir el kit de promoción en grupos y estados esta semana."
     ],
     "rotation": null,
