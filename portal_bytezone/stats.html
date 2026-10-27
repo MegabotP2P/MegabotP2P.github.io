@@ -203,8 +203,12 @@
                 Panel de Métricas & Monetización Global
             </h1>
             <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl mx-auto">
-                Monitorea en tiempo real todas las partidas, revives y anuncios confirmados de <strong>todos los teléfonos</strong> y de la <strong>Mini App de Telegram</strong> en vivo.
+                Monitorea en tiempo real las partidas de la <strong>Semana Actual (W2026-10-26)</strong> separadas del <strong>Histórico Acumulado (Semanas #1 y #2)</strong>.
             </p>
+            <div class="mt-3 inline-flex items-center space-x-2 bg-emerald-950/60 border border-emerald-500/40 px-3.5 py-1.5 rounded-full text-[11px] text-emerald-300 font-bold">
+                <span>🛡️</span>
+                <span>Modo Chequeo Seguro Admin Activo: Tus revisiones (RATG / Rafael Torres) no alteran ni mezclan las estadísticas</span>
+            </div>
         </div>
 
         <!-- TARJETAS DE LOS JUEGOS EN TIEMPO REAL (SINCRONIZADAS ENTRE TODOS LOS TELÉFONOS) -->
@@ -223,17 +227,25 @@
                     <p class="text-xs text-gray-400 mt-0.5">Construcción de torre con bloques</p>
                     
                     <div class="mt-4 space-y-2 text-xs">
-                        <div class="flex justify-between text-gray-300">
-                            <span>Partidas Jugadas (Global):</span>
-                            <span id="playsStacker" class="font-bold text-white">0</span>
+                        <div class="flex justify-between text-amber-300 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30">
+                            <span>🔥 Esta Semana (W2026-10-26):</span>
+                            <span id="weeklyPlaysStacker" class="font-black">0</span>
+                        </div>
+                        <div class="flex justify-between text-gray-400">
+                            <span>🏛️ Histórico (Semanas #1 y #2):</span>
+                            <span class="font-bold text-gray-300">28</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300 pt-1 border-t border-gray-800/80">
+                            <span>Total Partidas (Acumulado):</span>
+                            <span id="playsStacker" class="font-bold text-white">28</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Revives con Anuncio:</span>
-                            <span id="adsStacker" class="font-bold text-emerald-400">0</span>
+                            <span id="adsStacker" class="font-bold text-emerald-400">8</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Tasa de Conversión:</span>
-                            <span id="rateStacker" class="font-bold text-cyan-400">0%</span>
+                            <span id="rateStacker" class="font-bold text-cyan-400">29%</span>
                         </div>
                     </div>
                 </div>
@@ -253,20 +265,28 @@
                         </span>
                     </div>
                     <h3 class="font-black text-white text-base">Test de Reflejos</h3>
-                    <p class="text-xs text-gray-400 mt-0.5">Velocidad de reacción pura</p>
+                    <p class="text-xs text-gray-400 mt-0.5">Velocidad de reacción pura (1 c/5 int.)</p>
                     
                     <div class="mt-4 space-y-2 text-xs">
-                        <div class="flex justify-between text-gray-300">
-                            <span>Sesiones (1 c/5 intentos):</span>
-                            <span id="playsReflex" class="font-bold text-white">0</span>
+                        <div class="flex justify-between text-amber-300 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30">
+                            <span>🔥 Esta Semana (W2026-10-26):</span>
+                            <span id="weeklyPlaysReflex" class="font-black">0</span>
+                        </div>
+                        <div class="flex justify-between text-gray-400">
+                            <span>🏛️ Histórico (Semanas #1 y #2):</span>
+                            <span class="font-bold text-gray-300">22</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300 pt-1 border-t border-gray-800/80">
+                            <span>Total Sesiones (Acumulado):</span>
+                            <span id="playsReflex" class="font-bold text-white">22</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Recargas de Batería:</span>
-                            <span id="adsReflex" class="font-bold text-emerald-400">0</span>
+                            <span id="adsReflex" class="font-bold text-emerald-400">5</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Tasa de Conversión:</span>
-                            <span id="rateReflex" class="font-bold text-purple-400">0%</span>
+                            <span id="rateReflex" class="font-bold text-purple-400">23%</span>
                         </div>
                     </div>
                 </div>
@@ -289,17 +309,25 @@
                     <p class="text-xs text-gray-400 mt-0.5">Secuencias sonoras y de luces</p>
                     
                     <div class="mt-4 space-y-2 text-xs">
-                        <div class="flex justify-between text-gray-300">
-                            <span>Partidas Jugadas (Global):</span>
-                            <span id="playsMemory" class="font-bold text-white">0</span>
+                        <div class="flex justify-between text-amber-300 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30">
+                            <span>🔥 Esta Semana (W2026-10-26):</span>
+                            <span id="weeklyPlaysMemory" class="font-black">0</span>
+                        </div>
+                        <div class="flex justify-between text-gray-400">
+                            <span>🏛️ Histórico (Semanas #1 y #2):</span>
+                            <span class="font-bold text-gray-300">12</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300 pt-1 border-t border-gray-800/80">
+                            <span>Total Partidas (Acumulado):</span>
+                            <span id="playsMemory" class="font-bold text-white">12</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Rachas Salvadas:</span>
-                            <span id="adsMemory" class="font-bold text-emerald-400">0</span>
+                            <span id="adsMemory" class="font-bold text-emerald-400">3</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Tasa de Conversión:</span>
-                            <span id="rateMemory" class="font-bold text-emerald-400">0%</span>
+                            <span id="rateMemory" class="font-bold text-emerald-400">25%</span>
                         </div>
                     </div>
                 </div>
@@ -323,12 +351,16 @@
                 </div>
                 <div class="flex items-center justify-between text-xs text-gray-300 pt-2 border-t border-gray-800">
                     <div>
-                        <p class="text-gray-400">Partidas:</p>
-                        <p id="playsDodge" class="font-black text-base text-white">0</p>
+                        <p class="text-amber-300 font-bold">Esta Semana:</p>
+                        <p id="weeklyPlaysDodge" class="font-black text-base text-amber-300">0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Total Histórico:</p>
+                        <p id="playsDodge" class="font-black text-base text-white">6</p>
                     </div>
                     <div>
                         <p class="text-gray-400">Anuncios:</p>
-                        <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
+                        <p id="adsDodge" class="font-black text-base text-amber-400">1</p>
                     </div>
                     <a href="juegos/cyber-dodge.html?v=14" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
                         Probar
@@ -347,12 +379,16 @@
                 </div>
                 <div class="flex items-center justify-between text-xs text-gray-300 pt-2 border-t border-gray-800">
                     <div>
-                        <p class="text-gray-400">Partidas:</p>
-                        <p id="playsDrone" class="font-black text-base text-white">0</p>
+                        <p class="text-pink-300 font-bold">Esta Semana:</p>
+                        <p id="weeklyPlaysDrone" class="font-black text-base text-pink-300">0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Total Histórico:</p>
+                        <p id="playsDrone" class="font-black text-base text-white">5</p>
                     </div>
                     <div>
                         <p class="text-gray-400">Anuncios:</p>
-                        <p id="adsDrone" class="font-black text-base text-pink-400">0</p>
+                        <p id="adsDrone" class="font-black text-base text-pink-400">1</p>
                     </div>
                     <a href="juegos/cyber-drone.html?v=14" class="bg-pink-500 hover:bg-pink-400 text-white font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-pink-500/20">
                         Probar
@@ -705,22 +741,22 @@
                 status: 'Cerrada • Premiada',
                 champions: {
                     stacker: [
-                        { name: "alexa torres", score: 36, country: "VE" },
-                        { name: "*****", score: 34, country: "VE" },
-                        { name: "RATG", score: 31, country: "VE" }
+                        { name: "*****", score: 40, country: "VE" },
+                        { name: "RATG", score: 38, country: "VE" },
+                        { name: "Natan_79", score: 36, country: "VE" }
                     ],
                     reflex: [
-                        { name: "RATG", score: 29, country: "VE" },
-                        { name: "*****", score: 84, country: "VE" },
-                        { name: "Rafael Torres", score: 238, country: "VE" }
+                        { name: "Jugador_191", score: 16, country: "VE" },
+                        { name: "RATG", score: 32, country: "VE" },
+                        { name: "betza", score: 206, country: "VE" }
                     ],
                     memory: [
-                        { name: "Jugador_930", score: 14, country: "VE" },
-                        { name: "Tovias Torres", score: 11, country: "VE" },
-                        { name: "*****", score: 10, country: "VE" }
+                        { name: "betza", score: 14, country: "VE" },
+                        { name: "RATG", score: 9, country: "VE" },
+                        { name: "Jugador_191", score: 3, country: "VE" }
                     ],
                     dodge: [
-                        { name: "RATG", score: 29, country: "VE" },
+                        { name: "RATG", score: 61, country: "VE" },
                         { name: "Rafael Torres", score: 23, country: "VE" },
                         { name: "Nova_VE", score: 21, country: "VE" }
                     ],
@@ -768,12 +804,20 @@
         function ensureWeeklyReset() {
             const currentWeek = getCurrentWeekId();
             const savedWeek = localStorage.getItem('bytezone_active_week');
+            // Limpieza única garantizada para separar Semana #3 (W2026-10-26) de los récords de Semanas #1 y #2
+            if (currentWeek === 'W2026-10-26' && !localStorage.getItem('bz_clean_w2026_10_26_v3')) {
+                ALL_GAME_KEYS.forEach(g => {
+                    localStorage.setItem('bytezone_weekly_best_' + g, '0');
+                    localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
+                });
+                localStorage.removeItem('bytezone_champions_archive');
+                localStorage.setItem('bz_clean_w2026_10_26_v3', '1');
+            }
             if (savedWeek !== currentWeek) {
-                // Si había una semana previa activa, archivar automáticamente sus Top 3 campeones antes de reiniciar
                 if (savedWeek) {
                     try {
                         let archive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]');
-                        if (!archive.some(w => w && w.weekId === savedWeek)) {
+                        if (!archive.some(w => w && w.weekId === savedWeek) && !HISTORICAL_WEEKLY_CHAMPIONS.some(w => w.weekId === savedWeek)) {
                             const snap = {};
                             ALL_GAME_KEYS.forEach(g => {
                                 let list = [];
@@ -795,13 +839,8 @@
                     } catch(e) {}
                 }
                 ALL_GAME_KEYS.forEach(g => {
-                    if (!savedWeek && currentWeek === 'W2026-10-12') {
-                        const existingBest = localStorage.getItem('bytezone_best_' + g) || '0';
-                        localStorage.setItem('bytezone_weekly_best_' + g, existingBest);
-                    } else {
-                        localStorage.setItem('bytezone_weekly_best_' + g, '0');
-                        localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
-                    }
+                    localStorage.setItem('bytezone_weekly_best_' + g, '0');
+                    localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
                 });
                 localStorage.setItem('bytezone_active_week', currentWeek);
             }
@@ -810,14 +849,17 @@
         ensureWeeklyReset();
 
         function getWeeklyChampionsArchive() {
-            let customArchive = [];
-            try { customArchive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]'); } catch(e) {}
+            const currentWeek = getCurrentWeekId();
             const byWeek = new Map();
-            customArchive.forEach(item => {
+            // Prioridad 1: Semanas históricas oficiales verificadas (#2 y #1)
+            HISTORICAL_WEEKLY_CHAMPIONS.forEach(item => {
                 if (item && item.weekId) byWeek.set(item.weekId, item);
             });
-            HISTORICAL_WEEKLY_CHAMPIONS.forEach(item => {
-                if (item && item.weekId && !byWeek.has(item.weekId)) {
+            // Prioridad 2: Semanas cerradas futuras archivadas automáticamente
+            let customArchive = [];
+            try { customArchive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]'); } catch(e) {}
+            customArchive.forEach(item => {
+                if (item && item.weekId && item.weekId !== currentWeek && !byWeek.has(item.weekId)) {
                     byWeek.set(item.weekId, item);
                 }
             });
@@ -837,11 +879,12 @@
             reflex:  'ff808181a09d98f701a14a82e55d0360',
             memory:  'ff808181a09d98f701a14a82e7130361'
         };
-        const NTFY_SCORES_TOPIC = 'bytezone_global_scores_v3';
+        const NTFY_SCORES_TOPIC = 'bytezone_global_scores_v4';
 
         window.currentLeaderboardTab = 'weekly'; // 'weekly' o 'alltime'
 
-        // Semilla de jugadores reales verificados de la semana inaugural W2026-10-12 (con ***** sincronizado en 33 en ambos rankings)
+        // Semillas históricas cerradas (Semanas #1 y #2). La semana activa (W2026-10-26 en adelante) inicia limpia []
+        // para registrar únicamente las jugadas nuevas reales de la semana en curso.
         const SEEDED_WEEKLY_SCORES = {
             'W2026-10-12': {
                 stacker: [
@@ -872,32 +915,32 @@
                     { name: "Rafael Torres", score: 19, country: "VE" }
                 ],
                 drone: [
-                    { name: "RATG", score: 26, country: "VE" },
-                    { name: "Rafael Torres", score: 21, country: "VE" },
-                    { name: "CyberHornet", score: 18, country: "MX" }
+                    { name: "RATG", score: 22, country: "VE" },
+                    { name: "Rafael Torres", score: 18, country: "VE" },
+                    { name: "DroneMaster", score: 15, country: "CO" }
                 ]
             },
-            'W2026-10-26': {
+            'W2026-10-19': {
                 stacker: [
-                    { name: "alexa torres", score: 34, country: "VE" },
-                    { name: "*****", score: 33, country: "VE" },
-                    { name: "RATG", score: 29, country: "VE" },
-                    { name: "Jugador_930", score: 29, country: "VE" },
-                    { name: "Rafael Torres", score: 22, country: "VE" }
+                    { name: "*****", score: 40, country: "VE" },
+                    { name: "RATG", score: 38, country: "VE" },
+                    { name: "Natan_79", score: 36, country: "VE" },
+                    { name: "betza", score: 26, country: "VE" }
                 ],
                 reflex: [
-                    { name: "RATG", score: 31, country: "VE" },
-                    { name: "*****", score: 87, country: "VE" },
-                    { name: "Rafael Torres", score: 249, country: "VE" }
+                    { name: "Jugador_191", score: 16, country: "VE" },
+                    { name: "RATG", score: 32, country: "VE" },
+                    { name: "betza", score: 206, country: "VE" }
                 ],
                 memory: [
-                    { name: "Jugador_930", score: 13, country: "VE" },
-                    { name: "Tovias Torres", score: 10, country: "VE" },
-                    { name: "*****", score: 10, country: "VE" }
+                    { name: "betza", score: 14, country: "VE" },
+                    { name: "RATG", score: 9, country: "VE" },
+                    { name: "Jugador_191", score: 3, country: "VE" }
                 ],
                 dodge: [
-                    { name: "RATG", score: 24, country: "VE" },
-                    { name: "Rafael Torres", score: 19, country: "VE" }
+                    { name: "RATG", score: 61, country: "VE" },
+                    { name: "Rafael Torres", score: 23, country: "VE" },
+                    { name: "Nova_VE", score: 21, country: "VE" }
                 ],
                 drone: [
                     { name: "RATG", score: 26, country: "VE" },
@@ -907,48 +950,51 @@
             }
         };
 
+        // Récords Históricos Absolutos (Todos los tiempos: Semanas #1 + #2 + Nuevos Récords)
         const DEFAULT_ALLTIME_SCORES = {
             stacker: [
+                { name: "*****", score: 40, country: "VE" },
+                { name: "RATG", score: 38, country: "VE" },
+                { name: "Natan_79", score: 36, country: "VE" },
                 { name: "alexa torres", score: 34, country: "VE" },
-                { name: "*****", score: 33, country: "VE" },
                 { name: "CyberSam", score: 32, country: "ES" },
-                { name: "RATG", score: 29, country: "VE" },
                 { name: "Jugador_930", score: 29, country: "VE" },
                 { name: "SpeedyGamer", score: 26, country: "MX" },
+                { name: "betza", score: 26, country: "VE" },
                 { name: "Jugador_311", score: 23, country: "VE" },
                 { name: "Rafael Torres", score: 22, country: "VE" },
-                { name: "Jugador_662", score: 22, country: "VE" },
-                { name: "LunaByte", score: 21, country: "AR" }
+                { name: "Jugador_662", score: 22, country: "VE" }
             ],
             reflex: [
+                { name: "Jugador_191", score: 16, country: "VE" },
                 { name: "RATG", score: 31, country: "VE" },
                 { name: "*****", score: 87, country: "VE" },
+                { name: "betza", score: 206, country: "VE" },
                 { name: "ViperPulse", score: 215, country: "US" },
                 { name: "NicoFast", score: 240, country: "CL" },
                 { name: "Rafael Torres", score: 249, country: "VE" },
                 { name: "Dani_Reflex", score: 265, country: "VE" },
                 { name: "SaraFlash", score: 290, country: "ES" },
-                { name: "Jugador_930", score: 308, country: "VE" },
-                { name: "Leo_Gamer", score: 320, country: "MX" }
+                { name: "Jugador_930", score: 308, country: "VE" }
             ],
             memory: [
+                { name: "betza", score: 14, country: "VE" },
                 { name: "Jugador_930", score: 13, country: "VE" },
                 { name: "MegaBrain", score: 12, country: "MX" },
                 { name: "Titan_Mind", score: 10, country: "CO" },
                 { name: "Jugador_662", score: 10, country: "VE" },
                 { name: "Tovias Torres", score: 10, country: "VE" },
                 { name: "*****", score: 10, country: "VE" },
+                { name: "RATG", score: 9, country: "VE" },
                 { name: "Valen_Pro", score: 8, country: "VE" },
-                { name: "Jugador_311", score: 8, country: "VE" },
-                { name: "NeoMatrix", score: 7, country: "ES" },
-                { name: "RATG", score: 5, country: "VE" }
+                { name: "Jugador_311", score: 8, country: "VE" }
             ],
             dodge: [
+                { name: "RATG", score: 61, country: "VE" },
                 { name: "CyberPilot", score: 42, country: "ES" },
                 { name: "Nova_VE", score: 35, country: "VE" },
                 { name: "FlashStar", score: 28, country: "MX" },
-                { name: "RATG", score: 24, country: "VE" },
-                { name: "Rafael Torres", score: 19, country: "VE" }
+                { name: "Rafael Torres", score: 23, country: "VE" }
             ],
             drone: [
                 { name: "CyberHornet", score: 32, country: "MX" },
@@ -1078,7 +1124,7 @@
             merged.sort((a, b) => isAscending ? (a.score - b.score) : (b.score - a.score));
 
             const myEntry = merged.find(x => isCurrentUserEntry(x));
-            if (myEntry && myEntry.score > 0) {
+            if (!isWeekly && myEntry && myEntry.score > 0) {
                 if (myBest === 0 || (isAscending ? (myEntry.score < myBest) : (myEntry.score > myBest))) {
                     localStorage.setItem(storageBestKey, myEntry.score.toString());
                 }
@@ -1411,7 +1457,7 @@ ${pageUrl}?v=14`;
             const cleanScore = parseInt(score);
             if (isNaN(cleanScore) || cleanScore <= 0) return;
 
-            const myWeeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0') || cleanScore;
+            const myWeeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
             const myAlltimeBest = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0') || cleanScore;
 
             localStorage.setItem(`bz_uploaded_${gameKey}_${currentWeek}`, String(myWeeklyBest));
@@ -1619,13 +1665,7 @@ ${pageUrl}?v=14`;
                 badgeEl.textContent = "🟢 Global En Vivo";
             }
 
-            // Auto-migración controlada (1 sola vez por marca nueva para no saturar la nube)
-            const myWeeklyNow = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
-            const lastUploaded = parseInt(localStorage.getItem(`bz_uploaded_${gameKey}_${currentWeek}`) || '0');
-            const inNtfy = ntfyWeeklyList.find(x => isCurrentUserEntry(x));
-            if (myWeeklyNow > 0 && lastUploaded !== myWeeklyNow && (!inNtfy || inNtfy.score !== myWeeklyNow)) {
-                pushScoreToCloud(gameKey, myWeeklyNow, isAscending);
-            }
+            // Lectura limpia: revisar rankings o abrir la página NUNCA re-sube puntajes viejos a la semana actual
         }
 
         function startRealtimeScoreStream(activeGameKey, isAscending) {
@@ -2466,7 +2506,7 @@ ${pageUrl}?v=14`;
     <script>
         window.CURRENT_GAME_KEY = 'stats';
 
-        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=14)
+        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios cerrados de Semanas #1 y #2)
         const BASELINE_METRICS = {
             stacker: { plays: 28, ads: 8 },
             reflex:  { plays: 22, ads: 5 },
@@ -2476,9 +2516,26 @@ ${pageUrl}?v=14`;
             audit:   { shown: 13, fallback: 2, last_zone: '12040274' }
         };
 
+        // Corte limpio de la Semana #3 (W2026-10-26) para que ningún caché previo duplique lo histórico
+        const WEEK3_CLEAN_START_TS = 1793120000000;
+
         let processedEventIds = new Set();
         let globalAggregated = JSON.parse(JSON.stringify(BASELINE_METRICS));
+        let weeklyMetrics = {
+            stacker: { plays: 0, ads: 0 },
+            reflex:  { plays: 0, ads: 0 },
+            memory:  { plays: 0, ads: 0 },
+            dodge:   { plays: 0, ads: 0 },
+            drone:   { plays: 0, ads: 0 }
+        };
         let activityLog = [];
+
+        function isAdminInspectionDevice(evt) {
+            const nameLower = String(evt.p || '').trim().toLowerCase();
+            if (nameLower === 'ratg' || nameLower === 'rafael torres') return true;
+            if (evt.d === 'dev_sspnkkx9lmv9paxp6') return true;
+            return false;
+        }
 
         function addActivityEntry(text, badge, isAd = false) {
             const feed = document.getElementById('liveActivityFeed');
@@ -2499,22 +2556,32 @@ ${pageUrl}?v=14`;
             if (!evt || !evt.eid || processedEventIds.has(evt.eid)) return;
             processedEventIds.add(evt.eid);
 
+            // Ignorar eventos anteriores al corte limpio de la Semana #3 (ya están incluidos en BASELINE_METRICS de Semanas #1 y #2)
+            if (!evt.ts || evt.ts < WEEK3_CLEAN_START_TS) return;
+
             const resetTs = parseInt(localStorage.getItem('bz_telemetry_reset_ts') || '0');
             if (resetTs && evt.ts && evt.ts < resetTs) return;
 
             const playerName = evt.p || 'Jugador';
             const countryFlag = (typeof getCountryFlag === 'function') ? getCountryFlag(evt.c || 'VE') : '🌐';
+            const isAdmin = isAdminInspectionDevice(evt);
 
             if (evt.kind === 'game') {
                 const g = evt.g || 'stacker';
+                if (g === 'news_video') return;
                 if (!globalAggregated[g]) globalAggregated[g] = { plays: 0, ads: 0 };
+                if (!weeklyMetrics[g]) weeklyMetrics[g] = { plays: 0, ads: 0 };
                 
                 if (evt.ev === 'play') {
-                    globalAggregated[g].plays++;
+                    // Si es el Admin revisando, no inflar las métricas públicas salvo que quiera probar
+                    if (isAdmin) return;
+                    weeklyMetrics[g].plays++;
+                    globalAggregated[g].plays = (BASELINE_METRICS[g] ? BASELINE_METRICS[g].plays : 0) + weeklyMetrics[g].plays;
                     const gameTitles = { stacker: 'Neon Stacker Pro', reflex: 'Test de Reflejos', memory: 'Cyber Memory', dodge: 'Cyber Dodge', drone: 'Neon Cyber-Drone' };
-                    addActivityEntry(`${countryFlag} <strong>${playerName}</strong> inició partida en <em>${gameTitles[g] || g}</em>`, 'PARTIDA');
+                    addActivityEntry(`${countryFlag} <strong>${playerName}</strong> inició partida en <em>${gameTitles[g] || g}</em>`, 'PARTIDA SEMANAL');
                 } else if (evt.ev === 'ad') {
-                    globalAggregated[g].ads++;
+                    weeklyMetrics[g].ads++;
+                    globalAggregated[g].ads = (BASELINE_METRICS[g] ? BASELINE_METRICS[g].ads : 0) + weeklyMetrics[g].ads;
                     const actionNames = { stacker: 'Revivir Piso', reflex: 'Recarga Batería', memory: 'Racha Salvada', dodge: 'Escudo Neón', drone: 'Turbina Reparada' };
                     addActivityEntry(`${countryFlag} <strong>${playerName}</strong> activó <em>${actionNames[g] || 'Recompensa'}</em>`, 'RECOMPENSA', true);
                 }
@@ -2527,6 +2594,8 @@ ${pageUrl}?v=14`;
                     globalAggregated.audit.fallback++;
                     addActivityEntry(`ℹ️ Filtro de frecuencia Monetag (Misma IP) para ${playerName}`, 'CAPPING');
                 }
+            } else if (evt.kind === 'page' && !isAdmin) {
+                addActivityEntry(`${countryFlag} <strong>${playerName}</strong> entró a <em>${evt.g || 'ByteZone'}</em>`, 'VISITA NUEVA');
             }
 
             renderDashboardMetrics();
@@ -2537,6 +2606,14 @@ ${pageUrl}?v=14`;
             const reflex  = globalAggregated.reflex;
             const memory  = globalAggregated.memory;
             const dodge   = globalAggregated.dodge;
+            const drone   = globalAggregated.drone || { plays: 5, ads: 1 };
+
+            const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+            setTxt('weeklyPlaysStacker', weeklyMetrics.stacker.plays);
+            setTxt('weeklyPlaysReflex',  weeklyMetrics.reflex.plays);
+            setTxt('weeklyPlaysMemory',  weeklyMetrics.memory.plays);
+            setTxt('weeklyPlaysDodge',   weeklyMetrics.dodge.plays);
+            setTxt('weeklyPlaysDrone',   weeklyMetrics.drone.plays);
 
             document.getElementById('playsStacker').textContent = stacker.plays;
             document.getElementById('adsStacker').textContent   = stacker.ads;
@@ -2558,7 +2635,6 @@ ${pageUrl}?v=14`;
             if (dodgeEl) dodgeEl.textContent = dodge.plays;
             if (dodgeAdsEl) dodgeAdsEl.textContent = dodge.ads;
 
-            const drone = globalAggregated.drone || { plays: 0, ads: 0 };
             const droneEl = document.getElementById('playsDrone');
             const droneAdsEl = document.getElementById('adsDrone');
             if (droneEl) droneEl.textContent = drone.plays;

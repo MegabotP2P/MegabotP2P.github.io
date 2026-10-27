@@ -643,22 +643,22 @@
                 status: 'Cerrada • Premiada',
                 champions: {
                     stacker: [
-                        { name: "alexa torres", score: 36, country: "VE" },
-                        { name: "*****", score: 34, country: "VE" },
-                        { name: "RATG", score: 31, country: "VE" }
+                        { name: "*****", score: 40, country: "VE" },
+                        { name: "RATG", score: 38, country: "VE" },
+                        { name: "Natan_79", score: 36, country: "VE" }
                     ],
                     reflex: [
-                        { name: "RATG", score: 29, country: "VE" },
-                        { name: "*****", score: 84, country: "VE" },
-                        { name: "Rafael Torres", score: 238, country: "VE" }
+                        { name: "Jugador_191", score: 16, country: "VE" },
+                        { name: "RATG", score: 32, country: "VE" },
+                        { name: "betza", score: 206, country: "VE" }
                     ],
                     memory: [
-                        { name: "Jugador_930", score: 14, country: "VE" },
-                        { name: "Tovias Torres", score: 11, country: "VE" },
-                        { name: "*****", score: 10, country: "VE" }
+                        { name: "betza", score: 14, country: "VE" },
+                        { name: "RATG", score: 9, country: "VE" },
+                        { name: "Jugador_191", score: 3, country: "VE" }
                     ],
                     dodge: [
-                        { name: "RATG", score: 29, country: "VE" },
+                        { name: "RATG", score: 61, country: "VE" },
                         { name: "Rafael Torres", score: 23, country: "VE" },
                         { name: "Nova_VE", score: 21, country: "VE" }
                     ],
@@ -706,12 +706,20 @@
         function ensureWeeklyReset() {
             const currentWeek = getCurrentWeekId();
             const savedWeek = localStorage.getItem('bytezone_active_week');
+            // Limpieza única garantizada para separar Semana #3 (W2026-10-26) de los récords de Semanas #1 y #2
+            if (currentWeek === 'W2026-10-26' && !localStorage.getItem('bz_clean_w2026_10_26_v3')) {
+                ALL_GAME_KEYS.forEach(g => {
+                    localStorage.setItem('bytezone_weekly_best_' + g, '0');
+                    localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
+                });
+                localStorage.removeItem('bytezone_champions_archive');
+                localStorage.setItem('bz_clean_w2026_10_26_v3', '1');
+            }
             if (savedWeek !== currentWeek) {
-                // Si había una semana previa activa, archivar automáticamente sus Top 3 campeones antes de reiniciar
                 if (savedWeek) {
                     try {
                         let archive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]');
-                        if (!archive.some(w => w && w.weekId === savedWeek)) {
+                        if (!archive.some(w => w && w.weekId === savedWeek) && !HISTORICAL_WEEKLY_CHAMPIONS.some(w => w.weekId === savedWeek)) {
                             const snap = {};
                             ALL_GAME_KEYS.forEach(g => {
                                 let list = [];
@@ -733,13 +741,8 @@
                     } catch(e) {}
                 }
                 ALL_GAME_KEYS.forEach(g => {
-                    if (!savedWeek && currentWeek === 'W2026-10-12') {
-                        const existingBest = localStorage.getItem('bytezone_best_' + g) || '0';
-                        localStorage.setItem('bytezone_weekly_best_' + g, existingBest);
-                    } else {
-                        localStorage.setItem('bytezone_weekly_best_' + g, '0');
-                        localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
-                    }
+                    localStorage.setItem('bytezone_weekly_best_' + g, '0');
+                    localStorage.setItem('bytezone_weekly_scores_' + g, '[]');
                 });
                 localStorage.setItem('bytezone_active_week', currentWeek);
             }
@@ -748,14 +751,17 @@
         ensureWeeklyReset();
 
         function getWeeklyChampionsArchive() {
-            let customArchive = [];
-            try { customArchive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]'); } catch(e) {}
+            const currentWeek = getCurrentWeekId();
             const byWeek = new Map();
-            customArchive.forEach(item => {
+            // Prioridad 1: Semanas históricas oficiales verificadas (#2 y #1)
+            HISTORICAL_WEEKLY_CHAMPIONS.forEach(item => {
                 if (item && item.weekId) byWeek.set(item.weekId, item);
             });
-            HISTORICAL_WEEKLY_CHAMPIONS.forEach(item => {
-                if (item && item.weekId && !byWeek.has(item.weekId)) {
+            // Prioridad 2: Semanas cerradas futuras archivadas automáticamente
+            let customArchive = [];
+            try { customArchive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]'); } catch(e) {}
+            customArchive.forEach(item => {
+                if (item && item.weekId && item.weekId !== currentWeek && !byWeek.has(item.weekId)) {
                     byWeek.set(item.weekId, item);
                 }
             });
@@ -775,11 +781,12 @@
             reflex:  'ff808181a09d98f701a14a82e55d0360',
             memory:  'ff808181a09d98f701a14a82e7130361'
         };
-        const NTFY_SCORES_TOPIC = 'bytezone_global_scores_v3';
+        const NTFY_SCORES_TOPIC = 'bytezone_global_scores_v4';
 
         window.currentLeaderboardTab = 'weekly'; // 'weekly' o 'alltime'
 
-        // Semilla de jugadores reales verificados de la semana inaugural W2026-10-12 (con ***** sincronizado en 33 en ambos rankings)
+        // Semillas históricas cerradas (Semanas #1 y #2). La semana activa (W2026-10-26 en adelante) inicia limpia []
+        // para registrar únicamente las jugadas nuevas reales de la semana en curso.
         const SEEDED_WEEKLY_SCORES = {
             'W2026-10-12': {
                 stacker: [
@@ -810,32 +817,32 @@
                     { name: "Rafael Torres", score: 19, country: "VE" }
                 ],
                 drone: [
-                    { name: "RATG", score: 26, country: "VE" },
-                    { name: "Rafael Torres", score: 21, country: "VE" },
-                    { name: "CyberHornet", score: 18, country: "MX" }
+                    { name: "RATG", score: 22, country: "VE" },
+                    { name: "Rafael Torres", score: 18, country: "VE" },
+                    { name: "DroneMaster", score: 15, country: "CO" }
                 ]
             },
-            'W2026-10-26': {
+            'W2026-10-19': {
                 stacker: [
-                    { name: "alexa torres", score: 34, country: "VE" },
-                    { name: "*****", score: 33, country: "VE" },
-                    { name: "RATG", score: 29, country: "VE" },
-                    { name: "Jugador_930", score: 29, country: "VE" },
-                    { name: "Rafael Torres", score: 22, country: "VE" }
+                    { name: "*****", score: 40, country: "VE" },
+                    { name: "RATG", score: 38, country: "VE" },
+                    { name: "Natan_79", score: 36, country: "VE" },
+                    { name: "betza", score: 26, country: "VE" }
                 ],
                 reflex: [
-                    { name: "RATG", score: 31, country: "VE" },
-                    { name: "*****", score: 87, country: "VE" },
-                    { name: "Rafael Torres", score: 249, country: "VE" }
+                    { name: "Jugador_191", score: 16, country: "VE" },
+                    { name: "RATG", score: 32, country: "VE" },
+                    { name: "betza", score: 206, country: "VE" }
                 ],
                 memory: [
-                    { name: "Jugador_930", score: 13, country: "VE" },
-                    { name: "Tovias Torres", score: 10, country: "VE" },
-                    { name: "*****", score: 10, country: "VE" }
+                    { name: "betza", score: 14, country: "VE" },
+                    { name: "RATG", score: 9, country: "VE" },
+                    { name: "Jugador_191", score: 3, country: "VE" }
                 ],
                 dodge: [
-                    { name: "RATG", score: 24, country: "VE" },
-                    { name: "Rafael Torres", score: 19, country: "VE" }
+                    { name: "RATG", score: 61, country: "VE" },
+                    { name: "Rafael Torres", score: 23, country: "VE" },
+                    { name: "Nova_VE", score: 21, country: "VE" }
                 ],
                 drone: [
                     { name: "RATG", score: 26, country: "VE" },
@@ -845,48 +852,51 @@
             }
         };
 
+        // Récords Históricos Absolutos (Todos los tiempos: Semanas #1 + #2 + Nuevos Récords)
         const DEFAULT_ALLTIME_SCORES = {
             stacker: [
+                { name: "*****", score: 40, country: "VE" },
+                { name: "RATG", score: 38, country: "VE" },
+                { name: "Natan_79", score: 36, country: "VE" },
                 { name: "alexa torres", score: 34, country: "VE" },
-                { name: "*****", score: 33, country: "VE" },
                 { name: "CyberSam", score: 32, country: "ES" },
-                { name: "RATG", score: 29, country: "VE" },
                 { name: "Jugador_930", score: 29, country: "VE" },
                 { name: "SpeedyGamer", score: 26, country: "MX" },
+                { name: "betza", score: 26, country: "VE" },
                 { name: "Jugador_311", score: 23, country: "VE" },
                 { name: "Rafael Torres", score: 22, country: "VE" },
-                { name: "Jugador_662", score: 22, country: "VE" },
-                { name: "LunaByte", score: 21, country: "AR" }
+                { name: "Jugador_662", score: 22, country: "VE" }
             ],
             reflex: [
+                { name: "Jugador_191", score: 16, country: "VE" },
                 { name: "RATG", score: 31, country: "VE" },
                 { name: "*****", score: 87, country: "VE" },
+                { name: "betza", score: 206, country: "VE" },
                 { name: "ViperPulse", score: 215, country: "US" },
                 { name: "NicoFast", score: 240, country: "CL" },
                 { name: "Rafael Torres", score: 249, country: "VE" },
                 { name: "Dani_Reflex", score: 265, country: "VE" },
                 { name: "SaraFlash", score: 290, country: "ES" },
-                { name: "Jugador_930", score: 308, country: "VE" },
-                { name: "Leo_Gamer", score: 320, country: "MX" }
+                { name: "Jugador_930", score: 308, country: "VE" }
             ],
             memory: [
+                { name: "betza", score: 14, country: "VE" },
                 { name: "Jugador_930", score: 13, country: "VE" },
                 { name: "MegaBrain", score: 12, country: "MX" },
                 { name: "Titan_Mind", score: 10, country: "CO" },
                 { name: "Jugador_662", score: 10, country: "VE" },
                 { name: "Tovias Torres", score: 10, country: "VE" },
                 { name: "*****", score: 10, country: "VE" },
+                { name: "RATG", score: 9, country: "VE" },
                 { name: "Valen_Pro", score: 8, country: "VE" },
-                { name: "Jugador_311", score: 8, country: "VE" },
-                { name: "NeoMatrix", score: 7, country: "ES" },
-                { name: "RATG", score: 5, country: "VE" }
+                { name: "Jugador_311", score: 8, country: "VE" }
             ],
             dodge: [
+                { name: "RATG", score: 61, country: "VE" },
                 { name: "CyberPilot", score: 42, country: "ES" },
                 { name: "Nova_VE", score: 35, country: "VE" },
                 { name: "FlashStar", score: 28, country: "MX" },
-                { name: "RATG", score: 24, country: "VE" },
-                { name: "Rafael Torres", score: 19, country: "VE" }
+                { name: "Rafael Torres", score: 23, country: "VE" }
             ],
             drone: [
                 { name: "CyberHornet", score: 32, country: "MX" },
@@ -1016,7 +1026,7 @@
             merged.sort((a, b) => isAscending ? (a.score - b.score) : (b.score - a.score));
 
             const myEntry = merged.find(x => isCurrentUserEntry(x));
-            if (myEntry && myEntry.score > 0) {
+            if (!isWeekly && myEntry && myEntry.score > 0) {
                 if (myBest === 0 || (isAscending ? (myEntry.score < myBest) : (myEntry.score > myBest))) {
                     localStorage.setItem(storageBestKey, myEntry.score.toString());
                 }
@@ -1349,7 +1359,7 @@ ${pageUrl}?v=14`;
             const cleanScore = parseInt(score);
             if (isNaN(cleanScore) || cleanScore <= 0) return;
 
-            const myWeeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0') || cleanScore;
+            const myWeeklyBest = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
             const myAlltimeBest = parseInt(localStorage.getItem('bytezone_best_' + gameKey) || '0') || cleanScore;
 
             localStorage.setItem(`bz_uploaded_${gameKey}_${currentWeek}`, String(myWeeklyBest));
@@ -1557,13 +1567,7 @@ ${pageUrl}?v=14`;
                 badgeEl.textContent = "🟢 Global En Vivo";
             }
 
-            // Auto-migración controlada (1 sola vez por marca nueva para no saturar la nube)
-            const myWeeklyNow = parseInt(localStorage.getItem('bytezone_weekly_best_' + gameKey) || '0');
-            const lastUploaded = parseInt(localStorage.getItem(`bz_uploaded_${gameKey}_${currentWeek}`) || '0');
-            const inNtfy = ntfyWeeklyList.find(x => isCurrentUserEntry(x));
-            if (myWeeklyNow > 0 && lastUploaded !== myWeeklyNow && (!inNtfy || inNtfy.score !== myWeeklyNow)) {
-                pushScoreToCloud(gameKey, myWeeklyNow, isAscending);
-            }
+            // Lectura limpia: revisar rankings o abrir la página NUNCA re-sube puntajes viejos a la semana actual
         }
 
         function startRealtimeScoreStream(activeGameKey, isAscending) {
