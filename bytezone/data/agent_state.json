@@ -1,10 +1,11 @@
 {
   "portada": [
-    "reflex",
     "stacker",
+    "reflex",
     "memory"
   ],
   "vault": [
+    "drone",
     "dodge"
   ],
   "entered": {
@@ -23,18 +24,18 @@
     },
     {
       "week_id": "W2026-10-26",
-      "plays": 47,
+      "plays": 1,
       "devices": 3,
-      "views": 0,
-      "ads": 11
+      "views": 5,
+      "ads": 1
     }
   ],
   "last_news_keys": [
     "el truco con ia para quitar todos los an",
-    "joe tsai presidente de alibaba la única",
+    "con 190000 millones de dólares en gasto",
     "desarrollador de centro de datos de penn",
-    "ofertas en reacondicionados de mediamark",
-    "google anuncia la solución tan esperada"
+    "apple renueva el imac y el macbook pro d",
+    "la ue abre la vía para multar a google m"
   ],
   "last_joke_ids": [
     0,
@@ -53,5 +54,6 @@
     4,
     11,
     3
-  ]
+  ],
+  "champions_archive": {}
 }

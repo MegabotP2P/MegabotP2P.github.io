@@ -1,13 +1,13 @@
 {
   "version": 14,
   "week_id": "W2026-10-26",
-  "updated_at": "2026-10-26T05:59:55.230029-04:00",
-  "updated_human": "26/10/2026",
+  "updated_at": "2026-10-27T10:26:31.311495-04:00",
+  "updated_human": "27/10/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
     "mode": "Autónomo (Lunes + monitoreo de telemetría cada 6 h)",
     "active_games_count": 3,
-    "vault_games_count": 1
+    "vault_games_count": 2
   },
   "video_reel": {
     "title": "ByteZone TV • Noticiero IA (W2026-10-26)",
@@ -32,11 +32,11 @@
         "news_index": 1,
         "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
-        "headline": "Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\"",
-        "subtext": "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos?",
-        "image": "https://i.blogs.es/11c6aa/retrato-pop-art-con-estrellas-europeas/1024_2000.jpeg",
+        "headline": "Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible",
+        "subtext": "Se está gastando mucho en IA. Muchísimo.",
+        "image": "https://i.blogs.es/6ec393/satya/1024_2000.jpeg",
         "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 2: Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\". Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos? Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 2: Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible. Se está gastando mucho en IA. Muchísimo. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
         "is_vip_hook": false
       },
@@ -58,11 +58,11 @@
         "news_index": 3,
         "badge": "NOTICIA #4 • IMPACTO TECH",
         "icon": "🧠",
-        "headline": "Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más",
-        "subtext": "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos.",
-        "image": "https://i.blogs.es/0437a1/mediamarkt/1024_2000.jpeg",
+        "headline": "Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo",
+        "subtext": "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED.",
+        "image": "https://i.blogs.es/3a6ce7/original-6/1024_2000.jpeg",
         "source": "Xataka",
-        "voice_script": "Noticia número 4: Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más. MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 4: Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo. Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-emerald-600 to-teal-900",
         "is_vip_hook": false
       },
@@ -71,11 +71,11 @@
         "news_index": 4,
         "badge": "NOTICIA #5 • CIERRE SEMANAL",
         "icon": "🔥",
-        "headline": "Google anuncia la solución tan esperada para la barra de señal celular de Android Auto",
-        "subtext": "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red.",
-        "image": "https://i.blogs.es/e5ef4a/android-auto/1024_2000.jpeg",
+        "headline": "La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos",
+        "subtext": "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
+        "image": "https://i.blogs.es/5014ea/google-maps-y-ceuta-y-melilla/1024_2000.jpeg",
         "source": "Genbeta",
-        "voice_script": "Noticia número 5: Google anuncia la solución tan esperada para la barra de señal celular de Android Auto. Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "voice_script": "Noticia número 5: La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos. Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
         "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
@@ -103,22 +103,22 @@
     },
     {
       "id": "news_2",
-      "title": "Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\"",
-      "summary": "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos?",
-      "voice_extra": "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos?",
+      "title": "Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible",
+      "summary": "Se está gastando mucho en IA. Muchísimo.",
+      "voice_extra": "Se está gastando mucho en IA. Muchísimo.",
       "full_paragraphs": [
-        "Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos? Joe Tsai, presidente y cofundador de Alibaba, lo tiene claro: no en una API cerrada probablemente suministrada por una empresa externa, sino en un modelo abierto que puedan entrenar a medida, como ha contado en el evento Wave , que ha tenido lugar en Italia.",
-        "De hecho, Tsai va un paso más allá: cree que es la única vía de que Europa alcance la independencia tecnológica. Y lo dice sin rodeos: según él, mientras que las empresas chinas de IA comparten su innovación y los avances, los laboratorios de EEUU, no.",
-        "Por qué importa . Porque a día de hoy y pese a las advertencias de Arthur Mensch , CEO de Mistral, sobre los dos años de margen que tiene Europa para montar su propia infraestructura de IA y los diferentes esfuerzos de la administración europea y su ecosistema empresarial , la realidad es que sigue dependiendo de la tecnología de Estados Unidos y China. Y acontecimientos como el bloqueo internacional a los modelos más potentes de Anthropic por parte de EEUU en verano ya demostró que un gobierno puede cerrar el grifo a demanda.",
-        "Desde entonces, empresas como Siemens o Renault combinan modelos de diferentes orígenes por si las moscas. Pero los problemas no acaban aquí: China y EEUU controlan en torno al 90 % de la infraestructura mundial de computación para IA, así que aunque quisiera, a Europa le falta capacidad.",
-        "Hacia la soberanía (a contrarreloj) . El pasado 3 de junio Bruselas presentó un paquete de medidas con el objetivo de minimizar su dependencia externa en materia tecnológica que incluye una inyección económica para acelerar la construcción de centros de datos, inteligencia artificial, semiconductores y pone sobre la mesa el código abierto como alternativa. Eso sí, si hablamos de open source, como recuerda el informe del pasado mes de septiembre de Mozilla recogido por Tom's Hardware , quien lleva la voz cantante es China",
-        "La propuesta de Tsai . Lo que propone Joe Tsai es prácticamente un fine tuning: descargar los pesos de un modelo abierto, ejecutarlo en la infraestructura propia y entrenarlo con datos internos, de modo que la información sensible no salga de la empresa."
+        "Se está gastando mucho en IA. Muchísimo. Y son precisamente las cuatro grandes tecnológicas (Meta, Microsoft, Amazon y Google) las que están al frente de ese gasto . Tanto es así, que Microsoft ya ha empezado a dar los primeros coletazos para denominarse a sí misma una compañía enfocada, primeramente, en agentes de IA .",
+        "Satya Nadella, CEO de la compañía, ha contado más detalles sobre ello en su carta anual , explicando que Microsoft cuenta ahora con dos grupos principales diferentes en su ecosistema: agentes de IA e infrastructura, y dispositivos de consumo. Los agentes ya no son una característica dentro de los productos de Microsoft; son el principio organizativo de la empresa.",
+        "Por qué importa. Microsoft ha gastado este 2026 unos 190.000 millones de dólares en IA, según datos de Statista. Evidentemente, no quieren quedarse atrás en esta atropellada carrera, y la compañía quiere dejar claro a sus inversores cuáles son sus negocios principales y cómo se están organizando las cosas en torno a los agentes de IA. Por ello, cuando toque hablar de ingresos, hablarán de su negocio en dos segmentos claramente diferenciados, en este caso su negocio de IA e infraestuctura y dispositivos de consumo.",
+        "Nadella afirma que tiene \"confianza en los beneficios a largo plazo\" de esas inversiones, citando la demanda y las mejoras de eficiencia.",
+        "En detalle. Nadella argumenta que la informática está pasando de apps que manejamos a sistemas que trabajan para nosotros. Su frase para describirlo es que las personas ahora pueden \"delegar a lo macro y dirigir a lo micro\".",
+        "Las cifras de la carta muestran la situación en la que se encuentra la empresa:"
       ],
-      "full_voice_script": "Joe Tsai, presidente de Alibaba: \"La única forma de que Europa alcance la soberanía tecnológica es con la IA open source\". Noticia publicada por Xataka IA & Tech. Ante un futuro donde la IA tengo un papel esencial en la mayoría de procesos productivos, ¿dónde querría tener una empresa europea sus datos? Joe Tsai, presidente y cofundador de Alibaba, lo tiene claro: no en una API cerrada probablemente suministrada por una empresa externa, sino en un modelo abierto que puedan entrenar a medida, como ha contado en el evento Wave , que ha tenido lugar en Italia. De hecho, Tsai va un paso más allá: cree que es la única vía de que Europa alcance la independencia tecnológica. Y lo dice sin rodeos: según él, mientras que las empresas chinas de IA comparten su innovación y los avances, los laboratorios de EEUU, no. Por qué importa . Porque a día de hoy y pese a las advertencias de Arthur Mensch , CEO de Mistral, sobre los dos años de margen que tiene Europa para montar su propia infraestructura de IA y los diferentes esfuerzos de la administración europea y su ecosistema empresarial , la realidad es que sigue dependiendo de la tecnología de Estados Unidos y China. Y acontecimientos como el bloqueo internacional a los modelos más potentes de Anthropic por parte de EEUU en verano ya demostró que un gobierno puede cerrar el grifo a demanda. Desde entonces, empresas como Siemens o Renault combinan modelos de diferentes orígenes por si las moscas. Pero los problemas no acaban aquí: China y EEUU controlan en torno al 90 % de la infraestructura mundial de computación para IA, así que aunque quisiera, a Europa le falta capacidad. Hacia la soberanía (a contrarreloj) . El pasado 3 de junio Bruselas presentó un paquete de medidas con el objetivo de minimizar su dependencia externa en materia tecnológica que incluye una inyección económica para acelerar la construcción de centros de datos, inteligencia artificial, semiconductores y pone sobre la mesa el código abierto como alternativa. Eso sí, si hablamos de open source, como recuerda el informe del pasado mes de septiembre de Mozilla recogido por Tom's Hardware , quien lleva la voz cantante es China La propuesta de Tsai . Lo que propone Joe Tsai es prácticamente un fine tuning: descargar los pesos de un modelo abierto, ejecutarlo en la infraestructura propia y entrenarlo con datos internos, de modo que la información sensible no salga de la empresa.",
-      "image": "https://i.blogs.es/11c6aa/retrato-pop-art-con-estrellas-europeas/1024_2000.jpeg",
+      "full_voice_script": "Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible. Noticia publicada por Xataka IA & Tech. Se está gastando mucho en IA. Muchísimo. Y son precisamente las cuatro grandes tecnológicas (Meta, Microsoft, Amazon y Google) las que están al frente de ese gasto . Tanto es así, que Microsoft ya ha empezado a dar los primeros coletazos para denominarse a sí misma una compañía enfocada, primeramente, en agentes de IA . Satya Nadella, CEO de la compañía, ha contado más detalles sobre ello en su carta anual , explicando que Microsoft cuenta ahora con dos grupos principales diferentes en su ecosistema: agentes de IA e infrastructura, y dispositivos de consumo. Los agentes ya no son una característica dentro de los productos de Microsoft; son el principio organizativo de la empresa. Por qué importa. Microsoft ha gastado este 2026 unos 190.000 millones de dólares en IA, según datos de Statista. Evidentemente, no quieren quedarse atrás en esta atropellada carrera, y la compañía quiere dejar claro a sus inversores cuáles son sus negocios principales y cómo se están organizando las cosas en torno a los agentes de IA. Por ello, cuando toque hablar de ingresos, hablarán de su negocio en dos segmentos claramente diferenciados, en este caso su negocio de IA e infraestuctura y dispositivos de consumo. Nadella afirma que tiene \"confianza en los beneficios a largo plazo\" de esas inversiones, citando la demanda y las mejoras de eficiencia. En detalle. Nadella argumenta que la informática está pasando de apps que manejamos a sistemas que trabajan para nosotros. Su frase para describirlo es que las personas ahora pueden \"delegar a lo macro y dirigir a lo micro\". Las cifras de la carta muestran la situación en la que se encuentra la empresa:",
+      "image": "https://i.blogs.es/6ec393/satya/1024_2000.jpeg",
       "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/robotica-e-ia/presidente-alibaba-tiene-claro-unica-forma-que-europa-alcance-soberania-tecnologica-ia-open-source",
-      "published": "2026-10-25T17:30:11+00:00"
+      "link": "https://www.xataka.com/empresas-y-economia/microsoft-va-a-fundir-190-000-millones-dolares-ia-solo-este-ano-ha-hecho-movimiento-obvio-ahora-compania-agentes",
+      "published": "2026-10-26T18:33:23+00:00"
     },
     {
       "id": "news_3",
@@ -141,41 +141,41 @@
     },
     {
       "id": "news_4",
-      "title": "Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más",
-      "summary": "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos.",
-      "voice_extra": "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos.",
+      "title": "Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo",
+      "summary": "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED.",
+      "voice_extra": "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED.",
       "full_paragraphs": [
-        "MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos. Si no quieres esperar al Black Friday , atento a estos chollos que ya se encontrarán disponibles en la tienda hasta el 1 de noviembre o hasta agotar existencias:",
-        "Durante la campaña de MediaMarkt se puede comprar el Xiaomi 17T Pro mucho más barato. Añadiendo al carrito la configuración de 512 GB de almacenamiento interno , se queda por 611,93 euros en color azul (también está disponible en color morado ), un buen precio para un smartphone que cuenta con una buena pantalla de 6,83 pulgadas con tasa de refresco de hasta 144 Hz, una batería de 7.000 mAh con carga rápida de 100W y cámaras firmadas por Leica, ofreciendo de esta forma muy buenos resultados fotográficos.",
-        "Se trata de un móvil reacondicionado en estado excelente.",
-        "Si lo preferimos, el Samsung Galaxy S26 también ha bajado de precio en su configuración de 512 GB de almacenamiento interno. En este caso, al añadirlo al carrito se queda por 719,28 euros . Lo interesante de este móvil es que es más pequeño que el de Xiaomi al tener una pantalla de 6,3 pulgadas , su software está muy bien optimizado y su batería, pese a que no tiene mucha capacidad, ofrece una autonomía aproximada de dos días sin tener que utilizar el cargador.",
-        "Se trata de un móvil reacondicionado en estado excelente.",
-        "Si lo que estamos buscando es un buen televisor para ver pelis y series o para jugar a la consola, MediaMarkt tiene el modelo Samsung TQ65S83HAEXXC por 1.078,65 euros . Se trata de una smart TV con panel OLED de 65 pulgadas que cuenta con tratamiento antirreflejos, algo ideal si lo vamos a colocar frente a una ventana. También es compatible con HDR10+ y con Dolby Atmos, tiene modo Filmmaker, es compatible con Alexa y Google Assistant y su tasa de refresco es de hasta 120 Hz."
+        "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED. Sin embargo, parece que Apple tiene claro que el más especial es el modelo con pantalla táctil y ha decidido dejar todos los focos del miércoles para él solito.",
+        "Así, ayer presentó el nuevo iPad Mini que, aparte de la pantalla OLED, monta el espectacular SoC A20 Pro que ya hemos puesto a prueba en el análisis del iPhone 18 Pro Max . Y hoy ha desvelado la renovación de dos de los Mac que aún no habían dado el salto al chip M6 que debutó hace unos meses con el Mac mini .",
+        "A continuación, vamos con todos los detalles tanto del MacBook Pro M6 como del iMac M6.",
+        "\"Hasta 13 veces más rápido en tareas de IA que el M1\". Apple se empeña en comparar todos los nuevos SoC M con el de primera generación cuando han pasado seis añazos y el M1 no estaba diseñado para eso. Dicho esto, el principal cambio de este MacBook Pro es, evidentemente, el procesador.",
+        "El M6 cuenta con una CPU de 12 núcleos compuesta por dos núcleos de alta potencia, cuatro de rendimiento y seis de eficiencia. La GPU es de 12 núcleos y parte de 16 GB de memoria RAM con un ancho de banda de 153 GB/s, pero que podemos ampliar a 24 o 32 con un ancho de banda de 170 GB/s.",
+        "El almacenamiento sigue siendo de 1, 2 o 4 TB y donde también han actualizado es en el Wi-Fi. De un Wi-Fi 6e que ya nos chirrió en el modelo del año pasado , pasamos por fin a Wi-Fi 7 para equipararse con los modelos que tienen los M5 Pro y M5 Max."
       ],
-      "full_voice_script": "Ofertas en reacondicionados de MediaMarkt con grandes descuentos en el Samsung Galaxy S26 de 512 GB, en televisores, monitores y más. Noticia publicada por Xataka. MediaMarkt está celebrando una campaña de ofertas centrada en productos reacondicionados. Hay buenos precios en móviles, pero también en televisores, monitores e incluso lectores de libros electrónicos. Si no quieres esperar al Black Friday , atento a estos chollos que ya se encontrarán disponibles en la tienda hasta el 1 de noviembre o hasta agotar existencias: Durante la campaña de MediaMarkt se puede comprar el Xiaomi 17T Pro mucho más barato. Añadiendo al carrito la configuración de 512 GB de almacenamiento interno , se queda por 611,93 euros en color azul (también está disponible en color morado ), un buen precio para un smartphone que cuenta con una buena pantalla de 6,83 pulgadas con tasa de refresco de hasta 144 Hz, una batería de 7.000 mAh con carga rápida de 100W y cámaras firmadas por Leica, ofreciendo de esta forma muy buenos resultados fotográficos. Se trata de un móvil reacondicionado en estado excelente. Si lo preferimos, el Samsung Galaxy S26 también ha bajado de precio en su configuración de 512 GB de almacenamiento interno. En este caso, al añadirlo al carrito se queda por 719,28 euros . Lo interesante de este móvil es que es más pequeño que el de Xiaomi al tener una pantalla de 6,3 pulgadas , su software está muy bien optimizado y su batería, pese a que no tiene mucha capacidad, ofrece una autonomía aproximada de dos días sin tener que utilizar el cargador. Se trata de un móvil reacondicionado en estado excelente. Si lo que estamos buscando es un buen televisor para ver pelis y series o para jugar a la consola, MediaMarkt tiene el modelo Samsung TQ65S83HAEXXC por 1.078,65 euros . Se trata de una smart TV con panel OLED de 65 pulgadas que cuenta con tratamiento antirreflejos, algo ideal si lo vamos a colocar frente a una ventana. También es compatible con HDR10+ y con Dolby Atmos, tiene modo Filmmaker, es compatible con Alexa y Google Assistant y su tasa de refresco es de hasta 120 Hz.",
-      "image": "https://i.blogs.es/0437a1/mediamarkt/1024_2000.jpeg",
+      "full_voice_script": "Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo. Noticia publicada por Xataka. Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED. Sin embargo, parece que Apple tiene claro que el más especial es el modelo con pantalla táctil y ha decidido dejar todos los focos del miércoles para él solito. Así, ayer presentó el nuevo iPad Mini que, aparte de la pantalla OLED, monta el espectacular SoC A20 Pro que ya hemos puesto a prueba en el análisis del iPhone 18 Pro Max . Y hoy ha desvelado la renovación de dos de los Mac que aún no habían dado el salto al chip M6 que debutó hace unos meses con el Mac mini . A continuación, vamos con todos los detalles tanto del MacBook Pro M6 como del iMac M6. \"Hasta 13 veces más rápido en tareas de IA que el M1\". Apple se empeña en comparar todos los nuevos SoC M con el de primera generación cuando han pasado seis añazos y el M1 no estaba diseñado para eso. Dicho esto, el principal cambio de este MacBook Pro es, evidentemente, el procesador. El M6 cuenta con una CPU de 12 núcleos compuesta por dos núcleos de alta potencia, cuatro de rendimiento y seis de eficiencia. La GPU es de 12 núcleos y parte de 16 GB de memoria RAM con un ancho de banda de 153 GB/s, pero que podemos ampliar a 24 o 32 con un ancho de banda de 170 GB/s. El almacenamiento sigue siendo de 1, 2 o 4 TB y donde también han actualizado es en el Wi-Fi. De un Wi-Fi 6e que ya nos chirrió en el modelo del año pasado , pasamos por fin a Wi-Fi 7 para equipararse con los modelos que tienen los M5 Pro y M5 Max.",
+      "image": "https://i.blogs.es/3a6ce7/original-6/1024_2000.jpeg",
       "source": "Xataka",
-      "link": "https://www.xataka.com/seleccion/ofertas-reacondicionados-mediamarkt-grandes-descuentos-samsung-galaxy-s26-512-gb-televisores-monitores",
-      "published": "2026-10-26T10:15:29+01:00"
+      "link": "https://www.xataka.com/ordenadores/macbook-pro-m6-imac-m6-caracteristicas-precio-ficha-tecnica",
+      "published": "2026-10-27T15:16:00+01:00"
     },
     {
       "id": "news_5",
-      "title": "Google anuncia la solución tan esperada para la barra de señal celular de Android Auto",
-      "summary": "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red.",
-      "voice_extra": "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red.",
+      "title": "La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos",
+      "summary": "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
+      "voice_extra": "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
       "full_paragraphs": [
-        "Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red. El fallo podría hacer que el usuario creyera que su teléfono se había desconectado, mientras que las llamadas y los mensajes continuaban funcionando.",
-        "La confirmación procede de Mishaal Rahman, encargado de la relación con la comunidad de Android en Google , quien respondió en una publicación de Reddit . En su publicación, Rahman escribe: “Somos conscientes de los informes sobre la ausencia de la señal móvil y estamos distribuyendo una corrección que esperamos que solucione este problema” , y sigue: “La corrección todavía no está disponible de forma generalizada, así que puede tardar un tiempo en llegar a tu dispositivo” . Concluye sus comentarios diciendo que la persona podría apuntarse a la beta de Android Auto para intentar recibirla antes.",
-        "Su respuesta aborda el problema y la actualización , pero no se ofrece una línea de tiempo estimada para la distribución a nivel regional o por modelo de teléfono. También hay testimonios de usuarios en Reddit . Un usuario, brgomesz, publicó una captura de pantalla que ilustra cómo su indicador de red regresó a su Android Auto después de una actualización a la versión 17.8.663874. Otro usuario de Reddit comenta sus iniciales preocupaciones sobre la ausencia de indicadores de red con la versión 17.8.663874 y después actualiza su mensaje para indicar que el icono regresó en su Xiaomi 15 Ultra .",
-        "Cabe destacar que los usuarios de Android Auto deberían comprender que estas experiencias individuales no son pruebas suficientes de que un indicador de red vaya a ser restituido en el momento en que el dispositivo de la persona se actualice. La declaración de Google no vincula ninguna versión específica con el arreglo del indicador de red móvil. La solución desarrollada se está distribuyendo.",
-        "Google señala cómo el usuario puede encontrar la actualización para Android Auto . Describe un proceso que consiste en abrir la tienda de Google Play en el teléfono y pulsar en la imagen de perfil del usuario. Luego, la persona debe buscar “Gestionar apps y dispositivo” y localizar la sección de actualizaciones disponibles, pulsar en “Ver detalles” y revisar las actualizaciones para Android Auto. Si aparece una actualización para descargar, entonces se debe pulsar “Actualizar”. Otra opción es ir a la ficha de Android Auto en la tienda y pulsar “Actualizar” si aparece el botón.",
-        "El resto del procedimiento tiene que ver con las opciones de configuración manual o automática para instalar nuevas actualizaciones para Android Auto. Se debe ir a la página de la aplicación, pulsar en el menú de la esquina superior derecha y activar la actualización automática. Esta opción permite que la aplicación se actualice cuando haya actualizaciones disponibles, pero no es un factor determinante de cuándo comienza la distribución de una actualización para resolver un problema específico. La guía de Xataka sobre Android Auto ofrece una recopilación de formas en que se puede actualizar la aplicación."
+        "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
+        "La nota del Partido Popular sobre este asunto apareció hace poco: un comunicado sobre ambas ciudades , según el cual los coordinadores de la Comisión de Peticiones habían aprobado la iniciativa . Quien interpone la queja considera ambigua la representación de las fronteras y dice que Google debería mostrar una línea continua, no una línea discontinua. Pide a la Comisión Europea que actúe en relación con los riesgos de desinformación que, según la queja, podría generar el mapa. Su queja refleja su posición y no demuestra que se haya incumplido el reglamento.",
+        "El Observatorio de Ceuta y Melilla ha informado de que su director, Carlos Echeverría , había escrito a Google España en 2023 sobre el tema. También apareció en una nota del Observatorio el 23 de septiembre de 2026, que afirmaba que el asunto aún no se había resuelto.",
+        "Las notas de Google indican que el servicio diferencia entre varias fronteras. En el apartado sobre fronteras y nombres de los países , las líneas grises continuas se reservan a las fronteras internacionales sin discusión, y las discontinuas, a aquellas cuya definición sea objeto de controversia (y a determinados límites provisionales o decididos por tratados). Solo por el estilo de la línea discontinua no se puede distinguir qué categoría aplica Google a cada frontera.",
+        "Google Maps está sujeto a normas de cumplimiento adicionales de conformidad con el Reglamento de Servicios Digitales , en virtud del cual la Comisión Europea calificó el 25 de abril de 2023 al servicio de “plataforma en línea de muy gran tamaño”. Según los artículos 34 y 35 del Reglamento , Google debe evaluar los riesgos sistémicos que plantea su servicio y aplicar medidas para mitigarlos.",
+        "La Comisión puede solicitar información y obtener pruebas si sospecha que se ha producido una infracción. Antes de decidir sancionar a la empresa por incumplimiento del reglamento, debe acreditar la infracción y darle la oportunidad de presentar sus argumentos."
       ],
-      "full_voice_script": "Google anuncia la solución tan esperada para la barra de señal celular de Android Auto. Noticia publicada por Genbeta. Google ha confirmado que está distribuyendo una actualización para recuperar la indicación de la cobertura móvil en Android Auto . Este problema ha estado presente durante meses, dejando al usuario sin un indicador visual de cobertura de red. El fallo podría hacer que el usuario creyera que su teléfono se había desconectado, mientras que las llamadas y los mensajes continuaban funcionando. La confirmación procede de Mishaal Rahman, encargado de la relación con la comunidad de Android en Google , quien respondió en una publicación de Reddit . En su publicación, Rahman escribe: “Somos conscientes de los informes sobre la ausencia de la señal móvil y estamos distribuyendo una corrección que esperamos que solucione este problema” , y sigue: “La corrección todavía no está disponible de forma generalizada, así que puede tardar un tiempo en llegar a tu dispositivo” . Concluye sus comentarios diciendo que la persona podría apuntarse a la beta de Android Auto para intentar recibirla antes. Su respuesta aborda el problema y la actualización , pero no se ofrece una línea de tiempo estimada para la distribución a nivel regional o por modelo de teléfono. También hay testimonios de usuarios en Reddit . Un usuario, brgomesz, publicó una captura de pantalla que ilustra cómo su indicador de red regresó a su Android Auto después de una actualización a la versión 17.8.663874. Otro usuario de Reddit comenta sus iniciales preocupaciones sobre la ausencia de indicadores de red con la versión 17.8.663874 y después actualiza su mensaje para indicar que el icono regresó en su Xiaomi 15 Ultra . Cabe destacar que los usuarios de Android Auto deberían comprender que estas experiencias individuales no son pruebas suficientes de que un indicador de red vaya a ser restituido en el momento en que el dispositivo de la persona se actualice. La declaración de Google no vincula ninguna versión específica con el arreglo del indicador de red móvil. La solución desarrollada se está distribuyendo. Google señala cómo el usuario puede encontrar la actualización para Android Auto . Describe un proceso que consiste en abrir la tienda de Google Play en el teléfono y pulsar en la imagen de perfil del usuario. Luego, la persona debe buscar “Gestionar apps y dispositivo” y localizar la sección de actualizaciones disponibles, pulsar en “Ver detalles” y revisar las actualizaciones para Android Auto. Si aparece una actualización para descargar, entonces se debe pulsar “Actualizar”. Otra opción es ir a la ficha de Android Auto en la tienda y pulsar “Actualizar” si aparece el botón. El resto del procedimiento tiene que ver con las opciones de configuración manual o automática para instalar nuevas actualizaciones para Android Auto. Se debe ir a la página de la aplicación, pulsar en el menú de la esquina superior derecha y activar la actualización automática. Esta opción permite que la aplicación se actualice cuando haya actualizaciones disponibles, pero no es un factor determinante de cuándo comienza la distribución de una actualización para resolver un problema específico. La guía de Xataka sobre Android Auto ofrece una recopilación de formas en que se puede actualizar la aplicación.",
-      "image": "https://i.blogs.es/e5ef4a/android-auto/1024_2000.jpeg",
+      "full_voice_script": "La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos. Noticia publicada por Genbeta. Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales. La nota del Partido Popular sobre este asunto apareció hace poco: un comunicado sobre ambas ciudades , según el cual los coordinadores de la Comisión de Peticiones habían aprobado la iniciativa . Quien interpone la queja considera ambigua la representación de las fronteras y dice que Google debería mostrar una línea continua, no una línea discontinua. Pide a la Comisión Europea que actúe en relación con los riesgos de desinformación que, según la queja, podría generar el mapa. Su queja refleja su posición y no demuestra que se haya incumplido el reglamento. El Observatorio de Ceuta y Melilla ha informado de que su director, Carlos Echeverría , había escrito a Google España en 2023 sobre el tema. También apareció en una nota del Observatorio el 23 de septiembre de 2026, que afirmaba que el asunto aún no se había resuelto. Las notas de Google indican que el servicio diferencia entre varias fronteras. En el apartado sobre fronteras y nombres de los países , las líneas grises continuas se reservan a las fronteras internacionales sin discusión, y las discontinuas, a aquellas cuya definición sea objeto de controversia (y a determinados límites provisionales o decididos por tratados). Solo por el estilo de la línea discontinua no se puede distinguir qué categoría aplica Google a cada frontera. Google Maps está sujeto a normas de cumplimiento adicionales de conformidad con el Reglamento de Servicios Digitales , en virtud del cual la Comisión Europea calificó el 25 de abril de 2023 al servicio de “plataforma en línea de muy gran tamaño”. Según los artículos 34 y 35 del Reglamento , Google debe evaluar los riesgos sistémicos que plantea su servicio y aplicar medidas para mitigarlos. La Comisión puede solicitar información y obtener pruebas si sospecha que se ha producido una infracción. Antes de decidir sancionar a la empresa por incumplimiento del reglamento, debe acreditar la infracción y darle la oportunidad de presentar sus argumentos.",
+      "image": "https://i.blogs.es/5014ea/google-maps-y-ceuta-y-melilla/1024_2000.jpeg",
       "source": "Genbeta",
-      "link": "https://www.genbeta.com/a-fondo/google-anuncia-solucion-esperada-para-barra-senal-celular-android-auto",
-      "published": "2026-10-26T09:01:32+01:00"
+      "link": "https://www.genbeta.com/actualidad/ue-abre-via-para-multar-a-google-maps-representar-a-ceuta-melilla-como-territorios-disputa-marruecos",
+      "published": "2026-10-27T12:01:29+01:00"
     }
   ],
   "vip_hack_of_the_week": {
@@ -223,18 +223,22 @@
   ],
   "game_layout": {
     "portada": [
-      "reflex",
       "stacker",
+      "reflex",
       "memory"
     ],
     "vault": [
+      "drone",
       "dodge"
     ],
-    "badges": {
-      "reflex": "MÁS JUGADO DE LA SEMANA 🔥"
-    }
+    "badges": {}
   },
   "vault_games": [
+    {
+      "id": "drone",
+      "title": "Neon Cyber-Drone",
+      "url": "juegos/cyber-drone.html?v=14"
+    },
     {
       "id": "dodge",
       "title": "Cyber Dodge",
@@ -258,34 +262,34 @@
       "juegos para celular",
       "retos entre amigos",
       "smart",
-      "tsai",
-      "alibaba",
-      "europa",
+      "microsoft",
+      "dólares",
       "desarrollador",
       "pennsylvania",
-      "ofertas",
-      "mediamarkt"
+      "apple",
+      "macbook",
+      "google"
     ],
     "trending_terms": [
       "Smart",
-      "Tsai",
-      "Alibaba",
-      "Europa",
+      "Microsoft",
+      "dólares",
       "Desarrollador",
       "Pennsylvania",
-      "Ofertas",
-      "MediaMarkt"
+      "Apple",
+      "MacBook",
+      "Google"
     ],
     "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
-    "lastmod": "2026-10-26"
+    "lastmod": "2026-10-27"
   },
   "promo_kit": {
     "whatsapp_status": [
       "🎮 Torneo semanal nuevo en ByteZone: ranking reiniciado, ¡todos empiezan de cero! ⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo? Juega gratis 👉 https://megabotp2p.github.io/bytezone/",
-      "🏆 Campeones de la semana pasada → Neon Stacker Pro: ***** (43 pisos) | Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
+      "🏆 Campeones de la semana pasada → Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
       "🤖 Noticia IA de la semana: El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
     ],
-    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Smart #Tsai #Alibaba",
+    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Smart #Microsoft #dólares",
     "hashtags": [
       "#juegosgratis",
       "#arcade",
@@ -295,21 +299,16 @@
       "#tecnologia",
       "#telegram",
       "#Smart",
-      "#Tsai",
-      "#Alibaba"
+      "#Microsoft",
+      "#dólares"
     ],
     "challenge_lines": [
       "⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo?",
-      "🏗️ Récord de Neon Stacker: 39 pisos (*****). ¿Llegas más alto?"
+      "🏗️ Récord de Neon Stacker: 40 pisos (*****). ¿Llegas más alto?"
     ],
-    "last_week_champions_text": "🏆 Campeones de la semana pasada → Neon Stacker Pro: ***** (43 pisos) | Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)"
+    "last_week_champions_text": "🏆 Campeones de la semana pasada → Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)"
   },
   "last_week_champions": {
-    "stacker": {
-      "name": "*****",
-      "score": 43,
-      "country": "VE"
-    },
     "reflex": {
       "name": "Jugador_191",
       "score": 16,
@@ -324,7 +323,7 @@
   "all_time_records": {
     "stacker": {
       "name": "*****",
-      "score": 39,
+      "score": 40,
       "country": "VE"
     },
     "reflex": {
@@ -339,55 +338,65 @@
     }
   },
   "agent_report": {
-    "generated_at": "2026-10-26T05:59:55.230029-04:00",
+    "generated_at": "2026-10-27T10:26:31.311495-04:00",
     "week_id": "W2026-10-26",
     "traffic_status": "bajo",
     "traffic": {
       "devices_7d": 3,
-      "plays_7d": 47,
-      "views_7d": 0,
-      "ad_actions_7d": 9,
-      "ads_shown_7d": 11,
-      "devices_prev_7d": 0,
-      "change_pct": null,
+      "plays_7d": 1,
+      "views_7d": 5,
+      "ad_actions_7d": 1,
+      "ads_shown_7d": 1,
+      "devices_prev_7d": 3,
+      "change_pct": 0,
       "per_game": {
         "stacker": {
-          "view": 0,
-          "play": 13,
+          "view": 3,
+          "play": 1,
           "ad": 1
         },
         "reflex": {
           "view": 0,
-          "play": 20,
-          "ad": 2
+          "play": 0,
+          "ad": 0
         },
         "memory": {
-          "view": 0,
-          "play": 7,
-          "ad": 2
+          "view": 2,
+          "play": 0,
+          "ad": 0
         },
         "dodge": {
           "view": 0,
-          "play": 7,
-          "ad": 4
+          "play": 0,
+          "ad": 0
+        },
+        "drone": {
+          "view": 0,
+          "play": 0,
+          "ad": 0
         }
       },
       "top_countries": [
         [
           "VE",
-          56
+          7
         ]
       ]
     },
     "actions": [
       "Noticias renovadas: 5 historias nuevas (se evitaron los titulares de la semana anterior).",
       "Humor renovado: 10 chistes y 4 'verdades tech' nuevas.",
-      "SEO: meta-tags actualizados con palabras clave de la semana (Smart, Tsai, Alibaba, Europa, Desarrollador), sitemap regenerado. IndexNow aceptó la notificación (HTTP 202)",
+      "SEO: meta-tags actualizados con palabras clave de la semana (Smart, Microsoft, dólares, Desarrollador, Pennsylvania), sitemap regenerado. IndexNow aceptó la notificación (HTTP 202)",
       "Kit de promoción listo (textos para WhatsApp/Telegram/redes con los récords actuales).",
       "Telegram: sin token/chat configurados (envío automático desactivado).",
-      "Sin rotación: el menos jugado ('Cyber Memory') tiene 18% de las partidas (umbral 15%) o aún está en su periodo mínimo de 2 semanas.",
+      "Sin rotación: 1 partidas registradas en 7 días (se necesitan 30 para rotar titulares automáticamente). Todos los juegos siguen disponibles entre Portada y Baúl.",
       "ALERTA: tráfico bajo (menos de 25 dispositivos únicos en 7 días). Recomendación: difundir el kit de promoción en grupos y estados esta semana."
     ],
+    "self_evaluation": [
+      "Impulsar tráfico orgánico publicando 2 YouTube Shorts esta semana (1 de reto gamer y 1 de noticias virales IA) desde @RafaelStudio_bot.",
+      "Catálogo saludable: 3 juegos estelares en portada y 2 joyas activas en el Baúl Arcade (Neon Cyber-Drone, Cyber Dodge)."
+    ],
+    "needs_new_game_alert": false,
     "rotation": null,
     "note": "Las métricas se acumulan desde el primer día de la telemetría global; los primeros reportes tienen pocos datos."
   }

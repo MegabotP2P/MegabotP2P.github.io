@@ -42,19 +42,21 @@ CACHE_VERSION = 14
 SITE_BASE = "https://megabotp2p.github.io/bytezone/"
 INDEXNOW_KEY = "3f9a7c1e5b2d48a6b0c4e7d9a1f25683"
 TELEMETRY_TOPIC = "bytezone_global_telemetry_v12"
-GAMES = ["stacker", "reflex", "memory", "dodge"]
+GAMES = ["stacker", "reflex", "memory", "dodge", "drone"]
 GAME_NAMES = {
     "stacker": "Neon Stacker Pro",
     "reflex": "Test de Reflejos",
     "memory": "Cyber Memory",
     "dodge": "Cyber Dodge",
+    "drone": "Neon Cyber-Drone",
 }
-GAME_UNITS = {"stacker": "pisos", "reflex": "ms", "memory": "rondas", "dodge": "seg"}
+GAME_UNITS = {"stacker": "pisos", "reflex": "ms", "memory": "rondas", "dodge": "seg", "drone": "portales"}
 GAME_URLS = {
     "stacker": "juegos/neon-stacker.html",
     "reflex": "juegos/reflejos-visuales.html",
     "memory": "juegos/cyber-memory.html",
     "dodge": "juegos/cyber-dodge.html",
+    "drone": "juegos/cyber-drone.html",
 }
 CLOUD_ALLTIME_IDS = {
     "stacker": "ff808181a09d98f701a1448611567237",
@@ -525,12 +527,13 @@ def compute_stats(log):
 def default_state():
     return {
         "portada": ["stacker", "reflex", "memory"],
-        "vault": ["dodge"],
+        "vault": ["drone", "dodge"],
         "entered": {g: WEEK_ID for g in GAMES},
         "history": [],
         "last_news_keys": [],
         "last_joke_ids": [],
         "last_truth_ids": [],
+        "champions_archive": {},
     }
 
 def weeks_between(w_from, w_to):
@@ -545,8 +548,11 @@ def decide(stats, state):
     s = stats["last7"]
     p = stats["prev7"]
     decisions = []
-    portada = list(state.get("portada", default_state()["portada"]))
-    vault = list(state.get("vault", default_state()["vault"]))
+    portada = [g for g in state.get("portada", default_state()["portada"]) if g in GAMES]
+    vault = [g for g in state.get("vault", default_state()["vault"]) if g in GAMES and g not in portada]
+    for g in GAMES:
+        if g not in portada and g not in vault:
+            vault.insert(0, g)
     entered = dict(state.get("entered", {}))
     plays = {g: s["per_game"][g]["play"] for g in GAMES}
     total_portada_plays = sum(plays[g] for g in portada)
@@ -564,6 +570,7 @@ def decide(stats, state):
 
     # Rotación: el titular menos jugado cede su lugar a un juego del Baúl
     rotated = None
+    needs_new_game_alert = False
     if total_portada_plays >= 30 and vault:
         least = min(portada, key=lambda g: plays[g])
         share = plays[least] / total_portada_plays
@@ -576,8 +583,21 @@ def decide(stats, state):
             decisions.append(f"ROTACIÓN: '{GAME_NAMES[least]}' ({round(share*100)}% de las partidas) pasa al Baúl y '{GAME_NAMES[incoming]}' sube a la portada.")
         else:
             decisions.append(f"Sin rotación: el menos jugado ('{GAME_NAMES[least]}') tiene {round(share*100)}% de las partidas (umbral 15%) o aún está en su periodo mínimo de 2 semanas.")
+            if share < 0.18:
+                needs_new_game_alert = True
     else:
-        decisions.append(f"Sin rotación: solo {total_portada_plays} partidas registradas en 7 días (se necesitan 30 para decidir con datos).")
+        decisions.append(f"Sin rotación: {total_portada_plays} partidas registradas en 7 días (se necesitan 30 para rotar titulares automáticamente). Todos los juegos siguen disponibles entre Portada y Baúl.")
+
+    # Autoevaluación del Bot (Tráfico, Retención, YouTube y Juegos)
+    self_eval_tips = []
+    if traffic == "bajo":
+        self_eval_tips.append("Impulsar tráfico orgánico publicando 2 YouTube Shorts esta semana (1 de reto gamer y 1 de noticias virales IA) desde @RafaelStudio_bot.")
+    else:
+        self_eval_tips.append("Tráfico activo: mantener publicación constante en YouTube Shorts con comentario fijado hacia el Torneo Semanal.")
+    if needs_new_game_alert:
+        self_eval_tips.append(f"ALERTA DE RENOVACIÓN: '{GAME_NAMES[least]}' muestra desgaste. Se sugiere promover '{GAME_NAMES[vault[0]]}' desde el Baúl a los 3 Estelares.")
+    else:
+        self_eval_tips.append(f"Catálogo saludable: {len(portada)} juegos estelares en portada y {len(vault)} joyas activas en el Baúl Arcade ({', '.join(GAME_NAMES[v] for v in vault)}).")
 
     # Orden de portada por popularidad (si hay datos) y etiquetas
     if total_portada_plays >= 10:
@@ -591,7 +611,9 @@ def decide(stats, state):
 
     return {
         "portada": portada, "vault": vault, "entered": entered, "badges": badges,
-        "traffic": traffic, "change_pct": change_pct, "rotated": rotated, "decisions": decisions,
+        "traffic": traffic, "change_pct": change_pct, "rotated": rotated,
+        "decisions": decisions, "self_evaluation": self_eval_tips,
+        "needs_new_game_alert": needs_new_game_alert,
     }
 
 # ----------------------------------------------------------
@@ -662,11 +684,11 @@ def build_seo(news):
     }
 
 def write_sitemap():
-    pages = ["", "hacks.html", "humor.html", "telegram.html", "stats.html"] + list(GAME_URLS.values())
+    pages = ["", "campeones.html", "hacks.html", "humor.html", "telegram.html", "stats.html"] + list(GAME_URLS.values())
     today = now_vet.strftime("%Y-%m-%d")
     parts = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for pg in pages:
-        pr = "1.0" if pg == "" else ("0.9" if pg in ("hacks.html", "humor.html") else "0.8")
+        pr = "1.0" if pg == "" else ("0.9" if pg in ("campeones.html", "hacks.html", "humor.html") else "0.8")
         parts.append(f"  <url><loc>{SITE_BASE}{pg}</loc><lastmod>{today}</lastmod><changefreq>weekly</changefreq><priority>{pr}</priority></url>")
     parts.append("</urlset>")
     for root in OUTPUT_ROOTS:
@@ -821,6 +843,8 @@ def main():
             "per_game": s7["per_game"], "top_countries": s7["top_countries"],
         },
         "actions": actions,
+        "self_evaluation": decision.get("self_evaluation", []),
+        "needs_new_game_alert": decision.get("needs_new_game_alert", False),
         "rotation": decision["rotated"],
         "note": "Las métricas se acumulan desde el primer día de la telemetría global; los primeros reportes tienen pocos datos.",
     }

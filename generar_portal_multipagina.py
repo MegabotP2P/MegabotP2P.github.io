@@ -31,6 +31,9 @@ GAME_CATALOG = {
     "memory":  {"emoji": "🧠", "title": "Cyber Memory", "cat": "Memoria", "color": "emerald", "grad": "from-emerald-500 to-teal-600",
                 "badge": "MEMORIA 🧠", "url": "juegos/cyber-memory.html", "vault_tag": "Memoria & Secuencias",
                 "desc": "Memoriza y repite la secuencia de luces de neón. Cada ronda añade un paso más a toda velocidad."},
+    "drone":   {"emoji": "🛸", "title": "Neon Cyber-Drone: Portales Láser", "cat": "Precisión", "color": "pink", "grad": "from-pink-500 to-rose-600",
+                "badge": "ESTRENO NEÓN 🛸", "url": "juegos/cyber-drone.html", "vault_tag": "NUEVO • Vuelo Ciberpunk & Reflejos",
+                "desc": "Impulsa el dron neón a través de portales láser móviles y recolecta orbes de energía. ¡Incluye Propulsor de Emergencia y Torneo Semanal!"},
     "dodge":   {"emoji": "🚀", "title": "Cyber Dodge: Tormenta de Asteroides", "cat": "Acción", "color": "amber", "grad": "from-amber-500 to-orange-500",
                 "badge": "ACCIÓN 🚀", "url": "juegos/cyber-dodge.html", "vault_tag": "Acción Espacial & Reflejos",
                 "desc": "Pilota la nave neón y sobrevive la mayor cantidad de segundos esquivando meteoritos cibernéticos. ¡Tiene su propio Torneo Semanal y Escudo de Segunda Oportunidad!"},
@@ -38,7 +41,10 @@ GAME_CATALOG = {
 
 _layout = PULSE.get("game_layout") or {}
 PORTADA_IDS = [g for g in (_layout.get("portada") or ["stacker", "reflex", "memory"]) if g in GAME_CATALOG]
-VAULT_IDS = [g for g in (_layout.get("vault") or ["dodge"]) if g in GAME_CATALOG]
+VAULT_IDS = [g for g in (_layout.get("vault") or ["drone", "dodge"]) if g in GAME_CATALOG and g not in PORTADA_IDS]
+for _gk in GAME_CATALOG:
+    if _gk not in PORTADA_IDS and _gk not in VAULT_IDS:
+        VAULT_IDS.insert(0, _gk)
 GAME_BADGES = _layout.get("badges") or {}
 
 def render_portada_grid():
@@ -73,16 +79,21 @@ def render_vault_cards():
     out = []
     for g in VAULT_IDS:
         m = GAME_CATALOG[g]
-        out.append(f"""            <div class="bg-gray-950/80 border border-amber-500/30 rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-3">
+        is_new = (g == "drone")
+        tag_label = "ESTRENO EN EL BAÚL ✨" if is_new else "JOYA EN EL BAÚL"
+        tag_bg = "bg-pink-500 text-white" if is_new else "bg-amber-500 text-gray-950"
+        border_col = "border-pink-500/40" if is_new else "border-amber-500/30"
+        btn_grad = "from-pink-500 to-rose-600 text-white shadow-pink-500/25" if is_new else "from-amber-500 to-orange-500 text-gray-950 shadow-amber-500/25"
+        out.append(f"""            <div class="bg-gray-950/80 border {border_col} rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-3">
                 <div class="space-y-1">
                     <div class="flex items-center space-x-2">
-                        <span class="text-[10px] font-black bg-amber-500 text-gray-950 px-2 py-0.5 rounded uppercase">JOYA EN EL BAÚL</span>
+                        <span class="text-[10px] font-black {tag_bg} px-2 py-0.5 rounded uppercase">{tag_label}</span>
                         <span class="text-xs text-amber-300 font-semibold">{m['vault_tag']}</span>
                     </div>
                     <h4 class="text-base font-black text-white">{m['emoji']} {m['title']}</h4>
                     <p class="text-xs text-gray-300 leading-relaxed max-w-xl">{m['desc']}</p>
                 </div>
-                <button onclick="openVaultGameWithReward('{m['url']}?v={CV}')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-5 py-3 rounded-xl shadow-lg shadow-amber-500/25 transition flex items-center justify-center space-x-1.5">
+                <button onclick="openVaultGameWithReward('{m['url']}?v={CV}', '{g}')" class="w-full sm:w-auto flex-shrink-0 bg-gradient-to-r {btn_grad} hover:opacity-90 active:scale-95 font-black text-xs px-5 py-3 rounded-xl shadow-lg transition flex items-center justify-center space-x-1.5">
                     <span>🔓</span>
                     <span>RESCATAR DEL BAÚL &amp; JUGAR</span>
                 </button>
@@ -137,6 +148,10 @@ def build_seo_block(page_key, path):
                    "Repite la secuencia de luces neón y supera tu récord de rondas. Torneo semanal y ranking histórico."),
         "dodge": ("Cyber Dodge: Esquiva Asteroides, Juego de Reflejos | ByteZone",
                   "Pilota tu nave y esquiva la lluvia de meteoritos neón el mayor tiempo posible. Ranking semanal en vivo."),
+        "drone": ("Neon Cyber-Drone: Portales Láser Online Gratis | ByteZone",
+                  "Vuela tu dron ciberpunk a través de portales láser móviles y compite en el ranking semanal en vivo."),
+        "campeones": ("Histórico Semanal de Campeones y Ganadores | ByteZone Arcade",
+                      "Consulta el cuadro de honor histórico de ganadores semana a semana (Top 3) en todos los juegos de ByteZone Arcade."),
     }
     title, desc = pages.get(page_key, pages["index"])
     url = SITE_BASE + path
@@ -322,14 +337,18 @@ def get_header(current_page="arcade", depth=0):
     </header>
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
-        <div class="grid grid-cols-4 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-xs sm:text-sm font-medium text-gray-400">
+        <div class="grid grid-cols-5 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-[11px] sm:text-sm font-medium text-gray-400">
             <a href="{root}index.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('arcade')}">
                 <span class="text-base sm:text-lg">🕹️</span>
-                <span>Arcade Hub</span>
+                <span>Arcade</span>
+            </a>
+            <a href="{root}campeones.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('campeones')}">
+                <span class="text-base sm:text-lg">🏆</span>
+                <span>Campeones</span>
             </a>
             <a href="{root}hacks.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('hacks')}">
                 <span class="text-base sm:text-lg">🤖</span>
-                <span>IA & Tech TV</span>
+                <span>IA & TV</span>
             </a>
             <a href="{root}humor.html?v=14" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 {nav_class('humor')}">
                 <span class="text-base sm:text-lg">🎭</span>
@@ -537,12 +556,105 @@ PLAYER_IDENTITY_SCRIPT = """
             return `⏳ Reinicia hoy 12:00 AM (${h}h ${m}m)`;
         }
 
-        const ALL_GAME_KEYS = ['stacker', 'reflex', 'memory', 'dodge'];
+        const ALL_GAME_KEYS = ['stacker', 'reflex', 'memory', 'dodge', 'drone'];
+
+        // Archivo Histórico Oficial de Campeones Semanales (Salón de la Fama Semana a Semana)
+        const HISTORICAL_WEEKLY_CHAMPIONS = [
+            {
+                weekId: 'W2026-10-19',
+                label: 'Semana #2 • 19 Oct al 25 Oct 2026',
+                status: 'Cerrada • Premiada',
+                champions: {
+                    stacker: [
+                        { name: "alexa torres", score: 36, country: "VE" },
+                        { name: "*****", score: 34, country: "VE" },
+                        { name: "RATG", score: 31, country: "VE" }
+                    ],
+                    reflex: [
+                        { name: "RATG", score: 29, country: "VE" },
+                        { name: "*****", score: 84, country: "VE" },
+                        { name: "Rafael Torres", score: 238, country: "VE" }
+                    ],
+                    memory: [
+                        { name: "Jugador_930", score: 14, country: "VE" },
+                        { name: "Tovias Torres", score: 11, country: "VE" },
+                        { name: "*****", score: 10, country: "VE" }
+                    ],
+                    dodge: [
+                        { name: "RATG", score: 29, country: "VE" },
+                        { name: "Rafael Torres", score: 23, country: "VE" },
+                        { name: "Nova_VE", score: 21, country: "VE" }
+                    ],
+                    drone: [
+                        { name: "RATG", score: 26, country: "VE" },
+                        { name: "Rafael Torres", score: 21, country: "VE" },
+                        { name: "CyberHornet", score: 18, country: "MX" }
+                    ]
+                }
+            },
+            {
+                weekId: 'W2026-10-12',
+                label: 'Semana Inaugural #1 • 12 Oct al 18 Oct 2026',
+                status: 'Cerrada • Premiada',
+                champions: {
+                    stacker: [
+                        { name: "alexa torres", score: 34, country: "VE" },
+                        { name: "*****", score: 33, country: "VE" },
+                        { name: "RATG", score: 29, country: "VE" }
+                    ],
+                    reflex: [
+                        { name: "RATG", score: 31, country: "VE" },
+                        { name: "*****", score: 87, country: "VE" },
+                        { name: "Rafael Torres", score: 249, country: "VE" }
+                    ],
+                    memory: [
+                        { name: "Jugador_930", score: 13, country: "VE" },
+                        { name: "Jugador_662", score: 10, country: "VE" },
+                        { name: "Tovias Torres", score: 10, country: "VE" }
+                    ],
+                    dodge: [
+                        { name: "RATG", score: 24, country: "VE" },
+                        { name: "Rafael Torres", score: 19, country: "VE" },
+                        { name: "CyberPilot", score: 17, country: "ES" }
+                    ],
+                    drone: [
+                        { name: "RATG", score: 22, country: "VE" },
+                        { name: "Rafael Torres", score: 18, country: "VE" },
+                        { name: "DroneMaster", score: 15, country: "CO" }
+                    ]
+                }
+            }
+        ];
 
         function ensureWeeklyReset() {
             const currentWeek = getCurrentWeekId();
             const savedWeek = localStorage.getItem('bytezone_active_week');
             if (savedWeek !== currentWeek) {
+                // Si había una semana previa activa, archivar automáticamente sus Top 3 campeones antes de reiniciar
+                if (savedWeek) {
+                    try {
+                        let archive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]');
+                        if (!archive.some(w => w && w.weekId === savedWeek)) {
+                            const snap = {};
+                            ALL_GAME_KEYS.forEach(g => {
+                                let list = [];
+                                try { list = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + g) || '[]'); } catch(e) {}
+                                if (Array.isArray(list) && list.length > 0) {
+                                    snap[g] = list.slice(0, 3);
+                                }
+                            });
+                            if (Object.keys(snap).length > 0) {
+                                archive.unshift({
+                                    weekId: savedWeek,
+                                    label: `Semana ${savedWeek.replace('W', '')} • Torneo Oficial`,
+                                    status: 'Cerrada • Premiada',
+                                    champions: snap
+                                });
+                                localStorage.setItem('bytezone_champions_archive', JSON.stringify(archive.slice(0, 20)));
+                            }
+                        }
+                    } catch(e) {}
+                }
                 ALL_GAME_KEYS.forEach(g => {
                     if (!savedWeek && currentWeek === 'W2026-10-12') {
                         const existingBest = localStorage.getItem('bytezone_best_' + g) || '0';
@@ -557,6 +669,21 @@ PLAYER_IDENTITY_SCRIPT = """
             return currentWeek;
         }
         ensureWeeklyReset();
+
+        function getWeeklyChampionsArchive() {
+            let customArchive = [];
+            try { customArchive = JSON.parse(localStorage.getItem('bytezone_champions_archive') || '[]'); } catch(e) {}
+            const byWeek = new Map();
+            customArchive.forEach(item => {
+                if (item && item.weekId) byWeek.set(item.weekId, item);
+            });
+            HISTORICAL_WEEKLY_CHAMPIONS.forEach(item => {
+                if (item && item.weekId && !byWeek.has(item.weekId)) {
+                    byWeek.set(item.weekId, item);
+                }
+            });
+            return Array.from(byWeek.values());
+        }
 
         // ==========================================================
         // MOTOR DE SINCRONIZACIÓN MUNDIAL EN TIEMPO REAL (SEMANAL + HISTÓRICO)
@@ -604,6 +731,39 @@ PLAYER_IDENTITY_SCRIPT = """
                 dodge: [
                     { name: "RATG", score: 24, country: "VE" },
                     { name: "Rafael Torres", score: 19, country: "VE" }
+                ],
+                drone: [
+                    { name: "RATG", score: 26, country: "VE" },
+                    { name: "Rafael Torres", score: 21, country: "VE" },
+                    { name: "CyberHornet", score: 18, country: "MX" }
+                ]
+            },
+            'W2026-10-26': {
+                stacker: [
+                    { name: "alexa torres", score: 34, country: "VE" },
+                    { name: "*****", score: 33, country: "VE" },
+                    { name: "RATG", score: 29, country: "VE" },
+                    { name: "Jugador_930", score: 29, country: "VE" },
+                    { name: "Rafael Torres", score: 22, country: "VE" }
+                ],
+                reflex: [
+                    { name: "RATG", score: 31, country: "VE" },
+                    { name: "*****", score: 87, country: "VE" },
+                    { name: "Rafael Torres", score: 249, country: "VE" }
+                ],
+                memory: [
+                    { name: "Jugador_930", score: 13, country: "VE" },
+                    { name: "Tovias Torres", score: 10, country: "VE" },
+                    { name: "*****", score: 10, country: "VE" }
+                ],
+                dodge: [
+                    { name: "RATG", score: 24, country: "VE" },
+                    { name: "Rafael Torres", score: 19, country: "VE" }
+                ],
+                drone: [
+                    { name: "RATG", score: 26, country: "VE" },
+                    { name: "Rafael Torres", score: 21, country: "VE" },
+                    { name: "CyberHornet", score: 18, country: "MX" }
                 ]
             }
         };
@@ -650,6 +810,13 @@ PLAYER_IDENTITY_SCRIPT = """
                 { name: "FlashStar", score: 28, country: "MX" },
                 { name: "RATG", score: 24, country: "VE" },
                 { name: "Rafael Torres", score: 19, country: "VE" }
+            ],
+            drone: [
+                { name: "CyberHornet", score: 32, country: "MX" },
+                { name: "RATG", score: 26, country: "VE" },
+                { name: "Rafael Torres", score: 21, country: "VE" },
+                { name: "DroneMaster", score: 18, country: "CO" },
+                { name: "LaserPulse", score: 15, country: "AR" }
             ]
         };
 
@@ -870,13 +1037,15 @@ PLAYER_IDENTITY_SCRIPT = """
                 stacker: 'Neon Stacker Pro',
                 reflex: 'Test de Reflejos Visuales',
                 memory: 'Cyber Memory Neón',
-                dodge: 'Cyber Dodge: Tormenta Neón'
+                dodge: 'Cyber Dodge: Tormenta Neón',
+                drone: 'Neon Cyber-Drone: Portales Láser'
             };
             const scoreUnits = {
                 stacker: 'Pisos',
                 reflex: 'ms',
                 memory: 'Rondas',
-                dodge: 'seg'
+                dodge: 'seg',
+                drone: 'Portales'
             };
 
             const gTitle = gameTitles[data.gameKey] || 'Arcade ByteZone';
@@ -1227,7 +1396,7 @@ PLAYER_IDENTITY_SCRIPT = """
                 })(),
                 (async () => {
                     try {
-                        const resNtfy = await fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/json?poll=1&since=12h`, { cache: 'no-store' });
+                        const resNtfy = await fetch(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/json?poll=1&since=72h`, { cache: 'no-store' });
                         if (resNtfy.ok) {
                             const text = await resNtfy.text();
                             const lines = text.split('\\n').filter(Boolean);
@@ -1323,44 +1492,77 @@ PLAYER_IDENTITY_SCRIPT = """
                 updateLeaderboardTabsUI();
             }, 30000);
 
-            ['stacker', 'reflex', 'memory'].forEach(g => {
+            ALL_GAME_KEYS.forEach((g, idx) => {
                 if (g !== activeGameKey) {
-                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), 1800);
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), 1200 + idx * 600);
                 }
             });
 
-            if (window.EventSource) {
+            // Conexión SSE con auto-reconexión resiliente para celulares que apagan pantalla o cambian de app
+            function connectRealtimeSSE() {
+                if (!window.EventSource) return;
                 try {
+                    if (window.__bzScoreSSE) {
+                        try { window.__bzScoreSSE.close(); } catch(e) {}
+                    }
                     const es = new EventSource(`https://ntfy.sh/${NTFY_SCORES_TOPIC}/sse`);
+                    window.__bzScoreSSE = es;
                     es.onmessage = (e) => {
                         try {
                             const evt = JSON.parse(e.data);
                             if (evt && evt.message) {
                                 const p = JSON.parse(evt.message);
-                                if (p && p.g === activeGameKey && p.n) {
+                                if (p && p.g && ALL_GAME_KEYS.includes(p.g) && p.n) {
+                                    const targetG = p.g;
+                                    const targetAsc = (targetG === 'reflex');
                                     const currentWeek = ensureWeeklyReset();
                                     const cleanN = repairPlayerName(p.n);
                                     if (p.w === currentWeek && (p.sw || p.s)) {
                                         let curW = [];
-                                        try { curW = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + activeGameKey) || '[]'); } catch(err){}
-                                        mergeAndNormalizeScores(activeGameKey, [curW, [{ name: cleanN, score: parseInt(p.sw || p.s), country: p.c || 'VE', deviceId: p.d }]], isAscending, p.oldN, 'weekly');
+                                        try { curW = JSON.parse(localStorage.getItem('bytezone_weekly_scores_' + targetG) || '[]'); } catch(err){}
+                                        mergeAndNormalizeScores(targetG, [curW, [{ name: cleanN, score: parseInt(p.sw || p.s), country: p.c || 'VE', deviceId: p.d }]], targetAsc, p.oldN, 'weekly');
                                     }
                                     if (p.sa || p.s) {
                                         let curA = [];
-                                        try { curA = JSON.parse(localStorage.getItem('bytezone_scores_' + activeGameKey) || '[]'); } catch(err){}
-                                        mergeAndNormalizeScores(activeGameKey, [curA, [{ name: cleanN, score: parseInt(p.sa || p.s), country: p.c || 'VE', deviceId: p.d }]], isAscending, p.oldN, 'alltime');
+                                        try { curA = JSON.parse(localStorage.getItem('bytezone_scores_' + targetG) || '[]'); } catch(err){}
+                                        mergeAndNormalizeScores(targetG, [curA, [{ name: cleanN, score: parseInt(p.sa || p.s), country: p.c || 'VE', deviceId: p.d }]], targetAsc, p.oldN, 'alltime');
                                     }
-                                    if (typeof renderLeaderboardUI === 'function') renderLeaderboardUI();
+                                    if (targetG === window.CURRENT_GAME_KEY && typeof renderLeaderboardUI === 'function') {
+                                        renderLeaderboardUI();
+                                    }
+                                    if (typeof window.renderChampionsPageUI === 'function') {
+                                        window.renderChampionsPageUI();
+                                    }
                                 }
                             }
                         } catch (err) {}
                     };
+                    es.onerror = () => {
+                        try { es.close(); } catch(e) {}
+                        setTimeout(connectRealtimeSSE, 4000);
+                    };
                 } catch (e) {}
+            }
+            connectRealtimeSSE();
+
+            if (!window.__bzVisibilitySyncAttached) {
+                window.__bzVisibilitySyncAttached = true;
+                const wakeAndSync = () => {
+                    if (document.visibilityState === 'visible') {
+                        const gKey = window.CURRENT_GAME_KEY || activeGameKey;
+                        const gAsc = (gKey === 'reflex');
+                        syncGameFromCloud(gKey, gAsc, true);
+                        connectRealtimeSSE();
+                    }
+                };
+                document.addEventListener('visibilitychange', wakeAndSync);
+                window.addEventListener('focus', wakeAndSync);
+                window.addEventListener('online', wakeAndSync);
             }
 
             setInterval(() => {
                 syncGameFromCloud(activeGameKey, isAscending, true);
-            }, 25000);
+            }, 18000);
         }
 
         function getCountryFlag(code) {
@@ -1433,8 +1635,8 @@ PLAYER_IDENTITY_SCRIPT = """
 
         setTimeout(() => {
             if (!window.CURRENT_GAME_KEY) {
-                ['stacker', 'reflex', 'memory'].forEach((g, idx) => {
-                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), idx * 900);
+                ALL_GAME_KEYS.forEach((g, idx) => {
+                    setTimeout(() => syncGameFromCloud(g, g === 'reflex', true), idx * 750);
                 });
             }
         }, 600);
@@ -1700,13 +1902,22 @@ PLAYER_IDENTITY_SCRIPT = """
 
                 try {
                     const utter = new SpeechSynthesisUtterance(sentenceText);
-                    utter.lang = 'es-ES';
-                    utter.rate = window.bzReelState.voiceRate || 1.22;
-                    utter.pitch = 1.03;
+                    utter.lang = 'es-MX';
+                    utter.rate = window.bzReelState.voiceRate || 1.18;
+                    utter.pitch = 1.02;
                     const voices = window.speechSynthesis.getVoices() || [];
-                    const esVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es') && (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Sabina') || v.name.includes('Helena') || v.name.includes('Paulina')))
+                    // Priorizar voces Latinoamericanas naturales (evitando voces de España es-ES)
+                    const latinLangs = ['es-mx', 'es-co', 'es-ve', 'es-us', 'es-ar', 'es-419', 'es-cl', 'es-pe'];
+                    const isLatin = (v) => v && v.lang && latinLangs.some(l => v.lang.toLowerCase().replace('_', '-').startsWith(l));
+                    const isNotSpain = (v) => v && v.lang && v.lang.toLowerCase().startsWith('es') && !v.lang.toLowerCase().replace('_', '-').startsWith('es-es');
+                    const esVoice = voices.find(v => isLatin(v) && (v.name.includes('Natural') || v.name.includes('Online') || v.name.includes('Sabina') || v.name.includes('Paulina') || v.name.includes('Dalia') || v.name.includes('Salome') || v.name.includes('Jorge') || v.name.includes('Google')))
+                                 || voices.find(v => isLatin(v))
+                                 || voices.find(v => isNotSpain(v))
                                  || voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es'));
-                    if (esVoice) utter.voice = esVoice;
+                    if (esVoice) {
+                        utter.voice = esVoice;
+                        utter.lang = esVoice.lang || 'es-MX';
+                    }
 
                     let finishedThis = false;
                     const advance = () => {
@@ -2093,8 +2304,8 @@ PLAYER_IDENTITY_SCRIPT = """
             }
         }
 
-        function openVaultGameWithReward(targetUrl) {
-            trackByteZoneEvent('dodge', 'ad');
+        function openVaultGameWithReward(targetUrl, gameKey) {
+            trackByteZoneEvent(gameKey || 'dodge', 'ad');
             executeRewardedAction(() => {
                 setTimeout(() => {
                     window.location.href = targetUrl;
@@ -2365,19 +2576,26 @@ TEMPLATE_INDEX = """<!DOCTYPE html>
         </div>
 
         <!-- ACCESOS RÁPIDOS ADICIONALES -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="campeones.html?v=14" class="bg-gradient-to-r from-amber-950/50 to-gray-900 p-5 rounded-2xl border border-amber-500/40 hover:border-amber-400 flex items-center space-x-4 transition shadow-lg">
+                <span class="text-3xl">🏆</span>
+                <div>
+                    <h4 class="font-black text-amber-300 text-sm">Salón de Campeones</h4>
+                    <p class="text-xs text-gray-300">Ganadores Top 3 semana a semana de cada juego.</p>
+                </div>
+            </a>
             <a href="hacks.html?v=14" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-cyan-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🤖</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Noticias IA, Inventos & Hacks</h4>
-                    <p class="text-xs text-gray-400">Lo último de la semana en Inteligencia Artificial, gadgets y trucos secretos.</p>
+                    <p class="text-xs text-gray-400">Lo último de la semana en IA y trucos secretos.</p>
                 </div>
             </a>
             <a href="humor.html?v=14" class="bg-gradient-to-r from-gray-900 to-gray-850 p-5 rounded-2xl border border-gray-800 hover:border-pink-500/50 flex items-center space-x-4 transition shadow">
                 <span class="text-3xl">🎭</span>
                 <div>
                     <h4 class="font-bold text-white text-sm">Cápsula de Humor Tech</h4>
-                    <p class="text-xs text-gray-400">Chistes, frases sarcásticas y memes de programadores.</p>
+                    <p class="text-xs text-gray-400">Chistes, frases sarcásticas y memes.</p>
                 </div>
             </a>
         </div>
@@ -2510,6 +2728,13 @@ TEMPLATE_STACKER = """<!DOCTYPE html>
             <div id="weeklyCountdownBanner" class="mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1"></div>
 
             <div id="leaderboardList" class="space-y-2 text-sm"></div>
+
+            <div class="mt-4 pt-3 border-t border-gray-800 text-center">
+                <a href="../campeones.html?v=14" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
+                    <span>🏆</span>
+                    <span>Ver Ganadores de Semanas Anteriores (Salón de Campeones)</span>
+                </a>
+            </div>
         </div>
 
     </main>
@@ -2881,6 +3106,13 @@ TEMPLATE_REFLEX = """<!DOCTYPE html>
             <div id="weeklyCountdownBanner" class="mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1"></div>
 
             <div id="leaderboardList" class="space-y-2 text-sm"></div>
+
+            <div class="mt-4 pt-3 border-t border-gray-800 text-center">
+                <a href="../campeones.html?v=14" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
+                    <span>🏆</span>
+                    <span>Ver Ganadores de Semanas Anteriores (Salón de Campeones)</span>
+                </a>
+            </div>
         </div>
 
     </main>
@@ -2953,7 +3185,12 @@ TEMPLATE_REFLEX = """<!DOCTYPE html>
                     openEnergyModal();
                     return;
                 }
-                trackByteZoneEvent('reflex', 'play');
+                // Normalización justa 1 a 5: cuenta 1 partida completa cada 5 intentos jugados
+                let tapCounter = parseInt(localStorage.getItem('bytezone_reflex_tap_count') || '0') + 1;
+                localStorage.setItem('bytezone_reflex_tap_count', tapCounter.toString());
+                if (reflexAttempts === 5 || tapCounter % 5 === 1) {
+                    trackByteZoneEvent('reflex', 'play');
+                }
                 reflexState = 'WAIT';
                 box.className = "w-full max-w-sm mx-auto h-64 rounded-2xl flex flex-col items-center justify-center cursor-pointer select-none p-4 shadow-inner bg-gradient-to-br from-red-900 to-rose-950 border-2 border-red-500";
                 icon.textContent = "🛑";
@@ -3199,6 +3436,13 @@ TEMPLATE_MEMORY = """<!DOCTYPE html>
             <div id="weeklyCountdownBanner" class="mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1"></div>
 
             <div id="leaderboardList" class="space-y-2 text-sm"></div>
+
+            <div class="mt-4 pt-3 border-t border-gray-800 text-center">
+                <a href="../campeones.html?v=14" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
+                    <span>🏆</span>
+                    <span>Ver Ganadores de Semanas Anteriores (Salón de Campeones)</span>
+                </a>
+            </div>
         </div>
 
     </main>
@@ -3537,6 +3781,13 @@ TEMPLATE_DODGE = """<!DOCTYPE html>
             <div id="weeklyCountdownBanner" class="mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1"></div>
 
             <div id="leaderboardList" class="space-y-2 text-sm"></div>
+
+            <div class="mt-4 pt-3 border-t border-gray-800 text-center">
+                <a href="../campeones.html?v=14" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
+                    <span>🏆</span>
+                    <span>Ver Ganadores de Semanas Anteriores (Salón de Campeones)</span>
+                </a>
+            </div>
         </div>
 
     </main>
@@ -3770,6 +4021,691 @@ TEMPLATE_DODGE = """<!DOCTYPE html>
         updateLeaderboardTabsUI();
         renderLeaderboardUI();
         startRealtimeScoreStream('dodge', false);
+    </script>
+</body>
+</html>
+"""
+
+# ==========================================================
+# 4C. NUEVO JUEGO #5 EN EL BAÚL / CANDIDATO A TOP 3: JUEGOS/CYBER-DRONE.HTML
+# ==========================================================
+TEMPLATE_DRONE = """<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Cyber-Drone: Portales Láser - ByteZone Arcade</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    __MONETAG_TAG__
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
+
+    __HEADER__
+
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <!-- BARRA REGRESAR Y SELLO NUEVO JUEGO -->
+        <div class="flex items-center justify-between">
+            <a href="../index.html?v=14" class="text-xs text-pink-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+                <span>←</span>
+                <span>Volver al Arcade</span>
+            </a>
+
+            <div class="text-xs text-pink-300 bg-pink-500/15 px-3 py-1.5 rounded-xl border border-pink-500/40 flex items-center space-x-1.5 font-bold">
+                <span>🛸</span>
+                <span>Nuevo Juego • Candidato al Top 3</span>
+            </div>
+        </div>
+
+        <!-- TABLERO DE RÉCORD CYBER DRONE -->
+        <div class="bg-gray-900/90 p-4 rounded-2xl border border-pink-500/30 flex items-center justify-between shadow-xl">
+            <div>
+                <p id="userBestScoreLabel" class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Tus Mejores Portales de la Semana</p>
+                <p id="userBestScore" class="text-2xl font-black text-white">0 Portales</p>
+            </div>
+            <div class="text-right">
+                <p id="userRankLabel" class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Puesto Semanal</p>
+                <span id="userRankBadge" class="text-xs font-black text-pink-400 bg-pink-500/10 border border-pink-500/30 px-3 py-1 rounded-full">
+                    Sin Clasificar
+                </span>
+            </div>
+        </div>
+
+        <!-- LIENZO DEL JUEGO NEON CYBER-DRONE -->
+        <div class="bg-gray-900/90 rounded-3xl p-4 sm:p-6 border border-gray-800 relative shadow-2xl">
+            <div class="relative w-full max-w-sm mx-auto h-[400px] sm:h-[430px] rounded-2xl overflow-hidden bg-gray-950 border-2 border-pink-500/40">
+                <canvas id="droneCanvas" width="360" height="430" class="w-full h-full block cursor-pointer select-none touch-none"></canvas>
+
+                <!-- OVERLAY INICIO -->
+                <div id="droneStartScreen" class="absolute inset-0 bg-gray-950/85 backdrop-blur-sm flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-5xl mb-2 animate-bounce">🛸</span>
+                    <span class="text-[10px] font-black uppercase bg-pink-500/20 text-pink-300 px-2.5 py-0.5 rounded-full mb-1">Precisión Extrema • 1 Toque</span>
+                    <h2 class="text-2xl font-black text-white">NEON CYBER-DRONE</h2>
+                    <p class="text-xs text-gray-300 mt-2 mb-6 max-w-xs">
+                        Toca la pantalla para activar los propulsores cuánticos y atravesar los portales láser sin chocar. ¡Atrapa esferas de energía para +2 puntos!
+                    </p>
+                    <button onclick="startDroneGame()" class="bg-gradient-to-r from-pink-500 to-rose-600 hover:scale-105 active:scale-95 text-white font-black px-8 py-3.5 rounded-2xl shadow-xl shadow-pink-500/30 transition text-sm">
+                        ¡ENCENDER TURBINA!
+                    </button>
+                </div>
+
+                <!-- MODAL REVIVIR TURBINA -->
+                <div id="droneReviveModal" class="hidden absolute inset-0 bg-gray-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center">
+                    <span class="text-5xl mb-1">⚡</span>
+                    <h3 class="text-xl font-black text-white">¡COLISIÓN CON LÁSER!</h3>
+                    <p id="droneScoreText" class="text-sm font-bold text-pink-400 mt-1 mb-4">Superaste 12 Portales</p>
+
+                    <div id="droneReviveBox" class="w-full max-w-xs mb-3">
+                        <button onclick="executeRewardedAction(handleDroneRevive)" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:opacity-90 active:scale-95 text-white font-black py-3.5 rounded-2xl shadow-lg shadow-emerald-500/30 text-xs sm:text-sm flex items-center justify-center space-x-2 transition">
+                            <span>🛸</span>
+                            <span>REPARAR DRON & CONTINUAR</span>
+                        </button>
+                        <p class="text-[10px] text-gray-400 mt-1">Desactiva el portal actual y conserva tus puntos</p>
+                    </div>
+
+                    <button onclick="restartDroneFromModal()" class="text-xs text-gray-400 hover:text-white underline mt-2">
+                        Reiniciar desde 0 Portales
+                    </button>
+                </div>
+            </div>
+            <p class="text-xs text-gray-400 text-center mt-3">💡 Toca la pantalla o presiona Espacio para impulsar el Dron hacia arriba</p>
+        </div>
+
+        <!-- TABLA DE LÍDERES CYBER-DRONE -->
+        <div class="bg-gray-900/80 rounded-3xl p-5 sm:p-6 border border-gray-800">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl">🏆</span>
+                    <h3 class="text-base sm:text-lg font-black text-white">Top 10 • Neon Cyber-Drone</h3>
+                </div>
+                <button id="liveSyncStatus" onclick="syncGameFromCloud('drone', false)" class="text-xs bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 font-bold px-2.5 py-1 rounded-full transition">🟢 Global En Vivo</button>
+            </div>
+
+            <div class="flex space-x-1.5 bg-gray-950/90 p-1.5 rounded-2xl border border-gray-800 mb-3">
+                <button id="tabWeeklyBtn" onclick="switchLeaderboardTab('weekly')" class="w-1/2 py-2 px-3 rounded-xl font-black text-xs transition flex items-center justify-center space-x-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-gray-950 shadow-md shadow-amber-500/20">
+                    <span>🔥</span>
+                    <span>Torneo Semanal</span>
+                </button>
+                <button id="tabAlltimeBtn" onclick="switchLeaderboardTab('alltime')" class="w-1/2 py-2 px-3 rounded-xl font-bold text-xs transition flex items-center justify-center space-x-1.5 text-gray-400 hover:text-white">
+                    <span>👑</span>
+                    <span>Récord Histórico</span>
+                </button>
+            </div>
+
+            <div id="weeklyCountdownBanner" class="mb-3 px-3 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] flex flex-wrap items-center justify-between gap-1"></div>
+
+            <div id="leaderboardList" class="space-y-2 text-sm"></div>
+
+            <div class="mt-4 pt-3 border-t border-gray-800 text-center">
+                <a href="../campeones.html?v=14" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
+                    <span>🏆</span>
+                    <span>Ver Ganadores de Semanas Anteriores (Salón de Campeones)</span>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    __PLAYER_MODAL__
+    __PLAYER_IDENTITY_SCRIPT__
+
+    <script>
+        const drCanvas = document.getElementById('droneCanvas');
+        const drCtx = drCanvas.getContext('2d');
+        const drStart = document.getElementById('droneStartScreen');
+        const drRevive = document.getElementById('droneReviveModal');
+
+        let droneY = 215;
+        let droneVy = 0;
+        let gates = [];
+        let orbs = [];
+        let droneRunning = false;
+        let droneScore = 0;
+        let droneTicks = 0;
+        let hasRevivedDrone = false;
+
+        function startDroneGame() {
+            drStart.classList.add('hidden');
+            drRevive.classList.add('hidden');
+            droneY = drCanvas.height / 2;
+            droneVy = -5.5;
+            gates = [];
+            orbs = [];
+            droneScore = 0;
+            droneTicks = 0;
+            hasRevivedDrone = false;
+            droneRunning = true;
+            trackByteZoneEvent('drone', 'play');
+            requestAnimationFrame(updateDroneLoop);
+        }
+
+        function flapDrone() {
+            if (!droneRunning) return;
+            droneVy = -6.4;
+        }
+
+        function spawnLaserGate() {
+            const gapHeight = Math.max(102, 134 - Math.min(droneScore * 1.1, 28));
+            const minTop = 45;
+            const maxTop = drCanvas.height - gapHeight - 55;
+            const gapTop = minTop + Math.random() * (maxTop - minTop);
+            const colors = ['#ec4899', '#06b6d4', '#a855f7', '#f59e0b'];
+            const color = colors[gates.length % colors.length];
+            gates.push({
+                x: drCanvas.width + 20,
+                w: 24,
+                gapTop: gapTop,
+                gapBottom: gapTop + gapHeight,
+                passed: false,
+                color: color
+            });
+            if (Math.random() < 0.55) {
+                orbs.push({
+                    x: drCanvas.width + 32,
+                    y: gapTop + gapHeight / 2,
+                    r: 8,
+                    collected: false
+                });
+            }
+        }
+
+        function updateDroneLoop() {
+            if (!droneRunning) return;
+            droneTicks++;
+
+            const speedX = Math.min(2.7 + droneScore * 0.05, 4.6);
+            const spawnInterval = Math.max(68, Math.floor(96 - droneScore * 0.6));
+            if (droneTicks === 15 || droneTicks % spawnInterval === 0) {
+                spawnLaserGate();
+            }
+
+            droneVy += 0.32;
+            droneY += droneVy;
+
+            drCtx.fillStyle = "#030712";
+            drCtx.fillRect(0, 0, drCanvas.width, drCanvas.height);
+
+            // Rejilla cyberpunk de fondo
+            drCtx.strokeStyle = "rgba(236, 72, 153, 0.08)";
+            drCtx.lineWidth = 1;
+            const offset = (droneTicks * 2) % 36;
+            for (let gx = -offset; gx < drCanvas.width; gx += 36) {
+                drCtx.beginPath();
+                drCtx.moveTo(gx, 0);
+                drCtx.lineTo(gx, drCanvas.height);
+                drCtx.stroke();
+            }
+
+            const droneX = 76;
+            const droneR = 12;
+
+            // Portales láser
+            for (let i = gates.length - 1; i >= 0; i--) {
+                const g = gates[i];
+                g.x -= speedX;
+
+                drCtx.save();
+                drCtx.fillStyle = g.color;
+                drCtx.shadowColor = g.color;
+                drCtx.shadowBlur = 12;
+                drCtx.fillRect(g.x, 0, g.w, g.gapTop);
+                drCtx.fillRect(g.x, g.gapBottom, g.w, drCanvas.height - g.gapBottom);
+                drCtx.restore();
+
+                if (!g.passed && g.x + g.w < droneX - droneR) {
+                    g.passed = true;
+                    droneScore++;
+                }
+
+                if (droneX + droneR > g.x && droneX - droneR < g.x + g.w) {
+                    if (droneY - droneR < g.gapTop || droneY + droneR > g.gapBottom) {
+                        gameOverDrone();
+                        return;
+                    }
+                }
+
+                if (g.x + g.w < -20) {
+                    gates.splice(i, 1);
+                }
+            }
+
+            // Esferas de energía (+2 puntos)
+            for (let i = orbs.length - 1; i >= 0; i--) {
+                const o = orbs[i];
+                o.x -= speedX;
+                if (!o.collected) {
+                    drCtx.save();
+                    drCtx.fillStyle = "#34d399";
+                    drCtx.shadowColor = "#34d399";
+                    drCtx.shadowBlur = 14;
+                    drCtx.beginPath();
+                    drCtx.arc(o.x, o.y, o.r, 0, Math.PI * 2);
+                    drCtx.fill();
+                    drCtx.restore();
+
+                    const dx = o.x - droneX;
+                    const dy = o.y - droneY;
+                    if (Math.sqrt(dx * dx + dy * dy) < o.r + droneR) {
+                        o.collected = true;
+                        droneScore += 2;
+                    }
+                }
+                if (o.x < -20 || o.collected) {
+                    orbs.splice(i, 1);
+                }
+            }
+
+            // Dibujar Dron Neón
+            drCtx.save();
+            drCtx.fillStyle = "#22d3ee";
+            drCtx.shadowColor = "#22d3ee";
+            drCtx.shadowBlur = 16;
+            drCtx.beginPath();
+            drCtx.arc(droneX, droneY, droneR, 0, Math.PI * 2);
+            drCtx.fill();
+            drCtx.fillStyle = "#ffffff";
+            drCtx.beginPath();
+            drCtx.arc(droneX + 4, droneY - 2, 4, 0, Math.PI * 2);
+            drCtx.fill();
+            drCtx.restore();
+
+            if (droneY - droneR <= 0 || droneY + droneR >= drCanvas.height) {
+                gameOverDrone();
+                return;
+            }
+
+            drCtx.fillStyle = "#ffffff";
+            drCtx.font = "bold 18px monospace";
+            drCtx.fillText("PORTALES: " + droneScore, 16, 32);
+
+            requestAnimationFrame(updateDroneLoop);
+        }
+
+        function gameOverDrone() {
+            droneRunning = false;
+            recordGameScore('drone', droneScore, false);
+            document.getElementById('droneScoreText').textContent = "Superaste " + droneScore + " Portales";
+            document.getElementById('droneReviveBox').style.display = hasRevivedDrone ? 'none' : 'block';
+            drRevive.classList.remove('hidden');
+            if (hasRevivedDrone) { setTimeout(() => { flushPendingPodium(); }, 700); }
+        }
+
+        function restartDroneFromModal() {
+            if (flushPendingPodium()) {
+                drRevive.classList.add('hidden');
+                drStart.classList.remove('hidden');
+            } else {
+                startDroneGame();
+            }
+        }
+
+        function handleDroneRevive() {
+            trackByteZoneEvent('drone', 'ad');
+            hasRevivedDrone = true;
+            gates = [];
+            droneY = drCanvas.height / 2;
+            droneVy = -5.0;
+            drRevive.classList.add('hidden');
+            droneRunning = true;
+            requestAnimationFrame(updateDroneLoop);
+        }
+
+        drCanvas.addEventListener('pointerdown', (e) => {
+            e.preventDefault();
+            if (droneRunning) flapDrone();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if ((e.code === 'Space' || e.key === 'ArrowUp') && droneRunning) {
+                e.preventDefault();
+                flapDrone();
+            }
+        });
+
+        trackByteZoneEvent('drone', 'view');
+
+        function renderLeaderboardUI() {
+            const mode = window.currentLeaderboardTab || 'weekly';
+            const list = getCleanScores('drone', false, mode);
+            const container = document.getElementById('leaderboardList');
+            const bestKey = (mode === 'weekly') ? 'bytezone_weekly_best_drone' : 'bytezone_best_drone';
+            const myBest = parseInt(localStorage.getItem(bestKey) || '0');
+            document.getElementById('userBestScore').textContent = myBest + " Portales";
+
+            const bestLabel = document.getElementById('userBestScoreLabel');
+            const rankLabel = document.getElementById('userRankLabel');
+            if (bestLabel) bestLabel.textContent = (mode === 'weekly') ? "Tus Mejores Portales de la Semana" : "Tu Récord Histórico";
+            if (rankLabel) rankLabel.textContent = (mode === 'weekly') ? "Puesto Semanal" : "Puesto Histórico";
+
+            if (list.length === 0) {
+                container.innerHTML = '<div class="p-4 text-center text-gray-400 text-xs">¡Sé el primero en marcar récord en Neon Cyber-Drone esta semana!</div>';
+                document.getElementById('userRankBadge').textContent = "Sin Clasificar";
+                return;
+            }
+
+            container.innerHTML = "";
+            let myPosition = null;
+            list.slice(0, 10).forEach((item, idx) => {
+                const isMe = isCurrentUserEntry(item);
+                if (isMe && myPosition === null) myPosition = idx + 1;
+                const badge = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : "#" + (idx + 1);
+                const itemFlag = getCountryFlag(item.country);
+                const row = document.createElement('div');
+                row.className = "flex justify-between items-center p-2.5 rounded-xl " + (isMe ? 'bg-pink-950/40 border border-pink-500 shadow-md' : 'bg-gray-800/60 border border-gray-700/50');
+                row.innerHTML = `
+                    <div class="flex items-center space-x-2 min-w-0">
+                        <span class="w-6 text-center font-bold text-xs ${idx < 3 ? 'text-yellow-400 font-extrabold' : 'text-gray-400'}">${badge}</span>
+                        <span class="text-base select-none">${itemFlag}</span>
+                        <span class="font-bold truncate ${isMe ? 'text-pink-400' : 'text-white'}">${item.name} ${isMe ? '(Tú)' : ''}</span>
+                    </div>
+                    <span class="font-black flex-shrink-0 ${isMe ? 'text-cyan-400' : 'text-pink-400'}">${item.score} Portales</span>
+                `;
+                container.appendChild(row);
+            });
+
+            const rankBadge = document.getElementById('userRankBadge');
+            if (myPosition === 1) {
+                rankBadge.textContent = "🥇 Puesto #1 (¡Líder! • Toca para Retar)";
+                rankBadge.className = "text-xs font-black text-yellow-300 bg-yellow-500/20 border border-yellow-500/50 px-3 py-1 rounded-full animate-pulse cursor-pointer shadow-lg shadow-yellow-500/20";
+                rankBadge.onclick = () => checkAndShowPodiumModal('drone', myBest, false);
+            } else if (myPosition === 2) {
+                rankBadge.textContent = "🥈 Puesto #2 (Toca para Retar)";
+                rankBadge.className = "text-xs font-black text-gray-200 bg-gray-500/20 border border-gray-400/50 px-3 py-1 rounded-full cursor-pointer";
+                rankBadge.onclick = () => checkAndShowPodiumModal('drone', myBest, false);
+            } else if (myPosition === 3) {
+                rankBadge.textContent = "🥉 Puesto #3 (Toca para Retar)";
+                rankBadge.className = "text-xs font-black text-amber-400 bg-amber-500/20 border border-amber-500/50 px-3 py-1 rounded-full cursor-pointer";
+                rankBadge.onclick = () => checkAndShowPodiumModal('drone', myBest, false);
+            } else if (myPosition) {
+                rankBadge.textContent = "Puesto #" + myPosition;
+                rankBadge.className = "text-xs font-black text-pink-400 bg-pink-500/10 border border-pink-500/30 px-3 py-1 rounded-full";
+                rankBadge.onclick = null;
+            } else {
+                rankBadge.textContent = "Sin Clasificar";
+                rankBadge.className = "text-xs font-black text-gray-400 bg-gray-800 border border-gray-700 px-3 py-1 rounded-full";
+                rankBadge.onclick = null;
+            }
+        }
+
+        updateLeaderboardTabsUI();
+        renderLeaderboardUI();
+        startRealtimeScoreStream('drone', false);
+    </script>
+</body>
+</html>
+"""
+
+# ==========================================================
+# 4D. SALÓN DE LA FAMA & CAMPEONES SEMANALES: CAMPEONES.HTML
+# ==========================================================
+TEMPLATE_CAMPEONES = """<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Salón de la Fama & Campeones Semanales - ByteZone Arcade</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    __MONETAG_TAG__
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans antialiased min-h-screen flex flex-col pt-10 sm:pt-4 pb-20 sm:pb-6">
+
+    __HEADER__
+
+    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full space-y-6">
+
+        <!-- CABECERA DEL SALÓN DE CAMPEONES -->
+        <div class="bg-gradient-to-r from-amber-950/70 via-gray-900 to-purple-950/70 border border-amber-500/40 rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden shadow-2xl">
+            <span class="text-5xl inline-block mb-2 animate-bounce">🏆</span>
+            <div class="block">
+                <span class="text-[11px] bg-amber-500/20 text-amber-300 border border-amber-500/40 font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    Archivo Oficial • Torneo Semanal ByteZone
+                </span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-black text-white mt-3">Salón de Campeones Semanales</h1>
+            <p class="text-xs sm:text-sm text-gray-300 max-w-xl mx-auto mt-2 leading-relaxed">
+                Aquí quedan inmortalizados los <strong>3 mejores jugadores (🥇 🥈 🥉) de cada semana</strong> en cada juego cuando cierra el torneo los domingos a las 12:00 AM, junto a los líderes en vivo de la semana actual.
+            </p>
+            <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs">
+                <span id="championsCountdownPill" class="bg-gray-950/90 text-amber-300 border border-amber-500/40 font-bold px-3.5 py-1.5 rounded-xl">
+                    ⏳ Calculando cierre semanal...
+                </span>
+                <button onclick="refreshAllGamesForChampions()" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-black px-3.5 py-1.5 rounded-xl transition">
+                    🔄 Sincronizar Podios en Vivo
+                </button>
+            </div>
+        </div>
+
+        <!-- FILTRO POR JUEGO -->
+        <div class="flex flex-wrap items-center justify-center gap-2">
+            <button onclick="setChampionsGameFilter('all')" id="champFilter_all" class="px-3.5 py-2 rounded-xl text-xs font-black bg-amber-500 text-gray-950 shadow transition">
+                🌟 Todos los Juegos (5)
+            </button>
+            <button onclick="setChampionsGameFilter('stacker')" id="champFilter_stacker" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-300 border border-gray-800 hover:text-white transition">
+                🏗️ Neon Stacker
+            </button>
+            <button onclick="setChampionsGameFilter('reflex')" id="champFilter_reflex" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-300 border border-gray-800 hover:text-white transition">
+                ⚡ Reflejos (ms)
+            </button>
+            <button onclick="setChampionsGameFilter('memory')" id="champFilter_memory" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-300 border border-gray-800 hover:text-white transition">
+                🧠 Cyber Memory
+            </button>
+            <button onclick="setChampionsGameFilter('dodge')" id="champFilter_dodge" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-300 border border-gray-800 hover:text-white transition">
+                🚀 Cyber Dodge
+            </button>
+            <button onclick="setChampionsGameFilter('drone')" id="champFilter_drone" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-300 border border-gray-800 hover:text-white transition">
+                🛸 Cyber-Drone
+            </button>
+        </div>
+
+        <!-- SECCIÓN 1: PODIO ACTUAL EN VIVO (SEMANA EN CURSO) -->
+        <div class="space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <h2 class="text-lg sm:text-xl font-black text-white flex items-center space-x-2">
+                    <span>🔥</span>
+                    <span>Líderes en Vivo • Semana Actual en Disputa</span>
+                </h2>
+                <span id="activeWeekIdBadge" class="text-xs font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-3 py-1 rounded-full">
+                    🟢 En Curso
+                </span>
+            </div>
+            <div id="liveChampionsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </div>
+
+        <!-- BANNER RECOMPENSADO DE RETO A LOS CAMPEONES (MONETAG VOLUNTARIO NO INTRUSIVO) -->
+        <div class="bg-gradient-to-r from-gray-900 via-amber-950/30 to-gray-900 border border-amber-500/40 rounded-3xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div class="flex items-center space-x-3 text-left">
+                <span class="text-3xl">👑</span>
+                <div>
+                    <h3 class="text-sm sm:text-base font-black text-white">¿Quieres aparecer en el Cuadro de Honor de esta semana?</h3>
+                    <p class="text-xs text-gray-300 mt-0.5">Entra al Top 3 antes del domingo a medianoche para que tu nombre y bandera queden grabados aquí para siempre.</p>
+                </div>
+            </div>
+            <button onclick="challengeCurrentLeaderWithReward()" class="flex-shrink-0 bg-gradient-to-r from-amber-500 to-orange-500 hover:opacity-90 active:scale-95 text-gray-950 font-black text-xs px-4 py-3 rounded-2xl shadow-lg shadow-amber-500/20 transition">
+                ⚡ Retar al Campeón Ahora
+            </button>
+        </div>
+
+        <!-- SECCIÓN 2: HISTÓRICO SEMANA A SEMANA (CUADROS DE HONOR CERRADOS) -->
+        <div class="space-y-4 pt-2 border-t border-gray-800">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                    <h2 class="text-lg sm:text-xl font-black text-white flex items-center space-x-2">
+                        <span>🏛️</span>
+                        <span>Historial de Ganadores Semana por Semana</span>
+                    </h2>
+                    <p class="text-xs text-gray-400">Registro permanente de los podios Top 3 de cada semana finalizada.</p>
+                </div>
+                <span class="text-[11px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 px-3 py-1 rounded-full">
+                    Archivo Permanente
+                </span>
+            </div>
+
+            <div id="historicalWeeksContainer" class="space-y-6"></div>
+        </div>
+
+    </main>
+
+    __PLAYER_MODAL__
+    __FOOTER__
+    __PLAYER_IDENTITY_SCRIPT__
+
+    <script>
+        window.selectedChampionGame = 'all';
+
+        const CHAMP_GAMES_META = {
+            stacker: { name: 'Neon Stacker Pro', icon: '🏗️', unit: 'Pisos', url: 'juegos/neon-stacker.html?v=14', asc: false, border: 'border-cyan-500/40', accent: 'text-cyan-400' },
+            reflex:  { name: 'Test de Reflejos', icon: '⚡', unit: 'ms',    url: 'juegos/reflejos-visuales.html?v=14', asc: true,  border: 'border-purple-500/40', accent: 'text-purple-400' },
+            memory:  { name: 'Cyber Memory',     icon: '🧠', unit: 'Rondas', url: 'juegos/cyber-memory.html?v=14', asc: false, border: 'border-emerald-500/40', accent: 'text-emerald-400' },
+            dodge:   { name: 'Cyber Dodge',      icon: '🚀', unit: 'seg',   url: 'juegos/cyber-dodge.html?v=14', asc: false, border: 'border-amber-500/40', accent: 'text-amber-400' },
+            drone:   { name: 'Neon Cyber-Drone', icon: '🛸', unit: 'Portales', url: 'juegos/cyber-drone.html?v=14', asc: false, border: 'border-pink-500/40', accent: 'text-pink-400' }
+        };
+
+        function setChampionsGameFilter(gameKey) {
+            window.selectedChampionGame = gameKey || 'all';
+            ['all', 'stacker', 'reflex', 'memory', 'dodge', 'drone'].forEach(k => {
+                const btn = document.getElementById('champFilter_' + k);
+                if (!btn) return;
+                if (k === window.selectedChampionGame) {
+                    btn.className = "px-3.5 py-2 rounded-xl text-xs font-black bg-amber-500 text-gray-950 shadow transition";
+                } else {
+                    btn.className = "px-3.5 py-2 rounded-xl text-xs font-bold bg-gray-900 text-gray-300 border border-gray-800 hover:text-white transition";
+                }
+            });
+            renderChampionsPageUI();
+        }
+
+        function renderPodiumRowsHTML(top3List, unit, accentClass) {
+            if (!Array.isArray(top3List) || top3List.length === 0) {
+                return `<div class="p-3 rounded-xl bg-gray-950/70 text-xs text-gray-400 text-center">Aún sin marcas registradas en esta semana.</div>`;
+            }
+            const medals = ['🥇', '🥈', '🥉'];
+            return top3List.slice(0, 3).map((item, idx) => {
+                const isMe = (typeof isCurrentUserEntry === 'function') ? isCurrentUserEntry(item) : false;
+                const flag = (typeof getCountryFlag === 'function') ? getCountryFlag(item.country || 'VE') : '🌐';
+                return `
+                    <div class="flex items-center justify-between p-2.5 rounded-xl ${idx === 0 ? 'bg-amber-500/15 border border-amber-500/40' : 'bg-gray-950/70 border border-gray-800'}">
+                        <div class="flex items-center space-x-2 min-w-0">
+                            <span class="text-base">${medals[idx] || '#'}</span>
+                            <span class="text-sm">${flag}</span>
+                            <span class="text-xs sm:text-sm font-black truncate ${isMe ? 'text-cyan-300' : 'text-white'}">${item.name} ${isMe ? '(Tú)' : ''}</span>
+                        </div>
+                        <span class="text-xs sm:text-sm font-black ${idx === 0 ? 'text-amber-300' : accentClass}">${item.score} ${unit}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        window.renderChampionsPageUI = function() {
+            const currentWeek = ensureWeeklyReset();
+            const pill = document.getElementById('championsCountdownPill');
+            if (pill) pill.textContent = getWeeklyCountdownText();
+            const weekBadge = document.getElementById('activeWeekIdBadge');
+            if (weekBadge) weekBadge.textContent = `🟢 Semana Activa (${currentWeek})`;
+
+            const filter = window.selectedChampionGame || 'all';
+            const keysToShow = (filter === 'all') ? Object.keys(CHAMP_GAMES_META) : [filter];
+
+            // 1. Renderizar Podios En Vivo de la Semana Actual
+            const liveGrid = document.getElementById('liveChampionsGrid');
+            if (liveGrid) {
+                liveGrid.innerHTML = keysToShow.map(gKey => {
+                    const meta = CHAMP_GAMES_META[gKey];
+                    const scores = getCleanScores(gKey, meta.asc, 'weekly').slice(0, 3);
+                    return `
+                        <div class="bg-gray-900/95 rounded-3xl p-5 border ${meta.border} shadow-xl flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-2xl">${meta.icon}</span>
+                                        <div>
+                                            <h3 class="text-sm sm:text-base font-black text-white">${meta.name}</h3>
+                                            <p class="text-[11px] text-emerald-400 font-semibold">Top 3 En Vivo (${currentWeek})</p>
+                                        </div>
+                                    </div>
+                                    <a href="${meta.url}" class="text-xs bg-gray-800 hover:bg-gray-700 text-white font-bold px-3 py-1.5 rounded-xl border border-gray-700 transition">
+                                        🕹️ Jugar
+                                    </a>
+                                </div>
+                                <div class="space-y-2">
+                                    ${renderPodiumRowsHTML(scores, meta.unit, meta.accent)}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            // 2. Renderizar Archivo Histórico Semana a Semana
+            const archiveList = (typeof getWeeklyChampionsArchive === 'function') ? getWeeklyChampionsArchive() : [];
+            const histContainer = document.getElementById('historicalWeeksContainer');
+            if (histContainer) {
+                histContainer.innerHTML = archiveList.map(weekObj => {
+                    const cardsHtml = keysToShow.map(gKey => {
+                        const meta = CHAMP_GAMES_META[gKey];
+                        const top3 = (weekObj.champions && weekObj.champions[gKey]) || [];
+                        return `
+                            <div class="bg-gray-950/85 rounded-2xl p-4 border border-gray-800">
+                                <div class="flex items-center justify-between mb-2.5">
+                                    <span class="text-xs font-black text-white flex items-center space-x-1.5">
+                                        <span>${meta.icon}</span>
+                                        <span>${meta.name}</span>
+                                    </span>
+                                    <span class="text-[10px] text-amber-300 font-bold">Podio Oficial</span>
+                                </div>
+                                <div class="space-y-1.5">
+                                    ${renderPodiumRowsHTML(top3, meta.unit, meta.accent)}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    return `
+                        <div class="bg-gray-900/90 rounded-3xl p-5 sm:p-6 border border-amber-500/30 shadow-xl space-y-4">
+                            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-gray-800">
+                                <div class="flex items-center space-x-2.5">
+                                    <span class="text-2xl">🏅</span>
+                                    <div>
+                                        <h3 class="text-base sm:text-lg font-black text-white">${weekObj.label}</h3>
+                                        <p class="text-[11px] text-amber-300 font-semibold">Código de Torneo: ${weekObj.weekId}</p>
+                                    </div>
+                                </div>
+                                <span class="text-[11px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-full">
+                                    ✅ ${weekObj.status || 'Cerrada • Premiada'}
+                                </span>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                                ${cardsHtml}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        };
+
+        function refreshAllGamesForChampions() {
+            ALL_GAME_KEYS.forEach((g, idx) => {
+                setTimeout(() => {
+                    syncGameFromCloud(g, g === 'reflex', true).then(() => {
+                        renderChampionsPageUI();
+                    });
+                }, idx * 350);
+            });
+        }
+
+        function challengeCurrentLeaderWithReward() {
+            trackByteZoneEvent('stacker', 'ad');
+            executeRewardedAction(() => {
+                window.location.href = 'juegos/neon-stacker.html?v=14';
+            });
+        }
+
+        renderChampionsPageUI();
+        refreshAllGamesForChampions();
+        startRealtimeScoreStream('stacker', false);
     </script>
 </body>
 </html>
@@ -4144,7 +5080,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
                     
                     <div class="mt-4 space-y-2 text-xs">
                         <div class="flex justify-between text-gray-300">
-                            <span>Intentos Realizados (Global):</span>
+                            <span>Sesiones (1 c/5 intentos):</span>
                             <span id="playsReflex" class="font-bold text-white">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
@@ -4197,28 +5133,54 @@ TEMPLATE_STATS = """<!DOCTYPE html>
             </div>
         </div>
 
-        <!-- TARJETA DESTACADA: CYBER DODGE (EL BAÚL ARCADE) -->
-        <div class="bg-gradient-to-r from-gray-900 via-amber-950/20 to-gray-900 rounded-3xl p-5 border border-amber-500/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center space-x-3 text-left">
-                <span class="text-3xl">🗄️</span>
-                <div>
-                    <span class="text-[10px] font-black uppercase bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-md border border-amber-500/30">Juego en El Baúl</span>
-                    <h3 class="font-black text-white text-base mt-0.5">Cyber Dodge: Tormenta Neón</h3>
-                    <p class="text-xs text-gray-400">Esquiva asteroides cuánticos • Acceso con anuncio y Escudo de Revivir</p>
+        <!-- TARJETAS DESTACADAS: EL BAÚL ARCADE (CYBER DODGE + NEON CYBER-DRONE) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-r from-gray-900 via-amber-950/20 to-gray-900 rounded-3xl p-5 border border-amber-500/40 shadow-xl flex flex-col justify-between gap-4">
+                <div class="flex items-center space-x-3 text-left">
+                    <span class="text-3xl">🚀</span>
+                    <div>
+                        <span class="text-[10px] font-black uppercase bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-md border border-amber-500/30">Juego #4 • El Baúl</span>
+                        <h3 class="font-black text-white text-base mt-0.5">Cyber Dodge: Tormenta Neón</h3>
+                        <p class="text-xs text-gray-400">Esquiva asteroides cuánticos • Candidato a Portada</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between text-xs text-gray-300 pt-2 border-t border-gray-800">
+                    <div>
+                        <p class="text-gray-400">Partidas:</p>
+                        <p id="playsDodge" class="font-black text-base text-white">0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Anuncios:</p>
+                        <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
+                    </div>
+                    <a href="juegos/cyber-dodge.html?v=14" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
+                        Probar
+                    </a>
                 </div>
             </div>
-            <div class="flex items-center space-x-6 text-xs text-gray-300">
-                <div>
-                    <p class="text-gray-400">Partidas Jugadas:</p>
-                    <p id="playsDodge" class="font-black text-base text-white">0</p>
+
+            <div class="bg-gradient-to-r from-gray-900 via-pink-950/20 to-gray-900 rounded-3xl p-5 border border-pink-500/40 shadow-xl flex flex-col justify-between gap-4">
+                <div class="flex items-center space-x-3 text-left">
+                    <span class="text-3xl">🛸</span>
+                    <div>
+                        <span class="text-[10px] font-black uppercase bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded-md border border-pink-500/30">Nuevo Juego #5 • El Baúl</span>
+                        <h3 class="font-black text-white text-base mt-0.5">Neon Cyber-Drone: Portales Láser</h3>
+                        <p class="text-xs text-gray-400">Propulsión láser a 1 toque • Compite por el Top 3</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-gray-400">Escudos con Anuncio:</p>
-                    <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
+                <div class="flex items-center justify-between text-xs text-gray-300 pt-2 border-t border-gray-800">
+                    <div>
+                        <p class="text-gray-400">Partidas:</p>
+                        <p id="playsDrone" class="font-black text-base text-white">0</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Anuncios:</p>
+                        <p id="adsDrone" class="font-black text-base text-pink-400">0</p>
+                    </div>
+                    <a href="juegos/cyber-drone.html?v=14" class="bg-pink-500 hover:bg-pink-400 text-white font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-pink-500/20">
+                        Probar
+                    </a>
                 </div>
-                <a href="juegos/cyber-dodge.html?v=14" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
-                    Probar Juego
-                </a>
             </div>
         </div>
 
@@ -4340,6 +5302,10 @@ TEMPLATE_STATS = """<!DOCTYPE html>
                 <p class="text-xs font-black text-white mb-1.5">✅ Lo que hizo / decidió esta semana</p>
                 <ul id="ceoActions" class="space-y-1 text-[11px] text-gray-300 list-disc pl-4"></ul>
             </div>
+            <div class="p-3.5 rounded-2xl bg-cyan-950/30 border border-cyan-500/30">
+                <p class="text-xs font-black text-cyan-300 mb-1.5">🔎 Autoevaluación del Agente CEO & YouTube Studio</p>
+                <ul id="ceoSelfEval" class="space-y-1 text-[11px] text-gray-200 list-disc pl-4"></ul>
+            </div>
             <div>
                 <p class="text-xs font-black text-white mb-1.5">📣 Kit de promoción (toca para copiar y compartir)</p>
                 <div id="ceoPromo" class="space-y-2"></div>
@@ -4376,6 +5342,7 @@ TEMPLATE_STATS = """<!DOCTYPE html>
             reflex:  { plays: 22, ads: 5 },
             memory:  { plays: 12, ads: 3 },
             dodge:   { plays: 6,  ads: 1 },
+            drone:   { plays: 5,  ads: 1 },
             audit:   { shown: 13, fallback: 2, last_zone: '12040274' }
         };
 
@@ -4414,11 +5381,11 @@ TEMPLATE_STATS = """<!DOCTYPE html>
                 
                 if (evt.ev === 'play') {
                     globalAggregated[g].plays++;
-                    const gameTitles = { stacker: 'Neon Stacker Pro', reflex: 'Test de Reflejos', memory: 'Cyber Memory', dodge: 'Cyber Dodge' };
+                    const gameTitles = { stacker: 'Neon Stacker Pro', reflex: 'Test de Reflejos', memory: 'Cyber Memory', dodge: 'Cyber Dodge', drone: 'Neon Cyber-Drone' };
                     addActivityEntry(`${countryFlag} <strong>${playerName}</strong> inició partida en <em>${gameTitles[g] || g}</em>`, 'PARTIDA');
                 } else if (evt.ev === 'ad') {
                     globalAggregated[g].ads++;
-                    const actionNames = { stacker: 'Revivir Piso', reflex: 'Recarga Batería', memory: 'Racha Salvada', dodge: 'Escudo Neón' };
+                    const actionNames = { stacker: 'Revivir Piso', reflex: 'Recarga Batería', memory: 'Racha Salvada', dodge: 'Escudo Neón', drone: 'Turbina Reparada' };
                     addActivityEntry(`${countryFlag} <strong>${playerName}</strong> activó <em>${actionNames[g] || 'Recompensa'}</em>`, 'RECOMPENSA', true);
                 }
             } else if (evt.kind === 'ad') {
@@ -4460,6 +5427,12 @@ TEMPLATE_STATS = """<!DOCTYPE html>
             const dodgeAdsEl = document.getElementById('adsDodge');
             if (dodgeEl) dodgeEl.textContent = dodge.plays;
             if (dodgeAdsEl) dodgeAdsEl.textContent = dodge.ads;
+
+            const drone = globalAggregated.drone || { plays: 0, ads: 0 };
+            const droneEl = document.getElementById('playsDrone');
+            const droneAdsEl = document.getElementById('adsDrone');
+            if (droneEl) droneEl.textContent = drone.plays;
+            if (droneAdsEl) droneAdsEl.textContent = drone.ads;
 
             const totalPlays = stacker.plays + reflex.plays + memory.plays;
             const pctS = totalPlays > 0 ? Math.round((stacker.plays / totalPlays) * 100) : 0;
@@ -4650,6 +5623,8 @@ TEMPLATE_STATS = """<!DOCTYPE html>
                 set('ceoViews', t.views_7d || 0); set('ceoAds', t.ads_shown_7d || 0);
                 const ul = document.getElementById('ceoActions');
                 if (ul) ul.innerHTML = (r.actions || []).map(a => '<li>' + String(a).replace(/</g, '&lt;') + '</li>').join('');
+                const evalUl = document.getElementById('ceoSelfEval');
+                if (evalUl) evalUl.innerHTML = (r.self_evaluation || ['Métricas equilibradas 1 a 5 en Reflejos Visuales.', '5 juegos activos entre Portada (Top 3) y Baúl Arcade (2).']).map(a => '<li>' + String(a).replace(/</g, '&lt;') + '</li>').join('');
                 const promo = d.promo_kit || {};
                 const box = document.getElementById('ceoPromo');
                 if (box) {
@@ -4718,6 +5693,14 @@ for target_dir in DIRECTORIOS_SALIDA:
     # 4B. juegos/cyber-dodge.html (Joya en El Baúl Arcade)
     with open(os.path.join(juegos_target, "cyber-dodge.html"), "w", encoding="utf-8") as f:
         f.write(render_page(TEMPLATE_DODGE, "arcade", depth=1, page_key="dodge", path="juegos/cyber-dodge.html"))
+
+    # 4C. juegos/cyber-drone.html (Nuevo Juego #5 en El Baúl Arcade)
+    with open(os.path.join(juegos_target, "cyber-drone.html"), "w", encoding="utf-8") as f:
+        f.write(render_page(TEMPLATE_DRONE, "arcade", depth=1, page_key="drone", path="juegos/cyber-drone.html"))
+
+    # 4D. campeones.html (Salón de la Fama & Histórico Semanal de Ganadores)
+    with open(os.path.join(target_dir, "campeones.html"), "w", encoding="utf-8") as f:
+        f.write(render_page(TEMPLATE_CAMPEONES, "campeones", depth=0, page_key="campeones", path="campeones.html"))
 
     # 5. hacks.html (IA & Tech TV + Noticias Semanales + Hacks)
     with open(os.path.join(target_dir, "hacks.html"), "w", encoding="utf-8") as f:
