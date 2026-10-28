@@ -3,507 +3,909 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolucionaError - Diccionario y Solución de Códigos de Error</title>
-    <meta name="description" content="Encuentra gratis la solución a los códigos de error de tus lavadoras, aires acondicionados, neveras y motores de auto OBD2.">
+    <title>SolucionaError.com — Diccionario Técnico y Solución de Códigos de Falla</title>
+    <meta name="description" content="Encuentra gratis la solución paso a paso a los códigos de error de lavadoras, aires acondicionados, neveras y motores de autos OBD2. Guías de reseteo comprobadas.">
     <meta name="monetag" content="d1abe10ca7a4b6913b66971cc3948b1b">
     <link rel="canonical" href="https://megabotp2p.github.io/">
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .cat-pill.active {
+            background-color: #2563eb !important;
+            color: #ffffff !important;
+            border-color: #2563eb !important;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col pt-12 sm:pt-4">
 
-    <header class="bg-blue-900 text-white shadow-md pt-12 sm:pt-8">
-        <div class="max-w-5xl mx-auto px-4 py-8 text-center">
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-2">
-                🛠️ SolucionaError<span class="text-yellow-400">.com</span>
+    <!-- Header Hero con Buscador -->
+    <header class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900 text-white shadow-lg pb-10 pt-4 sm:pt-8 border-b border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            
+            <div class="inline-flex items-center space-x-2 bg-blue-500/15 border border-blue-400/30 px-3.5 py-1 rounded-full text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
+                <span>🛠️</span>
+                <span>Manuales de Servicio & Diagnóstico Rápido</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+                SolucionaError<span class="text-amber-400">.com</span>
             </h1>
-            <p class="text-blue-200 text-sm max-w-lg mx-auto mb-6">
-                Manuales técnicos rápidos y soluciones comprobadas para códigos de falla en electrodomésticos y autos.
+            <p class="text-slate-300 text-xs sm:text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+                Escribe el código que muestra tu máquina o auto y descubre qué significa, cómo resetearlo y cómo repararlo tú mismo sin gastar de más.
             </p>
 
             <!-- Buscador en tiempo real -->
             <div class="max-w-xl mx-auto relative">
-                <input type="text" id="searchInput" placeholder="Escribe tu código o marca (ej: 4E, Samsung, P0300, LG)..." 
-                       class="w-full px-5 py-3.5 rounded-2xl text-gray-900 bg-white shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-300 text-sm">
+                <input type="text" id="searchInput" placeholder="Escribe tu código o marca (ej: 4E, Samsung, P0300, LG, CL)..." 
+                       class="w-full pl-12 pr-4 py-4 rounded-2xl text-slate-900 bg-white shadow-2xl focus:outline-none focus:ring-4 focus:ring-blue-400 text-sm font-medium">
+                <span class="absolute left-4 top-4 text-slate-400 text-base">🔍</span>
             </div>
+
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow">
+    <!-- Barra de Filtros por Categoría -->
+    <div class="max-w-5xl mx-auto px-4 -mt-4 z-20 w-full">
+        <div class="bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-md border border-slate-200/80 flex items-center space-x-1.5 overflow-x-auto">
+            <button onclick="setCategoryFilter('all', this)" class="cat-pill active px-3.5 py-1.5 rounded-xl text-xs font-bold bg-blue-600 text-white shadow-sm transition">Todos</button><button onclick="setCategoryFilter('Aire Acondicionado', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:border-blue-400 transition">Aire Acondicionado</button><button onclick="setCategoryFilter('Autos y Motores', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:border-blue-400 transition">Autos y Motores</button><button onclick="setCategoryFilter('Lavadoras', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:border-blue-400 transition">Lavadoras</button><button onclick="setCategoryFilter('Refrigeradores', this)" class="cat-pill px-3.5 py-1.5 rounded-xl text-xs font-bold bg-white text-slate-600 border border-slate-200 hover:border-blue-400 transition">Refrigeradores</button>
+        </div>
+    </div>
+
+    <!-- Contenido y Listado de Códigos -->
+    <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold text-gray-900">Códigos más consultados hoy</h2>
-            <span id="contadorResultados" class="text-xs text-gray-500 font-medium"></span>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center space-x-2">
+                <span>📚</span>
+                <span>Códigos de Falla Frecuentes</span>
+            </h2>
+            <span id="contadorResultados" class="text-xs text-slate-500 font-bold bg-slate-200/70 px-2.5 py-1 rounded-lg"></span>
         </div>
 
-        <div id="codigosGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div id="codigosGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4">
             
-        <a href="codigos/samsung-lavadoras-error-4e-4c.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 4e / 4c lavadoras fallo en entrada o suministro de agua">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-4e-4c.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 4e / 4c lavadoras fallo en entrada o suministro de agua"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 4E / 4C</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en entrada o suministro de agua</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 4E / 4C</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en entrada o suministro de agua</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-5e-5c-e2.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 5e / 5c / e2 lavadoras fallo en el drenaje o desagüe">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-5e-5c-e2.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 5e / 5c / e2 lavadoras fallo en el drenaje o desagüe"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 5E / 5C / E2</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el drenaje o desagüe</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 5E / 5C / E2</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el drenaje o desagüe</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-ue-ub-e4.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung ue / ub / e4 lavadoras desbalance de carga en el tambor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-ue-ub-e4.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung ue / ub / e4 lavadoras desbalance de carga en el tambor"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error UE / UB / E4</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Desbalance de carga en el tambor</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error UE / UB / E4</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Desbalance de carga en el tambor</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-de-dc-de1.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung de / dc / de1 lavadoras puerta o escotilla abierta o mal cerrada">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-de-dc-de1.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung de / dc / de1 lavadoras puerta o escotilla abierta o mal cerrada"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error dE / dC / dE1</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Puerta o escotilla abierta o mal cerrada</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error dE / dC / dE1</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Puerta o escotilla abierta o mal cerrada</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-sud-suds.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung sud / suds lavadoras exceso de espuma detectado en la tina">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-sud-suds.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung sud / suds lavadoras exceso de espuma detectado en la tina"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error SUD / SUdS</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Exceso de espuma detectado en la tina</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error SUD / SUdS</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Exceso de espuma detectado en la tina</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-3e-3c-8e.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 3e / 3c / 8e lavadoras fallo en el motor o tacómetro">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-3e-3c-8e.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 3e / 3c / 8e lavadoras fallo en el motor o tacómetro"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 3E / 3C / 8E</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el motor o tacómetro</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 3E / 3C / 8E</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el motor o tacómetro</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-1e-1c-le.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 1e / 1c / le lavadoras fallo en sensor de nivel de agua (presostato)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-1e-1c-le.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 1e / 1c / le lavadoras fallo en sensor de nivel de agua (presostato)"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 1E / 1C / LE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en sensor de nivel de agua (Presostato)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 1E / 1C / LE</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en sensor de nivel de agua (Presostato)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-lavadoras-error-te-te1.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung te / te1 lavadoras sensor de temperatura (termistor) defectuoso">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/samsung-lavadoras-error-te-te1.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung te / te1 lavadoras sensor de temperatura (termistor) defectuoso"
+           data-category="Lavadoras"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error tE / tE1</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Sensor de temperatura (Termistor) defectuoso</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error tE / tE1</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Sensor de temperatura (Termistor) defectuoso</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-oe.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg oe lavadoras fallo de drenaje de agua">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-oe.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg oe lavadoras fallo de drenaje de agua"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error OE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de drenaje de agua</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error OE</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo de drenaje de agua</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-ie.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ie lavadoras suministro de agua insuficiente">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-ie.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg ie lavadoras suministro de agua insuficiente"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error IE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Suministro de agua insuficiente</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error IE</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Suministro de agua insuficiente</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-cl.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg cl lavadoras bloqueo infantil activo (child lock)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-cl.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg cl lavadoras bloqueo infantil activo (child lock)"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CL</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Bloqueo Infantil Activo (Child Lock)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error CL</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Bloqueo Infantil Activo (Child Lock)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-le.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg le lavadoras bloqueo o sobrecarga del motor direct drive">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-le.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg le lavadoras bloqueo o sobrecarga del motor direct drive"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error LE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Bloqueo o sobrecarga del motor Direct Drive</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error LE</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Bloqueo o sobrecarga del motor Direct Drive</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-de-de1-de2.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg de / de1 / de2 lavadoras error de puerta no bloqueada">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-de-de1-de2.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg de / de1 / de2 lavadoras error de puerta no bloqueada"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error dE / dE1 / dE2</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de puerta no bloqueada</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error dE / dE1 / dE2</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Error de puerta no bloqueada</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-fe.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg fe lavadoras error de desbordamiento (sobrellenado)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-fe.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg fe lavadoras error de desbordamiento (sobrellenado)"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error FE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de desbordamiento (Sobrellenado)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error FE</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Error de desbordamiento (Sobrellenado)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-lavadoras-error-pe.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg pe lavadoras sensor de presión de agua (presostato) defectuoso">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/lg-lavadoras-error-pe.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg pe lavadoras sensor de presión de agua (presostato) defectuoso"
+           data-category="Lavadoras"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error PE</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Sensor de presión de agua (Presostato) defectuoso</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error PE</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Sensor de presión de agua (Presostato) defectuoso</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/whirlpool-lavadoras-error-f21-e02.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f21 / e02 lavadoras tiempo de drenaje prolongado">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/whirlpool-lavadoras-error-f21-e02.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="whirlpool f21 / e02 lavadoras tiempo de drenaje prolongado"
+           data-category="Lavadoras"
+           data-brand="Whirlpool">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Whirlpool</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F21 / E02</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Tiempo de drenaje prolongado</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error F21 / E02</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Tiempo de drenaje prolongado</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/whirlpool-lavadoras-error-f20-e01.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f20 / e01 lavadoras problema de entrada de agua">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/whirlpool-lavadoras-error-f20-e01.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="whirlpool f20 / e01 lavadoras problema de entrada de agua"
+           data-category="Lavadoras"
+           data-brand="Whirlpool">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Whirlpool</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F20 / E01</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Problema de entrada de agua</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error F20 / E01</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Problema de entrada de agua</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/whirlpool-lavadoras-error-f06-e01.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f06 / e01 lavadoras error en el tacómetro del motor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/whirlpool-lavadoras-error-f06-e01.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="whirlpool f06 / e01 lavadoras error en el tacómetro del motor"
+           data-category="Lavadoras"
+           data-brand="Whirlpool">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Whirlpool</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F06 / E01</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error en el tacómetro del motor</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error F06 / E01</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Error en el tacómetro del motor</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/whirlpool-lavadoras-error-f28-e01.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="whirlpool f28 / e01 lavadoras error de comunicación de la placa central">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Whirlpool</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/whirlpool-lavadoras-error-f28-e01.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="whirlpool f28 / e01 lavadoras error de comunicación de la placa central"
+           data-category="Lavadoras"
+           data-brand="Whirlpool">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Whirlpool</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error F28 / E01</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de comunicación de la placa central</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error F28 / E01</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Error de comunicación de la placa central</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/mabe-lavadoras-error-e1.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e1 lavadoras tiempo límite de llenado excedido">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/mabe-lavadoras-error-e1.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="mabe e1 lavadoras tiempo límite de llenado excedido"
+           data-category="Lavadoras"
+           data-brand="Mabe">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Mabe</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E1</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Tiempo límite de llenado excedido</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E1</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Tiempo límite de llenado excedido</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/mabe-lavadoras-error-e2.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e2 lavadoras fallo en desagüe de la tina">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/mabe-lavadoras-error-e2.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="mabe e2 lavadoras fallo en desagüe de la tina"
+           data-category="Lavadoras"
+           data-brand="Mabe">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Mabe</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E2</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en desagüe de la tina</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E2</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en desagüe de la tina</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/mabe-lavadoras-error-e3.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e3 lavadoras desbalanceo en el centrifugado">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/mabe-lavadoras-error-e3.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="mabe e3 lavadoras desbalanceo en el centrifugado"
+           data-category="Lavadoras"
+           data-brand="Mabe">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Mabe</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E3</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Desbalanceo en el centrifugado</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E3</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Desbalanceo en el centrifugado</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/mabe-lavadoras-error-e4.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="mabe e4 lavadoras puerta o tapa superior abierta">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Mabe</span>
-                <span class="text-xs text-gray-400 font-medium">Lavadoras</span>
+        <a href="codigos/mabe-lavadoras-error-e4.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="mabe e4 lavadoras puerta o tapa superior abierta"
+           data-category="Lavadoras"
+           data-brand="Mabe">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Mabe</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Lavadoras</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E4</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Puerta o tapa superior abierta</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E4</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Puerta o tapa superior abierta</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-aire-acondicionado-error-ch05-c5.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch05 / c5 aire acondicionado error de comunicación inverter">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/lg-aire-acondicionado-error-ch05-c5.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg ch05 / c5 aire acondicionado error de comunicación inverter"
+           data-category="Aire Acondicionado"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH05 / C5</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Error de comunicación Inverter</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error CH05 / C5</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Error de comunicación Inverter</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-aire-acondicionado-error-ch10.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch10 aire acondicionado motor del ventilador interior bloqueado (bldc)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/lg-aire-acondicionado-error-ch10.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg ch10 aire acondicionado motor del ventilador interior bloqueado (bldc)"
+           data-category="Aire Acondicionado"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH10</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Motor del ventilador interior bloqueado (BLDC)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error CH10</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Motor del ventilador interior bloqueado (BLDC)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-aire-acondicionado-error-ch21.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch21 aire acondicionado pico de sobrecorriente en el compresor (ipm)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/lg-aire-acondicionado-error-ch21.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg ch21 aire acondicionado pico de sobrecorriente en el compresor (ipm)"
+           data-category="Aire Acondicionado"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH21</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Pico de sobrecorriente en el compresor (IPM)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error CH21</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Pico de sobrecorriente en el compresor (IPM)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-aire-acondicionado-error-ch38.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg ch38 aire acondicionado fuga de gas refrigerante detectada">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/lg-aire-acondicionado-error-ch38.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg ch38 aire acondicionado fuga de gas refrigerante detectada"
+           data-category="Aire Acondicionado"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error CH38</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fuga de gas refrigerante detectada</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error CH38</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fuga de gas refrigerante detectada</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-aire-acondicionado-error-e101-e102.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung e101 / e102 aire acondicionado fallo de comunicación entre unidades">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/samsung-aire-acondicionado-error-e101-e102.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung e101 / e102 aire acondicionado fallo de comunicación entre unidades"
+           data-category="Aire Acondicionado"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E101 / E102</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de comunicación entre unidades</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E101 / E102</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo de comunicación entre unidades</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-aire-acondicionado-error-e458.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung e458 aire acondicionado fallo en motor del ventilador exterior">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/samsung-aire-acondicionado-error-e458.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung e458 aire acondicionado fallo en motor del ventilador exterior"
+           data-category="Aire Acondicionado"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E458</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en motor del ventilador exterior</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E458</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en motor del ventilador exterior</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-aire-acondicionado-error-e201.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung e201 aire acondicionado fallo en sensor de temperatura de intercambio interior">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/samsung-aire-acondicionado-error-e201.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung e201 aire acondicionado fallo en sensor de temperatura de intercambio interior"
+           data-category="Aire Acondicionado"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error E201</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en sensor de temperatura de intercambio interior</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error E201</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en sensor de temperatura de intercambio interior</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/daikin-aire-acondicionado-error-u4.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="daikin u4 aire acondicionado fallo de transmisión entre split y compresor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Daikin</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/daikin-aire-acondicionado-error-u4.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="daikin u4 aire acondicionado fallo de transmisión entre split y compresor"
+           data-category="Aire Acondicionado"
+           data-brand="Daikin">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Daikin</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error U4</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de transmisión entre split y compresor</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error U4</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo de transmisión entre split y compresor</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/daikin-aire-acondicionado-error-a6.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="daikin a6 aire acondicionado fallo en motor del ventilador interior">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Daikin</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/daikin-aire-acondicionado-error-a6.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="daikin a6 aire acondicionado fallo en motor del ventilador interior"
+           data-category="Aire Acondicionado"
+           data-brand="Daikin">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Daikin</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error A6</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en motor del ventilador interior</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error A6</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en motor del ventilador interior</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/daikin-aire-acondicionado-error-l5.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="daikin l5 aire acondicionado sobrecarga instantánea en el compresor">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Daikin</span>
-                <span class="text-xs text-gray-400 font-medium">Aire Acondicionado</span>
+        <a href="codigos/daikin-aire-acondicionado-error-l5.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="daikin l5 aire acondicionado sobrecarga instantánea en el compresor"
+           data-category="Aire Acondicionado"
+           data-brand="Daikin">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Daikin</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Aire Acondicionado</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error L5</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Sobrecarga instantánea en el compresor</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error L5</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Sobrecarga instantánea en el compresor</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-refrigeradores-error-22e-22c.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 22e / 22c refrigeradores fallo en ventilador del evaporador (nevera)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
+        <a href="codigos/samsung-refrigeradores-error-22e-22c.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 22e / 22c refrigeradores fallo en ventilador del evaporador (nevera)"
+           data-category="Refrigeradores"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Refrigeradores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 22E / 22C</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en ventilador del evaporador (Nevera)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 22E / 22C</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en ventilador del evaporador (Nevera)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-refrigeradores-error-25e.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 25e refrigeradores fallo en el sistema de descongelación (defrost)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
+        <a href="codigos/samsung-refrigeradores-error-25e.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 25e refrigeradores fallo en el sistema de descongelación (defrost)"
+           data-category="Refrigeradores"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Refrigeradores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 25E</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el sistema de descongelación (Defrost)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 25E</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el sistema de descongelación (Defrost)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/samsung-refrigeradores-error-84e.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="samsung 84e refrigeradores compresor inverter bloqueado (rotor lock)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Samsung</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
+        <a href="codigos/samsung-refrigeradores-error-84e.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="samsung 84e refrigeradores compresor inverter bloqueado (rotor lock)"
+           data-category="Refrigeradores"
+           data-brand="Samsung">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Samsung</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Refrigeradores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error 84E</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Compresor Inverter bloqueado (Rotor Lock)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error 84E</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Compresor Inverter bloqueado (Rotor Lock)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-refrigeradores-error-er-ff.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg er ff refrigeradores fallo en el ventilador del congelador (freezer fan)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
+        <a href="codigos/lg-refrigeradores-error-er-ff.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg er ff refrigeradores fallo en el ventilador del congelador (freezer fan)"
+           data-category="Refrigeradores"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Refrigeradores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error Er FF</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el ventilador del congelador (Freezer Fan)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error Er FF</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el ventilador del congelador (Freezer Fan)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/lg-refrigeradores-error-er-dh.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="lg er dh refrigeradores fallo en la descongelación (defrost heater)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">LG</span>
-                <span class="text-xs text-gray-400 font-medium">Refrigeradores</span>
+        <a href="codigos/lg-refrigeradores-error-er-dh.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="lg er dh refrigeradores fallo en la descongelación (defrost heater)"
+           data-category="Refrigeradores"
+           data-brand="LG">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">LG</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Refrigeradores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error Er dH</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en la descongelación (Defrost Heater)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error Er dH</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en la descongelación (Defrost Heater)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0300.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0300 autos y motores fallo de encendido aleatorio en múltiples cilindros">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0300.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0300 autos y motores fallo de encendido aleatorio en múltiples cilindros"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0300</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de encendido aleatorio en múltiples cilindros</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0300</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo de encendido aleatorio en múltiples cilindros</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0301-p0302-p0303-p0304.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0301 / p0302 / p0303 / p0304 autos y motores fallo de encendido en cilindro específico">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0301-p0302-p0303-p0304.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0301 / p0302 / p0303 / p0304 autos y motores fallo de encendido en cilindro específico"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0301 / P0302 / P0303 / P0304</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo de encendido en cilindro específico</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0301 / P0302 / P0303 / P0304</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo de encendido en cilindro específico</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0420.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0420 autos y motores eficiencia del catalizador por debajo del umbral (banco 1)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0420.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0420 autos y motores eficiencia del catalizador por debajo del umbral (banco 1)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0420</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Eficiencia del catalizador por debajo del umbral (Banco 1)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0420</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Eficiencia del catalizador por debajo del umbral (Banco 1)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0171.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0171 autos y motores mezcla de combustible demasiado pobre (demasiado aire)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0171.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0171 autos y motores mezcla de combustible demasiado pobre (demasiado aire)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0171</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Mezcla de combustible demasiado pobre (Demasiado aire)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0171</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Mezcla de combustible demasiado pobre (Demasiado aire)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0172.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0172 autos y motores mezcla de combustible demasiado rica (exceso de combustible)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0172.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0172 autos y motores mezcla de combustible demasiado rica (exceso de combustible)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0172</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Mezcla de combustible demasiado rica (Exceso de combustible)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0172</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Mezcla de combustible demasiado rica (Exceso de combustible)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0128.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0128 autos y motores termostato del refrigerante trabado en frío">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0128.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0128 autos y motores termostato del refrigerante trabado en frío"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0128</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Termostato del refrigerante trabado en frío</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0128</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Termostato del refrigerante trabado en frío</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0442-p0455.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0442 / p0455 autos y motores fuga detectada en el sistema evap (gases de gasolina)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0442-p0455.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0442 / p0455 autos y motores fuga detectada en el sistema evap (gases de gasolina)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0442 / P0455</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fuga detectada en el sistema EVAP (Gases de gasolina)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0442 / P0455</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fuga detectada en el sistema EVAP (Gases de gasolina)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0340.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0340 autos y motores fallo en el circuito del sensor de posición del árbol de levas (cmp)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0340.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0340 autos y motores fallo en el circuito del sensor de posición del árbol de levas (cmp)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0340</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el circuito del sensor de posición del árbol de levas (CMP)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0340</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el circuito del sensor de posición del árbol de levas (CMP)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0335.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0335 autos y motores fallo en el sensor de posición del cigüeñal (ckp)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0335.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0335 autos y motores fallo en el sensor de posición del cigüeñal (ckp)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0335</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el sensor de posición del cigüeñal (CKP)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0335</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el sensor de posición del cigüeñal (CKP)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0500.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0500 autos y motores fallo en el sensor de velocidad del vehículo (vss)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0500.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0500 autos y motores fallo en el sensor de velocidad del vehículo (vss)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0500</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo en el sensor de velocidad del vehículo (VSS)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0500</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo en el sensor de velocidad del vehículo (VSS)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
-        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0700.html" class="codigo-card block bg-white p-5 rounded-xl border border-gray-200 hover:shadow-md hover:border-blue-500 transition group" data-search="genérico obd2 p0700 autos y motores fallo general en el sistema de control de transmisión automática (tcm)">
-            <div class="flex justify-between items-center mb-2">
-                <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">Genérico OBD2</span>
-                <span class="text-xs text-gray-400 font-medium">Autos y Motores</span>
+        <a href="codigos/gen-rico-obd2-autos-y-motores-error-p0700.html" class="codigo-card block bg-white p-5 rounded-2xl border border-slate-200/90 hover:border-blue-500 hover:shadow-md transition-all group" 
+           data-search="genérico obd2 p0700 autos y motores fallo general en el sistema de control de transmisión automática (tcm)"
+           data-category="Autos y Motores"
+           data-brand="Genérico OBD2">
+            <div class="flex justify-between items-center mb-2.5">
+                <span class="text-[11px] font-black text-blue-700 bg-blue-50 border border-blue-200/60 px-2.5 py-0.5 rounded-md uppercase tracking-wider">Genérico OBD2</span>
+                <span class="text-[11px] text-slate-400 font-semibold">Autos y Motores</span>
             </div>
-            <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition">Error P0700</h3>
-            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fallo general en el sistema de control de transmisión automática (TCM)</p>
+            <h3 class="text-base sm:text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Error P0700</h3>
+            <p class="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">Fallo general en el sistema de control de transmisión automática (TCM)</p>
+            <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-blue-600 font-bold group-hover:translate-x-0.5 transition-transform">
+                <span>Ver solución completa</span>
+                <span>→</span>
+            </div>
         </a>
         
+        </div>
+
+        <!-- Estado vacío si no hay coincidencias -->
+        <div id="emptyState" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 mt-4 p-6">
+            <span class="text-4xl">🔍</span>
+            <h3 class="text-base font-bold text-slate-800 mt-2">No se encontró ese código todavía</h3>
+            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Prueba buscando solo la marca (ej. Samsung) o el número (ej. 4E o P0128).</p>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 text-xs py-6 mt-12 text-center">
-        <p>© 2026 SolucionaError. Guías libres y abiertas para reparaciones domésticas.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 text-center space-y-2">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <p>© 2026 SolucionaError.com — Directorio técnico libre de fallas mecánicas y electrónicas.</p>
+            <div class="flex items-center space-x-4">
+                <a href="https://megabotp2p.github.io/bytezone/" class="text-amber-400 hover:underline flex items-center space-x-1">
+                    <span>⚡</span>
+                    <span>ByteZone Arcade</span>
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script>
         const input = document.getElementById('searchInput');
         const cards = document.querySelectorAll('.codigo-card');
         const contador = document.getElementById('contadorResultados');
+        const emptyState = document.getElementById('emptyState');
+        let selectedCategory = 'all';
 
         function filtrar() {
             const query = input.value.toLowerCase().trim();
             let visibles = 0;
             cards.forEach(card => {
-                const searchData = card.getAttribute('data-search');
-                if (searchData.includes(query)) {
+                const searchData = card.getAttribute('data-search') || '';
+                const cardCat = card.getAttribute('data-category') || '';
+                
+                const matchesCat = (selectedCategory === 'all' || cardCat === selectedCategory);
+                const matchesQuery = query === '' || searchData.includes(query);
+
+                if (matchesCat && matchesQuery) {
                     card.style.display = 'block';
                     visibles++;
                 } else {
                     card.style.display = 'none';
                 }
             });
-            contador.textContent = `${visibles} códigos encontrados`;
+
+            contador.textContent = `${visibles} códigos disponibles`;
+            emptyState.style.display = visibles === 0 ? 'block' : 'none';
         }
+
+        window.setCategoryFilter = function(category, element) {
+            selectedCategory = category;
+            document.querySelectorAll('.cat-pill').forEach(el => el.classList.remove('active'));
+            if (element) element.classList.add('active');
+            filtrar();
+        };
 
         input.addEventListener('input', filtrar);
         filtrar();
