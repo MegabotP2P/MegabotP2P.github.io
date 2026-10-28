@@ -80,13 +80,6 @@
             if (window.bzAdInProgress) return;
             window.bzAdInProgress = true;
 
-            const REQUIRED_SECONDS = 15;
-            let secondsLeft = REQUIRED_SECONDS;
-            let countdownInterval = null;
-            let adVerified = false;
-            let activeZone = '12040274';
-
-            // Modal de Verificación Estricta de 15 Segundos (Anti-Salto Monetag)
             let modal = document.getElementById('bzRewardedVerificationModal');
             if (!modal) {
                 modal = document.createElement('div');
@@ -95,122 +88,113 @@
                 document.body.appendChild(modal);
             }
 
-            modal.innerHTML = `
-                <div class="max-w-xs w-full bg-gray-900 border border-amber-500/60 rounded-3xl p-5 text-center shadow-2xl shadow-amber-500/20 animate-in fade-in zoom-in duration-200">
-                    <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-2xl animate-pulse">
-                        🛡️
+            const showHUD = (statusHtml) => {
+                modal.innerHTML = `
+                    <div class="max-w-xs w-full bg-gray-900 border border-cyan-500/50 rounded-3xl p-5 text-center shadow-2xl shadow-cyan-500/20 animate-in fade-in zoom-in duration-200">
+                        ${statusHtml}
                     </div>
-                    <h4 class="text-sm font-black text-white uppercase tracking-wider">Validando Anuncio</h4>
-                    <p class="text-[11px] text-gray-300 mt-1">Mira la publicidad completa (15s) para recibir tu beneficio:</p>
-                    
-                    <div class="my-4 py-2.5 px-3 bg-gray-950 rounded-2xl border border-gray-800">
-                        <span id="bzAdTimerSeconds" class="text-3xl font-black text-amber-400 font-mono tracking-wider">15s</span>
-                        <div class="w-full bg-gray-800 h-2 rounded-full mt-2.5 overflow-hidden">
-                            <div id="bzAdProgressBar" class="h-full bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-400 transition-all duration-1000 ease-linear" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    
-                    <p id="bzAdStatusNote" class="text-[10px] text-gray-400 leading-tight">
-                        ⚠️ No salgas ni cierres antes de 15s o el sistema cancelará la recompensa.
-                    </p>
-                </div>
-            `;
-            modal.style.display = 'flex';
+                `;
+                modal.style.display = 'flex';
+            };
 
-            const timerEl = document.getElementById('bzAdTimerSeconds');
-            const progressEl = document.getElementById('bzAdProgressBar');
-            const noteEl = document.getElementById('bzAdStatusNote');
-
-            const cleanupModal = (delay = 0) => {
-                if (countdownInterval) {
-                    clearInterval(countdownInterval);
-                    countdownInterval = null;
-                }
+            const closeHUD = (delay = 0) => {
                 setTimeout(() => {
-                    if (modal && modal.parentNode) {
-                        modal.style.display = 'none';
-                    }
+                    if (modal && modal.parentNode) modal.style.display = 'none';
                     window.bzAdInProgress = false;
                 }, delay);
             };
 
-            const completeRewardSuccess = () => {
-                adVerified = true;
-                if (timerEl) {
-                    timerEl.textContent = "✅ ¡Listo!";
-                    timerEl.className = "text-2xl font-black text-emerald-400 font-mono tracking-wider";
-                }
-                if (progressEl) {
-                    progressEl.style.width = "100%";
-                    progressEl.className = "h-full bg-emerald-500";
-                }
-                if (noteEl) {
-                    noteEl.textContent = "🎉 ¡Anuncio verificado con éxito! Recompensa entregada.";
-                    noteEl.className = "text-[11px] text-emerald-300 font-bold leading-tight";
-                }
+            // 1. Mostrar pantalla de carga
+            showHUD(`
+                <div class="w-12 h-12 mx-auto mb-3 border-4 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin"></div>
+                <h4 class="text-sm font-black text-white uppercase tracking-wider">Cargando Anuncio...</h4>
+                <p class="text-[11px] text-gray-300 mt-1">El video publicitario comenzará en un instante. No salgas del reproductor.</p>
+                <button id="bzCancelAdBtn" class="mt-4 text-[11px] text-gray-400 hover:text-white bg-gray-800/80 px-3 py-1.5 rounded-xl border border-gray-700/60 transition">
+                    Cancelar
+                </button>
+            `);
 
+            let isCancelled = false;
+            const cancelBtn = document.getElementById('bzCancelAdBtn');
+            if (cancelBtn) {
+                cancelBtn.onclick = () => {
+                    isCancelled = true;
+                    closeHUD(0);
+                };
+            }
+
+            // 2. Éxito estricto: Monetag confirmó la visualización completa
+            const handleSuccess = (zoneUsed) => {
+                if (isCancelled) return;
                 try {
                     const log = JSON.parse(localStorage.getItem('bytezone_ad_audit') || '{"shown":0,"fallback":0}');
                     log.shown = (log.shown || 0) + 1;
-                    log.last_zone = activeZone;
+                    log.last_zone = zoneUsed;
                     log.last_time = new Date().toISOString();
                     localStorage.setItem('bytezone_ad_audit', JSON.stringify(log));
                 } catch (e) {}
 
-                // Emitir impresión de anuncio a la nube global únicamente cuando se cumplieron los 15s completos
                 window.broadcastGlobalTelemetry({
                     kind: 'ad',
                     g: window.CURRENT_GAME_KEY || 'portal',
                     shown: 1,
-                    zone: activeZone
+                    zone: zoneUsed
                 });
 
-                cleanupModal(600);
+                showHUD(`
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-emerald-500/20 border border-emerald-400/50 flex items-center justify-center text-2xl">
+                        🎉
+                    </div>
+                    <h4 class="text-sm font-black text-white uppercase tracking-wider">¡Anuncio Completado!</h4>
+                    <p class="text-[11px] text-emerald-300 font-bold mt-1">Recompensa desbloqueada con éxito.</p>
+                `);
+
+                closeHUD(900);
 
                 if (typeof rewardCallback === 'function') {
                     try { rewardCallback(); } catch(err) { console.error("Error al aplicar rewardCallback:", err); }
                 }
             };
 
-            // Iniciar cuenta regresiva estricta de 15 segundos
-            countdownInterval = setInterval(() => {
-                secondsLeft--;
-                if (timerEl) timerEl.textContent = secondsLeft + "s";
-                if (progressEl) {
-                    const pct = Math.max(0, (secondsLeft / REQUIRED_SECONDS) * 100);
-                    progressEl.style.width = pct + "%";
-                }
+            // 3. Fallo o Cierre Prematuro: Sin recompensa
+            const handleFailure = (msg) => {
+                if (isCancelled) return;
+                showHUD(`
+                    <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-2xl">
+                        ⚠️
+                    </div>
+                    <h4 class="text-sm font-black text-white uppercase tracking-wider">Anuncio Incompleto</h4>
+                    <p class="text-[11px] text-amber-200 mt-1 leading-snug">${msg || 'Debes ver el anuncio completo para desbloquear tu recompensa.'}</p>
+                    <button onclick="document.getElementById('bzRewardedVerificationModal').style.display='none'; window.bzAdInProgress=false;" class="mt-4 text-xs font-bold text-white bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded-xl shadow transition">
+                        Entendido
+                    </button>
+                `);
+            };
 
-                if (secondsLeft <= 0) {
-                    clearInterval(countdownInterval);
-                    countdownInterval = null;
-                    completeRewardSuccess();
-                }
-            }, 1000);
-
-            // Llamar a Monetag SDK en segundo plano (Zona Principal o Respaldo)
-            const tryTriggerMonetag = () => {
-                const callBackup = () => {
-                    activeZone = '12040276';
-                    if (typeof window.show_12040276 === 'function') {
-                        window.show_12040276().catch((err2) => {
-                            console.warn("Monetag Zona Respaldo 12040276 sin inventario:", err2);
-                        });
-                    }
-                };
-
-                if (typeof window.show_12040274 === 'function') {
-                    activeZone = '12040274';
-                    window.show_12040274().catch((err1) => {
-                        console.warn("Monetag Zona Principal no llenó, probando respaldo:", err1);
-                        callBackup();
+            // 4. Ejecución en Cascada oficial de Monetag (12040274 -> 12040276)
+            const tryBackup = () => {
+                if (typeof window.show_12040276 === 'function') {
+                    window.show_12040276().then(() => {
+                        handleSuccess('12040276');
+                    }).catch((err2) => {
+                        console.warn("Monetag Zona 12040276 rechazada:", err2);
+                        handleFailure("No se completó la visualización del anuncio. Recuerda no saltártelo para recibir el beneficio.");
                     });
                 } else {
-                    callBackup();
+                    handleFailure("No hay anuncios disponibles en este momento. Inténtalo más tarde.");
                 }
             };
 
-            tryTriggerMonetag();
+            if (typeof window.show_12040274 === 'function') {
+                window.show_12040274().then(() => {
+                    handleSuccess('12040274');
+                }).catch((err1) => {
+                    console.warn("Monetag Zona 12040274 no disponible o cerrada prematuramente:", err1);
+                    tryBackup();
+                });
+            } else {
+                tryBackup();
+            }
         }
     </script>
 
@@ -289,12 +273,8 @@
                 Panel de Métricas & Monetización Global
             </h1>
             <p class="text-xs sm:text-sm text-gray-300 mt-2 max-w-xl mx-auto">
-                Monitorea en tiempo real las partidas de la <strong>Semana Actual (W2026-10-26)</strong> separadas del <strong>Histórico Acumulado (Semanas #1 y #2)</strong>.
+                Monitorea en tiempo real todas las partidas, revives y anuncios confirmados de <strong>todos los teléfonos</strong> y de la <strong>Mini App de Telegram</strong> en vivo.
             </p>
-            <div class="mt-3 inline-flex items-center space-x-2 bg-emerald-950/60 border border-emerald-500/40 px-3.5 py-1.5 rounded-full text-[11px] text-emerald-300 font-bold">
-                <span>🛡️</span>
-                <span>Modo Chequeo Seguro Admin Activo: Tus revisiones (RATG / Rafael Torres) no alteran ni mezclan las estadísticas</span>
-            </div>
         </div>
 
         <!-- TARJETAS DE LOS JUEGOS EN TIEMPO REAL (SINCRONIZADAS ENTRE TODOS LOS TELÉFONOS) -->
@@ -313,25 +293,17 @@
                     <p class="text-xs text-gray-400 mt-0.5">Construcción de torre con bloques</p>
                     
                     <div class="mt-4 space-y-2 text-xs">
-                        <div class="flex justify-between text-amber-300 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30">
-                            <span>🔥 Esta Semana (W2026-10-26):</span>
-                            <span id="weeklyPlaysStacker" class="font-black">0</span>
-                        </div>
-                        <div class="flex justify-between text-gray-400">
-                            <span>🏛️ Histórico (Semanas #1 y #2):</span>
-                            <span class="font-bold text-gray-300">28</span>
-                        </div>
-                        <div class="flex justify-between text-gray-300 pt-1 border-t border-gray-800/80">
-                            <span>Total Partidas (Acumulado):</span>
-                            <span id="playsStacker" class="font-bold text-white">28</span>
+                        <div class="flex justify-between text-gray-300">
+                            <span>Partidas Jugadas (Global):</span>
+                            <span id="playsStacker" class="font-bold text-white">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Revives con Anuncio:</span>
-                            <span id="adsStacker" class="font-bold text-emerald-400">8</span>
+                            <span id="adsStacker" class="font-bold text-emerald-400">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Tasa de Conversión:</span>
-                            <span id="rateStacker" class="font-bold text-cyan-400">29%</span>
+                            <span id="rateStacker" class="font-bold text-cyan-400">0%</span>
                         </div>
                     </div>
                 </div>
@@ -351,28 +323,20 @@
                         </span>
                     </div>
                     <h3 class="font-black text-white text-base">Test de Reflejos</h3>
-                    <p class="text-xs text-gray-400 mt-0.5">Velocidad de reacción pura (1 c/5 int.)</p>
+                    <p class="text-xs text-gray-400 mt-0.5">Velocidad de reacción pura</p>
                     
                     <div class="mt-4 space-y-2 text-xs">
-                        <div class="flex justify-between text-amber-300 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30">
-                            <span>🔥 Esta Semana (W2026-10-26):</span>
-                            <span id="weeklyPlaysReflex" class="font-black">0</span>
-                        </div>
-                        <div class="flex justify-between text-gray-400">
-                            <span>🏛️ Histórico (Semanas #1 y #2):</span>
-                            <span class="font-bold text-gray-300">22</span>
-                        </div>
-                        <div class="flex justify-between text-gray-300 pt-1 border-t border-gray-800/80">
-                            <span>Total Sesiones (Acumulado):</span>
-                            <span id="playsReflex" class="font-bold text-white">22</span>
+                        <div class="flex justify-between text-gray-300">
+                            <span>Sesiones (1 c/5 intentos):</span>
+                            <span id="playsReflex" class="font-bold text-white">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Recargas de Batería:</span>
-                            <span id="adsReflex" class="font-bold text-emerald-400">5</span>
+                            <span id="adsReflex" class="font-bold text-emerald-400">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Tasa de Conversión:</span>
-                            <span id="rateReflex" class="font-bold text-purple-400">23%</span>
+                            <span id="rateReflex" class="font-bold text-purple-400">0%</span>
                         </div>
                     </div>
                 </div>
@@ -395,25 +359,17 @@
                     <p class="text-xs text-gray-400 mt-0.5">Secuencias sonoras y de luces</p>
                     
                     <div class="mt-4 space-y-2 text-xs">
-                        <div class="flex justify-between text-amber-300 font-semibold bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30">
-                            <span>🔥 Esta Semana (W2026-10-26):</span>
-                            <span id="weeklyPlaysMemory" class="font-black">0</span>
-                        </div>
-                        <div class="flex justify-between text-gray-400">
-                            <span>🏛️ Histórico (Semanas #1 y #2):</span>
-                            <span class="font-bold text-gray-300">12</span>
-                        </div>
-                        <div class="flex justify-between text-gray-300 pt-1 border-t border-gray-800/80">
-                            <span>Total Partidas (Acumulado):</span>
-                            <span id="playsMemory" class="font-bold text-white">12</span>
+                        <div class="flex justify-between text-gray-300">
+                            <span>Partidas Jugadas (Global):</span>
+                            <span id="playsMemory" class="font-bold text-white">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Rachas Salvadas:</span>
-                            <span id="adsMemory" class="font-bold text-emerald-400">3</span>
+                            <span id="adsMemory" class="font-bold text-emerald-400">0</span>
                         </div>
                         <div class="flex justify-between text-gray-300">
                             <span>Tasa de Conversión:</span>
-                            <span id="rateMemory" class="font-bold text-emerald-400">25%</span>
+                            <span id="rateMemory" class="font-bold text-emerald-400">0%</span>
                         </div>
                     </div>
                 </div>
@@ -437,16 +393,12 @@
                 </div>
                 <div class="flex items-center justify-between text-xs text-gray-300 pt-2 border-t border-gray-800">
                     <div>
-                        <p class="text-amber-300 font-bold">Esta Semana:</p>
-                        <p id="weeklyPlaysDodge" class="font-black text-base text-amber-300">0</p>
-                    </div>
-                    <div>
-                        <p class="text-gray-400">Total Histórico:</p>
-                        <p id="playsDodge" class="font-black text-base text-white">6</p>
+                        <p class="text-gray-400">Partidas:</p>
+                        <p id="playsDodge" class="font-black text-base text-white">0</p>
                     </div>
                     <div>
                         <p class="text-gray-400">Anuncios:</p>
-                        <p id="adsDodge" class="font-black text-base text-amber-400">1</p>
+                        <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
                     </div>
                     <a href="juegos/cyber-dodge.html?v=14" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
                         Probar
@@ -465,16 +417,12 @@
                 </div>
                 <div class="flex items-center justify-between text-xs text-gray-300 pt-2 border-t border-gray-800">
                     <div>
-                        <p class="text-pink-300 font-bold">Esta Semana:</p>
-                        <p id="weeklyPlaysDrone" class="font-black text-base text-pink-300">0</p>
-                    </div>
-                    <div>
-                        <p class="text-gray-400">Total Histórico:</p>
-                        <p id="playsDrone" class="font-black text-base text-white">5</p>
+                        <p class="text-gray-400">Partidas:</p>
+                        <p id="playsDrone" class="font-black text-base text-white">0</p>
                     </div>
                     <div>
                         <p class="text-gray-400">Anuncios:</p>
-                        <p id="adsDrone" class="font-black text-base text-pink-400">1</p>
+                        <p id="adsDrone" class="font-black text-base text-pink-400">0</p>
                     </div>
                     <a href="juegos/cyber-drone.html?v=14" class="bg-pink-500 hover:bg-pink-400 text-white font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-pink-500/20">
                         Probar
@@ -2592,7 +2540,7 @@ ${pageUrl}?v=14`;
     <script>
         window.CURRENT_GAME_KEY = 'stats';
 
-        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios cerrados de Semanas #1 y #2)
+        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=14)
         const BASELINE_METRICS = {
             stacker: { plays: 28, ads: 8 },
             reflex:  { plays: 22, ads: 5 },
@@ -2602,26 +2550,9 @@ ${pageUrl}?v=14`;
             audit:   { shown: 13, fallback: 2, last_zone: '12040274' }
         };
 
-        // Corte limpio de la Semana #3 (W2026-10-26) para que ningún caché previo duplique lo histórico
-        const WEEK3_CLEAN_START_TS = 1793120000000;
-
         let processedEventIds = new Set();
         let globalAggregated = JSON.parse(JSON.stringify(BASELINE_METRICS));
-        let weeklyMetrics = {
-            stacker: { plays: 0, ads: 0 },
-            reflex:  { plays: 0, ads: 0 },
-            memory:  { plays: 0, ads: 0 },
-            dodge:   { plays: 0, ads: 0 },
-            drone:   { plays: 0, ads: 0 }
-        };
         let activityLog = [];
-
-        function isAdminInspectionDevice(evt) {
-            const nameLower = String(evt.p || '').trim().toLowerCase();
-            if (nameLower === 'ratg' || nameLower === 'rafael torres') return true;
-            if (evt.d === 'dev_sspnkkx9lmv9paxp6') return true;
-            return false;
-        }
 
         function addActivityEntry(text, badge, isAd = false) {
             const feed = document.getElementById('liveActivityFeed');
@@ -2642,32 +2573,22 @@ ${pageUrl}?v=14`;
             if (!evt || !evt.eid || processedEventIds.has(evt.eid)) return;
             processedEventIds.add(evt.eid);
 
-            // Ignorar eventos anteriores al corte limpio de la Semana #3 (ya están incluidos en BASELINE_METRICS de Semanas #1 y #2)
-            if (!evt.ts || evt.ts < WEEK3_CLEAN_START_TS) return;
-
             const resetTs = parseInt(localStorage.getItem('bz_telemetry_reset_ts') || '0');
             if (resetTs && evt.ts && evt.ts < resetTs) return;
 
             const playerName = evt.p || 'Jugador';
             const countryFlag = (typeof getCountryFlag === 'function') ? getCountryFlag(evt.c || 'VE') : '🌐';
-            const isAdmin = isAdminInspectionDevice(evt);
 
             if (evt.kind === 'game') {
                 const g = evt.g || 'stacker';
-                if (g === 'news_video') return;
                 if (!globalAggregated[g]) globalAggregated[g] = { plays: 0, ads: 0 };
-                if (!weeklyMetrics[g]) weeklyMetrics[g] = { plays: 0, ads: 0 };
                 
                 if (evt.ev === 'play') {
-                    // Si es el Admin revisando, no inflar las métricas públicas salvo que quiera probar
-                    if (isAdmin) return;
-                    weeklyMetrics[g].plays++;
-                    globalAggregated[g].plays = (BASELINE_METRICS[g] ? BASELINE_METRICS[g].plays : 0) + weeklyMetrics[g].plays;
+                    globalAggregated[g].plays++;
                     const gameTitles = { stacker: 'Neon Stacker Pro', reflex: 'Test de Reflejos', memory: 'Cyber Memory', dodge: 'Cyber Dodge', drone: 'Neon Cyber-Drone' };
-                    addActivityEntry(`${countryFlag} <strong>${playerName}</strong> inició partida en <em>${gameTitles[g] || g}</em>`, 'PARTIDA SEMANAL');
+                    addActivityEntry(`${countryFlag} <strong>${playerName}</strong> inició partida en <em>${gameTitles[g] || g}</em>`, 'PARTIDA');
                 } else if (evt.ev === 'ad') {
-                    weeklyMetrics[g].ads++;
-                    globalAggregated[g].ads = (BASELINE_METRICS[g] ? BASELINE_METRICS[g].ads : 0) + weeklyMetrics[g].ads;
+                    globalAggregated[g].ads++;
                     const actionNames = { stacker: 'Revivir Piso', reflex: 'Recarga Batería', memory: 'Racha Salvada', dodge: 'Escudo Neón', drone: 'Turbina Reparada' };
                     addActivityEntry(`${countryFlag} <strong>${playerName}</strong> activó <em>${actionNames[g] || 'Recompensa'}</em>`, 'RECOMPENSA', true);
                 }
@@ -2680,8 +2601,6 @@ ${pageUrl}?v=14`;
                     globalAggregated.audit.fallback++;
                     addActivityEntry(`ℹ️ Filtro de frecuencia Monetag (Misma IP) para ${playerName}`, 'CAPPING');
                 }
-            } else if (evt.kind === 'page' && !isAdmin) {
-                addActivityEntry(`${countryFlag} <strong>${playerName}</strong> entró a <em>${evt.g || 'ByteZone'}</em>`, 'VISITA NUEVA');
             }
 
             renderDashboardMetrics();
@@ -2692,14 +2611,6 @@ ${pageUrl}?v=14`;
             const reflex  = globalAggregated.reflex;
             const memory  = globalAggregated.memory;
             const dodge   = globalAggregated.dodge;
-            const drone   = globalAggregated.drone || { plays: 5, ads: 1 };
-
-            const setTxt = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-            setTxt('weeklyPlaysStacker', weeklyMetrics.stacker.plays);
-            setTxt('weeklyPlaysReflex',  weeklyMetrics.reflex.plays);
-            setTxt('weeklyPlaysMemory',  weeklyMetrics.memory.plays);
-            setTxt('weeklyPlaysDodge',   weeklyMetrics.dodge.plays);
-            setTxt('weeklyPlaysDrone',   weeklyMetrics.drone.plays);
 
             document.getElementById('playsStacker').textContent = stacker.plays;
             document.getElementById('adsStacker').textContent   = stacker.ads;
@@ -2721,6 +2632,7 @@ ${pageUrl}?v=14`;
             if (dodgeEl) dodgeEl.textContent = dodge.plays;
             if (dodgeAdsEl) dodgeAdsEl.textContent = dodge.ads;
 
+            const drone = globalAggregated.drone || { plays: 0, ads: 0 };
             const droneEl = document.getElementById('playsDrone');
             const droneAdsEl = document.getElementById('adsDrone');
             if (droneEl) droneEl.textContent = drone.plays;
