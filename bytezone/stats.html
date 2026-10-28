@@ -80,51 +80,137 @@
             if (window.bzAdInProgress) return;
             window.bzAdInProgress = true;
 
-            const finishReward = (adShown, zoneUsed) => {
-                window.bzAdInProgress = false;
+            const REQUIRED_SECONDS = 15;
+            let secondsLeft = REQUIRED_SECONDS;
+            let countdownInterval = null;
+            let adVerified = false;
+            let activeZone = '12040274';
+
+            // Modal de Verificación Estricta de 15 Segundos (Anti-Salto Monetag)
+            let modal = document.getElementById('bzRewardedVerificationModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'bzRewardedVerificationModal';
+                modal.className = 'fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300';
+                document.body.appendChild(modal);
+            }
+
+            modal.innerHTML = `
+                <div class="max-w-xs w-full bg-gray-900 border border-amber-500/60 rounded-3xl p-5 text-center shadow-2xl shadow-amber-500/20 animate-in fade-in zoom-in duration-200">
+                    <div class="w-14 h-14 mx-auto mb-3 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-2xl animate-pulse">
+                        🛡️
+                    </div>
+                    <h4 class="text-sm font-black text-white uppercase tracking-wider">Validando Anuncio</h4>
+                    <p class="text-[11px] text-gray-300 mt-1">Mira la publicidad completa (15s) para recibir tu beneficio:</p>
+                    
+                    <div class="my-4 py-2.5 px-3 bg-gray-950 rounded-2xl border border-gray-800">
+                        <span id="bzAdTimerSeconds" class="text-3xl font-black text-amber-400 font-mono tracking-wider">15s</span>
+                        <div class="w-full bg-gray-800 h-2 rounded-full mt-2.5 overflow-hidden">
+                            <div id="bzAdProgressBar" class="h-full bg-gradient-to-r from-amber-500 via-orange-500 to-emerald-400 transition-all duration-1000 ease-linear" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <p id="bzAdStatusNote" class="text-[10px] text-gray-400 leading-tight">
+                        ⚠️ No salgas ni cierres antes de 15s o el sistema cancelará la recompensa.
+                    </p>
+                </div>
+            `;
+            modal.style.display = 'flex';
+
+            const timerEl = document.getElementById('bzAdTimerSeconds');
+            const progressEl = document.getElementById('bzAdProgressBar');
+            const noteEl = document.getElementById('bzAdStatusNote');
+
+            const cleanupModal = (delay = 0) => {
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                }
+                setTimeout(() => {
+                    if (modal && modal.parentNode) {
+                        modal.style.display = 'none';
+                    }
+                    window.bzAdInProgress = false;
+                }, delay);
+            };
+
+            const completeRewardSuccess = () => {
+                adVerified = true;
+                if (timerEl) {
+                    timerEl.textContent = "✅ ¡Listo!";
+                    timerEl.className = "text-2xl font-black text-emerald-400 font-mono tracking-wider";
+                }
+                if (progressEl) {
+                    progressEl.style.width = "100%";
+                    progressEl.className = "h-full bg-emerald-500";
+                }
+                if (noteEl) {
+                    noteEl.textContent = "🎉 ¡Anuncio verificado con éxito! Recompensa entregada.";
+                    noteEl.className = "text-[11px] text-emerald-300 font-bold leading-tight";
+                }
+
                 try {
                     const log = JSON.parse(localStorage.getItem('bytezone_ad_audit') || '{"shown":0,"fallback":0}');
-                    if (adShown) log.shown = (log.shown || 0) + 1;
-                    else log.fallback = (log.fallback || 0) + 1;
-                    log.last_zone = zoneUsed;
+                    log.shown = (log.shown || 0) + 1;
+                    log.last_zone = activeZone;
                     log.last_time = new Date().toISOString();
                     localStorage.setItem('bytezone_ad_audit', JSON.stringify(log));
                 } catch (e) {}
 
-                // Emitir impresión de anuncio a la nube global para que se vea en todos los teléfonos al instante
+                // Emitir impresión de anuncio a la nube global únicamente cuando se cumplieron los 15s completos
                 window.broadcastGlobalTelemetry({
                     kind: 'ad',
                     g: window.CURRENT_GAME_KEY || 'portal',
-                    shown: adShown ? 1 : 0,
-                    zone: zoneUsed
+                    shown: 1,
+                    zone: activeZone
                 });
 
-                if (typeof rewardCallback === 'function') rewardCallback();
-            };
+                cleanupModal(600);
 
-            const tryBackupZone = () => {
-                if (typeof window.show_12040276 === 'function') {
-                    window.show_12040276().then(() => {
-                        finishReward(true, '12040276');
-                    }).catch((err2) => {
-                        console.warn("Monetag Zona Respaldo 12040276 sin inventario:", err2);
-                        finishReward(false, 'none');
-                    });
-                } else {
-                    finishReward(false, 'none');
+                if (typeof rewardCallback === 'function') {
+                    try { rewardCallback(); } catch(err) { console.error("Error al aplicar rewardCallback:", err); }
                 }
             };
 
-            if (typeof window.show_12040274 === 'function') {
-                window.show_12040274().then(() => {
-                    finishReward(true, '12040274');
-                }).catch((err1) => {
-                    console.warn("Monetag Zona Principal 12040274 no llenó, activando respaldo 12040276:", err1);
-                    tryBackupZone();
-                });
-            } else {
-                tryBackupZone();
-            }
+            // Iniciar cuenta regresiva estricta de 15 segundos
+            countdownInterval = setInterval(() => {
+                secondsLeft--;
+                if (timerEl) timerEl.textContent = secondsLeft + "s";
+                if (progressEl) {
+                    const pct = Math.max(0, (secondsLeft / REQUIRED_SECONDS) * 100);
+                    progressEl.style.width = pct + "%";
+                }
+
+                if (secondsLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                    completeRewardSuccess();
+                }
+            }, 1000);
+
+            // Llamar a Monetag SDK en segundo plano (Zona Principal o Respaldo)
+            const tryTriggerMonetag = () => {
+                const callBackup = () => {
+                    activeZone = '12040276';
+                    if (typeof window.show_12040276 === 'function') {
+                        window.show_12040276().catch((err2) => {
+                            console.warn("Monetag Zona Respaldo 12040276 sin inventario:", err2);
+                        });
+                    }
+                };
+
+                if (typeof window.show_12040274 === 'function') {
+                    activeZone = '12040274';
+                    window.show_12040274().catch((err1) => {
+                        console.warn("Monetag Zona Principal no llenó, probando respaldo:", err1);
+                        callBackup();
+                    });
+                } else {
+                    callBackup();
+                }
+            };
+
+            tryTriggerMonetag();
         }
     </script>
 
