@@ -1,8 +1,8 @@
 {
   "version": 14,
-  "week_id": "W2026-10-26",
-  "updated_at": "2026-10-27T10:26:31.311495-04:00",
-  "updated_human": "27/10/2026",
+  "week_id": "W2026-11-02",
+  "updated_at": "2026-11-02T07:20:41.380871-04:00",
+  "updated_human": "02/11/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
     "mode": "Autónomo (Lunes + monitoreo de telemetría cada 6 h)",
@@ -10,7 +10,7 @@
     "vault_games_count": 2
   },
   "video_reel": {
-    "title": "ByteZone TV • Noticiero IA (W2026-10-26)",
+    "title": "ByteZone TV • Noticiero IA (W2026-11-02)",
     "subtitle": "5 Noticias Completas con Imagen + Voz IA + Lectura Completa",
     "duration_label": "5 Noticias",
     "scenes": [
@@ -19,11 +19,11 @@
         "news_index": 0,
         "badge": "NOTICIA #1 • IA & FUTURO",
         "icon": "🤖",
-        "headline": "El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida",
-        "subtext": "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas.",
-        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
+        "headline": "Su lavadora Samsung quedó abandonada y una IA encontró la forma de salvarla",
+        "subtext": "Una de las cosas que más odiamos de vivir en esta era es que todos los productos tecnológicos tienen fecha de caducidad .",
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&quality=70&strip=all&ssl=1",
         "source": "Hipertextual IA",
-        "voice_script": "Noticia número 1: El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida. La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 1: Su lavadora Samsung quedó abandonada y una IA encontró la forma de salvarla. Una de las cosas que más odiamos de vivir en esta era es que todos los productos tecnológicos tienen fecha de caducidad . Pasamos a la siguiente noticia.",
         "bg_gradient": "from-cyan-600 to-blue-900",
         "is_vip_hook": false
       },
@@ -32,11 +32,11 @@
         "news_index": 1,
         "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
-        "headline": "Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible",
-        "subtext": "Se está gastando mucho en IA. Muchísimo.",
-        "image": "https://i.blogs.es/6ec393/satya/1024_2000.jpeg",
+        "headline": "Alguien ha conseguido lo que parecía imposible: un Redmi Note 12 ejecutando iOS. Con ayuda de Claude, claro",
+        "subtext": "A lo largo de todos estos años hemos visto mil y un ejemplos de modders intentando ejecutar iOS en teléfonos Android y viceversa.",
+        "image": "https://i.blogs.es/f2d046/android-ios/1024_2000.jpeg",
         "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 2: Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible. Se está gastando mucho en IA. Muchísimo. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 2: Alguien ha conseguido lo que parecía imposible: un Redmi Note 12 ejecutando iOS. Con ayuda de Claude, claro. A lo largo de todos estos años hemos visto mil y un ejemplos de modders intentando ejecutar iOS en teléfonos Android y viceversa. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
         "is_vip_hook": false
       },
@@ -45,11 +45,11 @@
         "news_index": 2,
         "badge": "NOTICIA #3 • TENDENCIA GLOBAL",
         "icon": "⚡",
-        "headline": "Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente",
-        "subtext": "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares.",
-        "image": "https://i.blogs.es/97db60/project-hazelnut/1024_2000.jpeg",
+        "headline": "Un investigador de IA advierte ante el Ayuntamiento de Nueva York: \"Estamos compitiendo por crear y desarrollar a nuestro propio adversario\"",
+        "subtext": "La carrera por desarrollar sistemas de IA cada vez más avanzados está preocupando a una parte importante de los investigadores que trabajaron en dicha tecnología.",
+        "image": "https://i.blogs.es/1a8271/inteligencia-artificial-genbeta-3/1024_2000.jpeg",
         "source": "Genbeta IA",
-        "voice_script": "Noticia número 3: Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente. NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 3: Un investigador de IA advierte ante el Ayuntamiento de Nueva York: \"Estamos compitiendo por crear y desarrollar a nuestro propio adversario\". La carrera por desarrollar sistemas de IA cada vez más avanzados está preocupando a una parte importante de los investigadores que trabajaron en dicha tecnología. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-pink-600 to-rose-900",
         "is_vip_hook": false
       },
@@ -58,11 +58,11 @@
         "news_index": 3,
         "badge": "NOTICIA #4 • IMPACTO TECH",
         "icon": "🧠",
-        "headline": "Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo",
-        "subtext": "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED.",
-        "image": "https://i.blogs.es/3a6ce7/original-6/1024_2000.jpeg",
+        "headline": "Shein, Temu y AliExpress tienen un nuevo problema en Europa: cada categoría de producto importado paga dos euros de tasa aduanera",
+        "subtext": "Hasta hace solo unos meses, pedir un cable USB de 50 céntimos a China, salía más barato que bajar a la tienda de la esquina y comprarlo, teniendo en cuenta que el pedido tenía que volar más de 10.000 km, pasar aduanas, y cubrir los costes de logística para entregarlo en tu domicilio una semana más tarde.",
+        "image": "https://i.blogs.es/569a74/adrian-sulyok-scznlg6rrhq-unsplash/1024_2000.jpeg",
         "source": "Xataka",
-        "voice_script": "Noticia número 4: Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo. Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 4: Shein, Temu y AliExpress tienen un nuevo problema en Europa: cada categoría de producto importado paga dos euros de tasa aduanera. Hasta hace solo unos meses, pedir un cable USB de 50 céntimos a China, salía más barato que bajar a la tienda de la esquina y comprarlo, teniendo en cuenta que el pedido tenía que volar más de 10.000 km, pasar aduanas, y cubrir los costes de logística para entregarlo en tu domicilio una semana más tarde. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-emerald-600 to-teal-900",
         "is_vip_hook": false
       },
@@ -71,11 +71,11 @@
         "news_index": 4,
         "badge": "NOTICIA #5 • CIERRE SEMANAL",
         "icon": "🔥",
-        "headline": "La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos",
-        "subtext": "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
-        "image": "https://i.blogs.es/5014ea/google-maps-y-ceuta-y-melilla/1024_2000.jpeg",
+        "headline": "Hacienda confirma que los mayores de 65 años pueden donar su vivienda habitual a sus hijos sin pagar IRPF por la ganancia",
+        "subtext": "Poner la casa a nombre de los hijos antes de fallecer es una alternativa que se plantean muchos padres, pero esa donación no pasa desapercibida y tiene consecuencias en la declaración de la renta de quien la hace.",
+        "image": "https://i.blogs.es/8486b3/55588691718_1afa161be5_o/1024_2000.jpeg",
         "source": "Genbeta",
-        "voice_script": "Noticia número 5: La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos. Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "voice_script": "Noticia número 5: Hacienda confirma que los mayores de 65 años pueden donar su vivienda habitual a sus hijos sin pagar IRPF por la ganancia. Poner la casa a nombre de los hijos antes de fallecer es una alternativa que se plantean muchos padres, pero esa donación no pasa desapercibida y tiene consecuencias en la declaración de la renta de quien la hace. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
         "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
@@ -84,141 +84,141 @@
   "weekly_news": [
     {
       "id": "news_1",
-      "title": "El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida",
-      "summary": "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas.",
-      "voice_extra": "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas.",
+      "title": "Su lavadora Samsung quedó abandonada y una IA encontró la forma de salvarla",
+      "summary": "Una de las cosas que más odiamos de vivir en esta era es que todos los productos tecnológicos tienen fecha de caducidad .",
+      "voice_extra": "Una de las cosas que más odiamos de vivir en esta era es que todos los productos tecnológicos tienen fecha de caducidad .",
       "full_paragraphs": [
-        "La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas. Lo bueno es que algunos usuarios vieron la utilidad de Claude y lo están empleando para eliminar los anuncios y el exceso de aplicaciones en los televisores.",
-        "De acuerdo con TechCrunch , varios usuarios están experimentando con la IA para acabar con el bloatware y el rastreo de sus Smart TVs. Debido a que Claude y otros modelos reducen la barrera técnica para realizar este tipo de modificaciones, los usuarios le piden que les ayude a identificar los procesos innecesarios o desactivar paquetes del sistema. En algunos casos, la IA puede sustituir las interfaces cargadas de publicidad por lanzadores más sencillos , sin importar si tu televisor usa Google TV, Android TV o Fire TV.",
-        "A diferencia de lo que hemos visto siempre, las herramientas no requieren que modifiques el televisor mediante root . Basta con habilitar las opciones de desarrollador en la TV para activar la depuración, lo cual nos permitirá conectarlo a tu ordenador a través de ADB (Android Debug Bridge). Una vez que lo hacemos, solo tenemos que pedirle a Claude que haga su magia y ejecute los comandos necesarios para desactivar aplicaciones y servicios que están de más.",
-        "Actualmente existen dos herramientas de código abierto que se encargan de hacer el trabajo por ti. La primera es CleanYourTV , que desactiva aplicaciones preinstaladas y puede instalar un nuevo lanzador que reemplaza la pantalla principal de Google TV o Android TV . Estos cambios no modifican la partición del sistema, así que puedes revertirlos en cualquier momento.",
-        "La segunda herramienta es dumbtv , enfocada a los dispositivos Fire TV de Amazon . Esta puede eliminar la publicidad y los componentes de telemetría que utiliza la compañía para rastrear tus acciones, así como aplicar filtros DNS para bloquear los anuncios, recopilación de datos y actualizaciones de determinados servicios. Por último, si la interfaz de tu Fire TV te parece muy pesada, tendrás la opción de usar un lanzador propio que ofrece una mejor experiencia de uso.",
-        "El resultado es una interfaz de usuario más rápida y ordenada, sin anuncios y sin seguimiento de la actividad, así como una reducción de esas aplicaciones que están de más y que no podemos eliminar por los métodos comunes. Otra ventaja del uso de Claude y otros modelos de IA es que recuperaremos la experiencia centrada en el contenido y las aplicaciones que más usamos, sin que el algoritmo las esconda o sugiera otras que jamás tocaremos de nuevo."
+        "Una de las cosas que más odiamos de vivir en esta era es que todos los productos tecnológicos tienen fecha de caducidad . Un ordenador, el móvil o cualquier otro dispositivo conectado dejará de recibir soporte en algún momento, lo que significa que ya no podrás instalar actualizaciones o usar ciertas funciones. La buena noticia es que la IA está acabando con la obsolescencia programada , como ocurrió con esta lavadora Samsung, que recuperó una de sus características clave.",
+        "Un usuario consiguió recuperar las funciones inteligentes de una lavadora con ayuda de Claude . En una publicación de Reddit , el propietario reveló que usó la IA de Anthropic para analizar el problema y encontrar una forma de devolver las capacidades conectadas que se perdieron cuando acabó el soporte oficial. La lavadora tenía más de 10 años de antigüedad y contaba con Wi-Fi, lo que le permitía sincronizarse con la app de Smart Things para controlarla por internet.",
+        "“Pagué una fortuna en aquel momento solo para conseguir todas esas nuevas funcionalidades”, dijo McArhony en Reddit. “Pantalla táctil, dosis automática (que sorprendentemente no es lo habitual), control inteligente por internet... era el Rolls Royce para los frikis de entonces”, añadió. Debido a que ya utilizaba otros productos de Samsung en el ecosistema, el usuario tomó la decisión de devolverle la vida a su lavadora usando la IA.",
+        "Tras dos horas de trabajo guiado por la IA, el propietario restauró las funciones de control inteligente y recuperó la comunicación entre la lavadora y la secadora . Claude consiguió reactivar todas las características y la lavadora funciona como nueva, con la gestión de programas, temperatura y velocidad de giro desde SmartThings.",
+        "El experimento de la lavadora de Samsung se suma a una oleada de proyectos en los que usuarios aprovechan a Claude y ChatGPT para modificar o restaurar dispositivos . Entre los más llamativos están aquellos que eliminan todo el bloatware, anuncios y el rastreo de los televisores. Tanto Samsung como LG han inyectado spyware en sus dispositivos y los usuarios están encontrando formas de revertirlo con ayuda de la IA .",
+        "Esto último ha generado controversia, ya que OpenAI y Anthropic están suspendiendo las cuentas de estos usuarios debido a una violación de sus términos de uso. Uno de los investigadores que vulneró Tizen en su televisor Samsung perdió acceso a su cuenta y todos sus créditos , ya que OpenAI dijo que incurrió en prácticas de abuso cibernético al analizar las vulnerabilidades y desarrollar exploits para sortear la seguridad de su Smart TV."
       ],
-      "full_voice_script": "El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida. Noticia publicada por Hipertextual IA. La IA está tomando un papel más activo para solucionar problemas reales. Aunque muchos han anticipado que la tecnología ayudará a descubrir la cura del cáncer y otras enfermedades, la realidad es que hasta ahora solo ha servido para generar memes y videos realistas. Lo bueno es que algunos usuarios vieron la utilidad de Claude y lo están empleando para eliminar los anuncios y el exceso de aplicaciones en los televisores. De acuerdo con TechCrunch , varios usuarios están experimentando con la IA para acabar con el bloatware y el rastreo de sus Smart TVs. Debido a que Claude y otros modelos reducen la barrera técnica para realizar este tipo de modificaciones, los usuarios le piden que les ayude a identificar los procesos innecesarios o desactivar paquetes del sistema. En algunos casos, la IA puede sustituir las interfaces cargadas de publicidad por lanzadores más sencillos , sin importar si tu televisor usa Google TV, Android TV o Fire TV. A diferencia de lo que hemos visto siempre, las herramientas no requieren que modifiques el televisor mediante root . Basta con habilitar las opciones de desarrollador en la TV para activar la depuración, lo cual nos permitirá conectarlo a tu ordenador a través de ADB (Android Debug Bridge). Una vez que lo hacemos, solo tenemos que pedirle a Claude que haga su magia y ejecute los comandos necesarios para desactivar aplicaciones y servicios que están de más. Actualmente existen dos herramientas de código abierto que se encargan de hacer el trabajo por ti. La primera es CleanYourTV , que desactiva aplicaciones preinstaladas y puede instalar un nuevo lanzador que reemplaza la pantalla principal de Google TV o Android TV . Estos cambios no modifican la partición del sistema, así que puedes revertirlos en cualquier momento. La segunda herramienta es dumbtv , enfocada a los dispositivos Fire TV de Amazon . Esta puede eliminar la publicidad y los componentes de telemetría que utiliza la compañía para rastrear tus acciones, así como aplicar filtros DNS para bloquear los anuncios, recopilación de datos y actualizaciones de determinados servicios. Por último, si la interfaz de tu Fire TV te parece muy pesada, tendrás la opción de usar un lanzador propio que ofrece una mejor experiencia de uso. El resultado es una interfaz de usuario más rápida y ordenada, sin anuncios y sin seguimiento de la actividad, así como una reducción de esas aplicaciones que están de más y que no podemos eliminar por los métodos comunes. Otra ventaja del uso de Claude y otros modelos de IA es que recuperaremos la experiencia centrada en el contenido y las aplicaciones que más usamos, sin que el algoritmo las esconda o sugiera otras que jamás tocaremos de nuevo.",
-      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
+      "full_voice_script": "Su lavadora Samsung quedó abandonada y una IA encontró la forma de salvarla. Noticia publicada por Hipertextual IA. Una de las cosas que más odiamos de vivir en esta era es que todos los productos tecnológicos tienen fecha de caducidad . Un ordenador, el móvil o cualquier otro dispositivo conectado dejará de recibir soporte en algún momento, lo que significa que ya no podrás instalar actualizaciones o usar ciertas funciones. La buena noticia es que la IA está acabando con la obsolescencia programada , como ocurrió con esta lavadora Samsung, que recuperó una de sus características clave. Un usuario consiguió recuperar las funciones inteligentes de una lavadora con ayuda de Claude . En una publicación de Reddit , el propietario reveló que usó la IA de Anthropic para analizar el problema y encontrar una forma de devolver las capacidades conectadas que se perdieron cuando acabó el soporte oficial. La lavadora tenía más de 10 años de antigüedad y contaba con Wi-Fi, lo que le permitía sincronizarse con la app de Smart Things para controlarla por internet. “Pagué una fortuna en aquel momento solo para conseguir todas esas nuevas funcionalidades”, dijo McArhony en Reddit. “Pantalla táctil, dosis automática (que sorprendentemente no es lo habitual), control inteligente por internet... era el Rolls Royce para los frikis de entonces”, añadió. Debido a que ya utilizaba otros productos de Samsung en el ecosistema, el usuario tomó la decisión de devolverle la vida a su lavadora usando la IA. Tras dos horas de trabajo guiado por la IA, el propietario restauró las funciones de control inteligente y recuperó la comunicación entre la lavadora y la secadora . Claude consiguió reactivar todas las características y la lavadora funciona como nueva, con la gestión de programas, temperatura y velocidad de giro desde SmartThings. El experimento de la lavadora de Samsung se suma a una oleada de proyectos en los que usuarios aprovechan a Claude y ChatGPT para modificar o restaurar dispositivos . Entre los más llamativos están aquellos que eliminan todo el bloatware, anuncios y el rastreo de los televisores. Tanto Samsung como LG han inyectado spyware en sus dispositivos y los usuarios están encontrando formas de revertirlo con ayuda de la IA . Esto último ha generado controversia, ya que OpenAI y Anthropic están suspendiendo las cuentas de estos usuarios debido a una violación de sus términos de uso. Uno de los investigadores que vulneró Tizen en su televisor Samsung perdió acceso a su cuenta y todos sus créditos , ya que OpenAI dijo que incurrió en prácticas de abuso cibernético al analizar las vulnerabilidades y desarrollar exploits para sortear la seguridad de su Smart TV.",
+      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&quality=70&strip=all&ssl=1",
       "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/eliminar-anuncios-bloatware-smart-tv-ia/",
-      "published": "2026-10-25T08:00:00+00:00"
+      "link": "https://hipertextual.com/inteligencia-artificial/reviven-lavadora-samsung-usando-ia-claude/",
+      "published": "2026-11-02T11:00:00+00:00"
     },
     {
       "id": "news_2",
-      "title": "Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible",
-      "summary": "Se está gastando mucho en IA. Muchísimo.",
-      "voice_extra": "Se está gastando mucho en IA. Muchísimo.",
+      "title": "Alguien ha conseguido lo que parecía imposible: un Redmi Note 12 ejecutando iOS. Con ayuda de Claude, claro",
+      "summary": "A lo largo de todos estos años hemos visto mil y un ejemplos de modders intentando ejecutar iOS en teléfonos Android y viceversa.",
+      "voice_extra": "A lo largo de todos estos años hemos visto mil y un ejemplos de modders intentando ejecutar iOS en teléfonos Android y viceversa.",
       "full_paragraphs": [
-        "Se está gastando mucho en IA. Muchísimo. Y son precisamente las cuatro grandes tecnológicas (Meta, Microsoft, Amazon y Google) las que están al frente de ese gasto . Tanto es así, que Microsoft ya ha empezado a dar los primeros coletazos para denominarse a sí misma una compañía enfocada, primeramente, en agentes de IA .",
-        "Satya Nadella, CEO de la compañía, ha contado más detalles sobre ello en su carta anual , explicando que Microsoft cuenta ahora con dos grupos principales diferentes en su ecosistema: agentes de IA e infrastructura, y dispositivos de consumo. Los agentes ya no son una característica dentro de los productos de Microsoft; son el principio organizativo de la empresa.",
-        "Por qué importa. Microsoft ha gastado este 2026 unos 190.000 millones de dólares en IA, según datos de Statista. Evidentemente, no quieren quedarse atrás en esta atropellada carrera, y la compañía quiere dejar claro a sus inversores cuáles son sus negocios principales y cómo se están organizando las cosas en torno a los agentes de IA. Por ello, cuando toque hablar de ingresos, hablarán de su negocio en dos segmentos claramente diferenciados, en este caso su negocio de IA e infraestuctura y dispositivos de consumo.",
-        "Nadella afirma que tiene \"confianza en los beneficios a largo plazo\" de esas inversiones, citando la demanda y las mejoras de eficiencia.",
-        "En detalle. Nadella argumenta que la informática está pasando de apps que manejamos a sistemas que trabajan para nosotros. Su frase para describirlo es que las personas ahora pueden \"delegar a lo macro y dirigir a lo micro\".",
-        "Las cifras de la carta muestran la situación en la que se encuentra la empresa:"
+        "A lo largo de todos estos años hemos visto mil y un ejemplos de modders intentando ejecutar iOS en teléfonos Android y viceversa. Han sido proyectos que, en su mayoría, han acabado en balde, pero en un contexto en el que existe la IA generativa (y mucho tiempo libre), ahora una oleada de aficionados se han puesto manos a la obra con resultados bastante sorprendentes.",
+        "Las redes sociales se han llenado de vídeos en los que usuarios han conseguido ejecutar iOS en Android. Un clip de iOS 16 en un Redmi Note 12 es uno de los que más ha dado de qué hablar estos días. Te contamos cómo lo han hecho.",
+        "Hito técnico . iOS está diseñado para funcionar únicamente en hardware de Apple, como seguramente sabrás. Ha habido proyectos anteriores para hacer justo lo contrario: ejecutar Android en un iPhone. Entre ellos se encuentra iDroid , que lograba arrancar Android en los primeros iPhone en 2010, y posteriormente Project Sandcastle , que hizo lo mismo con Android 10 en iPhone utilizando el chip AIO de Apple. Hasta ahora nadie había logrado hacer lo opuesto hasta ahora.",
+        "Cómo funciona. El movimiento, apodado \"Hackios\" e inspirado en la escena Hackintosh (macOS en PCs que no son de Apple), se remonta a un proyecto de código abierto en GitHub llamado ios-sweet . Sustituye el núcleo de Linux que los teléfonos Android usan normalmente por XNU, el núcleo que Apple utiliza en sus propios dispositivos. Un núcleo es el centro de un sistema operativo, básicamente la capa que permite que el software se comunique con el chip, la memoria y el almacenamiento. Lo bueno es que Apple publica el código fuente de XNU de forma abierta, por eso han surgido tantos experimentos.",
+        "En concreto, ios-sweet proporciona a XNU un árbol de dispositivos copiado de un iPhone X . Un árbol de dispositivos es algo así como la descripción del hardware en el que se ejecuta. En este caso, al entregarle el árbol de dispositivos de un iPhone X, el núcleo cree que está arrancando en un iPhone. Después se cargan archivos sin modificar de iOS 16 procedentes de un iPhone X, ejecutándose sobre el chip del móvil Android.",
+        "Por qué el iPhone X. Según cuentan desde Android Authority, el desarrollador del proyecto lo eligió porque es el último iPhone sin autenticación de punteros (PAC), una característica de seguridad requerida a partir del iPhone X en adelante. Los chips Qualcomm como el del Redmi Note 10 Pro no admiten PAC, por lo que un software de iPhone más nuevo no arrancaría. Así que lo más probable es que este mismo enfoque no funcione en móviles más modernos."
       ],
-      "full_voice_script": "Con 190.000 millones de dólares en gasto en IA, Microsoft ha anunciado el movimiento más intuitivo posible. Noticia publicada por Xataka IA & Tech. Se está gastando mucho en IA. Muchísimo. Y son precisamente las cuatro grandes tecnológicas (Meta, Microsoft, Amazon y Google) las que están al frente de ese gasto . Tanto es así, que Microsoft ya ha empezado a dar los primeros coletazos para denominarse a sí misma una compañía enfocada, primeramente, en agentes de IA . Satya Nadella, CEO de la compañía, ha contado más detalles sobre ello en su carta anual , explicando que Microsoft cuenta ahora con dos grupos principales diferentes en su ecosistema: agentes de IA e infrastructura, y dispositivos de consumo. Los agentes ya no son una característica dentro de los productos de Microsoft; son el principio organizativo de la empresa. Por qué importa. Microsoft ha gastado este 2026 unos 190.000 millones de dólares en IA, según datos de Statista. Evidentemente, no quieren quedarse atrás en esta atropellada carrera, y la compañía quiere dejar claro a sus inversores cuáles son sus negocios principales y cómo se están organizando las cosas en torno a los agentes de IA. Por ello, cuando toque hablar de ingresos, hablarán de su negocio en dos segmentos claramente diferenciados, en este caso su negocio de IA e infraestuctura y dispositivos de consumo. Nadella afirma que tiene \"confianza en los beneficios a largo plazo\" de esas inversiones, citando la demanda y las mejoras de eficiencia. En detalle. Nadella argumenta que la informática está pasando de apps que manejamos a sistemas que trabajan para nosotros. Su frase para describirlo es que las personas ahora pueden \"delegar a lo macro y dirigir a lo micro\". Las cifras de la carta muestran la situación en la que se encuentra la empresa:",
-      "image": "https://i.blogs.es/6ec393/satya/1024_2000.jpeg",
+      "full_voice_script": "Alguien ha conseguido lo que parecía imposible: un Redmi Note 12 ejecutando iOS. Con ayuda de Claude, claro. Noticia publicada por Xataka IA & Tech. A lo largo de todos estos años hemos visto mil y un ejemplos de modders intentando ejecutar iOS en teléfonos Android y viceversa. Han sido proyectos que, en su mayoría, han acabado en balde, pero en un contexto en el que existe la IA generativa (y mucho tiempo libre), ahora una oleada de aficionados se han puesto manos a la obra con resultados bastante sorprendentes. Las redes sociales se han llenado de vídeos en los que usuarios han conseguido ejecutar iOS en Android. Un clip de iOS 16 en un Redmi Note 12 es uno de los que más ha dado de qué hablar estos días. Te contamos cómo lo han hecho. Hito técnico . iOS está diseñado para funcionar únicamente en hardware de Apple, como seguramente sabrás. Ha habido proyectos anteriores para hacer justo lo contrario: ejecutar Android en un iPhone. Entre ellos se encuentra iDroid , que lograba arrancar Android en los primeros iPhone en 2010, y posteriormente Project Sandcastle , que hizo lo mismo con Android 10 en iPhone utilizando el chip AIO de Apple. Hasta ahora nadie había logrado hacer lo opuesto hasta ahora. Cómo funciona. El movimiento, apodado \"Hackios\" e inspirado en la escena Hackintosh (macOS en PCs que no son de Apple), se remonta a un proyecto de código abierto en GitHub llamado ios-sweet . Sustituye el núcleo de Linux que los teléfonos Android usan normalmente por XNU, el núcleo que Apple utiliza en sus propios dispositivos. Un núcleo es el centro de un sistema operativo, básicamente la capa que permite que el software se comunique con el chip, la memoria y el almacenamiento. Lo bueno es que Apple publica el código fuente de XNU de forma abierta, por eso han surgido tantos experimentos. En concreto, ios-sweet proporciona a XNU un árbol de dispositivos copiado de un iPhone X . Un árbol de dispositivos es algo así como la descripción del hardware en el que se ejecuta. En este caso, al entregarle el árbol de dispositivos de un iPhone X, el núcleo cree que está arrancando en un iPhone. Después se cargan archivos sin modificar de iOS 16 procedentes de un iPhone X, ejecutándose sobre el chip del móvil Android. Por qué el iPhone X. Según cuentan desde Android Authority, el desarrollador del proyecto lo eligió porque es el último iPhone sin autenticación de punteros (PAC), una característica de seguridad requerida a partir del iPhone X en adelante. Los chips Qualcomm como el del Redmi Note 10 Pro no admiten PAC, por lo que un software de iPhone más nuevo no arrancaría. Así que lo más probable es que este mismo enfoque no funcione en móviles más modernos.",
+      "image": "https://i.blogs.es/f2d046/android-ios/1024_2000.jpeg",
       "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/empresas-y-economia/microsoft-va-a-fundir-190-000-millones-dolares-ia-solo-este-ano-ha-hecho-movimiento-obvio-ahora-compania-agentes",
-      "published": "2026-10-26T18:33:23+00:00"
+      "link": "https://www.xataka.com/moviles/alguien-ha-conseguido-que-parecia-imposible-redmi-note-12-ejecutando-ios-ayuda-claude-claro",
+      "published": "2026-11-02T11:01:28+00:00"
     },
     {
       "id": "news_3",
-      "title": "Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente",
-      "summary": "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares.",
-      "voice_extra": "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares.",
+      "title": "Un investigador de IA advierte ante el Ayuntamiento de Nueva York: \"Estamos compitiendo por crear y desarrollar a nuestro propio adversario\"",
+      "summary": "La carrera por desarrollar sistemas de IA cada vez más avanzados está preocupando a una parte importante de los investigadores que trabajaron en dicha tecnología.",
+      "voice_extra": "La carrera por desarrollar sistemas de IA cada vez más avanzados está preocupando a una parte importante de los investigadores que trabajaron en dicha tecnología.",
       "full_paragraphs": [
-        "NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares. El proyecto ocuparía unas 520 hectáreas.",
-        "Project Hazelnut es un complejo de 15 edificios de centros de datos cerca del Humboldt Industrial Park. NorthPoint afirma que proporcionaría posibilidades laborales a los miembros locales de la fuerza laboral durante las fases de construcción y funcionamiento del complejo de centros de datos.",
-        "Los ingresos fiscales se afirman como fuente de recursos para necesidades urbanísticas. Todo son hipótesis en este momento. P romete un paquete de 165 millones de dólares . Ofrece 45 millones a los hogares, 15 millones a fondos comunitarios y 105 millones al pueblo durante 15 años para financiar iniciativas como el establecimiento de una fuerza policial y bajar las tarifas de recogida de basura. Ampliaba una iniciativa de 30 millones de dólares para ayudar a compensar posibles mayores tarifas locales.",
-        "NorthPoint afirmó que para su proyecto utilizaría aguas reutilizadas para sus sistemas de refrigeración en lugar de agua potable local y que conservaría el doble de superficie de bosque de la que talara. Todas eran medidas de mitigación del impacto declaradas por la compañía de NorthPoint, pendientes de desarrollo y de obtener permisos.",
-        "Sus opositores expresaban preocupaciones por el sonido no natural, la contaminación luminosa y la posible pérdida de valor de la vivienda, así como por la demanda de energía y agua. Algunos también calificaron el pago como soborno. Sus opiniones eran una muestra, no una negativa de todos los vecinos .",
-        "El municipio de Hazle Township rechazó el proyecto de NorthPoint en noviembre de 2025, y una jueza de Pennsylvania no dio por bueno un recurso de una filial de NorthPoint contra la decisión municipal. El pueblo abrió un periodo de 180 días para revisar su ordenanza. Su ordenanza no regulaba explícitamente la construcción de centros de datos . Se necesitaría una autorización especial de uso del suelo de la Junta Municipal de Audiencias Urbanísticas de Hazle Township, tras una audiencia."
+        "La carrera por desarrollar sistemas de IA cada vez más avanzados está preocupando a una parte importante de los investigadores que trabajaron en dicha tecnología. Mientras las Big Tech compiten por mejorar sus modelos, varias voces de la industria aprovechan el foco de atención de este sector para advertir de un problema: las capacidades podrían avanzar más rápido que los mecanismos diseñados para mantenerlas bajo control .",
+        "Un ejemplo es el caso de Alex Turner, exinvestigador de Google DeepMind. El pasado 5 de octubre aprovechó una comparecencia ante el Ayuntamiento de Nueva York para lanzar una advertencia y sostuvo que Estados Unidos podría estar desarrollando una amenaza mucho más preocupante que la competencia tecnológica con China, ya que el país norteamericano tendría entre manos una IA cuyos objetivos no coinciden con los intereses humanos.",
+        "Turner advirtió que \"estamos compitiendo por crear y desarrollar a nuestro propio adversario\", y aseguró que existe la posibilidad de que una IA desalineada termine siendo más poderosa que China. Así, con este término se refiere a sistemas capaces de perseguir objetivos incompatibles con las intenciones de sus desarrolladores incluso si fueron diseñados para realizar tareas beneficiosas.",
+        "Jacob Coxon, exinvestigador de Anthropic, fue otra de las voces que participó en la comparecencia y cuestionó la velocidad a la que avanza la industria. Bajo su punto de vista, mantener la trayectoria actual implica un riesgo considerable de ver cómo la humanidad pierde el control de sus sistemas futuros. Por desgracia, esta situación nos llevaría a consecuencias catastróficas, pero hay que recalcar que se trata de una predicción sobre posibles escenarios y no de un resultado probado.",
+        "La sesión contó con representantes de Google, Meta, Anthropic y OpenAI , y todos ellos respondieron bajo juramento a preguntas sobre la seguridad real de sus modelos. Julie Menin, presidenta del Ayuntamiento, aprovechó el espacio para cuestionar la capacidad de las compañías a la hora de cuantificar los riesgos más graves y, al mismo tiempo, determinar quién asumiría las responsabilidades si sus sistemas ocasionaran daños.",
+        "La preocupación de los investigadores también apunta a la necesidad de establecer medidas de supervisión independientes y una mayor transparencia. El Ayuntamiento de Nueva York estudia nuevas obligaciones para las empresas, entre ellas verificaciones externas y mecanismos de protección para los denunciantes. El debate, por tanto, no se limita a competir con China, sino a determinar cómo desarrollar una tecnología cada vez más capaz sin perder la posibilidad de controlarla."
       ],
-      "full_voice_script": "Desarrollador de centro de datos de Pennsylvania ofrece 10.000 dólares a 4.500 hogares; los residentes se niegan, diciendo que el dinero no es suficiente. Noticia publicada por Genbeta IA. NorthPoint Development está ofreciendo 10.000 dólares a cada hogar elegible si un proyecto de centros de datos llamado Hazelnut avanza en Hazle Township, Pennsylvania. La oferta se extendería a unos 4.500 hogares y sumaría 45 millones de dólares. El proyecto ocuparía unas 520 hectáreas. Project Hazelnut es un complejo de 15 edificios de centros de datos cerca del Humboldt Industrial Park. NorthPoint afirma que proporcionaría posibilidades laborales a los miembros locales de la fuerza laboral durante las fases de construcción y funcionamiento del complejo de centros de datos. Los ingresos fiscales se afirman como fuente de recursos para necesidades urbanísticas. Todo son hipótesis en este momento. P romete un paquete de 165 millones de dólares . Ofrece 45 millones a los hogares, 15 millones a fondos comunitarios y 105 millones al pueblo durante 15 años para financiar iniciativas como el establecimiento de una fuerza policial y bajar las tarifas de recogida de basura. Ampliaba una iniciativa de 30 millones de dólares para ayudar a compensar posibles mayores tarifas locales. NorthPoint afirmó que para su proyecto utilizaría aguas reutilizadas para sus sistemas de refrigeración en lugar de agua potable local y que conservaría el doble de superficie de bosque de la que talara. Todas eran medidas de mitigación del impacto declaradas por la compañía de NorthPoint, pendientes de desarrollo y de obtener permisos. Sus opositores expresaban preocupaciones por el sonido no natural, la contaminación luminosa y la posible pérdida de valor de la vivienda, así como por la demanda de energía y agua. Algunos también calificaron el pago como soborno. Sus opiniones eran una muestra, no una negativa de todos los vecinos . El municipio de Hazle Township rechazó el proyecto de NorthPoint en noviembre de 2025, y una jueza de Pennsylvania no dio por bueno un recurso de una filial de NorthPoint contra la decisión municipal. El pueblo abrió un periodo de 180 días para revisar su ordenanza. Su ordenanza no regulaba explícitamente la construcción de centros de datos . Se necesitaría una autorización especial de uso del suelo de la Junta Municipal de Audiencias Urbanísticas de Hazle Township, tras una audiencia.",
-      "image": "https://i.blogs.es/97db60/project-hazelnut/1024_2000.jpeg",
+      "full_voice_script": "Un investigador de IA advierte ante el Ayuntamiento de Nueva York: \"Estamos compitiendo por crear y desarrollar a nuestro propio adversario\". Noticia publicada por Genbeta IA. La carrera por desarrollar sistemas de IA cada vez más avanzados está preocupando a una parte importante de los investigadores que trabajaron en dicha tecnología. Mientras las Big Tech compiten por mejorar sus modelos, varias voces de la industria aprovechan el foco de atención de este sector para advertir de un problema: las capacidades podrían avanzar más rápido que los mecanismos diseñados para mantenerlas bajo control . Un ejemplo es el caso de Alex Turner, exinvestigador de Google DeepMind. El pasado 5 de octubre aprovechó una comparecencia ante el Ayuntamiento de Nueva York para lanzar una advertencia y sostuvo que Estados Unidos podría estar desarrollando una amenaza mucho más preocupante que la competencia tecnológica con China, ya que el país norteamericano tendría entre manos una IA cuyos objetivos no coinciden con los intereses humanos. Turner advirtió que \"estamos compitiendo por crear y desarrollar a nuestro propio adversario\", y aseguró que existe la posibilidad de que una IA desalineada termine siendo más poderosa que China. Así, con este término se refiere a sistemas capaces de perseguir objetivos incompatibles con las intenciones de sus desarrolladores incluso si fueron diseñados para realizar tareas beneficiosas. Jacob Coxon, exinvestigador de Anthropic, fue otra de las voces que participó en la comparecencia y cuestionó la velocidad a la que avanza la industria. Bajo su punto de vista, mantener la trayectoria actual implica un riesgo considerable de ver cómo la humanidad pierde el control de sus sistemas futuros. Por desgracia, esta situación nos llevaría a consecuencias catastróficas, pero hay que recalcar que se trata de una predicción sobre posibles escenarios y no de un resultado probado. La sesión contó con representantes de Google, Meta, Anthropic y OpenAI , y todos ellos respondieron bajo juramento a preguntas sobre la seguridad real de sus modelos. Julie Menin, presidenta del Ayuntamiento, aprovechó el espacio para cuestionar la capacidad de las compañías a la hora de cuantificar los riesgos más graves y, al mismo tiempo, determinar quién asumiría las responsabilidades si sus sistemas ocasionaran daños. La preocupación de los investigadores también apunta a la necesidad de establecer medidas de supervisión independientes y una mayor transparencia. El Ayuntamiento de Nueva York estudia nuevas obligaciones para las empresas, entre ellas verificaciones externas y mecanismos de protección para los denunciantes. El debate, por tanto, no se limita a competir con China, sino a determinar cómo desarrollar una tecnología cada vez más capaz sin perder la posibilidad de controlarla.",
+      "image": "https://i.blogs.es/1a8271/inteligencia-artificial-genbeta-3/1024_2000.jpeg",
       "source": "Genbeta IA",
-      "link": "https://www.genbeta.com/inteligencia-artificial/desarrollador-centro-datos-pennsylvania-ofrece-10-000-dolares-a-4-500-hogares-residentes-se-niegan-diciendo-que-dinero-no-suficiente",
-      "published": "2026-10-25T09:00:08+00:00"
+      "link": "https://www.genbeta.com/inteligencia-artificial/investigador-ia-advierte-ayuntamiento-nueva-york-estamos-compitiendo-crear-desarrollar-a-nuestro-propio-adversario",
+      "published": "2026-11-01T11:01:25+00:00"
     },
     {
       "id": "news_4",
-      "title": "Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo",
-      "summary": "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED.",
-      "voice_extra": "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED.",
+      "title": "Shein, Temu y AliExpress tienen un nuevo problema en Europa: cada categoría de producto importado paga dos euros de tasa aduanera",
+      "summary": "Hasta hace solo unos meses, pedir un cable USB de 50 céntimos a China, salía más barato que bajar a la tienda de la esquina y comprarlo, teniendo en cuenta que el pedido tenía que volar más de 10.000 km, pasar aduanas, y cubrir los costes de logística para entregarlo en tu domicilio una semana más tarde.",
+      "voice_extra": "Hasta hace solo unos meses, pedir un cable USB de 50 céntimos a China, salía más barato que bajar a la tienda de la esquina y comprarlo, teniendo en cuenta que el pedido tenía que volar más de 10.000 km, pasar aduanas, y cubrir los costes de logística para entregarlo en tu domicilio una semana más tarde.",
       "full_paragraphs": [
-        "Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED. Sin embargo, parece que Apple tiene claro que el más especial es el modelo con pantalla táctil y ha decidido dejar todos los focos del miércoles para él solito.",
-        "Así, ayer presentó el nuevo iPad Mini que, aparte de la pantalla OLED, monta el espectacular SoC A20 Pro que ya hemos puesto a prueba en el análisis del iPhone 18 Pro Max . Y hoy ha desvelado la renovación de dos de los Mac que aún no habían dado el salto al chip M6 que debutó hace unos meses con el Mac mini .",
-        "A continuación, vamos con todos los detalles tanto del MacBook Pro M6 como del iMac M6.",
-        "\"Hasta 13 veces más rápido en tareas de IA que el M1\". Apple se empeña en comparar todos los nuevos SoC M con el de primera generación cuando han pasado seis añazos y el M1 no estaba diseñado para eso. Dicho esto, el principal cambio de este MacBook Pro es, evidentemente, el procesador.",
-        "El M6 cuenta con una CPU de 12 núcleos compuesta por dos núcleos de alta potencia, cuatro de rendimiento y seis de eficiencia. La GPU es de 12 núcleos y parte de 16 GB de memoria RAM con un ancho de banda de 153 GB/s, pero que podemos ampliar a 24 o 32 con un ancho de banda de 170 GB/s.",
-        "El almacenamiento sigue siendo de 1, 2 o 4 TB y donde también han actualizado es en el Wi-Fi. De un Wi-Fi 6e que ya nos chirrió en el modelo del año pasado , pasamos por fin a Wi-Fi 7 para equipararse con los modelos que tienen los M5 Pro y M5 Max."
+        "Hasta hace solo unos meses, pedir un cable USB de 50 céntimos a China, salía más barato que bajar a la tienda de la esquina y comprarlo, teniendo en cuenta que el pedido tenía que volar más de 10.000 km, pasar aduanas, y cubrir los costes de logística para entregarlo en tu domicilio una semana más tarde.",
+        "Eso cambió el 1 de julio con la entrada de en vigor de la tasa de la Unión Europea a los productos llegados de China. Desde el 1 de noviembre, ese peaje vuelve a subir con la entrada en vigor de una nueva tasa de dos euros destinada a cubrir el coste de procesar estos pedidos en las aduanas de la UE.",
+        "El nuevo reglamento delegado fija en dos euros la tasa de gestión aduanera por cada categoría de artículo. Según especifican desde el bufete de abogados Garrigues, una categoría reúne las mercancías de un envío con la misma clasificación arancelaria, descripción y, en su caso, origen. Por ejemplo, cinco camisetas iguales pagarían esa nueva tasa una sola vez , mientras que un pedido que incluya una camiseta y un reloj pagarían dos veces la tasa por tratarse de productos distintos.",
+        "Esta tasa se suma al arancel transitorio de tres euros que ya se aplicó el pasado mes de julio y se estará vigente hasta julio de 2028. Es decir, siguiendo el ejemplo del cable de 50 céntimos del principio, ahora el comprador pagaría una factura total de 5,50 euros por el mismo cable, al incluirse las dos tasas.",
+        "A diferencia de la tasa que entró en vigor en julio, que se aplica a envíos con un valor inferior a 150 euros, la nueva tasa no tiene en cuenta el valor del paquete . Eso hace que vaya directa a la desincentivación las compras de productos de pequeño valor, un nicho en el que se basa el crecimiento de plataformas como Amazon, AliExpress, Temu o Shein.",
+        "Sobre el papel, este sobrecoste no lo paga el comprador. A ojos de la UE, las plataformas y los vendedores online son consideradas importadoras y responden de los trámites ante la aduana como lo haría cualquier empresa de exportación. Sin embargo, en la realidad, estas plataformas pueden absorber el coste en forma de campañas de promoción, o subir los precios de sus productos, lo cual pondrá freno a su competitividad con los productos locales."
       ],
-      "full_voice_script": "Apple renueva el iMac y el MacBook Pro de 14 pulgadas con los procesadores M6. El precio es el plato amargo. Noticia publicada por Xataka. Quien avisa no es traidor, pero Apple nos ha traicionado un poco con las fechas. Sabíamos que este miércoles 28 de octubre Apple presentaría nuevos dispositivos y sabíamos perfectamente que sería el iPad Mini OLED , nuevos Mac con el M6 y el MacBook Pro con panel táctil OLED. Sin embargo, parece que Apple tiene claro que el más especial es el modelo con pantalla táctil y ha decidido dejar todos los focos del miércoles para él solito. Así, ayer presentó el nuevo iPad Mini que, aparte de la pantalla OLED, monta el espectacular SoC A20 Pro que ya hemos puesto a prueba en el análisis del iPhone 18 Pro Max . Y hoy ha desvelado la renovación de dos de los Mac que aún no habían dado el salto al chip M6 que debutó hace unos meses con el Mac mini . A continuación, vamos con todos los detalles tanto del MacBook Pro M6 como del iMac M6. \"Hasta 13 veces más rápido en tareas de IA que el M1\". Apple se empeña en comparar todos los nuevos SoC M con el de primera generación cuando han pasado seis añazos y el M1 no estaba diseñado para eso. Dicho esto, el principal cambio de este MacBook Pro es, evidentemente, el procesador. El M6 cuenta con una CPU de 12 núcleos compuesta por dos núcleos de alta potencia, cuatro de rendimiento y seis de eficiencia. La GPU es de 12 núcleos y parte de 16 GB de memoria RAM con un ancho de banda de 153 GB/s, pero que podemos ampliar a 24 o 32 con un ancho de banda de 170 GB/s. El almacenamiento sigue siendo de 1, 2 o 4 TB y donde también han actualizado es en el Wi-Fi. De un Wi-Fi 6e que ya nos chirrió en el modelo del año pasado , pasamos por fin a Wi-Fi 7 para equipararse con los modelos que tienen los M5 Pro y M5 Max.",
-      "image": "https://i.blogs.es/3a6ce7/original-6/1024_2000.jpeg",
+      "full_voice_script": "Shein, Temu y AliExpress tienen un nuevo problema en Europa: cada categoría de producto importado paga dos euros de tasa aduanera. Noticia publicada por Xataka. Hasta hace solo unos meses, pedir un cable USB de 50 céntimos a China, salía más barato que bajar a la tienda de la esquina y comprarlo, teniendo en cuenta que el pedido tenía que volar más de 10.000 km, pasar aduanas, y cubrir los costes de logística para entregarlo en tu domicilio una semana más tarde. Eso cambió el 1 de julio con la entrada de en vigor de la tasa de la Unión Europea a los productos llegados de China. Desde el 1 de noviembre, ese peaje vuelve a subir con la entrada en vigor de una nueva tasa de dos euros destinada a cubrir el coste de procesar estos pedidos en las aduanas de la UE. El nuevo reglamento delegado fija en dos euros la tasa de gestión aduanera por cada categoría de artículo. Según especifican desde el bufete de abogados Garrigues, una categoría reúne las mercancías de un envío con la misma clasificación arancelaria, descripción y, en su caso, origen. Por ejemplo, cinco camisetas iguales pagarían esa nueva tasa una sola vez , mientras que un pedido que incluya una camiseta y un reloj pagarían dos veces la tasa por tratarse de productos distintos. Esta tasa se suma al arancel transitorio de tres euros que ya se aplicó el pasado mes de julio y se estará vigente hasta julio de 2028. Es decir, siguiendo el ejemplo del cable de 50 céntimos del principio, ahora el comprador pagaría una factura total de 5,50 euros por el mismo cable, al incluirse las dos tasas. A diferencia de la tasa que entró en vigor en julio, que se aplica a envíos con un valor inferior a 150 euros, la nueva tasa no tiene en cuenta el valor del paquete . Eso hace que vaya directa a la desincentivación las compras de productos de pequeño valor, un nicho en el que se basa el crecimiento de plataformas como Amazon, AliExpress, Temu o Shein. Sobre el papel, este sobrecoste no lo paga el comprador. A ojos de la UE, las plataformas y los vendedores online son consideradas importadoras y responden de los trámites ante la aduana como lo haría cualquier empresa de exportación. Sin embargo, en la realidad, estas plataformas pueden absorber el coste en forma de campañas de promoción, o subir los precios de sus productos, lo cual pondrá freno a su competitividad con los productos locales.",
+      "image": "https://i.blogs.es/569a74/adrian-sulyok-scznlg6rrhq-unsplash/1024_2000.jpeg",
       "source": "Xataka",
-      "link": "https://www.xataka.com/ordenadores/macbook-pro-m6-imac-m6-caracteristicas-precio-ficha-tecnica",
-      "published": "2026-10-27T15:16:00+01:00"
+      "link": "https://www.xataka.com/empresas-y-economia/shein-temu-aliexpress-tienen-nuevo-problema-europa-cada-categoria-producto-importado-paga-dos-euros-tasa-aduanera",
+      "published": "2026-11-02T11:31:28+01:00"
     },
     {
       "id": "news_5",
-      "title": "La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos",
-      "summary": "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
-      "voice_extra": "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
+      "title": "Hacienda confirma que los mayores de 65 años pueden donar su vivienda habitual a sus hijos sin pagar IRPF por la ganancia",
+      "summary": "Poner la casa a nombre de los hijos antes de fallecer es una alternativa que se plantean muchos padres, pero esa donación no pasa desapercibida y tiene consecuencias en la declaración de la renta de quien la hace.",
+      "voice_extra": "Poner la casa a nombre de los hijos antes de fallecer es una alternativa que se plantean muchos padres, pero esa donación no pasa desapercibida y tiene consecuencias en la declaración de la renta de quien la hace.",
       "full_paragraphs": [
-        "Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales.",
-        "La nota del Partido Popular sobre este asunto apareció hace poco: un comunicado sobre ambas ciudades , según el cual los coordinadores de la Comisión de Peticiones habían aprobado la iniciativa . Quien interpone la queja considera ambigua la representación de las fronteras y dice que Google debería mostrar una línea continua, no una línea discontinua. Pide a la Comisión Europea que actúe en relación con los riesgos de desinformación que, según la queja, podría generar el mapa. Su queja refleja su posición y no demuestra que se haya incumplido el reglamento.",
-        "El Observatorio de Ceuta y Melilla ha informado de que su director, Carlos Echeverría , había escrito a Google España en 2023 sobre el tema. También apareció en una nota del Observatorio el 23 de septiembre de 2026, que afirmaba que el asunto aún no se había resuelto.",
-        "Las notas de Google indican que el servicio diferencia entre varias fronteras. En el apartado sobre fronteras y nombres de los países , las líneas grises continuas se reservan a las fronteras internacionales sin discusión, y las discontinuas, a aquellas cuya definición sea objeto de controversia (y a determinados límites provisionales o decididos por tratados). Solo por el estilo de la línea discontinua no se puede distinguir qué categoría aplica Google a cada frontera.",
-        "Google Maps está sujeto a normas de cumplimiento adicionales de conformidad con el Reglamento de Servicios Digitales , en virtud del cual la Comisión Europea calificó el 25 de abril de 2023 al servicio de “plataforma en línea de muy gran tamaño”. Según los artículos 34 y 35 del Reglamento , Google debe evaluar los riesgos sistémicos que plantea su servicio y aplicar medidas para mitigarlos.",
-        "La Comisión puede solicitar información y obtener pruebas si sospecha que se ha producido una infracción. Antes de decidir sancionar a la empresa por incumplimiento del reglamento, debe acreditar la infracción y darle la oportunidad de presentar sus argumentos."
+        "Poner la casa a nombre de los hijos antes de fallecer es una alternativa que se plantean muchos padres, pero esa donación no pasa desapercibida y tiene consecuencias en la declaración de la renta de quien la hace. Y es que los mayores de 65 años cuentan con una exención en el IRPF que les evita tributar por la ganancia que obtienen al donar su vivienda habitual. Eso sí, no es una medida nueva y tiene requisitos concretos.",
+        "Lo que dice la ley . La exención está en el artículo 33.4.b de la Ley del IRPF, que deja fuera del impuesto la ganancia patrimonial que obtienen los mayores de 65 años al transmitir su vivienda habitual, y la Agencia Tributaria la incluye entre las rentas que no se declaran en su manual para mayores de 65 . Pero en principio la donación sí genera una ganancia para quien entrega la casa, según explica la Dirección General de Tributos (DGT) en su consulta vinculante V2752-21 . En esa respuesta, de noviembre de 2021, Tributos ya aplicaba la exención a un mayor de 65 años que quería donar su vivienda habitual a su hija.",
+        "El peso de la revalorización . La ventaja se nota sobre todo cuando la vivienda se compró hace décadas y desde entonces ha ganado mucho valor, porque la ganancia se calcula restando lo que costó al valor que se le asigna en la donación. Vamos, que cuanto más se haya revalorizado la casa, más dinero deja de integrar en su IRPF quien la dona.",
+        "Tiene que ser la vivienda habitual . El requisito clave es que el inmueble cuente como vivienda habitual a efectos fiscales. Según el mismo manual de la Agencia Tributaria, que remite al Reglamento del IRPF, eso exige haber residido en ella de forma continuada al menos tres años, salvo excepciones como un matrimonio o un traslado laboral, y que lo siga siendo al donarla o lo haya sido en algún momento de los dos años anteriores.",
+        "Y la DGT lo volvió a aplicar en la consulta V0217-26, fechada el 4 de febrero de 2026 : un contribuyente mayor de 65 años que llevaba más de 14 años sin vivir en la que fue su casa, alquilada durante ese tiempo, no podía acogerse a la exención porque habían pasado más de dos años desde que dejó de ser su residencia habitual.",
+        "El hijo no se libra . Aunque el padre o la madre se ahorren el IRPF por la ganancia, el hijo o la hija que reciban la vivienda quedarán sujetos al Impuesto sobre Sucesiones y Donaciones. Y no van a pagar lo mismo en todas partes, porque, si el hijo reside en España, la donación de un inmueble tributa con carácter general según la normativa de la comunidad autónoma donde está la vivienda, que es la que fija reducciones y bonificaciones, como detalla una contestación vinculante de la Comunidad de Madrid ."
       ],
-      "full_voice_script": "La UE abre la vía para multar a Google Maps por representar a Ceuta y Melilla como “territorios en disputa” con Marruecos. Noticia publicada por Genbeta. Google Maps traza una línea gris discontinua en las fronteras terrestres de Ceuta y Melilla con Marruecos. Una queja ha pedido a la Comisión Europea que actúe para que Google Maps cambie el trazado de acuerdo con el Reglamento de Servicios Digitales. La nota del Partido Popular sobre este asunto apareció hace poco: un comunicado sobre ambas ciudades , según el cual los coordinadores de la Comisión de Peticiones habían aprobado la iniciativa . Quien interpone la queja considera ambigua la representación de las fronteras y dice que Google debería mostrar una línea continua, no una línea discontinua. Pide a la Comisión Europea que actúe en relación con los riesgos de desinformación que, según la queja, podría generar el mapa. Su queja refleja su posición y no demuestra que se haya incumplido el reglamento. El Observatorio de Ceuta y Melilla ha informado de que su director, Carlos Echeverría , había escrito a Google España en 2023 sobre el tema. También apareció en una nota del Observatorio el 23 de septiembre de 2026, que afirmaba que el asunto aún no se había resuelto. Las notas de Google indican que el servicio diferencia entre varias fronteras. En el apartado sobre fronteras y nombres de los países , las líneas grises continuas se reservan a las fronteras internacionales sin discusión, y las discontinuas, a aquellas cuya definición sea objeto de controversia (y a determinados límites provisionales o decididos por tratados). Solo por el estilo de la línea discontinua no se puede distinguir qué categoría aplica Google a cada frontera. Google Maps está sujeto a normas de cumplimiento adicionales de conformidad con el Reglamento de Servicios Digitales , en virtud del cual la Comisión Europea calificó el 25 de abril de 2023 al servicio de “plataforma en línea de muy gran tamaño”. Según los artículos 34 y 35 del Reglamento , Google debe evaluar los riesgos sistémicos que plantea su servicio y aplicar medidas para mitigarlos. La Comisión puede solicitar información y obtener pruebas si sospecha que se ha producido una infracción. Antes de decidir sancionar a la empresa por incumplimiento del reglamento, debe acreditar la infracción y darle la oportunidad de presentar sus argumentos.",
-      "image": "https://i.blogs.es/5014ea/google-maps-y-ceuta-y-melilla/1024_2000.jpeg",
+      "full_voice_script": "Hacienda confirma que los mayores de 65 años pueden donar su vivienda habitual a sus hijos sin pagar IRPF por la ganancia. Noticia publicada por Genbeta. Poner la casa a nombre de los hijos antes de fallecer es una alternativa que se plantean muchos padres, pero esa donación no pasa desapercibida y tiene consecuencias en la declaración de la renta de quien la hace. Y es que los mayores de 65 años cuentan con una exención en el IRPF que les evita tributar por la ganancia que obtienen al donar su vivienda habitual. Eso sí, no es una medida nueva y tiene requisitos concretos. Lo que dice la ley . La exención está en el artículo 33.4.b de la Ley del IRPF, que deja fuera del impuesto la ganancia patrimonial que obtienen los mayores de 65 años al transmitir su vivienda habitual, y la Agencia Tributaria la incluye entre las rentas que no se declaran en su manual para mayores de 65 . Pero en principio la donación sí genera una ganancia para quien entrega la casa, según explica la Dirección General de Tributos (DGT) en su consulta vinculante V2752-21 . En esa respuesta, de noviembre de 2021, Tributos ya aplicaba la exención a un mayor de 65 años que quería donar su vivienda habitual a su hija. El peso de la revalorización . La ventaja se nota sobre todo cuando la vivienda se compró hace décadas y desde entonces ha ganado mucho valor, porque la ganancia se calcula restando lo que costó al valor que se le asigna en la donación. Vamos, que cuanto más se haya revalorizado la casa, más dinero deja de integrar en su IRPF quien la dona. Tiene que ser la vivienda habitual . El requisito clave es que el inmueble cuente como vivienda habitual a efectos fiscales. Según el mismo manual de la Agencia Tributaria, que remite al Reglamento del IRPF, eso exige haber residido en ella de forma continuada al menos tres años, salvo excepciones como un matrimonio o un traslado laboral, y que lo siga siendo al donarla o lo haya sido en algún momento de los dos años anteriores. Y la DGT lo volvió a aplicar en la consulta V0217-26, fechada el 4 de febrero de 2026 : un contribuyente mayor de 65 años que llevaba más de 14 años sin vivir en la que fue su casa, alquilada durante ese tiempo, no podía acogerse a la exención porque habían pasado más de dos años desde que dejó de ser su residencia habitual. El hijo no se libra . Aunque el padre o la madre se ahorren el IRPF por la ganancia, el hijo o la hija que reciban la vivienda quedarán sujetos al Impuesto sobre Sucesiones y Donaciones. Y no van a pagar lo mismo en todas partes, porque, si el hijo reside en España, la donación de un inmueble tributa con carácter general según la normativa de la comunidad autónoma donde está la vivienda, que es la que fija reducciones y bonificaciones, como detalla una contestación vinculante de la Comunidad de Madrid .",
+      "image": "https://i.blogs.es/8486b3/55588691718_1afa161be5_o/1024_2000.jpeg",
       "source": "Genbeta",
-      "link": "https://www.genbeta.com/actualidad/ue-abre-via-para-multar-a-google-maps-representar-a-ceuta-melilla-como-territorios-disputa-marruecos",
-      "published": "2026-10-27T12:01:29+01:00"
+      "link": "https://www.genbeta.com/laboral/hacienda-confirma-que-mayores-65-anos-pueden-donar-su-vivienda-habitual-a-sus-hijos-pagar-irpf-ganancia",
+      "published": "2026-11-02T11:56:54+01:00"
     }
   ],
   "vip_hack_of_the_week": {
-    "tag": "Truco Oculto WhatsApp",
-    "title": "Enviar fotos y videos en calidad 4K original sin que WhatsApp los pixele",
-    "body": "Antes de enviar cualquier foto o video, toca el botón 'HD' arriba en el editor, o adjúntalo como 'Documento' si quieres cero compresión. ¡La diferencia de nitidez es abismal!"
+    "tag": "Optimización Gamer",
+    "title": "Liberar memoria RAM oculta en 5 segundos antes de jugar",
+    "body": "En Chrome o Telegram, cierra las pestañas en segundo plano y activa el modo 'No Molestar' durante tu partida: evita micro-tirones de pantalla cuando buscas récords de menos de 100 milisegundos."
   },
   "weekly_jokes": [
-    "— Tengo una idea genial para una app.<br>— ¿Cuál?<br>— Una que avise cuando el vecino cambie la clave del Wi-Fi.",
-    "El corrector automático tiene vida propia: escribo 'llego en cinco' y envía 'llevo un cinco en matemática'.",
-    "Mi teléfono se cayó de la mesa y sobrevivió. Yo casi sufro un infarto. Resistencia emocional: 0, de pantalla: 100.",
-    "Mi laptop tiene 47 pestañas abiertas y yo solo recuerdo por qué abrí dos.",
-    "— Papá, ¿qué es la nube?<br>— Es donde el celular guarda lo que yo no quiero que mamá vea.",
-    "Mi PC tarda 10 minutos en encender y 2 segundos en congelarse justo cuando voy a guardar el trabajo. Puntería perfecta.",
-    "— ¿Ya reinició el equipo?<br>— Sí.<br>— ¿Seguro?<br>— ...ahora sí.",
-    "Programador: 'En mi computadora funciona'.<br>Cliente: 'Pero en la mía no'.<br>Programador: 'Entonces te mando mi computadora'.",
-    "Dormir 8 horas es fácil. Lo difícil es que el celular no te avise a las 3 a.m. que 'tu almacenamiento está casi lleno'.",
-    "Mi pantalla tiene tantas rayitas que ya no sé si es un teléfono o un mapa de carreteras."
+    "Nada te enseña a escribir más rápido que ver el 'Escribiendo...' de la persona con la que discutes por WhatsApp.",
+    "Mi modo 'No molestar' lleva activado desde 2021. A veces alguien se acuerda de mí por correo.",
+    "Instalé un antivirus tan potente que ahora mi computadora no deja pasar ni mis propios archivos.",
+    "Mi router tiene más lucecitas que un árbol de Navidad y aun así no hay internet.",
+    "La tía del grupo familiar: 'Cuidado con el 5G'. La misma tía a las 5 a.m.: reenvía 45 bendiciones con fotos de flores.",
+    "Mi compu hace un ruido como de avión despegando. Dice el técnico que es normal: 'está pensando muy fuerte'.",
+    "Antes uno buscaba pareja; ahora busca un enchufe. Y a veces el segundo aparece primero.",
+    "Actualización disponible: 2 GB. Mi almacenamiento: 40 MB. Mi paciencia: agotada.",
+    "Mi hijo me explicó qué es un meme. Llevo tres semanas explicándoselo a mi familia y nadie se ríe.",
+    "— Mesero, ¿cuál es la clave del Wi-Fi?<br>— Pida el combo y se la doy.<br>— ¿Y si pido solo el café?<br>— Le damos la clave... del negocio de enfrente."
   ],
   "weekly_truths": [
     {
-      "emoji": "🔌",
-      "color": "amber",
-      "title": "El Cargador Sagrado",
-      "body": "Todos tenemos <strong>un</strong> cargador que sí funciona. Se presta con ceremonia y se devuelve bajo juramento."
+      "emoji": "💻",
+      "color": "cyan",
+      "title": "La Regla de las Pestañas",
+      "body": "Una pestaña para trabajar. Cuarenta y seis para 'leer luego'. Cero lecturas posteriores."
     },
     {
-      "emoji": "📶",
-      "color": "blue",
-      "title": "El Wi-Fi del Vecino",
-      "body": "<strong>Señal:</strong> 5 rayitas.<br><strong>Velocidad:</strong> la de una tortuga con sueño.<br><strong>Clave:</strong> recién cambiada."
+      "emoji": "🧑‍💻",
+      "color": "purple",
+      "title": "Soporte Técnico",
+      "body": "—¿Ya lo apagó y lo volvió a encender?<br>—Sí.<br>—¿Seguro?<br>—...<strong>Ahora sí</strong>. Y funciona. Nadie sabe por qué."
     },
     {
-      "emoji": "📱",
-      "color": "blue",
-      "title": "La Pantalla Rota",
-      "body": "Nivel 1: una rajadura pequeña.<br>Nivel 2: 'ya me acostumbré'.<br>Nivel 3: lees el mensaje en forma de rompecabezas."
+      "emoji": "🤖",
+      "color": "purple",
+      "title": "La IA: Expectativa vs Realidad",
+      "body": "<strong>La gente:</strong> <em>\"La IA va a dominar el mundo con robots asesinos...\"</em><br><strong>La IA en la vida real:</strong> Dibuja personas con 7 dedos en una mano y confunde un chihuahua con un muffin."
     },
     {
-      "emoji": "🛒",
-      "color": "emerald",
-      "title": "Compras por Internet",
-      "body": "<strong>En la foto:</strong> Camiseta ajustada estilo cyberpunk.<br><strong>Lo que llega:</strong> Un mantel de cocina transparente con dos huecos para los brazos."
+      "emoji": "🎙️",
+      "color": "cyan",
+      "title": "La Ley del Audio de WhatsApp",
+      "body": "• <strong>0 a 15 seg:</strong> Escuchable con paciencia.<br>• <strong>15 a 45 seg:</strong> Lo pongo en 1.5x de inmediato.<br>• <strong>Más de 1 min:</strong> Eso ya no es un audio, es un podcast. ¡Llámame mejor!"
     }
   ],
   "game_layout": {
@@ -247,7 +247,7 @@
   ],
   "seo": {
     "title": "ByteZone Arcade | Juegos Gratis, Ranking Semanal y Noticias de IA",
-    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: El truco con IA para quitar todos los anuncios y hacer tu Smart TV…",
+    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: Su lavadora Samsung quedó abandonada y una IA encontró la forma de…",
     "keywords": [
       "juegos arcade online gratis",
       "juegos sin descargar",
@@ -261,35 +261,35 @@
       "mini juegos para Telegram",
       "juegos para celular",
       "retos entre amigos",
-      "smart",
-      "microsoft",
-      "dólares",
-      "desarrollador",
-      "pennsylvania",
-      "apple",
-      "macbook",
-      "google"
+      "samsung",
+      "alguien",
+      "redmi",
+      "note",
+      "claude",
+      "ayuntamiento",
+      "york",
+      "estamos"
     ],
     "trending_terms": [
-      "Smart",
-      "Microsoft",
-      "dólares",
-      "Desarrollador",
-      "Pennsylvania",
-      "Apple",
-      "MacBook",
-      "Google"
+      "Samsung",
+      "Alguien",
+      "Redmi",
+      "Note",
+      "Claude",
+      "Ayuntamiento",
+      "York",
+      "Estamos"
     ],
-    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&quality=70&strip=all&ssl=1",
-    "lastmod": "2026-10-27"
+    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&quality=70&strip=all&ssl=1",
+    "lastmod": "2026-11-02"
   },
   "promo_kit": {
     "whatsapp_status": [
       "🎮 Torneo semanal nuevo en ByteZone: ranking reiniciado, ¡todos empiezan de cero! ⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo? Juega gratis 👉 https://megabotp2p.github.io/bytezone/",
-      "🏆 Campeones de la semana pasada → Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
-      "🤖 Noticia IA de la semana: El truco con IA para quitar todos los anuncios y hacer tu Smart TV más rápida\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
+      "🏆 Campeones de la semana pasada → Test de Reflejos: ***** (96 ms)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
+      "🤖 Noticia IA de la semana: Su lavadora Samsung quedó abandonada y una IA encontró la forma de salvarla\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
     ],
-    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Smart #Microsoft #dólares",
+    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Samsung #Alguien #Redmi",
     "hashtags": [
       "#juegosgratis",
       "#arcade",
@@ -298,32 +298,27 @@
       "#IA",
       "#tecnologia",
       "#telegram",
-      "#Smart",
-      "#Microsoft",
-      "#dólares"
+      "#Samsung",
+      "#Alguien",
+      "#Redmi"
     ],
     "challenge_lines": [
       "⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo?",
-      "🏗️ Récord de Neon Stacker: 40 pisos (*****). ¿Llegas más alto?"
+      "🏗️ Récord de Neon Stacker: 43 pisos (*****). ¿Llegas más alto?"
     ],
-    "last_week_champions_text": "🏆 Campeones de la semana pasada → Test de Reflejos: Jugador_191 (16 ms) | Cyber Memory: Jugador_191 (3 rondas)"
+    "last_week_champions_text": "🏆 Campeones de la semana pasada → Test de Reflejos: ***** (96 ms)"
   },
   "last_week_champions": {
     "reflex": {
-      "name": "Jugador_191",
-      "score": 16,
-      "country": "VE"
-    },
-    "memory": {
-      "name": "Jugador_191",
-      "score": 3,
+      "name": "*****",
+      "score": 96,
       "country": "VE"
     }
   },
   "all_time_records": {
     "stacker": {
       "name": "*****",
-      "score": 40,
+      "score": 43,
       "country": "VE"
     },
     "reflex": {
@@ -338,8 +333,8 @@
     }
   },
   "agent_report": {
-    "generated_at": "2026-10-27T10:26:31.311495-04:00",
-    "week_id": "W2026-10-26",
+    "generated_at": "2026-11-02T07:20:41.380871-04:00",
+    "week_id": "W2026-11-02",
     "traffic_status": "bajo",
     "traffic": {
       "devices_7d": 3,
@@ -386,7 +381,7 @@
     "actions": [
       "Noticias renovadas: 5 historias nuevas (se evitaron los titulares de la semana anterior).",
       "Humor renovado: 10 chistes y 4 'verdades tech' nuevas.",
-      "SEO: meta-tags actualizados con palabras clave de la semana (Smart, Microsoft, dólares, Desarrollador, Pennsylvania), sitemap regenerado. IndexNow aceptó la notificación (HTTP 202)",
+      "SEO: meta-tags actualizados con palabras clave de la semana (Samsung, Alguien, Redmi, Note, Claude), sitemap regenerado. IndexNow aceptó la notificación (HTTP 200)",
       "Kit de promoción listo (textos para WhatsApp/Telegram/redes con los récords actuales).",
       "Telegram: sin token/chat configurados (envío automático desactivado).",
       "Sin rotación: 1 partidas registradas en 7 días (se necesitan 30 para rotar titulares automáticamente). Todos los juegos siguen disponibles entre Portada y Baúl.",
