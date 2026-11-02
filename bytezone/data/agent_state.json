@@ -28,32 +28,39 @@
       "devices": 3,
       "views": 5,
       "ads": 1
+    },
+    {
+      "week_id": "W2026-11-02",
+      "plays": 1,
+      "devices": 3,
+      "views": 5,
+      "ads": 1
     }
   ],
   "last_news_keys": [
-    "el truco con ia para quitar todos los an",
-    "con 190000 millones de dólares en gasto",
-    "desarrollador de centro de datos de penn",
-    "apple renueva el imac y el macbook pro d",
-    "la ue abre la vía para multar a google m"
+    "hasta nunca copilot la ia de microsoft d",
+    "sam altman no quiere que ejecutes ia en",
+    "bill gates 70 años fundador de microsoft",
+    "burgos ante la paradoja ferroviaria espa",
+    "los expertos en psicología coinciden qui"
   ],
   "last_joke_ids": [
-    0,
-    21,
-    14,
-    27,
-    23,
-    7,
-    17,
-    5,
-    36,
-    41
+    34,
+    40,
+    19,
+    22,
+    35,
+    33,
+    31,
+    15,
+    29,
+    30
   ],
   "last_truth_ids": [
-    10,
-    4,
-    11,
-    3
+    7,
+    8,
+    1,
+    0
   ],
   "champions_archive": {}
 }
