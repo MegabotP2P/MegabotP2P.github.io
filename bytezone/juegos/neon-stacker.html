@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Neon Stacker Pro: Juego de Torre Neón Online Gratis | ByteZone</title>
     <meta name="description" content="Apila bloques de neón sin fallar y llega al Piso más alto. Ranking semanal e histórico en vivo. Gratis y sin descargar.">
-    <meta name="keywords" content="juegos arcade online gratis, juegos sin descargar, test de reflejos, test de velocidad de reacción, juego de memoria, torneo semanal, ranking mundial de juegos, noticias de inteligencia artificial, resumen semanal de IA, mini juegos para Telegram, juegos para celular, retos entre amigos, smart, microsoft, dólares, desarrollador, pennsylvania, apple, macbook, google">
+    <meta name="keywords" content="juegos arcade online gratis, juegos sin descargar, test de reflejos, test de velocidad de reacción, juego de memoria, torneo semanal, ranking mundial de juegos, noticias de inteligencia artificial, resumen semanal de IA, mini juegos para Telegram, juegos para celular, retos entre amigos, samsung, alguien, redmi, note, claude, ayuntamiento, york, estamos">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://megabotp2p.github.io/bytezone/juegos/neon-stacker.html">
     <meta property="og:type" content="website">
@@ -13,11 +13,11 @@
     <meta property="og:title" content="Neon Stacker Pro: Juego de Torre Neón Online Gratis | ByteZone">
     <meta property="og:description" content="Apila bloques de neón sin fallar y llega al Piso más alto. Ranking semanal e histórico en vivo. Gratis y sin descargar.">
     <meta property="og:url" content="https://megabotp2p.github.io/bytezone/juegos/neon-stacker.html">
-    <meta property="og:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&amp;quality=70&amp;strip=all&amp;ssl=1">
+    <meta property="og:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&amp;quality=70&amp;strip=all&amp;ssl=1">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Neon Stacker Pro: Juego de Torre Neón Online Gratis | ByteZone">
     <meta name="twitter:description" content="Apila bloques de neón sin fallar y llega al Piso más alto. Ranking semanal e histórico en vivo. Gratis y sin descargar.">
-    <meta name="twitter:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&amp;quality=70&amp;strip=all&amp;ssl=1">
+    <meta name="twitter:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&amp;quality=70&amp;strip=all&amp;ssl=1">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ByteZone Arcade", "url": "https://megabotp2p.github.io/bytezone/juegos/neon-stacker.html", "inLanguage": "es", "description": "Apila bloques de neón sin fallar y llega al Piso más alto. Ranking semanal e histórico en vivo. Gratis y sin descargar."}</script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,102 +26,24 @@
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=15') && !sessionStorage.getItem('bz_v15_reloaded')) {
-                sessionStorage.setItem('bz_v15_reloaded', '1');
+            if (!location.search.includes('v=16') && !sessionStorage.getItem('bz_v16_reloaded')) {
+                sessionStorage.setItem('bz_v16_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=15' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=16' + location.hash);
             }
         } catch (e) {}
-
-        // Blindaje Nativo del Reproductor de Monetag (15s Obligatorios DENTRO de la Publicidad)
-        // 1. Fuerza temporizador de 15s (autoclose/closeDelay = 15) dentro del anuncio de Monetag.
-        // 2. Oculta y deshabilita el botón Cerrar (X) hasta que el contador llegue a 00:00.
-        // 3. Si el usuario toca "Continuar" y le da "Atrás" enseguida, NO cierra el anuncio (unclosable=true, closeOnClick=false):
-        //    al volver se encuentra el anuncio bloqueado donde quedó el contador hasta cumplir los 15s.
-        // 4. Si minimiza el navegador/teléfono, el contador usa requestAnimationFrame y queda en PAUSA hasta que regrese.
-        (function() {
-            try {
-                const ENFORCED_AD_SECONDS = 15;
-                const origJSONParse = JSON.parse;
-
-                const patchPreloadedMonetagStorage = function() {
-                    [window.localStorage, window.sessionStorage].forEach(function(store) {
-                        if (!store) return;
-                        for (let i = 0; i < store.length; i++) {
-                            const k = store.key(i);
-                            if (k && k.indexOf('tvlngkscvrk') === 0) {
-                                try {
-                                    const raw = store.getItem(k);
-                                    if (raw && (raw.indexOf('"banner_id"') !== -1 || raw.indexOf('"imp_url"') !== -1)) {
-                                        const parsed = origJSONParse(raw);
-                                        if (parsed && typeof parsed === 'object') {
-                                            parsed.autoclose = ENFORCED_AD_SECONDS;
-                                            store.setItem(k, JSON.stringify(parsed));
-                                        }
-                                    }
-                                } catch (err) {}
-                            }
-                        }
-                    });
-                };
-
-                JSON.parse = function(text, reviver) {
-                    const data = origJSONParse.call(this, text, reviver);
-                    try {
-                        if (data && typeof data === 'object') {
-                            if ('banner_id' in data || 'imp_url' in data || 'v9y_url' in data) {
-                                data.autoclose = ENFORCED_AD_SECONDS;
-                            }
-                            if (Array.isArray(data.ads)) {
-                                data.ads.forEach(function(ad) {
-                                    if (ad && typeof ad === 'object') {
-                                        ad.autoclose = ENFORCED_AD_SECONDS;
-                                    }
-                                });
-                            }
-                        }
-                    } catch (err) {}
-                    return data;
-                };
-
-                const origObjectAssign = Object.assign;
-                Object.assign = function(target) {
-                    const res = origObjectAssign.apply(this, arguments);
-                    try {
-                        if (res && typeof res === 'object') {
-                            if ('fakepushZoneId' in res || (typeof res.onClose === 'function' && typeof res.onShow === 'function')) {
-                                res.closeDelay = ENFORCED_AD_SECONDS;
-                                res.fakepushAutoclose = ENFORCED_AD_SECONDS;
-                                res.unclosable = true;
-                                res.closeOnClick = false;
-                                res.autoClose = false;
-                                res.forceCloseButton = false;
-                                res.fakepushForceCloseButton = false;
-                                res.closeWithTgBackButton = false;
-                                res.fakepushCloseWithTgBackButton = false;
-                                res.hintText = '⏳ Permanece 15s viendo el anuncio hasta que se active la X para recibir tu premio';
-                            }
-                        }
-                    } catch (err) {}
-                    return res;
-                };
-
-                window.patchPreloadedMonetagStorage = patchPreloadedMonetagStorage;
-                patchPreloadedMonetagStorage();
-            } catch (e) {}
-        })();
     </script>
 
     <!-- 1. Monetag In-Page Push Banners (Zona 12034401) - Web y Telegram Mini App -->
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
 
-    <!-- 2. Monetag Rewarded Interstitial SDK PRECARGADO desde el inicio (Zona Principal 12040274 CPM Alto + Zona Respaldo 12040276) -->
+    <!-- 2. Monetag Rewarded & In-App Interstitial SDK Oficial Precargado (Zona Principal 12040274 + Respaldo 12040276) -->
     <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
     <script src="https://libtl.com/sdk.js" data-zone="12040276" data-sdk="show_12040276"></script>
     
     <script>
-        // 3. Sistema de Recompensa Auditado con Cascada (Waterfall 12040274 -> 12040276) + Telemetría Global Multi-Teléfono
+        // 3. Sistema de Recompensa 100% Nativo Monetag (Waterfall 12040274 -> 12040276) + In-App Automático + Telemetría Global
         window.NTFY_TELEMETRY_TOPIC = 'bytezone_global_telemetry_v12';
         window.CLOUD_TELEMETRY_ID = 'ff808181a09d98f701a14fdad1ef0d95';
         window.bzAdInProgress = false;
@@ -131,6 +53,7 @@
                 const eid = payload.eid || ('ev_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6));
                 const fullPayload = Object.assign({
                     eid: eid,
+                    site: 'bytezone',
                     p: localStorage.getItem('bytezone_player_name') || 'Jugador',
                     d: localStorage.getItem('bytezone_device_id') || 'dev',
                     c: localStorage.getItem('bytezone_player_country') || 'VE',
@@ -155,15 +78,32 @@
             } catch (e) {}
         };
 
+        // Activar In-App Interstitial automático en la zona de respaldo (12040276) tras 12s de navegación
+        // para garantizar impresiones incluso si el visitante solo navega sin tocar botones VIP
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                try {
+                    if (typeof window.show_12040276 === 'function') {
+                        window.show_12040276({
+                            type: 'inApp',
+                            inAppSettings: {
+                                frequency: 2,
+                                capping: 0.1,
+                                interval: 45,
+                                timeout: 12,
+                                everyPage: false
+                            }
+                        });
+                    }
+                } catch (e) {}
+            }, 1500);
+        });
+
         function executeRewardedAction(rewardCallback) {
             if (window.bzAdInProgress) return;
             window.bzAdInProgress = true;
 
-            if (typeof window.patchPreloadedMonetagStorage === 'function') {
-                window.patchPreloadedMonetagStorage();
-            }
-
-            const REQUIRED_AD_SECONDS = 14;
+            const TOTAL_REQUIRED_SECONDS = 15;
             const adOpenedAt = Date.now();
 
             let modal = document.getElementById('bzRewardedVerificationModal');
@@ -183,18 +123,19 @@
                 modal.style.display = 'flex';
             };
 
+            let holdTimer = null;
             const closeHUD = (delay = 0) => {
+                if (holdTimer) { clearInterval(holdTimer); holdTimer = null; }
                 setTimeout(() => {
                     if (modal && modal.parentNode) modal.style.display = 'none';
                     window.bzAdInProgress = false;
                 }, delay);
             };
 
-            // 1. Mostrar pantalla de carga mientras abre el reproductor bloqueado de Monetag
             showHUD(`
                 <div class="w-12 h-12 mx-auto mb-3 border-4 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin"></div>
-                <h4 class="text-sm font-black text-white uppercase tracking-wider">Abriendo Publicidad (15s)...</h4>
-                <p class="text-[11px] text-gray-300 mt-1">Debes permanecer en la publicidad hasta que el contador de 15s llegue a 00:00 y se active la X.</p>
+                <h4 class="text-sm font-black text-white uppercase tracking-wider">Cargando Publicidad Oficial...</h4>
+                <p class="text-[11px] text-gray-300 mt-1">Completa la visualización de 15 segundos para desbloquear tu recompensa.</p>
                 <button id="bzCancelAdBtn" class="mt-4 text-[11px] text-gray-400 hover:text-white bg-gray-800/80 px-3 py-1.5 rounded-xl border border-gray-700/60 transition">
                     Cancelar
                 </button>
@@ -209,30 +150,23 @@
                 };
             }
 
-            // 2. Fallo o Cierre Prematuro: Sin recompensa
             const handleFailure = (msg) => {
                 if (isCancelled) return;
+                if (holdTimer) { clearInterval(holdTimer); holdTimer = null; }
                 showHUD(`
                     <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-2xl">
                         ⚠️
                     </div>
                     <h4 class="text-sm font-black text-white uppercase tracking-wider">Anuncio Incompleto</h4>
-                    <p class="text-[11px] text-amber-200 mt-1 leading-snug">${msg || 'Debes ver los 15 segundos completos de la publicidad para desbloquear tu recompensa.'}</p>
+                    <p class="text-[11px] text-amber-200 mt-1 leading-snug">${msg || 'Debes completar la visualización del anuncio para recibir tu recompensa.'}</p>
                     <button onclick="document.getElementById('bzRewardedVerificationModal').style.display='none'; window.bzAdInProgress=false;" class="mt-4 text-xs font-bold text-white bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded-xl shadow transition">
                         Entendido
                     </button>
                 `);
             };
 
-            // 3. Éxito estricto: Monetag cerró tras completar el contador de 15s
-            const handleSuccess = (zoneUsed) => {
+            const finalizeGrantReward = (zoneUsed) => {
                 if (isCancelled) return;
-                const elapsedSec = Math.round((Date.now() - adOpenedAt) / 1000);
-                if (elapsedSec < REQUIRED_AD_SECONDS) {
-                    handleFailure("Saliste de la publicidad antes de tiempo (" + elapsedSec + "s de 15s). Debes esperar a que termine el contador de 15 segundos dentro del anuncio.");
-                    return;
-                }
-
                 try {
                     const log = JSON.parse(localStorage.getItem('bytezone_ad_audit') || '{"shown":0,"fallback":0}');
                     log.shown = (log.shown || 0) + 1;
@@ -243,6 +177,7 @@
 
                 window.broadcastGlobalTelemetry({
                     kind: 'ad',
+                    site: 'bytezone',
                     g: window.CURRENT_GAME_KEY || 'portal',
                     shown: 1,
                     zone: zoneUsed
@@ -253,7 +188,7 @@
                         🎉
                     </div>
                     <h4 class="text-sm font-black text-white uppercase tracking-wider">¡Anuncio Completado!</h4>
-                    <p class="text-[11px] text-emerald-300 font-bold mt-1">Recompensa desbloqueada con éxito.</p>
+                    <p class="text-[11px] text-emerald-300 font-bold mt-1">Impresión verificada y recompensa desbloqueada.</p>
                 `);
 
                 closeHUD(900);
@@ -263,20 +198,57 @@
                 }
             };
 
-            // 4. Ejecución en Cascada oficial de Monetag (12040274 -> 12040276)
-            const tryBackup = () => {
-                if (typeof window.patchPreloadedMonetagStorage === 'function') {
-                    window.patchPreloadedMonetagStorage();
+            // Cuando Monetag confirma el anuncio nativamente (.then), si duró menos de 15s completamos los segundos restantes limpiamente
+            const handleSuccess = (zoneUsed) => {
+                if (isCancelled) return;
+                const elapsedSec = Math.floor((Date.now() - adOpenedAt) / 1000);
+                let remaining = TOTAL_REQUIRED_SECONDS - elapsedSec;
+
+                if (remaining <= 0) {
+                    finalizeGrantReward(zoneUsed);
+                    return;
                 }
+
+                showHUD(`
+                    <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-xl font-black text-cyan-300" id="bzRemSecBox">
+                        ${remaining}s
+                    </div>
+                    <h4 class="text-sm font-black text-white uppercase tracking-wider">Validando Impresión...</h4>
+                    <p class="text-[11px] text-gray-300 mt-1">Mantén esta ventana activa <span id="bzRemSecText" class="text-cyan-300 font-bold">${remaining}s</span> para liberar tu recompensa.</p>
+                `);
+
+                holdTimer = setInterval(() => {
+                    if (isCancelled) {
+                        clearInterval(holdTimer);
+                        holdTimer = null;
+                        return;
+                    }
+                    // Si el usuario minimiza el navegador, el contador se pausa
+                    if (document.hidden) return;
+                    remaining--;
+                    const boxEl = document.getElementById('bzRemSecBox');
+                    const txtEl = document.getElementById('bzRemSecText');
+                    if (boxEl) boxEl.textContent = Math.max(0, remaining) + 's';
+                    if (txtEl) txtEl.textContent = Math.max(0, remaining) + 's';
+                    if (remaining <= 0) {
+                        clearInterval(holdTimer);
+                        holdTimer = null;
+                        finalizeGrantReward(zoneUsed);
+                    }
+                }, 1000);
+            };
+
+            // Ejecución en Cascada 100% Nativa de Monetag (12040274 -> 12040276)
+            const tryBackup = () => {
                 if (typeof window.show_12040276 === 'function') {
                     window.show_12040276().then(() => {
                         handleSuccess('12040276');
                     }).catch((err2) => {
                         console.warn("Monetag Zona 12040276 rechazada:", err2);
-                        handleFailure("No se completó la visualización de los 15 segundos del anuncio.");
+                        handleFailure("Cerraste la publicidad antes de tiempo o no se pudo completar la visualización.");
                     });
                 } else {
-                    handleFailure("No hay anuncios disponibles en este momento. Inténtalo más tarde.");
+                    handleFailure("No hay anuncios disponibles en este momento. Inténtalo de nuevo en unos segundos.");
                 }
             };
 
@@ -302,7 +274,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="../index.html?v=15" class="flex items-center space-x-2 group">
+            <a href="../index.html?v=16" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -314,7 +286,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="../telegram.html?v=15" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="../telegram.html?v=16" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -324,23 +296,23 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-5 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-[11px] sm:text-sm font-medium text-gray-400">
-            <a href="../index.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
+            <a href="../index.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold shadow-md shadow-cyan-500/20">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade</span>
             </a>
-            <a href="../campeones.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="../campeones.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🏆</span>
                 <span>Campeones</span>
             </a>
-            <a href="../hacks.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="../hacks.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & TV</span>
             </a>
-            <a href="../humor.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="../humor.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="../telegram.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="../telegram.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -352,7 +324,7 @@
 
         <!-- BARRA REGRESAR Y RÉCORD PERSONAL -->
         <div class="flex items-center justify-between">
-            <a href="../index.html?v=15" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
+            <a href="../index.html?v=16" class="text-xs text-cyan-400 hover:underline flex items-center space-x-1 bg-gray-900 px-3 py-1.5 rounded-xl border border-gray-800">
                 <span>←</span>
                 <span>Volver al Arcade</span>
             </a>
@@ -446,7 +418,7 @@
             <div id="leaderboardList" class="space-y-2 text-sm"></div>
 
             <div class="mt-4 pt-3 border-t border-gray-800 text-center">
-                <a href="../campeones.html?v=15" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
+                <a href="../campeones.html?v=16" class="inline-flex items-center space-x-2 text-xs font-black text-amber-300 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 px-4 py-2.5 rounded-xl transition">
                     <span>🏆</span>
                     <span>Ver Ganadores de Semanas Anteriores (Salón de Campeones)</span>
                 </a>
@@ -1173,7 +1145,7 @@
 
 ` +
                 `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:
-${pageUrl}?v=15`;
+${pageUrl}?v=16`;
 
             currentPodiumShareText = challengeText;
 
@@ -1183,7 +1155,7 @@ ${pageUrl}?v=15`;
             }
             const tgBtn = document.getElementById('podiumTelegramBtn');
             if (tgBtn) {
-                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=15") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
+                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=16") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
             }
 
             modal.classList.remove('hidden');
@@ -1210,7 +1182,7 @@ ${pageUrl}?v=15`;
 
         function sharePodiumNative() {
             if (!currentPodiumShareText) return;
-            const pageUrl = window.location.href.split('?')[0] + '?v=15';
+            const pageUrl = window.location.href.split('?')[0] + '?v=16';
             if (navigator.share) {
                 navigator.share({ title: 'Reto ByteZone Arcade', text: currentPodiumShareText, url: pageUrl }).catch(() => {});
             } else {

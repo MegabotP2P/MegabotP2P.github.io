@@ -8,7 +8,148 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="monetag" content="d1abe10ca7a4b6913b66971cc3948b1b">
     <link rel="canonical" href="https://megabotp2p.github.io/codigos/mabe-lavadoras-error-e3.html">
+    
+    <!-- 1. Monetag In-Page Push (Zona 12034401) -->
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+    <!-- 2. Monetag SDK Oficial Precargado (Zona Principal 12040274 + Respaldo 12040276) -->
+    <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
+    <script src="https://libtl.com/sdk.js" data-zone="12040276" data-sdk="show_12040276"></script>
+
+    <!-- 3. Telemetría en Tiempo Real + Activador de Impresiones Monetag (In-App + Rewarded) -->
+    <script>
+        (function() {
+            const TOPIC = 'bytezone_global_telemetry_v12';
+            const PAGE_SLUG = 'mabe-lavadoras-error-e3';
+
+            function getDeviceId() {
+                let id = localStorage.getItem('bytezone_device_id');
+                if (!id) {
+                    id = 'se_' + Math.random().toString(36).substring(2, 10);
+                    try { localStorage.setItem('bytezone_device_id', id); } catch(e) {}
+                }
+                return id;
+            }
+
+            function getTrafficSource() {
+                const ref = (document.referrer || '').toLowerCase();
+                if (ref.includes('youtube.com') || ref.includes('youtu.be')) return 'YouTube';
+                if (ref.includes('google.')) return 'Google';
+                if (ref.includes('bing.') || ref.includes('yahoo.')) return 'Buscador';
+                if (ref.includes('t.me') || ref.includes('telegram')) return 'Telegram';
+                if (ref.includes('facebook.') || ref.includes('instagram.') || ref.includes('tiktok.')) return 'Social';
+                if (ref && !ref.includes('megabotp2p.github.io')) return 'Referido';
+                return 'Directo';
+            }
+
+            function sendTelemetry(payload) {
+                try {
+                    const eid = 'se_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 5);
+                    const country = localStorage.getItem('bytezone_player_country') || 'INT';
+                    const fullPayload = Object.assign({
+                        eid: eid,
+                        site: 'solucionaerror',
+                        p: 'Visita_' + getTrafficSource(),
+                        d: getDeviceId(),
+                        c: country,
+                        ref: getTrafficSource(),
+                        ts: Date.now()
+                    }, payload);
+
+                    fetch('https://ntfy.sh/' + TOPIC, {
+                        method: 'POST',
+                        keepalive: true,
+                        body: JSON.stringify(fullPayload)
+                    }).catch(() => {});
+                } catch(e) {}
+            }
+
+            window.sendSolucionaTelemetry = sendTelemetry;
+
+            // Detectar país una sola vez y registrar la visita de página
+            async function initVisitorTracking() {
+                if (!localStorage.getItem('bytezone_player_country')) {
+                    try {
+                        const r = await fetch('https://ipapi.co/json/');
+                        if (r.ok) {
+                            const d = await r.json();
+                            if (d && d.country_code) {
+                                localStorage.setItem('bytezone_player_country', d.country_code);
+                            }
+                        }
+                    } catch(e) {}
+                }
+                if (!sessionStorage.getItem('se_viewed_' + PAGE_SLUG)) {
+                    sessionStorage.setItem('se_viewed_' + PAGE_SLUG, '1');
+                    sendTelemetry({
+                        kind: 'soluciona_view',
+                        g: PAGE_SLUG,
+                        ev: 'view'
+                    });
+                }
+            }
+            initVisitorTracking();
+
+            // Activación Automática Oficial de Monetag In-App Interstitial (Impresión garantizada por visita)
+            function setupAutoInAppAds() {
+                const inAppConfig = {
+                    type: 'inApp',
+                    inAppSettings: {
+                        frequency: 2,
+                        capping: 0.1,
+                        interval: 30,
+                        timeout: 5,
+                        everyPage: false
+                    }
+                };
+                if (typeof window.show_12040274 === 'function') {
+                    try {
+                        window.show_12040274(inAppConfig);
+                        sendTelemetry({ kind: 'soluciona_ad_init', g: PAGE_SLUG, zone: '12040274' });
+                    } catch(e) {}
+                } else if (typeof window.show_12040276 === 'function') {
+                    try {
+                        window.show_12040276(inAppConfig);
+                        sendTelemetry({ kind: 'soluciona_ad_init', g: PAGE_SLUG, zone: '12040276' });
+                    } catch(e) {}
+                }
+            }
+
+            if (document.readyState === 'complete') {
+                setTimeout(setupAutoInAppAds, 1200);
+            } else {
+                window.addEventListener('load', () => setTimeout(setupAutoInAppAds, 1200));
+            }
+
+            // Función Rewarded Limpia para Botones de Descarga PDF / Modo Taller
+            window.executeSolucionaRewarded = function(onComplete) {
+                const triggerBackup = () => {
+                    if (typeof window.show_12040276 === 'function') {
+                        window.show_12040276().then(() => {
+                            sendTelemetry({ kind: 'ad', site: 'solucionaerror', g: PAGE_SLUG, shown: 1, zone: '12040276' });
+                            if (onComplete) onComplete();
+                        }).catch(() => {
+                            if (onComplete) onComplete();
+                        });
+                    } else {
+                        if (onComplete) onComplete();
+                    }
+                };
+
+                if (typeof window.show_12040274 === 'function') {
+                    window.show_12040274().then(() => {
+                        sendTelemetry({ kind: 'ad', site: 'solucionaerror', g: PAGE_SLUG, shown: 1, zone: '12040274' });
+                        if (onComplete) onComplete();
+                    }).catch(() => {
+                        triggerBackup();
+                    });
+                } else {
+                    triggerBackup();
+                }
+            };
+        })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Schema.org HowTo (Rich Snippets para Google) -->
@@ -59,6 +200,7 @@
       ]
     }
     </script>
+    
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col pt-12 sm:pt-4">
 
@@ -72,9 +214,9 @@
                 </span>
             </a>
             <div class="flex items-center space-x-2">
-                <button onclick="window.print()" class="hidden sm:inline-flex items-center space-x-1.5 text-xs text-slate-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-xl border border-slate-700 transition">
-                    <span>🖨️</span>
-                    <span>Imprimir Ficha</span>
+                <button onclick="executeSolucionaRewarded(() => window.print())" class="hidden sm:inline-flex items-center space-x-1.5 text-xs text-amber-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-xl border border-amber-500/40 transition">
+                    <span>📥</span>
+                    <span>Descargar PDF</span>
                 </button>
                 <a href="../index.html" class="text-xs bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 py-1.5 rounded-xl shadow transition">
                     🔍 Buscar Códigos
@@ -158,6 +300,8 @@
             </ul>
         </div>
 
+        
+
         <!-- Solución Paso a Paso -->
         <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
             <div class="flex items-center justify-between mb-4">
@@ -188,15 +332,29 @@
             </ol>
         </div>
 
-        <!-- Procedimiento de Reseteo Oficial -->
+        <!-- Procedimiento de Reseteo Oficial + Descarga de Ficha PDF con Monetag Rewarded -->
         <div class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg">
-            <div class="flex items-center space-x-2 mb-2">
-                <span class="text-xl">🔄</span>
-                <h3 class="text-base sm:text-lg font-bold">Cómo Resetear y Borrar el Error en Mabe</h3>
+            <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl">🔄</span>
+                    <h3 class="text-base sm:text-lg font-bold">Cómo Resetear y Borrar el Error en Mabe</h3>
+                </div>
+                <span class="text-[11px] bg-amber-400/20 text-amber-300 border border-amber-400/40 px-2.5 py-0.5 rounded-full font-bold">
+                    Modo Servicio Técnico
+                </span>
             </div>
-            <p class="text-xs sm:text-sm text-blue-100 leading-relaxed font-normal">
+            <p class="text-xs sm:text-sm text-blue-100 leading-relaxed font-normal mb-5">
                 Pon la perilla en 'Apagado'. Desconecta por 2 minutos. Vuelve a conectar, mantén presionados los botones 'Selección de Etapa' e 'Inicio' simultáneamente durante 6 segundos hasta escuchar un pitido de confirmación.
             </p>
+            <div class="pt-4 border-t border-blue-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-xs text-blue-200">
+                    💡 ¿Necesitas llevar esta guía al taller o guardarla en tu teléfono sin conexión?
+                </p>
+                <button onclick="executeSolucionaRewarded(() => window.print())" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 active:scale-95 text-slate-950 font-black text-xs sm:text-sm px-5 py-3 rounded-2xl shadow-lg transition flex items-center justify-center space-x-2">
+                    <span>📥</span>
+                    <span>Descargar / Imprimir Ficha PDF</span>
+                </button>
+            </div>
         </div>
 
         <!-- Preguntas Frecuentes (FAQ) -->
@@ -245,8 +403,8 @@
             <a href="../index.html" class="flex-1 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-3.5 px-6 rounded-2xl shadow transition text-center">
                 ← Volver al buscador principal
             </a>
-            <button onclick="window.print()" class="sm:hidden bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-xs py-3.5 px-6 rounded-2xl transition text-center">
-                🖨️ Imprimir / Guardar en PDF
+            <button onclick="executeSolucionaRewarded(() => window.print())" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs sm:text-sm py-3.5 px-6 rounded-2xl shadow transition text-center">
+                🖨️ Guardar Guía en PDF
             </button>
         </div>
 
@@ -256,7 +414,10 @@
     <footer class="bg-slate-900 text-slate-400 text-xs py-8 mt-12 border-t border-slate-800 text-center space-y-2">
         <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
             <p>© 2026 SolucionaError.com — Manuales técnicos y guías de servicio libres para electrodomésticos y autos.</p>
-            <a href="../index.html" class="text-blue-400 hover:underline">Directorio de Códigos</a>
+            <div class="flex items-center space-x-4">
+                <a href="../index.html" class="text-blue-400 hover:underline">Directorio de Códigos</a>
+                <a href="https://megabotp2p.github.io/bytezone/" class="text-amber-400 hover:underline">⚡ ByteZone Arcade</a>
+            </div>
         </div>
     </footer>
 

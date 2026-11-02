@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Panel de Métricas | ByteZone</title>
     <meta name="description" content="Panel interno de métricas.">
-    <meta name="keywords" content="juegos arcade online gratis, juegos sin descargar, test de reflejos, test de velocidad de reacción, juego de memoria, torneo semanal, ranking mundial de juegos, noticias de inteligencia artificial, resumen semanal de IA, mini juegos para Telegram, juegos para celular, retos entre amigos, smart, microsoft, dólares, desarrollador, pennsylvania, apple, macbook, google">
+    <meta name="keywords" content="juegos arcade online gratis, juegos sin descargar, test de reflejos, test de velocidad de reacción, juego de memoria, torneo semanal, ranking mundial de juegos, noticias de inteligencia artificial, resumen semanal de IA, mini juegos para Telegram, juegos para celular, retos entre amigos, samsung, alguien, redmi, note, claude, ayuntamiento, york, estamos">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://megabotp2p.github.io/bytezone/stats.html">
     <meta property="og:type" content="website">
@@ -13,11 +13,11 @@
     <meta property="og:title" content="Panel de Métricas | ByteZone">
     <meta property="og:description" content="Panel interno de métricas.">
     <meta property="og:url" content="https://megabotp2p.github.io/bytezone/stats.html">
-    <meta property="og:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&amp;quality=70&amp;strip=all&amp;ssl=1">
+    <meta property="og:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&amp;quality=70&amp;strip=all&amp;ssl=1">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Panel de Métricas | ByteZone">
     <meta name="twitter:description" content="Panel interno de métricas.">
-    <meta name="twitter:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/smart-tv.jpg?fit=1024%2C819&amp;quality=70&amp;strip=all&amp;ssl=1">
+    <meta name="twitter:image" content="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/10/lavadora.jpg?fit=1024%2C640&amp;quality=70&amp;strip=all&amp;ssl=1">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "ByteZone Arcade", "url": "https://megabotp2p.github.io/bytezone/stats.html", "inLanguage": "es", "description": "Panel interno de métricas."}</script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,102 +25,24 @@
     <script>
         // Redirección suave de versión sin destruir las cookies/tokens de atribución de Monetag
         try {
-            if (!location.search.includes('v=15') && !sessionStorage.getItem('bz_v15_reloaded')) {
-                sessionStorage.setItem('bz_v15_reloaded', '1');
+            if (!location.search.includes('v=16') && !sessionStorage.getItem('bz_v16_reloaded')) {
+                sessionStorage.setItem('bz_v16_reloaded', '1');
                 const cleanSearch = location.search.replace(/[?&]v=\d+/g, '');
                 const sep = cleanSearch.includes('?') ? '&' : '?';
-                location.replace(location.pathname + cleanSearch + sep + 'v=15' + location.hash);
+                location.replace(location.pathname + cleanSearch + sep + 'v=16' + location.hash);
             }
         } catch (e) {}
-
-        // Blindaje Nativo del Reproductor de Monetag (15s Obligatorios DENTRO de la Publicidad)
-        // 1. Fuerza temporizador de 15s (autoclose/closeDelay = 15) dentro del anuncio de Monetag.
-        // 2. Oculta y deshabilita el botón Cerrar (X) hasta que el contador llegue a 00:00.
-        // 3. Si el usuario toca "Continuar" y le da "Atrás" enseguida, NO cierra el anuncio (unclosable=true, closeOnClick=false):
-        //    al volver se encuentra el anuncio bloqueado donde quedó el contador hasta cumplir los 15s.
-        // 4. Si minimiza el navegador/teléfono, el contador usa requestAnimationFrame y queda en PAUSA hasta que regrese.
-        (function() {
-            try {
-                const ENFORCED_AD_SECONDS = 15;
-                const origJSONParse = JSON.parse;
-
-                const patchPreloadedMonetagStorage = function() {
-                    [window.localStorage, window.sessionStorage].forEach(function(store) {
-                        if (!store) return;
-                        for (let i = 0; i < store.length; i++) {
-                            const k = store.key(i);
-                            if (k && k.indexOf('tvlngkscvrk') === 0) {
-                                try {
-                                    const raw = store.getItem(k);
-                                    if (raw && (raw.indexOf('"banner_id"') !== -1 || raw.indexOf('"imp_url"') !== -1)) {
-                                        const parsed = origJSONParse(raw);
-                                        if (parsed && typeof parsed === 'object') {
-                                            parsed.autoclose = ENFORCED_AD_SECONDS;
-                                            store.setItem(k, JSON.stringify(parsed));
-                                        }
-                                    }
-                                } catch (err) {}
-                            }
-                        }
-                    });
-                };
-
-                JSON.parse = function(text, reviver) {
-                    const data = origJSONParse.call(this, text, reviver);
-                    try {
-                        if (data && typeof data === 'object') {
-                            if ('banner_id' in data || 'imp_url' in data || 'v9y_url' in data) {
-                                data.autoclose = ENFORCED_AD_SECONDS;
-                            }
-                            if (Array.isArray(data.ads)) {
-                                data.ads.forEach(function(ad) {
-                                    if (ad && typeof ad === 'object') {
-                                        ad.autoclose = ENFORCED_AD_SECONDS;
-                                    }
-                                });
-                            }
-                        }
-                    } catch (err) {}
-                    return data;
-                };
-
-                const origObjectAssign = Object.assign;
-                Object.assign = function(target) {
-                    const res = origObjectAssign.apply(this, arguments);
-                    try {
-                        if (res && typeof res === 'object') {
-                            if ('fakepushZoneId' in res || (typeof res.onClose === 'function' && typeof res.onShow === 'function')) {
-                                res.closeDelay = ENFORCED_AD_SECONDS;
-                                res.fakepushAutoclose = ENFORCED_AD_SECONDS;
-                                res.unclosable = true;
-                                res.closeOnClick = false;
-                                res.autoClose = false;
-                                res.forceCloseButton = false;
-                                res.fakepushForceCloseButton = false;
-                                res.closeWithTgBackButton = false;
-                                res.fakepushCloseWithTgBackButton = false;
-                                res.hintText = '⏳ Permanece 15s viendo el anuncio hasta que se active la X para recibir tu premio';
-                            }
-                        }
-                    } catch (err) {}
-                    return res;
-                };
-
-                window.patchPreloadedMonetagStorage = patchPreloadedMonetagStorage;
-                patchPreloadedMonetagStorage();
-            } catch (e) {}
-        })();
     </script>
 
     <!-- 1. Monetag In-Page Push Banners (Zona 12034401) - Web y Telegram Mini App -->
     <script>(function(s){s.dataset.zone='12034401',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));</script>
 
-    <!-- 2. Monetag Rewarded Interstitial SDK PRECARGADO desde el inicio (Zona Principal 12040274 CPM Alto + Zona Respaldo 12040276) -->
+    <!-- 2. Monetag Rewarded & In-App Interstitial SDK Oficial Precargado (Zona Principal 12040274 + Respaldo 12040276) -->
     <script src="https://libtl.com/sdk.js" data-zone="12040274" data-sdk="show_12040274"></script>
     <script src="https://libtl.com/sdk.js" data-zone="12040276" data-sdk="show_12040276"></script>
     
     <script>
-        // 3. Sistema de Recompensa Auditado con Cascada (Waterfall 12040274 -> 12040276) + Telemetría Global Multi-Teléfono
+        // 3. Sistema de Recompensa 100% Nativo Monetag (Waterfall 12040274 -> 12040276) + In-App Automático + Telemetría Global
         window.NTFY_TELEMETRY_TOPIC = 'bytezone_global_telemetry_v12';
         window.CLOUD_TELEMETRY_ID = 'ff808181a09d98f701a14fdad1ef0d95';
         window.bzAdInProgress = false;
@@ -130,6 +52,7 @@
                 const eid = payload.eid || ('ev_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6));
                 const fullPayload = Object.assign({
                     eid: eid,
+                    site: 'bytezone',
                     p: localStorage.getItem('bytezone_player_name') || 'Jugador',
                     d: localStorage.getItem('bytezone_device_id') || 'dev',
                     c: localStorage.getItem('bytezone_player_country') || 'VE',
@@ -154,15 +77,32 @@
             } catch (e) {}
         };
 
+        // Activar In-App Interstitial automático en la zona de respaldo (12040276) tras 12s de navegación
+        // para garantizar impresiones incluso si el visitante solo navega sin tocar botones VIP
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                try {
+                    if (typeof window.show_12040276 === 'function') {
+                        window.show_12040276({
+                            type: 'inApp',
+                            inAppSettings: {
+                                frequency: 2,
+                                capping: 0.1,
+                                interval: 45,
+                                timeout: 12,
+                                everyPage: false
+                            }
+                        });
+                    }
+                } catch (e) {}
+            }, 1500);
+        });
+
         function executeRewardedAction(rewardCallback) {
             if (window.bzAdInProgress) return;
             window.bzAdInProgress = true;
 
-            if (typeof window.patchPreloadedMonetagStorage === 'function') {
-                window.patchPreloadedMonetagStorage();
-            }
-
-            const REQUIRED_AD_SECONDS = 14;
+            const TOTAL_REQUIRED_SECONDS = 15;
             const adOpenedAt = Date.now();
 
             let modal = document.getElementById('bzRewardedVerificationModal');
@@ -182,18 +122,19 @@
                 modal.style.display = 'flex';
             };
 
+            let holdTimer = null;
             const closeHUD = (delay = 0) => {
+                if (holdTimer) { clearInterval(holdTimer); holdTimer = null; }
                 setTimeout(() => {
                     if (modal && modal.parentNode) modal.style.display = 'none';
                     window.bzAdInProgress = false;
                 }, delay);
             };
 
-            // 1. Mostrar pantalla de carga mientras abre el reproductor bloqueado de Monetag
             showHUD(`
                 <div class="w-12 h-12 mx-auto mb-3 border-4 border-cyan-500/30 border-t-cyan-400 rounded-full animate-spin"></div>
-                <h4 class="text-sm font-black text-white uppercase tracking-wider">Abriendo Publicidad (15s)...</h4>
-                <p class="text-[11px] text-gray-300 mt-1">Debes permanecer en la publicidad hasta que el contador de 15s llegue a 00:00 y se active la X.</p>
+                <h4 class="text-sm font-black text-white uppercase tracking-wider">Cargando Publicidad Oficial...</h4>
+                <p class="text-[11px] text-gray-300 mt-1">Completa la visualización de 15 segundos para desbloquear tu recompensa.</p>
                 <button id="bzCancelAdBtn" class="mt-4 text-[11px] text-gray-400 hover:text-white bg-gray-800/80 px-3 py-1.5 rounded-xl border border-gray-700/60 transition">
                     Cancelar
                 </button>
@@ -208,30 +149,23 @@
                 };
             }
 
-            // 2. Fallo o Cierre Prematuro: Sin recompensa
             const handleFailure = (msg) => {
                 if (isCancelled) return;
+                if (holdTimer) { clearInterval(holdTimer); holdTimer = null; }
                 showHUD(`
                     <div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-amber-500/20 border border-amber-400/50 flex items-center justify-center text-2xl">
                         ⚠️
                     </div>
                     <h4 class="text-sm font-black text-white uppercase tracking-wider">Anuncio Incompleto</h4>
-                    <p class="text-[11px] text-amber-200 mt-1 leading-snug">${msg || 'Debes ver los 15 segundos completos de la publicidad para desbloquear tu recompensa.'}</p>
+                    <p class="text-[11px] text-amber-200 mt-1 leading-snug">${msg || 'Debes completar la visualización del anuncio para recibir tu recompensa.'}</p>
                     <button onclick="document.getElementById('bzRewardedVerificationModal').style.display='none'; window.bzAdInProgress=false;" class="mt-4 text-xs font-bold text-white bg-amber-600 hover:bg-amber-500 px-4 py-2 rounded-xl shadow transition">
                         Entendido
                     </button>
                 `);
             };
 
-            // 3. Éxito estricto: Monetag cerró tras completar el contador de 15s
-            const handleSuccess = (zoneUsed) => {
+            const finalizeGrantReward = (zoneUsed) => {
                 if (isCancelled) return;
-                const elapsedSec = Math.round((Date.now() - adOpenedAt) / 1000);
-                if (elapsedSec < REQUIRED_AD_SECONDS) {
-                    handleFailure("Saliste de la publicidad antes de tiempo (" + elapsedSec + "s de 15s). Debes esperar a que termine el contador de 15 segundos dentro del anuncio.");
-                    return;
-                }
-
                 try {
                     const log = JSON.parse(localStorage.getItem('bytezone_ad_audit') || '{"shown":0,"fallback":0}');
                     log.shown = (log.shown || 0) + 1;
@@ -242,6 +176,7 @@
 
                 window.broadcastGlobalTelemetry({
                     kind: 'ad',
+                    site: 'bytezone',
                     g: window.CURRENT_GAME_KEY || 'portal',
                     shown: 1,
                     zone: zoneUsed
@@ -252,7 +187,7 @@
                         🎉
                     </div>
                     <h4 class="text-sm font-black text-white uppercase tracking-wider">¡Anuncio Completado!</h4>
-                    <p class="text-[11px] text-emerald-300 font-bold mt-1">Recompensa desbloqueada con éxito.</p>
+                    <p class="text-[11px] text-emerald-300 font-bold mt-1">Impresión verificada y recompensa desbloqueada.</p>
                 `);
 
                 closeHUD(900);
@@ -262,20 +197,57 @@
                 }
             };
 
-            // 4. Ejecución en Cascada oficial de Monetag (12040274 -> 12040276)
-            const tryBackup = () => {
-                if (typeof window.patchPreloadedMonetagStorage === 'function') {
-                    window.patchPreloadedMonetagStorage();
+            // Cuando Monetag confirma el anuncio nativamente (.then), si duró menos de 15s completamos los segundos restantes limpiamente
+            const handleSuccess = (zoneUsed) => {
+                if (isCancelled) return;
+                const elapsedSec = Math.floor((Date.now() - adOpenedAt) / 1000);
+                let remaining = TOTAL_REQUIRED_SECONDS - elapsedSec;
+
+                if (remaining <= 0) {
+                    finalizeGrantReward(zoneUsed);
+                    return;
                 }
+
+                showHUD(`
+                    <div class="w-12 h-12 mx-auto mb-2 rounded-2xl bg-cyan-500/20 border border-cyan-400/50 flex items-center justify-center text-xl font-black text-cyan-300" id="bzRemSecBox">
+                        ${remaining}s
+                    </div>
+                    <h4 class="text-sm font-black text-white uppercase tracking-wider">Validando Impresión...</h4>
+                    <p class="text-[11px] text-gray-300 mt-1">Mantén esta ventana activa <span id="bzRemSecText" class="text-cyan-300 font-bold">${remaining}s</span> para liberar tu recompensa.</p>
+                `);
+
+                holdTimer = setInterval(() => {
+                    if (isCancelled) {
+                        clearInterval(holdTimer);
+                        holdTimer = null;
+                        return;
+                    }
+                    // Si el usuario minimiza el navegador, el contador se pausa
+                    if (document.hidden) return;
+                    remaining--;
+                    const boxEl = document.getElementById('bzRemSecBox');
+                    const txtEl = document.getElementById('bzRemSecText');
+                    if (boxEl) boxEl.textContent = Math.max(0, remaining) + 's';
+                    if (txtEl) txtEl.textContent = Math.max(0, remaining) + 's';
+                    if (remaining <= 0) {
+                        clearInterval(holdTimer);
+                        holdTimer = null;
+                        finalizeGrantReward(zoneUsed);
+                    }
+                }, 1000);
+            };
+
+            // Ejecución en Cascada 100% Nativa de Monetag (12040274 -> 12040276)
+            const tryBackup = () => {
                 if (typeof window.show_12040276 === 'function') {
                     window.show_12040276().then(() => {
                         handleSuccess('12040276');
                     }).catch((err2) => {
                         console.warn("Monetag Zona 12040276 rechazada:", err2);
-                        handleFailure("No se completó la visualización de los 15 segundos del anuncio.");
+                        handleFailure("Cerraste la publicidad antes de tiempo o no se pudo completar la visualización.");
                     });
                 } else {
-                    handleFailure("No hay anuncios disponibles en este momento. Inténtalo más tarde.");
+                    handleFailure("No hay anuncios disponibles en este momento. Inténtalo de nuevo en unos segundos.");
                 }
             };
 
@@ -301,7 +273,7 @@
 
     <header class="relative z-30 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            <a href="index.html?v=15" class="flex items-center space-x-2 group">
+            <a href="index.html?v=16" class="flex items-center space-x-2 group">
                 <span class="text-2xl transform group-hover:scale-110 transition">⚡</span>
                 <span class="text-xl font-black tracking-wider bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
                     BYTE<span class="text-white">ZONE</span>
@@ -313,7 +285,7 @@
                     <span id="playerNameDisplay" class="font-bold max-w-[90px] sm:max-w-[120px] truncate">Jugador</span>
                     <span class="text-cyan-400 text-[10px]">✏️</span>
                 </button>
-                <a id="headerActionBtn" href="telegram.html?v=15" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
+                <a id="headerActionBtn" href="telegram.html?v=16" class="flex items-center space-x-1 text-xs bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-bold px-3 py-1.5 rounded-xl shadow-lg shadow-blue-500/25 transition">
                     <span id="headerActionIcon">✈️</span>
                     <span id="headerActionText" class="hidden sm:inline">Telegram</span>
                 </a>
@@ -323,23 +295,23 @@
 
     <nav class="max-w-4xl mx-auto px-4 mt-3 w-full">
         <div class="grid grid-cols-5 gap-1 sm:gap-2 p-1.5 bg-gray-900/85 backdrop-blur-md rounded-2xl border border-gray-800 text-[11px] sm:text-sm font-medium text-gray-400">
-            <a href="index.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="index.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🕹️</span>
                 <span>Arcade</span>
             </a>
-            <a href="campeones.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="campeones.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🏆</span>
                 <span>Campeones</span>
             </a>
-            <a href="hacks.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="hacks.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🤖</span>
                 <span>IA & TV</span>
             </a>
-            <a href="humor.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="humor.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🎭</span>
                 <span>Humor</span>
             </a>
-            <a href="telegram.html?v=15" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
+            <a href="telegram.html?v=16" class="py-2.5 rounded-xl transition flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-1.5 hover:text-white hover:bg-gray-800/50">
                 <span class="text-base sm:text-lg">🚀</span>
                 <span>Comunidad</span>
             </a>
@@ -494,7 +466,7 @@
                         <p class="text-gray-400">Anuncios:</p>
                         <p id="adsDodge" class="font-black text-base text-amber-400">0</p>
                     </div>
-                    <a href="juegos/cyber-dodge.html?v=15" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
+                    <a href="juegos/cyber-dodge.html?v=16" class="bg-amber-500 hover:bg-amber-400 text-gray-950 font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-amber-500/20">
                         Probar
                     </a>
                 </div>
@@ -518,7 +490,7 @@
                         <p class="text-gray-400">Anuncios:</p>
                         <p id="adsDrone" class="font-black text-base text-pink-400">0</p>
                     </div>
-                    <a href="juegos/cyber-drone.html?v=15" class="bg-pink-500 hover:bg-pink-400 text-white font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-pink-500/20">
+                    <a href="juegos/cyber-drone.html?v=16" class="bg-pink-500 hover:bg-pink-400 text-white font-black text-xs px-3.5 py-2 rounded-xl transition shadow-md shadow-pink-500/20">
                         Probar
                     </a>
                 </div>
@@ -603,6 +575,32 @@
             </div>
 
             <div id="auditTestResult" class="hidden p-3.5 rounded-2xl bg-emerald-950/50 border border-emerald-500/40 text-xs text-emerald-200 font-semibold"></div>
+
+            <!-- PANEL DE TRÁFICO EN TIEMPO REAL DE SOLUCIONAERROR.COM -->
+            <div class="mt-4 pt-4 border-t border-gray-800">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <p class="text-xs font-black text-amber-300 flex items-center space-x-1.5">
+                        <span>🛠️</span>
+                        <span>Tráfico en Vivo: SolucionaError.com (YouTube Shorts & Google SEO)</span>
+                    </p>
+                    <a href="../index.html" target="_blank" class="text-[11px] text-cyan-400 hover:underline font-bold">Abrir SolucionaError.com ↗</a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                    <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800">
+                        <p class="text-gray-400">Visitas a Fichas Técnicas:</p>
+                        <p id="solucionaViewsCount" class="font-black text-lg text-amber-400 mt-1">0</p>
+                        <p class="text-[11px] text-gray-500 mt-0.5">Lecturas reales en vivo</p>
+                    </div>
+                    <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800">
+                        <p class="text-gray-400">Fuentes de Tráfico:</p>
+                        <p id="solucionaSourcesText" class="font-bold text-xs text-white mt-1.5 leading-snug">Esperando visitas...</p>
+                    </div>
+                    <div class="p-3 bg-gray-950/80 rounded-2xl border border-gray-800">
+                        <p class="text-gray-400">Códigos Más Consultados:</p>
+                        <p id="solucionaTopPages" class="font-bold text-xs text-cyan-300 mt-1.5 leading-snug">Samsung 4E / Portada</p>
+                    </div>
+                </div>
+            </div>
 
             <!-- MONITOR DE ACTIVIDAD EN TIEMPO REAL DE TODOS LOS TELÉFONOS -->
             <div class="mt-4 pt-4 border-t border-gray-800">
@@ -767,7 +765,7 @@
     <footer class="bg-gray-900/80 border-t border-gray-800 py-6 text-center text-xs text-gray-500 mt-auto">
         <p>© 2026 ByteZone • Portal Autónomo de Mini-Juegos, IA & Entretenimiento Móvil</p>
         <p class="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px]">
-            <a href="stats.html?v=15" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
+            <a href="stats.html?v=16" class="text-gray-400 hover:text-cyan-400 transition flex items-center space-x-1">
                 <span>🤖</span>
                 <span class="underline">Agente CEO & Métricas</span>
             </a>
@@ -1401,7 +1399,7 @@
 
 ` +
                 `👉 ¿Crees que tienes mejores reflejos para quitarme el puesto? Juégalo gratis aquí:
-${pageUrl}?v=15`;
+${pageUrl}?v=16`;
 
             currentPodiumShareText = challengeText;
 
@@ -1411,7 +1409,7 @@ ${pageUrl}?v=15`;
             }
             const tgBtn = document.getElementById('podiumTelegramBtn');
             if (tgBtn) {
-                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=15") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
+                tgBtn.href = "https://t.me/share/url?url=" + encodeURIComponent(pageUrl + "?v=16") + "&text=" + encodeURIComponent(`🔥 ¡Acabo de meterme en el PODIO MUNDIAL! ⚡ Mi Marca en ${gTitle}: ${scoreFormatted} (${wBadge}). ¿Puedes superarme?`);
             }
 
             modal.classList.remove('hidden');
@@ -1438,7 +1436,7 @@ ${pageUrl}?v=15`;
 
         function sharePodiumNative() {
             if (!currentPodiumShareText) return;
-            const pageUrl = window.location.href.split('?')[0] + '?v=15';
+            const pageUrl = window.location.href.split('?')[0] + '?v=16';
             if (navigator.share) {
                 navigator.share({ title: 'Reto ByteZone Arcade', text: currentPodiumShareText, url: pageUrl }).catch(() => {});
             } else {
@@ -2634,13 +2632,14 @@ ${pageUrl}?v=15`;
     <script>
         window.CURRENT_GAME_KEY = 'stats';
 
-        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=14)
+        // LÍNEA BASE HISTÓRICA VERIFICADA (Partidas y Anuncios confirmados hasta v=16)
         const BASELINE_METRICS = {
             stacker: { plays: 28, ads: 8 },
             reflex:  { plays: 22, ads: 5 },
             memory:  { plays: 12, ads: 3 },
             dodge:   { plays: 6,  ads: 1 },
             drone:   { plays: 5,  ads: 1 },
+            soluciona: { views: 0, ads: 0, sources: {}, pages: {} },
             audit:   { shown: 13, fallback: 2, last_zone: '12040274' }
         };
 
@@ -2673,7 +2672,21 @@ ${pageUrl}?v=15`;
             const playerName = evt.p || 'Jugador';
             const countryFlag = (typeof getCountryFlag === 'function') ? getCountryFlag(evt.c || 'VE') : '🌐';
 
-            if (evt.kind === 'game') {
+            if (!globalAggregated.soluciona) {
+                globalAggregated.soluciona = { views: 0, ads: 0, sources: {}, pages: {} };
+            }
+
+            if (evt.kind === 'soluciona_view') {
+                globalAggregated.soluciona.views++;
+                const ref = evt.ref || 'Directo';
+                const pg = evt.g || 'portada';
+                globalAggregated.soluciona.sources[ref] = (globalAggregated.soluciona.sources[ref] || 0) + 1;
+                globalAggregated.soluciona.pages[pg] = (globalAggregated.soluciona.pages[pg] || 0) + 1;
+                addActivityEntry(`🛠️ ${countryFlag} Visita en <strong>SolucionaError</strong> (<code>${pg.slice(0, 28)}</code>) vía <em>${ref}</em>`, 'SOLUCIONA');
+            } else if (evt.kind === 'soluciona_ad_init') {
+                globalAggregated.soluciona.ads++;
+                addActivityEntry(`📢 ${countryFlag} In-App Monetag activado en <strong>SolucionaError</strong> (Zona ${evt.zone || '12040274'})`, 'AUTO-AD', true);
+            } else if (evt.kind === 'game') {
                 const g = evt.g || 'stacker';
                 if (!globalAggregated[g]) globalAggregated[g] = { plays: 0, ads: 0 };
                 
@@ -2690,7 +2703,8 @@ ${pageUrl}?v=15`;
                 if (evt.shown) {
                     globalAggregated.audit.shown++;
                     globalAggregated.audit.last_zone = evt.zone || '12040274';
-                    addActivityEntry(`💰 Impresión Rewarded confirmada en Zona <strong>${evt.zone}</strong> (${countryFlag} ${playerName})`, 'ANUNCIO PAGADO', true);
+                    const siteBadge = evt.site === 'solucionaerror' ? 'SolucionaError' : playerName;
+                    addActivityEntry(`💰 Impresión Rewarded confirmada en Zona <strong>${evt.zone}</strong> (${countryFlag} ${siteBadge})`, 'ANUNCIO PAGADO', true);
                 } else {
                     globalAggregated.audit.fallback++;
                     addActivityEntry(`ℹ️ Filtro de frecuencia Monetag (Misma IP) para ${playerName}`, 'CAPPING');
@@ -2777,6 +2791,27 @@ ${pageUrl}?v=15`;
             if (shownEl) shownEl.textContent = globalAggregated.audit.shown;
             if (fallbackEl) fallbackEl.textContent = globalAggregated.audit.fallback;
             if (lastZoneEl) lastZoneEl.textContent = "Última zona: " + (globalAggregated.audit.last_zone || '12040274');
+
+            // Actualizar Panel de Tráfico de SolucionaError.com
+            if (globalAggregated.soluciona) {
+                const se = globalAggregated.soluciona;
+                const vEl = document.getElementById('solucionaViewsCount');
+                const sEl = document.getElementById('solucionaSourcesText');
+                const pEl = document.getElementById('solucionaTopPages');
+                if (vEl) vEl.textContent = se.views || 0;
+                if (sEl) {
+                    const srcEntries = Object.entries(se.sources || {}).sort((a, b) => b[1] - a[1]);
+                    sEl.textContent = srcEntries.length > 0
+                        ? srcEntries.map(([k, v]) => `${k}: ${v}`).join(' • ')
+                        : 'Esperando visitas...';
+                }
+                if (pEl) {
+                    const pgEntries = Object.entries(se.pages || {}).sort((a, b) => b[1] - a[1]).slice(0, 2);
+                    pEl.textContent = pgEntries.length > 0
+                        ? pgEntries.map(([k, v]) => `${k.replace('samsung-lavadoras-error-', 'Samsung ').slice(0, 22)} (${v})`).join(', ')
+                        : 'Samsung 4E / Portada';
+                }
+            }
         }
 
         async function refreshGlobalMetricsFromCloud(userFeedback = false) {
