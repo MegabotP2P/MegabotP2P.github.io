@@ -35,32 +35,39 @@
       "devices": 3,
       "views": 5,
       "ads": 1
+    },
+    {
+      "week_id": "W2026-11-09",
+      "plays": 3,
+      "devices": 2,
+      "views": 5,
+      "ads": 3
     }
   ],
   "last_news_keys": [
-    "hasta nunca copilot la ia de microsoft d",
-    "sam altman no quiere que ejecutes ia en",
-    "bill gates 70 años fundador de microsoft",
-    "burgos ante la paradoja ferroviaria espa",
-    "los expertos en psicología coinciden qui"
+    "olvídate de usar claude code para clonar",
+    "anthropic pidió frenar el desarrollo de",
+    "bill gates advierte sobre la agitación e",
+    "muy resistente y con una batería difícil",
+    "hundieron 2 millones de neumáticos en el"
   ],
   "last_joke_ids": [
-    34,
-    40,
-    19,
-    22,
-    35,
-    33,
-    31,
-    15,
-    29,
-    30
+    27,
+    43,
+    36,
+    2,
+    6,
+    10,
+    5,
+    26,
+    3,
+    0
   ],
   "last_truth_ids": [
-    7,
-    8,
-    1,
-    0
+    3,
+    6,
+    10,
+    5
   ],
   "champions_archive": {}
 }

@@ -1,8 +1,8 @@
 {
   "version": 14,
-  "week_id": "W2026-11-02",
-  "updated_at": "2026-11-02T08:14:08.436684-04:00",
-  "updated_human": "02/11/2026",
+  "week_id": "W2026-11-09",
+  "updated_at": "2026-11-09T08:44:02.506877-04:00",
+  "updated_human": "09/11/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
     "mode": "Autónomo (Lunes + monitoreo de telemetría cada 6 h)",
@@ -10,7 +10,7 @@
     "vault_games_count": 2
   },
   "video_reel": {
-    "title": "ByteZone TV • Noticiero IA (W2026-11-02)",
+    "title": "ByteZone TV • Noticiero IA (W2026-11-09)",
     "subtitle": "5 Noticias Completas con Imagen + Voz IA + Lectura Completa",
     "duration_label": "5 Noticias",
     "scenes": [
@@ -19,11 +19,11 @@
         "news_index": 0,
         "badge": "NOTICIA #1 • IA & FUTURO",
         "icon": "🤖",
-        "headline": "Hasta nunca, Copilot: la IA de Microsoft desaparecerá pronto de tu televisor",
-        "subtext": "Si ya te cansaste del bloatware y las funciones de IA instaladas a la fuerza en tu televisor, te traemos buenas noticias. Microsoft dejará de ofrecer soporte para usar Copilot desde un Smart TV , por lo que esta función desaparecerá de los dispositivos en cuestión muy pronto.",
-        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2024/01/Copilot-Pro-Sugerencias.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
+        "headline": "Olvídate de usar Claude Code para clonar tus juegos favoritos: Anthropic cambia las reglas por la piratería",
+        "subtext": "Si pensabas pedirle a Claude Code que te ayude a crear tu propio GTA 6 sin saber programar y sin gastar miles de millones de dólares, ve pensando en una idea mejor. Anthropic ha cambiado las reglas del funcionamiento de su plataforma de programación con IA para impedir la piratería .",
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/04/claude-code-app-portada.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
         "source": "Hipertextual IA",
-        "voice_script": "Noticia número 1: Hasta nunca, Copilot: la IA de Microsoft desaparecerá pronto de tu televisor. Si ya te cansaste del bloatware y las funciones de IA instaladas a la fuerza en tu televisor, te traemos buenas noticias. Microsoft dejará de ofrecer soporte para usar Copilot desde un Smart TV , por lo que esta función desaparecerá de los dispositivos en cuestión muy pronto. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 1: Olvídate de usar Claude Code para clonar tus juegos favoritos: Anthropic cambia las reglas por la piratería. Si pensabas pedirle a Claude Code que te ayude a crear tu propio GTA 6 sin saber programar y sin gastar miles de millones de dólares, ve pensando en una idea mejor. Anthropic ha cambiado las reglas del funcionamiento de su plataforma de programación con IA para impedir la piratería . Pasamos a la siguiente noticia.",
         "bg_gradient": "from-cyan-600 to-blue-900",
         "is_vip_hook": false
       },
@@ -32,11 +32,11 @@
         "news_index": 1,
         "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
-        "headline": "Sam Altman no quiere que ejecutes IA en tu PC. La subida de las gráficas que provoca su propia industria se lo está poniendo fácil",
-        "subtext": "Llevo bastante tiempo detrás de una tarjeta gráfica potente no solo para subir de calidad mis juegos en el PC, también para tener un banco de pruebas para IA local. Y es imposible.",
-        "image": "https://i.blogs.es/b45d5d/rtx-5090-portada/1024_2000.jpeg",
+        "headline": "Anthropic pidió frenar el desarrollo de la IA, pero su IA está avanzando el doble de rápido que el año pasado",
+        "subtext": "A mediados de septiembre, Dario Amodei , CEO de Anthropic, lanzó un curioso mensaje : nos estamos pasando de frenada con la IA. Ya en su día comentamos que quizá no era una llamada a la responsabilidad, sino a relajar unas cuentas que podían empezar a no salir .",
+        "image": "https://i.blogs.es/c70121/original/1024_2000.jpeg",
         "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 2: Sam Altman no quiere que ejecutes IA en tu PC. La subida de las gráficas que provoca su propia industria se lo está poniendo fácil. Llevo bastante tiempo detrás de una tarjeta gráfica potente no solo para subir de calidad mis juegos en el PC, también para tener un banco de pruebas para IA local. Y es imposible. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 2: Anthropic pidió frenar el desarrollo de la IA, pero su IA está avanzando el doble de rápido que el año pasado. A mediados de septiembre, Dario Amodei , CEO de Anthropic, lanzó un curioso mensaje : nos estamos pasando de frenada con la IA. Ya en su día comentamos que quizá no era una llamada a la responsabilidad, sino a relajar unas cuentas que podían empezar a no salir . Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
         "is_vip_hook": false
       },
@@ -45,11 +45,11 @@
         "news_index": 2,
         "badge": "NOTICIA #3 • TENDENCIA GLOBAL",
         "icon": "⚡",
-        "headline": "Bill Gates (70 años), fundador de Microsoft, advierte sobre la IA: \"Nunca ha existido un arma tan poderosa\" y exige límites obligatorios por seguridad",
-        "subtext": "La IA está avanzando a tal velocidad que plantea nuevas dificultades para controlar sus posibles usos maliciosos.",
-        "image": "https://i.blogs.es/860bc4/bill-gates-genbeta-1/1024_2000.jpeg",
+        "headline": "Bill Gates advierte sobre la agitación económico-social durante 20 años debido a la IA",
+        "subtext": "Bill Gates cree que tendremos un periodo de 20 años en el que se presentarán muchas transformaciones . Es decir, que habrá cambios económicos y sociales.",
+        "image": "https://i.blogs.es/510c21/bill-gates/1024_2000.jpeg",
         "source": "Genbeta IA",
-        "voice_script": "Noticia número 3: Bill Gates (70 años), fundador de Microsoft, advierte sobre la IA: \"Nunca ha existido un arma tan poderosa\" y exige límites obligatorios por seguridad. La IA está avanzando a tal velocidad que plantea nuevas dificultades para controlar sus posibles usos maliciosos. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 3: Bill Gates advierte sobre la agitación económico-social durante 20 años debido a la IA. Bill Gates cree que tendremos un periodo de 20 años en el que se presentarán muchas transformaciones . Es decir, que habrá cambios económicos y sociales. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-pink-600 to-rose-900",
         "is_vip_hook": false
       },
@@ -58,11 +58,11 @@
         "news_index": 3,
         "badge": "NOTICIA #4 • IMPACTO TECH",
         "icon": "🧠",
-        "headline": "Burgos ante la paradoja ferroviaria española: Renfe es un servicio público pero rechaza poner más trenes por su baja rentabilidad",
-        "subtext": "\"El tren a Extremadura... que lo lleve Renfe\".",
-        "image": "https://i.blogs.es/09dc0a/renfe_class_104_granada_-_loja/1024_2000.jpeg",
+        "headline": "Muy resistente y con una batería difícil de acabar: este Garmin con cargador solar se adelanta al Black Friday con su mejor oferta hasta ahora",
+        "subtext": "Aunque los relojes deportivos con GPS son ideales para practicar cualquier actividad en el exterior, no todos son iguales. Los hay resistentes y con mucha autonomía, pensados para actividades más intensas o largas expediciones.",
+        "image": "https://i.blogs.es/0e7aae/instinct3-solar-amoled/1024_2000.jpeg",
         "source": "Xataka",
-        "voice_script": "Noticia número 4: Burgos ante la paradoja ferroviaria española: Renfe es un servicio público pero rechaza poner más trenes por su baja rentabilidad. \"El tren a Extremadura... que lo lleve Renfe\". Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 4: Muy resistente y con una batería difícil de acabar: este Garmin con cargador solar se adelanta al Black Friday con su mejor oferta hasta ahora. Aunque los relojes deportivos con GPS son ideales para practicar cualquier actividad en el exterior, no todos son iguales. Los hay resistentes y con mucha autonomía, pensados para actividades más intensas o largas expediciones. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-emerald-600 to-teal-900",
         "is_vip_hook": false
       },
@@ -71,11 +71,11 @@
         "news_index": 4,
         "badge": "NOTICIA #5 • CIERRE SEMANAL",
         "icon": "🔥",
-        "headline": "Los expertos en psicología coinciden: quienes eligen guardar silencio durante una discusión presentan una mejor inteligencia emocional",
-        "subtext": "Para la psicóloga Olga Albaladejo , este tipo de silencio puede ser un recurso de regulación emocional. Es lo que ella llama silencio regulador .",
-        "image": "https://i.blogs.es/0ff175/pareja-dicutiendo/1024_2000.jpeg",
+        "headline": "Hundieron 2 millones de neumáticos en el océano para crear un arrecife: 50 años después, el problema continúa",
+        "subtext": "A comienzos de los años 70 se empezaron a tirar neumáticos usados junto al condado de Broward (Florida) . Se trataba de un arrecife artificial.",
+        "image": "https://i.blogs.es/4c7190/fondo-marino-cubierto-de-neumaticos/1024_2000.jpeg",
         "source": "Genbeta",
-        "voice_script": "Noticia número 5: Los expertos en psicología coinciden: quienes eligen guardar silencio durante una discusión presentan una mejor inteligencia emocional. Para la psicóloga Olga Albaladejo , este tipo de silencio puede ser un recurso de regulación emocional. Es lo que ella llama silencio regulador . Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "voice_script": "Noticia número 5: Hundieron 2 millones de neumáticos en el océano para crear un arrecife: 50 años después, el problema continúa. A comienzos de los años 70 se empezaron a tirar neumáticos usados junto al condado de Broward (Florida) . Se trataba de un arrecife artificial. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
         "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
@@ -84,141 +84,141 @@
   "weekly_news": [
     {
       "id": "news_1",
-      "title": "Hasta nunca, Copilot: la IA de Microsoft desaparecerá pronto de tu televisor",
-      "summary": "Si ya te cansaste del bloatware y las funciones de IA instaladas a la fuerza en tu televisor, te traemos buenas noticias. Microsoft dejará de ofrecer soporte para usar Copilot desde un Smart TV , por lo que esta función desaparecerá de los dispositivos en cuestión muy pronto.",
-      "voice_extra": "Si ya te cansaste del bloatware y las funciones de IA instaladas a la fuerza en tu televisor, te traemos buenas noticias. Microsoft dejará de ofrecer soporte para usar Copilot desde un Smart TV , por lo que esta función desaparecerá de los dispositivos en cuestión muy pronto.",
+      "title": "Olvídate de usar Claude Code para clonar tus juegos favoritos: Anthropic cambia las reglas por la piratería",
+      "summary": "Si pensabas pedirle a Claude Code que te ayude a crear tu propio GTA 6 sin saber programar y sin gastar miles de millones de dólares, ve pensando en una idea mejor. Anthropic ha cambiado las reglas del funcionamiento de su plataforma de programación con IA para impedir la piratería .",
+      "voice_extra": "Si pensabas pedirle a Claude Code que te ayude a crear tu propio GTA 6 sin saber programar y sin gastar miles de millones de dólares, ve pensando en una idea mejor. Anthropic ha cambiado las reglas del funcionamiento de su plataforma de programación con IA para impedir la piratería .",
       "full_paragraphs": [
-        "Si ya te cansaste del bloatware y las funciones de IA instaladas a la fuerza en tu televisor, te traemos buenas noticias. Microsoft dejará de ofrecer soporte para usar Copilot desde un Smart TV , por lo que esta función desaparecerá de los dispositivos en cuestión muy pronto. La decisión no impacta en una sola marca de aparatos, sino en todos aquellos que incorporaron el asistente virtual de la firma de Redmond.",
-        "Según reporta Windows Central , LG ya informó a los usuarios de sus televisores con webOS sobre la discontinuación de Microsoft Copilot. El fabricante coreano ratificó que la plataforma impulsada por IA dejará de estar disponible en todos los TV compatibles, independientemente de su marca y modelo.",
-        "“Nos gustaría informarle que Microsoft decidió recientemente finalizar el soporte para el funcionamiento de Copilot en todos los televisores, incluyendo la característica disponible en nuestros televisores LG. Como resultado, la función habilitada para Copilot en su televisor ya no está disponible y puede dejar de funcionar en breve”, indica el mensaje emergente que en los últimos días comenzaron a recibir los usuarios.",
-        "Todavía faltan conocer detalles más finos sobre cuándo desaparecerá Microsoft Copilot de tu televisor. No obstante, puede que sea más pronto de lo que imaginas. El mismo mensaje indica luego que el plan de los de Redmond es discontinuar esta función durante 2026 , así que, considerando que solo le quedan dos meses al año, puede que se concrete en meras semanas.",
-        "La discontinuación de Microsoft Copilot en televisores llega menos de un año después de su lanzamiento. De hecho, tanto los de Redmond como los principales fabricantes de Smart TV quedaron en el centro de una polémica por instalar el asistente de IA de forma forzada y sin permitir su eliminación .",
-        "En el caso de LG, la compañía salió a aclarar rápidamente que lo que se instalaba sin solicitar permiso explícito de los usuarios no era una aplicación, sino un acceso directo que abría Microsoft Copilot en el navegador del televisor. Y si bien reconoció que en un principio no se podía borrar, estaba trabajando en opciones para permitirlo."
+        "Si pensabas pedirle a Claude Code que te ayude a crear tu propio GTA 6 sin saber programar y sin gastar miles de millones de dólares, ve pensando en una idea mejor. Anthropic ha cambiado las reglas del funcionamiento de su plataforma de programación con IA para impedir la piratería .",
+        "A finales de la semana pasada, usuarios de Claude Code se toparon con que la inteligencia artificial había recibido un cambio clave. Una orden emitida desde los servidores de Anthropic determinó que la herramienta ya no puede clonar juegos ni realizar ciertas tareas de ingeniería inversa.",
+        "Desde la empresa confirmaron que la modificación buscaba desalentar las intervenciones sobre propiedades intelectuales alcanzadas por derechos de autor. \"Añadimos dos frases al prompt de Claude Code en Opus 5.5 para disuadirlo de recrear el juego específico de otra persona, porque usar Claude para infringir propiedad intelectual va en contra de nuestra política de uso. Los juegos originales, los juegos de género y los juegos construidos a partir de tus propios diseños y activos están pensados para seguir funcionando\", explicó Addy Osmani, empleado de Anthropic.",
+        "Según parece, el bloqueo a clonar juegos de propiedades intelectuales protegidas impacta sobre Opus 5.5 y no sobre versiones previas de la IA . Esto tal vez se deba a que los resultados con modelos anteriores no son tan convincentes como los de la opción más reciente y potente. Sea como sea, Claude Code ya no será la principal aliada de quienes intenten recrear títulos sin autorización.",
+        "La decisión ya está causando polémica, como no podía ser de otra manera. Muchas de las respuestas al tuit de Osmani indican que los juegos a los que hacen referencia no pertenecen a Anthropic. Por ende, sostienen que están tomando atribuciones que no les corresponden . Los responsables de Claude Code refieren que la piratería es una violación de sus términos de servicio. Además, es lógico que quieran protegerse de cualquier represalia legal que puedan sufrir por parte de los estudios afectados.",
+        "El punto clave de esta historia es que el bloqueo de Claude Code no se limita a tratar de recrear juegos protegidos con derechos de autor . Usuarios de la plataforma de programación indican que las labores de ingeniería inversa ya no funcionan en Opus 5.5, incluso cuando intentan aplicarlas a código creados por ellos mismos."
       ],
-      "full_voice_script": "Hasta nunca, Copilot: la IA de Microsoft desaparecerá pronto de tu televisor. Noticia publicada por Hipertextual IA. Si ya te cansaste del bloatware y las funciones de IA instaladas a la fuerza en tu televisor, te traemos buenas noticias. Microsoft dejará de ofrecer soporte para usar Copilot desde un Smart TV , por lo que esta función desaparecerá de los dispositivos en cuestión muy pronto. La decisión no impacta en una sola marca de aparatos, sino en todos aquellos que incorporaron el asistente virtual de la firma de Redmond. Según reporta Windows Central , LG ya informó a los usuarios de sus televisores con webOS sobre la discontinuación de Microsoft Copilot. El fabricante coreano ratificó que la plataforma impulsada por IA dejará de estar disponible en todos los TV compatibles, independientemente de su marca y modelo. “Nos gustaría informarle que Microsoft decidió recientemente finalizar el soporte para el funcionamiento de Copilot en todos los televisores, incluyendo la característica disponible en nuestros televisores LG. Como resultado, la función habilitada para Copilot en su televisor ya no está disponible y puede dejar de funcionar en breve”, indica el mensaje emergente que en los últimos días comenzaron a recibir los usuarios. Todavía faltan conocer detalles más finos sobre cuándo desaparecerá Microsoft Copilot de tu televisor. No obstante, puede que sea más pronto de lo que imaginas. El mismo mensaje indica luego que el plan de los de Redmond es discontinuar esta función durante 2026 , así que, considerando que solo le quedan dos meses al año, puede que se concrete en meras semanas. La discontinuación de Microsoft Copilot en televisores llega menos de un año después de su lanzamiento. De hecho, tanto los de Redmond como los principales fabricantes de Smart TV quedaron en el centro de una polémica por instalar el asistente de IA de forma forzada y sin permitir su eliminación . En el caso de LG, la compañía salió a aclarar rápidamente que lo que se instalaba sin solicitar permiso explícito de los usuarios no era una aplicación, sino un acceso directo que abría Microsoft Copilot en el navegador del televisor. Y si bien reconoció que en un principio no se podía borrar, estaba trabajando en opciones para permitirlo.",
-      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2024/01/Copilot-Pro-Sugerencias.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
+      "full_voice_script": "Olvídate de usar Claude Code para clonar tus juegos favoritos: Anthropic cambia las reglas por la piratería. Noticia publicada por Hipertextual IA. Si pensabas pedirle a Claude Code que te ayude a crear tu propio GTA 6 sin saber programar y sin gastar miles de millones de dólares, ve pensando en una idea mejor. Anthropic ha cambiado las reglas del funcionamiento de su plataforma de programación con IA para impedir la piratería . A finales de la semana pasada, usuarios de Claude Code se toparon con que la inteligencia artificial había recibido un cambio clave. Una orden emitida desde los servidores de Anthropic determinó que la herramienta ya no puede clonar juegos ni realizar ciertas tareas de ingeniería inversa. Desde la empresa confirmaron que la modificación buscaba desalentar las intervenciones sobre propiedades intelectuales alcanzadas por derechos de autor. \"Añadimos dos frases al prompt de Claude Code en Opus 5.5 para disuadirlo de recrear el juego específico de otra persona, porque usar Claude para infringir propiedad intelectual va en contra de nuestra política de uso. Los juegos originales, los juegos de género y los juegos construidos a partir de tus propios diseños y activos están pensados para seguir funcionando\", explicó Addy Osmani, empleado de Anthropic. Según parece, el bloqueo a clonar juegos de propiedades intelectuales protegidas impacta sobre Opus 5.5 y no sobre versiones previas de la IA . Esto tal vez se deba a que los resultados con modelos anteriores no son tan convincentes como los de la opción más reciente y potente. Sea como sea, Claude Code ya no será la principal aliada de quienes intenten recrear títulos sin autorización. La decisión ya está causando polémica, como no podía ser de otra manera. Muchas de las respuestas al tuit de Osmani indican que los juegos a los que hacen referencia no pertenecen a Anthropic. Por ende, sostienen que están tomando atribuciones que no les corresponden . Los responsables de Claude Code refieren que la piratería es una violación de sus términos de servicio. Además, es lógico que quieran protegerse de cualquier represalia legal que puedan sufrir por parte de los estudios afectados. El punto clave de esta historia es que el bloqueo de Claude Code no se limita a tratar de recrear juegos protegidos con derechos de autor . Usuarios de la plataforma de programación indican que las labores de ingeniería inversa ya no funcionan en Opus 5.5, incluso cuando intentan aplicarlas a código creados por ellos mismos.",
+      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/04/claude-code-app-portada.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
       "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/hasta-nunca-copilot-la-ia-de-microsoft-desaparecera-pronto-de-tu-televisor/",
-      "published": "2026-11-01T17:00:00+00:00"
+      "link": "https://hipertextual.com/inteligencia-artificial/olvidate-de-usar-claude-code-para-clonar-tus-juegos-favoritos/",
+      "published": "2026-11-02T20:23:57+00:00"
     },
     {
       "id": "news_2",
-      "title": "Sam Altman no quiere que ejecutes IA en tu PC. La subida de las gráficas que provoca su propia industria se lo está poniendo fácil",
-      "summary": "Llevo bastante tiempo detrás de una tarjeta gráfica potente no solo para subir de calidad mis juegos en el PC, también para tener un banco de pruebas para IA local. Y es imposible.",
-      "voice_extra": "Llevo bastante tiempo detrás de una tarjeta gráfica potente no solo para subir de calidad mis juegos en el PC, también para tener un banco de pruebas para IA local. Y es imposible.",
+      "title": "Anthropic pidió frenar el desarrollo de la IA, pero su IA está avanzando el doble de rápido que el año pasado",
+      "summary": "A mediados de septiembre, Dario Amodei , CEO de Anthropic, lanzó un curioso mensaje : nos estamos pasando de frenada con la IA. Ya en su día comentamos que quizá no era una llamada a la responsabilidad, sino a relajar unas cuentas que podían empezar a no salir .",
+      "voice_extra": "A mediados de septiembre, Dario Amodei , CEO de Anthropic, lanzó un curioso mensaje : nos estamos pasando de frenada con la IA. Ya en su día comentamos que quizá no era una llamada a la responsabilidad, sino a relajar unas cuentas que podían empezar a no salir .",
       "full_paragraphs": [
-        "Llevo bastante tiempo detrás de una tarjeta gráfica potente no solo para subir de calidad mis juegos en el PC, también para tener un banco de pruebas para IA local. Y es imposible. Se me antojó una RTX 5090 , después fui rebajando expectativas hasta conformarme con modelos mucho más antiguos (tengo un PC con una \"modesta\" RTX 4060 ). Pero nada, no tengo presupuesto para conseguir un equipo decente. Todo por la crisis de componentes provocada por la propia IA.",
-        "Los números . Que el hardware haya subido es algo que todos los que observamos el mercado de PC ya sabemos. Y se le pueden poner números a esa subida: la RTX 5090, concretamente, ha doblado su precio . En términos generales, las tarjetas gráficas han subido más de un 30 % estos últimos tres meses (datos de Price Squirrel , vía Reddit ).",
-        "Lo curioso no es solo que se hayan encarecido las gráficas más actuales y potentes, es que hasta la segunda mano ha subido para las generaciones anteriores. Conseguir una RTX 3090 a buen precio es misión imposible, por ejemplo: basta una búsqueda por sitios como Wallapop para descubrir que están por encima de los mil euros (que se paguen es otra historia). Pagar más de mil euros por modelos de seis años, sin saber qué uso han tenido, me parece una locura.",
-        "Las tarjetas gráficas son la nueva fiebre del oro . Si renovar solo está al alcance de quienes tienen una cuenta bancaria a prueba de caprichos, el que ya posee una tarjeta tiene un tesoro. Es casi literal, porque la reventa puede generarle un gran beneficio. Y acaba impactando sobre los jugadores, que ven imposible actualizar sus equipos por una especulación generada por el mercado de la IA .",
-        "Los centros de datos no utilizan tarjetas gráficas de uso particular, pero sí que canibalizan el esfuerzo de la fabricación de componentes . A marcas como Samsung, SK Hynix o Micron les sale más rentable fabricar HBM para los aceleradores de IA que GDDR para tarjetas gráficas. Esta decisión logra que toda la tecnología se encarezca , especialmente las tarjetas gráficas.",
-        "De rebote, beneficio para quienes provocan la crisis . Los componentes también les salen más caros a los centros de datos, pero estos tienen una ventaja: las compras en alto volumen y a futuro. Con esto logran rebajar parte del incremento en los costes. Además, la idea es que recuperen esta inversión con beneficios, al menos en teoría. La práctica no lo deja tan claro ."
+        "A mediados de septiembre, Dario Amodei , CEO de Anthropic, lanzó un curioso mensaje : nos estamos pasando de frenada con la IA. Ya en su día comentamos que quizá no era una llamada a la responsabilidad, sino a relajar unas cuentas que podían empezar a no salir . El tiempo pone cada cosa en su lugar y un estudio independiente con acceso a datos internos de la compañía estima que los modelos de Anthropic están mejorando casi al doble de velocidad que antes.",
+        "¿La clave? El impulso de la IA para desarrollar IA.",
+        "En corto . Hace unos días, la organización sin ánimo de lucro METR (Model Evaluation and Threat Research) publicó el fruto de meses de trabajo: un análisis sobre cuánto acelera la IA su propio desarrollo dentro de Anthropic. La evaluación se realizó en el periodo entre el 12 de agosto y el 29 de octubre, por lo que empezó antes de que Amodei lanzara el mensaje, y concluyó que la compañía mejora las capacidades de sus modelos en tareas bien definidas en un tiempo alrededor de dos veces más rápido que el que tenía entre marzo de 2024 y octubre de 2025.",
+        "Dejan un margen de entre 1,3 y 3 veces más rápido y para sacar esas conclusiones se apoyan en el AECI, la versión de Anthropic del Epoch Capabilities Index que resume en un número el rendimiento de un modelo en un conjunto de tareas de prueba (los benchmarks, vamos). Así, estiman que, desde octubre de 2025, crece 1,9 veces más rápido.",
+        "La causa . METR afirma estar seguro de que la aceleración no se debe a que haya crecido más deprisa la potencia de cálculo para el entrenamiento. Este problema lo llevamos sufriendo los consumidores ya un año (y es lo que ha acarreado la actual crisis de componentes que no tiene final a la vista). La estimación subjetiva de los investigadores es que la mayor parte de la aceleración actual, quizá un 80%, se debe al uso de IA en el propio desarrollo de la IA.",
+        "Aquí confiesan que no hay consenso y ese impulso puede deberse únicamente al uso de IA para entrenar la IA ( algo que la propia Anthropic no ha escondido , vaya), pero también a un aumento de las contrataciones. En el análisis exponen las declaraciones de los investigadores entrevistados, que apuntan que la IA acelera el trabajo debido a su asistencia a los humanos, aunque aún no hace aportaciones autónomas en las partes más cruciales del entrenamiento."
       ],
-      "full_voice_script": "Sam Altman no quiere que ejecutes IA en tu PC. La subida de las gráficas que provoca su propia industria se lo está poniendo fácil. Noticia publicada por Xataka IA & Tech. Llevo bastante tiempo detrás de una tarjeta gráfica potente no solo para subir de calidad mis juegos en el PC, también para tener un banco de pruebas para IA local. Y es imposible. Se me antojó una RTX 5090 , después fui rebajando expectativas hasta conformarme con modelos mucho más antiguos (tengo un PC con una \"modesta\" RTX 4060 ). Pero nada, no tengo presupuesto para conseguir un equipo decente. Todo por la crisis de componentes provocada por la propia IA. Los números . Que el hardware haya subido es algo que todos los que observamos el mercado de PC ya sabemos. Y se le pueden poner números a esa subida: la RTX 5090, concretamente, ha doblado su precio . En términos generales, las tarjetas gráficas han subido más de un 30 % estos últimos tres meses (datos de Price Squirrel , vía Reddit ). Lo curioso no es solo que se hayan encarecido las gráficas más actuales y potentes, es que hasta la segunda mano ha subido para las generaciones anteriores. Conseguir una RTX 3090 a buen precio es misión imposible, por ejemplo: basta una búsqueda por sitios como Wallapop para descubrir que están por encima de los mil euros (que se paguen es otra historia). Pagar más de mil euros por modelos de seis años, sin saber qué uso han tenido, me parece una locura. Las tarjetas gráficas son la nueva fiebre del oro . Si renovar solo está al alcance de quienes tienen una cuenta bancaria a prueba de caprichos, el que ya posee una tarjeta tiene un tesoro. Es casi literal, porque la reventa puede generarle un gran beneficio. Y acaba impactando sobre los jugadores, que ven imposible actualizar sus equipos por una especulación generada por el mercado de la IA . Los centros de datos no utilizan tarjetas gráficas de uso particular, pero sí que canibalizan el esfuerzo de la fabricación de componentes . A marcas como Samsung, SK Hynix o Micron les sale más rentable fabricar HBM para los aceleradores de IA que GDDR para tarjetas gráficas. Esta decisión logra que toda la tecnología se encarezca , especialmente las tarjetas gráficas. De rebote, beneficio para quienes provocan la crisis . Los componentes también les salen más caros a los centros de datos, pero estos tienen una ventaja: las compras en alto volumen y a futuro. Con esto logran rebajar parte del incremento en los costes. Además, la idea es que recuperen esta inversión con beneficios, al menos en teoría. La práctica no lo deja tan claro .",
-      "image": "https://i.blogs.es/b45d5d/rtx-5090-portada/1024_2000.jpeg",
+      "full_voice_script": "Anthropic pidió frenar el desarrollo de la IA, pero su IA está avanzando el doble de rápido que el año pasado. Noticia publicada por Xataka IA & Tech. A mediados de septiembre, Dario Amodei , CEO de Anthropic, lanzó un curioso mensaje : nos estamos pasando de frenada con la IA. Ya en su día comentamos que quizá no era una llamada a la responsabilidad, sino a relajar unas cuentas que podían empezar a no salir . El tiempo pone cada cosa en su lugar y un estudio independiente con acceso a datos internos de la compañía estima que los modelos de Anthropic están mejorando casi al doble de velocidad que antes. ¿La clave? El impulso de la IA para desarrollar IA. En corto . Hace unos días, la organización sin ánimo de lucro METR (Model Evaluation and Threat Research) publicó el fruto de meses de trabajo: un análisis sobre cuánto acelera la IA su propio desarrollo dentro de Anthropic. La evaluación se realizó en el periodo entre el 12 de agosto y el 29 de octubre, por lo que empezó antes de que Amodei lanzara el mensaje, y concluyó que la compañía mejora las capacidades de sus modelos en tareas bien definidas en un tiempo alrededor de dos veces más rápido que el que tenía entre marzo de 2024 y octubre de 2025. Dejan un margen de entre 1,3 y 3 veces más rápido y para sacar esas conclusiones se apoyan en el AECI, la versión de Anthropic del Epoch Capabilities Index que resume en un número el rendimiento de un modelo en un conjunto de tareas de prueba (los benchmarks, vamos). Así, estiman que, desde octubre de 2025, crece 1,9 veces más rápido. La causa . METR afirma estar seguro de que la aceleración no se debe a que haya crecido más deprisa la potencia de cálculo para el entrenamiento. Este problema lo llevamos sufriendo los consumidores ya un año (y es lo que ha acarreado la actual crisis de componentes que no tiene final a la vista). La estimación subjetiva de los investigadores es que la mayor parte de la aceleración actual, quizá un 80%, se debe al uso de IA en el propio desarrollo de la IA. Aquí confiesan que no hay consenso y ese impulso puede deberse únicamente al uso de IA para entrenar la IA ( algo que la propia Anthropic no ha escondido , vaya), pero también a un aumento de las contrataciones. En el análisis exponen las declaraciones de los investigadores entrevistados, que apuntan que la IA acelera el trabajo debido a su asistencia a los humanos, aunque aún no hace aportaciones autónomas en las partes más cruciales del entrenamiento.",
+      "image": "https://i.blogs.es/c70121/original/1024_2000.jpeg",
       "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/robotica-e-ia/sam-altman-no-quiere-que-ejecutes-ia-tu-pc-subida-graficas-que-provoca-su-propia-industria-se-esta-poniendo-facil",
-      "published": "2026-11-02T11:45:27+00:00"
+      "link": "https://www.xataka.com/robotica-e-ia/anthropic-pidio-frenar-desarrollo-ia-su-ia-esta-avanzando-doble-rapido-que-ano-pasado",
+      "published": "2026-11-09T12:31:03+00:00"
     },
     {
       "id": "news_3",
-      "title": "Bill Gates (70 años), fundador de Microsoft, advierte sobre la IA: \"Nunca ha existido un arma tan poderosa\" y exige límites obligatorios por seguridad",
-      "summary": "La IA está avanzando a tal velocidad que plantea nuevas dificultades para controlar sus posibles usos maliciosos.",
-      "voice_extra": "La IA está avanzando a tal velocidad que plantea nuevas dificultades para controlar sus posibles usos maliciosos.",
+      "title": "Bill Gates advierte sobre la agitación económico-social durante 20 años debido a la IA",
+      "summary": "Bill Gates cree que tendremos un periodo de 20 años en el que se presentarán muchas transformaciones . Es decir, que habrá cambios económicos y sociales.",
+      "voice_extra": "Bill Gates cree que tendremos un periodo de 20 años en el que se presentarán muchas transformaciones . Es decir, que habrá cambios económicos y sociales.",
       "full_paragraphs": [
-        "La IA está avanzando a tal velocidad que plantea nuevas dificultades para controlar sus posibles usos maliciosos. Aunque las grandes compañías tecnológicas continúan desarrollando modelos cada vez más capaces, algunas de las figuras más importantes de la industria consideran que confiar exclusivamente en las empresas para garantizar su seguridad ya no es suficiente, y Bill Gates ha sido el último en sumarse a esta corriente .",
-        "El cofundador de Microsoft habló sobre esta cuestión en una entrevista concedida a NBC News en la que reclamó una mayor intervención de los gobiernos. Así, el empresario considera imprescindible establecer mecanismos de vigilancia y protección que las compañías estén obligadas a incorporar en sus sistemas.",
-        "Durante la conversación, Gates aseguró que \"nadie piensa que la autorregulación sea suficiente\". Para el empresario, tanto los responsables políticos como las fuerzas de seguridad deben participar en la definición de las medidas de protección, sobre todo si existe la posibilidad de que estas herramientas se utilicen para cometer delitos o desarrollar ataques informáticos.",
-        "Cuando habla de las consecuencias que podría tener un uso malintencionado de la tecnología, su advertencia va un paso más lejos. Gates defiende que nunca ha existido un arma tan poderosa como la combinación de personas con malas intenciones y herramientas avanzadas de IA , así que menciona riesgos como los ciberataques contra infraestructuras como resultado de esto. Además, también habla de la posibilidad de que grupos pequeños adquieran capacidades que antes estaban reservadas a grandes Estados.",
-        "Pese a todo lo que compartió, Gates no propone paralizar el desarrollo de la inteligencia artificial. De hecho, su planteamiento consiste en incorporar sistemas de supervisión que permitan conocer qué están haciendo los modelos mientras se establecen medidas de seguridad obligatorias. Tal y como detalló, estas exigencias supondrían un coste adicional para las empresas sin frenar de forma considerable sus avances.",
-        "La dificultad estará en conseguir que gobiernos y compañías adopten criterios comunes, especialmente en un contexto de competencia tecnológica internacional. Gates considera que alcanzar acuerdos globales podría resultar incluso más complicado que las negociaciones sobre armamento nuclear durante la Guerra Fría . Su advertencia apunta a una cuestión fundamental para el futuro de la inteligencia artificial: quién debe supervisar sus capacidades y hasta dónde debería permitirse que actúe sin intervención humana."
+        "Bill Gates cree que tendremos un periodo de 20 años en el que se presentarán muchas transformaciones . Es decir, que habrá cambios económicos y sociales. Durante este periodo pueden surgir algunos problemas. Incluso en un escenario en el que se maneje bien la tecnología, hay que atravesar un duro proceso de transición.",
+        "“Mi gran preocupación es este periodo de transición de 20 años. Hay ganadores y perdedores. Es un periodo muy disruptivo” , explicaba el cofundador de Microsoft.",
+        "Es un periodo de más o menos 20 años, dependiendo de cómo avancen las tecnologías y si decidimos frenarlas o no, y según él, tampoco está garantizada la abundancia .",
+        "Lo que preocupa es cómo vamos a atravesar este periodo . Habrá tanto cosas buenas como malas, ganadores y perdedores. El problema es el periodo de transición a esta posible abundancia.",
+        "En nuestro futuro tendremos la c ombinación de inteligencia artificial y robots humanoides . De esta forma podemos automatizar muchos trabajos físicos. Por ejemplo, podemos construir casas o producir alimentos. También pueden realizar operaciones quirúrgicas. De esta forma podemos reducir las carencias de bienes y servicios.",
+        "Por ello es importante pensar en qué aspectos podemos reservar a las personas ."
       ],
-      "full_voice_script": "Bill Gates (70 años), fundador de Microsoft, advierte sobre la IA: \"Nunca ha existido un arma tan poderosa\" y exige límites obligatorios por seguridad. Noticia publicada por Genbeta IA. La IA está avanzando a tal velocidad que plantea nuevas dificultades para controlar sus posibles usos maliciosos. Aunque las grandes compañías tecnológicas continúan desarrollando modelos cada vez más capaces, algunas de las figuras más importantes de la industria consideran que confiar exclusivamente en las empresas para garantizar su seguridad ya no es suficiente, y Bill Gates ha sido el último en sumarse a esta corriente . El cofundador de Microsoft habló sobre esta cuestión en una entrevista concedida a NBC News en la que reclamó una mayor intervención de los gobiernos. Así, el empresario considera imprescindible establecer mecanismos de vigilancia y protección que las compañías estén obligadas a incorporar en sus sistemas. Durante la conversación, Gates aseguró que \"nadie piensa que la autorregulación sea suficiente\". Para el empresario, tanto los responsables políticos como las fuerzas de seguridad deben participar en la definición de las medidas de protección, sobre todo si existe la posibilidad de que estas herramientas se utilicen para cometer delitos o desarrollar ataques informáticos. Cuando habla de las consecuencias que podría tener un uso malintencionado de la tecnología, su advertencia va un paso más lejos. Gates defiende que nunca ha existido un arma tan poderosa como la combinación de personas con malas intenciones y herramientas avanzadas de IA , así que menciona riesgos como los ciberataques contra infraestructuras como resultado de esto. Además, también habla de la posibilidad de que grupos pequeños adquieran capacidades que antes estaban reservadas a grandes Estados. Pese a todo lo que compartió, Gates no propone paralizar el desarrollo de la inteligencia artificial. De hecho, su planteamiento consiste en incorporar sistemas de supervisión que permitan conocer qué están haciendo los modelos mientras se establecen medidas de seguridad obligatorias. Tal y como detalló, estas exigencias supondrían un coste adicional para las empresas sin frenar de forma considerable sus avances. La dificultad estará en conseguir que gobiernos y compañías adopten criterios comunes, especialmente en un contexto de competencia tecnológica internacional. Gates considera que alcanzar acuerdos globales podría resultar incluso más complicado que las negociaciones sobre armamento nuclear durante la Guerra Fría . Su advertencia apunta a una cuestión fundamental para el futuro de la inteligencia artificial: quién debe supervisar sus capacidades y hasta dónde debería permitirse que actúe sin intervención humana.",
-      "image": "https://i.blogs.es/860bc4/bill-gates-genbeta-1/1024_2000.jpeg",
+      "full_voice_script": "Bill Gates advierte sobre la agitación económico-social durante 20 años debido a la IA. Noticia publicada por Genbeta IA. Bill Gates cree que tendremos un periodo de 20 años en el que se presentarán muchas transformaciones . Es decir, que habrá cambios económicos y sociales. Durante este periodo pueden surgir algunos problemas. Incluso en un escenario en el que se maneje bien la tecnología, hay que atravesar un duro proceso de transición. “Mi gran preocupación es este periodo de transición de 20 años. Hay ganadores y perdedores. Es un periodo muy disruptivo” , explicaba el cofundador de Microsoft. Es un periodo de más o menos 20 años, dependiendo de cómo avancen las tecnologías y si decidimos frenarlas o no, y según él, tampoco está garantizada la abundancia . Lo que preocupa es cómo vamos a atravesar este periodo . Habrá tanto cosas buenas como malas, ganadores y perdedores. El problema es el periodo de transición a esta posible abundancia. En nuestro futuro tendremos la c ombinación de inteligencia artificial y robots humanoides . De esta forma podemos automatizar muchos trabajos físicos. Por ejemplo, podemos construir casas o producir alimentos. También pueden realizar operaciones quirúrgicas. De esta forma podemos reducir las carencias de bienes y servicios. Por ello es importante pensar en qué aspectos podemos reservar a las personas .",
+      "image": "https://i.blogs.es/510c21/bill-gates/1024_2000.jpeg",
       "source": "Genbeta IA",
-      "link": "https://www.genbeta.com/inteligencia-artificial/bill-gates-70-anos-fundador-microsoft-advierte-ia-nunca-ha-existido-arma-poderosa-exige-limites-obligatorios-seguridad",
-      "published": "2026-10-31T11:01:28+00:00"
+      "link": "https://www.genbeta.com/actualidad/bill-gates-advierte-agitacion-economico-social-durante-20-anos-debido-a-ia",
+      "published": "2026-11-09T10:01:07+00:00"
     },
     {
       "id": "news_4",
-      "title": "Burgos ante la paradoja ferroviaria española: Renfe es un servicio público pero rechaza poner más trenes por su baja rentabilidad",
-      "summary": "\"El tren a Extremadura... que lo lleve Renfe\".",
-      "voice_extra": "\"El tren a Extremadura... que lo lleve Renfe\".",
+      "title": "Muy resistente y con una batería difícil de acabar: este Garmin con cargador solar se adelanta al Black Friday con su mejor oferta hasta ahora",
+      "summary": "Aunque los relojes deportivos con GPS son ideales para practicar cualquier actividad en el exterior, no todos son iguales. Los hay resistentes y con mucha autonomía, pensados para actividades más intensas o largas expediciones.",
+      "voice_extra": "Aunque los relojes deportivos con GPS son ideales para practicar cualquier actividad en el exterior, no todos son iguales. Los hay resistentes y con mucha autonomía, pensados para actividades más intensas o largas expediciones.",
       "full_paragraphs": [
-        "\"El tren a Extremadura... que lo lleve Renfe\". Las palabras son de Óscar Puente , ministro de Transportes, y tienen más de dos años. Con ellas se quejaba del complicado juego de equilibrios que tiene que hacer la compañía entre sus obligaciones de servicio público y sus obligaciones... comerciales.",
-        "Una frase que resume a la perfección lo que se vive en Burgos.",
-        "¿Qué ha pasado? Que Renfe no pondrá más frecuencias de AVE para su conexión con Madrid. Así se lo ha hecho saber, según Álvaro Gutiérrez, presidente de la Asociación de Usuarios de AVE de Burgos, en palabras recogidas por Cope . Esta asociación reclama más conexiones rápidas con la capital pero, de momento, parecen que no llegarán.",
-        "Según las informaciones recogidas por el medio, Renfe no pondrá más trenes de este tipo porque \"no son rentables\", algo que la asociación pone en duda asegurando que este verano había días que era complicado comprar un billete porque la oferta estaba casi cubierta en su totalidad.",
-        "En Xataka nos hemos puesto en contacto con la compañía pero nos han indicado que no hacen valoraciones sobre este tema.",
-        "¿Qué piden? En estos momentos, cada día se puede viajar entre Burgos y Madrid hasta en nueve frecuencias pero sólo en dos de ellas se puede realizar en trayecto en menos de 100 minutos. Sólo los AVE de las 6:40 y de las 17:21 se mueven en estos tiempos de viaje. La mayoría de frecuencias se acercan a las dos horas y en algunos casos hay trenes Intercity que se van por encima de las cuatro horas."
+        "Aunque los relojes deportivos con GPS son ideales para practicar cualquier actividad en el exterior, no todos son iguales. Los hay resistentes y con mucha autonomía, pensados para actividades más intensas o largas expediciones. Si es justo lo que estás buscando, entonces puede que te encaje muy bien el Garmin Instinct 3 Solar . Y más ahora, que está rebajado hasta los 278,99 euros en su versión de 50 mm.",
+        "Garmin Instinct 3 Solar 50 mm, Reloj Inteligente con GPS, Naranja | Carga solar, GPS, monitorización de salud, linterna LED y hasta 40 días de batería",
+        "La versión de 45 milímetros de este reloj también está rebajada , pero es la de 50 la que está a precio mínimo histórico . El Garmin Instinct 3 Solar es un reloj pensado para ser muy resistente frente a golpes y arañazos, lo que lo hace perfecto para practicar todo tipo de deportes al aire libre. El mismo, por cierto, es compatible tanto con Android como con iOS.",
+        "Una de las cosas que más destacan de este dispositivo es su autonomía. Garmin promete que puede llegar hasta los 40 días de batería en su modo smartwatch, pero además cuenta con un sistema de carga solar . También cuenta con una linterna LED con varios niveles de intensidad y un modo de luz roja más visible.",
+        "Este dispositivo tiene GPS y sensores para medir todo tipo de parámetros, como la frecuencia cardíaca. Es muy interesante también para medir nuestros entrenamientos, puesto que ofrece métricas muy detalladas a la hora de correr, escalar o incluso para deportes acuáticos. De hecho, es sumergible hasta los 100 metros .",
+        "💡 CÓMPRALO SI... Buscas un reloj deportivo con GPS que destaque por ser resistente y por tener autonomía casi infinita."
       ],
-      "full_voice_script": "Burgos ante la paradoja ferroviaria española: Renfe es un servicio público pero rechaza poner más trenes por su baja rentabilidad. Noticia publicada por Xataka. \"El tren a Extremadura... que lo lleve Renfe\". Las palabras son de Óscar Puente , ministro de Transportes, y tienen más de dos años. Con ellas se quejaba del complicado juego de equilibrios que tiene que hacer la compañía entre sus obligaciones de servicio público y sus obligaciones... comerciales. Una frase que resume a la perfección lo que se vive en Burgos. ¿Qué ha pasado? Que Renfe no pondrá más frecuencias de AVE para su conexión con Madrid. Así se lo ha hecho saber, según Álvaro Gutiérrez, presidente de la Asociación de Usuarios de AVE de Burgos, en palabras recogidas por Cope . Esta asociación reclama más conexiones rápidas con la capital pero, de momento, parecen que no llegarán. Según las informaciones recogidas por el medio, Renfe no pondrá más trenes de este tipo porque \"no son rentables\", algo que la asociación pone en duda asegurando que este verano había días que era complicado comprar un billete porque la oferta estaba casi cubierta en su totalidad. En Xataka nos hemos puesto en contacto con la compañía pero nos han indicado que no hacen valoraciones sobre este tema. ¿Qué piden? En estos momentos, cada día se puede viajar entre Burgos y Madrid hasta en nueve frecuencias pero sólo en dos de ellas se puede realizar en trayecto en menos de 100 minutos. Sólo los AVE de las 6:40 y de las 17:21 se mueven en estos tiempos de viaje. La mayoría de frecuencias se acercan a las dos horas y en algunos casos hay trenes Intercity que se van por encima de las cuatro horas.",
-      "image": "https://i.blogs.es/09dc0a/renfe_class_104_granada_-_loja/1024_2000.jpeg",
+      "full_voice_script": "Muy resistente y con una batería difícil de acabar: este Garmin con cargador solar se adelanta al Black Friday con su mejor oferta hasta ahora. Noticia publicada por Xataka. Aunque los relojes deportivos con GPS son ideales para practicar cualquier actividad en el exterior, no todos son iguales. Los hay resistentes y con mucha autonomía, pensados para actividades más intensas o largas expediciones. Si es justo lo que estás buscando, entonces puede que te encaje muy bien el Garmin Instinct 3 Solar . Y más ahora, que está rebajado hasta los 278,99 euros en su versión de 50 mm. Garmin Instinct 3 Solar 50 mm, Reloj Inteligente con GPS, Naranja | Carga solar, GPS, monitorización de salud, linterna LED y hasta 40 días de batería La versión de 45 milímetros de este reloj también está rebajada , pero es la de 50 la que está a precio mínimo histórico . El Garmin Instinct 3 Solar es un reloj pensado para ser muy resistente frente a golpes y arañazos, lo que lo hace perfecto para practicar todo tipo de deportes al aire libre. El mismo, por cierto, es compatible tanto con Android como con iOS. Una de las cosas que más destacan de este dispositivo es su autonomía. Garmin promete que puede llegar hasta los 40 días de batería en su modo smartwatch, pero además cuenta con un sistema de carga solar . También cuenta con una linterna LED con varios niveles de intensidad y un modo de luz roja más visible. Este dispositivo tiene GPS y sensores para medir todo tipo de parámetros, como la frecuencia cardíaca. Es muy interesante también para medir nuestros entrenamientos, puesto que ofrece métricas muy detalladas a la hora de correr, escalar o incluso para deportes acuáticos. De hecho, es sumergible hasta los 100 metros . 💡 CÓMPRALO SI... Buscas un reloj deportivo con GPS que destaque por ser resistente y por tener autonomía casi infinita.",
+      "image": "https://i.blogs.es/0e7aae/instinct3-solar-amoled/1024_2000.jpeg",
       "source": "Xataka",
-      "link": "https://www.xataka.com/movilidad/burgos-paradoja-ferroviaria-espanola-renfe-servicio-publico-rechaza-poner-trenes-su-baja-rentabilidad",
-      "published": "2026-11-02T13:01:31+01:00"
+      "link": "https://www.xataka.com/seleccion/muy-resistente-bateria-infinita-este-garmin-cargador-solar-se-adelanta-al-black-friday-su-mejor-oferta-ahora",
+      "published": "2026-11-09T13:15:06+01:00"
     },
     {
       "id": "news_5",
-      "title": "Los expertos en psicología coinciden: quienes eligen guardar silencio durante una discusión presentan una mejor inteligencia emocional",
-      "summary": "Para la psicóloga Olga Albaladejo , este tipo de silencio puede ser un recurso de regulación emocional. Es lo que ella llama silencio regulador .",
-      "voice_extra": "Para la psicóloga Olga Albaladejo , este tipo de silencio puede ser un recurso de regulación emocional. Es lo que ella llama silencio regulador .",
+      "title": "Hundieron 2 millones de neumáticos en el océano para crear un arrecife: 50 años después, el problema continúa",
+      "summary": "A comienzos de los años 70 se empezaron a tirar neumáticos usados junto al condado de Broward (Florida) . Se trataba de un arrecife artificial.",
+      "voice_extra": "A comienzos de los años 70 se empezaron a tirar neumáticos usados junto al condado de Broward (Florida) . Se trataba de un arrecife artificial.",
       "full_paragraphs": [
-        "Para la psicóloga Olga Albaladejo , este tipo de silencio puede ser un recurso de regulación emocional. Es lo que ella llama silencio regulador . Es decir, el individuo decide callarse para recobrar la calma. De esta manera podrá hablar y decir algo más útil que lo primero que se le ha venido a la cabeza. También se podría ver como un indicativo de mayor inteligencia emocional.",
-        "El secreto está en cómo se maneja . Por ejemplo, en este caso, el que utiliza el silencio dice lo que quiere comunicar. Que quiere unos minutos para recuperarse. Y que va a volver a hablar.",
-        "Por cierto, tiene su cara B . Por ejemplo, si se utiliza para castigar o escapar de la situación, deja de ser regulador para convertirse en un obstáculo para el diálogo.",
-        "Hay un motivo fisiológico. El Instituto Gottman (que lleva décadas estudiando parejas) explica que aquellos que quedan en blanco o se cierran en banda suelen estar inundados . El cuerpo entra en modo lucha o huida. Aumenta el pulso y se liberan hormonas de estrés. Ya no es posible continuar la discusión de manera tranquila y respetuosa.",
-        "Hay unas normas para utilizarlo . Por un lado, debe ser suficientemente largo. El mínimo son 20 minutos. Es el tiempo que tarda el cuerpo en tranquilizarse. Además, es recomendable establecer un código (palabra o gesto) previamente.",
-        "Otro tema es qué hacer en esos minutos . En otro texto del mismo instituto se recomienda salir a pasear o ir a otra habitación. Además, evitar dar vueltas al conflicto. Tampoco es correcto utilizar el silencio hosco como neutralidad. Esto no es poner un límite (que sería decir dónde está el límite y mantenerlo)."
+        "A comienzos de los años 70 se empezaron a tirar neumáticos usados junto al condado de Broward (Florida) . Se trataba de un arrecife artificial. En total se lanzaron entre uno y dos millones de neumáticos. Se pretendía conseguir así un mayor hábitat para peces y disponer de un sitio para estos residuos . Más de medio siglo después todavía están en pleno proceso de retiro.",
+        "Se trata del Osborne Tire Reef . Se lanzaron en una zona de arena entre dos arrecifes naturales. Cercano hay otro arrecife artificial (Osborne Reef) de estructuras de hormigón. En el informe de Florida se diferencian los dos.",
+        "En el mismo momento de su vertido comenzaron los problemas de inestabilidad . Algunas de las cintas que mantenían unidos los grupos se rompieron en la propia descarga. Además, los cierres metálicos se corroían y las cintas se iban soltando. También las corrientes y el oleaje de las tormentas han provocado que se hayan ido arrastrando hacia los arrecifes próximos.",
+        "En el plan de restauración (con los estudios de 2019 y 2024) se estimaron unos 521.000 neumáticos superficiales (no enterrados) en las zonas analizadas. Esto no incluye los que están totalmente enterrados o escondidos bajo otros organismos. Tampoco tiene en cuenta los que están fuera de estas zonas. Es decir, corresponde a estas campañas de estudio. Posteriormente, pueden haber cambiado en su número.",
+        "De ellos, 429.000 están en hábitats arenosos. Hasta 92.000 han entrado en contacto con hábitats de arrecife coralino. De esta manera hay que diferenciar los lugares donde se trabaja. Para los neumáticos que están sobre el arrecife se prevén métodos y permisos concretos .",
+        "En cuanto a la búsqueda de los residuos, se han utilizado técnicas de sonar y cartografía submarina . En la documentación oficial se habla de la extracción con buzos. Se hacen grupos de neumáticos que se izan a la embarcación con una grúa o cabrestante."
       ],
-      "full_voice_script": "Los expertos en psicología coinciden: quienes eligen guardar silencio durante una discusión presentan una mejor inteligencia emocional. Noticia publicada por Genbeta. Para la psicóloga Olga Albaladejo , este tipo de silencio puede ser un recurso de regulación emocional. Es lo que ella llama silencio regulador . Es decir, el individuo decide callarse para recobrar la calma. De esta manera podrá hablar y decir algo más útil que lo primero que se le ha venido a la cabeza. También se podría ver como un indicativo de mayor inteligencia emocional. El secreto está en cómo se maneja . Por ejemplo, en este caso, el que utiliza el silencio dice lo que quiere comunicar. Que quiere unos minutos para recuperarse. Y que va a volver a hablar. Por cierto, tiene su cara B . Por ejemplo, si se utiliza para castigar o escapar de la situación, deja de ser regulador para convertirse en un obstáculo para el diálogo. Hay un motivo fisiológico. El Instituto Gottman (que lleva décadas estudiando parejas) explica que aquellos que quedan en blanco o se cierran en banda suelen estar inundados . El cuerpo entra en modo lucha o huida. Aumenta el pulso y se liberan hormonas de estrés. Ya no es posible continuar la discusión de manera tranquila y respetuosa. Hay unas normas para utilizarlo . Por un lado, debe ser suficientemente largo. El mínimo son 20 minutos. Es el tiempo que tarda el cuerpo en tranquilizarse. Además, es recomendable establecer un código (palabra o gesto) previamente. Otro tema es qué hacer en esos minutos . En otro texto del mismo instituto se recomienda salir a pasear o ir a otra habitación. Además, evitar dar vueltas al conflicto. Tampoco es correcto utilizar el silencio hosco como neutralidad. Esto no es poner un límite (que sería decir dónde está el límite y mantenerlo).",
-      "image": "https://i.blogs.es/0ff175/pareja-dicutiendo/1024_2000.jpeg",
+      "full_voice_script": "Hundieron 2 millones de neumáticos en el océano para crear un arrecife: 50 años después, el problema continúa. Noticia publicada por Genbeta. A comienzos de los años 70 se empezaron a tirar neumáticos usados junto al condado de Broward (Florida) . Se trataba de un arrecife artificial. En total se lanzaron entre uno y dos millones de neumáticos. Se pretendía conseguir así un mayor hábitat para peces y disponer de un sitio para estos residuos . Más de medio siglo después todavía están en pleno proceso de retiro. Se trata del Osborne Tire Reef . Se lanzaron en una zona de arena entre dos arrecifes naturales. Cercano hay otro arrecife artificial (Osborne Reef) de estructuras de hormigón. En el informe de Florida se diferencian los dos. En el mismo momento de su vertido comenzaron los problemas de inestabilidad . Algunas de las cintas que mantenían unidos los grupos se rompieron en la propia descarga. Además, los cierres metálicos se corroían y las cintas se iban soltando. También las corrientes y el oleaje de las tormentas han provocado que se hayan ido arrastrando hacia los arrecifes próximos. En el plan de restauración (con los estudios de 2019 y 2024) se estimaron unos 521.000 neumáticos superficiales (no enterrados) en las zonas analizadas. Esto no incluye los que están totalmente enterrados o escondidos bajo otros organismos. Tampoco tiene en cuenta los que están fuera de estas zonas. Es decir, corresponde a estas campañas de estudio. Posteriormente, pueden haber cambiado en su número. De ellos, 429.000 están en hábitats arenosos. Hasta 92.000 han entrado en contacto con hábitats de arrecife coralino. De esta manera hay que diferenciar los lugares donde se trabaja. Para los neumáticos que están sobre el arrecife se prevén métodos y permisos concretos . En cuanto a la búsqueda de los residuos, se han utilizado técnicas de sonar y cartografía submarina . En la documentación oficial se habla de la extracción con buzos. Se hacen grupos de neumáticos que se izan a la embarcación con una grúa o cabrestante.",
+      "image": "https://i.blogs.es/4c7190/fondo-marino-cubierto-de-neumaticos/1024_2000.jpeg",
       "source": "Genbeta",
-      "link": "https://www.genbeta.com/actualidad/expertos-psicologia-coinciden-quienes-eligen-guardar-silencio-durante-discusion-presentan-mejor-inteligencia-emocional",
-      "published": "2026-11-02T13:01:33+01:00"
+      "link": "https://www.genbeta.com/internacional/hundieron-2-millones-neumaticos-oceano-para-crear-arrecife-50-anos-despues-problema-continua",
+      "published": "2026-11-09T13:01:07+01:00"
     }
   ],
   "vip_hack_of_the_week": {
-    "tag": "Optimización Gamer",
-    "title": "Liberar memoria RAM oculta en 5 segundos antes de jugar",
-    "body": "En Chrome o Telegram, cierra las pestañas en segundo plano y activa el modo 'No Molestar' durante tu partida: evita micro-tirones de pantalla cuando buscas récords de menos de 100 milisegundos."
+    "tag": "Batería Inmortal",
+    "title": "5 ajustes que alargan la batería de tu celular hasta 2 horas",
+    "body": "1) Activa el modo oscuro en pantallas OLED. 2) Baja la tasa de refresco a 60 Hz. 3) Desactiva la ubicación 'siempre activa' en apps que no la necesitan. 4) Limita las apps en segundo plano. 5) Mantén la carga entre 20% y 80% para cuidar la batería a largo plazo."
   },
   "weekly_jokes": [
-    "Nada te enseña a escribir más rápido que ver el 'Escribiendo...' de la persona con la que discutes por WhatsApp.",
-    "Mi modo 'No molestar' lleva activado desde 2021. A veces alguien se acuerda de mí por correo.",
-    "Instalé un antivirus tan potente que ahora mi computadora no deja pasar ni mis propios archivos.",
-    "Mi router tiene más lucecitas que un árbol de Navidad y aun así no hay internet.",
-    "La tía del grupo familiar: 'Cuidado con el 5G'. La misma tía a las 5 a.m.: reenvía 45 bendiciones con fotos de flores.",
-    "Mi compu hace un ruido como de avión despegando. Dice el técnico que es normal: 'está pensando muy fuerte'.",
-    "Antes uno buscaba pareja; ahora busca un enchufe. Y a veces el segundo aparece primero.",
-    "Actualización disponible: 2 GB. Mi almacenamiento: 40 MB. Mi paciencia: agotada.",
-    "Mi hijo me explicó qué es un meme. Llevo tres semanas explicándoselo a mi familia y nadie se ríe.",
-    "— Mesero, ¿cuál es la clave del Wi-Fi?<br>— Pida el combo y se la doy.<br>— ¿Y si pido solo el café?<br>— Le damos la clave... del negocio de enfrente."
+    "Mi laptop tiene 47 pestañas abiertas y yo solo recuerdo por qué abrí dos.",
+    "Mi cámara frontal es muy honesta; por eso le dejé de hablar.",
+    "Dormir 8 horas es fácil. Lo difícil es que el celular no te avise a las 3 a.m. que 'tu almacenamiento está casi lleno'.",
+    "Cuando el celular dice 'almacenamiento casi lleno' yo borro dos fotos repetidas y una app que nunca abrí. Dolor mínimo, espacio máximo.",
+    "Descargué una app para meditar. Me desconecté tan bien que olvidé abrirla.",
+    "En mi casa hay dos tipos de personas: los que dicen 'reinicia el router' y los que ya lo reiniciaron tres veces.",
+    "Programador: 'En mi computadora funciona'.<br>Cliente: 'Pero en la mía no'.<br>Programador: 'Entonces te mando mi computadora'.",
+    "Si grabas un video vertical te dirán 'ponlo horizontal'; si lo grabas horizontal, 'ponlo vertical'. La tecnología es una dictadura.",
+    "— ¿Cuál es tu mayor miedo?<br>— Que alguien me pida el celular 'solo para ver una foto'.",
+    "— Tengo una idea genial para una app.<br>— ¿Cuál?<br>— Una que avise cuando el vecino cambie la clave del Wi-Fi."
   ],
   "weekly_truths": [
     {
-      "emoji": "💻",
-      "color": "cyan",
-      "title": "La Regla de las Pestañas",
-      "body": "Una pestaña para trabajar. Cuarenta y seis para 'leer luego'. Cero lecturas posteriores."
+      "emoji": "🛒",
+      "color": "emerald",
+      "title": "Compras por Internet",
+      "body": "<strong>En la foto:</strong> Camiseta ajustada estilo cyberpunk.<br><strong>Lo que llega:</strong> Un mantel de cocina transparente con dos huecos para los brazos."
     },
     {
-      "emoji": "🧑‍💻",
-      "color": "purple",
-      "title": "Soporte Técnico",
-      "body": "—¿Ya lo apagó y lo volvió a encender?<br>—Sí.<br>—¿Seguro?<br>—...<strong>Ahora sí</strong>. Y funciona. Nadie sabe por qué."
+      "emoji": "🔔",
+      "color": "pink",
+      "title": "Notificaciones",
+      "body": "<strong>Importante:</strong> 1 mensaje de tu jefe.<br><strong>Urgentísimo:</strong> 47 avisos de apps que no recuerdas haber instalado."
     },
     {
-      "emoji": "🤖",
-      "color": "purple",
-      "title": "La IA: Expectativa vs Realidad",
-      "body": "<strong>La gente:</strong> <em>\"La IA va a dominar el mundo con robots asesinos...\"</em><br><strong>La IA en la vida real:</strong> Dibuja personas con 7 dedos en una mano y confunde un chihuahua con un muffin."
+      "emoji": "🔌",
+      "color": "amber",
+      "title": "El Cargador Sagrado",
+      "body": "Todos tenemos <strong>un</strong> cargador que sí funciona. Se presta con ceremonia y se devuelve bajo juramento."
     },
     {
-      "emoji": "🎙️",
-      "color": "cyan",
-      "title": "La Ley del Audio de WhatsApp",
-      "body": "• <strong>0 a 15 seg:</strong> Escuchable con paciencia.<br>• <strong>15 a 45 seg:</strong> Lo pongo en 1.5x de inmediato.<br>• <strong>Más de 1 min:</strong> Eso ya no es un audio, es un podcast. ¡Llámame mejor!"
+      "emoji": "📸",
+      "color": "amber",
+      "title": "La Galería del Celular",
+      "body": "10.000 fotos: 9.800 son capturas de pantalla, 150 son la misma selfie y ninguna es la que estás buscando."
     }
   ],
   "game_layout": {
@@ -247,7 +247,7 @@
   ],
   "seo": {
     "title": "ByteZone Arcade | Juegos Gratis, Ranking Semanal y Noticias de IA",
-    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: Hasta nunca, Copilot: la IA de Microsoft desaparecerá pronto de tu…",
+    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: Olvídate de usar Claude Code para clonar tus juegos favoritos:…",
     "keywords": [
       "juegos arcade online gratis",
       "juegos sin descargar",
@@ -261,35 +261,35 @@
       "mini juegos para Telegram",
       "juegos para celular",
       "retos entre amigos",
-      "microsoft",
-      "copilot",
-      "microsoft",
-      "altman",
+      "anthropic",
+      "olvídate",
+      "claude",
+      "code",
+      "anthropic",
       "bill",
       "gates",
-      "nunca",
-      "burgos"
+      "garmin"
     ],
     "trending_terms": [
-      "Microsoft",
-      "Copilot",
-      "microsoft",
-      "Altman",
+      "Anthropic",
+      "Olvídate",
+      "Claude",
+      "Code",
+      "anthropic",
       "Bill",
       "Gates",
-      "Nunca",
-      "Burgos"
+      "Garmin"
     ],
-    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2024/01/Copilot-Pro-Sugerencias.jpg?fit=1024%2C683&quality=70&strip=all&ssl=1",
-    "lastmod": "2026-11-02"
+    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/04/claude-code-app-portada.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
+    "lastmod": "2026-11-09"
   },
   "promo_kit": {
     "whatsapp_status": [
       "🎮 Torneo semanal nuevo en ByteZone: ranking reiniciado, ¡todos empiezan de cero! ⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo? Juega gratis 👉 https://megabotp2p.github.io/bytezone/",
-      "🏆 Campeones de la semana pasada → Test de Reflejos: ***** (96 ms)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
-      "🤖 Noticia IA de la semana: Hasta nunca, Copilot: la IA de Microsoft desaparecerá pronto de tu televisor\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
+      "🏆 Campeones de la semana pasada → Neon Stacker Pro: RATG (29 pisos) | Test de Reflejos: RATG (40 ms) | Cyber Memory: Micole (9 rondas)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
+      "🤖 Noticia IA de la semana: Olvídate de usar Claude Code para clonar tus juegos favoritos: Anthropic cambia las reglas por la piratería\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
     ],
-    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Microsoft #Copilot #microsoft",
+    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Anthropic #Olvídate #Claude",
     "hashtags": [
       "#juegosgratis",
       "#arcade",
@@ -298,20 +298,30 @@
       "#IA",
       "#tecnologia",
       "#telegram",
-      "#Microsoft",
-      "#Copilot",
-      "#microsoft"
+      "#Anthropic",
+      "#Olvídate",
+      "#Claude"
     ],
     "challenge_lines": [
       "⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo?",
       "🏗️ Récord de Neon Stacker: 43 pisos (*****). ¿Llegas más alto?"
     ],
-    "last_week_champions_text": "🏆 Campeones de la semana pasada → Test de Reflejos: ***** (96 ms)"
+    "last_week_champions_text": "🏆 Campeones de la semana pasada → Neon Stacker Pro: RATG (29 pisos) | Test de Reflejos: RATG (40 ms) | Cyber Memory: Micole (9 rondas)"
   },
   "last_week_champions": {
+    "stacker": {
+      "name": "RATG",
+      "score": 29,
+      "country": "VE"
+    },
     "reflex": {
-      "name": "*****",
-      "score": 96,
+      "name": "RATG",
+      "score": 40,
+      "country": "VE"
+    },
+    "memory": {
+      "name": "Micole",
+      "score": 9,
       "country": "VE"
     }
   },
@@ -333,17 +343,17 @@
     }
   },
   "agent_report": {
-    "generated_at": "2026-11-02T08:14:08.436684-04:00",
-    "week_id": "W2026-11-02",
+    "generated_at": "2026-11-09T08:44:02.506877-04:00",
+    "week_id": "W2026-11-09",
     "traffic_status": "bajo",
     "traffic": {
-      "devices_7d": 3,
-      "plays_7d": 1,
+      "devices_7d": 2,
+      "plays_7d": 3,
       "views_7d": 5,
-      "ad_actions_7d": 1,
-      "ads_shown_7d": 1,
+      "ad_actions_7d": 3,
+      "ads_shown_7d": 3,
       "devices_prev_7d": 3,
-      "change_pct": 0,
+      "change_pct": -33,
       "per_game": {
         "stacker": {
           "view": 3,
@@ -356,7 +366,7 @@
           "ad": 0
         },
         "memory": {
-          "view": 2,
+          "view": 0,
           "play": 0,
           "ad": 0
         },
@@ -366,22 +376,22 @@
           "ad": 0
         },
         "drone": {
-          "view": 0,
-          "play": 0,
-          "ad": 0
+          "view": 2,
+          "play": 2,
+          "ad": 2
         }
       },
       "top_countries": [
         [
           "VE",
-          7
+          11
         ]
       ]
     },
     "actions": [
       "Noticias renovadas: 5 historias nuevas (se evitaron los titulares de la semana anterior).",
       "Humor renovado: 10 chistes y 4 'verdades tech' nuevas.",
-      "SEO: meta-tags actualizados con palabras clave de la semana (Microsoft, Copilot, microsoft, Altman, Bill), sitemap regenerado. IndexNow aceptó la notificación (HTTP 200)",
+      "SEO: meta-tags actualizados con palabras clave de la semana (Anthropic, Olvídate, Claude, Code, anthropic), sitemap regenerado. IndexNow aceptó la notificación (HTTP 200)",
       "Kit de promoción listo (textos para WhatsApp/Telegram/redes con los récords actuales).",
       "Telegram: sin token/chat configurados (envío automático desactivado).",
       "Sin rotación: 1 partidas registradas en 7 días (se necesitan 30 para rotar titulares automáticamente). Todos los juegos siguen disponibles entre Portada y Baúl.",
