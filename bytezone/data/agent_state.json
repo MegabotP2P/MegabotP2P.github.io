@@ -49,32 +49,39 @@
       "devices": 0,
       "views": 0,
       "ads": 0
+    },
+    {
+      "week_id": "W2026-11-23",
+      "plays": 0,
+      "devices": 0,
+      "views": 0,
+      "ads": 0
     }
   ],
   "last_news_keys": [
-    "este nuevo linux con inteligencia artifi",
-    "mac studio m5 ultra 256 gb análisis un m",
-    "ceo de microsoft satya nadella tenemos q",
-    "este monitor es también ordenador incluy",
-    "una comunidad permite durante años el us"
+    "google lanza gemini 4 neon más rápido má",
+    "qué es artex la ia principal sospechosa",
+    "aquí están los 4 trabajos que resistirán",
+    "lenovo se lleva el mejor portátil conver",
+    "si arranca y se mueve no pasa nada la ló"
   ],
   "last_joke_ids": [
-    19,
-    18,
-    37,
-    38,
-    9,
-    14,
-    23,
-    7,
-    15,
-    32
+    31,
+    24,
+    10,
+    22,
+    36,
+    3,
+    33,
+    39,
+    42,
+    41
   ],
   "last_truth_ids": [
-    7,
-    11,
-    4,
-    9
+    8,
+    0,
+    5,
+    6
   ],
   "champions_archive": {}
 }

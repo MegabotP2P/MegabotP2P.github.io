@@ -1,8 +1,8 @@
 {
   "version": 14,
-  "week_id": "W2026-11-16",
-  "updated_at": "2026-11-16T08:37:32.636170-04:00",
-  "updated_human": "16/11/2026",
+  "week_id": "W2026-11-23",
+  "updated_at": "2026-11-23T10:22:01.853629-04:00",
+  "updated_human": "23/11/2026",
   "agent_status": {
     "name": "Agente CEO & SEO ByteZone",
     "mode": "Autónomo (Lunes + monitoreo de telemetría cada 6 h)",
@@ -10,7 +10,7 @@
     "vault_games_count": 2
   },
   "video_reel": {
-    "title": "ByteZone TV • Noticiero IA (W2026-11-16)",
+    "title": "ByteZone TV • Noticiero IA (W2026-11-23)",
     "subtitle": "5 Noticias Completas con Imagen + Voz IA + Lectura Completa",
     "duration_label": "5 Noticias",
     "scenes": [
@@ -19,11 +19,11 @@
         "news_index": 0,
         "badge": "NOTICIA #1 • IA & FUTURO",
         "icon": "🤖",
-        "headline": "Este nuevo Linux con inteligencia artificial nace de una de las figuras más conocidas de Android",
-        "subtext": "Con Microsoft y otras empresas insertando IA en los sistemas operativos, era cuestión de tiempo para que comenzáramos a ver esta tendencia en Linux. Hace unas semanas, Canonical confirmó la llegada de un asistente inteligente en Ubuntu y hoy toca el turno de otra distribución.",
-        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/11/koraos_06.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
+        "headline": "Google lanza Gemini 4 Neon: más rápido, más barato y demoledor escribiendo código",
+        "subtext": "Google ha presentado Gemini 4 Neon , su nueva IA diseñada para ejecutar tareas complejas a velocidades mucho más rápidas. A unos días de anunciar Hydrogen y Carbon , el gigante tecnológico vuelve al ruedo con un modelo que se sitúa entre los dos anteriores.",
+        "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/11/google-gemini-4-neon.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
         "source": "Hipertextual IA",
-        "voice_script": "Noticia número 1: Este nuevo Linux con inteligencia artificial nace de una de las figuras más conocidas de Android. Con Microsoft y otras empresas insertando IA en los sistemas operativos, era cuestión de tiempo para que comenzáramos a ver esta tendencia en Linux. Hace unas semanas, Canonical confirmó la llegada de un asistente inteligente en Ubuntu y hoy toca el turno de otra distribución. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 1: Google lanza Gemini 4 Neon: más rápido, más barato y demoledor escribiendo código. Google ha presentado Gemini 4 Neon , su nueva IA diseñada para ejecutar tareas complejas a velocidades mucho más rápidas. A unos días de anunciar Hydrogen y Carbon , el gigante tecnológico vuelve al ruedo con un modelo que se sitúa entre los dos anteriores. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-cyan-600 to-blue-900",
         "is_vip_hook": false
       },
@@ -32,11 +32,11 @@
         "news_index": 1,
         "badge": "NOTICIA #2 • INNOVACIÓN",
         "icon": "🚀",
-        "headline": "Mac Studio M5 Ultra (256 GB), análisis: un mes intentando encontrar los límites de una máquina casi sin límites",
-        "subtext": "Hay una pregunta obvia cuando uno se sienta delante del ordenador más caro y potente que jamás ha probado: ¿para qué quiere nadie pagar más de 16.000 euros por un Mac Studio con 256 GB de memoria unificada? La respuesta corta es, cómo no, la de ejecutar modelos de IA locales.",
-        "image": "https://i.blogs.es/3b9a69/macstudio-12/1024_2000.jpeg",
+        "headline": "Qué es Artex, la IA principal sospechosa del ciberataque a la Comisión Europea que tiene en alerta al FBI",
+        "subtext": "Con el avance de la IA generativa , son cada vez más los usuarios, empresas e instituciones que utilizan herramientas basadas en esta tecnología en sus procesos cotidianos.",
+        "image": "https://i.blogs.es/2c499e/jakub-zerdzicki-8ljjfxqfwkm-unsplash/1024_2000.jpeg",
         "source": "Xataka IA & Tech",
-        "voice_script": "Noticia número 2: Mac Studio M5 Ultra (256 GB), análisis: un mes intentando encontrar los límites de una máquina casi sin límites. Hay una pregunta obvia cuando uno se sienta delante del ordenador más caro y potente que jamás ha probado: ¿para qué quiere nadie pagar más de 16.000 euros por un Mac Studio con 256 GB de memoria unificada? La respuesta corta es, cómo no, la de ejecutar modelos de IA locales. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 2: Qué es Artex, la IA principal sospechosa del ciberataque a la Comisión Europea que tiene en alerta al FBI. Con el avance de la IA generativa , son cada vez más los usuarios, empresas e instituciones que utilizan herramientas basadas en esta tecnología en sus procesos cotidianos. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-purple-600 to-indigo-900",
         "is_vip_hook": false
       },
@@ -45,11 +45,11 @@
         "news_index": 2,
         "badge": "NOTICIA #3 • TENDENCIA GLOBAL",
         "icon": "⚡",
-        "headline": "CEO de Microsoft, Satya Nadella: \"Tenemos que hacer algo útil con la IA, o rápidamente perderemos el permiso social\" — desafiando a los pioneros de la IA a mejorar su desempeño",
-        "subtext": "Microsoft lleva años apostando por la IA invirtiendo grandes sumas de dinero en su desarrollo y llevando herramientas como Copilot a sus productos .",
-        "image": "https://i.blogs.es/9729bf/satya-nadella-microsoft/1024_2000.jpeg",
+        "headline": "\"Aquí están los 4 trabajos que resistirán a la Inteligencia Artificial\". Las predicciones de Bill Gates y el plan de Microsoft.",
+        "subtext": "La inteligencia artificial va a cambiar bastante el mercado laboral, pero Bill Gates cree que hay terrenos en los que las personas seguirán siendo necesarias, y señala cuatro : la programación, la biología, la energía y el deporte profesional.",
+        "image": "https://i.blogs.es/fc995f/bill-gates-en-un-encuentro-profesional/1024_2000.png",
         "source": "Genbeta IA",
-        "voice_script": "Noticia número 3: CEO de Microsoft, Satya Nadella: \"Tenemos que hacer algo útil con la IA, o rápidamente perderemos el permiso social\" — desafiando a los pioneros de la IA a mejorar su desempeño. Microsoft lleva años apostando por la IA invirtiendo grandes sumas de dinero en su desarrollo y llevando herramientas como Copilot a sus productos . Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 3: \"Aquí están los 4 trabajos que resistirán a la Inteligencia Artificial\". Las predicciones de Bill Gates y el plan de Microsoft.. La inteligencia artificial va a cambiar bastante el mercado laboral, pero Bill Gates cree que hay terrenos en los que las personas seguirán siendo necesarias, y señala cuatro : la programación, la biología, la energía y el deporte profesional. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-pink-600 to-rose-900",
         "is_vip_hook": false
       },
@@ -58,11 +58,11 @@
         "news_index": 3,
         "badge": "NOTICIA #4 • IMPACTO TECH",
         "icon": "🧠",
-        "headline": "Este monitor es también ordenador, incluye ratón y teclado, webcam y además Windows 11",
-        "subtext": "Ahora que estamos muy cerca de la fecha en la que se celebrará el Black Friday, las tiendas han comenzado a bajar los precios de muchos ordenadores. Un buen ejemplo lo tenemos en el HP OmniStudio , que por los 749 euros que cuesta ahora mismo es ideal si además queremos un monitor y otros periféricos.",
-        "image": "https://i.blogs.es/f020b1/hp-omnistudio/1024_2000.jpeg",
+        "headline": "Lenovo se lleva el mejor portátil convertible del año con una apuesta que le ha salido muy bien: Nvidia Spark",
+        "subtext": "Apostar por un chip de primera generación es arriesgado para un convertible. Bueno, es arriesgado para cualquier dispositivo, sobre todo si tienes otras opciones mucho más establecidas en el mercado.",
+        "image": "https://i.blogs.es/128539/lenovo-premios-final/1024_2000.jpeg",
         "source": "Xataka",
-        "voice_script": "Noticia número 4: Este monitor es también ordenador, incluye ratón y teclado, webcam y además Windows 11. Ahora que estamos muy cerca de la fecha en la que se celebrará el Black Friday, las tiendas han comenzado a bajar los precios de muchos ordenadores. Un buen ejemplo lo tenemos en el HP OmniStudio , que por los 749 euros que cuesta ahora mismo es ideal si además queremos un monitor y otros periféricos. Pasamos a la siguiente noticia.",
+        "voice_script": "Noticia número 4: Lenovo se lleva el mejor portátil convertible del año con una apuesta que le ha salido muy bien: Nvidia Spark. Apostar por un chip de primera generación es arriesgado para un convertible. Bueno, es arriesgado para cualquier dispositivo, sobre todo si tienes otras opciones mucho más establecidas en el mercado. Pasamos a la siguiente noticia.",
         "bg_gradient": "from-emerald-600 to-teal-900",
         "is_vip_hook": false
       },
@@ -71,11 +71,11 @@
         "news_index": 4,
         "badge": "NOTICIA #5 • CIERRE SEMANAL",
         "icon": "🔥",
-        "headline": "Una comunidad permite durante años el uso de una salida de humos y lo prohíbe tras el cambio de propietario la reforma del local: el Supremo anula el acuerdo por ir contra sus propios actos",
-        "subtext": "Que una comunidad de propietarios permita durante años utilizar una instalación y después decida prohibirla puede acabar siendo un problema, especialmente cuando el dueño de un local ya ha invertido dinero en reformarlo.",
-        "image": "https://i.blogs.es/5d283b/edificio-salida-humo/1024_2000.jpeg",
+        "headline": "“Si arranca y se mueve, no pasa nada”: la lógica que más llena los talleres, según un mecánico con 18 años de oficio",
+        "subtext": "Aunque el coche parezca que ha empezado a dar tirones o pierde potencia, puede seguir siendo capaz de arrancar y circular . Además, si esto ocurre de forma recurrente, es fácil que se vuelva habitual.",
+        "image": "https://i.blogs.es/d03e9a/mecanico-trabajando-en-el-motor/1024_2000.png",
         "source": "Genbeta",
-        "voice_script": "Noticia número 5: Una comunidad permite durante años el uso de una salida de humos y lo prohíbe tras el cambio de propietario la reforma del local: el Supremo anula el acuerdo por ir contra sus propios actos. Que una comunidad de propietarios permita durante años utilizar una instalación y después decida prohibirla puede acabar siendo un problema, especialmente cuando el dueño de un local ya ha invertido dinero en reformarlo. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
+        "voice_script": "Noticia número 5: “Si arranca y se mueve, no pasa nada”: la lógica que más llena los talleres, según un mecánico con 18 años de oficio. Aunque el coche parezca que ha empezado a dar tirones o pierde potencia, puede seguir siendo capaz de arrancar y circular . Además, si esto ocurre de forma recurrente, es fácil que se vuelva habitual. Y con esto cerramos el resumen semanal de ByteZone. Recuerda tocar cualquier noticia para leerla completa o desbloquear el truco VIP abajo.",
         "bg_gradient": "from-amber-500 to-orange-900",
         "is_vip_hook": true
       }
@@ -84,141 +84,141 @@
   "weekly_news": [
     {
       "id": "news_1",
-      "title": "Este nuevo Linux con inteligencia artificial nace de una de las figuras más conocidas de Android",
-      "summary": "Con Microsoft y otras empresas insertando IA en los sistemas operativos, era cuestión de tiempo para que comenzáramos a ver esta tendencia en Linux. Hace unas semanas, Canonical confirmó la llegada de un asistente inteligente en Ubuntu y hoy toca el turno de otra distribución.",
-      "voice_extra": "Con Microsoft y otras empresas insertando IA en los sistemas operativos, era cuestión de tiempo para que comenzáramos a ver esta tendencia en Linux. Hace unas semanas, Canonical confirmó la llegada de un asistente inteligente en Ubuntu y hoy toca el turno de otra distribución.",
+      "title": "Google lanza Gemini 4 Neon: más rápido, más barato y demoledor escribiendo código",
+      "summary": "Google ha presentado Gemini 4 Neon , su nueva IA diseñada para ejecutar tareas complejas a velocidades mucho más rápidas. A unos días de anunciar Hydrogen y Carbon , el gigante tecnológico vuelve al ruedo con un modelo que se sitúa entre los dos anteriores.",
+      "voice_extra": "Google ha presentado Gemini 4 Neon , su nueva IA diseñada para ejecutar tareas complejas a velocidades mucho más rápidas. A unos días de anunciar Hydrogen y Carbon , el gigante tecnológico vuelve al ruedo con un modelo que se sitúa entre los dos anteriores.",
       "full_paragraphs": [
-        "Con Microsoft y otras empresas insertando IA en los sistemas operativos, era cuestión de tiempo para que comenzáramos a ver esta tendencia en Linux. Hace unas semanas, Canonical confirmó la llegada de un asistente inteligente en Ubuntu y hoy toca el turno de otra distribución. El cofundador de Cyanogen, Kirt McMaster, ha presentado Kora OS, un sistema operativo basado en Linux que se enfoca en la IA .",
-        "De acuerdo con el comunicado de prensa, Kora OS fue concebido desde el núcleo para integrar la inteligencia artificial como parte de la plataforma. A diferencia de lo que hace Ubuntu con su Myna, Kora trata a los modelos de lenguaje y asistentes como elementos nativos del sistema operativo.",
-        "En una entrevista con TechCrunch , McMaster dijo que Kora OS está diseñado para quienes utilizan agentes y modelos de forma intensiva en su día a día . El cofundador de Cyanogen afirmó que no tienen intención de competir por los miles de usuarios de Windows, sino atraer a un nicho específico. El nuevo sistema operativo llegaría en 2027 junto con Humain OS, una plataforma basada en la misma tecnología, pero enfocada a empresas.",
-        "Según la información de la web, Kora OS está siendo desarrollado por Kora Systems, una compañía que surgió a partir de Playtron. Si juegas en Linux y has probado varios sistemas para saber cuál ofrece la mejor experiencia, seguramente te has topado con GameOS. Esta distribución basada en Fedora Silverblue es obra de Playtron, una empresa fundada por veteranos de Google y Cyanogen, como McMaster.",
-        "La pieza central de Kora se llama Cortex , un motor de inferencia híbrido que coordina el uso de CPU, GPU y NPU para ejecutar tareas de IA . La empresa afirma que su sistema puede aprovechar tanto los recursos de tu ordenador como los de otras máquinas conectadas a la misma red. El sistema prioriza la ejecución local para reducir la dependencia de la nube, aunque ofrece la alternativa de conectarte a servicios externos en caso de que necesites más potencia de cómputo.",
-        "A diferencia de Windows, Kora abandona el modelo tradicional de sistema operativo basado en carpetas y aplicaciones. En su lugar, los desarrolladores han creado los espacios de trabajo neuronales , una serie de entornos organizados según el contexto, memoria e intención de cada usuario. Cada espacio funciona como zona aislada en la que agentes de IA y aplicaciones operan con permisos específicos, lo que ayuda a reforzar la seguridad y privacidad."
+        "Google ha presentado Gemini 4 Neon , su nueva IA diseñada para ejecutar tareas complejas a velocidades mucho más rápidas. A unos días de anunciar Hydrogen y Carbon , el gigante tecnológico vuelve al ruedo con un modelo que se sitúa entre los dos anteriores. Google señala que Gemini 4 Neon ofrece capacidades de nivel frontera en ingeniería de software , análisis empresarial e investigación científica, pero enfocándose en la velocidad y eficiencia .",
+        "Como ocurre en todos los lanzamientos, Google mostró un listado de cifras y benchmarks que ponen a prueba el poder de su nueva IA. En el índice de inteligencia de Artificial Analysis, Gemini 4 Neon alcanza los 61 puntos en su nivel de razonamiento más avanzado, lo que le permite colarse en el listado de los mejores modelos. La IA también ofrece buen rendimiento en pruebas enfocadas en agentes de IA y seguimiento de instrucciones.",
+        "Además de la rapidez, una de las características más top de Gemini 4 Neon es la capacidad de trabajar con grandes volúmenes de información. El modelo cuenta con una ventana de contexto de hasta un millón de tokens , lo que le permite analizar hojas de cálculo, documentos en PDF, gráficos, audio y vídeo de forma simultánea. Neon puede convertir estos datos en informes o entregables, lo cual podría ser útil para quien trabaja en una oficina y necesita preparar una presentación.",
+        "Según Google, Neon también fue optimizado para tareas analíticas y científicas de alta complejidad . En algunos benchmarks de análisis científico y razonamiento matemático, el nuevo modelo se acerca cada vez más a otras IA más potentes. La tecnológica añade que en algunas pruebas iguala o supera a Gemini 4 Carbon , aunque con una velocidad hasta tres veces más rápida y a menor coste.",
+        "El desarrollo de software es otro de los puntos fuertes de Gemini 4 Neon. Google optimizó el modelo para flujos de trabajo de larga duración y puede actuar como un agente que gestiona herramientas, repositorios y proyectos complejos . En el Artificial Analysis Coding Agent Index, una prueba que mide cómo se desempeñan los agentes en tareas de ingeniería, Neon lidera la lista superando a Claude 5.5 Opus y GPT-6.2 Sol.",
+        "El nuevo modelo de Google puede depurar código en múltiples archivos , refactorizar repositorios grandes y comprender arquitecturas complejas. En una publicación en su web , Google mostró algunos de los ejemplos que logró con Gemini 4 Neon, como programar desde cero un simulador de esquí en primera persona con física realista a 120 Hz."
       ],
-      "full_voice_script": "Este nuevo Linux con inteligencia artificial nace de una de las figuras más conocidas de Android. Noticia publicada por Hipertextual IA. Con Microsoft y otras empresas insertando IA en los sistemas operativos, era cuestión de tiempo para que comenzáramos a ver esta tendencia en Linux. Hace unas semanas, Canonical confirmó la llegada de un asistente inteligente en Ubuntu y hoy toca el turno de otra distribución. El cofundador de Cyanogen, Kirt McMaster, ha presentado Kora OS, un sistema operativo basado en Linux que se enfoca en la IA . De acuerdo con el comunicado de prensa, Kora OS fue concebido desde el núcleo para integrar la inteligencia artificial como parte de la plataforma. A diferencia de lo que hace Ubuntu con su Myna, Kora trata a los modelos de lenguaje y asistentes como elementos nativos del sistema operativo. En una entrevista con TechCrunch , McMaster dijo que Kora OS está diseñado para quienes utilizan agentes y modelos de forma intensiva en su día a día . El cofundador de Cyanogen afirmó que no tienen intención de competir por los miles de usuarios de Windows, sino atraer a un nicho específico. El nuevo sistema operativo llegaría en 2027 junto con Humain OS, una plataforma basada en la misma tecnología, pero enfocada a empresas. Según la información de la web, Kora OS está siendo desarrollado por Kora Systems, una compañía que surgió a partir de Playtron. Si juegas en Linux y has probado varios sistemas para saber cuál ofrece la mejor experiencia, seguramente te has topado con GameOS. Esta distribución basada en Fedora Silverblue es obra de Playtron, una empresa fundada por veteranos de Google y Cyanogen, como McMaster. La pieza central de Kora se llama Cortex , un motor de inferencia híbrido que coordina el uso de CPU, GPU y NPU para ejecutar tareas de IA . La empresa afirma que su sistema puede aprovechar tanto los recursos de tu ordenador como los de otras máquinas conectadas a la misma red. El sistema prioriza la ejecución local para reducir la dependencia de la nube, aunque ofrece la alternativa de conectarte a servicios externos en caso de que necesites más potencia de cómputo. A diferencia de Windows, Kora abandona el modelo tradicional de sistema operativo basado en carpetas y aplicaciones. En su lugar, los desarrolladores han creado los espacios de trabajo neuronales , una serie de entornos organizados según el contexto, memoria e intención de cada usuario. Cada espacio funciona como zona aislada en la que agentes de IA y aplicaciones operan con permisos específicos, lo que ayuda a reforzar la seguridad y privacidad.",
-      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/11/koraos_06.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
+      "full_voice_script": "Google lanza Gemini 4 Neon: más rápido, más barato y demoledor escribiendo código. Noticia publicada por Hipertextual IA. Google ha presentado Gemini 4 Neon , su nueva IA diseñada para ejecutar tareas complejas a velocidades mucho más rápidas. A unos días de anunciar Hydrogen y Carbon , el gigante tecnológico vuelve al ruedo con un modelo que se sitúa entre los dos anteriores. Google señala que Gemini 4 Neon ofrece capacidades de nivel frontera en ingeniería de software , análisis empresarial e investigación científica, pero enfocándose en la velocidad y eficiencia . Como ocurre en todos los lanzamientos, Google mostró un listado de cifras y benchmarks que ponen a prueba el poder de su nueva IA. En el índice de inteligencia de Artificial Analysis, Gemini 4 Neon alcanza los 61 puntos en su nivel de razonamiento más avanzado, lo que le permite colarse en el listado de los mejores modelos. La IA también ofrece buen rendimiento en pruebas enfocadas en agentes de IA y seguimiento de instrucciones. Además de la rapidez, una de las características más top de Gemini 4 Neon es la capacidad de trabajar con grandes volúmenes de información. El modelo cuenta con una ventana de contexto de hasta un millón de tokens , lo que le permite analizar hojas de cálculo, documentos en PDF, gráficos, audio y vídeo de forma simultánea. Neon puede convertir estos datos en informes o entregables, lo cual podría ser útil para quien trabaja en una oficina y necesita preparar una presentación. Según Google, Neon también fue optimizado para tareas analíticas y científicas de alta complejidad . En algunos benchmarks de análisis científico y razonamiento matemático, el nuevo modelo se acerca cada vez más a otras IA más potentes. La tecnológica añade que en algunas pruebas iguala o supera a Gemini 4 Carbon , aunque con una velocidad hasta tres veces más rápida y a menor coste. El desarrollo de software es otro de los puntos fuertes de Gemini 4 Neon. Google optimizó el modelo para flujos de trabajo de larga duración y puede actuar como un agente que gestiona herramientas, repositorios y proyectos complejos . En el Artificial Analysis Coding Agent Index, una prueba que mide cómo se desempeñan los agentes en tareas de ingeniería, Neon lidera la lista superando a Claude 5.5 Opus y GPT-6.2 Sol. El nuevo modelo de Google puede depurar código en múltiples archivos , refactorizar repositorios grandes y comprender arquitecturas complejas. En una publicación en su web , Google mostró algunos de los ejemplos que logró con Gemini 4 Neon, como programar desde cero un simulador de esquí en primera persona con física realista a 120 Hz.",
+      "image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/11/google-gemini-4-neon.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
       "source": "Hipertextual IA",
-      "link": "https://hipertextual.com/inteligencia-artificial/kora-os-linux-ia-creador-cyanogen/",
-      "published": "2026-11-15T09:00:00+00:00"
+      "link": "https://hipertextual.com/inteligencia-artificial/gemini-4-neon-ia-rapida-eficiente-google/",
+      "published": "2026-11-19T00:24:09+00:00"
     },
     {
       "id": "news_2",
-      "title": "Mac Studio M5 Ultra (256 GB), análisis: un mes intentando encontrar los límites de una máquina casi sin límites",
-      "summary": "Hay una pregunta obvia cuando uno se sienta delante del ordenador más caro y potente que jamás ha probado: ¿para qué quiere nadie pagar más de 16.000 euros por un Mac Studio con 256 GB de memoria unificada? La respuesta corta es, cómo no, la de ejecutar modelos de IA locales.",
-      "voice_extra": "Hay una pregunta obvia cuando uno se sienta delante del ordenador más caro y potente que jamás ha probado: ¿para qué quiere nadie pagar más de 16.000 euros por un Mac Studio con 256 GB de memoria unificada? La respuesta corta es, cómo no, la de ejecutar modelos de IA locales.",
+      "title": "Qué es Artex, la IA principal sospechosa del ciberataque a la Comisión Europea que tiene en alerta al FBI",
+      "summary": "Con el avance de la IA generativa , son cada vez más los usuarios, empresas e instituciones que utilizan herramientas basadas en esta tecnología en sus procesos cotidianos.",
+      "voice_extra": "Con el avance de la IA generativa , son cada vez más los usuarios, empresas e instituciones que utilizan herramientas basadas en esta tecnología en sus procesos cotidianos.",
       "full_paragraphs": [
-        "Hay una pregunta obvia cuando uno se sienta delante del ordenador más caro y potente que jamás ha probado: ¿para qué quiere nadie pagar más de 16.000 euros por un Mac Studio con 256 GB de memoria unificada? La respuesta corta es, cómo no, la de ejecutar modelos de IA locales.",
-        "Porque lo que nos hemos propuesto es hacer una (laaarga) exposición de por qué un equipo así puede tener sentido y para quién. Llevamos más de un mes analizando el Mac Studio M5 Ultra 256 GB y el objetivo era intentar exprimirlo al máximo y tratar de medir sus límites. Y de hacerlo específicamente en el ámbito para el que claramente esta máquina bestial ha sido creada: la ejecución de modelos locales de IA.",
-        "CPU de 36 núcleos (12 supernúcleos y 24 de rendimiento)",
-        "Puerto HDMI compatible con salida de audio multicanal",
-        "En estos últimos cuatro años si uno quería sacar partido de un modelo de IA, lo más normal era aprovechar no el suyo propio, sino el de otros. Todo este tiempo hemos estado escribiendo prompts en una web (la de ChatGPT, la de Claude, la de Gemini, etc) o en algún entorno de desarrollo, por ejemplo OpenCode.",
-        "Pero al hacerlo sabemos perfectamente que todo lo que escribimos llega a algún centro de datos que procesa nuestras peticiones y acaba devolviendo una respuesta cada vez más precisa y rápida."
+        "Con el avance de la IA generativa , son cada vez más los usuarios, empresas e instituciones que utilizan herramientas basadas en esta tecnología en sus procesos cotidianos. Sus virtudes también han destacado especialmente en el sector de la ciberseguridad, pues los modelos de IA más punteros también pueden ser tremendamente eficaces a la hora de detectar vulnerabilidades.",
+        "Esa es precisamente la necesidad que pretende satisfacer a nivel empresarial e institucional la herramienta de Artex, un programa gratuito y de código abierto que permite que un modelo de IA sondee sistemas informáticos en busca de puntos débiles por su cuenta. Fue diseñado para pruebas de seguridad, pero ya hay grandes empresas que están haciendo uso de esta herramienta. El problema es que su nombre está ahora vinculado a varios incidentes informáticos. Te contamos todos los detalles.",
+        "Qué es. Artex es una herramienta que sirve como marco de pruebas de penetración de código abierto, el tipo de software que los equipos de seguridad utilizan para simular un ataque y encontrar agujeros antes de que lo hagan los atacantes reales. Lo que lo distingue es que delega gran parte del trabajo en la IA. La herramienta puede conectarse a cualquier modelo de lenguaje, desde modelos comerciales que ofrecen plataformas como Claude o ChatGPT hasta modelos de código abierto o chinos como DeepSeek , GLM o Kimi .",
+        "La herramienta fue publicada en Github este mismo verano bajo el alias “Autumn-27”. Su autor es el ingeniero chino Li Puhua.",
+        "Cómo funciona. La peculiaridad de esta herramienta es que permite al usuario describir su objetivo y hacer consultas en lenguaje natural sin la necesidad de escribir código o hacer uso de comandos. Una vez descrita la tarea, los agentes de IA se ponen manos a la obra para buscar servicios expuestos, detectan fallos como contraseñas débiles o configuraciones incorrectas e intentan utilizarlos para adentrarse más en una red.",
+        "Por qué se ha vuelto popular . Las organizaciones encargan pruebas de penetración porque encontrar un fallo uno mismo es mucho más barato que descubrirlo después de una brecha. Y claro, contar con la promesa de que una herramienta pueda automatizar esa tarea (y gratis), es bastante atractivo. Pero precisamente esas mismas funciones también pueden ser aprovechadas por los atacantes, y ahí radica parte de las preocupaciones."
       ],
-      "full_voice_script": "Mac Studio M5 Ultra (256 GB), análisis: un mes intentando encontrar los límites de una máquina casi sin límites. Noticia publicada por Xataka IA & Tech. Hay una pregunta obvia cuando uno se sienta delante del ordenador más caro y potente que jamás ha probado: ¿para qué quiere nadie pagar más de 16.000 euros por un Mac Studio con 256 GB de memoria unificada? La respuesta corta es, cómo no, la de ejecutar modelos de IA locales. Porque lo que nos hemos propuesto es hacer una (laaarga) exposición de por qué un equipo así puede tener sentido y para quién. Llevamos más de un mes analizando el Mac Studio M5 Ultra 256 GB y el objetivo era intentar exprimirlo al máximo y tratar de medir sus límites. Y de hacerlo específicamente en el ámbito para el que claramente esta máquina bestial ha sido creada: la ejecución de modelos locales de IA. CPU de 36 núcleos (12 supernúcleos y 24 de rendimiento) Puerto HDMI compatible con salida de audio multicanal En estos últimos cuatro años si uno quería sacar partido de un modelo de IA, lo más normal era aprovechar no el suyo propio, sino el de otros. Todo este tiempo hemos estado escribiendo prompts en una web (la de ChatGPT, la de Claude, la de Gemini, etc) o en algún entorno de desarrollo, por ejemplo OpenCode. Pero al hacerlo sabemos perfectamente que todo lo que escribimos llega a algún centro de datos que procesa nuestras peticiones y acaba devolviendo una respuesta cada vez más precisa y rápida.",
-      "image": "https://i.blogs.es/3b9a69/macstudio-12/1024_2000.jpeg",
+      "full_voice_script": "Qué es Artex, la IA principal sospechosa del ciberataque a la Comisión Europea que tiene en alerta al FBI. Noticia publicada por Xataka IA & Tech. Con el avance de la IA generativa , son cada vez más los usuarios, empresas e instituciones que utilizan herramientas basadas en esta tecnología en sus procesos cotidianos. Sus virtudes también han destacado especialmente en el sector de la ciberseguridad, pues los modelos de IA más punteros también pueden ser tremendamente eficaces a la hora de detectar vulnerabilidades. Esa es precisamente la necesidad que pretende satisfacer a nivel empresarial e institucional la herramienta de Artex, un programa gratuito y de código abierto que permite que un modelo de IA sondee sistemas informáticos en busca de puntos débiles por su cuenta. Fue diseñado para pruebas de seguridad, pero ya hay grandes empresas que están haciendo uso de esta herramienta. El problema es que su nombre está ahora vinculado a varios incidentes informáticos. Te contamos todos los detalles. Qué es. Artex es una herramienta que sirve como marco de pruebas de penetración de código abierto, el tipo de software que los equipos de seguridad utilizan para simular un ataque y encontrar agujeros antes de que lo hagan los atacantes reales. Lo que lo distingue es que delega gran parte del trabajo en la IA. La herramienta puede conectarse a cualquier modelo de lenguaje, desde modelos comerciales que ofrecen plataformas como Claude o ChatGPT hasta modelos de código abierto o chinos como DeepSeek , GLM o Kimi . La herramienta fue publicada en Github este mismo verano bajo el alias “Autumn-27”. Su autor es el ingeniero chino Li Puhua. Cómo funciona. La peculiaridad de esta herramienta es que permite al usuario describir su objetivo y hacer consultas en lenguaje natural sin la necesidad de escribir código o hacer uso de comandos. Una vez descrita la tarea, los agentes de IA se ponen manos a la obra para buscar servicios expuestos, detectan fallos como contraseñas débiles o configuraciones incorrectas e intentan utilizarlos para adentrarse más en una red. Por qué se ha vuelto popular . Las organizaciones encargan pruebas de penetración porque encontrar un fallo uno mismo es mucho más barato que descubrirlo después de una brecha. Y claro, contar con la promesa de que una herramienta pueda automatizar esa tarea (y gratis), es bastante atractivo. Pero precisamente esas mismas funciones también pueden ser aprovechadas por los atacantes, y ahí radica parte de las preocupaciones.",
+      "image": "https://i.blogs.es/2c499e/jakub-zerdzicki-8ljjfxqfwkm-unsplash/1024_2000.jpeg",
       "source": "Xataka IA & Tech",
-      "link": "https://www.xataka.com/analisis/mac-studio-m5-ultra-256-gb-analisis-review-caracteristicas-precio-especificaciones",
-      "published": "2026-11-16T12:01:25+00:00"
+      "link": "https://www.xataka.com/seguridad/que-artex-herramienta-ia-que-busca-fallos-seguridad-sola-que-preocupa-a-empresas-gobiernos",
+      "published": "2026-11-23T13:27:00+00:00"
     },
     {
       "id": "news_3",
-      "title": "CEO de Microsoft, Satya Nadella: \"Tenemos que hacer algo útil con la IA, o rápidamente perderemos el permiso social\" — desafiando a los pioneros de la IA a mejorar su desempeño",
-      "summary": "Microsoft lleva años apostando por la IA invirtiendo grandes sumas de dinero en su desarrollo y llevando herramientas como Copilot a sus productos .",
-      "voice_extra": "Microsoft lleva años apostando por la IA invirtiendo grandes sumas de dinero en su desarrollo y llevando herramientas como Copilot a sus productos .",
+      "title": "\"Aquí están los 4 trabajos que resistirán a la Inteligencia Artificial\". Las predicciones de Bill Gates y el plan de Microsoft.",
+      "summary": "La inteligencia artificial va a cambiar bastante el mercado laboral, pero Bill Gates cree que hay terrenos en los que las personas seguirán siendo necesarias, y señala cuatro : la programación, la biología, la energía y el deporte profesional.",
+      "voice_extra": "La inteligencia artificial va a cambiar bastante el mercado laboral, pero Bill Gates cree que hay terrenos en los que las personas seguirán siendo necesarias, y señala cuatro : la programación, la biología, la energía y el deporte profesional.",
       "full_paragraphs": [
-        "Microsoft lleva años apostando por la IA invirtiendo grandes sumas de dinero en su desarrollo y llevando herramientas como Copilot a sus productos . Sin embargo, Satya Nadella (CEO de la compañía) reconoce que toda esta apuesta tiene un problema: ¿de qué sirve gastar tantos recursos si la tecnología no termina mejorando la vida de las personas? Por eso, el directivo llegó a advertir que la industria podría perder rápidamente el respaldo de la sociedad si no consigue demostrar su utilidad.",
-        "Durante una conversación con Larry Fink (CEO de BlackRock) en el Foro Económico Mundial de Davos que tuvo lugar en enero, Nadella explicó que la comunidad internacional tiene que empezar a utilizar la IA para conseguir resultados que realmente importen . Si no lo hacen, Nadella considera que será difícil justificar el consumo energético que necesitan los centros de datos para mantener funcionando todos estos sistemas.",
-        "¿Y a qué se refiere exactamente? El CEO de Microsoft puso como ejemplos la sanidad, la educación, la eficiencia de las administraciones públicas y la competitividad de las empresas. Para él, no basta con desarrollar modelos más potentes o capaces de generar respuestas cada vez mejores, también es necesario que esas mejoras lleguen a la sociedad.",
-        "El problema es que mantener toda esta infraestructura requiere enormes cantidades de electricidad, y los centros de datos están aumentando sus necesidades energéticas . De hecho, algunos proyectos ya se están encontrando con la oposición de comunidades locales por su posible impacto ambiental y la presión que pueden ejercer sobre las redes eléctricas.",
-        "Nadella cree que, si la IA no consigue mejorar aspectos concretos de nuestra vida, las empresas podrían perder lo que denomina \"permiso social\" para seguir destinando recursos escasos como la energía a esta tecnología . Eso sí, no está pidiendo que se frene su desarrollo, sino que los avances se traduzcan en beneficios reales y lleguen a más personas, empresas y países.",
-        "En Genbeta | Jordi Cruz, sobre la actitud de los trabajadores: “Hay un cambio generacional. Hemos pasado de ser espartanos y meterle catorce horas a hacer ocho y entenderlo de una forma distinta”"
+        "La inteligencia artificial va a cambiar bastante el mercado laboral, pero Bill Gates cree que hay terrenos en los que las personas seguirán siendo necesarias, y señala cuatro : la programación, la biología, la energía y el deporte profesional. Y es que, aunque la automatización asuma cada vez más tareas, eso no implica que los trabajadores vayan a desaparecer de todos los ámbitos.",
+        "El deporte, para las personas . Gates puso ese ejemplo en The Tonight Show en 2025. Cuando el presentador le preguntó si seguiremos necesitando a los humanos, contestó que no para la mayoría de las cosas, pero añadió que eso lo decidiremos nosotros: “Como el béisbol. No vamos a querer ver a ordenadores jugando al béisbol”. Vamos, que hay actividades cuya gracia está en que las hacen personas.",
+        "La IA como acelerador . En las otras tres áreas, la tecnología haría de acelerador más que de sustituto. Gates ha hecho múltiples declaraciones declarando que la IA ya puede generar código, pero los programadores siguen siendo necesarios para detectar y corregir errores y para hacer avanzar la propia IA. De hecho, en una entrevista con Axios Gates defendió que conviene seguir aprendiendo a programar aunque los ordenadores lo hagan muy bien, para entender lo que hay debajo.",
+        "Biología y energía . La misma recopilación le atribuye la idea de que la IA diagnostica bien enfermedades y analiza el ADN, aunque le falta la creatividad que piden la investigación biológica y los descubrimientos científicos, mientras que la energía sería un campo demasiado complejo para automatizarlo del todo.",
+        "Lo que sí se automatizará . En la misma charla con Fallon en Tonight Show, Gates avanzó que “en lo que respecta a fabricar cosas, moverlas y cultivar alimentos, con el tiempo serán problemas básicamente resueltos”, lo que afecta a la industria, la logística y la agricultura. Eso sí, también dejó claro que “habrá algunas cosas que nos reservaremos”, así que tocará decidir como sociedad qué tareas queremos seguir dejando en manos de personas.",
+        "Las salidas voluntarias de Microsoft . El debate coincide con los ajustes de plantilla de las grandes tecnológicas. Microsoft anunció el 26 de octubre de 2026 un programa de salidas voluntarias por tiempo limitado, con apoyo económico y recursos para planificar la carrera profesional, dirigido a empleados elegibles de los equipos que participan en Estados Unidos, Canadá, Reino Unido e India, pudiendo acogerse a él unos 60.000 empleados, más de una cuarta parte de la plantilla."
       ],
-      "full_voice_script": "CEO de Microsoft, Satya Nadella: \"Tenemos que hacer algo útil con la IA, o rápidamente perderemos el permiso social\" — desafiando a los pioneros de la IA a mejorar su desempeño. Noticia publicada por Genbeta IA. Microsoft lleva años apostando por la IA invirtiendo grandes sumas de dinero en su desarrollo y llevando herramientas como Copilot a sus productos . Sin embargo, Satya Nadella (CEO de la compañía) reconoce que toda esta apuesta tiene un problema: ¿de qué sirve gastar tantos recursos si la tecnología no termina mejorando la vida de las personas? Por eso, el directivo llegó a advertir que la industria podría perder rápidamente el respaldo de la sociedad si no consigue demostrar su utilidad. Durante una conversación con Larry Fink (CEO de BlackRock) en el Foro Económico Mundial de Davos que tuvo lugar en enero, Nadella explicó que la comunidad internacional tiene que empezar a utilizar la IA para conseguir resultados que realmente importen . Si no lo hacen, Nadella considera que será difícil justificar el consumo energético que necesitan los centros de datos para mantener funcionando todos estos sistemas. ¿Y a qué se refiere exactamente? El CEO de Microsoft puso como ejemplos la sanidad, la educación, la eficiencia de las administraciones públicas y la competitividad de las empresas. Para él, no basta con desarrollar modelos más potentes o capaces de generar respuestas cada vez mejores, también es necesario que esas mejoras lleguen a la sociedad. El problema es que mantener toda esta infraestructura requiere enormes cantidades de electricidad, y los centros de datos están aumentando sus necesidades energéticas . De hecho, algunos proyectos ya se están encontrando con la oposición de comunidades locales por su posible impacto ambiental y la presión que pueden ejercer sobre las redes eléctricas. Nadella cree que, si la IA no consigue mejorar aspectos concretos de nuestra vida, las empresas podrían perder lo que denomina \"permiso social\" para seguir destinando recursos escasos como la energía a esta tecnología . Eso sí, no está pidiendo que se frene su desarrollo, sino que los avances se traduzcan en beneficios reales y lleguen a más personas, empresas y países. En Genbeta | Jordi Cruz, sobre la actitud de los trabajadores: “Hay un cambio generacional. Hemos pasado de ser espartanos y meterle catorce horas a hacer ocho y entenderlo de una forma distinta”",
-      "image": "https://i.blogs.es/9729bf/satya-nadella-microsoft/1024_2000.jpeg",
+      "full_voice_script": "\"Aquí están los 4 trabajos que resistirán a la Inteligencia Artificial\". Las predicciones de Bill Gates y el plan de Microsoft.. Noticia publicada por Genbeta IA. La inteligencia artificial va a cambiar bastante el mercado laboral, pero Bill Gates cree que hay terrenos en los que las personas seguirán siendo necesarias, y señala cuatro : la programación, la biología, la energía y el deporte profesional. Y es que, aunque la automatización asuma cada vez más tareas, eso no implica que los trabajadores vayan a desaparecer de todos los ámbitos. El deporte, para las personas . Gates puso ese ejemplo en The Tonight Show en 2025. Cuando el presentador le preguntó si seguiremos necesitando a los humanos, contestó que no para la mayoría de las cosas, pero añadió que eso lo decidiremos nosotros: “Como el béisbol. No vamos a querer ver a ordenadores jugando al béisbol”. Vamos, que hay actividades cuya gracia está en que las hacen personas. La IA como acelerador . En las otras tres áreas, la tecnología haría de acelerador más que de sustituto. Gates ha hecho múltiples declaraciones declarando que la IA ya puede generar código, pero los programadores siguen siendo necesarios para detectar y corregir errores y para hacer avanzar la propia IA. De hecho, en una entrevista con Axios Gates defendió que conviene seguir aprendiendo a programar aunque los ordenadores lo hagan muy bien, para entender lo que hay debajo. Biología y energía . La misma recopilación le atribuye la idea de que la IA diagnostica bien enfermedades y analiza el ADN, aunque le falta la creatividad que piden la investigación biológica y los descubrimientos científicos, mientras que la energía sería un campo demasiado complejo para automatizarlo del todo. Lo que sí se automatizará . En la misma charla con Fallon en Tonight Show, Gates avanzó que “en lo que respecta a fabricar cosas, moverlas y cultivar alimentos, con el tiempo serán problemas básicamente resueltos”, lo que afecta a la industria, la logística y la agricultura. Eso sí, también dejó claro que “habrá algunas cosas que nos reservaremos”, así que tocará decidir como sociedad qué tareas queremos seguir dejando en manos de personas. Las salidas voluntarias de Microsoft . El debate coincide con los ajustes de plantilla de las grandes tecnológicas. Microsoft anunció el 26 de octubre de 2026 un programa de salidas voluntarias por tiempo limitado, con apoyo económico y recursos para planificar la carrera profesional, dirigido a empleados elegibles de los equipos que participan en Estados Unidos, Canadá, Reino Unido e India, pudiendo acogerse a él unos 60.000 empleados, más de una cuarta parte de la plantilla.",
+      "image": "https://i.blogs.es/fc995f/bill-gates-en-un-encuentro-profesional/1024_2000.png",
       "source": "Genbeta IA",
-      "link": "https://www.genbeta.com/inteligencia-artificial/ceo-microsoft-satya-nadella-tenemos-que-hacer-algo-util-ia-rapidamente-perderemos-permiso-social-desafiando-a-pioneros-ia-a-mejorar-su-desempeno",
-      "published": "2026-11-13T19:01:21+00:00"
+      "link": "https://www.genbeta.com/inteligencia-artificial/aqui-estan-4-trabajos-que-resistiran-a-inteligencia-artificial-predicciones-bill-gates-plan-microsoft",
+      "published": "2026-11-18T15:01:15+00:00"
     },
     {
       "id": "news_4",
-      "title": "Este monitor es también ordenador, incluye ratón y teclado, webcam y además Windows 11",
-      "summary": "Ahora que estamos muy cerca de la fecha en la que se celebrará el Black Friday, las tiendas han comenzado a bajar los precios de muchos ordenadores. Un buen ejemplo lo tenemos en el HP OmniStudio , que por los 749 euros que cuesta ahora mismo es ideal si además queremos un monitor y otros periféricos.",
-      "voice_extra": "Ahora que estamos muy cerca de la fecha en la que se celebrará el Black Friday, las tiendas han comenzado a bajar los precios de muchos ordenadores. Un buen ejemplo lo tenemos en el HP OmniStudio , que por los 749 euros que cuesta ahora mismo es ideal si además queremos un monitor y otros periféricos.",
+      "title": "Lenovo se lleva el mejor portátil convertible del año con una apuesta que le ha salido muy bien: Nvidia Spark",
+      "summary": "Apostar por un chip de primera generación es arriesgado para un convertible. Bueno, es arriesgado para cualquier dispositivo, sobre todo si tienes otras opciones mucho más establecidas en el mercado.",
+      "voice_extra": "Apostar por un chip de primera generación es arriesgado para un convertible. Bueno, es arriesgado para cualquier dispositivo, sobre todo si tienes otras opciones mucho más establecidas en el mercado.",
       "full_paragraphs": [
-        "Ahora que estamos muy cerca de la fecha en la que se celebrará el Black Friday, las tiendas han comenzado a bajar los precios de muchos ordenadores. Un buen ejemplo lo tenemos en el HP OmniStudio , que por los 749 euros que cuesta ahora mismo es ideal si además queremos un monitor y otros periféricos.",
-        "El HP OmniStudio es un ordenador all-in-one que destaca principalmente por todo lo que incluye, ya que viene junto con bastantes periféricos. En lo que se refiere al ordenador, monta el procesador Ryzen 5 y viene con una configuración de 8 GB de RAM (DDR5) y 512 GB de almacenamiento (SSD) .",
-        "Lo bueno es que este ordenador viene con Windows 11 , por lo que no tenemos que preocuparnos de instalar el sistema operativo por nuestra cuenta. También cuenta con WiFi 7, Bluetooth 6.0 , Ethernet, HDMI, un par de puertos USB-C y también cuenta con USB-A.",
-        "Al tratarse de un ordenador todo en uno, el HP OmniStudio viene junto con un monitor con pantalla antirreflectante de 23,8 pulgadas que ofrece una resolución Full HD y una tasa de refresco de 10 Hz. Además, incluye webcam integrada y viene con un ratón y con un teclado con pad numérico.",
-        "💡 CÓMPRALO SI... Buscas un ordenador para estudiar o trabajar y además también tienes que comprar un monitor y varios periféricos.",
-        "⛔ NO LO COMPRES SI... Necesitas una mayor potencia para trabajar o estudiar con apps exigentes, ya que esta configuración del HP OmniStudio puede quedarse justita."
+        "Apostar por un chip de primera generación es arriesgado para un convertible. Bueno, es arriesgado para cualquier dispositivo, sobre todo si tienes otras opciones mucho más establecidas en el mercado. Pero también es cierto que el NVIDIA Spark ha suscitado la expectación de toda la industria al ser una plataforma todoterreno que apuesta por impulsar el rendimiento del equipo sea cual sea la tarea (productividad, IA, gaming, etc).",
+        "Los convertibles son una categoría que durante mucho tiempo han tenido que equilibrar movilidad frente a potencia. Intel y AMD ya cuentan con plataformas bastante sólidas en este segmento, pero eso no ha impedido a Lenovo a explorar otras alternativas entre toda su oferta de productos. Por ello, igual su Yoga 9n 2-en-1 de 11ª generación es el más interesante . Y es que está construido en torno a la plataforma RTX Spark de NVIDIA, que reúne una CPU con arquitectura Arm, una GPU Blackwell y memoria unificada en un solo chip.",
+        "Este equipo ha sido nuestro ganador en los Premios Xataka Verisure 2026 dentro de la categoría de “Mejor portátil convertible”, superando al ASUS ProArt GoPro Edition PX13 y a la Microsoft Surface Pro de 13 pulgadas de 12ª generación con chip Snapdragon. Y te contamos por qué.",
+        "El Yoga es un portátil creativo grande y flexible. Tiene una pantalla táctil OLED de 16 pulgadas, resolución 2.880 x 1.800 y una bisagra de 360 grados, y admite entrada con lápiz tanto en la pantalla como en el panel táctil. Spark es la carta más fuerte que tiene en la mano. El chip viene con hasta 20 núcleos de CPU, hasta 6.144 núcleos de GPU y hasta 64 GB de memoria unificada . El portento es tal que este modelo de Lenovo en cuestión se convierte por méritos propios en el escaparate perfecto para la plataforma de NVIDIA.",
+        "Spark tiene la capacidad de ofrecer a los equipos gran rendimiento para ejecutar modelos de IA en local , pero también el potencial de ser una gran plataforma para ejecutar videojuegos en formatos más reducidos, con una mejor gestión térmica. Este chip, junto a todas las virtudes del Yoga 9n 2-en-1 que Lenovo trae casa, hacen que se convierta (jeje) en una de las propuestas más completas del segmento y, para nuestro jurado, el mejor convertible de este año.",
+        "Englobar potencia y flexibilidad no suele ser barato, y este equipo es el perfecto ejemplo de ello. Los precios superan los 3.000 euros , por lo que todavía se encuentra en un segmento nicho."
       ],
-      "full_voice_script": "Este monitor es también ordenador, incluye ratón y teclado, webcam y además Windows 11. Noticia publicada por Xataka. Ahora que estamos muy cerca de la fecha en la que se celebrará el Black Friday, las tiendas han comenzado a bajar los precios de muchos ordenadores. Un buen ejemplo lo tenemos en el HP OmniStudio , que por los 749 euros que cuesta ahora mismo es ideal si además queremos un monitor y otros periféricos. El HP OmniStudio es un ordenador all-in-one que destaca principalmente por todo lo que incluye, ya que viene junto con bastantes periféricos. En lo que se refiere al ordenador, monta el procesador Ryzen 5 y viene con una configuración de 8 GB de RAM (DDR5) y 512 GB de almacenamiento (SSD) . Lo bueno es que este ordenador viene con Windows 11 , por lo que no tenemos que preocuparnos de instalar el sistema operativo por nuestra cuenta. También cuenta con WiFi 7, Bluetooth 6.0 , Ethernet, HDMI, un par de puertos USB-C y también cuenta con USB-A. Al tratarse de un ordenador todo en uno, el HP OmniStudio viene junto con un monitor con pantalla antirreflectante de 23,8 pulgadas que ofrece una resolución Full HD y una tasa de refresco de 10 Hz. Además, incluye webcam integrada y viene con un ratón y con un teclado con pad numérico. 💡 CÓMPRALO SI... Buscas un ordenador para estudiar o trabajar y además también tienes que comprar un monitor y varios periféricos. ⛔ NO LO COMPRES SI... Necesitas una mayor potencia para trabajar o estudiar con apps exigentes, ya que esta configuración del HP OmniStudio puede quedarse justita.",
-      "image": "https://i.blogs.es/f020b1/hp-omnistudio/1024_2000.jpeg",
+      "full_voice_script": "Lenovo se lleva el mejor portátil convertible del año con una apuesta que le ha salido muy bien: Nvidia Spark. Noticia publicada por Xataka. Apostar por un chip de primera generación es arriesgado para un convertible. Bueno, es arriesgado para cualquier dispositivo, sobre todo si tienes otras opciones mucho más establecidas en el mercado. Pero también es cierto que el NVIDIA Spark ha suscitado la expectación de toda la industria al ser una plataforma todoterreno que apuesta por impulsar el rendimiento del equipo sea cual sea la tarea (productividad, IA, gaming, etc). Los convertibles son una categoría que durante mucho tiempo han tenido que equilibrar movilidad frente a potencia. Intel y AMD ya cuentan con plataformas bastante sólidas en este segmento, pero eso no ha impedido a Lenovo a explorar otras alternativas entre toda su oferta de productos. Por ello, igual su Yoga 9n 2-en-1 de 11ª generación es el más interesante . Y es que está construido en torno a la plataforma RTX Spark de NVIDIA, que reúne una CPU con arquitectura Arm, una GPU Blackwell y memoria unificada en un solo chip. Este equipo ha sido nuestro ganador en los Premios Xataka Verisure 2026 dentro de la categoría de “Mejor portátil convertible”, superando al ASUS ProArt GoPro Edition PX13 y a la Microsoft Surface Pro de 13 pulgadas de 12ª generación con chip Snapdragon. Y te contamos por qué. El Yoga es un portátil creativo grande y flexible. Tiene una pantalla táctil OLED de 16 pulgadas, resolución 2.880 x 1.800 y una bisagra de 360 grados, y admite entrada con lápiz tanto en la pantalla como en el panel táctil. Spark es la carta más fuerte que tiene en la mano. El chip viene con hasta 20 núcleos de CPU, hasta 6.144 núcleos de GPU y hasta 64 GB de memoria unificada . El portento es tal que este modelo de Lenovo en cuestión se convierte por méritos propios en el escaparate perfecto para la plataforma de NVIDIA. Spark tiene la capacidad de ofrecer a los equipos gran rendimiento para ejecutar modelos de IA en local , pero también el potencial de ser una gran plataforma para ejecutar videojuegos en formatos más reducidos, con una mejor gestión térmica. Este chip, junto a todas las virtudes del Yoga 9n 2-en-1 que Lenovo trae casa, hacen que se convierta (jeje) en una de las propuestas más completas del segmento y, para nuestro jurado, el mejor convertible de este año. Englobar potencia y flexibilidad no suele ser barato, y este equipo es el perfecto ejemplo de ello. Los precios superan los 3.000 euros , por lo que todavía se encuentra en un segmento nicho.",
+      "image": "https://i.blogs.es/128539/lenovo-premios-final/1024_2000.jpeg",
       "source": "Xataka",
-      "link": "https://www.xataka.com/seleccion/este-monitor-tambien-ordenador-incluye-raton-teclado-webcam-windows-11",
-      "published": "2026-11-16T13:31:21+01:00"
+      "link": "https://www.xataka.com/ordenadores/lenovo-se-lleva-mejor-portatil-convertible-ano-apuesta-que-le-ha-salido-muy-bien-nvidia-spark",
+      "published": "2026-11-23T15:00:50+01:00"
     },
     {
       "id": "news_5",
-      "title": "Una comunidad permite durante años el uso de una salida de humos y lo prohíbe tras el cambio de propietario la reforma del local: el Supremo anula el acuerdo por ir contra sus propios actos",
-      "summary": "Que una comunidad de propietarios permita durante años utilizar una instalación y después decida prohibirla puede acabar siendo un problema, especialmente cuando el dueño de un local ya ha invertido dinero en reformarlo.",
-      "voice_extra": "Que una comunidad de propietarios permita durante años utilizar una instalación y después decida prohibirla puede acabar siendo un problema, especialmente cuando el dueño de un local ya ha invertido dinero en reformarlo.",
+      "title": "“Si arranca y se mueve, no pasa nada”: la lógica que más llena los talleres, según un mecánico con 18 años de oficio",
+      "summary": "Aunque el coche parezca que ha empezado a dar tirones o pierde potencia, puede seguir siendo capaz de arrancar y circular . Además, si esto ocurre de forma recurrente, es fácil que se vuelva habitual.",
+      "voice_extra": "Aunque el coche parezca que ha empezado a dar tirones o pierde potencia, puede seguir siendo capaz de arrancar y circular . Además, si esto ocurre de forma recurrente, es fácil que se vuelva habitual.",
       "full_paragraphs": [
-        "Que una comunidad de propietarios permita durante años utilizar una instalación y después decida prohibirla puede acabar siendo un problema, especialmente cuando el dueño de un local ya ha invertido dinero en reformarlo. Justo eso es lo que ocurrió en un edificio de Madrid, donde los vecinos exigieron retirar una chimenea de salida de humos que llevaba instalada desde 1990 . Sin embargo, el Tribunal Supremo terminó dando la razón a la empresa propietaria del local al considerar que la comunidad había actuado contra sus propios actos.",
-        "Como recoge NoticiasTrabajo en su información sobre el conflicto , la instalación había sido autorizada inicialmente a un inquilino con carácter personal y temporal, pero siguió utilizándose cuando este abandonó el local. De hecho, otro arrendatario la empleó al menos desde 2002 sin que la comunidad exigiera retirarla. La situación cambió cuando una empresa compró el establecimiento en 2016 para abrir un restaurante y comunicó su proyecto de reforma a la presidenta y al administrador, que incluso visitaron las obras. ¿Y qué ocurrió? Nadie se opuso al uso de la chimenea y las únicas preocupaciones que trasladaron estaban relacionadas con el ruido.",
-        "Una vez terminada la reforma, llegó el conflicto. En marzo de 2017, la comunidad aprobó un acuerdo para prohibir el uso de la salida de humos y exigir el desmontaje de la chimenea, pese a que había conocido las obras y permitido que finalizaran. La propietaria acudió a los tribunales y perdió en primera instancia, pero la Audiencia Provincial de Madrid anuló el acuerdo al entender que los vecinos habían generado una situación de confianza que después contradijeron . La comunidad recurrió de nuevo y el caso terminó en el Tribunal Supremo.",
-        "Aquí entra en juego el artículo 7.1 del Código Civil , que establece que los derechos deben ejercerse conforme a las exigencias de la buena fe. En su sentencia 103/2026, de 29 de enero , el Supremo explica que la comunidad no podía ignorar su comportamiento anterior, especialmente después de permitir durante más de 14 años el uso de la instalación y conocer las reformas del nuevo propietario sin plantear ninguna objeción a la chimenea.",
-        "A todo esto debemos sumar que los artículos 7 y 17 de la Ley de Propiedad Horizontal regulan las actuaciones sobre elementos comunes y los acuerdos necesarios para modificarlos. Sin embargo, esas facultades también tienen límites, como ha ocurrido en este caso. El Supremo consideró que la comunidad había esperado a que concluyeran las obras y se realizara la inversión para prohibir algo que llevaba años tolerando. Por eso, desestimó su recurso y confirmó la nulidad del acuerdo, al entender que vulneraba la buena fe y la doctrina de los actos propios.",
-        "En Xataka | Un viejo edificio de Madrid necesitaba ascensor y no tenía hueco: el juez ha permitido que se coma el patio interior del bloque"
+        "Aunque el coche parezca que ha empezado a dar tirones o pierde potencia, puede seguir siendo capaz de arrancar y circular . Además, si esto ocurre de forma recurrente, es fácil que se vuelva habitual. Por eso se puede asumir que es por los kilómetros. Posponer los mantenimientos tiene sus consecuencias, advierte Juande Rodríguez (mecánico con 18 años de experiencia) .",
+        "“El error más caro es acostumbrarse a que el coche ya no va como antes” . Empezó en los talleres con 16 años. A los 20 abrió su propio negocio. En su currículum destacan ocho años de mecánica de competición. Deja claro que, a unque el coche siga siendo operativo, es importante actuar ante los primeros síntomas .",
+        "Por ejemplo, el color del humo que sale por el escape puede ser indicativo. Si tenemos pérdida de potencia y sale humo blanco o azulado, es posible que sea el turbo. También puede ir asociado a consumo de aceite. Es fundamental saber cuál es el origen.",
+        "El humo negro puede hacer referencia a problemas en la admisión . Por ejemplo, si el filtro de aire está tapado, no llega suficiente aire al motor. También puede haber pérdida de potencia sin humo. En este caso, la causa puede ser un sensor de admisión sucio o carbonilla .",
+        "Si al acelerar el motor gira más rápido, pero no aumenta la velocidad en la misma proporción, es posible que esté patinando el embrague . Es importante que, antes de que deje de transmitir fuerza a las ruedas, se revise. También es relevante revisarlo si el pedal está duro o cuesta enganchar marchas (por razones diferentes).",
+        "Otro elemento a revisar es el Start-Stop . Si no apaga el motor en las paradas, es posible que tenga que ver con el estado de la batería. También puede ser desactivado por la electrónica (cuando no se cumplan las condiciones necesarias para su funcionamiento). Sin embargo, esto no quiere decir que haya una avería."
       ],
-      "full_voice_script": "Una comunidad permite durante años el uso de una salida de humos y lo prohíbe tras el cambio de propietario la reforma del local: el Supremo anula el acuerdo por ir contra sus propios actos. Noticia publicada por Genbeta. Que una comunidad de propietarios permita durante años utilizar una instalación y después decida prohibirla puede acabar siendo un problema, especialmente cuando el dueño de un local ya ha invertido dinero en reformarlo. Justo eso es lo que ocurrió en un edificio de Madrid, donde los vecinos exigieron retirar una chimenea de salida de humos que llevaba instalada desde 1990 . Sin embargo, el Tribunal Supremo terminó dando la razón a la empresa propietaria del local al considerar que la comunidad había actuado contra sus propios actos. Como recoge NoticiasTrabajo en su información sobre el conflicto , la instalación había sido autorizada inicialmente a un inquilino con carácter personal y temporal, pero siguió utilizándose cuando este abandonó el local. De hecho, otro arrendatario la empleó al menos desde 2002 sin que la comunidad exigiera retirarla. La situación cambió cuando una empresa compró el establecimiento en 2016 para abrir un restaurante y comunicó su proyecto de reforma a la presidenta y al administrador, que incluso visitaron las obras. ¿Y qué ocurrió? Nadie se opuso al uso de la chimenea y las únicas preocupaciones que trasladaron estaban relacionadas con el ruido. Una vez terminada la reforma, llegó el conflicto. En marzo de 2017, la comunidad aprobó un acuerdo para prohibir el uso de la salida de humos y exigir el desmontaje de la chimenea, pese a que había conocido las obras y permitido que finalizaran. La propietaria acudió a los tribunales y perdió en primera instancia, pero la Audiencia Provincial de Madrid anuló el acuerdo al entender que los vecinos habían generado una situación de confianza que después contradijeron . La comunidad recurrió de nuevo y el caso terminó en el Tribunal Supremo. Aquí entra en juego el artículo 7.1 del Código Civil , que establece que los derechos deben ejercerse conforme a las exigencias de la buena fe. En su sentencia 103/2026, de 29 de enero , el Supremo explica que la comunidad no podía ignorar su comportamiento anterior, especialmente después de permitir durante más de 14 años el uso de la instalación y conocer las reformas del nuevo propietario sin plantear ninguna objeción a la chimenea. A todo esto debemos sumar que los artículos 7 y 17 de la Ley de Propiedad Horizontal regulan las actuaciones sobre elementos comunes y los acuerdos necesarios para modificarlos. Sin embargo, esas facultades también tienen límites, como ha ocurrido en este caso. El Supremo consideró que la comunidad había esperado a que concluyeran las obras y se realizara la inversión para prohibir algo que llevaba años tolerando. Por eso, desestimó su recurso y confirmó la nulidad del acuerdo, al entender que vulneraba la buena fe y la doctrina de los actos propios. En Xataka | Un viejo edificio de Madrid necesitaba ascensor y no tenía hueco: el juez ha permitido que se coma el patio interior del bloque",
-      "image": "https://i.blogs.es/5d283b/edificio-salida-humo/1024_2000.jpeg",
+      "full_voice_script": "“Si arranca y se mueve, no pasa nada”: la lógica que más llena los talleres, según un mecánico con 18 años de oficio. Noticia publicada por Genbeta. Aunque el coche parezca que ha empezado a dar tirones o pierde potencia, puede seguir siendo capaz de arrancar y circular . Además, si esto ocurre de forma recurrente, es fácil que se vuelva habitual. Por eso se puede asumir que es por los kilómetros. Posponer los mantenimientos tiene sus consecuencias, advierte Juande Rodríguez (mecánico con 18 años de experiencia) . “El error más caro es acostumbrarse a que el coche ya no va como antes” . Empezó en los talleres con 16 años. A los 20 abrió su propio negocio. En su currículum destacan ocho años de mecánica de competición. Deja claro que, a unque el coche siga siendo operativo, es importante actuar ante los primeros síntomas . Por ejemplo, el color del humo que sale por el escape puede ser indicativo. Si tenemos pérdida de potencia y sale humo blanco o azulado, es posible que sea el turbo. También puede ir asociado a consumo de aceite. Es fundamental saber cuál es el origen. El humo negro puede hacer referencia a problemas en la admisión . Por ejemplo, si el filtro de aire está tapado, no llega suficiente aire al motor. También puede haber pérdida de potencia sin humo. En este caso, la causa puede ser un sensor de admisión sucio o carbonilla . Si al acelerar el motor gira más rápido, pero no aumenta la velocidad en la misma proporción, es posible que esté patinando el embrague . Es importante que, antes de que deje de transmitir fuerza a las ruedas, se revise. También es relevante revisarlo si el pedal está duro o cuesta enganchar marchas (por razones diferentes). Otro elemento a revisar es el Start-Stop . Si no apaga el motor en las paradas, es posible que tenga que ver con el estado de la batería. También puede ser desactivado por la electrónica (cuando no se cumplan las condiciones necesarias para su funcionamiento). Sin embargo, esto no quiere decir que haya una avería.",
+      "image": "https://i.blogs.es/d03e9a/mecanico-trabajando-en-el-motor/1024_2000.png",
       "source": "Genbeta",
-      "link": "https://www.genbeta.com/actualidad/comunidad-permite-durante-anos-uso-salida-humos-prohibe-cambio-propietario-reforma-local-supremo-anula-acuerdo-ir-sus-propios-actos",
-      "published": "2026-11-16T13:01:26+01:00"
+      "link": "https://www.genbeta.com/laboral/arranca-se-mueve-no-pasa-nada-logica-que-llena-talleres-mecanico-18-anos-oficio",
+      "published": "2026-11-23T15:00:51+01:00"
     }
   ],
   "vip_hack_of_the_week": {
-    "tag": "Seguridad Digital",
-    "title": "El truco de 30 segundos para que no te roben la cuenta de WhatsApp o Telegram",
-    "body": "Activa la verificación en dos pasos (WhatsApp: Ajustes > Cuenta > Verificación en dos pasos; Telegram: Ajustes > Privacidad > Contraseña de dos pasos). Nunca compartas el código de 6 dígitos con nadie, ni con 'soporte'."
+    "tag": "Productividad IA",
+    "title": "Cómo pedirle a una IA que te resuma cualquier PDF o artículo en segundos",
+    "body": "Pega el texto y escribe: 'Resúmelo en 5 puntos clave, dime la conclusión y qué debería hacer yo con esta información'. Ese prompt ordena la respuesta y te ahorra media hora de lectura."
   },
   "weekly_jokes": [
-    "Instalé un antivirus tan potente que ahora mi computadora no deja pasar ni mis propios archivos.",
-    "Mi estado de WhatsApp dura 24 horas. Mi arrepentimiento por subirlo, dos minutos.",
-    "Yo: 'Voy a usar el teléfono 5 minutos'. El teléfono, 2 horas después: 'Hola de nuevo'.",
-    "Mi contraseña tiene mayúsculas, números y símbolos... y aun así soy el único que no se la sabe.",
-    "Mi mamá y la tecnología: 'Hijo, se me quitó el internet de la pantalla'. Traducción: se le cerró la aplicación.",
-    "Mi teléfono se cayó de la mesa y sobrevivió. Yo casi sufro un infarto. Resistencia emocional: 0, de pantalla: 100.",
-    "— Papá, ¿qué es la nube?<br>— Es donde el celular guarda lo que yo no quiero que mamá vea.",
-    "Mi PC tarda 10 minutos en encender y 2 segundos en congelarse justo cuando voy a guardar el trabajo. Puntería perfecta.",
-    "Actualización disponible: 2 GB. Mi almacenamiento: 40 MB. Mi paciencia: agotada.",
-    "Le pedí a una IA que dibujara un gato. Me dio un gato con siete patas y cara de ofendido. Igualito a mi jefe un lunes."
+    "Antes uno buscaba pareja; ahora busca un enchufe. Y a veces el segundo aparece primero.",
+    "Mi cuenta de ahorros y mi batería tienen algo en común: las dos llegan al 5% a mitad de mes.",
+    "En mi casa hay dos tipos de personas: los que dicen 'reinicia el router' y los que ya lo reiniciaron tres veces.",
+    "Mi router tiene más lucecitas que un árbol de Navidad y aun así no hay internet.",
+    "Dormir 8 horas es fácil. Lo difícil es que el celular no te avise a las 3 a.m. que 'tu almacenamiento está casi lleno'.",
+    "— ¿Cuál es tu mayor miedo?<br>— Que alguien me pida el celular 'solo para ver una foto'.",
+    "Mi compu hace un ruido como de avión despegando. Dice el técnico que es normal: 'está pensando muy fuerte'.",
+    "El GPS dijo 'a 200 metros gire a la derecha'. Doblé a la derecha. Ahora vivo en un campo de maíz.",
+    "— ¿Dónde están mis lentes?<br>— En tu cara.<br>— Ah, es que los busqué con la linterna del celular.",
+    "Mi pantalla tiene tantas rayitas que ya no sé si es un teléfono o un mapa de carreteras."
   ],
   "weekly_truths": [
     {
-      "emoji": "💻",
+      "emoji": "🧑‍💻",
+      "color": "purple",
+      "title": "Soporte Técnico",
+      "body": "—¿Ya lo apagó y lo volvió a encender?<br>—Sí.<br>—¿Seguro?<br>—...<strong>Ahora sí</strong>. Y funciona. Nadie sabe por qué."
+    },
+    {
+      "emoji": "🎙️",
       "color": "cyan",
-      "title": "La Regla de las Pestañas",
-      "body": "Una pestaña para trabajar. Cuarenta y seis para 'leer luego'. Cero lecturas posteriores."
+      "title": "La Ley del Audio de WhatsApp",
+      "body": "• <strong>0 a 15 seg:</strong> Escuchable con paciencia.<br>• <strong>15 a 45 seg:</strong> Lo pongo en 1.5x de inmediato.<br>• <strong>Más de 1 min:</strong> Eso ya no es un audio, es un podcast. ¡Llámame mejor!"
     },
     {
-      "emoji": "📱",
-      "color": "blue",
-      "title": "La Pantalla Rota",
-      "body": "Nivel 1: una rajadura pequeña.<br>Nivel 2: 'ya me acostumbré'.<br>Nivel 3: lees el mensaje en forma de rompecabezas."
+      "emoji": "📸",
+      "color": "amber",
+      "title": "La Galería del Celular",
+      "body": "10.000 fotos: 9.800 son capturas de pantalla, 150 son la misma selfie y ninguna es la que estás buscando."
     },
     {
-      "emoji": "📶",
-      "color": "blue",
-      "title": "El Wi-Fi del Vecino",
-      "body": "<strong>Señal:</strong> 5 rayitas.<br><strong>Velocidad:</strong> la de una tortuga con sueño.<br><strong>Clave:</strong> recién cambiada."
-    },
-    {
-      "emoji": "🎮",
-      "color": "emerald",
-      "title": "Psicología Gamer",
-      "body": "<strong>Pierdo:</strong> es culpa del lag.<br><strong>Gano:</strong> pura habilidad y talento natural."
+      "emoji": "🔔",
+      "color": "pink",
+      "title": "Notificaciones",
+      "body": "<strong>Importante:</strong> 1 mensaje de tu jefe.<br><strong>Urgentísimo:</strong> 47 avisos de apps que no recuerdas haber instalado."
     }
   ],
   "game_layout": {
@@ -247,7 +247,7 @@
   ],
   "seo": {
     "title": "ByteZone Arcade | Juegos Gratis, Ranking Semanal y Noticias de IA",
-    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: Este nuevo Linux con inteligencia artificial nace de una de las…",
+    "description": "Juega gratis Neon Stacker, Test de Reflejos y Cyber Memory, compite en el torneo semanal y entérate de lo último en IA: Google lanza Gemini 4 Neon: más rápido, más barato y demoledor…",
     "keywords": [
       "juegos arcade online gratis",
       "juegos sin descargar",
@@ -261,35 +261,35 @@
       "mini juegos para Telegram",
       "juegos para celular",
       "retos entre amigos",
-      "linux",
-      "android",
-      "studio",
-      "ultra",
-      "límites",
-      "microsoft",
-      "satya",
-      "nadella"
+      "google",
+      "gemini",
+      "neon",
+      "artex",
+      "comisión",
+      "europea",
+      "aquí",
+      "inteligencia"
     ],
     "trending_terms": [
-      "Linux",
-      "Android",
-      "Studio",
-      "Ultra",
-      "límites",
-      "Microsoft",
-      "Satya",
-      "Nadella"
+      "Google",
+      "Gemini",
+      "Neon",
+      "Artex",
+      "Comisión",
+      "Europea",
+      "Aquí",
+      "Inteligencia"
     ],
-    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/11/koraos_06.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
-    "lastmod": "2026-11-16"
+    "og_image": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2026/11/google-gemini-4-neon.jpg?fit=1024%2C576&quality=70&strip=all&ssl=1",
+    "lastmod": "2026-11-23"
   },
   "promo_kit": {
     "whatsapp_status": [
       "🎮 Torneo semanal nuevo en ByteZone: ranking reiniciado, ¡todos empiezan de cero! ⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo? Juega gratis 👉 https://megabotp2p.github.io/bytezone/",
-      "🏆 Campeones de la semana pasada → Neon Stacker Pro: ***** (26 pisos)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
-      "🤖 Noticia IA de la semana: Este nuevo Linux con inteligencia artificial nace de una de las figuras más conocidas de Android\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
+      "🏆 Campeones de la semana pasada → Neon Stacker Pro: RATG (24 pisos)\n\nEsta semana puedes ser #1. Gratis y sin descargar 👉 https://megabotp2p.github.io/bytezone/",
+      "🤖 Noticia IA de la semana: Google lanza Gemini 4 Neon: más rápido, más barato y demoledor escribiendo código\nResumen en 45 segundos + juegos gratis 👉 https://megabotp2p.github.io/bytezone/"
     ],
-    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Linux #Android #Studio",
+    "social_caption": "Nueva semana, ranking en cero 🏁 Juega Neon Stacker Pro, Test de Reflejos y Cyber Memory gratis y compite con el mundo. https://megabotp2p.github.io/bytezone/ #juegosgratis #arcade #reflejos #retos #IA #tecnologia #telegram #Google #Gemini #Neon",
     "hashtags": [
       "#juegosgratis",
       "#arcade",
@@ -298,20 +298,20 @@
       "#IA",
       "#tecnologia",
       "#telegram",
-      "#Linux",
-      "#Android",
-      "#Studio"
+      "#Google",
+      "#Gemini",
+      "#Neon"
     ],
     "challenge_lines": [
       "⚡ El récord de reflejos es 16 ms (Jugador_191). ¿Puedes vencerlo?",
       "🏗️ Récord de Neon Stacker: 43 pisos (*****). ¿Llegas más alto?"
     ],
-    "last_week_champions_text": "🏆 Campeones de la semana pasada → Neon Stacker Pro: ***** (26 pisos)"
+    "last_week_champions_text": "🏆 Campeones de la semana pasada → Neon Stacker Pro: RATG (24 pisos)"
   },
   "last_week_champions": {
     "stacker": {
-      "name": "*****",
-      "score": 26,
+      "name": "RATG",
+      "score": 24,
       "country": "VE"
     }
   },
@@ -333,8 +333,8 @@
     }
   },
   "agent_report": {
-    "generated_at": "2026-11-16T08:37:32.636170-04:00",
-    "week_id": "W2026-11-16",
+    "generated_at": "2026-11-23T10:22:01.853629-04:00",
+    "week_id": "W2026-11-23",
     "traffic_status": "bajo",
     "traffic": {
       "devices_7d": 0,
@@ -342,8 +342,8 @@
       "views_7d": 0,
       "ad_actions_7d": 0,
       "ads_shown_7d": 0,
-      "devices_prev_7d": 2,
-      "change_pct": -100,
+      "devices_prev_7d": 0,
+      "change_pct": null,
       "per_game": {
         "stacker": {
           "view": 0,
@@ -376,7 +376,7 @@
     "actions": [
       "Noticias renovadas: 5 historias nuevas (se evitaron los titulares de la semana anterior).",
       "Humor renovado: 10 chistes y 4 'verdades tech' nuevas.",
-      "SEO: meta-tags actualizados con palabras clave de la semana (Linux, Android, Studio, Ultra, límites), sitemap regenerado. IndexNow aceptó la notificación (HTTP 200)",
+      "SEO: meta-tags actualizados con palabras clave de la semana (Google, Gemini, Neon, Artex, Comisión), sitemap regenerado. IndexNow aceptó la notificación (HTTP 200)",
       "Kit de promoción listo (textos para WhatsApp/Telegram/redes con los récords actuales).",
       "Telegram: sin token/chat configurados (envío automático desactivado).",
       "Sin rotación: 0 partidas registradas en 7 días (se necesitan 30 para rotar titulares automáticamente). Todos los juegos siguen disponibles entre Portada y Baúl.",
